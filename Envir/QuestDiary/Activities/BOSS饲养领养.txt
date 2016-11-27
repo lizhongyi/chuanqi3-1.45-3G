@@ -1,0 +1,358 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@领养BOSS_领]
+{
+#SAY
+{FCOLOR/1}<$USERNAME>{FCOLOR/12} 你好!\
+是不是觉得每天和一群高手抢BOSS很危险，搞不好没打到BOSS还被别人杀了？
+现在好了，我这里有BOSS的幼虫，你只要每天精心的喂养它，三天后就能长成BOSS了。\
+注意事项：\
+1、{FCOLOR/1}领养后的幼虫在三天内必须每天喂养，漏下一天就会饿死，需要重新领取后再开始喂养。{FCOLOR/12}\
+2、幼虫喂养的饲料有两种，一种是普通饲料，用诺玛头像和15元宝合成。另一种是高级饲料，需要用群魔头像和30元宝合成。\
+3、三天内喂养的幼虫如果全部用普通饲料，养成的BOSS是低级的BOSS，比如{FCOLOR/10}沃玛教主、霸王教主{FCOLOR/12}等。\
+三天内喂养的幼虫只需要有一天用了高级饲料，养成的BOSS是高级的BOSS，比如{FCOLOR/10}诺玛教主、异界神灵{FCOLOR/12}等。\
+4、养成的BOSS种类只有在您成功养成后系统才会告诉您养的是什么。\
+5、领养BOSS的幼虫需金币100W{FCOLOR/10}(沙成员80W){FCOLOR/12}，领养玩家的等级{FCOLOR/1}50{FCOLOR/12}级以上。\
+6、养成的BOSS爆元宝和物品跟系统刷出的BOSS爆率是一样的。\
+<我要领养BOSS/@要个BOSS_1> 
+
+[@要个BOSS_1]
+#IF
+checklevel 50
+#ACT
+goto @要个BOSS_2
+break
+#ELSESAY
+50级以上的玩家才养BOSS哦!
+<返回/@领养BOSS_领>\
+
+[@要个BOSS_2]
+#ACT
+LoadValue A0 "ParamControl\饲养BOSS.ini" [BOSS] [%USERNAME]
+
+#IF
+equal A0 ""
+#ACT
+goto @可以养BOSS
+#ELSEACT
+LoadValue A2 "ParamControl\饲养BOSS.ini" [BOSS状态] [%USERNAME]
+goto @要个BOSS_3
+
+[@要个BOSS_3]
+#IF
+equal A2 "死亡"
+#ACT
+goto @可以养BOSS
+#ELSESAY
+您养的BOSS还没有处理掉呢，不能养两个啊！
+
+[@可以养BOSS]
+#IF
+checklevel 50
+checkgold 1000000
+#ACT
+take 金币 1000000
+SaveValue "ParamControl\饲养BOSS.ini" [BOSS] [%USERNAME] "低级"
+SaveValue "ParamControl\饲养BOSS.ini" [剩余天数] [%USERNAME] 3
+SaveValue "ParamControl\饲养BOSS.ini" [BOSS状态] [%USERNAME] "健康"
+set [361] 0
+set [362] 0
+set [363] 0
+set [364] 0
+set [365] 0
+set [366] 0
+set [367] 0
+#SAY
+恭喜您成功领养了一个BOSS的幼虫，您必须在接下来的3天内每天喂养，不然幼虫是要死掉的哦！\
+<知道了/@exit>
+#ELSESAY
+您没有100W金币吗？太穷了怎么养BOSS哦！
+}
+
+;;喂养------------------------------------------------------------------------
+[@喂养BOSS]
+{
+#IF
+dayofweek sun
+#ACT
+mov s2 1
+goto @sunjboss
+break
+
+#IF
+dayofweek mon
+#ACT
+mov s2 2
+goto @monjboss
+break
+
+#IF
+dayofweek tue
+#ACT
+mov s2 3
+goto @tuejboss
+break
+
+#IF
+dayofweek wed
+#ACT
+mov s2 4
+goto @wedjboss
+break
+
+#IF
+dayofweek thu
+#ACT
+mov s2 5
+goto @thujboss
+break
+
+#IF
+dayofweek fri
+#ACT
+mov s2 6
+goto @frijboss
+break
+
+#IF
+dayofweek sat
+#ACT
+mov s2 7
+goto @satjboss
+break
+
+[@sunjboss]
+#IF
+equal s2 1
+#ACT
+#CALL [Activities\BOSS饲养星期日.txt] @喂_星期日
+
+[@monjboss]
+#IF
+equal s2 2
+#CALL [Activities\BOSS饲养星期一.txt] @喂_星期一
+
+[@tuejboss]
+#IF
+equal s2 3
+#CALL [Activities\BOSS饲养星期二.txt] @喂_星期二
+
+[@wedjboss]
+#IF
+equal s2 4
+#CALL [Activities\BOSS饲养星期三.txt] @喂_星期三
+
+[@thujboss]
+#IF
+equal s2 5
+#CALL [Activities\BOSS饲养星期四.txt] @喂_星期四
+
+[@frijboss]
+#IF
+equal s2 6
+#CALL [Activities\BOSS饲养星期五.txt] @喂_星期五
+
+[@satjboss]
+#IF
+equal s2 7
+#CALL [Activities\BOSS饲养星期六.txt] @喂_星期六
+}
+
+;;制作------------------------------------------------------------------------
+[@制作饲料]
+{
+#SAY
+{FCOLOR/10}喂养BOSS的饲料可分为两种~{FCOLOR/12}\\
+一种是{FCOLOR/1}普通饲料{FCOLOR/12}需要{FCOLOR/10}诺玛头像及15元宝合成{FCOLOR/12}\\
+一种是{FCOLOR/1}高级饲料{FCOLOR/12}需要{FCOLOR/10}群魔头像及30元宝合成{FCOLOR/12}\\
+<合成普通饲料/@普通饲料1>\\
+<合成高级饲料/@高级饲料1>\\
+
+
+[@普通饲料1]
+#IF
+checkcmd CHECKUSERJF 15
+checkitem 诺玛头像 1
+#ACT
+close
+take  诺玛头像  1
+actcmd SETUSERJF - 15 普通饲料
+give  普通饲料  1
+SysMsg "温馨提示: 1个普通饲料制作成功，请查收您的包裹！"
+#ELSESAY
+对不起，您的材料不足或您没有15个元宝！
+
+[@高级饲料1]
+#IF
+checkcmd CHECKUSERJF 30
+checkitem 群魔头像 1
+#ACT
+close
+take  群魔头像  1
+actcmd SETUSERJF - 30 普通饲料
+give  高级饲料  1
+SysMsg "温馨提示: 1个高级饲料制作成功，请查收您的包裹！"
+#ELSESAY
+对不起，您的材料不足或您没有30个元宝！
+}
+
+;;查看---------------------------------------------------------------------------
+[@查看BOSS]
+{
+#ACT
+LoadValue A2 "ParamControl\饲养BOSS.ini" [BOSS状态] [%USERNAME]
+
+#IF
+equal A2 ""
+#SAY
+您还没有领养BOSS呢！
+#ACT
+break
+
+#IF
+equal A2 "死亡"
+#SAY
+您领养的BOSS已经死亡，请重新领养一个吧！
+#ACT
+break
+
+#IF
+#ACT
+LoadValue A0 "ParamControl\饲养BOSS.ini" [BOSS] [%USERNAME]
+LoadValue N1 "ParamControl\饲养BOSS.ini" [剩余天数] [%USERNAME]
+#SAY
+您领养的BOSS数据：\\
+级别为 {FCOLOR/10}<$OUTPUT(A0)>{FCOLOR/12}\\
+剩余天数 {FCOLOR/10}<$OUTPUT(N1)>{FCOLOR/12} 天\\
+状态为 {FCOLOR/10}<$OUTPUT(A2)>{FCOLOR/12}\\
+如果您今天没有喂养，请先喂养一次确定数据。
+}
+
+;;宰杀------------------------------------------------------------------------
+[@宰杀BOSS]
+{
+#SAY
+如果您领养的BOSS幼虫已经成功长成BOSS了，那就快来宰杀吧，养成的BOSS{FCOLOR/10}爆元宝和物品{FCOLOR/12}
+跟系统刷出的的BOSS是一样的哦！\
+在BOSS养成后，您可以选择在{FCOLOR/10}任何时间{FCOLOR/12}去宰杀，不过您要注意的是在宰杀BOSS时如果您被
+BOSS杀死或下线出来后就{FCOLOR/10}不能再进入了{FCOLOR/12}，小心为上！\
+{FCOLOR/1}注意：{FCOLOR/12}\
+1、当您进入后其他人就不能再进了，但是可以使用{FCOLOR/10}夫妻传送{FCOLOR/12}和{FCOLOR/10}记忆套装{FCOLOR/12}
+进入，如果您一个人对付不了那就让您的配偶用结婚戒指飞进去吧！\
+2、为了防止误操作，里面不能使用回城，下线后回道馆，杀完BOSS可以{FCOLOR/10}点NPC{FCOLOR/12}出来\
+3、每次进去杀BOSS的时候为{FCOLOR/1}15分钟{FCOLOR/12}，进入后和里面的{FCOLOR/10}NPC对话召唤{FCOLOR/12}出您养的BOSS，时间到后被传送回道馆。\
+请选择一个宰杀地图，因为每次只能进一人，所以我们准备了多张地图供您选择，遇到有人时可以选择其他的地图。\\
+
+<地图一/@宰杀BOSSGO_1(BABY1)>  <地图二/@宰杀BOSSGO_1(BABY2)>\
+
+[@宰杀BOSSGO_1()]
+#ACT
+Mov  A3  %ARG(1) 
+LoadValue A2 "ParamControl\饲养BOSS.ini" [BOSS状态] [%USERNAME]
+
+#IF
+equal A2 ""
+#SAY
+您还没有领养BOSS呢！
+#ACT
+break
+
+#IF
+equal A2 "死亡"
+#SAY
+您领养的BOSS已经死亡，请重新领养一个吧！
+#ELSEACT
+goto @宰杀BOSSGO_2
+
+[@宰杀BOSSGO_2]
+#ACT
+LoadValue A0 "ParamControl\饲养BOSS.ini" [BOSS] [%USERNAME]
+LoadValue N1 "ParamControl\饲养BOSS.ini" [剩余天数] [%USERNAME]
+
+#IF
+!equal N1 0
+#SAY
+您的BOSS还没喂养完呢！
+#ACT
+break
+
+#IF
+equal A0 "低级"
+or equal A0 "高级"
+#SAY
+您的BOSS幼虫还没长成真正的BOSS呢！
+#ACT
+break
+
+#IF
+checkhum %A3 1
+#SAY
+现在里面有人在宰杀BOSS，请您选择{FCOLOR/10}其他的宰杀地图{FCOLOR/12}，或者请稍后再来...\\
+<选择其他地图/@宰杀BOSS>
+#ELSEACT
+TimeRecall 15
+mapmove %A3 38 24
+}
+
+;;宰杀------------------------------------------------------------------------
+[@召唤BOSS]
+{
+#SAY
+养BOSS真是辛苦，不过现在总算可以收获了，祝你杀了BOSS爆极品哦！\\
+<召唤我的养BOSS/@召唤BOSS_1>\\
+<送我回道观/@回比奇_BOSS>
+
+[@召唤BOSS_1]
+#ACT
+LoadValue A2 "ParamControl\饲养BOSS.ini" [BOSS状态] [%USERNAME]
+
+#IF
+equal A2 ""
+#SAY
+您还没有领养BOSS呢！
+#ACT
+break
+
+#IF
+equal A2 "死亡"
+#SAY
+您领养的BOSS已经死亡，请重新领养一个吧！
+#ELSEACT
+goto @召唤BOSS_2
+
+[@召唤BOSS_2]
+#ACT
+LoadValue A0 "ParamControl\饲养BOSS.ini" [BOSS] [%USERNAME]
+LoadValue N1 "ParamControl\饲养BOSS.ini" [剩余天数] [%USERNAME]
+
+#IF
+!equal N1 0
+#SAY
+您的BOSS还没喂养完呢！
+#ACT
+break
+
+#IF
+equal A0 "低级"
+or equal A0 "高级"
+#SAY
+您的BOSS幼虫还没长成真正的BOSS呢！
+#ACT
+break
+
+#IF
+#ACT
+mov A4 %USERMAP
+SaveValue "ParamControl\饲养BOSS.ini" [BOSS状态] [%USERNAME] "死亡"
+Param1 %A4
+Param2 42
+Param3 34
+MonGen %A0 1 0
+#SAY
+您养的{FCOLOR/14}<$OUTPUT(A0)>{FCOLOR/12}已经召唤出来了，快去杀了它吧！
+
+[@回比奇_BOSS]
+#ACT
+mapmove 1 400 122
+break
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

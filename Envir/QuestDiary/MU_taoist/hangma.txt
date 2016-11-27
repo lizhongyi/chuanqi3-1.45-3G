@@ -1,0 +1,208 @@
+;;创天网络有限公司原版1.45
+[@mugong_hangma]
+{
+#IF
+check [019] 1
+#SAY
+你不是已经收到书吗？那么你为什么还要索要？\ \
+<结束/@exit>
+#ACT
+break
+
+#IF
+check [042] 1
+#SAY
+在做什么。。不到飞天废矿找 {FCOLOR/10}‘灵珠’ {FCOLOR/12} ，认为现在是可以磨磨噌噌的时候嘛？现在很多人正在死去。千万快些 ！！\ \
+<结束/@exit>
+#ACT
+break
+
+#IF
+check [042] 0
+#SAY
+有什么事情找我吗？\ \
+<想得到前辈清明子的指教而来。/@check_rootin>
+#ELSESAY
+很高兴，我就是清明子。\ \
+<结束/@exit>
+
+[@check_rootin]
+#IF
+checklevel 21
+#ACT
+goto @mugong_hangma_highlevel
+#ELSEACT
+goto @mugong_hangma_lowlevel
+
+[@mugong_hangma_highlevel]
+#IF
+checkjob taoist
+#ACT
+goto @mugong_hangma_highlevel_next
+#ELSESAY
+对不起，施主不是道士，不能修炼该武功，请回去吧！\ \
+<结束/@exit>
+
+[@mugong_hangma_lowlevel]
+#IF
+checkjob taoist
+#SAY
+嗯，虽然不可以，那时还不具备修炼该武功的能力。后会有期！\ \
+<结束/@exit>
+#ELSESAY
+对不起，施主不是道士，不能修炼该武功，请回去吧！\ \
+<结束/@exit>
+
+[@mugong_hangma_highlevel_next]
+#IF
+checkmagic 幽灵盾 
+#SAY
+你已经正在修炼该武功了哟。好象去找寻其它新的武功更好些。\ \
+<结束/@exit>
+#ELSESAY
+嘿嘿，虽然不知道什么事情，如果我可以帮忙就好了。\ \
+<下一步/@mugong_hangma_highlevel_next1>
+
+[@mugong_hangma_highlevel_next1]
+#IF
+#ACT
+goto @mugong_hangma_highlevel_next2
+
+[@mugong_hangma_highlevel_next2]
+#IF
+#SAY
+嗯，是这样的。当然按照道友所讲的。最近有魔力的怪兽频繁地出没于各个地方，对此魔力没有任何抵抗力的很多人正在遭受磨难。\
+因此按照道友所讲是为了帮助这些人才想学习 {FCOLOR/10}幽灵盾{FCOLOR/12} 的。\
+嗯，为了他人而献身是我们道士所追求的基本精神，道友正在保持 {FCOLOR/10}真正道士的精神{FCOLOR/12} 。我为你的善良品格而感动。\ \ 
+<教我武功吗？/@mugong_hangma_highlevel_next3>
+
+[@mugong_hangma_highlevel_next3]
+#IF
+#SAY
+使用这种武功时，会从施功者体内消耗巨大的功力，但长时间修炼功力强者没关系。没有此功力者将功力同化，身体无法动弹。严重时会损伤气脉成为废人。\ 
+为了防止这种危险，虽然已经使用护身符和辅助工具，但是如果发功者的内力不优秀完全起不到任何作用。这样还想学习该武功吗？\ \ 
+<重新考虑一下！/@mugong_hangma_highlevel_next3_except> \
+<已经做好了献出生命的准备。/@mugong_hangma_highlevel_next4>
+
+[@mugong_hangma_highlevel_next3_except]
+#IF
+#SAY
+好的 \ \
+<结束/@exit>
+[@mugong_hangma_highlevel_next4]
+#IF
+#SAY
+已经下了这么大的决心也是没有办法的事情。好的！我将传授幽灵盾给你。但是这之前帮我做一件事情可以吗？\ \
+<好的。/@mugong_hangma_highlevel_next5> \
+<不行。/@mugong_hangma_highlevel_next5_except>
+
+[@mugong_hangma_highlevel_next5_except]
+#IF
+#SAY
+嗯。。如果那样，我也不能将武功传授给你。\ \ 
+<结束/@exit>
+
+[@mugong_hangma_highlevel_next5]
+#IF
+#SAY
+不是其它的事情，听说过生活在飞天费矿的魔法僵尸吗？如果抓到 {FCOLOR/10}魔法 僵尸{FCOLOR/12} 偶而会有叫做 {FCOLOR/10}'灵珠'{FCOLOR/12} 的奇特珠子出来，请将这个东西拿给我。请不要问这个东西用在哪儿和为什么需要。\
+只要将这个珠子拿来，将传授武功给你。好了，请快去快回！\ \
+<结束/@exit>
+#ACT
+set [042] 1
+break
+}
+
+
+[@mugong_hangma_getring]
+{
+#IF
+check [019] 1
+#ACT
+break
+
+#IF
+check [042] 0
+#ACT
+break
+
+#IF
+check [043] 0
+#ACT
+break
+
+#IF
+check [042] 1
+check [043] 1
+check [044] 1
+#ACT
+goto @mugong_hangma_getring_next1
+break
+
+#IF
+check [042] 1
+check [043] 1
+checkitem 灵珠 1
+#SAY
+幸运的是已经找到 {FCOLOR/10}灵珠{FCOLOR/12} 了哟。好的，现在该是我遵守约定的时候了。请等一下。。\ \
+<下一步/@mugong_hangma_getring_next>
+#ELSESAY
+你丢失了灵珠哟。。这该怎么办。。。。\ \
+<结束/@exit>
+
+[@mugong_hangma_getring_next]
+#IF
+check [043] 1
+checkitem 灵珠 1
+#SAY
+好的，请喝 {FCOLOR/10}药水{FCOLOR/12} 。这个药是用你拿来的灵珠和其它灵验的药材一起加工制成的珍贵药。这个药可以大力提高内力，吃了这个药，在修炼武功的时候不会发生走火入魔的事情。\ \
+<不，如何承受得了这种辛苦?/@mugong_hangma_getring_next1>
+#ACT
+take 灵珠 1
+give 无名药 1
+SET [044] 1
+#ELSESAY
+你丢失了灵珠哟。。这该怎么办。。。。\ \
+<结束/@exit>
+
+[@mugong_hangma_getring_next1]
+#IF
+checkitem 无名药 1
+#SAY
+你不是已经吃这个药嘛，快点把这个药吃了。
+#ELSESAY
+为天下万民就连自己的生命都可以像棵草一样抛弃的真正英雄，如果这点都做不到，还可以堂堂正正地生活在世上吗？\ 
+希望你保持慈善的本性，成为为天下民众费心的 {FCOLOR/10}真正道士{FCOLOR/12} 。\ \ 
+<谢谢. /@mugong_hangma_getring_next2>
+
+[@mugong_hangma_getring_next2]
+#IF
+checkmagic 幽灵盾 
+#SAY
+你已经正在修炼该武功了哟。好象去找寻其它新的武功更好些。\ \
+<结束/@exit>
+#ACT
+break
+#IF
+check [019] 0
+#ACT
+give 金币 22000
+give 幽灵盾（秘籍）
+give 松笛 1
+reset [042] 2
+set [019] 1
+#SAY
+那么就到此为止了，请上路吧！你现在要做的事情还有很多，千万要小心！\ \
+<结束/@exit>
+#ELSESAY
+你不是已经收到书吗？那么你为什么还要索要？\ \
+<结束/@exit>
+}
+
+[@mugong_hangma_explain]
+{
+#IF
+#SAY
+若想学幽灵盾，从魔法僵尸那儿找回 {FCOLOR/10}灵珠{FCOLOR/12} 即可。
+<结束/@exit>
+}

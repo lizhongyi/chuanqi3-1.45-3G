@@ -1,0 +1,513 @@
+;;创天网络有限公司原版1.45
+[@Refine]
+{
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!! \ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkweaponlevel 17
+#SAY
+还有{FCOLOR/10}武器等级 17{FCOLOR/12}以上就不能再炼制武器了。\ \
+<前一步/@main>
+#ACT
+break
+
+#IF
+checkweaponmctype 0
+checkrefineweapon
+#SAY
+您的武器等级提高了，恭喜您.. \
+您现在也可以制炼武器了... \
+{FCOLOR/1}普通(持久度,元素,破坏力，自然系魔法,灵魂系魔法)制炼失败时武器不会消失，但是大规模(准确,神圣,绿色毒,红色毒,魔法时间延长,麻痹,攻击速度)制炼失败时，就有可能武器消失，请注意这一点..{FCOLOR/12} \
+包里的所有装饰品和黑铁都会被称为制炼的材料,所以不必要的物品赶快做一下整理。\
+好,您要做什么制炼?? \ \
+<制炼持久度。/@Refine_Dura> \
+<制炼破坏力。/@Refine_DC> \
+<制炼全系列魔法。/@Refine_ALL> \
+<制炼元素。/@Refine_Atom> \
+<前一步/@main>
+#ACT
+break
+
+#IF
+checkweaponmctype 1
+checkrefineweapon
+#SAY
+您的武器等级提高了，恭喜您.. \
+您现在也可以制炼武器了... \
+{FCOLOR/1}普通(持久度,元素,破坏力，自然系魔法,灵魂系魔法)制炼失败时武器不会消失，但是大规模(准确,神圣,绿色毒,红色毒,魔法时间延长,麻痹,攻击速度)制炼失败时，就有可能武器消失，请注意这一点..{FCOLOR/12} \
+包里的所有装饰品和黑铁都会被称为制炼的材料,所以不必要的物品赶快做一下整理。\
+好,您要做什么制炼?? \ \
+<制炼持久度。/@Refine_Dura> \
+<制炼破坏力。/@Refine_DC> \
+<制炼自然系魔法。/@Refine_MC> \
+<制炼元素。/@Refine_Atom> \
+<前一步/@main>
+#ACT
+break
+
+#IF
+checkweaponmctype 2
+checkrefineweapon
+#SAY
+您的武器等级提高了，恭喜您.. \
+您现在也可以制炼武器了... \
+{FCOLOR/1}普通(持久度,元素,破坏力，自然系魔法,灵魂系魔法)制炼失败时武器不会消失，但是大规模(准确,神圣,绿色毒,红色毒,魔法时间延长,麻痹,攻击速度)制炼失败时，就有可能武器消失，请注意这一点..{FCOLOR/12} \
+包里的所有装饰品和黑铁都会被称为制炼的材料,所以不必要的物品赶快做一下整理。\
+好,您要做什么制炼?? \ \
+<制炼持久度。/@Refine_Dura> \
+<制炼破坏力。/@Refine_DC> \
+<制炼灵魂系魔法。/@Refine_SC> \
+<制炼元素。/@Refine_Atom> \
+<前一步/@main>
+#ACT
+break
+
+#ELSESAY
+您的武器等级没有升级。。\ \
+<前一步/@main>
+
+[@Refine_Dura]
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!! \ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkweaponlevel 17
+#SAY
+还有{FCOLOR/10}武器等级 17{FCOLOR/12}以上就不能再炼制武器了。\ \
+<前一步/@main>
+#ACT
+break
+
+#IF
+checkitem 黑铁 5
+checkrefineweapon
+checkGold 10000
+#ACT
+refineWeapon 10000 1 0
+#ELSESAY
+您还没准备好制炼用的材料。 \ \
+<结束/@exit>
+
+
+[@Refine_DC]
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!! \ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkGold 50000
+#ELSEACT
+BREAK
+#ELSESAY
+炼制需要花费5W金币.
+
+#IF
+checkweaponlevel 17
+#SAY
+还有{FCOLOR/10}武器等级 17{FCOLOR/12}以上就不能再炼制武器了。\ \
+<前一步/@main>
+#ACT
+break
+
+#IF
+checkitem 黑铁 3
+checkrefineitem 1 3
+checkrefineweapon
+#ACT
+RefineWeapon 50000 3 0
+#ELSESAY
+您还没准备好制炼用的材料。 \ \
+<结束/@exit>
+
+
+[@Refine_MC]
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!! \ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkweaponlevel 17
+#SAY
+还有{FCOLOR/10}武器等级 17{FCOLOR/12}以上就不能再炼制武器了。\ \
+<前一步/@main>
+#ACT
+break
+
+#IF
+checkGold 50000
+#ELSEACT
+BREAK
+#ELSESAY
+炼制需要花费5W金币.
+
+#IF
+checkitem 黑铁 3
+checkrefineitem 2 3
+checkrefineweapon
+#ACT
+RefineWeapon 50000 3 1
+#ELSESAY
+您还没准备好制炼用的材料。 \ \
+<结束/@exit>
+
+
+[@Refine_SC]
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!! \ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkweaponlevel 17
+#SAY
+还有{FCOLOR/10}武器等级 17{FCOLOR/12}以上就不能再炼制武器了。\ \
+<前一步/@main>
+#ACT
+break
+
+#IF
+checkGold 50000
+#ELSEACT
+BREAK
+#ELSESAY
+炼制需要花费5W金币.
+
+#IF
+checkitem 黑铁 3
+checkrefineitem 3 3
+checkrefineweapon
+#ACT
+RefineWeapon 50000 3 1
+#ELSESAY
+您还没准备好制炼用的材料。 \ \
+<结束/@exit>
+
+[@Refine_ALL]
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!! \ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkweaponlevel 17
+#SAY
+还有{FCOLOR/10}武器等级 17{FCOLOR/12}以上就不能再炼制武器了。\ \
+<前一步/@main>
+#ACT
+break
+
+#IF
+checkGold 50000
+#ELSEACT
+BREAK
+#ELSESAY
+炼制需要花费5W金币.
+
+#IF
+checkitem 黑铁 3
+checkrefineitem 4 3
+checkrefineweapon
+#ACT
+RefineWeapon 50000 3 1
+break
+#ELSESAY
+您还没准备好制炼用的材料。 \ \
+<结束/@exit>
+
+[@Refine_Atom]
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!! \ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkweaponlevel 17
+#SAY
+还有{FCOLOR/10}武器等级 17{FCOLOR/12}以上就不能再炼制武器了。\ \
+<前一步/@main>
+#ACT
+break
+
+#IF
+checkrefineweapon
+#SAY
+请选择您要制炼的元素种类.. \ \
+<制炼元素(火) /@Refine_Fire> \
+<制炼元素(冰)/@Refine_Ice> \
+<制炼元素(雷)/@Refine_Light> \
+<制炼元素(风)/@Refine_Wind> \
+<制炼元素(神圣)/@Refine_Holy> \
+<制炼元素(暗黑)/@Refine_Dark> \
+<制炼元素(幻影)/@Refine_Pantom> \
+<前一步/@Refine> \ 
+
+
+[@Refine_Fire]
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!! \ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkweaponlevel 17
+#SAY
+还有{FCOLOR/10}武器等级 17{FCOLOR/12}以上就不能再炼制武器了。\ \
+<前一步/@main>
+#ACT
+break
+
+#IF
+checkGold 50000
+#ELSEACT
+BREAK
+#ELSESAY
+炼制需要花费5W金币.
+
+#IF
+checkitem 黑铁 3
+checkrefineitem 0 5
+checkrefineweapon
+#ACT
+RefineWeapon 50000 4 1
+#ELSESAY
+您还没准备好制炼用的材料。 \ \
+<结束/@exit>
+
+[@Refine_Ice]
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!! \ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkweaponlevel 17
+#SAY
+还有{FCOLOR/10}武器等级 17{FCOLOR/12}以上就不能再炼制武器了。\ \
+<前一步/@main>
+#ACT
+break
+
+#IF
+checkGold 50000
+#ELSEACT
+BREAK
+#ELSESAY
+炼制需要花费5W金币.
+
+#IF
+checkitem 黑铁 3
+checkrefineitem 0 5
+checkrefineweapon
+#ACT
+RefineWeapon 50000 4 2
+#ELSESAY
+您还没准备好制炼用的材料。 \ \
+<结束/@exit>
+
+[@Refine_Light]
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!! \ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkweaponlevel 17
+#SAY
+还有{FCOLOR/10}武器等级 17{FCOLOR/12}以上就不能再炼制武器了。\ \
+<前一步/@main>
+#ACT
+break
+
+#IF
+checkGold 50000
+#ELSEACT
+BREAK
+#ELSESAY
+炼制需要花费5W金币.
+
+#IF
+checkitem 黑铁 3
+checkrefineitem 0 5
+checkrefineweapon
+#ACT
+RefineWeapon 50000 4 3
+#ELSESAY
+您还没准备好制炼用的材料。 \ \
+<结束/@exit>
+
+[@Refine_Wind]
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!! \ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkweaponlevel 17
+#SAY
+还有{FCOLOR/10}武器等级 17{FCOLOR/12}以上就不能再炼制武器了。\ \
+<前一步/@main>
+#ACT
+break
+
+#IF
+checkGold 50000
+#ELSEACT
+BREAK
+#ELSESAY
+炼制需要花费5W金币.
+
+#IF
+checkitem 黑铁 3
+checkrefineitem 0 5
+checkrefineweapon
+#ACT
+RefineWeapon 50000 4 4
+#ELSESAY
+您还没准备好制炼用的材料。 \ \
+<结束/@exit>
+
+
+[@Refine_Holy]
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!! \ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkweaponlevel 17
+#SAY
+还有{FCOLOR/10}武器等级 17{FCOLOR/12}以上就不能再炼制武器了。\ \
+<前一步/@main>
+#ACT
+break
+
+#IF
+checkGold 50000
+#ELSEACT
+BREAK
+#ELSESAY
+炼制需要花费5W金币.
+
+#IF
+checkitem 黑铁 3
+checkrefineitem 0 5
+checkrefineweapon
+#ACT
+RefineWeapon 50000 4 5
+#ELSESAY
+您还没准备好制炼用的材料。 \ \
+<结束/@exit>
+
+
+[@Refine_Dark]
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!! \ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkweaponlevel 17
+#SAY
+还有{FCOLOR/10}武器等级 17{FCOLOR/12}以上就不能再炼制武器了。\ \
+<前一步/@main>
+#ACT
+break
+
+#IF
+checkGold 50000
+#ELSEACT
+BREAK
+#ELSESAY
+炼制需要花费5W金币.
+
+#IF
+checkitem 黑铁 3
+checkrefineitem 0 5
+checkrefineweapon
+#ACT
+RefineWeapon 50000 4 6
+#ELSESAY
+您还没准备好制炼用的材料。 \ \
+<结束/@exit>
+
+[@Refine_pantom]
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!! \ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkweaponlevel 17
+#SAY
+还有{FCOLOR/10}武器等级 17{FCOLOR/12}以上就不能再炼制武器了。\ \
+<前一步/@main>
+#ACT
+break
+
+#IF
+checkGold 50000
+#ELSEACT
+BREAK
+#ELSESAY
+炼制需要花费5W金币.
+
+#IF
+checkitem 黑铁 3
+checkrefineitem 0 5
+checkrefineweapon
+#ACT
+RefineWeapon 50000 4 7
+#ELSESAY
+您还没准备好制炼用的材料。 \ \
+<结束/@exit>
+
+}

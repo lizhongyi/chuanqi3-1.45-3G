@@ -1,0 +1,301 @@
+;;王者传奇3 www.mir3w.com
+[@NPCACT_QuestBossToday]
+{
+#IF
+#ACT
+LoadValue A0 "ParamControl\任务记录.ini" %USERNAME 任务进度
+LoadValue D5 "ParamControl\任务记录.ini" %USERNAME 任务类型
+
+#IF
+Equal A0 "End"
+#ACT
+BREAK
+#SAY
+（今天好象没其他事情可做了。）\\
+<关 闭/@exit>
+
+#IF
+Equal A0 "PreEnd"
+#ACT
+GOTO @QuestBoss_END_1
+break
+
+#IF
+Equal D5 2
+Equal A0 "Progress"
+#ACT
+GOTO @QuestBoss_END_2
+break
+
+#IF
+Equal D5 3
+Equal A0 "Progress"
+#ACT
+GOTO @QuestBoss_END_3
+break
+
+#IF
+Equal D5 4
+Equal A0 "Progress"
+#ACT
+GOTO @QuestBoss_END_2
+break
+
+#ELSEACT
+GOTO @ConfirmbossQuest
+break
+
+[@QuestBoss_END_1]
+#IF
+Equal A0 "PreEnd"
+#ELSEACT
+BREAK
+
+#IF
+#ACT
+LoadValue D6 "ParamControl\任务记录.ini" %USERNAME 任务编号
+LoadValue D1 "ParamControl\任务查询.ini" %D6 金币1
+LoadValue D2 "ParamControl\任务查询.ini" %D6 金币2
+LoadValue A2 "ParamControl\任务查询.ini" %D6 物品1
+LoadValue A3 "ParamControl\任务查询.ini" %D6 物品2
+LoadValue D7 "ParamControl\任务记录.ini" %USERNAME 任务经验
+
+#IF
+#ACT
+MOVR D8 100
+
+#IF
+ELARGE D8 0
+SMALL  D8 40
+#ACT
+SetUserExp + %D7
+SYSMSG "本次任务您获得了 <$OUTPUT(D7)> 点经验值." 1
+GIVE 金币 %D1
+SAVEVALUE "ParamControl\任务记录.ini" %USERNAME 任务进度 End
+break
+#SAY
+谢谢你的帮忙,这是你应得的.\\
+<关 闭/@exit>\
+
+#IF
+ELARGE D8 40
+SMALL  D8 60
+#ACT
+SetUserExp + %D7
+SYSMSG "本次任务您获得了 <$OUTPUT(D7)> 点经验值." 1
+GIVE 金币 %D2
+SAVEVALUE "ParamControl\任务记录.ini" %USERNAME 任务进度 End
+break
+#SAY
+谢谢你的帮忙,这是你应得的. \\
+<关 闭/@exit>\
+
+#IF
+ELARGE D8 60
+SMALL  D8 90
+#ACT
+SetUserExp + %D7
+SYSMSG "本次任务您获得了 <$OUTPUT(D7)> 点经验值." 1
+GIVE %A2 1
+SAVEVALUE "ParamControl\任务记录.ini" %USERNAME 任务进度 End
+MOV 老万红字物品 %A2
+GOTO @检测老万红字
+break
+#SAY
+谢谢你的帮忙,这是你应得的. \\
+<关 闭/@exit>\
+
+#IF
+ELARGE D8 90
+SMALL  D8 101
+#ACT
+SetUserExp + %D7
+SYSMSG "本次任务您获得了 <$OUTPUT(D7)> 点经验值." 1
+GIVE %A3 1
+SAVEVALUE "ParamControl\任务记录.ini" %USERNAME 任务进度 End
+MOV 老万红字物品 %A3
+GOTO @检测老万红字
+break
+#SAY
+谢谢你的帮忙,这是你应得的. \\
+<关 闭/@exit>\
+
+[@QuestBoss_END_2]
+#ACT
+LoadValue A4 "ParamControl\任务记录.ini" %USERNAME 任务怪物
+LoadValue D3 "ParamControl\任务记录.ini" %USERNAME 怪物总数
+
+#IF
+CHECKITEM %A4 %D3
+#ELSEACT
+GOTO @ConfirmbossQuest
+BREAK
+
+#IF
+#ACT
+LoadValue D6 "ParamControl\任务记录.ini" %USERNAME 任务编号
+LoadValue D1 "ParamControl\任务查询.ini" %D6 金币1
+LoadValue D2 "ParamControl\任务查询.ini" %D6 金币2
+LoadValue A2 "ParamControl\任务查询.ini" %D6 物品1
+LoadValue A3 "ParamControl\任务查询.ini" %D6 物品2
+LoadValue D7 "ParamControl\任务记录.ini" %USERNAME 任务经验
+
+#IF
+#ACT
+MOVR D8 100
+
+#IF
+ELARGE D8 0
+SMALL  D8 40
+#ACT
+TAKE %A4 %D3
+SetUserExp + %D7
+GIVE 金币 %D1
+SAVEVALUE "ParamControl\任务记录.ini" %USERNAME 任务进度 End
+break
+#SAY
+谢谢你的帮忙,这是你应得的.\\
+<关 闭/@exit>\
+
+#IF
+ELARGE D8 40
+SMALL  D8 60
+#ACT
+TAKE %A4 %D3
+SetUserExp + %D7
+GIVE 金币 %D2
+SAVEVALUE "ParamControl\任务记录.ini" %USERNAME 任务进度 End
+break
+#SAY
+谢谢你的帮忙,这是你应得的.\\
+<关 闭/@exit>\
+
+#IF
+ELARGE D8 60
+SMALL  D8 90
+#ACT
+TAKE %A4 %D3
+SetUserExp + %D7
+GIVE %A2 1
+SAVEVALUE "ParamControl\任务记录.ini" %USERNAME 任务进度 End
+MOV 老万红字物品 %A2
+GOTO @检测老万红字
+break
+#SAY
+谢谢你的帮忙,这是你应得的.\\
+<关 闭/@exit>\
+
+#IF
+ELARGE D8 90
+SMALL  D8 101
+#ACT
+TAKE %A4 %D3
+SetUserExp + %D7
+GIVE %A3 1
+SAVEVALUE "ParamControl\任务记录.ini" %USERNAME 任务进度 End
+MOV 老万红字物品 %A3
+GOTO @检测老万红字
+break
+#SAY
+谢谢你的帮忙,这是你应得的.\\
+<关 闭/@exit>\
+
+
+[@QuestBoss_END_3]
+#ACT
+LoadValue A4 "ParamControl\任务记录.ini" %USERNAME 任务怪物
+LoadValue D3 "ParamControl\任务记录.ini" %USERNAME 怪物总数
+
+#IF
+CHECKITEM %A4 %D3
+checkduraeva %A4 10
+#ELSEACT
+GOTO @ConfirmbossQuest
+BREAK
+
+#IF
+#ACT
+LoadValue D6 "ParamControl\任务记录.ini" %USERNAME 任务编号
+LoadValue D1 "ParamControl\任务查询.ini" %D6 金币1
+LoadValue D2 "ParamControl\任务查询.ini" %D6 金币2
+LoadValue A2 "ParamControl\任务查询.ini" %D6 物品1
+LoadValue A3 "ParamControl\任务查询.ini" %D6 物品2
+LoadValue D7 "ParamControl\任务记录.ini" %USERNAME 任务经验
+
+#IF
+#ACT
+MOVR D8 100
+
+#IF
+ELARGE D8 0
+SMALL  D8 40
+#ACT
+TAKE %A4 %D3
+SetUserExp + %D7
+GIVE 金币 %D1
+SAVEVALUE "ParamControl\任务记录.ini" %USERNAME 任务进度 End
+break
+#SAY
+谢谢你的帮忙,这是你应得的.\\
+<关 闭/@exit>\
+
+#IF
+ELARGE D8 40
+SMALL  D8 60
+#ACT
+TAKE %A4 %D3
+SetUserExp + %D7
+GIVE 金币 %D2
+SAVEVALUE "ParamControl\任务记录.ini" %USERNAME 任务进度 End
+break
+#SAY
+谢谢你的帮忙,这是你应得的.\\
+<关 闭/@exit>\
+
+#IF
+ELARGE D8 60
+SMALL  D8 90
+#ACT
+TAKE %A4 %D3
+SetUserExp + %D7
+GIVE %A2 1
+SAVEVALUE "ParamControl\任务记录.ini" %USERNAME 任务进度 End
+MOV 老万红字物品 %A2
+GOTO @检测老万红字
+break
+#SAY
+谢谢你的帮忙,这是你应得的.\\
+<关 闭/@exit>\
+
+#IF
+ELARGE D8 90
+SMALL  D8 101
+#ACT
+TAKE %A4 %D3
+SetUserExp + %D7
+GIVE %A3 1
+MOV 老万红字物品 %A3
+GOTO @检测老万红字
+SAVEVALUE "ParamControl\任务记录.ini" %USERNAME 任务进度 End
+break
+#SAY
+谢谢你的帮忙,这是你应得的.\\
+<关 闭/@exit>\
+
+[@检测老万红字]
+#ACT
+LOADVALUE D0 "ParamControl\老万任务经验表.txt" [红字提示] %老万红字物品
+
+#IF
+Equal D0 1
+#ACT
+lineMsg [Grobal] "<$USERNAME>在完成万事通任务时人品爆发获得了<$OUTPUT(老万红字物品)>."
+BREAK
+
+
+[@ConfirmbossQuest]
+#CALL [每日任务\QT_NPCCHAXUN.txt] @BossQuest_ChaXun
+
+
+}
+;;王者传奇3 www.mir3w.com

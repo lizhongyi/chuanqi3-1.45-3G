@@ -1,0 +1,303 @@
+;;创天网络有限公司原版1.45
+[@main]
+#ACT
+goto @weather_control_sabuk
+goto @Default_Setting_Sabuk
+goto @Defult_SafeZone_Setting
+goto @Baodian_OK
+break
+
+[@Defult_SafeZone_Setting]
+#CALL [\System\SafeZone.txt] @SafeZone
+
+[@Weather_Control_Sabuk]
+#CALL [\System\Weather.txt] @Weather
+
+[@Default_Setting_Sabuk]
+#CALL [\System\DefaultSabuk.txt] @SabukDefult
+
+[@_War_Ready_Sabuk]
+#CALL [\System\CastleWar.txt] @CastleWarReady
+
+[@_War_Start_Sabuk]
+#CALL [\System\CastleWar.txt] @CastleWarStart
+
+[@_War_Finish_Sabuk]
+#CALL [\System\CastleWar.txt] @CastleWarFinish
+
+[@_CastleOwnerChanged_Sabuk]
+#CALL [\System\Flag.txt] @ChangeFlag
+
+[@_CastleFlagChanged_Sabuk]
+#CALL [\System\Flag.txt] @ChangeFlag
+
+[@_UserLogin]
+#CALL [\system\NEWHUMAN.TXT] @newhuman
+
+[@_Diary]
+#CALL [Label\D键菜单.txt] @D键菜单_Main
+
+[@_MagicGate]
+#ACT
+MapMove D900 20 22
+
+[@Baodian_OK]
+#ACT
+SetItemEvent 3 6 @随身宝典1
+
+[@随身宝典1]
+#IF
+EQUAL A9 "游戏宝典"
+#ACT
+return false
+#CALL [KINGSCRIPT\游戏宝典.txt] @游戏宝典_1
+BREAK
+
+#IF
+EQUAL A9 "特修神水"
+#ACT
+return false
+BREAK
+#SAY
+你要使用特修神水吗?\\
+<【特修全身】/@特修全装>
+
+#IF
+EQUAL A9 "发卡"
+#ACT
+return false
+goto @改变发型
+BREAK
+
+#IF
+EQUAL A9 "赞助币彩票"
+#ACT
+return false
+BREAK
+#SAY
+打开赞助币彩票可以随机获得10-100不等的内测赞助币。\\
+<【打开】/@打开人民币彩票>
+
+#IF
+EQUAL A9 "经验卷"
+#ACT
+return false
+BREAK
+#SAY
+每天可以使用3个经验卷,每个经验卷为80W经验.\\
+<【打开】/@打开经验卷>
+
+#IF
+EQUAL A9 "传音喇叭"
+#ACT
+return false
+mov 红字发送内容 ""
+mov 添加红字内容 ""
+BREAK
+#SAY
+为了弥补单行输入字符过少的问题,在输入发送内容后,使用{FCOLOR/10}添加内容{FCOLOR/12}可以增加红字的内容.\\
+<好的我知道了/@传音喇叭>
+
+[@打开经验卷]
+#ACT
+LOADVALUE D0 "ParamControl\经验卷.ini" %USERNAME %CURDAY
+
+#IF
+Elarge D0 3
+#ACT
+SYSMSG "你今天的经验卷次数已经达到3次."
+CLOSE
+BREAK
+
+#IF
+CHECKITEM 经验卷 1
+#ACT
+TAKE 经验卷 1
+SetUserExp + 800000
+INC D0 1
+SAVEVALUE "ParamControl\经验卷.ini" %USERNAME %CURDAY %D0
+BREAK
+#ELSEACT
+SYSMSG "你的包袱里没有经验卷."
+CLOSE
+BREAK
+
+
+
+[@传音喇叭]
+#SAY
+<〖输入发送的内容〗/@@发送红字内容>    <〖添加内容〗/@@添加红字内容>\\
+{FCOLOR/10}当前红字内容{FCOLOR/10}:{FCOLOR/1}<$OUTPUT(红字发送内容)><$OUTPUT(添加红字内容)>{FCOLOR/12}\\
+<【确定发送】/@传音喇叭_OK>
+
+[@传音喇叭_OK]
+#If
+Equal 红字发送内容 ""
+Equal 添加红字内容 ""
+#ACT
+SYSMSG "发送的内容为空!"
+BREAK
+
+#IF
+CHECKITEM 传音喇叭 1
+#ACT
+CLOSE
+TAKE 传音喇叭 1
+lineMsg [Grobal] "<$USERNAME>:<$OUTPUT(红字发送内容)><$OUTPUT(添加红字内容)>"
+break
+#ELSESAY
+你身上的传音喇叭去哪了?\\
+<关闭/@Exit>
+
+[@@发送红字内容]
+#ACT
+MOV 红字发送内容 %INPUTSTR
+GOTO @传音喇叭
+BREAK
+
+[@@添加红字内容]
+#ACT
+MOV 添加红字内容 %INPUTSTR
+GOTO @传音喇叭
+BREAK
+
+
+[@特修全装]
+#IF
+CHECKITEM 特修神水 1
+#ACT
+CLOSE
+TAKE 特修神水 1
+RepairItem 0
+RepairItem 1
+RepairItem 3
+RepairItem 4
+RepairItem 5
+RepairItem 6
+RepairItem 7
+RepairItem 8
+RepairItem 9
+RepairItem 10
+BREAK
+#ELSESAY
+你身上的特修神水呢?\\
+<关闭/@Exit>
+
+[@打开人民币彩票]
+#IF
+CHECKITEM 赞助币彩票 1
+#ELSEACT
+BREAK
+
+#IF
+#ACT
+MOVR D0 100
+
+#IF
+Elarge D0 10
+#ACT
+CLOSE
+TAKE 赞助币彩票 1
+GIVE 10元赞助币 1
+lineMsg [Grobal] "<$USERNAME>打开赞助币彩票获得了10元赞助币."
+BREAK
+
+#IF
+Elarge D0 2
+#ACT
+CLOSE
+TAKE 赞助币彩票 1
+GIVE 20元赞助币 1
+lineMsg [Grobal] "<$USERNAME>打开赞助币彩票获得了20元赞助币."
+BREAK
+
+#IF
+#ACT
+CLOSE
+TAKE 赞助币彩票 1
+GIVE 30元赞助币 1
+lineMsg [Grobal] "<$USERNAME>打开赞助币彩票获得了30元赞助币."
+BREAK
+
+[@改变发型]
+#IF
+gender  man
+#SAY
+请选择你想要的发型。\
+<秃头/@HairChangeShape(0,秃头)> , <剪发/@HairChangeShape(1,秃头)> , <长辫子/@HairChangeShape(2,长辫子)> , <短发/@HairChangeShape(3,短发)> , <发髻/@HairChangeShape(4,发髻)>, <乱发/@HairChangeShape(5,乱发)>\
+<前一步/@main>
+#ELSESAY
+请选择你想要的发型。\
+<直长发/@HairChangeShape(1,直长发)> , <发髻/@HairChangeShape(2,发髻)> , <短发/@HairChangeShape(3,短发)> , <编辫儿/@HairChangeShape(4,编辫儿)> <短卷发/@HairChangeShape(5,短卷发)>\
+<前一步/@main>
+
+
+[@HairChangeShape()]
+#ACT
+mov D0 %ARG(1)
+MOV A0 %ARG(2)
+
+#IF
+CheckItem 发卡 1
+#ACT
+TAKE 发卡 1
+#ELSEACT
+sysmsg "你身上的发卡呢,跑哪去了."
+BREAK
+
+
+#IF
+equal D0 0
+#SAY
+根据你的要求把你发型改为<$OUTPUT(A0)>了。你的喜好真奇怪。\ \
+<前一步/@改变发型>
+#ACT
+hairstyle 0
+break
+
+#IF
+equal D0 1
+#SAY
+发型改为<$OUTPUT(A0)>了。\ \
+<前一步/@改变发型>
+#ACT
+hairstyle 1
+break
+
+#IF
+equal D0 2
+#SAY
+发型变为<$OUTPUT(A0)>了。\ \
+<前一步/@改变发型>
+#ACT
+hairstyle 2
+break
+
+#IF
+equal D0 3
+#SAY
+发型改为<$OUTPUT(A0)>了。\ \
+<前一步/@改变发型>
+#ACT
+hairstyle 3
+break
+
+#IF
+equal D0 4
+#SAY
+发型改为<$OUTPUT(A0)>了。\ \
+<前一步/@改变发型>
+#ACT
+hairstyle 4
+break
+
+#IF
+equal D0 5
+#SAY
+发型改为<$OUTPUT(A0)>了。\ \
+<前一步/@改变发型>
+#ACT
+hairstyle 5
+break
+
+;;创天网络有限公司原版1.45

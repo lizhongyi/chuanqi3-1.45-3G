@@ -1,0 +1,7 @@
+01:22:07 [127.0.0.1:2310] GameServer connected.
+01:25:10 [127.0.0.1:2310] GameServer disconnected.
+01:25:22 [127.0.0.1:2410] GameServer connected.
+01:32:43 [127.0.0.1:2410] GameServer disconnected.
+01:33:17 [127.0.0.1:5600] LoginServer disconnected.
+01:33:17 StartTimer : TIMER_CONNLOGINSERVER
+01:33:17 Cleanup DB Server

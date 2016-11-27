@@ -1,0 +1,281 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@领取宝宝_1]
+{
+#ACT
+MOV A8 %USERMAP
+
+#IF
+!Equal A8 3
+#SAY
+{FCOLOR/10}角色达到对应级别就可以召唤对应的宝宝来助阵.{FCOLOR/12}\\
+1 级可以召唤<【狼】/@领取免费宝宝1>\\
+10级可以召唤<【火焰沃玛】/@领取免费宝宝2>\\
+20级可以召唤<【猿猴战将】/@领取免费宝宝3>\\
+25级可以召唤<【黑色恶蛆】/@领取免费宝宝4>\\
+30级可以召唤<【海神将领】/@领取免费宝宝5> 1天8次.\\
+45级可以召唤<【沙漠风魔】/@领取免费宝宝6> 1天5次,PK勿用\\
+#ELSESAY
+对不起,此地图不允许使用.
+
+[@领取免费宝宝1]
+#ACT
+LOADVALUE D1 "ParamControl\狼宝宝.ini" %USERNAME %CURDAY
+
+#IF
+Elarge D1 5
+#ACT
+BREAK
+#SAY
+你今天已经领取过{FCOLOR/10}狼{FCOLOR/12}5次,不能再领取了.\\
+<关闭/@exit>
+
+#IF
+checkmonRecall
+#ACT
+INC D1 1
+SAVEVALUE "ParamControl\狼宝宝.ini" %USERNAME %CURDAY %D1
+MonRecall 狼66 100 0
+BREAK
+#SAY
+你召唤了{FCOLOR/10}狼{FCOLOR/12},好好利用吧.\\
+<关闭/@EXIT>
+#ELSESAY
+每个角色只能同时召唤1个宝宝来助阵.\\
+<关闭/@EXIT>
+
+
+[@领取免费宝宝2]
+#ACT
+LOADVALUE D1 "ParamControl\火焰沃玛宝宝.ini" %USERNAME %CURDAY
+
+#IF
+Elarge D1 5
+#ACT
+BREAK
+#SAY
+你今天已经领取过{FCOLOR/10}火焰沃玛{FCOLOR/12}5次,不能再领取了.\\
+<关闭/@exit>
+
+#IF
+CHECKLEVEL 10
+#ELSEACT
+BREAK
+#ELSESAY
+领取{FCOLOR/10}火焰沃玛{FCOLOR/12}需要等级达到{FCOLOR/1}10{FCOLOR/12}级.\\
+<关闭/@exit>
+
+#IF
+checkmonRecall
+#ACT
+INC D1 1
+SAVEVALUE "ParamControl\火焰沃玛宝宝.ini" %USERNAME %CURDAY %D1
+MonRecall 火焰沃玛66 100 0
+BREAK
+#SAY
+你召唤了{FCOLOR/10}火焰沃玛{FCOLOR/12},好好利用吧.\\
+<关闭/@EXIT>
+#ELSESAY
+每个角色只能同时召唤1个宝宝来助阵.\\
+<关闭/@EXIT>
+
+
+[@领取免费宝宝3]
+#ACT
+LOADVALUE D1 "ParamControl\猿猴战将宝宝.ini" %USERNAME %CURDAY
+
+#IF
+Elarge D1 5
+#ACT
+BREAK
+#SAY
+你今天已经领取过{FCOLOR/10}猿猴战将{FCOLOR/12}5次,不能再领取了.\\
+<关闭/@exit>
+
+#IF
+CHECKLEVEL 20
+#ELSEACT
+BREAK
+#ELSESAY
+领取{FCOLOR/10}猿猴战将{FCOLOR/12}需要等级达到{FCOLOR/1}20{FCOLOR/12}级.\\
+<关闭/@exit>
+
+#IF
+checkmonRecall
+#ACT
+INC D1 1
+SAVEVALUE "ParamControl\猿猴战将宝宝.ini" %USERNAME %CURDAY %D1
+MonRecall 猿猴战将66 100 0
+BREAK
+#SAY
+你召唤了{FCOLOR/10}猿猴战将{FCOLOR/12},好好利用吧.\\
+<关闭/@EXIT>
+#ELSESAY
+每个角色只能同时召唤1个宝宝来助阵.\\
+<关闭/@EXIT>
+
+
+[@领取免费宝宝4]
+#ACT
+LOADVALUE D1 "ParamControl\黑色恶蛆宝宝.ini" %USERNAME %CURDAY
+
+#IF
+Elarge D1 8
+#ACT
+BREAK
+#SAY
+你今天已经领取过{FCOLOR/10}黑色恶蛆{FCOLOR/12}8次,不能再领取了.\\
+<关闭/@exit>
+
+#IF
+CHECKLEVEL 25
+#ELSEACT
+BREAK
+#ELSESAY
+领取{FCOLOR/10}黑色恶蛆{FCOLOR/12}需要等级达到{FCOLOR/1}25{FCOLOR/12}级.\\
+<关闭/@exit>
+
+#IF
+checkmonRecall
+#ACT
+INC D1 1
+SAVEVALUE "ParamControl\黑色恶蛆宝宝.ini" %USERNAME %CURDAY %D1
+MonRecall 黑色恶蛆66 100 0
+BREAK
+#SAY
+你召唤了{FCOLOR/10}黑色恶蛆{FCOLOR/12},好好利用吧.\\
+<关闭/@EXIT>
+#ELSESAY
+每个角色只能同时召唤1个宝宝来助阵.\\
+<关闭/@EXIT>
+
+
+
+[@领取免费宝宝5]
+#ACT
+LOADVALUE D1 "ParamControl\海神将领宝宝.ini" %USERNAME %CURDAY
+MOV A0 %USERMAP
+
+#IF
+Equal A0 "D900"
+or Equal A0 "D901"
+or Equal A0 "D9011"
+or Equal A0 "D9012"
+or Equal A0 "D9021"
+or Equal A0 "D90211"
+or Equal A0 "D90212"
+or Equal A0 "D9022"
+or Equal A0 "D90221"
+or Equal A0 "D90222"
+or Equal A0 "D90223"
+or Equal A0 "D903"
+or Equal A0 "D9031"
+or Equal A0 "D9032"
+or Equal A0 "D9033"
+or Equal A0 "D904"
+or Equal A0 "D90323"
+#ACT
+BREAK
+#SAY
+对不起,在此地图不允许召唤{FCOLOR/10}海神将领{FCOLOR/12}.\\
+<关闭/@exit>
+
+#IF
+Elarge D1 8
+#ACT
+BREAK
+#SAY
+你今天已经领取过{FCOLOR/10}海神将领{FCOLOR/12}8次,不能再领取了.\\
+<关闭/@exit>
+
+#IF
+CHECKLEVEL 30
+#ELSEACT
+BREAK
+#ELSESAY
+领取{FCOLOR/10}海神将领{FCOLOR/12}需要等级达到{FCOLOR/1}30{FCOLOR/12}级.\\
+<关闭/@exit>
+
+#IF
+checkmonRecall
+#ACT
+INC D1 1
+SAVEVALUE "ParamControl\海神将领宝宝.ini" %USERNAME %CURDAY %D1
+MonRecall 海神将领66 100 0
+BREAK
+#SAY
+你召唤了{FCOLOR/10}海神将领{FCOLOR/12},好好利用吧.\\
+<关闭/@EXIT>
+#ELSESAY
+每个角色只能同时召唤1个宝宝来助阵.\\
+<关闭/@EXIT>
+
+
+[@领取免费宝宝6]
+#ACT
+LOADVALUE D1 "ParamControl\沙漠风魔宝宝.ini" %USERNAME %CURDAY
+MOV A0 %USERMAP
+
+#IF
+Equal A0 "D900"
+or Equal A0 "D901"
+or Equal A0 "D9011"
+or Equal A0 "D9012"
+or Equal A0 "D9021"
+or Equal A0 "D90211"
+or Equal A0 "D90212"
+or Equal A0 "D9022"
+or Equal A0 "D90221"
+or Equal A0 "D90222"
+or Equal A0 "D90223"
+or Equal A0 "D903"
+or Equal A0 "D9031"
+or Equal A0 "D9032"
+or Equal A0 "D9033"
+or Equal A0 "D904"
+or Equal A0 "D90323"
+or Equal A0 "D024"
+or Equal A0 "D6015"
+or Equal A0 "D1215"
+or Equal A0 "D10162"
+or Equal A0 "D515"
+or Equal A0 "D1116"
+or Equal A0 "D1506"
+or Equal A0 "D904"
+or Equal A0 "D1606"
+#ACT
+BREAK
+#SAY
+对不起,在此地图不允许召唤{FCOLOR/10}沙漠风魔{FCOLOR/12}.\\
+<关闭/@exit>
+
+#IF
+Elarge D1 5
+#ACT
+BREAK
+#SAY
+你今天已经领取过{FCOLOR/10}沙漠风魔{FCOLOR/12}5次,不能再领取了.\\
+<关闭/@exit>
+
+#IF
+CHECKLEVEL 30
+#ELSEACT
+BREAK
+#ELSESAY
+领取{FCOLOR/10}沙漠风魔{FCOLOR/12}需要等级达到{FCOLOR/1}45{FCOLOR/12}级.\\
+<关闭/@exit>
+
+#IF
+checkmonRecall
+#ACT
+INC D1 1
+SAVEVALUE "ParamControl\沙漠风魔宝宝.ini" %USERNAME %CURDAY %D1
+MonRecall 沙漠风魔66 100 0
+BREAK
+#SAY
+你召唤了{FCOLOR/10}沙漠风魔{FCOLOR/12},好好利用吧.\\
+<关闭/@EXIT>
+#ELSESAY
+每个角色只能同时召唤1个宝宝来助阵.\\
+<关闭/@EXIT>
+
+}

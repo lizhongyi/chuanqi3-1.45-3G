@@ -1,0 +1,40 @@
+;;王者传奇3 www.mir3w.com
+[@main]
+#act
+LoadValue D0 "ParamControl\任务记录.ini" %USERNAME 任务编号
+LoadValue A0 "ParamControl\任务记录.ini" %USERNAME 任务进度
+LoadValue D1 "ParamControl\诺玛击杀.ini" 记录 %USERNAME
+INC D1 1
+SAVEVALUE "ParamControl\诺玛击杀.ini" 记录 %USERNAME %D1
+
+#IF
+#ACT
+SYSMSG "你目前已经击杀的诺玛怪物累积达到了<$OUTPUT(D1)>个" 2
+
+#IF
+Elarge D1 200
+#ACT
+mov A2 %USERX
+MOV A3 %USERY
+MOV A4 %USERMAP
+ADDSTR A4 ","
+ADDSTR A4 %A2
+ADDSTR A4 ","
+ADDSTR A4 %A3
+ADDSTR A4 ",5"
+SAVEVALUE "ParamControl\诺玛击杀.ini" 记录 %USERNAME 0
+MongenP %A4 诺玛突击队长1 1
+LineMsg "Grobal" "(*) 由于<$OUTPUT(USERNAME)>玩家杀死了诺玛怪物200个,触发了队长的复仇,诺玛突击队长出现在<$USERMAPNAME>|<$OUTPUT(A2)>|<$OUTPUT(A3)>!"
+
+#IF
+EQUAL A0 "Progress"
+EQUAL D0 225
+#ACT
+MOV A5 "诺玛骑兵"
+GOTO @BossQuest_TQCase2
+break
+#ELSEACT
+break
+
+[@BossQuest_TQCase2]
+#CALL [每日任务\QT_TotalMonster.txt] @BossQuest_Monster_Total

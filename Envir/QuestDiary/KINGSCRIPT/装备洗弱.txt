@@ -1,0 +1,40 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@装备洗弱_1]
+#SAY
+{FCOLOR/10}洗去装备上的弱元素需要收费5个装备洗弱石+200W金币!\
+您必须要把您要洗弱元素的装备带在身上\
+<【 衣  服 】/@ClearBad(0)>      <【 头  盔 】/@ClearBad(4)>\
+<【 左手镯 】/@ClearBad(5)>      <【 右手镯 】/@ClearBad(6)>\
+<【 鞋  子 】/@ClearBad(10)>\\
+<【 结  束 】/@EXIT>\
+
+
+[@ClearBad()]
+#ACT
+mov D0 %ARG(1)
+
+#IF
+checkcmd CHECKITEMINFO %D0 0
+
+#IF
+EQUAL FLD_NAME ""
+#ACT
+BREAK
+#SAY
+对应的位置没有佩戴装备.
+
+#IF
+CHECKITEM 装备洗弱石 5
+CHECKGOLD 2000000
+#ACT
+TAKE 装备洗弱石 5
+TAKE 金币 2000000
+ACTCMD EDITITEM FLD_DESC6 = 0
+SysMSG "装备的弱元素已经成功清除了."
+CLOSE
+BREAK
+#ELSESAY
+你的包袱里没有5个装备洗弱石或200W金币.\\
+<关闭/@Exit>
+
+}

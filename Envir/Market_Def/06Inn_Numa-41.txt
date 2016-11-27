@@ -1,0 +1,26 @@
+;;创天网络有限公司原版1.45
+%100
+
+[@main]
+#SAY
+快来吧,我叫啊勒. 是受叛军首领之命,来帮助人类勇士'保管物品'的. 如果有需要保管的物品,请先放在我这里. \ \
+  <寄存物品./@storage>\
+  <取回物品./@PreGetback>\
+  <仓库 密码 管理/@StgPassword>\
+  <结束/@exit>
+
+[@StgPassword]
+#CALL [\PassWord\PassWord.txt] @Manage_PassWord
+
+[@PreGetback]
+#CALL [\PassWord\PassWord.txt] @Input_PassWord
+
+[@storage]
+#SAY
+嗯... 这个放在这里, 那个先放在那里... 不好!~ 忘记了!! \ \
+<继续/@main>
+
+[@getback]
+#SAY
+想取回保管的物品? 你需要哪个? \ \
+<继续/@main>

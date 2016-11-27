@@ -1,0 +1,187 @@
+;;创天网络有限公司原版1.45
+[@ChangeAtom]
+{
+#IF
+!HasWeaponAtom
+#SAY
+没有元素属性的武器不可以变更属性.\ \
+<结束/@exit>
+#ACT
+break
+
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!! \ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkgold 2000000
+#SAY
+真想把武器的元素能力换成其他数值吗？ \ \
+<换武器的元素。/@ChangeAtom_Next> \
+<结束/@exit>
+#ELSESAY
+钱不够啊。。\ \
+<结束/@exit>
+
+[@ChangeAtom_Next]
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!! \ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkgold 2000000
+#SAY
+挑你想要的武器的元素吧。。\ \
+<把武器的元素换成（火）元素。/@ChangeAtom_Fire> \
+<把武器的元素换成（冰）元素。/@ChangeAtom_Ice> \
+<把武器的元素换成（雷）元素。/@ChangeAtom_Light> \
+<把武器的元素换成（风）元素。/@ChangeAtom_Wind> \
+<把武器的元素换成（神圣）元素。/@ChangeAtom_Holy> \
+<把武器的元素换成（暗黑）元素。/@ChangeAtom_Dark> \
+<把武器的元素换成（幻影）元素。/@ChangeAtom_Pantom> \
+#ELSESAY
+钱不够啊。。\ \
+<结束/@exit>
+
+
+[@ChangeAtom_Fire]
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!! \ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkgold 2000000
+#ACT
+ChangeWeaponAtom 1
+take 金币 2000000
+#SAY
+武器的元素换成了（火）系列。\ \
+<结束/@exit>
+
+
+[@ChangeAtom_Ice]
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!! \ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkgold 2000000
+#ACT
+ChangeWeaponAtom 2
+take 金币 2000000
+#SAY
+武器的元素换成了（冰）系列。\ \
+<结束/@exit>
+
+
+[@ChangeAtom_Light]
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!! \ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkgold 2000000
+#ACT
+ChangeWeaponAtom 3
+take 金币 2000000
+#SAY
+武器的元素换成了（雷）系列。\ \
+<结束/@exit>
+
+
+[@ChangeAtom_Wind]
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!! \ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkgold 2000000
+#ACT
+ChangeWeaponAtom 4
+take 金币 2000000
+#SAY
+武器的元素换成了（风）系列。\ \
+<结束/@exit>
+
+
+[@ChangeAtom_Holy]
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!! \ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkgold 2000000
+#ACT
+ChangeWeaponAtom 5
+take 金币 2000000
+#SAY
+武器的元素换成了（神圣）系列。\ \
+<结束/@exit>
+
+
+[@ChangeAtom_Dark]
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!! \ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkgold 2000000
+#ACT
+ChangeWeaponAtom 6
+take 金币 2000000
+#SAY
+武器的元素换成了（暗黑）系列。\ \
+<结束/@exit>
+
+
+[@ChangeAtom_Pantom]
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!! \ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkgold 2000000
+#ACT
+ChangeWeaponAtom 7
+take 金币 2000000
+#SAY
+武器的元素换成了（幻影）系列。\ \
+<结束/@exit>
+
+}

@@ -1,0 +1,1103 @@
+2014-03-31 12:46:07.250 : ------[绿色 SQL Server]-------- Web: http://www.SuiSoft.cn;  QQ: 3860040;  Mail:szq993@163.com;  --------------------------------------
+2014-03-31 12:46:07.375 :   GSQLAdmin 管理器在 2014-03-31 12:46:07 启动.
+2014-03-31 12:46:07.375 :   Version   作者只保留本管理器的版权,其他附带文件版权归美国微软公司所有,本软件以技术研究为宗旨,请在下载本软件后24小时内删除附带的"SQLServer"文件或替换为您购买的正版"SQLServer"文件,否则后果自负. 作者不为您承担任何方面的任何责任.
+2014-03-31 12:46:07.500 :   GSQLAdmin 自主创造通讯接口成功.
+2014-03-31 12:46:07.500 :   HotKey    成功注册热键 Win + F4 (启动SQL).
+2014-03-31 12:46:07.500 :   HotKey    成功注册热键 Win + F5 (停止SQL).
+2014-03-31 12:46:07.500 :   HotKey    成功注册热键 Win + F9 (显示管理器).
+2014-03-31 12:46:07.765 :   SQLServer 开始启动.
+2014-03-31 12:46:07.781 :   Key       密匙检测成功.
+2014-03-31 12:46:07.781 :   Virtual   虚拟文件环境.
+2014-03-31 12:46:07.796 :   Virtual   虚拟注册表环境.
+2014-03-31 12:46:07.921 :   Virtual   虚拟API环境.
+2014-03-31 12:46:07.921 :   GSQLAdmin 载入 SQLServer 主体.
+2014-03-31 12:46:07.968 :   MsVersion Microsoft SQL Server  2000 - 8.00.2039 (Intel X86) 
+2014-03-31 12:46:07.968 :   MsVersion May  3 2005 23:18:38 
+2014-03-31 12:46:07.968 :   MsVersion Copyright (c) 1988-2003 Microsoft Corporation
+2014-03-31 12:46:08.437 :   MsVersion Enterprise Edition on Windows NT 5.1 (Build 2600: Service Pack 2)
+2014-03-31 12:46:08.453 :   server    Copyright (C) 1988-2002 Microsoft Corporation.
+2014-03-31 12:46:08.453 :   server    保留所有权利。
+2014-03-31 12:46:08.453 :   server    服务器进程 ID 是 364。
+2014-03-31 12:46:08.453 :   server    SQL Server 正在以优先级“normal”（已检测到 1 CPU）启动。
+2014-03-31 12:46:08.468 :   server    已为 thread 模式处理而配置了 SQL Server。
+2014-03-31 12:46:08.468 :   server    使用 dynamic 锁分配。[2500] 锁块，[5000] 锁所有者块。
+2014-03-31 12:46:08.468 :   server    尝试初始化分布式事务处理协调器。
+2014-03-31 12:46:17.406 :   server    Failed to obtain TransactionDispenserInterface: XACT_E_TMNOTAVAILABLE
+2014-03-31 12:46:17.421 :   spid3     启动数据库“master”。
+2014-03-31 12:46:17.656 :   server    正在使用“SSNETLIB.DLL”版本“8.0.2039”。
+2014-03-31 12:46:17.687 :   server    SQL Server 正在监听 0.1.0.4: 1433。
+2014-03-31 12:46:17.687 :   server    SQL Server 正在监听 192.168.1.103: 1433。
+2014-03-31 12:46:17.687 :   server    SQL Server 正在监听 127.0.0.1: 1433。
+2014-03-31 12:46:17.703 :   server    SQL Server 正在监听 TCP, Shared Memory, Named Pipes。
+2014-03-31 12:46:17.703 :   server    SQL Server 已准备好进行客户端连接
+2014-03-31 12:46:17.718 :   TryCon    启动成功, 尝试使用 Ado 连接.
+2014-03-31 12:46:17.734 :   spid3     服务器名称是“59DC979F34D64BD”。
+2014-03-31 12:46:17.734 :   spid5     启动数据库“model”。
+2014-03-31 12:46:17.734 :   spid3     Skipping startup of clean database id 8
+2014-03-31 12:46:17.765 :   spid8     启动数据库“msdb”。
+2014-03-31 12:46:17.765 :   spid9     启动数据库“account”。
+2014-03-31 12:46:17.765 :   spid10    启动数据库“conlog”。
+2014-03-31 12:46:17.781 :   spid11    启动数据库“game1”。
+2014-03-31 12:46:18.203 :   spid5     清除 tempdb 数据库。
+2014-03-31 12:46:18.312 :   spid11    启动数据库“kingforeiserverbasedata”。
+2014-03-31 12:46:18.453 :   spid9     启动数据库“manage”。
+2014-03-31 12:46:19.078 :   spid5     启动数据库“tempdb”。
+2014-03-31 12:46:19.187 :   spid3     恢复完成。
+2014-03-31 12:46:19.203 :   GSQLAdmin 您可以使用以下机器名连接绿色SQL。
+2014-03-31 12:46:19.203 :             远程“0.1.0.4,1433” 远程“192.168.1.103,1433” 本地“127.0.0.1,1433” 本地“59DC979F34D64BD” 
+2014-03-31 12:46:43.390 :   TryCon    连接方法 1 失败.
+2014-03-31 12:46:43.390 :   TryCon    连接字符串: Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=(local)
+2014-03-31 12:46:43.406 :   TryCon    错误  信息: [DBNETLIB][ConnectionOpen (Connect()).]SQL Server 不存在或拒绝访问。
+2014-03-31 12:46:43.453 :   TryCon    测试连接成功. 连接字符串: 
+2014-03-31 12:46:43.453 :             Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=127.0.0.1
+2014-03-31 12:46:43.468 :   SQLServer 启动完毕. 
+2014-03-31 12:46:43.468 :   GSQLAdmin 自动检测 D:\Mud3\GSQL\MyDB\ 中的数据库文件.
+2014-03-31 12:46:43.593 :   GSQLAdmin 检测完毕.
+2014-03-31 12:50:05.859 : ------[绿色 SQL Server]-------- Web: http://www.SuiSoft.cn;  QQ: 3860040;  Mail:szq993@163.com;  --------------------------------------
+2014-03-31 12:50:06.156 :   GSQLAdmin 管理器在 2014-03-31 12:50:05 启动.
+2014-03-31 12:50:06.171 :   Version   作者只保留本管理器的版权,其他附带文件版权归美国微软公司所有,本软件以技术研究为宗旨,请在下载本软件后24小时内删除附带的"SQLServer"文件或替换为您购买的正版"SQLServer"文件,否则后果自负. 作者不为您承担任何方面的任何责任.
+2014-03-31 12:50:06.375 :   GSQLAdmin 自主创造通讯接口成功.
+2014-03-31 12:50:06.390 :   HotKey    成功注册热键 Win + F4 (启动SQL).
+2014-03-31 12:50:06.390 :   HotKey    成功注册热键 Win + F5 (停止SQL).
+2014-03-31 12:50:06.390 :   HotKey    成功注册热键 Win + F9 (显示管理器).
+2014-03-31 12:50:07.000 :   SQLServer 开始启动.
+2014-03-31 12:50:07.015 :   Key       密匙检测成功.
+2014-03-31 12:50:07.015 :   Virtual   虚拟文件环境.
+2014-03-31 12:50:07.015 :   Virtual   虚拟注册表环境.
+2014-03-31 12:50:10.265 :   Virtual   虚拟API环境.
+2014-03-31 12:50:10.265 :   GSQLAdmin 载入 SQLServer 主体.
+2014-03-31 12:50:10.265 :   MsVersion Microsoft SQL Server  2000 - 8.00.2039 (Intel X86) 
+2014-03-31 12:50:10.265 :   MsVersion May  3 2005 23:18:38 
+2014-03-31 12:50:10.265 :   MsVersion Copyright (c) 1988-2003 Microsoft Corporation
+2014-03-31 12:50:10.281 :   MsVersion Enterprise Edition on Windows NT 5.1 (Build 2600: Service Pack 2)
+2014-03-31 12:50:10.281 :   server    Copyright (C) 1988-2002 Microsoft Corporation.
+2014-03-31 12:50:10.281 :   server    保留所有权利。
+2014-03-31 12:50:10.296 :   server    服务器进程 ID 是 1288。
+2014-03-31 12:50:10.296 :   server    SQL Server 正在以优先级“normal”（已检测到 1 CPU）启动。
+2014-03-31 12:50:10.296 :   server    已为 thread 模式处理而配置了 SQL Server。
+2014-03-31 12:50:10.312 :   server    使用 dynamic 锁分配。[2500] 锁块，[5000] 锁所有者块。
+2014-03-31 12:50:10.921 :   server    尝试初始化分布式事务处理协调器。
+2014-03-31 12:50:19.796 :   server    Failed to obtain TransactionDispenserInterface: XACT_E_TMNOTAVAILABLE
+2014-03-31 12:50:19.843 :   spid3     启动数据库“master”。
+2014-03-31 12:50:20.375 :   spid3     0 个事务在数据库“master”中后滚 (1)。
+2014-03-31 12:50:20.406 :   spid3     恢复操作正在对数据库 'master'（1）执行检查点操作。
+2014-03-31 12:50:20.500 :   server    正在使用“SSNETLIB.DLL”版本“8.0.2039”。
+2014-03-31 12:50:20.515 :   spid5     启动数据库“model”。
+2014-03-31 12:50:20.531 :   spid3     服务器名称是“59DC979F34D64BD”。
+2014-03-31 12:50:20.531 :   spid3     Skipping startup of clean database id 8
+2014-03-31 12:50:20.578 :   spid8     启动数据库“msdb”。
+2014-03-31 12:50:20.593 :   spid9     启动数据库“account”。
+2014-03-31 12:50:20.593 :   spid10    启动数据库“conlog”。
+2014-03-31 12:50:20.609 :   spid11    启动数据库“game1”。
+2014-03-31 12:50:20.656 :   server    SQL Server 正在监听 0.1.0.4: 1433。
+2014-03-31 12:50:20.656 :   server    SQL Server 正在监听 192.168.1.103: 1433。
+2014-03-31 12:50:20.656 :   server    SQL Server 正在监听 127.0.0.1: 1433。
+2014-03-31 12:50:21.187 :   server    SQL Server 正在监听 TCP, Shared Memory, Named Pipes。
+2014-03-31 12:50:21.203 :   server    SQL Server 已准备好进行客户端连接
+2014-03-31 12:50:21.203 :   TryCon    启动成功, 尝试使用 Ado 连接.
+2014-03-31 12:50:22.531 :   spid11    启动数据库“kingforeiserverbasedata”。
+2014-03-31 12:50:22.531 :   spid5     清除 tempdb 数据库。
+2014-03-31 12:50:22.546 :   spid9     启动数据库“manage”。
+2014-03-31 12:50:23.484 :   spid5     启动数据库“tempdb”。
+2014-03-31 12:50:23.968 :   spid3     恢复完成。
+2014-03-31 12:50:23.968 :   GSQLAdmin 您可以使用以下机器名连接绿色SQL。
+2014-03-31 12:50:23.984 :             本地“59DC979F34D64BD” 远程“0.1.0.4,1433” 远程“192.168.1.103,1433” 本地“127.0.0.1,1433” 
+2014-03-31 12:50:49.671 :   TryCon    连接方法 1 失败.
+2014-03-31 12:50:49.671 :   TryCon    连接字符串: Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=(local)
+2014-03-31 12:50:49.687 :   TryCon    错误  信息: [DBNETLIB][ConnectionOpen (Connect()).]SQL Server 不存在或拒绝访问。
+2014-03-31 12:50:49.750 :   TryCon    测试连接成功. 连接字符串: 
+2014-03-31 12:50:49.765 :             Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=127.0.0.1
+2014-03-31 12:50:49.765 :   SQLServer 启动完毕. 
+2014-03-31 12:50:49.781 :   GSQLAdmin 自动检测 D:\Mud3\GSQL\MyDB\ 中的数据库文件.
+2014-03-31 12:50:50.453 :   GSQLAdmin 检测完毕.
+2014-03-31 12:55:05.531 :   spid51    服务器已按要求关闭。
+2014-03-31 12:55:06.718 :   SQLServer 结束.
+2014-03-31 12:55:08.921 :   SQLServer 开始启动.
+2014-03-31 12:55:08.937 :   Key       密匙检测成功.
+2014-03-31 12:55:08.937 :   Virtual   虚拟文件环境.
+2014-03-31 12:55:08.937 :   Virtual   虚拟注册表环境.
+2014-03-31 12:55:09.078 :   Virtual   虚拟API环境.
+2014-03-31 12:55:09.078 :   GSQLAdmin 载入 SQLServer 主体.
+2014-03-31 12:55:09.125 :   MsVersion Microsoft SQL Server  2000 - 8.00.2039 (Intel X86) 
+2014-03-31 12:55:09.125 :   MsVersion May  3 2005 23:18:38 
+2014-03-31 12:55:09.140 :   MsVersion Copyright (c) 1988-2003 Microsoft Corporation
+2014-03-31 12:55:09.140 :   MsVersion Enterprise Edition on Windows NT 5.1 (Build 2600: Service Pack 2)
+2014-03-31 12:55:09.156 :   server    Copyright (C) 1988-2002 Microsoft Corporation.
+2014-03-31 12:55:09.156 :   server    保留所有权利。
+2014-03-31 12:55:09.156 :   server    服务器进程 ID 是 2376。
+2014-03-31 12:55:09.171 :   server    SQL Server 正在以优先级“normal”（已检测到 1 CPU）启动。
+2014-03-31 12:55:09.390 :   server    已为 thread 模式处理而配置了 SQL Server。
+2014-03-31 12:55:09.406 :   server    使用 dynamic 锁分配。[2500] 锁块，[5000] 锁所有者块。
+2014-03-31 12:55:09.421 :   server    尝试初始化分布式事务处理协调器。
+2014-03-31 12:55:18.515 :   server    Failed to obtain TransactionDispenserInterface: XACT_E_TMNOTAVAILABLE
+2014-03-31 12:55:18.531 :   spid3     启动数据库“master”。
+2014-03-31 12:55:18.765 :   server    正在使用“SSNETLIB.DLL”版本“8.0.2039”。
+2014-03-31 12:55:18.796 :   server    SQL Server 正在监听 0.1.0.4: 1433。
+2014-03-31 12:55:18.796 :   server    SQL Server 正在监听 192.168.1.103: 1433。
+2014-03-31 12:55:18.812 :   server    SQL Server 正在监听 127.0.0.1: 1433。
+2014-03-31 12:55:18.812 :   server    SQL Server 正在监听 TCP, Shared Memory, Named Pipes。
+2014-03-31 12:55:18.828 :   server    SQL Server 已准备好进行客户端连接
+2014-03-31 12:55:18.828 :   TryCon    启动成功, 尝试使用 Ado 连接.
+2014-03-31 12:55:18.843 :   spid3     服务器名称是“59DC979F34D64BD”。
+2014-03-31 12:55:18.843 :   spid5     启动数据库“model”。
+2014-03-31 12:55:18.843 :   spid3     Skipping startup of clean database id 8
+2014-03-31 12:55:18.859 :   spid8     启动数据库“msdb”。
+2014-03-31 12:55:18.875 :   spid9     启动数据库“account”。
+2014-03-31 12:55:18.890 :   spid10    启动数据库“conlog”。
+2014-03-31 12:55:18.890 :   spid11    启动数据库“game1”。
+2014-03-31 12:55:19.296 :   spid5     清除 tempdb 数据库。
+2014-03-31 12:55:19.390 :   spid11    启动数据库“kingforeiserverbasedata”。
+2014-03-31 12:55:19.531 :   spid9     启动数据库“manage”。
+2014-03-31 12:55:20.171 :   spid5     启动数据库“tempdb”。
+2014-03-31 12:55:20.281 :   spid3     恢复完成。
+2014-03-31 12:55:20.296 :   GSQLAdmin 您可以使用以下机器名连接绿色SQL。
+2014-03-31 12:55:20.296 :             远程“0.1.0.4,1433” 远程“192.168.1.103,1433” 本地“127.0.0.1,1433” 本地“59DC979F34D64BD” 
+2014-03-31 12:55:44.484 :   TryCon    连接方法 1 失败.
+2014-03-31 12:55:44.484 :   TryCon    连接字符串: Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=(local)
+2014-03-31 12:55:44.500 :   TryCon    错误  信息: [DBNETLIB][ConnectionOpen (Connect()).]SQL Server 不存在或拒绝访问。
+2014-03-31 12:55:44.531 :   TryCon    测试连接成功. 连接字符串: 
+2014-03-31 12:55:44.546 :             Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=127.0.0.1
+2014-03-31 12:55:44.546 :   SQLServer 启动完毕. 
+2014-03-31 12:55:44.562 :   GSQLAdmin 自动检测 D:\Mud3\GSQL\MyDB\ 中的数据库文件.
+2014-03-31 12:55:44.671 :   GSQLAdmin 检测完毕.
+2014-03-31 12:55:54.187 :   GSQLAdmin 关闭接口.
+2014-03-31 12:55:54.187 :   GSQLAdmin 管理器关闭.
+2014-03-31 12:54:09.593 : ------[绿色 SQL Server]-------- Web: http://www.SuiSoft.cn;  QQ: 3860040;  Mail:szq993@163.com;  --------------------------------------
+2014-03-31 12:54:09.687 :   GSQLAdmin 管理器在 2014-03-31 12:54:09 启动.
+2014-03-31 12:54:09.702 :   Version   作者只保留本管理器的版权,其他附带文件版权归美国微软公司所有,本软件以技术研究为宗旨,请在下载本软件后24小时内删除附带的"SQLServer"文件或替换为您购买的正版"SQLServer"文件,否则后果自负. 作者不为您承担任何方面的任何责任.
+2014-03-31 12:54:09.827 :   GSQLAdmin 自主创造通讯接口成功.
+2014-03-31 12:54:09.827 :   HotKey    成功注册热键 Win + F4 (启动SQL).
+2014-03-31 12:54:09.843 :   HotKey    成功注册热键 Win + F5 (停止SQL).
+2014-03-31 12:54:09.843 :   HotKey    成功注册热键 Win + F9 (显示管理器).
+2014-03-31 12:54:10.155 :   SQLServer 开始启动.
+2014-03-31 12:54:10.155 :   Key       密匙检测成功.
+2014-03-31 12:54:10.170 :   Virtual   虚拟文件环境.
+2014-03-31 12:54:10.186 :   Virtual   虚拟注册表环境.
+2014-03-31 12:54:10.280 :   Virtual   虚拟API环境.
+2014-03-31 12:54:10.420 :   GSQLAdmin 载入 SQLServer 主体.
+2014-03-31 12:54:10.592 :   MsVersion Microsoft SQL Server  2000 - 8.00.2039 (Intel X86) 
+2014-03-31 12:54:10.607 :   MsVersion May  3 2005 23:18:38 
+2014-03-31 12:54:10.607 :   MsVersion Copyright (c) 1988-2003 Microsoft Corporation
+2014-03-31 12:54:10.623 :   MsVersion Enterprise Edition on Windows NT 6.1 (Build 7601: Service Pack 1)
+2014-03-31 12:54:10.638 :   server    Copyright (C) 1988-2002 Microsoft Corporation.
+2014-03-31 12:54:10.638 :   server    保留所有权利。
+2014-03-31 12:54:10.654 :   server    服务器进程 ID 是 3264。
+2014-03-31 12:54:10.654 :   server    SQL Server 正在以优先级“normal”（已检测到 4 CPUs）启动。
+2014-03-31 12:54:10.826 :   server    已为 thread 模式处理而配置了 SQL Server。
+2014-03-31 12:54:10.826 :   server    使用 dynamic 锁分配。[2500] 锁块，[5000] 锁所有者块。
+2014-03-31 12:54:11.247 :   server    尝试初始化分布式事务处理协调器。
+2014-03-31 12:54:11.652 :   server    Failed to obtain TransactionDispenserInterface: XACT_E_TMNOTAVAILABLE
+2014-03-31 12:54:11.684 :   spid4     启动数据库“master”。
+2014-03-31 12:54:12.120 :   server    正在使用“SSNETLIB.DLL”版本“8.0.2039”。
+2014-03-31 12:54:12.136 :   spid5     启动数据库“model”。
+2014-03-31 12:54:12.152 :   spid4     服务器名称是“MA4TKSHBXBI1NAU”。
+2014-03-31 12:54:12.167 :   spid4     Skipping startup of clean database id 8
+2014-03-31 12:54:12.183 :   spid8     启动数据库“msdb”。
+2014-03-31 12:54:12.245 :   spid9     启动数据库“account”。
+2014-03-31 12:54:12.245 :   spid10    启动数据库“conlog”。
+2014-03-31 12:54:12.292 :   spid11    启动数据库“game1”。
+2014-03-31 12:54:12.308 :   spid12    启动数据库“kingforeiserverbasedata”。
+2014-03-31 12:54:12.386 :   spid13    启动数据库“manage”。
+2014-03-31 12:54:12.401 :   spid5     清除 tempdb 数据库。
+2014-03-31 12:54:12.791 :   spid11    前滚了 16 个事务（在数据库 'game1'（7）中。
+2014-03-31 12:54:12.838 :   spid11    回滚了 0 个事务（在数据库 'game1'（7）中。
+2014-03-31 12:54:12.963 :   spid11    恢复操作正在对数据库 'game1'（7）执行检查点操作。
+2014-03-31 12:54:13.478 :   spid5     启动数据库“tempdb”。
+2014-03-31 12:54:13.665 :   server    SQL Server 正在监听 192.168.1.100: 1433。
+2014-03-31 12:54:13.680 :   server    SQL Server 正在监听 127.0.0.1: 1433。
+2014-03-31 12:54:13.805 :   server    SQL Server 正在监听 TCP, Shared Memory, Named Pipes。
+2014-03-31 12:54:13.821 :   server    SQL Server 已准备好进行客户端连接
+2014-03-31 12:54:13.852 :   TryCon    启动成功, 尝试使用 Ado 连接.
+2014-03-31 12:54:15.162 :   spid4     恢复完成。
+2014-03-31 12:54:15.194 :   GSQLAdmin 您可以使用以下机器名连接绿色SQL。
+2014-03-31 12:54:15.194 :             本地“MA4TKSHBXBI1NAU” 远程“192.168.1.100,1433” 本地“127.0.0.1,1433” 
+2014-03-31 12:54:15.287 :   TryCon    测试连接成功. 连接字符串: 
+2014-03-31 12:54:15.318 :             Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=(local)
+2014-03-31 12:54:15.318 :   SQLServer 启动完毕. 
+2014-03-31 12:54:15.412 :   GSQLAdmin 自动检测 H:\GSQL\MyDB\ 中的数据库文件.
+2014-03-31 12:54:15.771 :   GSQLAdmin 检测完毕.
+2014-03-31 12:54:27.752 :   spid53    启动数据库“herocommon1”。
+2014-03-31 12:54:27.814 :   spid53    恢复操作正在对数据库 'herocommon1'（8）执行检查点操作。
+2014-03-31 12:54:39.140 :   spid52    启动数据库“herocommon1”。
+2014-03-31 12:54:47.111 :   spid52    启动数据库“herocommon1”。
+2014-03-31 12:55:09.872 :   spid52    启动数据库“herocommon1”。
+2014-03-31 12:55:10.964 :   spid52    启动数据库“herocommon1”。
+2014-03-31 12:55:11.120 :   spid52    启动数据库“herocommon1”。
+2014-03-31 12:55:11.244 :   spid52    启动数据库“herocommon1”。
+2014-03-31 12:55:23.771 :   GSQLAdmin 关闭接口.
+2014-03-31 12:55:23.787 :   GSQLAdmin 管理器关闭.
+2014-03-31 13:00:01.734 : ------[绿色 SQL Server]-------- Web: http://www.SuiSoft.cn;  QQ: 3860040;  Mail:szq993@163.com;  --------------------------------------
+2014-03-31 13:00:01.937 :   GSQLAdmin 管理器在 2014-03-31 13:00:01 启动.
+2014-03-31 13:00:01.953 :   Version   作者只保留本管理器的版权,其他附带文件版权归美国微软公司所有,本软件以技术研究为宗旨,请在下载本软件后24小时内删除附带的"SQLServer"文件或替换为您购买的正版"SQLServer"文件,否则后果自负. 作者不为您承担任何方面的任何责任.
+2014-03-31 13:00:02.062 :   GSQLAdmin 自主创造通讯接口成功.
+2014-03-31 13:00:02.062 :   HotKey    成功注册热键 Win + F4 (启动SQL).
+2014-03-31 13:00:02.062 :   HotKey    成功注册热键 Win + F5 (停止SQL).
+2014-03-31 13:00:02.062 :   HotKey    成功注册热键 Win + F9 (显示管理器).
+2014-03-31 13:00:04.062 :   SQLServer 开始启动.
+2014-03-31 13:00:04.062 :   Key       密匙检测成功.
+2014-03-31 13:00:04.062 :   Virtual   虚拟文件环境.
+2014-03-31 13:00:04.062 :   Virtual   虚拟注册表环境.
+2014-03-31 13:00:04.546 :   Virtual   虚拟API环境.
+2014-03-31 13:00:04.546 :   GSQLAdmin 载入 SQLServer 主体.
+2014-03-31 13:00:06.390 :   MsVersion Microsoft SQL Server  2000 - 8.00.2039 (Intel X86) 
+2014-03-31 13:00:06.437 :   MsVersion May  3 2005 23:18:38 
+2014-03-31 13:00:06.437 :   MsVersion Copyright (c) 1988-2003 Microsoft Corporation
+2014-03-31 13:00:06.453 :   MsVersion Enterprise Edition on Windows NT 5.1 (Build 2600: Service Pack 2)
+2014-03-31 13:00:06.453 :   server    Copyright (C) 1988-2002 Microsoft Corporation.
+2014-03-31 13:00:06.453 :   server    保留所有权利。
+2014-03-31 13:00:06.453 :   server    服务器进程 ID 是 1380。
+2014-03-31 13:00:06.562 :   server    SQL Server 正在以优先级“normal”（已检测到 1 CPU）启动。
+2014-03-31 13:00:06.984 :   server    已为 thread 模式处理而配置了 SQL Server。
+2014-03-31 13:00:07.000 :   server    使用 dynamic 锁分配。[2500] 锁块，[5000] 锁所有者块。
+2014-03-31 13:00:07.359 :   server    尝试初始化分布式事务处理协调器。
+2014-03-31 13:00:16.515 :   server    Failed to obtain TransactionDispenserInterface: XACT_E_TMNOTAVAILABLE
+2014-03-31 13:00:16.578 :   spid3     启动数据库“master”。
+2014-03-31 13:00:16.968 :   server    正在使用“SSNETLIB.DLL”版本“8.0.2039”。
+2014-03-31 13:00:17.000 :   server    SQL Server 正在监听 0.1.0.4: 1433。
+2014-03-31 13:00:17.000 :   server    SQL Server 正在监听 192.168.1.103: 1433。
+2014-03-31 13:00:17.015 :   server    SQL Server 正在监听 127.0.0.1: 1433。
+2014-03-31 13:00:17.031 :   server    SQL Server 正在监听 TCP, Shared Memory, Named Pipes。
+2014-03-31 13:00:17.031 :   server    SQL Server 已准备好进行客户端连接
+2014-03-31 13:00:17.031 :   TryCon    启动成功, 尝试使用 Ado 连接.
+2014-03-31 13:00:17.078 :   spid3     服务器名称是“59DC979F34D64BD”。
+2014-03-31 13:00:17.078 :   spid3     Skipping startup of clean database id 8
+2014-03-31 13:00:17.078 :   spid5     启动数据库“model”。
+2014-03-31 13:00:17.109 :   spid8     启动数据库“msdb”。
+2014-03-31 13:00:17.109 :   spid9     启动数据库“account”。
+2014-03-31 13:00:17.109 :   spid10    启动数据库“conlog”。
+2014-03-31 13:00:17.125 :   spid11    启动数据库“game1”。
+2014-03-31 13:00:17.640 :   spid5     清除 tempdb 数据库。
+2014-03-31 13:00:17.671 :   spid10    启动数据库“kingforeiserverbasedata”。
+2014-03-31 13:00:17.750 :   spid11    启动数据库“manage”。
+2014-03-31 13:00:19.625 :   spid5     启动数据库“tempdb”。
+2014-03-31 13:00:42.750 :   TryCon    连接方法 1 失败.
+2014-03-31 13:00:42.750 :   TryCon    连接字符串: Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=(local)
+2014-03-31 13:00:42.750 :   TryCon    错误  信息: [DBNETLIB][ConnectionOpen (Connect()).]SQL Server 不存在或拒绝访问。
+2014-03-31 13:00:42.781 :   TryCon    测试连接成功. 连接字符串: 
+2014-03-31 13:00:42.781 :             Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=127.0.0.1
+2014-03-31 13:00:42.781 :   SQLServer 启动完毕. 
+2014-03-31 13:00:42.781 :   GSQLAdmin 自动检测 D:\Mud3\Gsql\MyDB\ 中的数据库文件.
+2014-03-31 13:00:43.125 :   GSQLAdmin 检测完毕.
+2014-03-31 13:00:59.453 :   spid3     恢复完成。
+2014-03-31 13:00:59.468 :   GSQLAdmin 您可以使用以下机器名连接绿色SQL。
+2014-03-31 13:00:59.468 :             远程“0.1.0.4,1433” 远程“192.168.1.103,1433” 本地“127.0.0.1,1433” 本地“59DC979F34D64BD” 
+2014-03-31 13:01:07.265 : ------[绿色 SQL Server]-------- Web: http://www.SuiSoft.cn;  QQ: 3860040;  Mail:szq993@163.com;  --------------------------------------
+2014-03-31 13:01:07.375 :   GSQLAdmin 管理器在 2014-03-31 13:01:07 启动.
+2014-03-31 13:01:07.390 :   Version   作者只保留本管理器的版权,其他附带文件版权归美国微软公司所有,本软件以技术研究为宗旨,请在下载本软件后24小时内删除附带的"SQLServer"文件或替换为您购买的正版"SQLServer"文件,否则后果自负. 作者不为您承担任何方面的任何责任.
+2014-03-31 13:01:07.500 :   GSQLAdmin 连接到现有通讯接口.
+2014-03-31 13:01:07.500 :   GSQLAdmin 读取旧日志.
+2014-03-31 13:01:07.500 :   MsVersion Microsoft SQL Server  2000 - 8.00.2039 (Intel X86) 
+2014-03-31 13:01:07.500 :   MsVersion May  3 2005 23:18:38 
+2014-03-31 13:01:07.500 :   MsVersion Copyright (c) 1988-2003 Microsoft Corporation
+2014-03-31 13:01:07.500 :   MsVersion Enterprise Edition on Windows NT 5.1 (Build 2600: Service Pack 2)
+2014-03-31 13:01:07.500 :   server    Copyright (C) 1988-2002 Microsoft Corporation.
+2014-03-31 13:01:07.500 :   server    保留所有权利。
+2014-03-31 13:01:07.500 :   server    服务器进程 ID 是 1380。
+2014-03-31 13:01:07.500 :   server    SQL Server 正在以优先级“normal”（已检测到 1 CPU）启动。
+2014-03-31 13:01:07.500 :   server    已为 thread 模式处理而配置了 SQL Server。
+2014-03-31 13:01:07.515 :   server    使用 dynamic 锁分配。[2500] 锁块，[5000] 锁所有者块。
+2014-03-31 13:01:07.515 :   server    尝试初始化分布式事务处理协调器。
+2014-03-31 13:01:07.515 :   server    Failed to obtain TransactionDispenserInterface: XACT_E_TMNOTAVAILABLE
+2014-03-31 13:01:07.515 :   spid3     启动数据库“master”。
+2014-03-31 13:01:07.515 :   server    正在使用“SSNETLIB.DLL”版本“8.0.2039”。
+2014-03-31 13:01:07.515 :   server    SQL Server 正在监听 0.1.0.4: 1433。
+2014-03-31 13:01:07.515 :   server    SQL Server 正在监听 192.168.1.103: 1433。
+2014-03-31 13:01:07.515 :   server    SQL Server 正在监听 127.0.0.1: 1433。
+2014-03-31 13:01:07.515 :   server    SQL Server 正在监听 TCP, Shared Memory, Named Pipes。
+2014-03-31 13:01:07.515 :   server    SQL Server 已准备好进行客户端连接
+2014-03-31 13:01:07.515 :   spid3     服务器名称是“59DC979F34D64BD”。
+2014-03-31 13:01:07.515 :   spid3     Skipping startup of clean database id 8
+2014-03-31 13:01:07.531 :   spid5     启动数据库“model”。
+2014-03-31 13:01:07.531 :   spid8     启动数据库“msdb”。
+2014-03-31 13:01:07.531 :   spid9     启动数据库“account”。
+2014-03-31 13:01:07.531 :   spid10    启动数据库“conlog”。
+2014-03-31 13:01:07.531 :   spid11    启动数据库“game1”。
+2014-03-31 13:01:07.531 :   spid5     清除 tempdb 数据库。
+2014-03-31 13:01:07.531 :   spid10    启动数据库“kingforeiserverbasedata”。
+2014-03-31 13:01:07.531 :   spid11    启动数据库“manage”。
+2014-03-31 13:01:07.531 :   spid5     启动数据库“tempdb”。
+2014-03-31 13:01:07.531 :   spid3     恢复完成。
+2014-03-31 13:01:07.546 :   TryCon    启动成功, 尝试使用 Ado 连接.
+2014-03-31 13:01:07.546 :   HotKey    成功注册热键 Win + F4 (启动SQL).
+2014-03-31 13:01:07.562 :   HotKey    成功注册热键 Win + F5 (停止SQL).
+2014-03-31 13:01:07.562 :   HotKey    成功注册热键 Win + F9 (显示管理器).
+2014-03-31 13:01:33.390 :   TryCon    连接方法 1 失败.
+2014-03-31 13:01:33.390 :   TryCon    连接字符串: Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=(local)
+2014-03-31 13:01:33.390 :   TryCon    错误  信息: [DBNETLIB][ConnectionOpen (Connect()).]SQL Server 不存在或拒绝访问。
+2014-03-31 13:01:33.421 :   TryCon    测试连接成功. 连接字符串: 
+2014-03-31 13:01:33.421 :             Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=127.0.0.1
+2014-03-31 13:01:33.421 :   SQLServer 启动完毕. 
+2014-03-31 13:01:33.421 :   GSQLAdmin 自动检测 D:\Mud3\Gsql\MyDB\ 中的数据库文件.
+2014-03-31 13:01:33.453 :   GSQLAdmin 检测完毕.
+2014-03-31 13:01:47.578 :   spid56    启动数据库“herocommon1”。
+2014-03-31 13:22:20.125 : ------[绿色 SQL Server]-------- Web: http://www.SuiSoft.cn;  QQ: 3860040;  Mail:szq993@163.com;  --------------------------------------
+2014-03-31 13:22:20.468 :   GSQLAdmin 管理器在 2014-03-31 13:22:20 启动.
+2014-03-31 13:22:20.468 :   Version   作者只保留本管理器的版权,其他附带文件版权归美国微软公司所有,本软件以技术研究为宗旨,请在下载本软件后24小时内删除附带的"SQLServer"文件或替换为您购买的正版"SQLServer"文件,否则后果自负. 作者不为您承担任何方面的任何责任.
+2014-03-31 13:22:22.796 :   GSQLAdmin 自主创造通讯接口成功.
+2014-03-31 13:22:22.796 :   HotKey    成功注册热键 Win + F4 (启动SQL).
+2014-03-31 13:22:22.796 :   HotKey    成功注册热键 Win + F5 (停止SQL).
+2014-03-31 13:22:22.812 :   HotKey    成功注册热键 Win + F9 (显示管理器).
+2014-03-31 13:22:36.281 :   SQLServer 开始启动.
+2014-03-31 13:22:36.281 :   Key       密匙检测成功.
+2014-03-31 13:22:36.281 :   Virtual   虚拟文件环境.
+2014-03-31 13:22:36.281 :   Virtual   虚拟注册表环境.
+2014-03-31 13:22:37.281 :   Virtual   虚拟API环境.
+2014-03-31 13:22:37.281 :   GSQLAdmin 载入 SQLServer 主体.
+2014-03-31 13:22:37.500 :   MsVersion Microsoft SQL Server  2000 - 8.00.2039 (Intel X86) 
+2014-03-31 13:22:37.515 :   MsVersion May  3 2005 23:18:38 
+2014-03-31 13:22:37.515 :   MsVersion Copyright (c) 1988-2003 Microsoft Corporation
+2014-03-31 13:22:37.531 :   MsVersion Enterprise Edition on Windows NT 5.1 (Build 2600: Service Pack 2)
+2014-03-31 13:22:37.546 :   server    Copyright (C) 1988-2002 Microsoft Corporation.
+2014-03-31 13:22:37.546 :   server    保留所有权利。
+2014-03-31 13:22:37.578 :   server    服务器进程 ID 是 1280。
+2014-03-31 13:22:38.656 :   server    SQL Server 正在以优先级“normal”（已检测到 1 CPU）启动。
+2014-03-31 13:22:38.656 :   server    已为 thread 模式处理而配置了 SQL Server。
+2014-03-31 13:22:38.687 :   server    使用 dynamic 锁分配。[2500] 锁块，[5000] 锁所有者块。
+2014-03-31 13:22:38.734 :   server    尝试初始化分布式事务处理协调器。
+2014-03-31 13:22:48.140 :   server    Failed to obtain TransactionDispenserInterface: XACT_E_TMNOTAVAILABLE
+2014-03-31 13:22:48.187 :   spid3     启动数据库“master”。
+2014-03-31 13:22:48.812 :   spid3     0 个事务在数据库“master”中后滚 (1)。
+2014-03-31 13:22:48.828 :   spid3     恢复操作正在对数据库 'master'（1）执行检查点操作。
+2014-03-31 13:22:48.953 :   server    正在使用“SSNETLIB.DLL”版本“8.0.2039”。
+2014-03-31 13:22:48.968 :   spid5     启动数据库“model”。
+2014-03-31 13:22:48.984 :   spid3     服务器名称是“59DC979F34D64BD”。
+2014-03-31 13:22:48.984 :   spid8     启动数据库“msdb”。
+2014-03-31 13:22:49.000 :   spid9     启动数据库“account”。
+2014-03-31 13:22:49.000 :   spid10    启动数据库“conlog”。
+2014-03-31 13:22:49.000 :   spid11    启动数据库“game1”。
+2014-03-31 13:22:49.046 :   server    SQL Server 正在监听 0.1.0.4: 1433。
+2014-03-31 13:22:49.046 :   server    SQL Server 正在监听 192.168.1.103: 1433。
+2014-03-31 13:22:49.046 :   server    SQL Server 正在监听 127.0.0.1: 1433。
+2014-03-31 13:22:49.250 :   server    SQL Server 正在监听 TCP, Shared Memory, Named Pipes。
+2014-03-31 13:22:49.250 :   server    SQL Server 已准备好进行客户端连接
+2014-03-31 13:22:49.250 :   TryCon    启动成功, 尝试使用 Ado 连接.
+2014-03-31 13:22:49.531 :   spid5     清除 tempdb 数据库。
+2014-03-31 13:22:49.546 :   spid9     前滚了 2 个事务（在数据库 'account'（5）中。
+2014-03-31 13:22:49.578 :   spid11    启动数据库“herocommon1”。
+2014-03-31 13:22:49.640 :   spid9     回滚了 0 个事务（在数据库 'account'（5）中。
+2014-03-31 13:22:49.671 :   spid10    启动数据库“kingforeiserverbasedata”。
+2014-03-31 13:22:49.687 :   spid9     恢复操作正在对数据库 'account'（5）执行检查点操作。
+2014-03-31 13:22:49.734 :   spid8     启动数据库“manage”。
+2014-03-31 13:22:51.843 :   spid5     启动数据库“tempdb”。
+2014-03-31 13:23:15.015 :   TryCon    连接方法 1 失败.
+2014-03-31 13:23:15.015 :   TryCon    连接字符串: Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=(local)
+2014-03-31 13:23:15.015 :   TryCon    错误  信息: [DBNETLIB][ConnectionOpen (Connect()).]SQL Server 不存在或拒绝访问。
+2014-03-31 13:23:15.046 :   TryCon    测试连接成功. 连接字符串: 
+2014-03-31 13:23:15.046 :             Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=127.0.0.1
+2014-03-31 13:23:15.046 :   SQLServer 启动完毕. 
+2014-03-31 13:23:15.046 :   GSQLAdmin 自动检测 D:\Mud3\Gsql\MyDB\ 中的数据库文件.
+2014-03-31 13:23:15.406 :   GSQLAdmin 检测完毕.
+2014-03-31 13:23:31.421 :   spid3     恢复完成。
+2014-03-31 13:23:31.421 :   GSQLAdmin 您可以使用以下机器名连接绿色SQL。
+2014-03-31 13:23:31.421 :             本地“59DC979F34D64BD” 远程“0.1.0.4,1433” 远程“192.168.1.103,1433” 本地“127.0.0.1,1433” 
+2014-03-31 13:53:39.031 : ------[绿色 SQL Server]-------- Web: http://www.SuiSoft.cn;  QQ: 3860040;  Mail:szq993@163.com;  --------------------------------------
+2014-03-31 13:53:39.390 :   GSQLAdmin 管理器在 2014-03-31 13:53:38 启动.
+2014-03-31 13:53:39.390 :   Version   作者只保留本管理器的版权,其他附带文件版权归美国微软公司所有,本软件以技术研究为宗旨,请在下载本软件后24小时内删除附带的"SQLServer"文件或替换为您购买的正版"SQLServer"文件,否则后果自负. 作者不为您承担任何方面的任何责任.
+2014-03-31 13:53:39.546 :   GSQLAdmin 连接到现有通讯接口.
+2014-03-31 13:53:39.546 :   GSQLAdmin 读取旧日志.
+2014-03-31 13:53:39.546 :   MsVersion Microsoft SQL Server  2000 - 8.00.2039 (Intel X86) 
+2014-03-31 13:53:39.546 :   MsVersion May  3 2005 23:18:38 
+2014-03-31 13:53:39.546 :   MsVersion Copyright (c) 1988-2003 Microsoft Corporation
+2014-03-31 13:53:39.546 :   MsVersion Enterprise Edition on Windows NT 5.1 (Build 2600: Service Pack 2)
+2014-03-31 13:53:39.546 :   server    Copyright (C) 1988-2002 Microsoft Corporation.
+2014-03-31 13:53:39.546 :   server    保留所有权利。
+2014-03-31 13:53:39.546 :   server    服务器进程 ID 是 1280。
+2014-03-31 13:53:39.546 :   server    SQL Server 正在以优先级“normal”（已检测到 1 CPU）启动。
+2014-03-31 13:53:39.546 :   server    已为 thread 模式处理而配置了 SQL Server。
+2014-03-31 13:53:39.546 :   server    使用 dynamic 锁分配。[2500] 锁块，[5000] 锁所有者块。
+2014-03-31 13:53:39.562 :   server    尝试初始化分布式事务处理协调器。
+2014-03-31 13:53:39.562 :   server    Failed to obtain TransactionDispenserInterface: XACT_E_TMNOTAVAILABLE
+2014-03-31 13:53:39.562 :   spid3     启动数据库“master”。
+2014-03-31 13:53:39.562 :   spid3     0 个事务在数据库“master”中后滚 (1)。
+2014-03-31 13:53:39.562 :   spid3     恢复操作正在对数据库 'master'（1）执行检查点操作。
+2014-03-31 13:53:39.562 :   server    正在使用“SSNETLIB.DLL”版本“8.0.2039”。
+2014-03-31 13:53:39.562 :   spid5     启动数据库“model”。
+2014-03-31 13:53:39.562 :   spid3     服务器名称是“59DC979F34D64BD”。
+2014-03-31 13:53:39.562 :   spid8     启动数据库“msdb”。
+2014-03-31 13:53:39.562 :   spid9     启动数据库“account”。
+2014-03-31 13:53:39.562 :   spid10    启动数据库“conlog”。
+2014-03-31 13:53:39.578 :   spid11    启动数据库“game1”。
+2014-03-31 13:53:39.578 :   server    SQL Server 正在监听 0.1.0.4: 1433。
+2014-03-31 13:53:39.578 :   server    SQL Server 正在监听 192.168.1.103: 1433。
+2014-03-31 13:53:39.578 :   server    SQL Server 正在监听 127.0.0.1: 1433。
+2014-03-31 13:53:39.578 :   server    SQL Server 正在监听 TCP, Shared Memory, Named Pipes。
+2014-03-31 13:53:39.578 :   server    SQL Server 已准备好进行客户端连接
+2014-03-31 13:53:39.578 :   spid5     清除 tempdb 数据库。
+2014-03-31 13:53:39.578 :   spid9     前滚了 2 个事务（在数据库 'account'（5）中。
+2014-03-31 13:53:39.578 :   spid11    启动数据库“herocommon1”。
+2014-03-31 13:53:39.578 :   spid9     回滚了 0 个事务（在数据库 'account'（5）中。
+2014-03-31 13:53:39.578 :   spid10    启动数据库“kingforeiserverbasedata”。
+2014-03-31 13:53:39.578 :   spid9     恢复操作正在对数据库 'account'（5）执行检查点操作。
+2014-03-31 13:53:39.593 :   spid8     启动数据库“manage”。
+2014-03-31 13:53:39.593 :   spid5     启动数据库“tempdb”。
+2014-03-31 13:53:39.593 :   spid3     恢复完成。
+2014-03-31 13:53:39.593 :   TryCon    启动成功, 尝试使用 Ado 连接.
+2014-03-31 13:53:39.906 :   HotKey    成功注册热键 Win + F4 (启动SQL).
+2014-03-31 13:53:39.906 :   HotKey    成功注册热键 Win + F5 (停止SQL).
+2014-03-31 13:53:39.906 :   HotKey    成功注册热键 Win + F9 (显示管理器).
+2014-03-31 13:54:05.984 :   TryCon    连接方法 1 失败.
+2014-03-31 13:54:05.984 :   TryCon    连接字符串: Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=(local)
+2014-03-31 13:54:06.000 :   TryCon    错误  信息: [DBNETLIB][ConnectionOpen (Connect()).]SQL Server 不存在或拒绝访问。
+2014-03-31 13:54:06.125 :   TryCon    测试连接成功. 连接字符串: 
+2014-03-31 13:54:06.125 :             Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=127.0.0.1
+2014-03-31 13:54:06.125 :   SQLServer 启动完毕. 
+2014-03-31 13:54:06.140 :   GSQLAdmin 自动检测 D:\Mud3\GSQL\MyDB\ 中的数据库文件.
+2014-03-31 13:54:06.218 :   GSQLAdmin 检测完毕.
+2014-03-31 13:54:12.937 :   GSQLAdmin 关闭接口.
+2014-03-31 13:54:12.937 :   GSQLAdmin 管理器关闭.
+2014-07-12 12:15:56.218 : ------[绿色 SQL Server]-------- Web: http://www.SuiSoft.cn;  QQ: 3860040;  Mail:szq993@163.com;  --------------------------------------
+2014-07-12 12:15:56.312 :   GSQLAdmin 管理器在 2014-07-12 12:15:56 启动.
+2014-07-12 12:15:56.312 :   Version   作者只保留本管理器的版权,其他附带文件版权归美国微软公司所有,本软件以技术研究为宗旨,请在下载本软件后24小时内删除附带的"SQLServer"文件或替换为您购买的正版"SQLServer"文件,否则后果自负. 作者不为您承担任何方面的任何责任.
+2014-07-12 12:15:56.359 :   GSQLAdmin 自主创造通讯接口成功.
+2014-07-12 12:15:56.375 :   HotKey    成功注册热键 Win + F4 (启动SQL).
+2014-07-12 12:15:56.375 :   HotKey    成功注册热键 Win + F5 (停止SQL).
+2014-07-12 12:15:56.375 :   HotKey    成功注册热键 Win + F9 (显示管理器).
+2014-07-12 12:15:57.109 :   SQLServer 开始启动.
+2014-07-12 12:15:57.109 :   Key       密匙检测成功.
+2014-07-12 12:15:57.109 :   Virtual   虚拟文件环境.
+2014-07-12 12:15:57.109 :   Virtual   虚拟注册表环境.
+2014-07-12 12:15:57.140 :   Virtual   虚拟API环境.
+2014-07-12 12:15:57.250 :   GSQLAdmin 载入 SQLServer 主体.
+2014-07-12 12:15:57.750 :   MsVersion Microsoft SQL Server  2000 - 8.00.2039 (Intel X86) 
+2014-07-12 12:15:57.750 :   MsVersion May  3 2005 23:18:38 
+2014-07-12 12:15:57.750 :   MsVersion Copyright (c) 1988-2003 Microsoft Corporation
+2014-07-12 12:15:57.750 :   MsVersion Enterprise Edition on Windows NT 5.1 (Build 2600: Service Pack 3)
+2014-07-12 12:15:57.750 :   server    Copyright (C) 1988-2002 Microsoft Corporation.
+2014-07-12 12:15:57.765 :   server    保留所有权利。
+2014-07-12 12:15:57.765 :   server    服务器进程 ID 是 7904。
+2014-07-12 12:15:57.796 :   server    SQL Server 正在以优先级“normal”（已检测到 2 CPUs）启动。
+2014-07-12 12:15:58.484 :   server    已为 thread 模式处理而配置了 SQL Server。
+2014-07-12 12:15:58.500 :   server    使用 dynamic 锁分配。[2500] 锁块，[5000] 锁所有者块。
+2014-07-12 12:15:58.593 :   server    尝试初始化分布式事务处理协调器。
+2014-07-12 12:15:59.000 :   server    Failed to obtain TransactionDispenserInterface: XACT_E_TMNOTAVAILABLE
+2014-07-12 12:15:59.140 :   spid3     启动数据库“master”。
+2014-07-12 12:15:59.625 :   server    正在使用“SSNETLIB.DLL”版本“8.0.2039”。
+2014-07-12 12:15:59.625 :   spid5     启动数据库“model”。
+2014-07-12 12:15:59.656 :   spid3     服务器名称是“2CMJ85ZEOFN5RQQ”。
+2014-07-12 12:15:59.656 :   spid3     Skipping startup of clean database id 8
+2014-07-12 12:15:59.671 :   spid8     启动数据库“msdb”。
+2014-07-12 12:15:59.671 :   spid10    启动数据库“account”。
+2014-07-12 12:15:59.671 :   spid9     启动数据库“conlog”。
+2014-07-12 12:15:59.671 :   spid11    启动数据库“game1”。
+2014-07-12 12:15:59.687 :   spid12    启动数据库“kingforeiserverbasedata”。
+2014-07-12 12:15:59.687 :   spid13    启动数据库“manage”。
+2014-07-12 12:16:00.421 :   spid5     清除 tempdb 数据库。
+2014-07-12 12:16:01.203 :   server    SQL Server 正在监听 192.168.1.101: 1433。
+2014-07-12 12:16:01.203 :   server    SQL Server 正在监听 10.0.14.12: 1433。
+2014-07-12 12:16:01.203 :   server    SQL Server 正在监听 127.0.0.1: 1433。
+2014-07-12 12:16:01.343 :   server    SQL Server 正在监听 TCP, Shared Memory, Named Pipes。
+2014-07-12 12:16:01.343 :   server    SQL Server 已准备好进行客户端连接
+2014-07-12 12:16:01.359 :   TryCon    启动成功, 尝试使用 Ado 连接.
+2014-07-12 12:16:01.406 :   spid5     启动数据库“tempdb”。
+2014-07-12 12:16:01.531 :   spid3     恢复完成。
+2014-07-12 12:16:01.531 :   GSQLAdmin 您可以使用以下机器名连接绿色SQL。
+2014-07-12 12:16:01.546 :             本地“2CMJ85ZEOFN5RQQ” 远程“192.168.1.101,1433” 远程“10.0.14.12,1433” 本地“127.0.0.1,1433” 
+2014-07-12 12:16:02.109 :   TryCon    测试连接成功. 连接字符串: 
+2014-07-12 12:16:02.109 :             Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=(local)
+2014-07-12 12:16:02.109 :   SQLServer 启动完毕. 
+2014-07-12 12:16:02.109 :   GSQLAdmin 自动检测 D:\Mud3\GSQL\MyDB\ 中的数据库文件.
+2014-07-12 12:16:02.890 :   GSQLAdmin 检测完毕.
+2014-07-12 12:22:19.125 :   spid77    启动数据库“herocommon1”。
+2014-07-12 13:21:53.390 :   GSQLAdmin 关闭接口.
+2014-07-12 13:21:53.406 :   GSQLAdmin 管理器关闭.
+2014-07-17 19:51:42.031 : ------[绿色 SQL Server]-------- Web: http://www.SuiSoft.cn;  QQ: 3860040;  Mail:szq993@163.com;  --------------------------------------
+2014-07-17 19:51:42.203 :   GSQLAdmin 管理器在 2014-07-17 19:51:41 启动.
+2014-07-17 19:51:42.203 :   Version   作者只保留本管理器的版权,其他附带文件版权归美国微软公司所有,本软件以技术研究为宗旨,请在下载本软件后24小时内删除附带的"SQLServer"文件或替换为您购买的正版"SQLServer"文件,否则后果自负. 作者不为您承担任何方面的任何责任.
+2014-07-17 19:51:42.343 :   GSQLAdmin 自主创造通讯接口成功.
+2014-07-17 19:51:42.343 :   HotKey    成功注册热键 Win + F4 (启动SQL).
+2014-07-17 19:51:42.343 :   HotKey    成功注册热键 Win + F5 (停止SQL).
+2014-07-17 19:51:42.343 :   HotKey    成功注册热键 Win + F9 (显示管理器).
+2014-07-17 19:51:42.921 :   SQLServer 开始启动.
+2014-07-17 19:51:42.921 :   Key       密匙检测成功.
+2014-07-17 19:51:42.921 :   Virtual   虚拟文件环境.
+2014-07-17 19:51:42.921 :   Virtual   虚拟注册表环境.
+2014-07-17 19:51:43.078 :   Virtual   虚拟API环境.
+2014-07-17 19:51:43.203 :   GSQLAdmin 载入 SQLServer 主体.
+2014-07-17 19:51:43.750 :   MsVersion Microsoft SQL Server  2000 - 8.00.2039 (Intel X86) 
+2014-07-17 19:51:43.750 :   MsVersion May  3 2005 23:18:38 
+2014-07-17 19:51:43.750 :   MsVersion Copyright (c) 1988-2003 Microsoft Corporation
+2014-07-17 19:51:43.750 :   MsVersion Enterprise Edition on Windows NT 5.1 (Build 2600: Service Pack 3)
+2014-07-17 19:51:43.750 :   server    Copyright (C) 1988-2002 Microsoft Corporation.
+2014-07-17 19:51:43.765 :   server    保留所有权利。
+2014-07-17 19:51:43.765 :   server    服务器进程 ID 是 5156。
+2014-07-17 19:51:43.828 :   server    SQL Server 正在以优先级“normal”（已检测到 2 CPUs）启动。
+2014-07-17 19:51:44.750 :   server    已为 thread 模式处理而配置了 SQL Server。
+2014-07-17 19:51:44.750 :   server    使用 dynamic 锁分配。[2500] 锁块，[5000] 锁所有者块。
+2014-07-17 19:51:45.109 :   server    尝试初始化分布式事务处理协调器。
+2014-07-17 19:51:45.421 :   server    Failed to obtain TransactionDispenserInterface: XACT_E_TMNOTAVAILABLE
+2014-07-17 19:51:45.515 :   spid3     启动数据库“master”。
+2014-07-17 19:51:46.390 :   server    正在使用“SSNETLIB.DLL”版本“8.0.2039”。
+2014-07-17 19:51:46.390 :   spid5     启动数据库“model”。
+2014-07-17 19:51:46.421 :   spid3     服务器名称是“2CMJ85ZEOFN5RQQ”。
+2014-07-17 19:51:46.437 :   spid3     Skipping startup of clean database id 8
+2014-07-17 19:51:46.437 :   spid9     启动数据库“account”。
+2014-07-17 19:51:46.437 :   spid8     启动数据库“msdb”。
+2014-07-17 19:51:46.484 :   spid10    启动数据库“conlog”。
+2014-07-17 19:51:46.484 :   spid11    启动数据库“game1”。
+2014-07-17 19:51:46.546 :   spid12    启动数据库“kingforeiserverbasedata”。
+2014-07-17 19:51:46.546 :   spid13    启动数据库“manage”。
+2014-07-17 19:51:47.203 :   spid5     清除 tempdb 数据库。
+2014-07-17 19:51:47.890 :   spid5     启动数据库“tempdb”。
+2014-07-17 19:51:47.968 :   server    SQL Server 正在监听 192.168.1.101: 1433。
+2014-07-17 19:51:47.968 :   server    SQL Server 正在监听 10.0.15.17: 1433。
+2014-07-17 19:51:47.968 :   server    SQL Server 正在监听 127.0.0.1: 1433。
+2014-07-17 19:51:48.484 :   spid3     恢复完成。
+2014-07-17 19:51:48.500 :   GSQLAdmin 您可以使用以下机器名连接绿色SQL。
+2014-07-17 19:51:48.500 :             本地“2CMJ85ZEOFN5RQQ” 远程“192.168.1.101,1433” 远程“10.0.15.17,1433” 本地“127.0.0.1,1433” 
+2014-07-17 19:51:48.750 :   server    SQL Server 正在监听 TCP, Shared Memory, Named Pipes。
+2014-07-17 19:51:48.750 :   server    SQL Server 已准备好进行客户端连接
+2014-07-17 19:51:48.750 :   TryCon    启动成功, 尝试使用 Ado 连接.
+2014-07-17 19:51:49.437 :   TryCon    测试连接成功. 连接字符串: 
+2014-07-17 19:51:49.437 :             Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=(local)
+2014-07-17 19:51:49.437 :   SQLServer 启动完毕. 
+2014-07-17 19:51:49.437 :   GSQLAdmin 自动检测 D:\Mud3\GSQL\MyDB\ 中的数据库文件.
+2014-07-17 19:51:50.531 :   GSQLAdmin 检测完毕.
+2014-07-17 19:53:36.062 :   spid53    启动数据库“herocommon1”。
+2014-07-17 19:53:52.265 :   spid52    启动数据库“herocommon1”。
+2014-07-17 19:54:21.578 :   spid52    启动数据库“herocommon1”。
+2014-07-17 19:54:22.687 :   spid52    启动数据库“herocommon1”。
+2014-07-17 19:54:22.718 :   spid52    启动数据库“herocommon1”。
+2014-07-17 19:54:22.750 :   spid52    启动数据库“herocommon1”。
+2014-07-17 21:33:38.765 :   spid52    启动数据库“herocommon1”。
+2014-07-17 21:33:48.421 :   spid52    启动数据库“herocommon1”。
+2014-07-17 21:33:49.437 :   spid52    启动数据库“herocommon1”。
+2014-07-17 21:34:35.078 :   spid77    启动数据库“herocommon1”。
+2014-07-17 21:37:15.109 :   GSQLAdmin 关闭接口.
+2014-07-17 21:37:15.109 :   GSQLAdmin 管理器关闭.
+2014-09-01 09:23:13.972 : ------[绿色 SQL Server]-------- Web: http://www.SuiSoft.cn;  QQ: 3860040;  Mail:szq993@163.com;  --------------------------------------
+2014-09-01 09:23:14.072 :   GSQLAdmin 管理器在 2014-09-01 09:23:13 启动.
+2014-09-01 09:23:14.074 :   Version   作者只保留本管理器的版权,其他附带文件版权归美国微软公司所有,本软件以技术研究为宗旨,请在下载本软件后24小时内删除附带的"SQLServer"文件或替换为您购买的正版"SQLServer"文件,否则后果自负. 作者不为您承担任何方面的任何责任.
+2014-09-01 09:23:14.306 :   GSQLAdmin 自主创造通讯接口成功.
+2014-09-01 09:23:14.308 :   HotKey    成功注册热键 Win + F4 (启动SQL).
+2014-09-01 09:23:14.309 :   HotKey    成功注册热键 Win + F5 (停止SQL).
+2014-09-01 09:23:14.309 :   HotKey    成功注册热键 Win + F9 (显示管理器).
+2014-09-01 09:23:15.011 :   SQLServer 开始启动.
+2014-09-01 09:23:15.034 :   Key       密匙检测成功.
+2014-09-01 09:23:15.035 :   Virtual   虚拟文件环境.
+2014-09-01 09:23:15.043 :   Virtual   虚拟注册表环境.
+2014-09-01 09:23:15.133 :   Virtual   虚拟API环境.
+2014-09-01 09:23:16.135 :   GSQLAdmin 载入 SQLServer 主体.
+2014-09-01 09:23:16.413 :   MsVersion Microsoft SQL Server  2000 - 8.00.2039 (Intel X86) 
+2014-09-01 09:23:16.414 :   MsVersion May  3 2005 23:18:38 
+2014-09-01 09:23:16.415 :   MsVersion Copyright (c) 1988-2003 Microsoft Corporation
+2014-09-01 09:23:16.431 :   MsVersion Enterprise Edition on Windows NT 6.1 (Build 7601: Service Pack 1)
+2014-09-01 09:23:16.440 :   server    Copyright (C) 1988-2002 Microsoft Corporation.
+2014-09-01 09:23:16.442 :   server    保留所有权利。
+2014-09-01 09:23:16.445 :   server    服务器进程 ID 是 2096。
+2014-09-01 09:23:16.467 :   server    SQL Server 正在以优先级“normal”（已检测到 4 CPUs）启动。
+2014-09-01 09:23:16.650 :   server    已为 thread 模式处理而配置了 SQL Server。
+2014-09-01 09:23:16.653 :   server    使用 dynamic 锁分配。[2500] 锁块，[5000] 锁所有者块。
+2014-09-01 09:23:17.288 :   server    尝试初始化分布式事务处理协调器。
+2014-09-01 09:23:17.784 :   server    Failed to obtain TransactionDispenserInterface: XACT_E_TMNOTAVAILABLE
+2014-09-01 09:23:17.873 :   spid4     启动数据库“master”。
+2014-09-01 09:23:18.462 :   server    正在使用“SSNETLIB.DLL”版本“8.0.2039”。
+2014-09-01 09:23:18.466 :   spid5     启动数据库“model”。
+2014-09-01 09:23:18.493 :   spid4     服务器名称是“MA4TKSHBXBI1NAU”。
+2014-09-01 09:23:18.497 :   spid4     Skipping startup of clean database id 8
+2014-09-01 09:23:18.506 :   spid8     启动数据库“msdb”。
+2014-09-01 09:23:18.510 :   spid9     启动数据库“account”。
+2014-09-01 09:23:18.513 :   spid10    启动数据库“conlog”。
+2014-09-01 09:23:18.517 :   spid12    启动数据库“kingforeiserverbasedata”。
+2014-09-01 09:23:18.521 :   spid13    启动数据库“manage”。
+2014-09-01 09:23:18.524 :   spid11    启动数据库“game1”。
+2014-09-01 09:23:19.531 :   spid5     清除 tempdb 数据库。
+2014-09-01 09:23:20.966 :   spid5     启动数据库“tempdb”。
+2014-09-01 09:23:21.030 :   server    SQL Server 正在监听 192.168.1.101: 1433。
+2014-09-01 09:23:21.036 :   server    SQL Server 正在监听 127.0.0.1: 1433。
+2014-09-01 09:23:21.125 :   server    SQL Server 正在监听 TCP, Shared Memory, Named Pipes。
+2014-09-01 09:23:21.129 :   server    SQL Server 已准备好进行客户端连接
+2014-09-01 09:23:21.132 :   TryCon    启动成功, 尝试使用 Ado 连接.
+2014-09-01 09:23:21.284 :   spid4     恢复完成。
+2014-09-01 09:23:21.288 :   GSQLAdmin 您可以使用以下机器名连接绿色SQL。
+2014-09-01 09:23:21.293 :             本地“MA4TKSHBXBI1NAU” 远程“192.168.1.101,1433” 本地“127.0.0.1,1433” 
+2014-09-01 09:23:21.891 :   TryCon    测试连接成功. 连接字符串: 
+2014-09-01 09:23:21.895 :             Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=(local)
+2014-09-01 09:23:21.902 :   SQLServer 启动完毕. 
+2014-09-01 09:23:21.985 :   GSQLAdmin 自动检测 D:\Mud3\GSQL\MyDB\ 中的数据库文件.
+2014-09-01 09:23:22.742 :   GSQLAdmin 检测完毕.
+2014-09-01 09:27:55.185 :   GSQLAdmin 关闭接口.
+2014-09-01 09:27:55.186 :   GSQLAdmin 管理器关闭.
+2016-11-24 00:25:09.956 : ------[绿色 SQL Server]-------- Web: http://www.SuiSoft.cn;  QQ: 3860040;  Mail:szq993@163.com;  --------------------------------------
+2016-11-24 00:25:10.144 :   GSQLAdmin 管理器在 2016-11-24 00:25:09 启动.
+2016-11-24 00:25:10.144 :   Version   作者只保留本管理器的版权,其他附带文件版权归美国微软公司所有,本软件以技术研究为宗旨,请在下载本软件后24小时内删除附带的"SQLServer"文件或替换为您购买的正版"SQLServer"文件,否则后果自负. 作者不为您承担任何方面的任何责任.
+2016-11-24 00:25:10.315 :   GSQLAdmin 自主创造通讯接口成功.
+2016-11-24 00:25:10.331 :   HotKey    成功注册热键 Win + F4 (启动SQL).
+2016-11-24 00:25:10.331 :   HotKey    成功注册热键 Win + F5 (停止SQL).
+2016-11-24 00:25:10.331 :   HotKey    成功注册热键 Win + F9 (显示管理器).
+2016-11-24 00:25:10.972 :   SQLServer 开始启动.
+2016-11-24 00:25:10.972 :   Key       密匙检测成功.
+2016-11-24 00:25:10.972 :   Virtual   虚拟文件环境.
+2016-11-24 00:25:10.972 :   Virtual   虚拟注册表环境.
+2016-11-24 00:25:10.972 :   Virtual   虚拟API环境.
+2016-11-24 00:25:10.972 :   GSQLAdmin 载入 SQLServer 主体.
+2016-11-24 00:25:11.097 :   MsVersion Microsoft SQL Server  2000 - 8.00.2039 (Intel X86) 
+2016-11-24 00:25:11.097 :   MsVersion May  3 2005 23:18:38 
+2016-11-24 00:25:11.112 :   MsVersion Copyright (c) 1988-2003 Microsoft Corporation
+2016-11-24 00:25:11.112 :   MsVersion Enterprise Edition on Windows NT 5.2 (Build 3790: Service Pack 2)
+2016-11-24 00:25:11.112 :   server    Copyright (C) 1988-2002 Microsoft Corporation.
+2016-11-24 00:25:11.112 :   server    保留所有权利。
+2016-11-24 00:25:11.112 :   server    服务器进程 ID 是 3488。
+2016-11-24 00:25:11.112 :   server    SQL Server 正在以优先级“normal”（已检测到 1 CPU）启动。
+2016-11-24 00:25:11.159 :   server    已为 thread 模式处理而配置了 SQL Server。
+2016-11-24 00:25:11.175 :   server    使用 dynamic 锁分配。[2500] 锁块，[5000] 锁所有者块。
+2016-11-24 00:25:11.222 :   server    尝试初始化分布式事务处理协调器。
+2016-11-24 00:25:13.394 :   spid3     启动数据库“master”。
+2016-11-24 00:25:13.628 :   server    正在使用“SSNETLIB.DLL”版本“8.0.2039”。
+2016-11-24 00:25:13.628 :   spid3     服务器名称是“iZhn6ss22e6di3Z”。
+2016-11-24 00:25:13.628 :   spid3     Skipping startup of clean database id 8
+2016-11-24 00:25:13.644 :   spid5     启动数据库“model”。
+2016-11-24 00:25:13.659 :   spid8     启动数据库“msdb”。
+2016-11-24 00:25:13.659 :   spid9     启动数据库“account”。
+2016-11-24 00:25:13.659 :   spid10    启动数据库“conlog”。
+2016-11-24 00:25:13.659 :   spid11    启动数据库“game1”。
+2016-11-24 00:25:13.737 :   server    SQL Server 正在监听 120.24.191.9: 1433。
+2016-11-24 00:25:13.737 :   server    SQL Server 正在监听 10.169.230.47: 1433。
+2016-11-24 00:25:13.737 :   server    SQL Server 正在监听 169.254.25.129: 1433。
+2016-11-24 00:25:13.737 :   server    SQL Server 正在监听 127.0.0.1: 1433。
+2016-11-24 00:25:13.769 :   spid5     清除 tempdb 数据库。
+2016-11-24 00:25:13.800 :   server    SQL Server 正在监听 TCP, Shared Memory, Named Pipes。
+2016-11-24 00:25:13.800 :   server    SQL Server 已准备好进行客户端连接
+2016-11-24 00:25:13.800 :   TryCon    启动成功, 尝试使用 Ado 连接.
+2016-11-24 00:25:13.894 :   spid8     启动数据库“kingforeiserverbasedata”。
+2016-11-24 00:25:13.894 :   spid9     启动数据库“manage”。
+2016-11-24 00:25:14.284 :   spid5     启动数据库“tempdb”。
+2016-11-24 00:25:14.378 :   spid3     恢复完成。
+2016-11-24 00:25:14.378 :   GSQLAdmin 您可以使用以下机器名连接绿色SQL。
+2016-11-24 00:25:14.378 :             本地“iZhn6ss22e6di3Z” 远程“120.24.191.9,1433” 远程“10.169.230.47,1433” 远程“169.254.25.129,1433” 本地“127.0.0.1,1433” 
+2016-11-24 00:25:14.440 :   TryCon    测试连接成功. 连接字符串: 
+2016-11-24 00:25:14.456 :             Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=(local)
+2016-11-24 00:25:14.456 :   SQLServer 启动完毕. 
+2016-11-24 00:25:14.456 :   GSQLAdmin 自动检测 D:\Mud3\Gsql\MyDB\ 中的数据库文件.
+2016-11-24 00:25:14.690 :   GSQLAdmin 检测完毕.
+2016-11-24 00:26:01.691 :   spid53    启动数据库“herocommon1”。
+2016-11-24 00:29:46.866 : ------[绿色 SQL Server]-------- Web: http://www.SuiSoft.cn;  QQ: 3860040;  Mail:szq993@163.com;  --------------------------------------
+2016-11-24 00:29:46.881 :   GSQLAdmin 管理器在 2016-11-24 00:29:46 启动.
+2016-11-24 00:29:46.881 :   Version   作者只保留本管理器的版权,其他附带文件版权归美国微软公司所有,本软件以技术研究为宗旨,请在下载本软件后24小时内删除附带的"SQLServer"文件或替换为您购买的正版"SQLServer"文件,否则后果自负. 作者不为您承担任何方面的任何责任.
+2016-11-24 00:29:46.944 :   GSQLAdmin 连接到现有通讯接口.
+2016-11-24 00:29:46.944 :   GSQLAdmin 读取旧日志.
+2016-11-24 00:29:46.944 :   MsVersion Microsoft SQL Server  2000 - 8.00.2039 (Intel X86) 
+2016-11-24 00:29:46.944 :   MsVersion May  3 2005 23:18:38 
+2016-11-24 00:29:46.944 :   MsVersion Copyright (c) 1988-2003 Microsoft Corporation
+2016-11-24 00:29:46.944 :   MsVersion Enterprise Edition on Windows NT 5.2 (Build 3790: Service Pack 2)
+2016-11-24 00:29:46.944 :   server    Copyright (C) 1988-2002 Microsoft Corporation.
+2016-11-24 00:29:46.944 :   server    保留所有权利。
+2016-11-24 00:29:46.944 :   server    服务器进程 ID 是 3488。
+2016-11-24 00:29:46.944 :   server    SQL Server 正在以优先级“normal”（已检测到 1 CPU）启动。
+2016-11-24 00:29:46.944 :   server    已为 thread 模式处理而配置了 SQL Server。
+2016-11-24 00:29:46.944 :   server    使用 dynamic 锁分配。[2500] 锁块，[5000] 锁所有者块。
+2016-11-24 00:29:46.944 :   server    尝试初始化分布式事务处理协调器。
+2016-11-24 00:29:46.944 :   spid3     启动数据库“master”。
+2016-11-24 00:29:46.944 :   server    正在使用“SSNETLIB.DLL”版本“8.0.2039”。
+2016-11-24 00:29:46.944 :   spid3     服务器名称是“iZhn6ss22e6di3Z”。
+2016-11-24 00:29:46.944 :   spid3     Skipping startup of clean database id 8
+2016-11-24 00:29:46.944 :   spid5     启动数据库“model”。
+2016-11-24 00:29:46.944 :   spid8     启动数据库“msdb”。
+2016-11-24 00:29:46.944 :   spid9     启动数据库“account”。
+2016-11-24 00:29:46.944 :   spid10    启动数据库“conlog”。
+2016-11-24 00:29:46.944 :   spid11    启动数据库“game1”。
+2016-11-24 00:29:46.944 :   server    SQL Server 正在监听 120.24.191.9: 1433。
+2016-11-24 00:29:46.944 :   server    SQL Server 正在监听 10.169.230.47: 1433。
+2016-11-24 00:29:46.944 :   server    SQL Server 正在监听 169.254.25.129: 1433。
+2016-11-24 00:29:46.944 :   server    SQL Server 正在监听 127.0.0.1: 1433。
+2016-11-24 00:29:46.944 :   spid5     清除 tempdb 数据库。
+2016-11-24 00:29:46.944 :   server    SQL Server 正在监听 TCP, Shared Memory, Named Pipes。
+2016-11-24 00:29:46.944 :   server    SQL Server 已准备好进行客户端连接
+2016-11-24 00:29:46.944 :   spid8     启动数据库“kingforeiserverbasedata”。
+2016-11-24 00:29:46.944 :   spid9     启动数据库“manage”。
+2016-11-24 00:29:46.944 :   spid5     启动数据库“tempdb”。
+2016-11-24 00:29:46.944 :   spid3     恢复完成。
+2016-11-24 00:29:46.944 :   spid53    启动数据库“herocommon1”。
+2016-11-24 00:29:46.944 :   TryCon    启动成功, 尝试使用 Ado 连接.
+2016-11-24 00:29:46.960 :   HotKey    成功注册热键 Win + F4 (启动SQL).
+2016-11-24 00:29:46.960 :   HotKey    成功注册热键 Win + F5 (停止SQL).
+2016-11-24 00:29:46.960 :   HotKey    成功注册热键 Win + F9 (显示管理器).
+2016-11-24 00:29:46.991 :   TryCon    测试连接成功. 连接字符串: 
+2016-11-24 00:29:46.991 :             Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=(local)
+2016-11-24 00:29:47.006 :   SQLServer 启动完毕. 
+2016-11-24 00:29:47.006 :   GSQLAdmin 自动检测 D:\Mud3\Gsql\MyDB\ 中的数据库文件.
+2016-11-24 00:29:47.038 :   GSQLAdmin 检测完毕.
+2016-11-24 00:33:28.728 : ------[绿色 SQL Server]-------- Web: http://www.SuiSoft.cn;  QQ: 3860040;  Mail:szq993@163.com;  --------------------------------------
+2016-11-24 00:33:28.916 :   GSQLAdmin 管理器在 2016-11-24 00:33:28 启动.
+2016-11-24 00:33:28.931 :   Version   作者只保留本管理器的版权,其他附带文件版权归美国微软公司所有,本软件以技术研究为宗旨,请在下载本软件后24小时内删除附带的"SQLServer"文件或替换为您购买的正版"SQLServer"文件,否则后果自负. 作者不为您承担任何方面的任何责任.
+2016-11-24 00:33:29.009 :   GSQLAdmin 连接到现有通讯接口.
+2016-11-24 00:33:29.009 :   GSQLAdmin 读取旧日志.
+2016-11-24 00:33:29.009 :   MsVersion Microsoft SQL Server  2000 - 8.00.2039 (Intel X86) 
+2016-11-24 00:33:29.009 :   MsVersion May  3 2005 23:18:38 
+2016-11-24 00:33:29.009 :   MsVersion Copyright (c) 1988-2003 Microsoft Corporation
+2016-11-24 00:33:29.009 :   MsVersion Enterprise Edition on Windows NT 5.2 (Build 3790: Service Pack 2)
+2016-11-24 00:33:29.025 :   server    Copyright (C) 1988-2002 Microsoft Corporation.
+2016-11-24 00:33:29.025 :   server    保留所有权利。
+2016-11-24 00:33:29.025 :   server    服务器进程 ID 是 3488。
+2016-11-24 00:33:29.025 :   server    SQL Server 正在以优先级“normal”（已检测到 1 CPU）启动。
+2016-11-24 00:33:29.025 :   server    已为 thread 模式处理而配置了 SQL Server。
+2016-11-24 00:33:29.025 :   server    使用 dynamic 锁分配。[2500] 锁块，[5000] 锁所有者块。
+2016-11-24 00:33:29.025 :   server    尝试初始化分布式事务处理协调器。
+2016-11-24 00:33:29.025 :   spid3     启动数据库“master”。
+2016-11-24 00:33:29.025 :   server    正在使用“SSNETLIB.DLL”版本“8.0.2039”。
+2016-11-24 00:33:29.025 :   spid3     服务器名称是“iZhn6ss22e6di3Z”。
+2016-11-24 00:33:29.025 :   spid3     Skipping startup of clean database id 8
+2016-11-24 00:33:29.025 :   spid5     启动数据库“model”。
+2016-11-24 00:33:29.025 :   spid8     启动数据库“msdb”。
+2016-11-24 00:33:29.025 :   spid9     启动数据库“account”。
+2016-11-24 00:33:29.025 :   spid10    启动数据库“conlog”。
+2016-11-24 00:33:29.025 :   spid11    启动数据库“game1”。
+2016-11-24 00:33:29.025 :   server    SQL Server 正在监听 120.24.191.9: 1433。
+2016-11-24 00:33:29.025 :   server    SQL Server 正在监听 10.169.230.47: 1433。
+2016-11-24 00:33:29.025 :   server    SQL Server 正在监听 169.254.25.129: 1433。
+2016-11-24 00:33:29.025 :   server    SQL Server 正在监听 127.0.0.1: 1433。
+2016-11-24 00:33:29.025 :   spid5     清除 tempdb 数据库。
+2016-11-24 00:33:29.025 :   server    SQL Server 正在监听 TCP, Shared Memory, Named Pipes。
+2016-11-24 00:33:29.025 :   server    SQL Server 已准备好进行客户端连接
+2016-11-24 00:33:29.025 :   spid8     启动数据库“kingforeiserverbasedata”。
+2016-11-24 00:33:29.025 :   spid9     启动数据库“manage”。
+2016-11-24 00:33:29.025 :   spid5     启动数据库“tempdb”。
+2016-11-24 00:33:29.025 :   spid3     恢复完成。
+2016-11-24 00:33:29.025 :   spid53    启动数据库“herocommon1”。
+2016-11-24 00:33:29.025 :   TryCon    启动成功, 尝试使用 Ado 连接.
+2016-11-24 00:33:29.041 :   HotKey    成功注册热键 Win + F4 (启动SQL).
+2016-11-24 00:33:29.041 :   HotKey    成功注册热键 Win + F5 (停止SQL).
+2016-11-24 00:33:29.041 :   HotKey    成功注册热键 Win + F9 (显示管理器).
+2016-11-24 00:33:29.166 :   TryCon    测试连接成功. 连接字符串: 
+2016-11-24 00:33:29.181 :             Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=(local)
+2016-11-24 00:33:29.181 :   SQLServer 启动完毕. 
+2016-11-24 00:33:29.181 :   GSQLAdmin 自动检测 D:\Mud3\GSQL\MyDB\ 中的数据库文件.
+2016-11-24 00:33:29.228 :   GSQLAdmin 检测完毕.
+2016-11-24 00:36:56.371 :   spid52    使用 'xpstar.dll' 版本 '2000.80.2039' 来执行扩展存储过程 'sp_MSgetversion'。
+2016-11-24 00:37:00.606 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:37:00.731 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:37:00.809 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:37:00.887 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:37:00.949 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:37:01.028 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:37:01.168 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:37:01.246 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:37:01.325 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:37:01.418 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:37:05.887 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:37:05.965 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:37:06.059 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:37:06.121 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:37:06.231 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:37:06.278 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:37:35.981 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:37:36.075 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:37:36.153 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:37:36.231 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:37:36.309 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:37:36.387 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:37:56.685 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:37:56.778 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:37:56.841 :   spid52    启动数据库“herocommon1”。
+2016-11-24 00:44:30.580 :   spid65    启动数据库“herocommon1”。
+2016-11-24 21:57:39.950 : ------[绿色 SQL Server]-------- Web: http://www.SuiSoft.cn;  QQ: 3860040;  Mail:szq993@163.com;  --------------------------------------
+2016-11-24 21:57:47.622 :   GSQLAdmin 管理器在 2016-11-24 21:57:37 启动.
+2016-11-24 21:57:47.622 :   Version   作者只保留本管理器的版权,其他附带文件版权归美国微软公司所有,本软件以技术研究为宗旨,请在下载本软件后24小时内删除附带的"SQLServer"文件或替换为您购买的正版"SQLServer"文件,否则后果自负. 作者不为您承担任何方面的任何责任.
+2016-11-24 21:57:49.888 :   GSQLAdmin 连接到现有通讯接口.
+2016-11-24 21:57:49.888 :   GSQLAdmin 读取旧日志.
+2016-11-24 21:57:49.888 :   MsVersion Microsoft SQL Server  2000 - 8.00.2039 (Intel X86) 
+2016-11-24 21:57:49.888 :   MsVersion May  3 2005 23:18:38 
+2016-11-24 21:57:49.888 :   MsVersion Copyright (c) 1988-2003 Microsoft Corporation
+2016-11-24 21:57:49.888 :   MsVersion Enterprise Edition on Windows NT 5.2 (Build 3790: Service Pack 2)
+2016-11-24 21:57:49.888 :   server    Copyright (C) 1988-2002 Microsoft Corporation.
+2016-11-24 21:57:49.888 :   server    保留所有权利。
+2016-11-24 21:57:49.888 :   server    服务器进程 ID 是 3488。
+2016-11-24 21:57:49.888 :   server    SQL Server 正在以优先级“normal”（已检测到 1 CPU）启动。
+2016-11-24 21:57:49.888 :   server    已为 thread 模式处理而配置了 SQL Server。
+2016-11-24 21:57:49.888 :   server    使用 dynamic 锁分配。[2500] 锁块，[5000] 锁所有者块。
+2016-11-24 21:57:49.888 :   server    尝试初始化分布式事务处理协调器。
+2016-11-24 21:57:49.888 :   spid3     启动数据库“master”。
+2016-11-24 21:57:49.888 :   server    正在使用“SSNETLIB.DLL”版本“8.0.2039”。
+2016-11-24 21:57:49.888 :   spid3     服务器名称是“iZhn6ss22e6di3Z”。
+2016-11-24 21:57:49.888 :   spid3     Skipping startup of clean database id 8
+2016-11-24 21:57:49.888 :   spid5     启动数据库“model”。
+2016-11-24 21:57:49.888 :   spid8     启动数据库“msdb”。
+2016-11-24 21:57:49.888 :   spid9     启动数据库“account”。
+2016-11-24 21:57:49.888 :   spid10    启动数据库“conlog”。
+2016-11-24 21:57:49.888 :   spid11    启动数据库“game1”。
+2016-11-24 21:57:49.888 :   server    SQL Server 正在监听 120.24.191.9: 1433。
+2016-11-24 21:57:49.888 :   server    SQL Server 正在监听 10.169.230.47: 1433。
+2016-11-24 21:57:49.888 :   server    SQL Server 正在监听 169.254.25.129: 1433。
+2016-11-24 21:57:49.888 :   server    SQL Server 正在监听 127.0.0.1: 1433。
+2016-11-24 21:57:49.888 :   spid5     清除 tempdb 数据库。
+2016-11-24 21:57:49.888 :   server    SQL Server 正在监听 TCP, Shared Memory, Named Pipes。
+2016-11-24 21:57:49.888 :   server    SQL Server 已准备好进行客户端连接
+2016-11-24 21:57:49.888 :   spid8     启动数据库“kingforeiserverbasedata”。
+2016-11-24 21:57:49.888 :   spid9     启动数据库“manage”。
+2016-11-24 21:57:49.888 :   spid5     启动数据库“tempdb”。
+2016-11-24 21:57:49.888 :   spid3     恢复完成。
+2016-11-24 21:57:49.888 :   spid53    启动数据库“herocommon1”。
+2016-11-24 21:57:49.888 :   spid52    使用 'xpstar.dll' 版本 '2000.80.2039' 来执行扩展存储过程 'sp_MSgetversion'。
+2016-11-24 21:57:49.888 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.888 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   spid52    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   spid65    启动数据库“herocommon1”。
+2016-11-24 21:57:49.903 :   TryCon    启动成功, 尝试使用 Ado 连接.
+2016-11-24 21:57:51.216 :   HotKey    成功注册热键 Win + F4 (启动SQL).
+2016-11-24 21:57:51.216 :   HotKey    成功注册热键 Win + F5 (停止SQL).
+2016-11-24 21:57:51.216 :   HotKey    成功注册热键 Win + F9 (显示管理器).
+2016-11-24 21:57:59.997 :   TryCon    测试连接成功. 连接字符串: 
+2016-11-24 21:57:59.997 :             Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=(local)
+2016-11-24 21:57:59.997 :   SQLServer 启动完毕. 
+2016-11-24 21:58:00.185 :   GSQLAdmin 自动检测 D:\Mud3\Gsql\MyDB\ 中的数据库文件.
+2016-11-24 21:58:01.888 :   GSQLAdmin 检测完毕.
+2016-11-26 20:57:34.365 : ------[绿色 SQL Server]-------- Web: http://www.SuiSoft.cn;  QQ: 3860040;  Mail:szq993@163.com;  --------------------------------------
+2016-11-26 20:57:34.427 :   GSQLAdmin 管理器在 2016-11-26 20:57:34 启动.
+2016-11-26 20:57:34.427 :   Version   作者只保留本管理器的版权,其他附带文件版权归美国微软公司所有,本软件以技术研究为宗旨,请在下载本软件后24小时内删除附带的"SQLServer"文件或替换为您购买的正版"SQLServer"文件,否则后果自负. 作者不为您承担任何方面的任何责任.
+2016-11-26 20:57:34.505 :   GSQLAdmin 自主创造通讯接口成功.
+2016-11-26 20:57:34.505 :   HotKey    成功注册热键 Win + F4 (启动SQL).
+2016-11-26 20:57:34.505 :   HotKey    成功注册热键 Win + F5 (停止SQL).
+2016-11-26 20:57:34.505 :   HotKey    成功注册热键 Win + F9 (显示管理器).
+2016-11-26 20:57:34.943 :   SQLServer 开始启动.
+2016-11-26 20:57:34.943 :   Key       密匙检测成功.
+2016-11-26 20:57:34.943 :   Virtual   虚拟文件环境.
+2016-11-26 20:57:34.958 :   Virtual   虚拟注册表环境.
+2016-11-26 20:57:35.037 :   Virtual   虚拟API环境.
+2016-11-26 20:57:35.068 :   GSQLAdmin 载入 SQLServer 主体.
+2016-11-26 20:57:35.318 :   MsVersion Microsoft SQL Server  2000 - 8.00.2039 (Intel X86) 
+2016-11-26 20:57:35.318 :   MsVersion May  3 2005 23:18:38 
+2016-11-26 20:57:35.318 :   MsVersion Copyright (c) 1988-2003 Microsoft Corporation
+2016-11-26 20:57:35.318 :   MsVersion Enterprise Edition on Windows NT 5.2 (Build 3790: Service Pack 2)
+2016-11-26 20:57:35.318 :   server    Copyright (C) 1988-2002 Microsoft Corporation.
+2016-11-26 20:57:35.318 :   server    保留所有权利。
+2016-11-26 20:57:35.318 :   server    服务器进程 ID 是 2448。
+2016-11-26 20:57:35.365 :   server    SQL Server 正在以优先级“normal”（已检测到 1 CPU）启动。
+2016-11-26 20:57:35.412 :   server    已为 thread 模式处理而配置了 SQL Server。
+2016-11-26 20:57:35.412 :   server    使用 dynamic 锁分配。[2500] 锁块，[5000] 锁所有者块。
+2016-11-26 20:57:35.474 :   server    尝试初始化分布式事务处理协调器。
+2016-11-26 20:57:36.505 :   spid3     启动数据库“master”。
+2016-11-26 20:57:36.708 :   spid3     0 个事务在数据库“master”中后滚 (1)。
+2016-11-26 20:57:36.708 :   spid3     恢复操作正在对数据库 'master'（1）执行检查点操作。
+2016-11-26 20:57:36.896 :   server    正在使用“SSNETLIB.DLL”版本“8.0.2039”。
+2016-11-26 20:57:36.896 :   spid5     启动数据库“model”。
+2016-11-26 20:57:36.896 :   spid3     服务器名称是“iZhn6ss22e6di3Z”。
+2016-11-26 20:57:36.912 :   spid8     启动数据库“msdb”。
+2016-11-26 20:57:36.912 :   spid9     启动数据库“account”。
+2016-11-26 20:57:36.912 :   spid10    启动数据库“conlog”。
+2016-11-26 20:57:36.912 :   spid10    udopen: 创建/打开物理设备 D:\MUD3\GSQL\Data\conlog.mdf 时发生操作系统错误 2(系统找不到指定的文件。)。
+2016-11-26 20:57:36.927 :   server    SQL Server 正在监听 120.24.191.9: 1433。
+2016-11-26 20:57:36.927 :   server    SQL Server 正在监听 10.169.230.47: 1433。
+2016-11-26 20:57:36.927 :   server    SQL Server 正在监听 169.254.25.129: 1433。
+2016-11-26 20:57:36.927 :   server    SQL Server 正在监听 127.0.0.1: 1433。
+2016-11-26 20:57:36.927 :   spid10    FCB::Open failed: 未能为虚拟设备号 (VDN) 1 打开设备 D:\MUD3\GSQL\Data\conlog.mdf。
+2016-11-26 20:57:36.927 :   spid11    启动数据库“game1”。
+2016-11-26 20:57:36.927 :   spid11    udopen: 创建/打开物理设备 D:\MUD3\GSQL\Data\game1.mdf 时发生操作系统错误 2(系统找不到指定的文件。)。
+2016-11-26 20:57:36.927 :   spid11    FCB::Open failed: 未能为虚拟设备号 (VDN) 1 打开设备 D:\MUD3\GSQL\Data\game1.mdf。
+2016-11-26 20:57:36.943 :   spid11    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\game1.mdf' 可能有误。
+2016-11-26 20:57:36.974 :   spid10    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\conlog.mdf' 可能有误。
+2016-11-26 20:57:36.974 :   spid10    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\conlog_log.LDF' 可能有误。
+2016-11-26 20:57:36.974 :   server    SQL Server 正在监听 TCP, Shared Memory, Named Pipes。
+2016-11-26 20:57:36.974 :   server    SQL Server 已准备好进行客户端连接
+2016-11-26 20:57:36.974 :   TryCon    启动成功, 尝试使用 Ado 连接.
+2016-11-26 20:57:37.146 :   spid10    启动数据库“herocommon1”。
+2016-11-26 20:57:37.146 :   spid10    udopen: 创建/打开物理设备 D:\MUD3\GSQL\Data\herocommon1.mdf 时发生操作系统错误 2(系统找不到指定的文件。)。
+2016-11-26 20:57:37.146 :   spid10    FCB::Open failed: 未能为虚拟设备号 (VDN) 1 打开设备 D:\MUD3\GSQL\Data\herocommon1.mdf。
+2016-11-26 20:57:37.146 :   spid11    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\game1_log.LDF' 可能有误。
+2016-11-26 20:57:37.146 :   spid11    启动数据库“kingforeiserverbasedata”。
+2016-11-26 20:57:37.146 :   spid11    udopen: 创建/打开物理设备 D:\MUD3\GSQL\Data\kingforeiserverbasedata.mdf 时发生操作系统错误 2(系统找不到指定的文件。)。
+2016-11-26 20:57:37.146 :   spid11    FCB::Open failed: 未能为虚拟设备号 (VDN) 1 打开设备 D:\MUD3\GSQL\Data\kingforeiserverbasedata.mdf。
+2016-11-26 20:57:37.146 :   spid11    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\kingforeiserverbasedata.mdf' 可能有误。
+2016-11-26 20:57:37.162 :   spid11    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\kingforeiserverbasedata_log.LDF' 可能有误。
+2016-11-26 20:57:37.162 :   spid11    启动数据库“manage”。
+2016-11-26 20:57:37.162 :   spid11    udopen: 创建/打开物理设备 D:\MUD3\GSQL\Data\manage.mdf 时发生操作系统错误 2(系统找不到指定的文件。)。
+2016-11-26 20:57:37.162 :   spid11    FCB::Open failed: 未能为虚拟设备号 (VDN) 1 打开设备 D:\MUD3\GSQL\Data\manage.mdf。
+2016-11-26 20:57:37.162 :   spid11    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\manage.mdf' 可能有误。
+2016-11-26 20:57:37.162 :   spid11    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\manage_log.LDF' 可能有误。
+2016-11-26 20:57:37.162 :   spid10    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\herocommon1.mdf' 可能有误。
+2016-11-26 20:57:37.162 :   spid10    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\herocommon1_log.LDF' 可能有误。
+2016-11-26 20:57:37.177 :   spid5     清除 tempdb 数据库。
+2016-11-26 20:57:37.537 :   spid5     启动数据库“tempdb”。
+2016-11-26 20:57:37.646 :   spid3     恢复完成。
+2016-11-26 20:57:37.646 :   GSQLAdmin 您可以使用以下机器名连接绿色SQL。
+2016-11-26 20:57:37.646 :             本地“iZhn6ss22e6di3Z” 远程“120.24.191.9,1433” 远程“10.169.230.47,1433” 远程“169.254.25.129,1433” 本地“127.0.0.1,1433” 
+2016-11-26 20:57:37.646 :   TryCon    测试连接成功. 连接字符串: 
+2016-11-26 20:57:37.662 :             Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=(local)
+2016-11-26 20:57:37.662 :   SQLServer 启动完毕. 
+2016-11-26 20:57:37.662 :   GSQLAdmin 自动检测 D:\Mud3-1.45\GSQL\MyDB\ 中的数据库文件.
+2016-11-26 20:57:38.052 :   GSQLAdmin 检测完毕.
+2016-11-26 20:57:41.756 :   spid51    服务器已按要求关闭。
+2016-11-26 20:57:42.896 :   SQLServer 结束.
+2016-11-26 20:57:46.349 :   GSQLAdmin 关闭接口.
+2016-11-26 20:57:46.349 :   GSQLAdmin 管理器关闭.
+2016-11-26 21:00:12.793 : ------[绿色 SQL Server]-------- Web: http://www.SuiSoft.cn;  QQ: 3860040;  Mail:szq993@163.com;  --------------------------------------
+2016-11-26 21:00:12.871 :   GSQLAdmin 管理器在 2016-11-26 21:00:12 启动.
+2016-11-26 21:00:12.871 :   Version   作者只保留本管理器的版权,其他附带文件版权归美国微软公司所有,本软件以技术研究为宗旨,请在下载本软件后24小时内删除附带的"SQLServer"文件或替换为您购买的正版"SQLServer"文件,否则后果自负. 作者不为您承担任何方面的任何责任.
+2016-11-26 21:00:12.902 :   GSQLAdmin 自主创造通讯接口成功.
+2016-11-26 21:00:12.902 :   HotKey    成功注册热键 Win + F4 (启动SQL).
+2016-11-26 21:00:12.902 :   HotKey    成功注册热键 Win + F5 (停止SQL).
+2016-11-26 21:00:12.902 :   HotKey    成功注册热键 Win + F9 (显示管理器).
+2016-11-26 21:00:13.589 :   SQLServer 开始启动.
+2016-11-26 21:00:13.589 :   Key       密匙检测成功.
+2016-11-26 21:00:13.589 :   Virtual   虚拟文件环境.
+2016-11-26 21:00:13.589 :   Virtual   虚拟注册表环境.
+2016-11-26 21:00:13.605 :   Virtual   虚拟API环境.
+2016-11-26 21:00:13.621 :   GSQLAdmin 载入 SQLServer 主体.
+2016-11-26 21:00:13.793 :   MsVersion Microsoft SQL Server  2000 - 8.00.2039 (Intel X86) 
+2016-11-26 21:00:13.793 :   MsVersion May  3 2005 23:18:38 
+2016-11-26 21:00:13.793 :   MsVersion Copyright (c) 1988-2003 Microsoft Corporation
+2016-11-26 21:00:13.793 :   MsVersion Enterprise Edition on Windows NT 5.2 (Build 3790: Service Pack 2)
+2016-11-26 21:00:13.793 :   server    Copyright (C) 1988-2002 Microsoft Corporation.
+2016-11-26 21:00:13.793 :   server    保留所有权利。
+2016-11-26 21:00:13.793 :   server    服务器进程 ID 是 3164。
+2016-11-26 21:00:13.855 :   server    SQL Server 正在以优先级“normal”（已检测到 1 CPU）启动。
+2016-11-26 21:00:13.918 :   server    已为 thread 模式处理而配置了 SQL Server。
+2016-11-26 21:00:13.918 :   server    使用 dynamic 锁分配。[2500] 锁块，[5000] 锁所有者块。
+2016-11-26 21:00:14.058 :   server    尝试初始化分布式事务处理协调器。
+2016-11-26 21:00:16.058 :   spid3     启动数据库“master”。
+2016-11-26 21:00:16.168 :   server    正在使用“SSNETLIB.DLL”版本“8.0.2039”。
+2016-11-26 21:00:16.183 :   server    SQL Server 正在监听 120.24.191.9: 1433。
+2016-11-26 21:00:16.183 :   server    SQL Server 正在监听 10.169.230.47: 1433。
+2016-11-26 21:00:16.183 :   server    SQL Server 正在监听 169.254.25.129: 1433。
+2016-11-26 21:00:16.183 :   server    SQL Server 正在监听 127.0.0.1: 1433。
+2016-11-26 21:00:16.183 :   spid3     服务器名称是“iZhn6ss22e6di3Z”。
+2016-11-26 21:00:16.183 :   spid5     启动数据库“model”。
+2016-11-26 21:00:16.183 :   server    SQL Server 正在监听 TCP, Shared Memory, Named Pipes。
+2016-11-26 21:00:16.199 :   server    SQL Server 已准备好进行客户端连接
+2016-11-26 21:00:16.199 :   TryCon    启动成功, 尝试使用 Ado 连接.
+2016-11-26 21:00:16.199 :   spid8     启动数据库“msdb”。
+2016-11-26 21:00:16.199 :   spid9     启动数据库“account”。
+2016-11-26 21:00:16.199 :   spid9     udopen: 创建/打开物理设备 D:\MUD3\GSQL\Data\account.mdf 时发生操作系统错误 2(系统找不到指定的文件。)。
+2016-11-26 21:00:16.215 :   spid9     FCB::Open failed: 未能为虚拟设备号 (VDN) 1 打开设备 D:\MUD3\GSQL\Data\account.mdf。
+2016-11-26 21:00:16.215 :   spid10    启动数据库“conlog”。
+2016-11-26 21:00:16.215 :   spid10    udopen: 创建/打开物理设备 D:\MUD3\GSQL\Data\conlog.mdf 时发生操作系统错误 2(系统找不到指定的文件。)。
+2016-11-26 21:00:16.215 :   spid10    FCB::Open failed: 未能为虚拟设备号 (VDN) 1 打开设备 D:\MUD3\GSQL\Data\conlog.mdf。
+2016-11-26 21:00:16.215 :   spid11    启动数据库“game1”。
+2016-11-26 21:00:16.215 :   spid11    udopen: 创建/打开物理设备 D:\MUD3\GSQL\Data\game1.mdf 时发生操作系统错误 2(系统找不到指定的文件。)。
+2016-11-26 21:00:16.230 :   spid11    FCB::Open failed: 未能为虚拟设备号 (VDN) 1 打开设备 D:\MUD3\GSQL\Data\game1.mdf。
+2016-11-26 21:00:16.246 :   spid9     设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\account.mdf' 可能有误。
+2016-11-26 21:00:16.246 :   spid10    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\conlog.mdf' 可能有误。
+2016-11-26 21:00:16.246 :   spid11    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\game1.mdf' 可能有误。
+2016-11-26 21:00:16.261 :   spid9     设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\account_log.LDF' 可能有误。
+2016-11-26 21:00:16.261 :   spid10    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\conlog_log.LDF' 可能有误。
+2016-11-26 21:00:16.261 :   spid11    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\game1_log.LDF' 可能有误。
+2016-11-26 21:00:16.261 :   TryCon    测试连接成功. 连接字符串: 
+2016-11-26 21:00:16.261 :             Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=(local)
+2016-11-26 21:00:16.261 :   SQLServer 启动完毕. 
+2016-11-26 21:00:16.277 :   GSQLAdmin 自动检测 D:\mud3\GSQL\MyDB\ 中的数据库文件.
+2016-11-26 21:00:16.480 :   RunSqlErr "exec Sp_attach_db 'tempdb', 'D:\mud3\GSQL\Data\tempdb.mdf', 'D:\mud3\GSQL\Data\templog.ldf'" 数据库 'tempdb' 已存在。
+2016-11-26 21:00:16.480 :   GSQLAdmin 附加数据库 "D:\mud3\GSQL\MyDB\tempdb.mdf" 遇到错误：数据库 'tempdb' 已存在。
+2016-11-26 21:00:16.527 :   RunSqlErr "exec Sp_attach_db 'msdb', 'D:\mud3\GSQL\Data\msdbdata.mdf', 'D:\mud3\GSQL\Data\MSDBLog.ldf'" 数据库 'msdb' 已存在。
+2016-11-26 21:00:16.527 :   GSQLAdmin 附加数据库 "D:\mud3\GSQL\MyDB\msdbdata.mdf" 遇到错误：数据库 'msdb' 已存在。
+2016-11-26 21:00:16.543 :   RunSqlErr "exec Sp_attach_db 'model', 'D:\mud3\GSQL\Data\model.mdf', 'D:\mud3\GSQL\Data\modellog.ldf'" 数据库 'model' 已存在。
+2016-11-26 21:00:16.543 :   GSQLAdmin 附加数据库 "D:\mud3\GSQL\MyDB\model.mdf" 遇到错误：数据库 'model' 已存在。
+2016-11-26 21:00:17.433 :   GSQLAdmin 附加数据库 "D:\mud3\GSQL\MyDB\master.mdf" 时发现数据库中已存在对应数据库 "master".
+2016-11-26 21:00:18.449 :   GSQLAdmin 附加数据库 [hero3g] 完成.
+2016-11-26 21:00:18.668 :   GSQLAdmin 附加数据库 [game3g] 完成.
+2016-11-26 21:00:18.699 :   GSQLAdmin 附加数据库 "D:\mud3\GSQL\MyDB\Account.MDF" 时发现数据库中已存在对应数据库 "Account".
+2016-11-26 21:00:18.699 :   GSQLAdmin 检测完毕.
+2016-11-26 21:00:18.762 :   spid9     启动数据库“herocommon1”。
+2016-11-26 21:00:18.762 :   spid9     udopen: 创建/打开物理设备 D:\MUD3\GSQL\Data\herocommon1.mdf 时发生操作系统错误 2(系统找不到指定的文件。)。
+2016-11-26 21:00:18.762 :   spid9     FCB::Open failed: 未能为虚拟设备号 (VDN) 1 打开设备 D:\MUD3\GSQL\Data\herocommon1.mdf。
+2016-11-26 21:00:18.762 :   spid9     设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\herocommon1.mdf' 可能有误。
+2016-11-26 21:00:18.762 :   spid9     设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\herocommon1_log.LDF' 可能有误。
+2016-11-26 21:00:18.762 :   spid10    启动数据库“kingforeiserverbasedata”。
+2016-11-26 21:00:18.762 :   spid10    udopen: 创建/打开物理设备 D:\MUD3\GSQL\Data\kingforeiserverbasedata.mdf 时发生操作系统错误 2(系统找不到指定的文件。)。
+2016-11-26 21:00:18.762 :   spid10    FCB::Open failed: 未能为虚拟设备号 (VDN) 1 打开设备 D:\MUD3\GSQL\Data\kingforeiserverbasedata.mdf。
+2016-11-26 21:00:18.762 :   spid10    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\kingforeiserverbasedata.mdf' 可能有误。
+2016-11-26 21:00:18.762 :   spid10    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\kingforeiserverbasedata_log.LDF' 可能有误。
+2016-11-26 21:00:18.762 :   spid11    启动数据库“manage”。
+2016-11-26 21:00:18.762 :   spid11    udopen: 创建/打开物理设备 D:\MUD3\GSQL\Data\manage.mdf 时发生操作系统错误 2(系统找不到指定的文件。)。
+2016-11-26 21:00:18.762 :   spid11    FCB::Open failed: 未能为虚拟设备号 (VDN) 1 打开设备 D:\MUD3\GSQL\Data\manage.mdf。
+2016-11-26 21:00:18.762 :   spid11    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\manage.mdf' 可能有误。
+2016-11-26 21:00:18.762 :   spid11    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\manage_log.LDF' 可能有误。
+2016-11-26 21:00:18.762 :   spid5     清除 tempdb 数据库。
+2016-11-26 21:00:18.762 :   spid5     启动数据库“tempdb”。
+2016-11-26 21:00:18.762 :   spid3     恢复完成。
+2016-11-26 21:00:18.762 :   GSQLAdmin 您可以使用以下机器名连接绿色SQL。
+2016-11-26 21:00:18.762 :             远程“120.24.191.9,1433” 远程“10.169.230.47,1433” 远程“169.254.25.129,1433” 本地“127.0.0.1,1433” 本地“iZhn6ss22e6di3Z” 
+2016-11-26 21:00:18.762 :   spid51    启动数据库“hero3g”。
+2016-11-26 21:00:18.762 :   spid51    启动数据库“game3g”。
+2016-11-26 21:01:57.765 :   spid51    启动数据库“Account”。
+2016-11-26 21:02:05.984 :   spid51    启动数据库“game3g”。
+2016-11-26 21:02:12.141 :   spid51    启动数据库“hero3g”。
+2016-11-27 00:44:40.798 :   spid72    使用 'xpstar.dll' 版本 '2000.80.2039' 来执行扩展存储过程 'sp_MSgetversion'。
+2016-11-27 13:48:35.589 : ------[绿色 SQL Server]-------- Web: http://www.SuiSoft.cn;  QQ: 3860040;  Mail:szq993@163.com;  --------------------------------------
+2016-11-27 13:48:35.933 :   GSQLAdmin 管理器在 2016-11-27 13:48:35 启动.
+2016-11-27 13:48:35.933 :   Version   作者只保留本管理器的版权,其他附带文件版权归美国微软公司所有,本软件以技术研究为宗旨,请在下载本软件后24小时内删除附带的"SQLServer"文件或替换为您购买的正版"SQLServer"文件,否则后果自负. 作者不为您承担任何方面的任何责任.
+2016-11-27 13:48:36.199 :   GSQLAdmin 自主创造通讯接口成功.
+2016-11-27 13:48:36.199 :   HotKey    成功注册热键 Win + F4 (启动SQL).
+2016-11-27 13:48:36.199 :   HotKey    成功注册热键 Win + F5 (停止SQL).
+2016-11-27 13:48:36.199 :   HotKey    成功注册热键 Win + F9 (显示管理器).
+2016-11-27 13:48:36.495 :   SQLServer 开始启动.
+2016-11-27 13:48:36.495 :   Key       密匙检测成功.
+2016-11-27 13:48:36.495 :   Virtual   虚拟文件环境.
+2016-11-27 13:48:36.495 :   Virtual   虚拟注册表环境.
+2016-11-27 13:48:37.261 :   Virtual   虚拟API环境.
+2016-11-27 13:48:37.261 :   GSQLAdmin 载入 SQLServer 主体.
+2016-11-27 13:48:37.261 :   MsVersion Microsoft SQL Server  2000 - 8.00.2039 (Intel X86) 
+2016-11-27 13:48:37.261 :   MsVersion May  3 2005 23:18:38 
+2016-11-27 13:48:37.261 :   MsVersion Copyright (c) 1988-2003 Microsoft Corporation
+2016-11-27 13:48:37.261 :   MsVersion Enterprise Edition on Windows NT 5.2 (Build 3790: Service Pack 2)
+2016-11-27 13:48:37.261 :   server    Copyright (C) 1988-2002 Microsoft Corporation.
+2016-11-27 13:48:37.261 :   server    保留所有权利。
+2016-11-27 13:48:37.261 :   server    服务器进程 ID 是 1540。
+2016-11-27 13:48:37.261 :   server    SQL Server 正在以优先级“normal”（已检测到 1 CPU）启动。
+2016-11-27 13:48:37.667 :   server    已为 thread 模式处理而配置了 SQL Server。
+2016-11-27 13:48:37.667 :   server    使用 dynamic 锁分配。[2500] 锁块，[5000] 锁所有者块。
+2016-11-27 13:48:37.667 :   server    尝试初始化分布式事务处理协调器。
+2016-11-27 13:48:39.402 :   spid3     启动数据库“master”。
+2016-11-27 13:48:39.683 :   spid3     0 个事务在数据库“master”中后滚 (1)。
+2016-11-27 13:48:39.683 :   spid3     恢复操作正在对数据库 'master'（1）执行检查点操作。
+2016-11-27 13:48:39.839 :   server    正在使用“SSNETLIB.DLL”版本“8.0.2039”。
+2016-11-27 13:48:39.839 :   spid3     服务器名称是“iZhn6ss22e6di3Z”。
+2016-11-27 13:48:39.839 :   spid5     启动数据库“model”。
+2016-11-27 13:48:39.855 :   spid8     启动数据库“msdb”。
+2016-11-27 13:48:39.855 :   spid9     启动数据库“Account”。
+2016-11-27 13:48:39.855 :   spid10    启动数据库“game3g”。
+2016-11-27 13:48:39.855 :   spid11    启动数据库“hero3g”。
+2016-11-27 13:48:39.933 :   server    SQL Server 正在监听 120.24.191.9: 1433。
+2016-11-27 13:48:39.933 :   server    SQL Server 正在监听 10.169.230.47: 1433。
+2016-11-27 13:48:39.933 :   server    SQL Server 正在监听 169.254.25.129: 1433。
+2016-11-27 13:48:39.933 :   server    SQL Server 正在监听 127.0.0.1: 1433。
+2016-11-27 13:48:40.027 :   spid11    前滚了 114 个事务（在数据库 'hero3g'（7）中。
+2016-11-27 13:48:40.027 :   server    SQL Server 正在监听 TCP, Shared Memory, Named Pipes。
+2016-11-27 13:48:40.027 :   server    SQL Server 已准备好进行客户端连接
+2016-11-27 13:48:40.027 :   TryCon    启动成功, 尝试使用 Ado 连接.
+2016-11-27 13:48:40.121 :   spid11    回滚了 0 个事务（在数据库 'hero3g'（7）中。
+2016-11-27 13:48:40.121 :   spid10    前滚了 21 个事务（在数据库 'game3g'（6）中。
+2016-11-27 13:48:40.121 :   spid10    回滚了 0 个事务（在数据库 'game3g'（6）中。
+2016-11-27 13:48:40.121 :   spid11    恢复操作正在对数据库 'hero3g'（7）执行检查点操作。
+2016-11-27 13:48:40.121 :   spid10    恢复操作正在对数据库 'game3g'（6）执行检查点操作。
+2016-11-27 13:48:40.121 :   spid5     清除 tempdb 数据库。
+2016-11-27 13:48:40.339 :   TryCon    测试连接成功. 连接字符串: 
+2016-11-27 13:48:40.339 :             Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=(local)
+2016-11-27 13:48:40.339 :   SQLServer 启动完毕. 
+2016-11-27 13:48:40.339 :   GSQLAdmin 自动检测 D:\mud3\GSQL\MyDB\ 中的数据库文件.
+2016-11-27 13:48:41.074 :   RunSqlErr "exec Sp_attach_db 'tempdb', 'D:\mud3\GSQL\Data\tempdb.mdf', 'D:\mud3\GSQL\Data\templog.ldf'" 数据库 'tempdb' 已存在。
+2016-11-27 13:48:41.074 :   GSQLAdmin 附加数据库 "D:\mud3\GSQL\MyDB\tempdb.mdf" 遇到错误：数据库 'tempdb' 已存在。
+2016-11-27 13:48:41.105 :   RunSqlErr "exec Sp_attach_db 'msdb', 'D:\mud3\GSQL\Data\msdbdata.mdf', 'D:\mud3\GSQL\Data\MSDBLog.ldf'" 数据库 'msdb' 已存在。
+2016-11-27 13:48:41.105 :   GSQLAdmin 附加数据库 "D:\mud3\GSQL\MyDB\msdbdata.mdf" 遇到错误：数据库 'msdb' 已存在。
+2016-11-27 13:48:41.136 :   RunSqlErr "exec Sp_attach_db 'model', 'D:\mud3\GSQL\Data\model.mdf', 'D:\mud3\GSQL\Data\modellog.ldf'" 数据库 'model' 已存在。
+2016-11-27 13:48:41.152 :   GSQLAdmin 附加数据库 "D:\mud3\GSQL\MyDB\model.mdf" 遇到错误：数据库 'model' 已存在。
+2016-11-27 13:48:41.183 :   GSQLAdmin 附加数据库 "D:\mud3\GSQL\MyDB\master.mdf" 时发现数据库中已存在对应数据库 "master".
+2016-11-27 13:48:41.246 :   GSQLAdmin 附加数据库 "D:\mud3\GSQL\MyDB\Account.MDF" 时发现数据库中已存在对应数据库 "Account".
+2016-11-27 13:48:41.261 :   GSQLAdmin 检测完毕.
+2016-11-27 13:48:41.339 :   spid5     启动数据库“tempdb”。
+2016-11-27 13:48:41.339 :   spid9     前滚了 54 个事务（在数据库 'Account'（5）中。
+2016-11-27 13:48:41.339 :   spid9     回滚了 0 个事务（在数据库 'Account'（5）中。
+2016-11-27 13:48:41.339 :   spid9     恢复操作正在对数据库 'Account'（5）执行检查点操作。
+2016-11-27 13:48:41.464 :   spid3     恢复完成。
+2016-11-27 13:48:41.464 :   GSQLAdmin 您可以使用以下机器名连接绿色SQL。
+2016-11-27 13:48:41.464 :             本地“iZhn6ss22e6di3Z” 远程“120.24.191.9,1433” 远程“10.169.230.47,1433” 远程“169.254.25.129,1433” 本地“127.0.0.1,1433” 
+2016-11-27 13:49:11.121 :   spid52    使用 'xpstar.dll' 版本 '2000.80.2039' 来执行扩展存储过程 'sp_MSgetversion'。

@@ -1,0 +1,70 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@BossQuest_ChaXun]
+{
+#ACT
+LoadValue D6 "ParamControl\任务记录.ini" %USERNAME 任务编号
+LoadValue D5 "ParamControl\任务记录.ini" %USERNAME 任务类型
+
+LoadValue D1 "ParamControl\任务查询.ini" %D6 金币1
+LoadValue D2 "ParamControl\任务查询.ini" %D6 金币2
+LoadValue A2 "ParamControl\任务查询.ini" %D6 物品1
+LoadValue A3 "ParamControl\任务查询.ini" %D6 物品2
+
+LoadValue A0 "ParamControl\任务记录.ini" %USERNAME 任务进度
+LoadValue A4 "ParamControl\任务记录.ini" %USERNAME 任务怪物
+LoadValue D0 "ParamControl\任务记录.ini" %USERNAME 怪物数量
+LoadValue D3 "ParamControl\任务记录.ini" %USERNAME 怪物总数
+LoadValue A7 "ParamControl\任务记录.ini" %USERNAME 任务地图
+LoadValue D7 "ParamControl\任务记录.ini" %USERNAME 任务经验
+
+#IF
+Equal D5 1
+#ACT
+#SAY
+任务内容:到{FCOLOR/10}<$OUTPUT(A7)>{FCOLOR/12}打败怪物{FCOLOR/10}<$OUTPUT(A4)>{FCOLOR/12}{FCOLOR/1}[<$OUTPUT(D3)>]{FCOLOR/12}只 \\
+任务进度:杀 [{FCOLOR/10}<$OUTPUT(A4)>{FCOLOR/12}] 进度{FCOLOR/15} <$OUTPUT(D0)>/<$OUTPUT(D3)>{FCOLOR/12}\\
+完成任务将获得以下奖励的其中一种:\\
+1.{FCOLOR/10}金币: {FCOLOR/14}<$OUTPUT(D1)>{FCOLOR/12}\
+2.{FCOLOR/10}金币: {FCOLOR/14}<$OUTPUT(D2)>{FCOLOR/12}\
+3.{FCOLOR/10}物品: {FCOLOR/14}<$OUTPUT(A2)>{FCOLOR/12}\
+4.{FCOLOR/10}物品: {FCOLOR/14}<$OUTPUT(A3)>{FCOLOR/12}\\
+{FCOLOR/10}完成本次任务可以获得经验值奖励 {FCOLOR/1}<$OUTPUT(D7)>{FCOLOR/10} 点.{FCOLOR/12}\\
+
+#IF
+Equal D5 2
+#SAY
+任务内容:请帮我找到{FCOLOR/10}<$OUTPUT(A4)>{FCOLOR/12}{FCOLOR/1}[<$OUTPUT(D3)>]{FCOLOR/12}个 \\
+材料获取:在{FCOLOR/10}<$OUTPUT(A7)>{FCOLOR/12}地图通过击杀怪物获取.\\
+完成任务将获得以下奖励的其中一种:\\
+1.{FCOLOR/10}金币: {FCOLOR/14}<$OUTPUT(D1)>{FCOLOR/12}\
+2.{FCOLOR/10}金币: {FCOLOR/14}<$OUTPUT(D2)>{FCOLOR/12}\
+3.{FCOLOR/10}物品: {FCOLOR/14}<$OUTPUT(A2)>{FCOLOR/12}\
+4.{FCOLOR/10}物品: {FCOLOR/14}<$OUTPUT(A3)>{FCOLOR/12}\\
+{FCOLOR/10}完成本次任务可以获得经验值奖励 {FCOLOR/1}<$OUTPUT(D7)>{FCOLOR/10} 点.{FCOLOR/12}\\
+
+#IF
+Equal D5 3
+#SAY
+任务内容:请帮我找到纯度10以上的{FCOLOR/10}<$OUTPUT(A4)>{FCOLOR/12}{FCOLOR/1}[<$OUTPUT(D3)>]{FCOLOR/12}个 \\
+物品获取:在{FCOLOR/10}<$OUTPUT(A7)>{FCOLOR/12}地图通过挖矿获取.\\
+完成任务将获得以下奖励的其中一种:\\
+1.{FCOLOR/10}金币: {FCOLOR/14}<$OUTPUT(D1)>{FCOLOR/12}\
+2.{FCOLOR/10}金币: {FCOLOR/14}<$OUTPUT(D2)>{FCOLOR/12}\
+3.{FCOLOR/10}物品: {FCOLOR/14}<$OUTPUT(A2)>{FCOLOR/12}\
+4.{FCOLOR/10}物品: {FCOLOR/14}<$OUTPUT(A3)>{FCOLOR/12}\\
+{FCOLOR/10}完成本次任务可以获得经验值奖励 {FCOLOR/1}<$OUTPUT(D7)>{FCOLOR/10} 点.{FCOLOR/12}\\
+
+#IF
+Equal D5 4
+#SAY
+任务内容:请帮我找到{FCOLOR/10}<$OUTPUT(A4)>{FCOLOR/12}{FCOLOR/1}[<$OUTPUT(D3)>]{FCOLOR/12}个 \\
+物品获取:通过{FCOLOR/10}砍栗子树{FCOLOR/12}获取.\\
+完成任务将获得以下奖励的其中一种:\\
+1.{FCOLOR/10}金币: {FCOLOR/14}<$OUTPUT(D1)>{FCOLOR/12}\
+2.{FCOLOR/10}金币: {FCOLOR/14}<$OUTPUT(D2)>{FCOLOR/12}\
+3.{FCOLOR/10}物品: {FCOLOR/14}<$OUTPUT(A2)>{FCOLOR/12}\
+4.{FCOLOR/10}物品: {FCOLOR/14}<$OUTPUT(A3)>{FCOLOR/12}\\
+{FCOLOR/10}完成本次任务可以获得经验值奖励 {FCOLOR/1}<$OUTPUT(D7)>{FCOLOR/10} 点.{FCOLOR/12}\\
+
+
+}

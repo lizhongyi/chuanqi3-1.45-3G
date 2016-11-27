@@ -1,0 +1,34 @@
+;;创天网络有限公司原版1.45
+[@main]
+#IF
+check [027] 1
+#ACT
+break
+#IF
+check [048] 1
+#ACT
+break
+#IF
+check [037] 0
+#ACT
+break
+#IF
+check [046] 0
+check [047] 1
+#ACT
+goto @move_next_check1
+break
+#IF
+check [046] 1
+check [047] 0
+#ACT
+goto @move_next_check1
+#ELSEACT
+goto @move_next_5to0R
+break
+
+[@move_next_5to0R]
+#CALL [\MU_wizard\teleport.txt] @MapQuest_move_5to0R
+
+[@move_next_check1]
+#CALL [\MU_wizard\teleport.txt] @MapQuest_fly_check1

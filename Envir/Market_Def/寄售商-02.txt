@@ -1,0 +1,112 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@main]
+#IF
+#SAY
+寄售系统,物品卖出后,系统收2%的手续费.\
+每人最多可以寄售{FOLCOR/10}20件物品{FCOLOR/12}.\
+<查看所有寄售的物品/@AllItem1212>\
+<查看衣服/@Armor1212>\
+<查看武器/@Weapon1212>\
+<查看项链/@Necklace1212>\
+<查看头盔(帽子)/@Helmet1212>\
+<查看戒指/@Ring1212>\
+<查看手镯(手套)/@Bracelet1212>\
+<查看鞋类/@Shoes1212>\
+<查看药品书卷/@Potion1212>\
+<查看图书/@Book1212>\
+<查看其他物品/@Item1212>\
+<查看自己寄售的物品是已经否卖出./@TypeItem1212>\\
+<结束/@exit>
+
+[@AllItem1212]
+#IF
+#ACT
+settypeusermarket 0
+OPENUSERMARKET
+
+
+
+[@Armor1212]
+#IF
+#ACT
+settypeusermarket 1
+OPENUSERMARKET
+
+
+
+[@Weapon1212]
+#IF
+#ACT
+settypeusermarket 2
+OPENUSERMARKET
+
+
+
+[@Necklace1212]
+#IF
+#ACT
+settypeusermarket 4
+OPENUSERMARKET
+
+
+
+[@Helmet1212]
+#IF
+#ACT
+settypeusermarket 5
+OPENUSERMARKET
+
+
+
+[@Ring1212]
+#IF
+#ACT
+settypeusermarket 8
+OPENUSERMARKET
+
+
+
+[@Bracelet1212]
+#IF
+#ACT
+settypeusermarket 6
+OPENUSERMARKET
+
+
+
+[@Shoes1212]
+#IF
+#ACT
+settypeusermarket 11
+OPENUSERMARKET
+
+
+
+[@Potion1212]
+#IF
+#ACT
+settypeusermarket 21
+OPENUSERMARKET
+
+
+
+[@Book1212]
+#IF
+#ACT
+settypeusermarket 22
+OPENUSERMARKET
+
+
+
+[@Item1212]
+#IF
+#ACT
+settypeusermarket 23
+OPENUSERMARKET
+
+
+
+[@TypeItem1212]
+#IF
+#ACT
+CHECKSOLDITEMSUSERMARKET

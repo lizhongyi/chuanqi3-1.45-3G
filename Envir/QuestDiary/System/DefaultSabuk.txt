@@ -1,0 +1,18 @@
+;;创天网络有限公司原版1.45
+[@SabukDefult]
+{
+#ACT
+SetAreaAttr  "3, 206, 159, 6"   "NoFly"
+SetAreaAttr  "3, 206, 159, 10"  "NoLack"
+SetAreaAttr  "3, 212, 166, 5"  "NoLack"
+SetAreaAttr  "3, 210, 148, 5"  "NoLack"
+SetAreaAttr  "3, 203, 172, 5"  "NoLack"
+SetAreaAttr  "3, 234, 191, 4"  "NoLack"
+SetAreaAttr  "3, 169, 191, 4"  "NoLack"
+SetAreaAttr  "3, 233, 127, 4"  "NoLack"
+SetAreaAttr  "3, 220, 143, 8"  "NoLack"
+SetAreaAttr  "3,  79, 144, 8"  "NoLack"
+SetAreaAttr  "3, 284, 516, 8"  "NoLack"
+SetAreaAttr  "3,  66, 513, 8"  "NoLack"
+}
+;;创天网络有限公司原版1.45

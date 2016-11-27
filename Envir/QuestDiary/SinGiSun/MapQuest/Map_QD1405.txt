@@ -1,0 +1,9 @@
+;;----------;;购买请联系鱼的眼泪,QQ:16487549
+[@main]
+#ACT
+goto @SinGiMap_z013
+break
+
+[@SinGiMap_z013]
+#CALL [SinGiSun\Map_SinGiMain.txt] @ExitSinGiSun_1
+;;----------;;购买请联系鱼的眼泪,QQ:16487549

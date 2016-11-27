@@ -1,0 +1,27 @@
+;;创天网络有限公司原版1.45
+%100
+
+[@main]
+#SAY
+这里是 沙巴克城 {FCOLOR/10}<$CS_SABUK_OWNER>{FCOLOR/12} 行会的领地。\
+贫道是宿舍管理员，需要的话，可以把东西暂时寄存在我这里。\
+<寄存/@storage>物品\
+<取回/@PreGetback>寄存的物品\
+<仓库 密码 管理/@StgPassword>\
+<结束/@exit>
+
+[@StgPassword]
+#CALL [\PassWord\PassWord.txt] @Manage_PassWord
+
+[@PreGetback]
+#CALL [\PassWord\PassWord.txt] @Input_PassWord
+
+[@storage]
+#SAY
+你想寄存什么东西？\ \
+<前一步/@main>
+
+[@getback]
+#SAY
+你想找什么，看了目录以后再决定吧。\ \
+<前一步/@main>

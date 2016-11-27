@@ -1,0 +1,1365 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@FriendSystem_0]
+{
+#IF
+#ACT
+Mov 检测好友存在 ""
+FormatStr "where FLD_CHARACTER='%s'" %USERNAME
+actcmd READSQL "TBL_FriendSystem" "FLD_CHARACTER" "检测好友存在" %A9
+
+#IF
+Equal 检测好友存在 ""
+#ACT
+FormatStr "'%s'" %USERNAME
+Mov A8 %A9
+AddStr A8 ",'NULL','NULL','NULL','NULL','NULL','NULL','NULL','NULL','NULL','NULL'"
+FormatStr "FLD_CHARACTER='%s'" %USERNAME
+WriteValueSql "TBL_FriendSystem" %A9 "FLD_CHARACTER,FLD_Friend0,FLD_Friend1,FLD_Friend2,FLD_Friend3,FLD_Friend4,FLD_Friend5,FLD_Friend6,FLD_Friend7,FLD_Friend8,FLD_Friend9" %A8
+break
+#SAY
+{FCOLOR/14}好友通讯录{FCOLOR/12},{FCOLOR/13}点击好友名称可直接私聊.{FCOLOR/12}\\
+{FCOLOR/13}◇◇{FCOLOR/12} <添加好友/@@AddFriendAct>(最多{FCOLOR/15}10{FCOLOR/12}名好友)\\
+<返回/@Mir3GuideBook>\
+<离开/@exit>
+
+#IF
+#ACT
+FormatStr "where FLD_CHARACTER='%s'" %USERNAME
+actcmd READSQL "TBL_FriendSystem" "FLD_Friend0,FLD_Friend1,FLD_Friend2,FLD_Friend3,FLD_Friend4,FLD_Friend5" "好友A,好友B,好友C,好友D,好友E,好友F" %A9
+actcmd READSQL "TBL_FriendSystem" "FLD_Friend6,FLD_Friend7,FLD_Friend8,FLD_Friend9" "好友G,好友H,好友I,好友J" %A9
+
+#IF
+!Equal 好友A "NULL"
+checkcmd ISONLINE %好友A
+#ACT
+FormatStr "@_FriendMapA(%s)" %USERNAME
+actcmd RUNSCRIPTLABEL %好友A %A9
+Mov 好友AA "<"
+AddStr 好友AA %好友A
+AddStr 好友AA "/@好友ASend>
+#SAY
+{FCOLOR/3}◇ <删除/@DelFriend0>   {FCOLOR/10}(在线) <$OUTPUT(好友AA)>{FCOLOR/12}</@好友ASend>   <送花/@@SendHua>\\
+#IF
+!Equal 好友A "NULL"
+!checkcmd ISONLINE %好友A
+#SAY
+{FCOLOR/3}◇ <删除/@DelFriend0>   {FCOLOR/8}(离线) <$OUTPUT(好友A)>{FCOLOR/12}   <送花/@@SendHua>\\
+
+
+#IF
+!Equal 好友B "NULL"
+checkcmd ISONLINE %好友B
+#ACT
+Mov 好友BB "<"
+AddStr 好友BB %好友B
+AddStr 好友BB "/@好友BSend>
+#SAY
+{FCOLOR/3}◇ <删除/@DelFriend1>   {FCOLOR/10}(在线) <$OUTPUT(好友BB)>{FCOLOR/12}</@好友BSend>   <送花/@@SendHua2>\\
+#IF
+!Equal 好友B "NULL"
+!checkcmd ISONLINE %好友B
+#SAY
+{FCOLOR/3}◇ <删除/@DelFriend1>   {FCOLOR/8}(离线) <$OUTPUT(好友B)>{FCOLOR/12}   <送花/@@SendHua2>\\
+
+#IF
+!Equal 好友C "NULL"
+checkcmd ISONLINE %好友C
+#ACT
+Mov 好友CC "<"
+AddStr 好友CC %好友C
+AddStr 好友CC "/@好友CSend>
+#SAY
+{FCOLOR/3}◇ <删除/@DelFriend2>   {FCOLOR/10}(在线) <$OUTPUT(好友CC)>{FCOLOR/12}</@好友CSend>   <送花/@@SendHua3>\\
+#IF
+!Equal 好友C "NULL"
+!checkcmd ISONLINE %好友C
+#SAY
+{FCOLOR/3}◇ <删除/@DelFriend2>   {FCOLOR/8}(离线) <$OUTPUT(好友C)>{FCOLOR/12}   <送花/@@SendHua3>\\
+
+#IF
+!Equal 好友D "NULL"
+checkcmd ISONLINE %好友D
+#ACT
+Mov 好友DD "<"
+AddStr 好友DD %好友D
+AddStr 好友DD "/@好友DSend>
+#SAY
+{FCOLOR/3}◇ <删除/@DelFriend3>   {FCOLOR/10}(在线) <$OUTPUT(好友DD)>{FCOLOR/12}</@好友DSend>   <送花/@@SendHua4>\\
+#IF
+!Equal 好友D "NULL"
+!checkcmd ISONLINE %好友D
+#SAY
+{FCOLOR/3}◇ <删除/@DelFriend3>   {FCOLOR/8}(离线) <$OUTPUT(好友D)>{FCOLOR/12}   <送花/@@SendHua4>\\
+
+#IF
+!Equal 好友E "NULL"
+checkcmd ISONLINE %好友E
+#ACT
+Mov 好友EE "<"
+AddStr 好友EE %好友E
+AddStr 好友EE "/@好友ESend>
+#SAY
+{FCOLOR/3}◇ <删除/@DelFriend4>   {FCOLOR/10}(在线) <$OUTPUT(好友EE)>{FCOLOR/12}</@好友ESend>   <送花/@@SendHua5>\\
+#IF
+!Equal 好友E "NULL"
+!checkcmd ISONLINE %好友E
+#SAY
+{FCOLOR/3}◇ <删除/@DelFriend4>   {FCOLOR/8}(离线) <$OUTPUT(好友E)>{FCOLOR/12}   <送花/@@SendHua5>\\
+
+#IF
+!Equal 好友F "NULL"
+checkcmd ISONLINE %好友F
+#ACT
+Mov 好友FF "<"
+AddStr 好友FF %好友F
+AddStr 好友FF "/@好友FSend>
+#SAY
+{FCOLOR/3}◇ <删除/@DelFriend5>   {FCOLOR/10}(在线) <$OUTPUT(好友FF)>{FCOLOR/12}</@好友FSend>   <送花/@@SendHua6>\\
+#IF
+!Equal 好友F "NULL"
+!checkcmd ISONLINE %好友F
+#SAY
+{FCOLOR/3}◇ <删除/@DelFriend5>   {FCOLOR/8}(离线) <$OUTPUT(好友F)>{FCOLOR/12}   <送花/@@SendHua6>\\
+
+#IF
+!Equal 好友G "NULL"
+checkcmd ISONLINE %好友G
+#ACT
+Mov 好友GG "<"
+AddStr 好友GG %好友G
+AddStr 好友GG "/@好友GSend>
+#SAY
+{FCOLOR/3}◇ <删除/@DelFriend6>   {FCOLOR/10}(在线) <$OUTPUT(好友GG)>{FCOLOR/12}</@好友GSend>   <送花/@@SendHua7>\\
+#IF
+!Equal 好友G "NULL"
+!checkcmd ISONLINE %好友G
+#SAY
+{FCOLOR/3}◇ <删除/@DelFriend6>   {FCOLOR/8}(离线) <$OUTPUT(好友G)>{FCOLOR/12}   <送花/@@SendHua7>\\
+
+#IF
+!Equal 好友H "NULL"
+checkcmd ISONLINE %好友H
+#ACT
+Mov 好友HH "<"
+AddStr 好友HH %好友H
+AddStr 好友HH "/@好友HSend>
+#SAY
+{FCOLOR/3}◇ <删除/@DelFriend7>   {FCOLOR/10}(在线) <$OUTPUT(好友HH)>{FCOLOR/12}</@好友HSend>   <送花/@@SendHua8>\\
+#IF
+!Equal 好友H "NULL"
+!checkcmd ISONLINE %好友H
+#SAY
+{FCOLOR/3}◇ <删除/@DelFriend7>   {FCOLOR/8}(离线) <$OUTPUT(好友H)>{FCOLOR/12}   <送花/@@SendHua8>\\
+
+#IF
+!Equal 好友I "NULL"
+checkcmd ISONLINE %好友I
+#ACT
+Mov 好友II "<"
+AddStr 好友II %好友I
+AddStr 好友II "/@好友ISend>
+#SAY
+{FCOLOR/3}◇ <删除/@DelFriend8>   {FCOLOR/10}(在线) <$OUTPUT(好友II)>{FCOLOR/12}</@好友ISend>   <送花/@@SendHua9>\\
+#IF
+!Equal 好友I "NULL"
+!checkcmd ISONLINE %好友I
+#SAY
+{FCOLOR/3}◇ <删除/@DelFriend8>   {FCOLOR/8}(离线) <$OUTPUT(好友I)>{FCOLOR/12}   <送花/@@SendHua9>\\
+
+#IF
+!Equal 好友J "NULL"
+checkcmd ISONLINE %好友J
+#ACT
+Mov 好友JJ "<"
+AddStr 好友JJ %好友J
+AddStr 好友JJ "/@好友JSend>
+#SAY
+{FCOLOR/3}◇ <删除/@DelFriend9>   {FCOLOR/10}(在线) <$OUTPUT(好友JJ)>{FCOLOR/12}</@好友JSend>   <送花/@@SendHua10>\\
+#IF
+!Equal 好友J "NULL"
+!checkcmd ISONLINE %好友J
+#SAY
+{FCOLOR/3}◇ <删除/@DelFriend9>   {FCOLOR/8}(离线) <$OUTPUT(好友J)>{FCOLOR/12}   <送花/@@SendHua10>\\
+
+#IF
+#SAY
+\{FCOLOR/13}◇◇{FCOLOR/12} <添加好友/@@AddFriendAct>(最多{FCOLOR/15}10{FCOLOR/12}名好友)\\
+<离开/@exit>
+
+
+[@好友ASend]
+#ACT
+FormatStr "@_FriendMsg(%s)" %USERNAME
+actcmd RUNSCRIPTLABEL %好友A %A9
+break
+
+[@好友BSend]
+#ACT
+FormatStr "@_FriendMsg(%s)" %USERNAME
+actcmd RUNSCRIPTLABEL %好友B %A9
+break
+
+[@好友CSend]
+#ACT
+FormatStr "@_FriendMsg(%s)" %USERNAME
+actcmd RUNSCRIPTLABEL %好友C %A9
+break
+
+[@好友DSend]
+#ACT
+FormatStr "@_FriendMsg(%s)" %USERNAME
+actcmd RUNSCRIPTLABEL %好友D %A9
+break
+
+[@好友ESend]
+#ACT
+FormatStr "@_FriendMsg(%s)" %USERNAME
+actcmd RUNSCRIPTLABEL %好友E %A9
+break
+
+[@好友FSend]
+#ACT
+FormatStr "@_FriendMsg(%s)" %USERNAME
+actcmd RUNSCRIPTLABEL %好友F %A9
+break
+
+[@好友GSend]
+#ACT
+FormatStr "@_FriendMsg(%s)" %USERNAME
+actcmd RUNSCRIPTLABEL %好友G %A9
+break
+
+[@好友HSend]
+#ACT
+FormatStr "@_FriendMsg(%s)" %USERNAME
+actcmd RUNSCRIPTLABEL %好友H %A9
+break
+
+[@好友ISend]
+#ACT
+FormatStr "@_FriendMsg(%s)" %USERNAME
+actcmd RUNSCRIPTLABEL %好友I %A9
+break
+
+[@好友JSend]
+#ACT
+FormatStr "@_FriendMsg(%s)" %USERNAME
+actcmd RUNSCRIPTLABEL %好友J %A9
+break
+
+[@_FriendMsg()]
+#ACT
+mov 地图检测方 %ARG(1)
+Mov 说话临时 "/"
+AddStr 说话临时 %地图检测方
+actcmd SENDUSERSAY %说话临时
+break
+
+
+[@@AddFriendAct]
+#IF
+#ACT
+Mov A0 %INPUTSTR
+
+#IF
+Equal A0 ""
+#ACT
+break
+#SAY
+{FCOLOR/1}该角色不存在!{FCOLOR/12}\\
+<返回/@FriendSystem_0>\
+<关闭/@exit>
+
+#IF
+Equal A0 %USERNAME
+#ACT
+break
+#SAY
+{FCOLOR/1}不能添加自己为好友!{FCOLOR/12}\\
+<关闭/@exit>
+
+#IF
+!checkcmd ISONLINE %A0
+#ACT
+Mov 检测好友名字 ""
+FormatStr "where FLD_CHARACTER='%s'" %A0
+actcmd READSQL "TBL_CHARACTER" "FLD_CHARACTER" "检测好友名字" %A9
+goto @Friend_Check
+break
+
+#IF
+#ACT
+FormatStr "where FLD_CHARACTER='%s'" %USERNAME
+actcmd READSQL "TBL_FriendSystem" "FLD_Friend0,FLD_Friend1,FLD_Friend2,FLD_Friend3,FLD_Friend4,FLD_Friend5" "好友A,好友B,好友C,好友D,好友E,好友F" %A9
+actcmd READSQL "TBL_FriendSystem" "FLD_Friend6,FLD_Friend7,FLD_Friend8,FLD_Friend9" "好友G,好友H,好友I,好友J" %A9
+goto @AddFriendA
+break
+
+[@Friend_Check]
+#IF
+Equal 检测好友名字 ""
+#ACT
+break
+#SAY
+{FCOLOR/1}该角色不存在!{FCOLOR/12}\\
+<关闭/@exit>
+
+#IF
+#ACT
+FormatStr "where FLD_CHARACTER='%s'" %USERNAME
+actcmd READSQL "TBL_FriendSystem" "FLD_Friend0,FLD_Friend1,FLD_Friend2,FLD_Friend3,FLD_Friend4,FLD_Friend5" "好友A,好友B,好友C,好友D,好友E,好友F" %A9
+actcmd READSQL "TBL_FriendSystem" "FLD_Friend6,FLD_Friend7,FLD_Friend8,FLD_Friend9" "好友G,好友H,好友I,好友J" %A9
+goto @AddFriendA
+break
+
+[@AddFriendA]
+#IF
+Equal 好友A "NULL"
+#ACT
+FormatStr "FLD_CHARACTER='%s'" %USERNAME
+Mov A8 %A9
+FormatStr "FLD_Friend0='%s'" %A0
+UpdateValueSql "TBL_FriendSystem" %A8 %A9
+delaygoto [local] 0 @FriendSystem_0
+break
+
+#IF
+Equal 好友B "NULL"
+#ACT
+FormatStr "FLD_CHARACTER='%s'" %USERNAME
+Mov A8 %A9
+FormatStr "FLD_Friend1='%s'" %A0
+UpdateValueSql "TBL_FriendSystem" %A8 %A9
+delaygoto [local] 0 @FriendSystem_0
+break
+
+#IF
+Equal 好友C "NULL"
+#ACT
+FormatStr "FLD_CHARACTER='%s'" %USERNAME
+Mov A8 %A9
+FormatStr "FLD_Friend2='%s'" %A0
+UpdateValueSql "TBL_FriendSystem" %A8 %A9
+delaygoto [local] 0 @FriendSystem_0
+break
+
+#IF
+Equal 好友D "NULL"
+#ACT
+FormatStr "FLD_CHARACTER='%s'" %USERNAME
+Mov A8 %A9
+FormatStr "FLD_Friend3='%s'" %A0
+UpdateValueSql "TBL_FriendSystem" %A8 %A9
+delaygoto [local] 0 @FriendSystem_0
+break
+
+#IF
+Equal 好友E "NULL"
+#ACT
+FormatStr "FLD_CHARACTER='%s'" %USERNAME
+Mov A8 %A9
+FormatStr "FLD_Friend4='%s'" %A0
+UpdateValueSql "TBL_FriendSystem" %A8 %A9
+delaygoto [local] 0 @FriendSystem_0
+break
+
+#IF
+Equal 好友F "NULL"
+#ACT
+FormatStr "FLD_CHARACTER='%s'" %USERNAME
+Mov A8 %A9
+FormatStr "FLD_Friend5='%s'" %A0
+UpdateValueSql "TBL_FriendSystem" %A8 %A9
+delaygoto [local] 0 @FriendSystem_0
+break
+
+#IF
+Equal 好友G "NULL"
+#ACT
+FormatStr "FLD_CHARACTER='%s'" %USERNAME
+Mov A8 %A9
+FormatStr "FLD_Friend6='%s'" %A0
+UpdateValueSql "TBL_FriendSystem" %A8 %A9
+delaygoto [local] 0 @FriendSystem_0
+break
+
+#IF
+Equal 好友H "NULL"
+#ACT
+FormatStr "FLD_CHARACTER='%s'" %USERNAME
+Mov A8 %A9
+FormatStr "FLD_Friend7='%s'" %A0
+UpdateValueSql "TBL_FriendSystem" %A8 %A9
+delaygoto [local] 0 @FriendSystem_0
+break
+
+#IF
+Equal 好友I "NULL"
+#ACT
+FormatStr "FLD_CHARACTER='%s'" %USERNAME
+Mov A8 %A9
+FormatStr "FLD_Friend8='%s'" %A0
+UpdateValueSql "TBL_FriendSystem" %A8 %A9
+delaygoto [local] 0 @FriendSystem_0
+break
+
+#IF
+Equal 好友J "NULL"
+#ACT
+FormatStr "FLD_CHARACTER='%s'" %USERNAME
+Mov A8 %A9
+FormatStr "FLD_Friend9='%s'" %A0
+UpdateValueSql "TBL_FriendSystem" %A8 %A9
+delaygoto [local] 0 @FriendSystem_0
+break
+
+#IF
+#ACT
+break
+#SAY
+{FCOLOR/1}最多有10名好友,你的好友列表已经满了!{FCOLOR/12}\\
+<关闭/@exit>
+
+
+[@DelFriend0]
+#IF
+#ACT
+FormatStr "where FLD_CHARACTER='%s'" %USERNAME
+actcmd READSQL "TBL_FriendSystem" "FLD_Friend1,FLD_Friend2,FLD_Friend3,FLD_Friend4,FLD_Friend5" "好友B,好友C,好友D,好友E,好友F" %A9
+actcmd READSQL "TBL_FriendSystem" "FLD_Friend6,FLD_Friend7,FLD_Friend8,FLD_Friend9" "好友G,好友H,好友I,好友J" %A9
+FormatStr "FLD_Friend0='%s',FLD_Friend1='%s',FLD_Friend2='%s'," %好友B %好友C %好友D
+Mov A8 %A9
+FormatStr "FLD_Friend3='%s',FLD_Friend4='%s',FLD_Friend5='%s'," %好友E %好友F %好友G
+Addstr A8 %A9
+FormatStr "FLD_Friend6='%s',FLD_Friend7='%s',FLD_Friend8='%s',FLD_Friend9='NULL'" %好友H %好友I %好友J
+Addstr A8 %A9
+FormatStr "FLD_CHARACTER='%s'" %USERNAME
+UpdateValueSql "TBL_FriendSystem" %A9 %A8
+delaygoto [local] 0 @FriendSystem_0
+break
+
+[@DelFriend1]
+#IF
+#ACT
+FormatStr "where FLD_CHARACTER='%s'" %USERNAME
+actcmd READSQL "TBL_FriendSystem" "FLD_Friend2,FLD_Friend3,FLD_Friend4,FLD_Friend5" "好友C,好友D,好友E,好友F" %A9
+actcmd READSQL "TBL_FriendSystem" "FLD_Friend6,FLD_Friend7,FLD_Friend8,FLD_Friend9" "好友G,好友H,好友I,好友J" %A9
+FormatStr "FLD_Friend1='%s',FLD_Friend2='%s'," %好友C %好友D
+Mov A8 %A9
+FormatStr "FLD_Friend3='%s',FLD_Friend4='%s',FLD_Friend5='%s'," %好友E %好友F %好友G
+Addstr A8 %A9
+FormatStr "FLD_Friend6='%s',FLD_Friend7='%s',FLD_Friend8='%s',FLD_Friend9='NULL'" %好友H %好友I %好友J
+Addstr A8 %A9
+FormatStr "FLD_CHARACTER='%s'" %USERNAME
+UpdateValueSql "TBL_FriendSystem" %A9 %A8
+delaygoto [local] 0 @FriendSystem_0
+break
+
+[@DelFriend2]
+#IF
+#ACT
+FormatStr "where FLD_CHARACTER='%s'" %USERNAME
+actcmd READSQL "TBL_FriendSystem" "FLD_Friend3,FLD_Friend4,FLD_Friend5" "好友D,好友E,好友F" %A9
+actcmd READSQL "TBL_FriendSystem" "FLD_Friend6,FLD_Friend7,FLD_Friend8,FLD_Friend9" "好友G,好友H,好友I,好友J" %A9
+FormatStr "FLD_Friend2='%s'," %好友D
+Mov A8 %A9
+FormatStr "FLD_Friend3='%s',FLD_Friend4='%s',FLD_Friend5='%s'," %好友E %好友F %好友G
+Addstr A8 %A9
+FormatStr "FLD_Friend6='%s',FLD_Friend7='%s',FLD_Friend8='%s',FLD_Friend9='NULL'" %好友H %好友I %好友J
+Addstr A8 %A9
+FormatStr "FLD_CHARACTER='%s'" %USERNAME
+UpdateValueSql "TBL_FriendSystem" %A9 %A8
+delaygoto [local] 0 @FriendSystem_0
+break
+
+[@DelFriend3]
+#IF
+#ACT
+FormatStr "where FLD_CHARACTER='%s'" %USERNAME
+actcmd READSQL "TBL_FriendSystem" "FLD_Friend4,FLD_Friend5,FLD_Friend6,FLD_Friend7,FLD_Friend8,FLD_Friend9" "好友E,好友F,好友G,好友H,好友I,好友J" %A9
+FormatStr "FLD_Friend3='%s',FLD_Friend4='%s',FLD_Friend5='%s'," %好友E %好友F %好友G
+Mov A8 %A9
+FormatStr "FLD_Friend6='%s',FLD_Friend7='%s',FLD_Friend8='%s',FLD_Friend9='NULL'" %好友H %好友I %好友J
+Addstr A8 %A9
+FormatStr "FLD_CHARACTER='%s'" %USERNAME
+UpdateValueSql "TBL_FriendSystem" %A9 %A8
+delaygoto [local] 0 @FriendSystem_0
+break
+
+
+[@DelFriend4]
+#IF
+#ACT
+FormatStr "where FLD_CHARACTER='%s'" %USERNAME
+actcmd READSQL "TBL_FriendSystem" "FLD_Friend5,FLD_Friend6,FLD_Friend7,FLD_Friend8,FLD_Friend9" "好友F,好友G,好友H,好友I,好友J" %A9
+FormatStr "FLD_Friend4='%s',FLD_Friend5='%s'," %好友F %好友G
+Mov A8 %A9
+FormatStr "FLD_Friend6='%s',FLD_Friend7='%s',FLD_Friend8='%s',FLD_Friend9='NULL'" %好友H %好友I %好友J
+Addstr A8 %A9
+FormatStr "FLD_CHARACTER='%s'" %USERNAME
+UpdateValueSql "TBL_FriendSystem" %A9 %A8
+delaygoto [local] 0 @FriendSystem_0
+break
+
+[@DelFriend5]
+#IF
+#ACT
+FormatStr "where FLD_CHARACTER='%s'" %USERNAME
+actcmd READSQL "TBL_FriendSystem" "FLD_Friend6,FLD_Friend7,FLD_Friend8,FLD_Friend9" "好友G,好友H,好友I,好友J" %A9
+FormatStr "FLD_Friend5='%s'," %好友G
+Mov A8 %A9
+FormatStr "FLD_Friend6='%s',FLD_Friend7='%s',FLD_Friend8='%s',FLD_Friend9='NULL'" %好友H %好友I %好友J
+Addstr A8 %A9
+FormatStr "FLD_CHARACTER='%s'" %USERNAME
+UpdateValueSql "TBL_FriendSystem" %A9 %A8
+delaygoto [local] 0 @FriendSystem_0
+break
+
+
+[@DelFriend6]
+#IF
+#ACT
+FormatStr "where FLD_CHARACTER='%s'" %USERNAME
+actcmd READSQL "TBL_FriendSystem" "FLD_Friend7,FLD_Friend8,FLD_Friend9" "好友H,好友I,好友J" %A9
+FormatStr "FLD_Friend6='%s',FLD_Friend7='%s',FLD_Friend8='%s',FLD_Friend9='NULL'" %好友H %好友I %好友J
+Mov A8 %A9
+FormatStr "FLD_CHARACTER='%s'" %USERNAME
+UpdateValueSql "TBL_FriendSystem" %A9 %A8
+delaygoto [local] 0 @FriendSystem_0
+break
+
+[@DelFriend7]
+#IF
+#ACT
+FormatStr "where FLD_CHARACTER='%s'" %USERNAME
+actcmd READSQL "TBL_FriendSystem" "FLD_Friend8,FLD_Friend9" "好友I,好友J" %A9
+FormatStr "FLD_Friend7='%s',FLD_Friend8='%s',FLD_Friend9='NULL'" %好友I %好友J
+Mov A8 %A9
+FormatStr "FLD_CHARACTER='%s'" %USERNAME
+UpdateValueSql "TBL_FriendSystem" %A9 %A8
+delaygoto [local] 0 @FriendSystem_0
+break
+
+[@DelFriend8]
+#IF
+#ACT
+FormatStr "where FLD_CHARACTER='%s'" %USERNAME
+actcmd READSQL "TBL_FriendSystem" "FLD_Friend9" "好友J" %A9
+FormatStr "FLD_Friend8='%s',FLD_Friend9='NULL'" %好友J
+Mov A8 %A9
+FormatStr "FLD_CHARACTER='%s'" %USERNAME
+UpdateValueSql "TBL_FriendSystem" %A9 %A8
+delaygoto [local] 0 @FriendSystem_0
+break
+
+[@DelFriend9]
+#IF
+#ACT
+FormatStr "FLD_CHARACTER='%s'" %USERNAME
+UpdateValueSql "TBL_FriendSystem" %A9 "FLD_Friend9='NULL'"
+delaygoto [local] 0 @FriendSystem_0
+break
+
+[@@SendHua]
+#ACT
+MOV D0 %INPUTNUM
+LOADVALUE D6 "ParamControl\送花排行.ini" [系统] [日期]
+
+#if
+Large D0 0
+#ELSEACT
+BREAK
+
+#IF
+Equal D6 %CURDAY
+#ELSEACT
+SAVEVALUE "ParamControl\送花排行.ini" [系统] [日期] %CURDAY
+
+#IF
+CHECKITEM 鲜花 %D0
+#ELSEACT
+BREAK
+#ELSESAY
+对不起,你的包袱里没有{FCOLOR/1}<$OUTPUT(D0)>{FCOLOR/12}朵鲜花.\\
+<关闭/@Exit>
+
+#IF
+#ACT
+TAKE 鲜花 %D0
+
+LOADVALUE D1 "ParamControl\送花记录.ini" %USERNAME %好友A
+INC D1 %D0
+SAVEVALUE "ParamControl\送花记录.ini" %USERNAME %好友A %D1
+
+LOADVALUE D2 "ParamControl\送花排行.ini" %好友A %CURDAY
+INC D2 %D0
+SAVEVALUE "ParamControl\送花排行.ini" %好友A %CURDAY %D2
+
+LOADVALUE D3 "ParamControl\送花排行.ini" %好友A 总数
+INC D3 %D0
+SAVEVALUE "ParamControl\送花排行.ini" %好友A 总数 %D3
+
+LOADVALUE D4 "ParamControl\送花记录.ini" %好友A 总数
+
+#IF
+Large D1 %D4
+#ACT
+SAVEVALUE "ParamControl\送花记录.ini" %好友A 总数 %D1
+SAVEVALUE "ParamControl\送花记录.ini" %好友A 守护 %USERNAME
+
+#if
+#ACT
+LOADVALUE D5 "ParamControl\每日记录.ini" %USERNAME %好友A
+INC D5 %D0
+SaveValue "ParamControl\每日记录.ini" %USERNAME %好友A %D5
+
+LOADVALUE D4 "ParamControl\每日记录.ini" %好友A 数量
+
+#IF
+large D5 %D4
+#Act
+SaveValue "ParamControl\每日记录.ini" %好友A 数量 %D5
+SaveValue "ParamControl\每日记录.ini" %好友A 守护 %USERNAME
+
+#IF
+Small D0 10
+#ACT
+lineMsg [1] "玩家'<$USERNAME>'为<$OUTPUT(好友A)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+#IF
+Small D0 100
+#ACT
+lineMsg [Grobal] "玩家'<$USERNAME>'为<$OUTPUT(好友A)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+#IF
+#ACT
+lineMsg [Grobal] "(*)玩家'<$USERNAME>'为<$OUTPUT(好友A)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[@@SendHua2]
+#ACT
+MOV D0 %INPUTNUM
+LOADVALUE D6 "ParamControl\送花排行.ini" [系统] [日期]
+
+#if
+Large D0 0
+#ELSEACT
+BREAK
+
+#IF
+Equal D6 %CURDAY
+#ELSEACT
+SAVEVALUE "ParamControl\送花排行.ini" [系统] [日期] %CURDAY
+
+#IF
+CHECKITEM 鲜花 %D0
+#ELSEACT
+BREAK
+#ELSESAY
+对不起,你的包袱里没有{FCOLOR/1}<$OUTPUT(D0)>{FCOLOR/12}朵鲜花.\\
+<关闭/@Exit>
+
+#IF
+#ACT
+TAKE 鲜花 %D0
+
+LOADVALUE D1 "ParamControl\送花记录.ini" %USERNAME %好友B
+INC D1 %D0
+SAVEVALUE "ParamControl\送花记录.ini" %USERNAME %好友B %D1
+
+LOADVALUE D2 "ParamControl\送花排行.ini" %好友B %CURDAY
+INC D2 %D0
+SAVEVALUE "ParamControl\送花排行.ini" %好友B %CURDAY %D2
+
+LOADVALUE D3 "ParamControl\送花排行.ini" %好友B 总数
+INC D3 %D0
+SAVEVALUE "ParamControl\送花排行.ini" %好友B 总数 %D3
+
+LOADVALUE D4 "ParamControl\送花记录.ini" %好友B 总数
+
+#IF
+Large D1 %D4
+#ACT
+SAVEVALUE "ParamControl\送花记录.ini" %好友B 总数 %D1
+SAVEVALUE "ParamControl\送花记录.ini" %好友B 守护 %USERNAME
+
+#if
+#ACT
+LOADVALUE D5 "ParamControl\每日记录.ini" %USERNAME %好友B
+INC D5 %D0
+SaveValue "ParamControl\每日记录.ini" %USERNAME %好友B %D5
+
+LOADVALUE D4 "ParamControl\每日记录.ini" %好友B 数量
+
+#IF
+large D5 %D4
+#Act
+SaveValue "ParamControl\每日记录.ini" %好友B 数量 %D5
+SaveValue "ParamControl\每日记录.ini" %好友B 守护 %USERNAME
+
+#IF
+Small D0 10
+#ACT
+lineMsg [1] "玩家'<$USERNAME>'为<$OUTPUT(好友B)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+#IF
+Small D0 100
+#ACT
+lineMsg [Grobal] "玩家'<$USERNAME>'为<$OUTPUT(好友B)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+#IF
+#ACT
+lineMsg [Grobal] "(*)玩家'<$USERNAME>'为<$OUTPUT(好友B)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+[@@SendHua3]
+#ACT
+MOV D0 %INPUTNUM
+LOADVALUE D6 "ParamControl\送花排行.ini" [系统] [日期]
+
+#if
+Large D0 0
+#ELSEACT
+BREAK
+
+#IF
+Equal D6 %CURDAY
+#ELSEACT
+SAVEVALUE "ParamControl\送花排行.ini" [系统] [日期] %CURDAY
+
+#IF
+CHECKITEM 鲜花 %D0
+#ELSEACT
+BREAK
+#ELSESAY
+对不起,你的包袱里没有{FCOLOR/1}<$OUTPUT(D0)>{FCOLOR/12}朵鲜花.\\
+<关闭/@Exit>
+
+#IF
+#ACT
+TAKE 鲜花 %D0
+
+LOADVALUE D1 "ParamControl\送花记录.ini" %USERNAME %好友C
+INC D1 %D0
+SAVEVALUE "ParamControl\送花记录.ini" %USERNAME %好友C %D1
+
+LOADVALUE D2 "ParamControl\送花排行.ini" %好友C %CURDAY
+INC D2 %D0
+SAVEVALUE "ParamControl\送花排行.ini" %好友C %CURDAY %D2
+
+LOADVALUE D3 "ParamControl\送花排行.ini" %好友C 总数
+INC D3 %D0
+SAVEVALUE "ParamControl\送花排行.ini" %好友C 总数 %D3
+
+LOADVALUE D4 "ParamControl\送花记录.ini" %好友C 总数
+
+#IF
+Large D1 %D4
+#ACT
+SAVEVALUE "ParamControl\送花记录.ini" %好友C 总数 %D1
+SAVEVALUE "ParamControl\送花记录.ini" %好友C 守护 %USERNAME
+
+#if
+#ACT
+LOADVALUE D5 "ParamControl\每日记录.ini" %USERNAME %好友C
+INC D5 %D0
+SaveValue "ParamControl\每日记录.ini" %USERNAME %好友C %D5
+
+LOADVALUE D4 "ParamControl\每日记录.ini" %好友C 数量
+
+#IF
+large D5 %D4
+#Act
+SaveValue "ParamControl\每日记录.ini" %好友C 数量 %D5
+SaveValue "ParamControl\每日记录.ini" %好友C 守护 %USERNAME
+
+#IF
+Small D0 10
+#ACT
+lineMsg [1] "玩家'<$USERNAME>'为<$OUTPUT(好友C)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+#IF
+Small D0 100
+#ACT
+lineMsg [Grobal] "玩家'<$USERNAME>'为<$OUTPUT(好友C)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+#IF
+#ACT
+lineMsg [Grobal] "(*)玩家'<$USERNAME>'为<$OUTPUT(好友C)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[@@SendHua4]
+#ACT
+MOV D0 %INPUTNUM
+LOADVALUE D6 "ParamControl\送花排行.ini" [系统] [日期]
+
+#if
+Large D0 0
+#ELSEACT
+BREAK
+
+#IF
+Equal D6 %CURDAY
+#ELSEACT
+SAVEVALUE "ParamControl\送花排行.ini" [系统] [日期] %CURDAY
+
+#IF
+CHECKITEM 鲜花 %D0
+#ELSEACT
+BREAK
+#ELSESAY
+对不起,你的包袱里没有{FCOLOR/1}<$OUTPUT(D0)>{FCOLOR/12}朵鲜花.\\
+<关闭/@Exit>
+
+#IF
+#ACT
+TAKE 鲜花 %D0
+
+LOADVALUE D1 "ParamControl\送花记录.ini" %USERNAME %好友D
+INC D1 %D0
+SAVEVALUE "ParamControl\送花记录.ini" %USERNAME %好友D %D1
+
+LOADVALUE D2 "ParamControl\送花排行.ini" %好友D %CURDAY
+INC D2 %D0
+SAVEVALUE "ParamControl\送花排行.ini" %好友D %CURDAY %D2
+
+LOADVALUE D3 "ParamControl\送花排行.ini" %好友D 总数
+INC D3 %D0
+SAVEVALUE "ParamControl\送花排行.ini" %好友D 总数 %D3
+
+LOADVALUE D4 "ParamControl\送花记录.ini" %好友D 总数
+
+#IF
+Large D1 %D4
+#ACT
+SAVEVALUE "ParamControl\送花记录.ini" %好友D 总数 %D1
+SAVEVALUE "ParamControl\送花记录.ini" %好友D 守护 %USERNAME
+
+#if
+#ACT
+LOADVALUE D5 "ParamControl\每日记录.ini" %USERNAME %好友D
+INC D5 %D0
+SaveValue "ParamControl\每日记录.ini" %USERNAME %好友D %D5
+
+LOADVALUE D4 "ParamControl\每日记录.ini" %好友D 数量
+
+#IF
+large D5 %D4
+#Act
+SaveValue "ParamControl\每日记录.ini" %好友D 数量 %D5
+SaveValue "ParamControl\每日记录.ini" %好友D 守护 %USERNAME
+
+#IF
+Small D0 10
+#ACT
+lineMsg [1] "玩家'<$USERNAME>'为<$OUTPUT(好友D)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+#IF
+Small D0 100
+#ACT
+lineMsg [Grobal] "玩家'<$USERNAME>'为<$OUTPUT(好友D)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+#IF
+#ACT
+lineMsg [Grobal] "(*)玩家'<$USERNAME>'为<$OUTPUT(好友D)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[@@SendHua5]
+#ACT
+MOV D0 %INPUTNUM
+LOADVALUE D6 "ParamControl\送花排行.ini" [系统] [日期]
+
+#if
+Large D0 0
+#ELSEACT
+BREAK
+
+#IF
+Equal D6 %CURDAY
+#ELSEACT
+SAVEVALUE "ParamControl\送花排行.ini" [系统] [日期] %CURDAY
+
+#IF
+CHECKITEM 鲜花 %D0
+#ELSEACT
+BREAK
+#ELSESAY
+对不起,你的包袱里没有{FCOLOR/1}<$OUTPUT(D0)>{FCOLOR/12}朵鲜花.\\
+<关闭/@Exit>
+
+#IF
+#ACT
+TAKE 鲜花 %D0
+
+LOADVALUE D1 "ParamControl\送花记录.ini" %USERNAME %好友E
+INC D1 %D0
+SAVEVALUE "ParamControl\送花记录.ini" %USERNAME %好友E %D1
+
+LOADVALUE D2 "ParamControl\送花排行.ini" %好友E %CURDAY
+INC D2 %D0
+SAVEVALUE "ParamControl\送花排行.ini" %好友E %CURDAY %D2
+
+LOADVALUE D3 "ParamControl\送花排行.ini" %好友E 总数
+INC D3 %D0
+SAVEVALUE "ParamControl\送花排行.ini" %好友E 总数 %D3
+
+LOADVALUE D4 "ParamControl\送花记录.ini" %好友E 总数
+
+#IF
+Large D1 %D4
+#ACT
+SAVEVALUE "ParamControl\送花记录.ini" %好友E 总数 %D1
+SAVEVALUE "ParamControl\送花记录.ini" %好友E 守护 %USERNAME
+
+#if
+#ACT
+LOADVALUE D5 "ParamControl\每日记录.ini" %USERNAME %好友E
+INC D5 %D0
+SaveValue "ParamControl\每日记录.ini" %USERNAME %好友E %D5
+
+LOADVALUE D4 "ParamControl\每日记录.ini" %好友E 数量
+
+#IF
+large D5 %D4
+#Act
+SaveValue "ParamControl\每日记录.ini" %好友E 数量 %D5
+SaveValue "ParamControl\每日记录.ini" %好友E 守护 %USERNAME
+
+#IF
+Small D0 10
+#ACT
+lineMsg [1] "玩家'<$USERNAME>'为<$OUTPUT(好友E)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+#IF
+Small D0 100
+#ACT
+lineMsg [Grobal] "玩家'<$USERNAME>'为<$OUTPUT(好友E)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+#IF
+#ACT
+lineMsg [Grobal] "(*)玩家'<$USERNAME>'为<$OUTPUT(好友E)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[@@SendHua6]
+#ACT
+MOV D0 %INPUTNUM
+LOADVALUE D6 "ParamControl\送花排行.ini" [系统] [日期]
+
+#if
+Large D0 0
+#ELSEACT
+BREAK
+
+#IF
+Equal D6 %CURDAY
+#ELSEACT
+SAVEVALUE "ParamControl\送花排行.ini" [系统] [日期] %CURDAY
+
+#IF
+CHECKITEM 鲜花 %D0
+#ELSEACT
+BREAK
+#ELSESAY
+对不起,你的包袱里没有{FCOLOR/1}<$OUTPUT(D0)>{FCOLOR/12}朵鲜花.\\
+<关闭/@Exit>
+
+#IF
+#ACT
+TAKE 鲜花 %D0
+
+LOADVALUE D1 "ParamControl\送花记录.ini" %USERNAME %好友F
+INC D1 %D0
+SAVEVALUE "ParamControl\送花记录.ini" %USERNAME %好友F %D1
+
+LOADVALUE D2 "ParamControl\送花排行.ini" %好友F %CURDAY
+INC D2 %D0
+SAVEVALUE "ParamControl\送花排行.ini" %好友F %CURDAY %D2
+
+LOADVALUE D3 "ParamControl\送花排行.ini" %好友F 总数
+INC D3 %D0
+SAVEVALUE "ParamControl\送花排行.ini" %好友F 总数 %D3
+
+LOADVALUE D4 "ParamControl\送花记录.ini" %好友F 总数
+
+#IF
+Large D1 %D4
+#ACT
+SAVEVALUE "ParamControl\送花记录.ini" %好友F 总数 %D1
+SAVEVALUE "ParamControl\送花记录.ini" %好友F 守护 %USERNAME
+
+#if
+#ACT
+LOADVALUE D5 "ParamControl\每日记录.ini" %USERNAME %好友F
+INC D5 %D0
+SaveValue "ParamControl\每日记录.ini" %USERNAME %好友F %D5
+
+LOADVALUE D4 "ParamControl\每日记录.ini" %好友F 数量
+
+#IF
+large D5 %D4
+#Act
+SaveValue "ParamControl\每日记录.ini" %好友F 数量 %D5
+SaveValue "ParamControl\每日记录.ini" %好友F 守护 %USERNAME
+
+#IF
+Small D0 10
+#ACT
+lineMsg [1] "玩家'<$USERNAME>'为<$OUTPUT(好友F)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+#IF
+Small D0 100
+#ACT
+lineMsg [Grobal] "玩家'<$USERNAME>'为<$OUTPUT(好友F)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+#IF
+#ACT
+lineMsg [Grobal] "(*)玩家'<$USERNAME>'为<$OUTPUT(好友F)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+[@@SendHua7]
+#ACT
+MOV D0 %INPUTNUM
+LOADVALUE D6 "ParamControl\送花排行.ini" [系统] [日期]
+
+#if
+Large D0 0
+#ELSEACT
+BREAK
+
+#IF
+Equal D6 %CURDAY
+#ELSEACT
+SAVEVALUE "ParamControl\送花排行.ini" [系统] [日期] %CURDAY
+
+#IF
+CHECKITEM 鲜花 %D0
+#ELSEACT
+BREAK
+#ELSESAY
+对不起,你的包袱里没有{FCOLOR/1}<$OUTPUT(D0)>{FCOLOR/12}朵鲜花.\\
+<关闭/@Exit>
+
+#IF
+#ACT
+TAKE 鲜花 %D0
+
+LOADVALUE D1 "ParamControl\送花记录.ini" %USERNAME %好友G
+INC D1 %D0
+SAVEVALUE "ParamControl\送花记录.ini" %USERNAME %好友G %D1
+
+LOADVALUE D2 "ParamControl\送花排行.ini" %好友G %CURDAY
+INC D2 %D0
+SAVEVALUE "ParamControl\送花排行.ini" %好友G %CURDAY %D2
+
+LOADVALUE D3 "ParamControl\送花排行.ini" %好友G 总数
+INC D3 %D0
+SAVEVALUE "ParamControl\送花排行.ini" %好友G 总数 %D3
+
+LOADVALUE D4 "ParamControl\送花记录.ini" %好友G 总数
+
+#IF
+Large D1 %D4
+#ACT
+SAVEVALUE "ParamControl\送花记录.ini" %好友G 总数 %D1
+SAVEVALUE "ParamControl\送花记录.ini" %好友G 守护 %USERNAME
+
+#if
+#ACT
+LOADVALUE D5 "ParamControl\每日记录.ini" %USERNAME %好友G
+INC D5 %D0
+SaveValue "ParamControl\每日记录.ini" %USERNAME %好友G %D5
+
+LOADVALUE D4 "ParamControl\每日记录.ini" %好友G 数量
+
+#IF
+large D5 %D4
+#Act
+SaveValue "ParamControl\每日记录.ini" %好友G 数量 %D5
+SaveValue "ParamControl\每日记录.ini" %好友G 守护 %USERNAME
+
+#IF
+Small D0 10
+#ACT
+lineMsg [1] "玩家'<$USERNAME>'为<$OUTPUT(好友G)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+#IF
+Small D0 100
+#ACT
+lineMsg [Grobal] "玩家'<$USERNAME>'为<$OUTPUT(好友G)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+#IF
+#ACT
+lineMsg [Grobal] "(*)玩家'<$USERNAME>'为<$OUTPUT(好友G)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[@@SendHua8]
+#ACT
+MOV D0 %INPUTNUM
+LOADVALUE D6 "ParamControl\送花排行.ini" [系统] [日期]
+
+#if
+Large D0 0
+#ELSEACT
+BREAK
+
+#IF
+Equal D6 %CURDAY
+#ELSEACT
+SAVEVALUE "ParamControl\送花排行.ini" [系统] [日期] %CURDAY
+
+#IF
+CHECKITEM 鲜花 %D0
+#ELSEACT
+BREAK
+#ELSESAY
+对不起,你的包袱里没有{FCOLOR/1}<$OUTPUT(D0)>{FCOLOR/12}朵鲜花.\\
+<关闭/@Exit>
+
+#IF
+#ACT
+TAKE 鲜花 %D0
+
+LOADVALUE D1 "ParamControl\送花记录.ini" %USERNAME %好友H
+INC D1 %D0
+SAVEVALUE "ParamControl\送花记录.ini" %USERNAME %好友H %D1
+
+LOADVALUE D2 "ParamControl\送花排行.ini" %好友H %CURDAY
+INC D2 %D0
+SAVEVALUE "ParamControl\送花排行.ini" %好友H %CURDAY %D2
+
+LOADVALUE D3 "ParamControl\送花排行.ini" %好友H 总数
+INC D3 %D0
+SAVEVALUE "ParamControl\送花排行.ini" %好友H 总数 %D3
+
+LOADVALUE D4 "ParamControl\送花记录.ini" %好友H 总数
+
+#IF
+Large D1 %D4
+#ACT
+SAVEVALUE "ParamControl\送花记录.ini" %好友H 总数 %D1
+SAVEVALUE "ParamControl\送花记录.ini" %好友H 守护 %USERNAME
+
+#if
+#ACT
+LOADVALUE D5 "ParamControl\每日记录.ini" %USERNAME %好友H
+INC D5 %D0
+SaveValue "ParamControl\每日记录.ini" %USERNAME %好友H %D5
+
+LOADVALUE D4 "ParamControl\每日记录.ini" %好友H 数量
+
+#IF
+large D5 %D4
+#Act
+SaveValue "ParamControl\每日记录.ini" %好友H 数量 %D5
+SaveValue "ParamControl\每日记录.ini" %好友H 守护 %USERNAME
+
+#IF
+Small D0 10
+#ACT
+lineMsg [1] "玩家'<$USERNAME>'为<$OUTPUT(好友H)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+#IF
+Small D0 100
+#ACT
+lineMsg [Grobal] "玩家'<$USERNAME>'为<$OUTPUT(好友H)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+#IF
+#ACT
+lineMsg [Grobal] "(*)玩家'<$USERNAME>'为<$OUTPUT(好友H)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[@@SendHua9]
+#ACT
+MOV D0 %INPUTNUM
+LOADVALUE D6 "ParamControl\送花排行.ini" [系统] [日期]
+
+#if
+Large D0 0
+#ELSEACT
+BREAK
+
+#IF
+Equal D6 %CURDAY
+#ELSEACT
+SAVEVALUE "ParamControl\送花排行.ini" [系统] [日期] %CURDAY
+
+#IF
+CHECKITEM 鲜花 %D0
+#ELSEACT
+BREAK
+#ELSESAY
+对不起,你的包袱里没有{FCOLOR/1}<$OUTPUT(D0)>{FCOLOR/12}朵鲜花.\\
+<关闭/@Exit>
+
+#IF
+#ACT
+TAKE 鲜花 %D0
+
+LOADVALUE D1 "ParamControl\送花记录.ini" %USERNAME %好友I
+INC D1 %D0
+SAVEVALUE "ParamControl\送花记录.ini" %USERNAME %好友I %D1
+
+LOADVALUE D2 "ParamControl\送花排行.ini" %好友I %CURDAY
+INC D2 %D0
+SAVEVALUE "ParamControl\送花排行.ini" %好友I %CURDAY %D2
+
+LOADVALUE D3 "ParamControl\送花排行.ini" %好友I 总数
+INC D3 %D0
+SAVEVALUE "ParamControl\送花排行.ini" %好友I 总数 %D3
+
+LOADVALUE D4 "ParamControl\送花记录.ini" %好友I 总数
+
+#IF
+Large D1 %D4
+#ACT
+SAVEVALUE "ParamControl\送花记录.ini" %好友I 总数 %D1
+SAVEVALUE "ParamControl\送花记录.ini" %好友I 守护 %USERNAME
+
+#if
+#ACT
+LOADVALUE D5 "ParamControl\每日记录.ini" %USERNAME %好友I
+INC D5 %D0
+SaveValue "ParamControl\每日记录.ini" %USERNAME %好友I %D5
+
+LOADVALUE D4 "ParamControl\每日记录.ini" %好友I 数量
+
+#IF
+large D5 %D4
+#Act
+SaveValue "ParamControl\每日记录.ini" %好友I 数量 %D5
+SaveValue "ParamControl\每日记录.ini" %好友I 守护 %USERNAME
+
+#IF
+Small D0 10
+#ACT
+lineMsg [1] "玩家'<$USERNAME>'为<$OUTPUT(好友I)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+#IF
+Small D0 100
+#ACT
+lineMsg [Grobal] "玩家'<$USERNAME>'为<$OUTPUT(好友I)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+#IF
+#ACT
+lineMsg [Grobal] "(*)玩家'<$USERNAME>'为<$OUTPUT(好友I)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[@@SendHua10]
+#ACT
+MOV D0 %INPUTNUM
+LOADVALUE D6 "ParamControl\送花排行.ini" [系统] [日期]
+
+#if
+Large D0 0
+#ELSEACT
+BREAK
+
+#IF
+Equal D6 %CURDAY
+#ELSEACT
+SAVEVALUE "ParamControl\送花排行.ini" [系统] [日期] %CURDAY
+
+#IF
+CHECKITEM 鲜花 %D0
+#ELSEACT
+BREAK
+#ELSESAY
+对不起,你的包袱里没有{FCOLOR/1}<$OUTPUT(D0)>{FCOLOR/12}朵鲜花.\\
+<关闭/@Exit>
+
+#IF
+#ACT
+TAKE 鲜花 %D0
+
+LOADVALUE D1 "ParamControl\送花记录.ini" %USERNAME %好友J
+INC D1 %D0
+SAVEVALUE "ParamControl\送花记录.ini" %USERNAME %好友J %D1
+
+LOADVALUE D2 "ParamControl\送花排行.ini" %好友J %CURDAY
+INC D2 %D0
+SAVEVALUE "ParamControl\送花排行.ini" %好友J %CURDAY %D2
+
+LOADVALUE D3 "ParamControl\送花排行.ini" %好友J 总数
+INC D3 %D0
+SAVEVALUE "ParamControl\送花排行.ini" %好友J 总数 %D3
+
+LOADVALUE D4 "ParamControl\送花记录.ini" %好友J 总数
+
+#IF
+Large D1 %D4
+#ACT
+SAVEVALUE "ParamControl\送花记录.ini" %好友J 总数 %D1
+SAVEVALUE "ParamControl\送花记录.ini" %好友J 守护 %USERNAME
+
+#if
+#ACT
+LOADVALUE D5 "ParamControl\每日记录.ini" %USERNAME %好友J
+INC D5 %D0
+SaveValue "ParamControl\每日记录.ini" %USERNAME %好友J %D5
+
+LOADVALUE D4 "ParamControl\每日记录.ini" %好友J 数量
+
+#IF
+large D5 %D4
+#Act
+SaveValue "ParamControl\每日记录.ini" %好友J 数量 %D5
+SaveValue "ParamControl\每日记录.ini" %好友J 守护 %USERNAME
+
+#IF
+Small D0 10
+#ACT
+lineMsg [1] "玩家'<$USERNAME>'为<$OUTPUT(好友J)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+#IF
+Small D0 100
+#ACT
+lineMsg [Grobal] "玩家'<$USERNAME>'为<$OUTPUT(好友J)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+#IF
+#ACT
+lineMsg [Grobal] "(*)玩家'<$USERNAME>'为<$OUTPUT(好友J)>献上了<$OUTPUT(D0)>朵鲜花."
+break
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+}

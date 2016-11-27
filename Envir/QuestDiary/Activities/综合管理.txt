@@ -1,0 +1,165 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@综合管理_Main]
+{
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}综{FCOLOR/4}━{FCOLOR/14}合{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_[ <个人PK挑战赛/@个人PK挑战赛8> ] [ <职业PK挑战赛/@职业PK挑战赛8> ] [ <行会号角申请/@行会号角申请8> ]\\
+_[ <行会奖励系统/@行会奖励系统8> ] [ <怪物饲养宰杀/@BOSS饲养宰杀8> ] [ <装备特殊修理/@装备特修_Main> ]\\
+_[ <垃圾变卖回收/@sell> ] [ <物品淘宝中心/@buy> ] [ <造型美容美发/@美容美发_Main> ]\
+
+[@BOSS饲养宰杀8]
+#CALL [Activities\BOSS饲养管理.txt] @喂养BOSS管理_Main
+
+[@行会号角申请8]
+#CALL [Activities\行会申请.txt] @行会申请_1
+
+[@行会奖励系统8]
+#CALL [Activities\行会奖励.txt] @行会奖励_1
+
+[@职业PK挑战赛8]
+#ACT
+LOADVALUE B1 "ParamControl\PK场检查.ini" 比赛场 战士PK王
+LOADVALUE B2 "ParamControl\PK场检查.ini" 比赛场 法师PK王
+LOADVALUE B3 "ParamControl\PK场检查.ini" 比赛场 道士PK王
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}职{FCOLOR/4}━{FCOLOR/14}业{FCOLOR/4}━{FCOLOR/14}PK{FCOLOR/4}━{FCOLOR/14}赛{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+同职业PK赛, 比赛地图不能喝药水,不计PK值,不爆装备\
+参赛者需支付{FCOLOR/10}50万金币{FCOLOR/12}.作为占用场地费用...没有奖励\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}全{FCOLOR/4}━{FCOLOR/14}服{FCOLOR/4}━{FCOLOR/14}PK{FCOLOR/4}━{FCOLOR/14}王{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_          战士PK王: {FCOLOR/1}<$OUTPUT(B1)>{FCOLOR/12}\
+_          法师PK王: {FCOLOR/1}<$OUTPUT(B2)>{FCOLOR/12}\
+_          道士PK王: {FCOLOR/1}<$OUTPUT(B3)>{FCOLOR/12}\\
+_                 [ <参加比赛/@职业挑战8_1> ]\
+
+[@个人PK挑战赛8]
+#CALL [Activities\个人PK赛.txt] @个人PK赛_Main
+
+[@职业挑战8_1]
+#IF
+checklevel 50
+#ACT
+GOTO @职业挑战8_2
+#ELSEACT
+SYSMSG "【温馨提示】您的等级小于 [ 50级 ] 不得参与比赛~"
+Close
+Break
+
+[@职业挑战8_2]
+#CALL [Activities\职业PK赛.txt] @职业PK赛_jc2
+
+[@美容美发_Main]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}美{FCOLOR/4}━{FCOLOR/14}容{FCOLOR/4}━{FCOLOR/14}美{FCOLOR/4}━{FCOLOR/14}发{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_                  {FCOLOR/1}更改头发颜色{FCOLOR/12}\
+_      [ <染成白色 → 需要费用 200W 金币/@HairColor(白色,255,255,255,2000000)> ]\
+_      [ <染成黑色 → 需要费用 200W 金币/@HairColor(黑色,60,60,60,2000000)> ]\
+_      [ <染成灰色 → 需要费用 200W 金币/@HairColor(灰色,170,170,170,2000000)> ]\
+_      [ <随机颜色 → 需要费用 100W 金币/@HairColor(Random,0,0,0,1000000)> ]\\
+
+#IF
+gender man
+#SAY
+_                  {FCOLOR/1}更改男性发型{FCOLOR/12}\
+_      [ <做成光头 → 需要费用 300W 金币/@HairShape(光头,0)> ]\
+_      [ <做成碎发 → 需要费用 300W 金币/@HairShape(碎发,1)> ]\
+_      [ <做成发髻 → 需要费用 300W 金币/@HairShape(发髻,2)> ]\
+_      [ <做成短发 → 需要费用 300W 金币/@HairShape(短发,3)> ]\
+_      [ <做成发辫 → 需要费用 300W 金币/@HairShape(发辫,4)> ]\
+_      [ <做成散发 → 需要费用 300W 金币/@HairShape(散发,5)> ]\\
+#ELSESAY
+_                  {FCOLOR/1}更改女性发型{FCOLOR/12}\
+_      [ <做成光头 → 需要费用 300W 金币/@HairShape(光头,0)> ]\
+_      [ <做成披肩 → 需要费用 300W 金币/@HairShape(披肩,1)> ]\
+_      [ <做成发髻 → 需要费用 300W 金币/@HairShape(发髻,2)> ]\
+_      [ <做成短发 → 需要费用 300W 金币/@HairShape(短发,3)> ]\
+_      [ <做成马尾 → 需要费用 300W 金币/@HairShape(马尾,4)> ]\
+_      [ <做成卷发 → 需要费用 300W 金币/@HairShape(卷发,5)> ]\\
+_               [ <返回上层菜单/@Main> ]\
+
+[@HairColor()]
+#IF
+#ACT
+Mov A0 %ARG(1)
+Mov D0 %ARG(2)
+Mov D1 %ARG(3)
+Mov D2 %ARG(4)
+Mov D3 %ARG(5)
+
+#IF
+Equal A0 "Random"
+CheckGold %D3
+#ACT
+take 金币 %D3
+hairrndcol
+sysmsg "【温馨提示】花费了200W金币,随机染了一种颜色,满意吧!"
+close
+break
+
+#IF
+checkgold %D3
+#ACT
+take 金币 %D3
+haircolor %D0 %D1 %D2
+sysmsg "【温馨提示】花费了200W金币,您染成了[ <$OUTPUT(A0)> ],满意吧!"
+close
+break
+#ELSEACT
+sysmsg "【温馨提示】您的金币不足200W,不可以进行染色!"
+close
+break
+
+[@HairShape()]
+#IF
+#ACT
+Mov A0 %ARG(1)
+Mov D0 %ARG(2)
+
+#IF
+checkgold 3000000
+#ACT
+take 金币 3000000
+hairstyle %D0
+sysmsg "【温馨提示】花费300W金币,发型改成[ <$OUTPUT(A0)> ]了,很有个性啊!"
+close
+break
+#ELSEACT
+sysmsg "【温馨提示】您的金币不足300W,不可以改变发型!"
+close
+break
+
+[@装备特修_Main]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}修{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━{FCOLOR/14}装{FCOLOR/4}━{FCOLOR/14}备{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+您好 {FCOLOR/1}勇士啊{FCOLOR/12} 本服务器的所有装备的持久度均为最高65\
+所以在我这里修理装备的费用比较高，每次修理需要15W\
+费用。请认真考虑后再使用该功能。修理范围如下：\
+{FCOLOR/10}武器、头盔、衣服、项链、手镯、戒指、鞋子、勋章。{FCOLOR/12}\\
+_               [ <全身装备修理/@装备特修_Main_01> ]\\
+_               [ <返回上一菜单/@Main> ]\
+
+[@装备特修_Main_01]
+#IF
+checkgold 150000
+#ACT
+Close
+take 金币 150000
+RepairItem 0
+RepairItem 1
+RepairItem 2
+RepairItem 3
+RepairItem 4
+RepairItem 5
+RepairItem 6
+RepairItem 7
+RepairItem 8
+RepairItem 9
+RepairItem 10
+RepairItem 11
+SysMsg  "【特修完毕】: 您花费了15W金币特修了全身的所有装备~"
+#ELSEACT
+SysMsg  "【温欣提示】:您的金币不足,无法进行特修~"
+Close
+
+}
+
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

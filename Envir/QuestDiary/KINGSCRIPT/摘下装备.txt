@@ -1,0 +1,35 @@
+;;激情网络
+[@摘下装备_Main]
+{
+#Act
+Mov 摘下索引2 ""
+Mov 摘下索引 ""
+Mov 摘下索引2 %ARG(2)
+Mov 摘下索引 %ARG(3)
+Mov 铭刻信息 ""
+
+#If
+small 摘下索引 1
+#Act
+break
+
+#If
+Equal 摘下索引 ""
+#Act
+break
+
+#IF
+Small 摘下索引2 0
+#ACT
+break
+
+#IF
+#Act
+GOTO @装备属性检测
+break
+
+[@装备属性检测]
+#CALL [KINGSCRIPT\装备属性检测.txt] @检测_Main
+
+}
+;;激情网络

@@ -1,0 +1,173 @@
+;;创天网络有限公司原版1.45
+[@MapQuest_massheal_cave]
+#IF
+checkjob warrior
+#ACT
+break
+;
+#IF
+checkjob wizard
+#ACT
+break
+;
+#IF
+check [058] 1
+#ACT
+set [058] 0
+enter_fail
+break
+;
+#IF
+check [023] 1
+#SAY
+(这里是以前击退蜈蚣的洞窟哦...现在洞口被堵上了。)
+#ACT
+enter_fail
+break
+;
+#IF
+check [059] 1
+#SAY
+(这里是以前击退蜈蚣的洞窟哦...现在洞口被堵上了。)
+#ACT
+enter_fail
+break
+;
+#IF
+check [057] 0
+#SAY
+(好像是什么洞窟入口？现在洞口被堵上了。)
+#ACT
+enter_fail
+break
+;
+#IF
+check [056] 0
+#SAY
+(好像是什么洞窟入口？现在洞口被堵上了。)
+#ACT
+enter_fail
+break
+;
+#IF
+check [056] 1
+check [057] 1
+#ACT
+goto @MapQuest_massheal_cave1_1
+#ELSEACT
+enter_fail
+
+
+[@MapQuest_massheal_cave1_1]
+#IF
+checkhum 1_020 1
+#SAY
+(好像有人在里面？有声音。。。)\
+#ACT
+enter_fail
+#ELSEACT
+goto @MapQuest_massheal_cave1_2
+
+[@MapQuest_massheal_cave1_2]
+#IF
+checkhum 1_021 1
+#SAY
+(好像有人在里面？有声音。。。)\
+#ACT
+enter_fail
+#ELSEACT
+goto @MapQuest_massheal_cave1_3
+
+[@MapQuest_massheal_cave1_3]
+#IF
+checkhum 1_022 1
+#SAY
+(好像有人在里面？有声音。。。)\
+#ACT
+enter_fail
+#ELSEACT
+goto @MapQuest_massheal_cave1_4
+
+[@MapQuest_massheal_cave1_4]
+#IF
+checkhum 1_023 1
+#SAY
+(好像有人在里面？有声音。。。)\
+#ACT
+enter_fail
+#ELSEACT
+Monclear 1_020
+Monclear 1_021
+Monclear 1_022
+Monclear 1_023
+;
+Param1 1_020
+Param2 15
+Param3 77
+MonGen 跳跳蜂61  10 10
+;
+Param1 1_020
+Param2 70
+Param3 20
+MonGen 黑色恶蛆61  10  10
+;
+Param1 1_020
+Param2 90
+Param3 70
+MonGen 跳跳蜂61  10  10
+MonGen 沃毒蜈蚣61 1 1
+MonGen 邪恶蜈蚣61 1 1
+;
+Param1 1_020
+Param2 100
+Param3 42
+MonGen 黑色恶蛆61  10  10
+;
+Param1 1_020
+Param2 146
+Param3 18
+MonGen 跳跳蜂61  10 10
+;
+Param1 1_021
+Param2 25
+Param3 30
+MonGen 跳跳蜂61  15  10
+MonGen 蝴蝶虫61  5 10
+;
+Param1 1_022
+Param2 45
+Param3 20
+MonGen 黑色恶蛆61  10  10
+MonGen 蜈蚣61  5  10
+;
+Param1 1_022
+Param2 65
+Param3 70
+MonGen 蜈蚣61  10 10
+;
+Param1 1_022
+Param2 75
+Param3 42
+MonGen 黑色恶蛆61  10  10
+MonGen 沃毒蜈蚣61  1 1
+MonGen 邪恶蜈蚣61  1 1
+;
+Param1 1_022
+Param2 122
+Param3 17
+MonGen 蜈蚣61  10  10
+;
+Param1 1_022
+Param2 154
+Param3 30
+MonGen 黑色恶蛆61  10  10
+MonGen 蜈蚣61  5  10
+;
+Param1 1_023
+Param2 22
+Param3 22
+MonGen 沃毒蜈蚣62  1 1
+MonGen 蜈蚣61  10 1
+;
+set [058] 1
+enter_ok

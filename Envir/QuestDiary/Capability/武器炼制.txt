@@ -1,0 +1,534 @@
+;;
+[@武器炼制_Main]
+{
+#ACT
+MOV 成功几率 30
+MOV 毁灭数量 1
+MOV Temp 0
+MOV 随机几率 0
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}武{FCOLOR/4}━{FCOLOR/14}器{FCOLOR/4}━{FCOLOR/14}炼{FCOLOR/4}━{FCOLOR/14}制{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_          [ <炼 制 已 升 级 的 武 器/@炼制武器> ]\\
+_          [ <取 回 已 炼 制 的 武 器/@取回武器> ]\\
+_          [ <转 换 武 器 攻 击 元 素/@转换元素> ]\\
+_          [ <补 救 炼 制 失 败 武 器/@炼制补救> ]\\
+_          [ <武 器 一 键 炼 制 直 升/@武器直升> ]\\
+_          [ <初 始 化 武 器 的 属 性/@武器初始> ]\\
+_           [ <武 器 MAX 满 级 再 升/@武器MAX> ]\
+
+[@炼制补救]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}武{FCOLOR/4}━{FCOLOR/14}器{FCOLOR/4}━{FCOLOR/14}炼{FCOLOR/4}━{FCOLOR/14}制{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_    我是{FCOLOR/10}制炼武器的阿翔{FCOLOR/12}, 如果武器的级别够了\
+_    可以交给我制炼. 即使沙城的人价钱也一样\
+_    每次补救需要花费{FCOLOR/1}20个{FCOLOR/12}元宝。\\
+_[ <补 救 物 理 破 坏/@补救炼制开始(20)> ]     [ <补 救 魔 法 攻 击/@补救炼制开始(21)> ]\\
+_[ <补 救 火 焰 元 素/@补救炼制开始(11)> ]     [ <补 救 寒 冰 元 素/@补救炼制开始(12)> ]\\
+_[ <补 救 雷 电 元 素/@补救炼制开始(13)> ]     [ <补 救 狂 风 元 素/@补救炼制开始(14)> ]\\
+_[ <补 救 神 圣 元 素/@补救炼制开始(15)> ]     [ <补 救 暗 黑 元 素/@补救炼制开始(16)> ]\\
+_[ <补 救 幻 影 元 素/@补救炼制开始(17)> ]     [ <返 回 上 层 菜 单/@武器炼制_Main> ]\
+
+[@炼制武器]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}武{FCOLOR/4}━{FCOLOR/14}器{FCOLOR/4}━{FCOLOR/14}炼{FCOLOR/4}━{FCOLOR/14}制{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_    我是{FCOLOR/10}制炼武器的阿翔{FCOLOR/12}, 如果武器的级别够了\
+_    可以交给我制炼. 即使沙城的人价钱也一样\
+_    炼制需要{FCOLOR/1}50W{FCOLOR/12}金币,黑铁{FCOLOR/1}5{FCOLOR/12}个,升刀首饰{FCOLOR/1}5{FCOLOR/12}个\\
+_[ <炼 制 物 理 破 坏/@武器炼制开始(3,0)> ]     [ <炼 制 魔 法 攻 击/@武器炼制开始(3,1)> ]\\
+_[ <炼 制 火 焰 元 素/@武器炼制开始(4,1)> ]     [ <炼 制 寒 冰 元 素/@武器炼制开始(4,2)> ]\\
+_[ <炼 制 雷 电 元 素/@武器炼制开始(4,3)> ]     [ <炼 制 狂 风 元 素/@武器炼制开始(4,4)> ]\\
+_[ <炼 制 神 圣 元 素/@武器炼制开始(4,5)> ]     [ <炼 制 暗 黑 元 素/@武器炼制开始(4,6)> ]\\
+_[ <炼 制 幻 影 元 素/@武器炼制开始(4,7)> ]     [ <返 回 上 层 菜 单/@武器炼制_Main> ]\
+
+[@补救炼制开始()]
+#ACT
+MOV D0 %ARG(1)
+
+#IF
+checkcmd CHECKITEMINFO 1 0
+
+#if 
+SMALL FLD_DESC10 1
+#act
+SysMsg "温馨提示：您的武器还没有升级和炼制无法补救"
+break
+
+#IF
+!checkcmd CHECKITEMINFO 1 0       ;;;检测是否带装备
+#ACT
+Close
+SysMsg  "温馨提示: 您的[ 武器 ]位置没有佩带任何装备"
+break
+
+#IF
+checkweaponlevel 22
+#ACT
+SysMsg "武器等级22级后,不能使用补救系统"
+break
+
+#IF
+checkcmd CHECKUSERJF 20
+#ACT
+Close
+actcmd SETUSERJF - 20 升刀补救
+ACTCMD EDITITEM 10 = %D0
+SysMsg "武器升刀补救成功,请[ 试刀 ]吧"
+#elseact
+Close
+SysMsg "您的元宝不足,武器升刀补救失败"
+
+[@武器炼制开始()]
+#ACT
+MOV 阿翔参数1 %ARG(1)
+MOV 阿翔参数2 %ARG(2)
+
+#IF
+CHECKCMD CHECKITEMINFO 1
+
+#IF
+checkweaponlevel 1
+#ELSEACT
+SYSMSG "温馨提示：您没有携带武器无法炼制！"
+Break
+
+#IF
+checkweaponlevel 22
+#ACT
+SysMsg "武器已经满级了无需再炼制！"
+Break
+
+#IF
+Checkitemw 寂幻之刃 1
+or Checkitemw 沙城之刃[沙] 1
+#ACT
+SYSMSG "温馨提示：该武器无法炼制！"
+Break
+
+#IF
+!checkrefineweapon
+#ACT
+SYSMSG "温馨提示：您的武器还没有升级无法炼制"
+Break
+
+#IF
+!checkitem 黑铁 5
+#ACT
+SYSMSG "温馨提示：您没有5个炼制用的黑铁,无法进行炼制！"
+Break
+
+#IF
+!checkrefineitem 5 5
+#ACT
+SYSMSG "温馨提示：您没有5个炼制用的首饰,无法进行炼制！"
+Break
+
+#IF
+#ACT
+RefineWeapon 500000 %阿翔参数1 %阿翔参数2
+Break
+
+[~@upgradenow_ok]
+#SAY
+温馨提示：武器炼制成功，请取回武器查看是否成功！\
+武器[{FCOLOR/1} 制炼以后过了7天 {FCOLOR/12}]的话就不能取回武器了,请不要忘记了\\
+_              <取回已制炼的武器/@取回武器>
+
+[@取回武器]
+#ACT
+GetBackUpgItem
+
+[~@upgradenow_ing]
+#SAY
+我一次只能制炼一个武器\
+等我手头的工作结束后你再来申请制炼吧\\
+[ <返 回 上 层 菜 单/@Main> ]
+
+[~@upgradenow_fail]
+#SAY
+材料不够,请准备好后再来\
+并且辛苦费不要忘了带来...\\
+[ <返 回 上 层 菜 单/@Main> ]
+
+[~@getbackupgnow_ok]
+#SAY
+这是你的武器,虽然我尽了全力但是\
+成功与否还要你试一下才知道\\
+<关 闭/@exit>
+
+[~@getbackupgnow_fail]
+#SAY
+你有东西存放在这里吗? 好像没有啊...\
+如果是很久以前存放的东西的话你还是回去吧\
+长时间不取的武器会被化掉当作材料使用\\
+[ <返 回 上 层 菜 单/@Main> ]
+
+[@转换元素]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}武{FCOLOR/4}━{FCOLOR/14}器{FCOLOR/4}━{FCOLOR/14}炼{FCOLOR/4}━{FCOLOR/14}制{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_    我是{FCOLOR/10}制炼武器的阿翔{FCOLOR/12}, 如果武器的级别够了\
+_    可以交给我制炼. 即使沙城的人价钱也一样\
+_    转换元素需要花费您{FCOLOR/1}200W{FCOLOR/12}金币。\\
+_        [ <把武器属性改成火焰元素属性/@元素转换开始(火焰,1)> ]\\
+_        [ <把武器属性改成寒冰元素属性/@元素转换开始(寒冰,2)> ]\\
+_        [ <把武器属性改成雷电元素属性/@元素转换开始(雷电,3)> ]\\
+_        [ <把武器属性改成狂风元素属性/@元素转换开始(狂风,4)> ]\\
+_        [ <把武器属性改成神圣元素属性/@元素转换开始(神圣,5)> ]\\
+_        [ <把武器属性改成暗黑元素属性/@元素转换开始(暗黑,6)> ]\\
+_        [ <把武器属性改成幻影元素属性/@元素转换开始(幻影,7)> ]\\
+_             [ <返 回 上 层 菜 单/@武器炼制_Main> ]\
+
+[@元素转换开始()]
+#ACT
+Mov A0 %ARG(1)
+Mov D0 %ARG(2)
+
+#IF
+!checkcmd CHECKITEMINFO 1 0       ;;;检测是否带装备
+#ACT
+SysMsg  "温馨提示: 您的[ 武器 ]位置没有佩带任何装备"
+Break
+
+#IF
+!HasWeaponAtom
+#ACT
+SysMsg  "武器没有元素属性,你叫我怎么帮你呢？"
+Break
+
+#IF
+checkgold 2000000
+#ACT
+ChangeWeaponAtom %D0
+take 金币 2000000
+SysMsg  "温馨提示: 您武器的元素属性已改为[ <$OUTPUT(A0)> ]系列"
+Close
+#ELSEACT
+Close
+SysMsg  "温馨提示: 您的金币不足 200万"
+
+[@武器直升]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}武{FCOLOR/4}━{FCOLOR/14}器{FCOLOR/4}━{FCOLOR/14}直{FCOLOR/4}━{FCOLOR/14}升{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+对于高等级和高转生的玩家来说每次升级武器非常的繁琐\
+在这里,我可以将您的武器一次提升到{FCOLOR/1}MAX满级{FCOLOR/12}的状态从而\
+使炼制武器更加的人性化。使用武器直升需要全新的武器\
+上并花费{FCOLOR/1}100个元宝{FCOLOR/12}作为我劳动的手续费。\\
+_[ <直 升 物 理 破 坏/@直升炼制开始A(FLD_DESC0,物理破坏)> ]     [ <直 升 魔 法 攻 击/@直升炼制开始A(FLD_DESC1,魔法攻击)> ]\\
+_[ <直 升 火 焰 元 素/@直升炼制开始B(1,火焰元素)> ]     [ <直 升 寒 冰 元 素/@直升炼制开始B(2,寒冰元素)> ]\\
+_[ <直 升 雷 电 元 素/@直升炼制开始B(3,雷电元素)> ]     [ <直 升 狂 风 元 素/@直升炼制开始B(4,狂风元素)> ]\\
+_[ <直 升 神 圣 元 素/@直升炼制开始B(5,神圣元素)> ]     [ <直 升 暗 黑 元 素/@直升炼制开始B(6,暗黑元素)> ]\\
+_[ <直 升 幻 影 元 素/@直升炼制开始B(7,幻影元素)> ]     [ <返 回 上 层 菜 单/@武器炼制_Main> ]\
+
+[@直升炼制开始A()]
+#ACT
+MOV 直升参数1 %ARG(1)
+MOV 直升参数2 %ARG(2)
+
+#IF
+checkcmd CHECKITEMINFO 1 0
+
+#IF
+!checkcmd CHECKITEMINFO 1 0       ;;;检测是否带装备
+#ACT
+Close
+SysMsg  "温馨提示: 您的[ 武器 ]位置没有佩带任何装备"
+break
+
+#IF
+checkweaponlevel 2
+#ACT
+SysMsg "您当前的武器不是新的无法直升！"
+Break
+
+#IF
+CHECKUSERJF 100
+#ACT
+SETUSERJF - 100
+ACTCMD EDITITEM FLD_DESC14 = 115
+ACTCMD EDITITEM %直升参数1 + 21
+SYSMSG "温馨提示：恭喜您武器的[ <$OUTPUT(直升参数2)> ]一键直升成功.武器已经达到满级状态."
+Break
+Close
+#ELSEACT
+SYSMSG "温馨提示：您的元宝不足100,无法进行一键直升."
+Break
+
+[@直升炼制开始B()]
+#ACT
+MOV 直升参数1 %ARG(1)
+MOV 直升参数2 %ARG(2)
+
+#IF
+checkcmd CHECKITEMINFO 1 0
+
+#IF
+!checkcmd CHECKITEMINFO 1 0       ;;;检测是否带装备
+#ACT
+Close
+SysMsg  "温馨提示: 您的[ 武器 ]位置没有佩带任何装备"
+break
+
+#IF
+checkweaponlevel 2
+#ACT
+SysMsg "您当前的武器不是新的无法直升！"
+Break
+
+#IF
+CHECKUSERJF 100
+#ACT
+SETUSERJF - 100
+ACTCMD EDITITEM FLD_DESC14 = 115
+ACTCMD EDITITEM FLD_DESC11 = %直升参数1
+ACTCMD EDITITEM FLD_DESC12 + 21
+SYSMSG "温馨提示：恭喜您武器的[ <$OUTPUT(直升参数2)> ]一键直升成功.武器已经达到满级状态."
+Break
+Close
+#ELSEACT
+SYSMSG "温馨提示：您的元宝不足100,无法进行一键直升."
+Break
+
+[@武器初始]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}武{FCOLOR/4}━{FCOLOR/14}器{FCOLOR/4}━{FCOLOR/14}初{FCOLOR/4}━{FCOLOR/14}始{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+如果您对武器的属性不满意，这里可以把武器进行初始化\
+重置。初始化操作使您的武器的等级、附加属性{FCOLOR/1}全部清零{FCOLOR/12}\
+初始化后并且给予武器{FCOLOR/1}0-5{FCOLOR/12}点随机附加属性成为极品武器.\
+使用该功能需要花费{FCOLOR/1}2个魔晶石{FCOLOR/12}的材料费。\\
+_    [ <对武器进行初始化操作/@武器格式化1> ]可附加{FCOLOR/1}破坏{FCOLOR/12}属性\\
+_    [ <对武器进行初始化操作/@武器格式化2> ]可附加{FCOLOR/1}全系{FCOLOR/12}属性\\
+_        [ <返回上层菜单/@武器炼制_Main> ]
+
+[@武器格式化1]
+#ACT
+MOVR D7 6
+
+#IF
+checkcmd CHECKITEMINFO 1 0
+
+#IF
+!checkcmd CHECKITEMINFO 1 0       ;;;检测是否带装备
+#ACT
+Close
+SysMsg  "温馨提示: 您的[ 武器 ]位置没有佩带任何装备"
+break
+
+#IF
+CHECKITEM 魔晶石 2
+#ACT
+ACTCMD EDITITEM FLD_DESC0 = %D7
+ACTCMD EDITITEM FLD_DESC1 = 0
+ACTCMD EDITITEM FLD_DESC8 = 0
+ACTCMD EDITITEM FLD_DESC11 = 0
+ACTCMD EDITITEM FLD_DESC12 = 0
+ACTCMD EDITITEM FLD_DESC13 = 0
+ACTCMD EDITITEM FLD_DESC14 = 0
+ACTCMD EDITITEM FLD_DESC15 = 0
+ACTCMD EDITITEM FLD_DESC16 = 0
+TAKE 魔晶石 2
+SYSMSG "温馨提示：您成功的将武器初始化."
+Break
+Close
+#ELSEACT
+SYSMSG "温馨提示：您的材料不足无法操作."
+Break
+
+[@武器格式化2]
+#ACT
+MOVR D7 6
+
+#IF
+checkcmd CHECKITEMINFO 1 0
+
+#IF
+!checkcmd CHECKITEMINFO 1 0       ;;;检测是否带装备
+#ACT
+Close
+SysMsg  "温馨提示: 您的[ 武器 ]位置没有佩带任何装备"
+break
+
+#IF
+CHECKITEM 魔晶石 2
+#ACT
+ACTCMD EDITITEM FLD_DESC0 = 0
+ACTCMD EDITITEM FLD_DESC1 = %D7
+ACTCMD EDITITEM FLD_DESC8 = 0
+ACTCMD EDITITEM FLD_DESC11 = 0
+ACTCMD EDITITEM FLD_DESC12 = 0
+ACTCMD EDITITEM FLD_DESC13 = 0
+ACTCMD EDITITEM FLD_DESC14 = 0
+ACTCMD EDITITEM FLD_DESC15 = 0
+ACTCMD EDITITEM FLD_DESC16 = 0
+TAKE 魔晶石 2
+SYSMSG "温馨提示：您成功的将武器初始化."
+Break
+Close
+#ELSEACT
+SYSMSG "温馨提示：您的材料不足无法操作."
+Break
+
+[@武器MAX]
+#IF
+checkcmd CHECKITEMINFO 1 0
+
+#IF
+!checkcmd CHECKITEMINFO 1 0       ;;;检测是否带装备
+#ACT
+Close
+SysMsg  "温馨提示: 您的[ 武器 ]位置没有佩带任何装备"
+break
+
+#IF
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}武{FCOLOR/4}━{FCOLOR/14}器{FCOLOR/4}━{FCOLOR/14}再{FCOLOR/4}━{FCOLOR/14}升{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+武器达到{FCOLOR/1}MAX{FCOLOR/12}满级后,您是否感觉对属性还不满意。没关系\
+我这里可以把满级的武器再进行{FCOLOR/1}3次{FCOLOR/12}再升.再升武器默认的\
+成功率为{FCOLOR/1}30%{FCOLOR/12},每增加{FCOLOR/1}1个毁灭精华{FCOLOR/12}可增加{FCOLOR/1}20%{FCOLOR/12}的成功率。每\
+次再升可提升{FCOLOR/1}5点{FCOLOR/12}的物理破坏或者魔法攻击.默认的费用为\
+{FCOLOR/1}100元宝{FCOLOR/12}和{FCOLOR/1}1个毁灭精华{FCOLOR/12}   {FCOLOR/14}您武器已经再升次数为: {FCOLOR/1}<$OUTPUT(FLD_DESC8)>{FCOLOR/12}\
+_             {FCOLOR/13}请 放 入 再 升 的 材 料{FCOLOR/12}\
+_<增加毁灭精华/@增加毁灭精华1> [{FCOLOR/1} <$OUTPUT(毁灭数量)> {FCOLOR/12}] {FCOLOR/12}<减少毁灭精华/@减少毁灭精华1>   成功率{FCOLOR/12}[{FCOLOR/1} <$OUTPUT(成功几率)>% {FCOLOR/12}]\
+_             {FCOLOR/13}请 选 择 再 升 的 功 能{FCOLOR/12}\
+_[ <再 升 物 理 破 坏/@武器再升开始A(FLD_DESC0)> ]     [ <再 升 魔 法 攻 击/@武器再升开始A(FLD_DESC1)> ]\\
+_[ <再 升 火 焰 元 素/@武器再升开始B(1)> ]     [ <再 升 寒 冰 元 素/@武器再升开始B(2)> ]\\
+_[ <再 升 雷 电 元 素/@武器再升开始B(3)> ]     [ <再 升 狂 风 元 素/@武器再升开始B(4)> ]\\
+_[ <再 升 神 圣 元 素/@武器再升开始B(5)> ]     [ <再 升 暗 黑 元 素/@武器再升开始B(6)> ]\\
+_[ <再 升 幻 影 元 素/@武器再升开始B(7)> ]     [ <返 回 上 层 菜 单/@武器炼制_Main> ]\
+
+[@增加毁灭精华1]
+#IF
+ELARGE 毁灭数量 4
+#ACT
+SYSMSG "温馨提示: 无法再增加投入数量."
+Break
+
+#IF
+#ACT
+INC 毁灭数量 1
+INC 成功几率 20
+GOTO @武器MAX
+
+[@减少毁灭精华1]
+#IF
+ESMALL 毁灭数量 1
+#ACT
+SYSMSG "温馨提示: 无法再减少投入数量."
+Break
+
+#IF
+#ACT
+DEC 毁灭数量 1
+DEC 成功几率 20
+GOTO @武器MAX
+
+[@武器再升开始A()]
+#ACT
+MOV 再升参数 %ARG(1)
+MOVR 随机几率 100
+INC 随机几率 1
+
+#IF
+checkcmd CHECKITEMINFO 1 0
+
+#IF
+!checkcmd CHECKITEMINFO 1 0       ;;;检测是否带装备
+#ACT
+Close
+SysMsg  "温馨提示: 您的[ 武器 ]位置没有佩带任何装备"
+break
+
+#IF
+!CHECKITEM 毁灭精华 %毁灭数量
+#ACT
+SYSMSG "温馨提示: 您的[ 毁灭精华 ]不足[ <$OUTPUT(毁灭数量)> ]个"
+Break
+
+#IF
+!checkweaponlevel 22
+#ACT
+SysMsg "您的武器没有MAX满级,无法进行再升."
+Break
+
+#IF
+ELARGE FLD_DESC8 3
+#ACT
+Close
+SysMsg  "温馨提示: 您的武器已经提升过3次,无法再次提升."
+break
+
+#IF
+ELARGE 成功几率 %随机几率
+EQUAL Temp 0
+#ACT
+MOV Temp 1
+TAKE 毁灭精华 %毁灭数量
+ACTCMD EDITITEM %再升参数 + 5
+ACTCMD EDITITEM FLD_DESC8 + 1
+SYSMSG "温馨提升：恭喜您再升武器成功."
+Break
+Close
+#ELSEACT
+MOV Temp 1
+TAKE 毁灭精华 %毁灭数量
+ACTCMD EDITITEM FLD_DESC8 + 1
+SYSMSG "温馨提升：对不起,您再升武器失败."
+Break
+Close
+
+[@武器再升开始B()]
+#ACT
+MOV 再升参数 %ARG(1)
+MOVR 随机几率 100
+INC 随机几率 1
+
+#IF
+checkcmd CHECKITEMINFO 1 0
+
+#IF
+!checkcmd CHECKITEMINFO 1 0       ;;;检测是否带装备
+#ACT
+Close
+SysMsg  "温馨提示: 您的[ 武器 ]位置没有佩带任何装备"
+break
+
+#IF
+!CHECKITEM 毁灭精华 %毁灭数量
+#ACT
+SYSMSG "温馨提示: 您的[ 毁灭精华 ]不足[ <$OUTPUT(毁灭数量)> ]个"
+Break
+
+#IF
+!checkweaponlevel 22
+#ACT
+SysMsg "您的武器没有MAX满级,无法进行再升."
+Break
+
+#IF
+ELARGE FLD_DESC8 3
+#ACT
+Close
+SysMsg  "温馨提示: 您的武器已经提升过3次,无法再次提升."
+break
+
+#IF
+ELARGE 成功几率 %随机几率
+EQUAL Temp 0
+#ACT
+MOV Temp 1
+TAKE 毁灭精华 %毁灭数量
+ACTCMD EDITITEM FLD_DESC11 = %再升参数
+ACTCMD EDITITEM FLD_DESC12 + 5
+ACTCMD EDITITEM FLD_DESC8 + 1
+SYSMSG "温馨提升：恭喜您再升武器成功."
+Break
+Close
+#ELSEACT
+MOV Temp 1
+TAKE 毁灭精华 %毁灭数量
+ACTCMD EDITITEM FLD_DESC8 + 1
+SYSMSG "温馨提升：对不起,您再升武器失败."
+Break
+Close
+
+}
+
+;;

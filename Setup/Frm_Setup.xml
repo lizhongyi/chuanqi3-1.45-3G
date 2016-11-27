@@ -1,0 +1,2786 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<DLD_Config>
+  <ConfigVer>0.0000</ConfigVer>
+  <TFrmManage_FrmManage>
+    <TFrmManage Name="FrmManage">
+      <Components>
+        <TButton Name="btn1">
+          <Caption>Record</Caption>
+        </TButton>
+        <TEdit Name="edt1">
+          <Text>3</Text>
+        </TEdit>
+        <TEdit Name="edt2">
+          <Text>$0058B28C</Text>
+        </TEdit>
+        <TTabSheet Name="ts1">
+          <Caption>ÓÃ»§¹ÜÀí</Caption>
+        </TTabSheet>
+        <TTabSheet Name="ts7">
+          <Caption>ÓÃ»§Êý¾Ý</Caption>
+        </TTabSheet>
+        <TGroupBox Name="GroupBox9">
+          <Caption/>
+        </TGroupBox>
+        <TLabel Name="lbl1">
+          <Caption>SearchType</Caption>
+        </TLabel>
+        <TLabel Name="lbl3">
+          <Caption>SearchValue</Caption>
+        </TLabel>
+        <TComboBox Name="cbbSearchType">
+          <Items>(TComboBoxStrings)
+            <DefinedProperties>
+            B1N0cmluZ3MBBgROYW1lBgdQb2ludGVyBgdMb2dpbklEBgdMb2dpbklQBgNNYXAGAVgGAVkGBUdN
+            THZsBgRHb2xkBgJKRgYFTGV2ZWwA
+            </DefinedProperties>
+          </Items>
+        </TComboBox>
+        <TEdit Name="edtSearchValue">
+          <Text/>
+        </TEdit>
+        <TButton Name="btn6">
+          <Caption>Search</Caption>
+        </TButton>
+        <TCheckBox Name="chkSearchNot">
+          <Caption>Not</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkSearchInRet">
+          <Caption>SearchInRet</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TGroupBox Name="grp6">
+          <Caption/>
+        </TGroupBox>
+        <TLabel Name="lbl16">
+          <Caption>½ÇÉ«Ãû</Caption>
+        </TLabel>
+        <TLabel Name="lbl17">
+          <Caption>ÓÃ»§Ö¸Õë</Caption>
+        </TLabel>
+        <TLabel Name="lbl18">
+          <Caption>GMµÈ¼¶</Caption>
+        </TLabel>
+        <TLabel Name="lbl19">
+          <Caption>µÈ¼¶</Caption>
+        </TLabel>
+        <TLabel Name="lbl20">
+          <Caption>½ð±Ò</Caption>
+        </TLabel>
+        <TLabel Name="lbl21">
+          <Caption>PKÖµ</Caption>
+        </TLabel>
+        <TLabel Name="lbl22">
+          <Caption>ÐÔ±ð</Caption>
+        </TLabel>
+        <TLabel Name="lbl23">
+          <Caption>Ö°Òµ</Caption>
+        </TLabel>
+        <TLabel Name="lbl24">
+          <Caption>IP</Caption>
+        </TLabel>
+        <TLabel Name="lbl25">
+          <Caption>µØÍ¼</Caption>
+        </TLabel>
+        <TLabel Name="lbl26">
+          <Caption>×ø±êX</Caption>
+        </TLabel>
+        <TLabel Name="lbl27">
+          <Caption>×ø±êY</Caption>
+        </TLabel>
+        <TLabel Name="lbllbsetjf">
+          <Caption>»ý·Ö</Caption>
+        </TLabel>
+        <TLabel Name="lblsetfame">
+          <Caption>ÉùÍû</Caption>
+        </TLabel>
+        <TLabel Name="lblsetround">
+          <Caption>×ªÉú</Caption>
+        </TLabel>
+        <TListBox Name="OnLineList"/>
+        <TButton Name="btnSEARCH">
+          <Caption>ËÑË÷</Caption>
+        </TButton>
+        <TButton Name="btnSAVE">
+          <Caption>±£´æ</Caption>
+        </TButton>
+        <TButton Name="btnPOS">
+          <Caption>Ë¢ÐÂ</Caption>
+        </TButton>
+        <TEdit Name="FindName">
+          <Text/>
+        </TEdit>
+        <TSpinEdit Name="UserPointer">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="FindGmlvl">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="FindLvl">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="FindGold">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="FindPk">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TComboBox Name="FindSex">
+          <Items>(TComboBoxStrings)
+            <DefinedProperties>
+            B1N0cmluZ3MBBgNNYW4GBVdvTWFuBgNBbnkA
+            </DefinedProperties>
+          </Items>
+        </TComboBox>
+        <TComboBox Name="FindJob">
+          <Items>(TComboBoxStrings)
+            <DefinedProperties>
+            B1N0cmluZ3MBBgRXYXJyBgZXaXphcmQGBFRhb3MGA0FueQA=
+            </DefinedProperties>
+          </Items>
+        </TComboBox>
+        <TEdit Name="FindUserIP">
+          <Text/>
+        </TEdit>
+        <TCheckBox Name="Listen">
+          <Caption>Listen</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TCheckBox Name="CanTalk">
+          <Caption>ÔÊÐíËµ»°</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TSpinEdit Name="MapY">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="MapX">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TEdit Name="UserMap">
+          <Text/>
+        </TEdit>
+        <TSpinEdit Name="seFindJF">
+          <Value>4769</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seFindFame">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seFindRound">
+          <Value>1</Value>
+        </TSpinEdit>
+        <TTabSheet Name="ts6">
+          <Caption>Íæ¼ÒÁÄÌì</Caption>
+        </TTabSheet>
+        <TGroupBox Name="grp2">
+          <Caption/>
+        </TGroupBox>
+        <TLabel Name="Label61">
+          <Caption>ÁÄÌì¼àÌýÑ¡Ïî</Caption>
+        </TLabel>
+        <TCheckBox Name="chkChat1">
+          <Caption>°××Ö</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkChat2">
+          <Caption>!@</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkChat3">
+          <Caption>/</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkChat4">
+          <Caption>!!</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkChat5">
+          <Caption>!</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkChat6">
+          <Caption>!~</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkChat7">
+          <Caption>@</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TTabSheet Name="ts4">
+          <Caption>ÓÎÏ·¹ÜÀí</Caption>
+        </TTabSheet>
+        <TButton Name="btnLoadParam">
+          <Caption>¶ÁÈ¡Ë¢ÐÂÅäÖÃ</Caption>
+        </TButton>
+        <TButton Name="btnReloadMonster">
+          <Caption>ÖØ¶Á¹ÖÎïÊý¾Ý</Caption>
+        </TButton>
+        <TButton Name="btnReloadMagic">
+          <Caption>ÖØ¶ÁÄ§·¨Êý¾Ý</Caption>
+        </TButton>
+        <TButton Name="btnReloadStdItem">
+          <Caption>ÖØ¶ÁÎïÆ·Êý¾Ý</Caption>
+        </TButton>
+        <TButton Name="btnSaveParam">
+          <Caption>±£´æË¢ÐÂÅäÖÃ</Caption>
+        </TButton>
+        <TGroupBox Name="GroupBox29">
+          <Caption/>
+        </TGroupBox>
+        <TLabel Name="Label116">
+          <Caption/>
+        </TLabel>
+        <TLabel Name="Label117">
+          <Caption/>
+        </TLabel>
+        <TLabel Name="Label118">
+          <Caption/>
+        </TLabel>
+        <TLabel Name="lbl2">
+          <Caption>ÑÓÊ±</Caption>
+        </TLabel>
+        <TCheckBox Name="chkOpenCloseServer">
+          <Caption>Î¬»¤</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TEdit Name="edtCloseMsg">
+          <Text>·þÎñÆ÷Î¬»¤²âÊÔGSP£¬´«Èý¶¯Á¦£¡</Text>
+        </TEdit>
+        <TSpinEdit Name="seCloseServerDalayTime">
+          <Value>10</Value>
+        </TSpinEdit>
+        <TGroupBox Name="GroupBox8">
+          <Caption>¿ªÇøÊ±¼ä</Caption>
+        </TGroupBox>
+        <TLabel Name="Label139">
+          <Caption>DATE:</Caption>
+        </TLabel>
+        <TLabel Name="Label138">
+          <Caption>TIME:</Caption>
+        </TLabel>
+        <TButton Name="btnReloadAllNpc">
+          <Caption>ÖØ¶Ánpc(Ñ¡ÖÐÍæ¼Ò)</Caption>
+        </TButton>
+        <TButton Name="btnReloadDefaultNpc">
+          <Caption>ÖØ¶ÁDefaultNpc</Caption>
+        </TButton>
+        <TButton Name="btnReloadLineNotice">
+          <Caption>ÖØ¶ÁLineNotice</Caption>
+        </TButton>
+        <TButton Name="btnReloadAdmin">
+          <Caption>ÖØ¶Á¹ÜÀíÔ±</Caption>
+        </TButton>
+        <TButton Name="btnReloadMonItems">
+          <Caption>ÖØ¶Á±©ÂÊ</Caption>
+        </TButton>
+        <TButton Name="ReloadMapquest">
+          <Caption>ÖØ¶ÁMapquest</Caption>
+        </TButton>
+        <TTabSheet Name="ts2">
+          <Caption>ÉèÖÃ1</Caption>
+        </TTabSheet>
+        <TGroupBox Name="grp1">
+          <Caption/>
+        </TGroupBox>
+        <TLabel Name="Label183">
+          <Caption>ÃÜÂë1</Caption>
+        </TLabel>
+        <TLabel Name="Label182">
+          <Caption>ÃÜÂë2</Caption>
+        </TLabel>
+        <TLabel Name="Label167">
+          <Caption>µ¥»úµÇÂ½ÊýÁ¿</Caption>
+        </TLabel>
+        <TCheckBox Name="chkGMInvincible">
+          <Caption>GMÉÏÏßÎÞµÐ</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkGMSuperPower">
+          <Caption>GMÉÏÏß³¬¼¶Ä£Ê½</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkGMOperation">
+          <Caption>GMÉÏÏß¹ÜÀíÔ±</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkGMInvisible">
+          <Caption>GMÉÏÏßÒþÉí</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkGetBackAnyNpc">
+          <Caption>ÔÊÐíÍ¨È¡</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkStorageAnyNpc">
+          <Caption>ÔÊÐíÍ¨´æ</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkSellAnyNpc">
+          <Caption>ÔÊÐíÍ¨Âô</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkOpenTempJF">
+          <Caption>¿ª·ÅÁÙÊ±»ý·Ö</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkCloseShortMsg">
+          <Caption>¹Ø±Õ¶ÌÐÅ</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkOpenShareGold">
+          <Caption>´ò¿ª½ð±Ò¹²Ïí</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkOpenBaitan">
+          <Caption>ÔÊÐí°ÚÌ¯</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkOpenBabyDress">
+          <Caption>ÔÊÐí³èÎï×°±¸</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkHide_FailEx">
+          <Caption>¿ª·Å_FailEx</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkHideScriptErrLog">
+          <Caption>ÆÁ±Î½Å±¾´íÎó</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkAddLocalLog">
+          <Caption>¿ª·Å±¾µØÈÕÖ¾</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkAllowDieClickNpc">
+          <Caption>ÔÊÐíËÀÍöµã»÷NPC</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkGmTalkred">
+          <Caption>GMÃÜÈËºì×Ö</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TEdit Name="edtPass1">
+          <Text>12345678</Text>
+        </TEdit>
+        <TEdit Name="edtPass2">
+          <Text>12341234</Text>
+        </TEdit>
+        <TSpinEdit Name="seOnePcAllow">
+          <Value>10</Value>
+        </TSpinEdit>
+        <TCheckBox Name="chkTimeItemFix">
+          <Caption>ÆÚÏÞÎïÆ·ÏÞÖÆ</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkNewStore">
+          <Caption>ÐÂ²Ö¿âÄ£Ê½</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkNewShop">
+          <Caption>ÐÂÉÌµêÄ£Ê½</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TGroupBox Name="GroupBox2">
+          <Caption/>
+        </TGroupBox>
+        <TLabel Name="Label2">
+          <Caption>ÎïÆ·Ë¢ÐÂÊ±¼ä</Caption>
+        </TLabel>
+        <TLabel Name="Label3">
+          <Caption>Êý¾Ý´æµµÊ±¼ä</Caption>
+        </TLabel>
+        <TLabel Name="Label4">
+          <Caption>È«·þº°»°µÈ¼¶</Caption>
+        </TLabel>
+        <TLabel Name="Label5">
+          <Caption>È«·þº°»°¼ä¸ô</Caption>
+        </TLabel>
+        <TLabel Name="Label7">
+          <Caption>¼ÄÊÛÊÖÐø·Ñ</Caption>
+        </TLabel>
+        <TLabel Name="Label10">
+          <Caption>µôÂä½ð±ÒÉÏÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label91">
+          <Caption>¾­ÑéË¥¼õµÈ¼¶</Caption>
+        </TLabel>
+        <TLabel Name="jfname">
+          <Caption>»ý·ÖÃû³Æ</Caption>
+        </TLabel>
+        <TLabel Name="Label190">
+          <Caption>¼ÄÊÛ×î¸ß½ð¶î</Caption>
+        </TLabel>
+        <TLabel Name="Label192">
+          <Caption>ÒÚ</Caption>
+        </TLabel>
+        <TLabel Name="famename">
+          <Caption>ÉùÍûÃû³Æ</Caption>
+        </TLabel>
+        <TLabel Name="ryname">
+          <Caption>ÈÙÓþÃû³Æ</Caption>
+        </TLabel>
+        <TLabel Name="tfname">
+          <Caption>Ìì¸³Ãû³Æ</Caption>
+        </TLabel>
+        <TSpinEdit Name="seStdPosTime">
+          <Value>10</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="sePlayerSaveTime">
+          <Value>10</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSayToAllLvl">
+          <Value>40</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSayToAllTime">
+          <Value>8</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seMaxDropGold">
+          <Value>50000</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seEntrustSellMoney">
+          <Value>5000</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seMonLvlAboutExp">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TCheckBox Name="cbGainExp2">
+          <Caption>ÐÂ×é¶Ó¾­Ñé·ÖÅä·½Ê½</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TEdit Name="edtMine2_10">
+          <Text>ÍÚµ½µÄµã¾í</Text>
+        </TEdit>
+        <TCheckBox Name="chkSetMine2">
+          <Caption>ÉèÖÃMINE2</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TEdit Name="edtMine2_11">
+          <Text>½ð¸ÕÊ¯</Text>
+        </TEdit>
+        <TCheckBox Name="chkSetMine21">
+          <Caption>½ð¸ÕÊ¯</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TEdit Name="edtMine2_12">
+          <Text>Ê¯ÁñÊ¯</Text>
+        </TEdit>
+        <TCheckBox Name="chkSetMine22">
+          <Caption>Ê¯ÁñÊ¯</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TEdit Name="edtMine2_13">
+          <Text>×ÏË®¾§</Text>
+        </TEdit>
+        <TCheckBox Name="chkSetMine23">
+          <Caption>×ÏË®¾§</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TEdit Name="edtJifen">
+          <Text>»ý·Ö</Text>
+        </TEdit>
+        <TSpinEdit Name="seJishouFee">
+          <Value>15</Value>
+        </TSpinEdit>
+        <TEdit Name="edtFameName">
+          <Text>ÉùÍû</Text>
+        </TEdit>
+        <TEdit Name="edtFamousName">
+          <Text>½ð¿¨</Text>
+        </TEdit>
+        <TEdit Name="edtSuperPowerName">
+          <Text>Ìì¸³</Text>
+        </TEdit>
+        <TGroupBox Name="grp10">
+          <Caption>É³°Í¿ËÉèÖÃ</Caption>
+        </TGroupBox>
+        <TLabel Name="lbl54">
+          <Caption>¹¥³Ç¿ªÆôÊ±¼ä</Caption>
+        </TLabel>
+        <TLabel Name="lbl55">
+          <Caption>¹¥³ÇÌáÊ¾Ê±¼ä</Caption>
+        </TLabel>
+        <TLabel Name="lbl56">
+          <Caption>¹¥³Ç½áÊøÊ±¼ä</Caption>
+        </TLabel>
+        <TLabel Name="lbl57">
+          <Caption>¹¥³ÇÑÓÊ±ÌìÊý</Caption>
+        </TLabel>
+        <TLabel Name="lbl58">
+          <Caption>ÊØ³Ç×î³¤Ê±¼ä</Caption>
+        </TLabel>
+        <TSpinEdit Name="seStartHintTime">
+          <Value>19</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seStartTime">
+          <Value>20</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seDelayDay">
+          <Value>3</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seEndTime">
+          <Value>22</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seWinEndTime">
+          <Value>30</Value>
+        </TSpinEdit>
+        <TGroupBox Name="grp11">
+          <Caption/>
+        </TGroupBox>
+        <TLabel Name="lbl59">
+          <Caption>ºìÃûµØÍ¼×ø±êX</Caption>
+        </TLabel>
+        <TLabel Name="lbl60">
+          <Caption>ºìÃûµØÍ¼</Caption>
+        </TLabel>
+        <TLabel Name="lbl61">
+          <Caption>ºìÃûµØÍ¼×ø±êY</Caption>
+        </TLabel>
+        <TEdit Name="edtRedNameMap">
+          <Text>81</Text>
+        </TEdit>
+        <TSpinEdit Name="seRedNameMapX">
+          <Value>131</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seRedNameMapY">
+          <Value>255</Value>
+        </TSpinEdit>
+        <TGroupBox Name="grp13">
+          <Caption/>
+        </TGroupBox>
+        <TLabel Name="lbl66">
+          <Caption>ÎïÆ·×îµÍ¼Û¸ñ</Caption>
+        </TLabel>
+        <TCheckBox Name="chkDisabledSafeZoneDrop">
+          <Caption>°²È«Çø½ûÖ¹¶ªÆú</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TSpinEdit Name="seDropItemMinPrice">
+          <Value>1000</Value>
+        </TSpinEdit>
+        <TGroupBox Name="grp14">
+          <Caption>ÐÐ»á¸½¼ÓÊôÐÔ</Caption>
+        </TGroupBox>
+        <TLabel Name="lbl67">
+          <Caption>É³Ä®ÍÁ³Ç</Caption>
+        </TLabel>
+        <TLabel Name="lbl68">
+          <Caption>É³°Í¿Ë³Ç</Caption>
+        </TLabel>
+        <TSpinEdit Name="seSabukAddAbil">
+          <Value>7</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seTaosungAddAbil">
+          <Value>7</Value>
+        </TSpinEdit>
+        <TCheckBox Name="chkGuildAddMemType">
+          <Caption>ÐÂÐÐ»á¼ÓÈËÄ£Ê½</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkGuildWarDieGoHome">
+          <Caption>ÐÐ»áÕ½ËÀÍö²»»Ø³Ç</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TTabSheet Name="ts3">
+          <Caption>ÉèÖÃ2</Caption>
+        </TTabSheet>
+        <TGroupBox Name="GroupBox41">
+          <Caption>°ÚÌ¯ÉèÖÃ</Caption>
+        </TGroupBox>
+        <TLabel Name="Label171">
+          <Caption>¹ºÂòÕß×îµÍ»ý·Ö</Caption>
+        </TLabel>
+        <TLabel Name="Label172">
+          <Caption>¹ºÂòÕß×îµÍµÈ¼¶</Caption>
+        </TLabel>
+        <TLabel Name="Label175">
+          <Caption>³öÊÛÕß×îµÍ×ªÉú</Caption>
+        </TLabel>
+        <TLabel Name="Label176">
+          <Caption>Ë°ÊÕ×îµÍ½ð¶î</Caption>
+        </TLabel>
+        <TLabel Name="Label177">
+          <Caption>Ë°ÊÕ±ÈÂÊ</Caption>
+        </TLabel>
+        <TLabel Name="Label29">
+          <Caption>»ý·ÖÉÌµêË°ÂÊ</Caption>
+        </TLabel>
+        <TLabel Name="Label30">
+          <Caption>%</Caption>
+        </TLabel>
+        <TLabel Name="lbl78">
+          <Caption>³öÊÛÕß×îµÍ»ý·Ö</Caption>
+        </TLabel>
+        <TLabel Name="lbl79">
+          <Caption>³öÊÛÕß×îµÍµÈ¼¶</Caption>
+        </TLabel>
+        <TSpinEdit Name="seBuyMinLvl">
+          <Value>1</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seBuyMinJF">
+          <Value>1</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSellMinJF">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seStartRevenueJF">
+          <Value>1</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seRevenueRatio">
+          <Value>2</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seJfGood">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TCheckBox Name="chkOpenJfSell">
+          <Caption>´ò¿ª»ý·Ö»ØÊÕ</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TSpinEdit Name="seBaitanSelllvl">
+          <Value>60</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seBaitanSellRound">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TGroupBox Name="GroupBox3">
+          <Caption>ÔÚÏß¹º¿¨Éè¶¨</Caption>
+        </TGroupBox>
+        <TLabel Name="Label16">
+          <Caption>Êý¾ÝÔ´</Caption>
+        </TLabel>
+        <TLabel Name="Label17">
+          <Caption>IP</Caption>
+        </TLabel>
+        <TLabel Name="Label18">
+          <Caption>ID</Caption>
+        </TLabel>
+        <TLabel Name="Label19">
+          <Caption>PASS</Caption>
+        </TLabel>
+        <TLabel Name="Label20">
+          <Caption>¶Ë¿Ú</Caption>
+        </TLabel>
+        <TLabel Name="Label21">
+          <Caption>±íÃû</Caption>
+        </TLabel>
+        <TEdit Name="edtCardIp">
+          <Text>127.0.0.1</Text>
+        </TEdit>
+        <TEdit Name="edtCardDsn">
+          <Text>Card</Text>
+        </TEdit>
+        <TEdit Name="edtCardID">
+          <Text>mir3data</Text>
+        </TEdit>
+        <TEdit Name="edtCardPass">
+          <Text>mir3data</Text>
+        </TEdit>
+        <TSpinEdit Name="seCardPort">
+          <Value>1433</Value>
+        </TSpinEdit>
+        <TCheckBox Name="chkOpenCardDataBase">
+          <Caption>¿ªÆôÔÚÏß³åÖµ</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TEdit Name="edtTabelName">
+          <Text>TabelName</Text>
+        </TEdit>
+        <TGroupBox Name="grp8">
+          <Caption>×°±¸²ÎÊýÉè¶¨</Caption>
+        </TGroupBox>
+        <TLabel Name="lbl33">
+          <Caption>ÎäÆ÷×î´óµÈ¼¶</Caption>
+        </TLabel>
+        <TLabel Name="lbl34">
+          <Caption>Ê×ÊÎ×î¸ßµÈ¼¶</Caption>
+        </TLabel>
+        <TLabel Name="lbl35">
+          <Caption>ÎäÆ÷¾­ÑéÏÞÖÆµÈ¼¶</Caption>
+        </TLabel>
+        <TLabel Name="lbl36">
+          <Caption>ÎäÆ÷×î¸ß¾­Ñé</Caption>
+        </TLabel>
+        <TLabel Name="lbl37">
+          <Caption>GMÖÆÔì¼«Æ·¸ÅÂÊ</Caption>
+        </TLabel>
+        <TLabel Name="lbl38">
+          <Caption>1/</Caption>
+        </TLabel>
+        <TLabel Name="lbl39">
+          <Caption>Ð¡¼«Æ·¸ÅÂÊ</Caption>
+        </TLabel>
+        <TLabel Name="lbl40">
+          <Caption>1/</Caption>
+        </TLabel>
+        <TLabel Name="lbl4">
+          <Caption>ÎäÆ÷ÎÞÊÓµÈ¼¶</Caption>
+        </TLabel>
+        <TLabel Name="Label187">
+          <Caption>×£¸£ÓÍ×î´óÐÒÔË</Caption>
+        </TLabel>
+        <TSpinEdit Name="seWeaponMaxLvl">
+          <Value>17</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seJewelryMaxLvl">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seWeaponLimitExpLvl">
+          <Value>17</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seWeaponMaxExp">
+          <Value>30000</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seGmMakeItem">
+          <Value>1</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seLittleUpgrade">
+          <Value>1</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seWpnIgnoreAcLvl">
+          <Value>22</Value>
+        </TSpinEdit>
+        <TGroupBox Name="grp5">
+          <Caption>Æíµ»ÉèÖÃ</Caption>
+        </TGroupBox>
+        <TLabel Name="lbl14">
+          <Caption>Æíµ»¼¸ÂÊ</Caption>
+        </TLabel>
+        <TLabel Name="lbl15">
+          <Caption>±¬»÷±¶ÂÊ</Caption>
+        </TLabel>
+        <TSpinEdit Name="sePrayHitRatio">
+          <Value>1</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="sePrayHit">
+          <Value>1</Value>
+        </TSpinEdit>
+        <TGroupBox Name="grp9">
+          <Caption>Íæ¼Ò×°±¸µôÂä¿ØÖÆ</Caption>
+        </TGroupBox>
+        <TLabel Name="lbl42">
+          <Caption>°×ÃûÆÕÍ¨×°±¸</Caption>
+        </TLabel>
+        <TLabel Name="lbl43">
+          <Caption>°×Ãû¸ß¼¶×°±¸</Caption>
+        </TLabel>
+        <TLabel Name="lbl44">
+          <Caption>°×ÃûÏ¡ÊÀ×°±¸</Caption>
+        </TLabel>
+        <TLabel Name="lbl45">
+          <Caption>ºìÃûÆÕÍ¨×°±¸</Caption>
+        </TLabel>
+        <TLabel Name="lbl46">
+          <Caption>ºìÃû¸ß¼¶×°±¸</Caption>
+        </TLabel>
+        <TLabel Name="lbl47">
+          <Caption>ºìÃûÏ¡ÊÀ×°±¸</Caption>
+        </TLabel>
+        <TLabel Name="lbl48">
+          <Caption>1/</Caption>
+        </TLabel>
+        <TLabel Name="lbl49">
+          <Caption>1/</Caption>
+        </TLabel>
+        <TLabel Name="lbl50">
+          <Caption>1/</Caption>
+        </TLabel>
+        <TLabel Name="lbl51">
+          <Caption>1/</Caption>
+        </TLabel>
+        <TLabel Name="lbl52">
+          <Caption>1/</Caption>
+        </TLabel>
+        <TLabel Name="lbl53">
+          <Caption>1/</Caption>
+        </TLabel>
+        <TSpinEdit Name="seNormolWhite">
+          <Value>200</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seHighWhite">
+          <Value>500</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seRareWhite">
+          <Value>900</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seNormolRed">
+          <Value>20</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seHighRed">
+          <Value>50</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seRareRed">
+          <Value>90</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seWeaponLucky">
+          <Value>7</Value>
+        </TSpinEdit>
+        <TGroupBox Name="GroupBox4">
+          <Caption>ÐÂÆíµ»ÉèÖÃ</Caption>
+        </TGroupBox>
+        <TLabel Name="Label13">
+          <Caption>Æíµ»¼¸ÂÊ</Caption>
+        </TLabel>
+        <TLabel Name="Label22">
+          <Caption>±¬»÷±¶ÂÊ</Caption>
+        </TLabel>
+        <TSpinEdit Name="sePrayHitRatio2">
+          <Value>1</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="sePrayHit2">
+          <Value>1</Value>
+        </TSpinEdit>
+        <TGroupBox Name="GroupBox38">
+          <Caption>ÐÂÆíµ»ÉèÖÃ2</Caption>
+        </TGroupBox>
+        <TLabel Name="Label243">
+          <Caption>Æíµ»¼¸ÂÊ</Caption>
+        </TLabel>
+        <TLabel Name="Label245">
+          <Caption>±¬»÷±¶ÂÊ</Caption>
+        </TLabel>
+        <TSpinEdit Name="sePrayHitRatio3">
+          <Value>10</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="sePrayHit3">
+          <Value>10</Value>
+        </TSpinEdit>
+        <TGroupBox Name="grp15">
+          <Caption>ÐÂÆíµ»ÉèÖÃ3</Caption>
+        </TGroupBox>
+        <TLabel Name="lbl76">
+          <Caption>Æíµ»¼¸ÂÊ</Caption>
+        </TLabel>
+        <TLabel Name="lbl77">
+          <Caption>±¬»÷±¶ÂÊ</Caption>
+        </TLabel>
+        <TSpinEdit Name="sePrayHitRatio4">
+          <Value>1</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="sePrayHit4">
+          <Value>1</Value>
+        </TSpinEdit>
+        <TTabSheet Name="ts5">
+          <Caption>ÉèÖÃ3</Caption>
+        </TTabSheet>
+        <TGroupBox Name="GroupBox40">
+          <Caption>¹ýÂË½ø³Ì</Caption>
+        </TGroupBox>
+        <TButton Name="btnRefreshFilterDlls">
+          <Caption>Refresh</Caption>
+        </TButton>
+        <TGroupBox Name="GroupBox14">
+          <Caption>ËÙ¶ÈÉèÖÃ</Caption>
+        </TGroupBox>
+        <TGroupBox Name="grp3">
+          <Caption/>
+        </TGroupBox>
+        <TLabel Name="lbl5">
+          <Caption>×ß,ÅÜ¼ä¸ô</Caption>
+        </TLabel>
+        <TLabel Name="lbl6">
+          <Caption>¹¥»÷¼ä¸ô</Caption>
+        </TLabel>
+        <TLabel Name="lbl7">
+          <Caption>Ä§·¨¼ä¸ô</Caption>
+        </TLabel>
+        <TSpinEdit Name="seWalkRunSpeedUpTime">
+          <Value>380</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seHitSpeedUpTime">
+          <Value>900</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seMagSpeedUpTime">
+          <Value>800</Value>
+        </TSpinEdit>
+        <TGroupBox Name="grp4">
+          <Caption/>
+        </TGroupBox>
+        <TLabel Name="lbl8">
+          <Caption>¼ÓËÙÅÜ¶¯n´Î¿¨×¡</Caption>
+        </TLabel>
+        <TLabel Name="lbl9">
+          <Caption>¿¨×¡n´ÎÌßµô</Caption>
+        </TLabel>
+        <TLabel Name="lbl10">
+          <Caption>¼ÓËÙ»÷ÅÜn´Î¿¨×¡</Caption>
+        </TLabel>
+        <TLabel Name="lbl11">
+          <Caption>¿¨×¡n´ÎÌßµô</Caption>
+        </TLabel>
+        <TLabel Name="lbl12">
+          <Caption>¼ÓËÙÄ§·¨n´Î¿¨×¡</Caption>
+        </TLabel>
+        <TLabel Name="lbl13">
+          <Caption>¿¨×¡n´ÎÌßµô</Caption>
+        </TLabel>
+        <TLabel Name="lbl41">
+          <Caption>¼ÓËÙn´Î½ûÖ¹µÇÂ½</Caption>
+        </TLabel>
+        <TSpinEdit Name="seRunCritical">
+          <Value>9999</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seAddCritical">
+          <Value>9999</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seHitAddCritical">
+          <Value>99999</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seHitRunCritical">
+          <Value>9999</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seMagCritical">
+          <Value>99999</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seKickCritical">
+          <Value>99999</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seMaxOverSpeedTime">
+          <Value>3</Value>
+        </TSpinEdit>
+        <TGroupBox Name="grp26">
+          <Caption>·â¼ÓËÙÉèÖÃ</Caption>
+        </TGroupBox>
+        <TLabel Name="lbllbspeedperiod">
+          <Caption>Ê±¼äÎó²î¼ä¸ô</Caption>
+        </TLabel>
+        <TLabel Name="Label260">
+          <Caption>Ê±¼ä¼ä¸ôÉè¶¨</Caption>
+        </TLabel>
+        <TSpinEdit Name="seTime">
+          <Value>120</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seTimePeriod">
+          <Value>300</Value>
+        </TSpinEdit>
+        <TGroupBox Name="grp27">
+          <Caption>ÔÊÐíµÇÂ½µÄ¿Í»§¶Ë</Caption>
+        </TGroupBox>
+        <TTabSheet Name="TabSheet1">
+          <Caption>ÉèÖÃ4</Caption>
+        </TTabSheet>
+        <TGroupBox Name="GroupBox27">
+          <Caption>·Ù»êÄ§¹¦</Caption>
+        </TGroupBox>
+        <TLabel Name="Label107">
+          <Caption>0¼¶Ôö¼Ó×ÔÈ»</Caption>
+        </TLabel>
+        <TLabel Name="Label108">
+          <Caption>1¼¶Ôö¼Ó×ÔÈ»</Caption>
+        </TLabel>
+        <TLabel Name="Label109">
+          <Caption>3¼¶Ôö¼Ó×ÔÈ»</Caption>
+        </TLabel>
+        <TLabel Name="Label110">
+          <Caption>2¼¶Ôö¼Ó×ÔÈ»</Caption>
+        </TLabel>
+        <TLabel Name="Label111">
+          <Caption>4¼¶Ôö¼Ó×ÔÈ»</Caption>
+        </TLabel>
+        <TLabel Name="Label112">
+          <Caption>5¼¶Ôö¼Ó×ÔÈ»</Caption>
+        </TLabel>
+        <TSpinEdit Name="seSpNXLHLvl0">
+          <Value>20</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSpNXLHLvl1">
+          <Value>40</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSpNXLHLvl2">
+          <Value>60</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSpNXLHLvl3">
+          <Value>80</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSpNXLHLvl4">
+          <Value>100</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSpNXLHLvl5">
+          <Value>120</Value>
+        </TSpinEdit>
+        <TGroupBox Name="GroupBox15">
+          <Caption>·½°¸2</Caption>
+        </TGroupBox>
+        <TLabel Name="Label55">
+          <Caption>%</Caption>
+        </TLabel>
+        <TLabel Name="Label56">
+          <Caption>%</Caption>
+        </TLabel>
+        <TLabel Name="Label57">
+          <Caption>%</Caption>
+        </TLabel>
+        <TLabel Name="Label58">
+          <Caption>%</Caption>
+        </TLabel>
+        <TLabel Name="Label59">
+          <Caption>%</Caption>
+        </TLabel>
+        <TLabel Name="Label60">
+          <Caption>%</Caption>
+        </TLabel>
+        <TSpinEdit Name="seSpNXLHLvl0sl2">
+          <Value>20</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSpNXLHLvl1sl2">
+          <Value>30</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSpNXLHLvl2sl2">
+          <Value>40</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSpNXLHLvl3sl2">
+          <Value>50</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSpNXLHLvl4sl2">
+          <Value>60</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSpNXLHLvl5sl2">
+          <Value>70</Value>
+        </TSpinEdit>
+        <TCheckBox Name="chkSpNXSu2">
+          <Caption>ÊôÐÔ·½°¸2</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TGroupBox Name="GroupBox21">
+          <Caption>ÄýÑªÀë»ê</Caption>
+        </TGroupBox>
+        <TLabel Name="Label73">
+          <Caption>0¼¶Ôö¼Ó×ÔÈ»</Caption>
+        </TLabel>
+        <TLabel Name="Label74">
+          <Caption>1¼¶Ôö¼Ó×ÔÈ»</Caption>
+        </TLabel>
+        <TLabel Name="Label75">
+          <Caption>3¼¶Ôö¼Ó×ÔÈ»</Caption>
+        </TLabel>
+        <TLabel Name="Label76">
+          <Caption>2¼¶Ôö¼Ó×ÔÈ»</Caption>
+        </TLabel>
+        <TLabel Name="Label77">
+          <Caption>4¼¶Ôö¼Ó×ÔÈ»</Caption>
+        </TLabel>
+        <TLabel Name="Label78">
+          <Caption>5¼¶Ôö¼Ó×ÔÈ»</Caption>
+        </TLabel>
+        <TSpinEdit Name="seNxlhLvl0">
+          <Value>10</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seNxlhLvl1">
+          <Value>20</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seNxlhLvl2">
+          <Value>30</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seNxlhLvl3">
+          <Value>40</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seNxlhLvl4">
+          <Value>50</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seNxlhLvl5">
+          <Value>60</Value>
+        </TSpinEdit>
+        <TCheckBox Name="chkNXSu2">
+          <Caption>ÊôÐÔ·½°¸2</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TGroupBox Name="grp17">
+          <Caption>·½°¸2</Caption>
+        </TGroupBox>
+        <TLabel Name="lbl85">
+          <Caption>%</Caption>
+        </TLabel>
+        <TLabel Name="lbl86">
+          <Caption>%</Caption>
+        </TLabel>
+        <TLabel Name="lbl87">
+          <Caption>%</Caption>
+        </TLabel>
+        <TLabel Name="lbl88">
+          <Caption>%</Caption>
+        </TLabel>
+        <TLabel Name="lbl89">
+          <Caption>%</Caption>
+        </TLabel>
+        <TLabel Name="lbl90">
+          <Caption>%</Caption>
+        </TLabel>
+        <TSpinEdit Name="seNXLHLvl0sl2">
+          <Value>20</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seNXLHLvl1sl2">
+          <Value>30</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seNXLHLvl2sl2">
+          <Value>40</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seNXLHLvl3sl2">
+          <Value>50</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seNXLHLvl4sl2">
+          <Value>60</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seNXLHLvl5sl2">
+          <Value>70</Value>
+        </TSpinEdit>
+        <TGroupBox Name="GroupBox12">
+          <Caption>µÀÊ¿Éý¼¶Éè¶¨</Caption>
+        </TGroupBox>
+        <TLabel Name="Label48">
+          <Caption>Ã¿¼¶¼ÓÑª</Caption>
+        </TLabel>
+        <TLabel Name="Label49">
+          <Caption>Ã¿¼¶¼ÓÀ¶</Caption>
+        </TLabel>
+        <TLabel Name="Label89">
+          <Caption>Ã¿¼¸¼¶Ôö¼Ó1-1Ä§</Caption>
+        </TLabel>
+        <TLabel Name="Label106">
+          <Caption>Ã¿¼¸¼¶Ôö¼Ó0-1Ä§·À</Caption>
+        </TLabel>
+        <TLabel Name="Label191">
+          <Caption>Ã¿¼¸¼¶Ôö¼Ó0-1·À</Caption>
+        </TLabel>
+        <TLabel Name="Label237">
+          <Caption>Ã¿¼¸¼¶Ôö¼Ó1-1¹¥</Caption>
+        </TLabel>
+        <TSpinEdit Name="seTaoistAddHP">
+          <Value>35</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seTaoistAddMP">
+          <Value>25</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seTaoAddScPernLvl">
+          <Value>5</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seTaoAddMacPernLvl">
+          <Value>5</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seTaoAddAcPernLvl">
+          <Value>5</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seTaoAddDcPernLvl">
+          <Value>5</Value>
+        </TSpinEdit>
+        <TGroupBox Name="GroupBox11">
+          <Caption>Õ½Ê¿Éý¼¶Éè¶¨</Caption>
+        </TGroupBox>
+        <TLabel Name="Label46">
+          <Caption>Ã¿¼¶¼ÓÑª</Caption>
+        </TLabel>
+        <TLabel Name="Label47">
+          <Caption>Ã¿¼¶¼ÓÀ¶</Caption>
+        </TLabel>
+        <TLabel Name="Label86">
+          <Caption>Ã¿¼¸¼¶Ôö¼Ó1-1¹¥</Caption>
+        </TLabel>
+        <TLabel Name="Label87">
+          <Caption>Ã¿¼¸¼¶Ôö¼Ó0-1·À</Caption>
+        </TLabel>
+        <TLabel Name="Label193">
+          <Caption>Ã¿¼¸¼¶Ôö¼Ó0-1Ä§·À</Caption>
+        </TLabel>
+        <TSpinEdit Name="seWarriorAddHP">
+          <Value>50</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seWarriorAddMP">
+          <Value>10</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seWarAddDcPernLvl">
+          <Value>5</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seWarAddAcPernLvl">
+          <Value>7</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seWarAddMacPernLvl">
+          <Value>7</Value>
+        </TSpinEdit>
+        <TGroupBox Name="GroupBox13">
+          <Caption>·¨Ê¦Éý¼¶Éè¶¨</Caption>
+        </TGroupBox>
+        <TLabel Name="Label50">
+          <Caption>Ã¿¼¶¼ÓÑª</Caption>
+        </TLabel>
+        <TLabel Name="Label51">
+          <Caption>Ã¿¼¶¼ÓÀ¶</Caption>
+        </TLabel>
+        <TLabel Name="Label88">
+          <Caption>Ã¿¼¸¼¶Ôö¼Ó1-1Ä§</Caption>
+        </TLabel>
+        <TLabel Name="Label113">
+          <Caption>Ã¿¼¸¼¶Ôö¼Ó0-1Ä§·À</Caption>
+        </TLabel>
+        <TLabel Name="Label195">
+          <Caption>Ã¿¼¸¼¶Ôö¼Ó0-1·À</Caption>
+        </TLabel>
+        <TSpinEdit Name="seWizardAddMP">
+          <Value>40</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seWizardAddHP">
+          <Value>25</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seWizAddMcPernLvl">
+          <Value>7</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seWizAddMacPernLvl">
+          <Value>7</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seWizAddAcPernLvl">
+          <Value>7</Value>
+        </TSpinEdit>
+        <TGroupBox Name="grp7">
+          <Caption>¼¼ÄÜ²ÎÊýÉè¶¨</Caption>
+        </TGroupBox>
+        <TLabel Name="lbl28">
+          <Caption>Ä§·¨³É¹¦¼¸ÂÊ  1/</Caption>
+        </TLabel>
+        <TLabel Name="lbl29">
+          <Caption>Ä§·¨µÈ¼¶ÏÞÖÆ</Caption>
+        </TLabel>
+        <TLabel Name="lbl30">
+          <Caption>ÃëÓ°ÎÞ×Ù¼ä¸ô</Caption>
+        </TLabel>
+        <TLabel Name="lbl31">
+          <Caption>ms</Caption>
+        </TLabel>
+        <TLabel Name="Label185">
+          <Caption>½ð¸ÕÖ®Çû¼¸ÂÊ²ÎÊý</Caption>
+        </TLabel>
+        <TLabel Name="mabitime">
+          <Caption>Âé±Ô¼ä¸ô(È«¾Ö)</Caption>
+        </TLabel>
+        <TLabel Name="Label240">
+          <Caption>ms</Caption>
+        </TLabel>
+        <TLabel Name="kuangbaorate">
+          <Caption>¿ñ±©¼¸ÂÊ²ÎÊý</Caption>
+        </TLabel>
+        <TLabel Name="junlinrate">
+          <Caption>¾ýÁÙ¼¸ÂÊ²ÎÊý</Caption>
+        </TLabel>
+        <TSpinEdit Name="seMagicRatio">
+          <Value>20</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seFixMagicValidLvl">
+          <Value>250</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seMYWZTick">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TCheckBox Name="chkHide_FixLvl">
+          <Caption>ÏÞÖÆµÈ¼¶</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkHide_FixXFQ">
+          <Caption>ÏÞÖÆÐý·çÇ½</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TSpinEdit Name="seJGZQ">
+          <Value>12</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seMabitime">
+          <Value>10000</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seKuangbao">
+          <Value>16</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seJunlin">
+          <Value>12</Value>
+        </TSpinEdit>
+        <TGroupBox Name="GroupBox1">
+          <Caption/>
+        </TGroupBox>
+        <TLabel Name="Label9">
+          <Caption>ÔÆ¼ÅÊõ¼ä¸ô(ms)</Caption>
+        </TLabel>
+        <TLabel Name="lbl75">
+          <Caption>±¬¶¾´ÎÊý</Caption>
+        </TLabel>
+        <TLabel Name="lbl84">
+          <Caption>ºì¶¾ÔöÉË±ÈÀý</Caption>
+        </TLabel>
+        <TSpinEdit Name="seYjsDelay">
+          <Value>2000</Value>
+        </TSpinEdit>
+        <TCheckBox Name="chkYjsPKAvald">
+          <Caption>ÔÆ¼ÅÊõ»ÒÃû</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkStoneCanWalk">
+          <Caption>ÔÊÐíÊ¯»¯×ßÂ·</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TCheckBox Name="chkAllowShihuaHit">
+          <Caption>ÔÊÐíÊ¯»¯ÎïÀí¹¥»÷</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TSpinEdit Name="seBigPoison">
+          <Value>11</Value>
+        </TSpinEdit>
+        <TEdit Name="edtRedPoison">
+          <Text>3.6</Text>
+        </TEdit>
+        <TGroupBox Name="grp18">
+          <Caption>grp18</Caption>
+        </TGroupBox>
+        <TLabel Name="Label246">
+          <Caption>ÒÆ»¨½ÓÄ¾×î´ó·´ÉËÖµ</Caption>
+        </TLabel>
+        <TLabel Name="Label1">
+          <Caption>Ïà¶ÔÄ§·¨¶Ü±¶Êý</Caption>
+        </TLabel>
+        <TLabel Name="Label8">
+          <Caption>ÍÀÁúÕ¶²ÎÊý</Caption>
+        </TLabel>
+        <TLabel Name="lbl32">
+          <Caption>ÔÆ¼ÅÊõµÈ¼¶ÏÞÖÆ</Caption>
+        </TLabel>
+        <TSpinEdit Name="seYhjmMax">
+          <Value>999999999</Value>
+        </TSpinEdit>
+        <TEdit Name="edtMgdSpell">
+          <Text>1.2</Text>
+        </TEdit>
+        <TEdit Name="edthighRand">
+          <Text>3.0</Text>
+        </TEdit>
+        <TSpinEdit Name="seYunJiLvl">
+          <Value>10</Value>
+        </TSpinEdit>
+        <TCheckBox Name="chkYjsNewLvl">
+          <Caption>ÔÆ¼ÅÊõÐÂµÈ¼¶Ä£Ê½</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TGroupBox Name="grp19">
+          <Caption>ÒÆ»¨½ÓÓñ</Caption>
+        </TGroupBox>
+        <TLabel Name="Label248">
+          <Caption>0¼¶Ôö¼Ó</Caption>
+        </TLabel>
+        <TLabel Name="Label249">
+          <Caption>1¼¶Ôö¼Ó</Caption>
+        </TLabel>
+        <TLabel Name="Label250">
+          <Caption>3¼¶Ôö¼Ó</Caption>
+        </TLabel>
+        <TLabel Name="Label251">
+          <Caption>2¼¶Ôö¼Ó</Caption>
+        </TLabel>
+        <TLabel Name="Label252">
+          <Caption>4¼¶Ôö¼Ó</Caption>
+        </TLabel>
+        <TLabel Name="Label253">
+          <Caption>5¼¶Ôö¼Ó</Caption>
+        </TLabel>
+        <TSpinEdit Name="seYHJY0">
+          <Value>30</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seYHJY1">
+          <Value>40</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seYHJY2">
+          <Value>50</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seYHJY3">
+          <Value>60</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seYHJY4">
+          <Value>80</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seYHJY5">
+          <Value>100</Value>
+        </TSpinEdit>
+        <TGroupBox Name="grp20">
+          <Caption>·½°¸2</Caption>
+        </TGroupBox>
+        <TLabel Name="Label254">
+          <Caption>%</Caption>
+        </TLabel>
+        <TLabel Name="Label255">
+          <Caption>%</Caption>
+        </TLabel>
+        <TLabel Name="Label256">
+          <Caption>%</Caption>
+        </TLabel>
+        <TLabel Name="Label257">
+          <Caption>%</Caption>
+        </TLabel>
+        <TLabel Name="Label258">
+          <Caption>%</Caption>
+        </TLabel>
+        <TLabel Name="Label259">
+          <Caption>%</Caption>
+        </TLabel>
+        <TSpinEdit Name="seYHJY0Sln2">
+          <Value>30</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seYHJY1Sln2">
+          <Value>40</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seYHJY2Sln2">
+          <Value>50</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seYHJY3Sln2">
+          <Value>60</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seYHJY4Sln2">
+          <Value>70</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seYHJY5Sln2">
+          <Value>80</Value>
+        </TSpinEdit>
+        <TCheckBox Name="chkYHJYSln2">
+          <Caption>ÊôÐÔ·½°¸2</Caption>
+          <Checked>False</Checked>
+        </TCheckBox>
+        <TTabSheet Name="TabSheet2">
+          <Caption>ÉèÖÃ5</Caption>
+        </TTabSheet>
+        <TGroupBox Name="GroupBox5">
+          <Caption>¼ÆÊ±Æ÷</Caption>
+        </TGroupBox>
+        <TLabel Name="Label12">
+          <Caption>S</Caption>
+        </TLabel>
+        <TLabel Name="Label11">
+          <Caption>ÈËÎï¼ÆÊ±Æ÷1</Caption>
+        </TLabel>
+        <TLabel Name="Label43">
+          <Caption>ÈËÎï¼ÆÊ±Æ÷2</Caption>
+        </TLabel>
+        <TLabel Name="Label44">
+          <Caption>S</Caption>
+        </TLabel>
+        <TLabel Name="Label45">
+          <Caption>ÈËÎï¼ÆÊ±Æ÷3</Caption>
+        </TLabel>
+        <TLabel Name="Label52">
+          <Caption>S</Caption>
+        </TLabel>
+        <TLabel Name="Label93">
+          <Caption>ÏµÍ³¼ÆÊ±Æ÷1</Caption>
+        </TLabel>
+        <TLabel Name="Label94">
+          <Caption>S</Caption>
+        </TLabel>
+        <TLabel Name="Label197">
+          <Caption>ÏµÍ³¼ÆÊ±Æ÷2</Caption>
+        </TLabel>
+        <TLabel Name="Label198">
+          <Caption>S</Caption>
+        </TLabel>
+        <TLabel Name="Label199">
+          <Caption>ÏµÍ³¼ÆÊ±Æ÷3</Caption>
+        </TLabel>
+        <TLabel Name="Label200">
+          <Caption>S</Caption>
+        </TLabel>
+        <TLabel Name="lbl91">
+          <Caption>S</Caption>
+        </TLabel>
+        <TLabel Name="lbl92">
+          <Caption>ÈËÎï¼ÆÊ±Æ÷4</Caption>
+        </TLabel>
+        <TLabel Name="lbl93">
+          <Caption>ÈËÎï¼ÆÊ±Æ÷5</Caption>
+        </TLabel>
+        <TLabel Name="lbl94">
+          <Caption>S</Caption>
+        </TLabel>
+        <TSpinEdit Name="seTimeRun">
+          <Value>60</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seTimeRun2">
+          <Value>60</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seTimeRun3">
+          <Value>600</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seTimeRunSys">
+          <Value>300</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seTimeRunSys2">
+          <Value>600</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seTimeRunSys3">
+          <Value>600</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seTimeRun4">
+          <Value>600</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seTimeRun5">
+          <Value>600</Value>
+        </TSpinEdit>
+        <TGroupBox Name="GroupBox6">
+          <Caption>×Ô¶¨ÒåÃüÁî</Caption>
+        </TGroupBox>
+        <TLabel Name="Label53">
+          <Caption>ÃüÁî¢Ù:</Caption>
+        </TLabel>
+        <TLabel Name="Label54">
+          <Caption>È¨ÏÞ¢Ù:</Caption>
+        </TLabel>
+        <TLabel Name="Label62">
+          <Caption>±êÇ©¢Ù:</Caption>
+        </TLabel>
+        <TLabel Name="Label63">
+          <Caption>ÃüÁî¢Ú:</Caption>
+        </TLabel>
+        <TLabel Name="Label64">
+          <Caption>È¨ÏÞ¢Ú:</Caption>
+        </TLabel>
+        <TLabel Name="Label65">
+          <Caption>±êÇ©¢Ú:</Caption>
+        </TLabel>
+        <TLabel Name="Label66">
+          <Caption>ÃüÁî¢Û:</Caption>
+        </TLabel>
+        <TLabel Name="Label67">
+          <Caption>È¨ÏÞ¢Û:</Caption>
+        </TLabel>
+        <TLabel Name="Label68">
+          <Caption>±êÇ©¢Û:</Caption>
+        </TLabel>
+        <TLabel Name="Label69">
+          <Caption>ÃüÁî¢Ü:</Caption>
+        </TLabel>
+        <TLabel Name="Label70">
+          <Caption>È¨ÏÞ¢Ü:</Caption>
+        </TLabel>
+        <TLabel Name="Label71">
+          <Caption>±êÇ©¢Ü:</Caption>
+        </TLabel>
+        <TLabel Name="Label72">
+          <Caption>ÃüÁî¢Ý:</Caption>
+        </TLabel>
+        <TLabel Name="Label79">
+          <Caption>È¨ÏÞ¢Ý:</Caption>
+        </TLabel>
+        <TLabel Name="Label80">
+          <Caption>±êÇ©¢Ý:</Caption>
+        </TLabel>
+        <TLabel Name="Label81">
+          <Caption>ÃüÁî¢Þ:</Caption>
+        </TLabel>
+        <TLabel Name="Label82">
+          <Caption>È¨ÏÞ¢Þ:</Caption>
+        </TLabel>
+        <TLabel Name="Label83">
+          <Caption>±êÇ©¢Þ:</Caption>
+        </TLabel>
+        <TEdit Name="edtCmd1">
+          <Text>@Ìí¼Ó³ÉÔ±</Text>
+        </TEdit>
+        <TEdit Name="edtCmdTitle1">
+          <Text>@_ADDGUILDMEMBER</Text>
+        </TEdit>
+        <TSpinEdit Name="seCmdLvl1">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TEdit Name="edtCmd2">
+          <Text>@Ô­µØ¸´»î</Text>
+        </TEdit>
+        <TEdit Name="edtCmdTitle2">
+          <Text>@_Resurrection</Text>
+        </TEdit>
+        <TSpinEdit Name="seCmdLvl2">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TEdit Name="edtCmd3">
+          <Text>@ÐÖµÜºÏÒ»</Text>
+        </TEdit>
+        <TEdit Name="edtCmdTitle3">
+          <Text>@_HandandFoot</Text>
+        </TEdit>
+        <TSpinEdit Name="seCmdLvl3">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TEdit Name="edtCmd4">
+          <Text>@×é¶ÓºÏÒ»</Text>
+        </TEdit>
+        <TEdit Name="edtCmdTitle4">
+          <Text>@_Oneteam</Text>
+        </TEdit>
+        <TSpinEdit Name="seCmdLvl4">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TEdit Name="edtCmd5">
+          <Text>@ÃüÁî5</Text>
+        </TEdit>
+        <TEdit Name="edtCmdTitle5">
+          <Text>@_Event_5</Text>
+        </TEdit>
+        <TSpinEdit Name="seCmdLvl5">
+          <Value>7</Value>
+        </TSpinEdit>
+        <TEdit Name="edtCmd6">
+          <Text>@ÃüÁî6</Text>
+        </TEdit>
+        <TEdit Name="edtCmdTitle6">
+          <Text>@_Event_6</Text>
+        </TEdit>
+        <TSpinEdit Name="seCmdLvl6">
+          <Value>7</Value>
+        </TSpinEdit>
+        <TGroupBox Name="grp12">
+          <Caption/>
+        </TGroupBox>
+        <TLabel Name="lbl62">
+          <Caption>Ê¦Í½Ôö¼Ó¾­Ñé</Caption>
+        </TLabel>
+        <TLabel Name="lbl63">
+          <Caption>Ê¦Í½»¥·É¼ä¸ô</Caption>
+        </TLabel>
+        <TLabel Name="lbl64">
+          <Caption>%</Caption>
+        </TLabel>
+        <TLabel Name="lbl65">
+          <Caption>S</Caption>
+        </TLabel>
+        <TLabel Name="Label99">
+          <Caption>Ê¦¸µ·âºÅ</Caption>
+        </TLabel>
+        <TLabel Name="Label100">
+          <Caption>Í½µÜ·âºÅ</Caption>
+        </TLabel>
+        <TLabel Name="Label101">
+          <Caption>¾­ÑéÓÐÐ§¼ä¸ô</Caption>
+        </TLabel>
+        <TLabel Name="Label102">
+          <Caption>Ê¦¸µ¾­Ñé±ÈÀý</Caption>
+        </TLabel>
+        <TLabel Name="Label103">
+          <Caption>%</Caption>
+        </TLabel>
+        <TLabel Name="Label104">
+          <Caption>%</Caption>
+        </TLabel>
+        <TLabel Name="Label105">
+          <Caption>Í½µÜ¾­Ñé±ÈÀý</Caption>
+        </TLabel>
+        <TLabel Name="Label134">
+          <Caption>S</Caption>
+        </TLabel>
+        <TLabel Name="Label149">
+          <Caption>·òÆÞ»¥·É¼ä¸ô</Caption>
+        </TLabel>
+        <TLabel Name="Label166">
+          <Caption>»áÔ±¾­Ñé¼Ó³É</Caption>
+        </TLabel>
+        <TLabel Name="Label186">
+          <Caption>ÈýÖ°Òµ×é¶ÓÕ½Ê¿¼Ó³É</Caption>
+        </TLabel>
+        <TLabel Name="Label188">
+          <Caption>ÈýÖ°Òµ×é¶Ó·¨Ê¦¼Ó³É</Caption>
+        </TLabel>
+        <TLabel Name="Label189">
+          <Caption>ÈýÖ°Òµ×é¶ÓµÀÊ¿¼Ó³É</Caption>
+        </TLabel>
+        <TLabel Name="Label168">
+          <Caption>µÀÊ¿¾­Ñé±ÈÀý</Caption>
+        </TLabel>
+        <TLabel Name="Label194">
+          <Caption>·¨Ê¦¾­Ñé±ÈÀý</Caption>
+        </TLabel>
+        <TLabel Name="Label238">
+          <Caption>Õ½Ê¿¾­Ñé±ÈÀý</Caption>
+        </TLabel>
+        <TSpinEdit Name="seSTAddExp">
+          <Value>30</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSTFlyTime">
+          <Value>20</Value>
+        </TSpinEdit>
+        <TEdit Name="edtMasterName">
+          <Text>µÄÊ¦¸µ</Text>
+        </TEdit>
+        <TEdit Name="edtStudentName">
+          <Text>µÄÍ½µÜ</Text>
+        </TEdit>
+        <TSpinEdit Name="seStExpDistance">
+          <Value>12</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seMasterExpRate">
+          <Value>70</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seStudentExpRate">
+          <Value>30</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seCoupleFLy">
+          <Value>2</Value>
+        </TSpinEdit>
+        <TEdit Name="edtvipExpadd">
+          <Text>1.3</Text>
+        </TEdit>
+        <TEdit Name="edt3jobrate">
+          <Text>0.8</Text>
+        </TEdit>
+        <TEdit Name="edt3jobrateWiz">
+          <Text>0.6</Text>
+        </TEdit>
+        <TEdit Name="edt3jobrateTao">
+          <Text>0.8</Text>
+        </TEdit>
+        <TEdit Name="edtWarExpRate">
+          <Text>1.2</Text>
+        </TEdit>
+        <TEdit Name="edtWizExpRate">
+          <Text>1.0</Text>
+        </TEdit>
+        <TEdit Name="edtTaoExpRate">
+          <Text>1.2</Text>
+        </TEdit>
+        <TGroupBox Name="GroupBox18">
+          <Caption>PKÉèÖÃ</Caption>
+        </TGroupBox>
+        <TLabel Name="Label140">
+          <Caption>Íæ¼ÒÉËº¦Ë¥¼õ</Caption>
+        </TLabel>
+        <TLabel Name="Label141">
+          <Caption>%</Caption>
+        </TLabel>
+        <TLabel Name="lbl69">
+          <Caption>Õ½Ê¿ÉËº¦Ë¥¼õ</Caption>
+        </TLabel>
+        <TLabel Name="lbl70">
+          <Caption>%</Caption>
+        </TLabel>
+        <TLabel Name="lbl71">
+          <Caption>·¨Ê¦ÉËº¦Ë¥¼õ</Caption>
+        </TLabel>
+        <TLabel Name="lbl72">
+          <Caption>%</Caption>
+        </TLabel>
+        <TLabel Name="lbl73">
+          <Caption>µÀÊ¿ÉËº¦Ë¥¼õ</Caption>
+        </TLabel>
+        <TLabel Name="lbl74">
+          <Caption>%</Caption>
+        </TLabel>
+        <TSpinEdit Name="seAttPowerSetting">
+          <Value>100</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seReduceWarrior">
+          <Value>120</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seReduceWizzard">
+          <Value>100</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seReduceTaoist">
+          <Value>105</Value>
+        </TSpinEdit>
+        <TGroupBox Name="grp16">
+          <Caption>¹¥»÷ÑÕÉ«ÉèÖÃ</Caption>
+        </TGroupBox>
+        <TLabel Name="lbl80">
+          <Caption>ºìÉ«</Caption>
+        </TLabel>
+        <TLabel Name="lbl81">
+          <Caption>ÂÌÉ«</Caption>
+        </TLabel>
+        <TLabel Name="lbl82">
+          <Caption>³ÈÉ«</Caption>
+        </TLabel>
+        <TLabel Name="lbl83">
+          <Caption>×ÏÉ«</Caption>
+        </TLabel>
+        <TSpinEdit Name="seRedBlood">
+          <Value>100</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seGreedBlood">
+          <Value>500</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seOrangeBlood">
+          <Value>4000</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="sePurpesBlood">
+          <Value>65000</Value>
+        </TSpinEdit>
+        <TTabSheet Name="TabSheet3">
+          <Caption>ÉèÖÃ6</Caption>
+        </TTabSheet>
+        <TGroupBox Name="GroupBox20">
+          <Caption>Õ½Ê¿×ªÉú</Caption>
+        </TGroupBox>
+        <TLabel Name="Label119">
+          <Caption>ÆÆ»µÉÏÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label120">
+          <Caption>ÆÆ»µÏÂÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label121">
+          <Caption>×ÔÈ»ÏÂÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label122">
+          <Caption>×ÔÈ»ÉÏÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label123">
+          <Caption>ÌåÁ¦</Caption>
+        </TLabel>
+        <TLabel Name="Label124">
+          <Caption>Ä§Á¦</Caption>
+        </TLabel>
+        <TLabel Name="Label125">
+          <Caption>·ÀÓùÉÏÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label126">
+          <Caption>·ÀÓùÏÂÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label127">
+          <Caption>Ä§ÓùÏÂÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label128">
+          <Caption>Ä§ÓùÉÏÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label150">
+          <Caption>Áé»êÏÂÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label151">
+          <Caption>Áé»êÉÏÏÞ</Caption>
+        </TLabel>
+        <TSpinEdit Name="WarriorAddMinDc">
+          <Value>45</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="WarriorAddMaxDc">
+          <Value>45</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="WarriorAddMinMc">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="WarriorAddMaxMc">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="WarriorAddSHP">
+          <Value>400</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="WarriorAddSMP">
+          <Value>100</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seWarriorAddMinAc">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seWarriorAddMaxAc">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seWarriorAddMinMAc">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seWarriorAddMaxMAc">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="WarriorAddMinSc">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="WarriorAddMaxSc">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TGroupBox Name="GroupBox23">
+          <Caption>·¨Ê¦×ªÉú</Caption>
+        </TGroupBox>
+        <TLabel Name="Label135">
+          <Caption>ÆÆ»µÉÏÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label136">
+          <Caption>ÆÆ»µÏÂÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label137">
+          <Caption>×ÔÈ»ÏÂÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label142">
+          <Caption>×ÔÈ»ÉÏÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label143">
+          <Caption>ÌåÁ¦</Caption>
+        </TLabel>
+        <TLabel Name="Label144">
+          <Caption>Ä§Á¦</Caption>
+        </TLabel>
+        <TLabel Name="Label145">
+          <Caption>·ÀÓùÉÏÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label146">
+          <Caption>·ÀÓùÏÂÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label147">
+          <Caption>Ä§ÓùÏÂÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label148">
+          <Caption>Ä§ÓùÉÏÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label152">
+          <Caption>Áé»êÏÂÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label153">
+          <Caption>Áé»êÉÏÏÞ</Caption>
+        </TLabel>
+        <TSpinEdit Name="WizardAddMinMc">
+          <Value>35</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="WizardAddMaxMc">
+          <Value>35</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="WizardAddSHP">
+          <Value>200</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="WizardAddSMP">
+          <Value>200</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seWizardAddMinDc">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seWizardAddMaxDc">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seWizardAddMinAc">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seWizardAddMaxAc">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seWizardAddMinmAc">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seWizardAddMaxMAc">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="WizardAddMinSc">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="WizardAddMaxSc">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TGroupBox Name="GroupBox22">
+          <Caption>µÀÊ¿×ªÉú</Caption>
+        </TGroupBox>
+        <TLabel Name="Label155">
+          <Caption>ÆÆ»µÉÏÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label156">
+          <Caption>ÆÆ»µÏÂÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label157">
+          <Caption>×ÔÈ»ÏÂÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label158">
+          <Caption>×ÔÈ»ÉÏÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label159">
+          <Caption>ÌåÁ¦</Caption>
+        </TLabel>
+        <TLabel Name="Label160">
+          <Caption>Ä§Á¦</Caption>
+        </TLabel>
+        <TLabel Name="Label161">
+          <Caption>·ÀÓùÉÏÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label162">
+          <Caption>·ÀÓùÏÂÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label163">
+          <Caption>Ä§ÓùÏÂÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label164">
+          <Caption>Ä§ÓùÉÏÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label154">
+          <Caption>Áé»êÏÂÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label165">
+          <Caption>Áé»êÉÏÏÞ</Caption>
+        </TLabel>
+        <TSpinEdit Name="TaoistAddMinDc">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="TaoistAddMaxDc">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="TaoistAddMinSc">
+          <Value>40</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="TaoistAddMaxSc">
+          <Value>40</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="TaoistAddSHP">
+          <Value>300</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="TaoistAddSMP">
+          <Value>150</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seTaoistAddMinAc">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seTaoistAddMaxAc">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seTaoistAddMinMAc">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seTaoistAddMaxMAc">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="TaoistAddMinMc">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="TaoistAddMaxMc">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TGroupBox Name="GroupBox10">
+          <Caption>×ªÉúÆäËüÉèÖÃ</Caption>
+        </TGroupBox>
+        <TLabel Name="Label173">
+          <Caption>»ð</Caption>
+        </TLabel>
+        <TLabel Name="Label174">
+          <Caption>À×</Caption>
+        </TLabel>
+        <TLabel Name="Label178">
+          <Caption>±ù</Caption>
+        </TLabel>
+        <TLabel Name="Label179">
+          <Caption>·ç</Caption>
+        </TLabel>
+        <TLabel Name="Label180">
+          <Caption>ÉñÊ¥</Caption>
+        </TLabel>
+        <TLabel Name="Label181">
+          <Caption>°µºÚ</Caption>
+        </TLabel>
+        <TLabel Name="Label115">
+          <Caption>×ªÉú¾­Ñé</Caption>
+        </TLabel>
+        <TLabel Name="Label114">
+          <Caption>%</Caption>
+        </TLabel>
+        <TLabel Name="Label129">
+          <Caption>»ÃÓ°</Caption>
+        </TLabel>
+        <TLabel Name="Label241">
+          <Caption>´ÓµÚ         ×ª¿ªÊ¼</Caption>
+        </TLabel>
+        <TSpinEdit Name="seAtom1">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seAtom2">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seAtom3">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seAtom4">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seAtom5">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seAtom6">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seRebornExpReduce">
+          <Value>100</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seAtom7">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seDecRound">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TGroupBox Name="GroupBox24">
+          <Caption>³õÊ¼ÉèÖÃ</Caption>
+        </TGroupBox>
+        <TLabel Name="Label169">
+          <Caption>ÉÏÏßµÈ¼¶</Caption>
+        </TLabel>
+        <TLabel Name="Label170">
+          <Caption>ÉÏÏß½ð±Ò</Caption>
+        </TLabel>
+        <TSpinEdit Name="seNewhumlvl">
+          <Value>1</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seNewhumGold">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TTabSheet Name="TabSheet4">
+          <Caption>ÉèÖÃ7</Caption>
+        </TTabSheet>
+        <TGroupBox Name="GroupBox37">
+          <Caption>ÈËÎïÊôÐÔ·â¶¥</Caption>
+        </TGroupBox>
+        <TLabel Name="lbMaxHp">
+          <Caption>HP</Caption>
+        </TLabel>
+        <TLabel Name="lbMaxAc">
+          <Caption>AC</Caption>
+        </TLabel>
+        <TLabel Name="Label196">
+          <Caption>-</Caption>
+        </TLabel>
+        <TLabel Name="lbMaxMac">
+          <Caption>MAC</Caption>
+        </TLabel>
+        <TLabel Name="Label239">
+          <Caption>-</Caption>
+        </TLabel>
+        <TLabel Name="lbMaxDc">
+          <Caption>DC</Caption>
+        </TLabel>
+        <TLabel Name="Label242">
+          <Caption>-</Caption>
+        </TLabel>
+        <TLabel Name="lbMaxMc">
+          <Caption>MC</Caption>
+        </TLabel>
+        <TLabel Name="Label244">
+          <Caption>-</Caption>
+        </TLabel>
+        <TLabel Name="lbMaxMp">
+          <Caption>MP</Caption>
+        </TLabel>
+        <TLabel Name="LbMaxSc">
+          <Caption>SC</Caption>
+        </TLabel>
+        <TLabel Name="Label247">
+          <Caption>-</Caption>
+        </TLabel>
+        <TLabel Name="Label15">
+          <Caption>¼Óµã×î¸ßµÈ¼¶</Caption>
+        </TLabel>
+        <TLabel Name="Label14">
+          <Caption>Íæ¼Ò×î¸ßµÈ¼¶</Caption>
+        </TLabel>
+        <TLabel Name="Label6">
+          <Caption>³ÖÓÐ½ð±ÒÉÏÏÞ</Caption>
+        </TLabel>
+        <TSpinEdit Name="seMaxPlayerHP">
+          <Value>65535</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seMaxPlayerMinAC">
+          <Value>65535</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seMaxPlayerMaxAc">
+          <Value>65535</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seMaxPlayerMinMac">
+          <Value>65535</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seMaxPlayerMaxMac">
+          <Value>65535</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seMaxPlayerMinDc">
+          <Value>65535</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seMaxPlayerMaxDc">
+          <Value>65535</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seMaxPlayerMinMc">
+          <Value>65535</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seMaxPlayerMaxMc">
+          <Value>65535</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seMaxPlayerMP">
+          <Value>65535</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seMaxPlayerMinSc">
+          <Value>65535</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seMaxPlayerMaxSc">
+          <Value>65535</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seAddBonusMaxLvl">
+          <Value>100</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="sePlayerMaxLvl">
+          <Value>120</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seMaxGoldHave">
+          <Value>20</Value>
+        </TSpinEdit>
+        <TGroupBox Name="grp21">
+          <Caption>ÕÙ»½ÊÞ¿ØÖÆ</Caption>
+        </TGroupBox>
+        <TGroupBox Name="grp22">
+          <Caption>ÕÙ»½÷¼÷ÃÃ¿¼¶Ôö¼Ó</Caption>
+        </TGroupBox>
+        <TLabel Name="Label201">
+          <Caption>HP</Caption>
+        </TLabel>
+        <TLabel Name="Label204">
+          <Caption>AC</Caption>
+        </TLabel>
+        <TLabel Name="Label202">
+          <Caption>-</Caption>
+        </TLabel>
+        <TLabel Name="Label203">
+          <Caption>MAC</Caption>
+        </TLabel>
+        <TLabel Name="Label205">
+          <Caption>-</Caption>
+        </TLabel>
+        <TLabel Name="Label206">
+          <Caption>DC</Caption>
+        </TLabel>
+        <TLabel Name="Label207">
+          <Caption>-</Caption>
+        </TLabel>
+        <TLabel Name="Label208">
+          <Caption>MC</Caption>
+        </TLabel>
+        <TLabel Name="Label209">
+          <Caption>-</Caption>
+        </TLabel>
+        <TSpinEdit Name="seSkelHP">
+          <Value>50</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSkelMinAc">
+          <Value>12</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSkelMaxAc">
+          <Value>12</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSkelMinMac">
+          <Value>12</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSkelMaxMac">
+          <Value>12</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSkelMinDc">
+          <Value>12</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSkelMaxDc">
+          <Value>12</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSkelMinMc">
+          <Value>12</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSkelMaxMc">
+          <Value>12</Value>
+        </TSpinEdit>
+        <TCheckBox Name="chkKuLouSln2">
+          <Caption>·½°¸2</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TGroupBox Name="grp23">
+          <Caption>ÕÙ»½³¬Ç¿÷¼÷ÃÃ¿¼¶Ôö¼Ó</Caption>
+        </TGroupBox>
+        <TLabel Name="Label210">
+          <Caption>HP</Caption>
+        </TLabel>
+        <TLabel Name="Label211">
+          <Caption>AC</Caption>
+        </TLabel>
+        <TLabel Name="Label212">
+          <Caption>-</Caption>
+        </TLabel>
+        <TLabel Name="Label213">
+          <Caption>MAC</Caption>
+        </TLabel>
+        <TLabel Name="Label214">
+          <Caption>-</Caption>
+        </TLabel>
+        <TLabel Name="Label215">
+          <Caption>DC</Caption>
+        </TLabel>
+        <TLabel Name="Label216">
+          <Caption>-</Caption>
+        </TLabel>
+        <TLabel Name="Label217">
+          <Caption>MC</Caption>
+        </TLabel>
+        <TLabel Name="Label218">
+          <Caption>-</Caption>
+        </TLabel>
+        <TSpinEdit Name="seSuperSkelHP">
+          <Value>100</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSuperSkelMinAc">
+          <Value>17</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSuperSkelMaxAc">
+          <Value>17</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSuperSkelMinMac">
+          <Value>17</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSuperSkelMaxMac">
+          <Value>17</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSuperSkelMinDc">
+          <Value>17</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSuperSkelMaxDc">
+          <Value>17</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSuperSkelMinMc">
+          <Value>17</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSuperSkelMaxMc">
+          <Value>17</Value>
+        </TSpinEdit>
+        <TCheckBox Name="chkSuperKuLouSln2">
+          <Caption>·½°¸2</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TGroupBox Name="grp24">
+          <Caption>ÕÙ»½Ê¥ÊÞÃ¿¼¶Ôö¼Ó</Caption>
+        </TGroupBox>
+        <TLabel Name="Label219">
+          <Caption>HP</Caption>
+        </TLabel>
+        <TLabel Name="Label220">
+          <Caption>AC</Caption>
+        </TLabel>
+        <TLabel Name="Label221">
+          <Caption>-</Caption>
+        </TLabel>
+        <TLabel Name="Label222">
+          <Caption>MAC</Caption>
+        </TLabel>
+        <TLabel Name="Label223">
+          <Caption>-</Caption>
+        </TLabel>
+        <TLabel Name="Label224">
+          <Caption>DC</Caption>
+        </TLabel>
+        <TLabel Name="Label225">
+          <Caption>-</Caption>
+        </TLabel>
+        <TLabel Name="Label226">
+          <Caption>MC</Caption>
+        </TLabel>
+        <TLabel Name="Label227">
+          <Caption>-</Caption>
+        </TLabel>
+        <TSpinEdit Name="seSuperShHP">
+          <Value>20</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSuperShMinAc">
+          <Value>20</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSuperShMaxAc">
+          <Value>20</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSuperShMinMac">
+          <Value>20</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSuperShMaxMac">
+          <Value>20</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSuperShMinDc">
+          <Value>20</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSuperShMaxDc">
+          <Value>20</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSuperShMinMc">
+          <Value>20</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seSuperShMaxMc">
+          <Value>20</Value>
+        </TSpinEdit>
+        <TCheckBox Name="chkShengShouSln2">
+          <Caption>·½°¸2</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TGroupBox Name="grp25">
+          <Caption>ÕÙ»½ÉñÊÞÃ¿¼¶Ôö¼Ó</Caption>
+        </TGroupBox>
+        <TLabel Name="Label228">
+          <Caption>HP</Caption>
+        </TLabel>
+        <TLabel Name="Label229">
+          <Caption>AC</Caption>
+        </TLabel>
+        <TLabel Name="Label230">
+          <Caption>-</Caption>
+        </TLabel>
+        <TLabel Name="Label231">
+          <Caption>MAC</Caption>
+        </TLabel>
+        <TLabel Name="Label232">
+          <Caption>-</Caption>
+        </TLabel>
+        <TLabel Name="Label233">
+          <Caption>DC</Caption>
+        </TLabel>
+        <TLabel Name="Label234">
+          <Caption>-</Caption>
+        </TLabel>
+        <TLabel Name="Label235">
+          <Caption>MC</Caption>
+        </TLabel>
+        <TLabel Name="Label236">
+          <Caption>-</Caption>
+        </TLabel>
+        <TSpinEdit Name="seShHP">
+          <Value>150</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seShMinAc">
+          <Value>15</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seShMaxAc">
+          <Value>15</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seShMinMac">
+          <Value>15</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seShMaxMac">
+          <Value>15</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seShMinDc">
+          <Value>15</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seShMaxDc">
+          <Value>15</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seShMinMc">
+          <Value>15</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seShMaxMc">
+          <Value>15</Value>
+        </TSpinEdit>
+        <TCheckBox Name="chkShenShouSln2">
+          <Caption>·½°¸2</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TTabSheet Name="ts8">
+          <Caption>ÉèÖÃ8</Caption>
+        </TTabSheet>
+        <TEdit Name="edt3">
+          <Text>20061128</Text>
+        </TEdit>
+        <TSpinEdit Name="se1">
+          <Value>2</Value>
+        </TSpinEdit>
+        <TCheckBox Name="chk1">
+          <Caption>IsObj</Caption>
+          <Checked>True</Checked>
+        </TCheckBox>
+        <TButton Name="btn2">
+          <Caption>D5454</Caption>
+        </TButton>
+        <TButton Name="Button1">
+          <Caption>Extended</Caption>
+        </TButton>
+        <TButton Name="btn3">
+          <Caption>btn3</Caption>
+        </TButton>
+        <TButton Name="btn4">
+          <Caption>btn4</Caption>
+        </TButton>
+        <TGroupBox Name="GroupBox25">
+          <Caption>GroupBox25</Caption>
+        </TGroupBox>
+        <TGroupBox Name="GroupBox16">
+          <Caption>ÁÄÌì¹ýÂË</Caption>
+        </TGroupBox>
+        <TLabel Name="Label130">
+          <Caption>¹ýÂË×Ö·û</Caption>
+        </TLabel>
+        <TLabel Name="Label131">
+          <Caption>Ìæ»»³É×Ö·û</Caption>
+        </TLabel>
+        <TEdit Name="edtSrcWord">
+          <Text/>
+        </TEdit>
+        <TRadioButton Name="RadioButton1">
+          <Checked>True</Checked>
+        </TRadioButton>
+        <TRadioButton Name="RadioButton2">
+          <Checked>False</Checked>
+        </TRadioButton>
+        <TRadioButton Name="RadioButton3">
+          <Checked>False</Checked>
+        </TRadioButton>
+        <TRadioButton Name="RadioButton4">
+          <Checked>False</Checked>
+        </TRadioButton>
+        <TRadioButton Name="RadioButton5">
+          <Checked>False</Checked>
+        </TRadioButton>
+        <TRadioButton Name="RadioButton6">
+          <Checked>False</Checked>
+        </TRadioButton>
+        <TRadioButton Name="RadioButton7">
+          <Checked>False</Checked>
+        </TRadioButton>
+        <TEdit Name="edtReplace">
+          <Text/>
+        </TEdit>
+        <TButton Name="Button2">
+          <Caption>Ìí¼Ó/ÐÞ¸Ä</Caption>
+        </TButton>
+        <TButton Name="Button3">
+          <Caption>É¾³ý</Caption>
+        </TButton>
+        <TListBox Name="lbFilterList"/>
+        <TGroupBox Name="GroupBox19">
+          <Caption>ÁÙÊ±½ûÑÔÃûµ¥</Caption>
+        </TGroupBox>
+        <TListBox Name="lbFilterPlayerTmpList"/>
+        <TGroupBox Name="GroupBox17">
+          <Caption>ÓÀ¾Ã½ûÑÔÃûµ¥</Caption>
+        </TGroupBox>
+        <TListBox Name="lbFilterPlayerList"/>
+        <TGroupBox Name="GroupBox26">
+          <Caption>GroupBox26</Caption>
+        </TGroupBox>
+        <TLabel Name="Label184">
+          <Caption>¸´»îÒ©Ë®¼ä¸ô</Caption>
+        </TLabel>
+        <TLabel Name="Label84">
+          <Caption>ÐÐ»á³ÉÔ±ÉÏÏÞ</Caption>
+        </TLabel>
+        <TLabel Name="Label85">
+          <Caption>S</Caption>
+        </TLabel>
+        <TLabel Name="Label97">
+          <Caption>ÉùÍû</Caption>
+        </TLabel>
+        <TLabel Name="Label98">
+          <Caption>»áÔ±µÈ¼¶</Caption>
+        </TLabel>
+        <TLabel Name="Label96">
+          <Caption>×ªÉú</Caption>
+        </TLabel>
+        <TLabel Name="Label95">
+          <Caption>»ý·Ö</Caption>
+        </TLabel>
+        <TGroupBox Name="GroupBox7">
+          <Caption>¿×²ÎÊý</Caption>
+        </TGroupBox>
+        <TLabel Name="Label23">
+          <Caption>1¿×µôÂä¼¸ÂÊ</Caption>
+        </TLabel>
+        <TLabel Name="Label24">
+          <Caption>1/</Caption>
+        </TLabel>
+        <TLabel Name="Label25">
+          <Caption>2¿×µôÂä¼¸ÂÊ</Caption>
+        </TLabel>
+        <TLabel Name="Label26">
+          <Caption>1/</Caption>
+        </TLabel>
+        <TLabel Name="Label27">
+          <Caption>3¿×µôÂä¼¸ÂÊ</Caption>
+        </TLabel>
+        <TLabel Name="Label28">
+          <Caption>1/</Caption>
+        </TLabel>
+        <TLabel Name="Label31">
+          <Caption>´ò1¿×¼¸ÂÊ</Caption>
+        </TLabel>
+        <TLabel Name="Label32">
+          <Caption>1/</Caption>
+        </TLabel>
+        <TLabel Name="Label33">
+          <Caption>´ò2¿×¼¸ÂÊ</Caption>
+        </TLabel>
+        <TLabel Name="Label34">
+          <Caption>1/</Caption>
+        </TLabel>
+        <TLabel Name="Label35">
+          <Caption>´ò3¿×¼¸ÂÊ</Caption>
+        </TLabel>
+        <TLabel Name="Label36">
+          <Caption>1/</Caption>
+        </TLabel>
+        <TLabel Name="Label37">
+          <Caption>Ïâ1¿×¼¸ÂÊ</Caption>
+        </TLabel>
+        <TLabel Name="Label38">
+          <Caption>1/</Caption>
+        </TLabel>
+        <TLabel Name="Label39">
+          <Caption>Ïâ2¿×¼¸ÂÊ</Caption>
+        </TLabel>
+        <TLabel Name="Label40">
+          <Caption>1/</Caption>
+        </TLabel>
+        <TLabel Name="Label41">
+          <Caption>Ïâ3¿×¼¸ÂÊ</Caption>
+        </TLabel>
+        <TLabel Name="Label42">
+          <Caption>1/</Caption>
+        </TLabel>
+        <TSpinEdit Name="seHoleRate">
+          <Value>2</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seHoleRate2">
+          <Value>4</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seHoleRate3">
+          <Value>6</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seMakeHoleRate1">
+          <Value>2</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seMakeHoleRate2">
+          <Value>4</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seMakeHoleRate3">
+          <Value>6</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seInsertHole1">
+          <Value>2</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seInsertHole2">
+          <Value>4</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seInsertHole3">
+          <Value>6</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seGuildMemberCount">
+          <Value>30</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="seReliveDrugTIme">
+          <Value>30</Value>
+        </TSpinEdit>
+        <TListBox Name="lbAllproc"/>
+        <TSpinEdit Name="FindJifen">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="FindFame">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="FindVip">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="FindReborn">
+          <Value>0</Value>
+        </TSpinEdit>
+        <TGroupBox Name="GroupBox28">
+          <Caption>GroupBox28</Caption>
+        </TGroupBox>
+        <TLabel Name="Label92">
+          <Caption>ÎÄ×ÖÑÕÉ«</Caption>
+        </TLabel>
+        <TLabel Name="Label90">
+          <Caption>Ö´ÐÐÍæ¼Ò</Caption>
+        </TLabel>
+        <TButton Name="SendGmMsg">
+          <Caption>·¢ËÍÏûÏ¢</Caption>
+        </TButton>
+        <TComboBox Name="SayColor">
+          <Items>(TComboBoxStrings)
+            <DefinedProperties>
+            B1N0cmluZ3MBBgK67AYCs8gGAsC2AA==
+            </DefinedProperties>
+          </Items>
+        </TComboBox>
+        <TEdit Name="SelectTalk">
+          <Text>hahah</Text>
+        </TEdit>
+        <TComboBox Name="SayContent"/>
+        <TGroupBox Name="GroupBox30">
+          <Caption>GroupBox30</Caption>
+        </TGroupBox>
+        <TButton Name="btn5">
+          <Caption>Raise Exception</Caption>
+        </TButton>
+        <TGroupBox Name="GroupBox31">
+          <Caption>GroupBox31</Caption>
+        </TGroupBox>
+        <TLabel Name="Label133">
+          <Caption>×ªÉúµÈ¼¶²î</Caption>
+        </TLabel>
+        <TLabel Name="Label132">
+          <Caption>PK±£»¤µÈ¼¶</Caption>
+        </TLabel>
+        <TSpinEdit Name="sePKProtectRound">
+          <Value>2</Value>
+        </TSpinEdit>
+        <TSpinEdit Name="sePKProtectLVL">
+          <Value>3</Value>
+        </TSpinEdit>
+        <TPopupMenu Name="pm1">
+          <DefinedProperties>
+          BExlZnQDAQIDVG9wAiU=
+          </DefinedProperties>
+        </TPopupMenu>
+        <TMenuItem Name="mniClear">
+          <Caption>Clear</Caption>
+        </TMenuItem>
+        <TPopupMenu Name="pm2">
+          <DefinedProperties>
+          BExlZnQDGQIDVG9wAh0=
+          </DefinedProperties>
+        </TPopupMenu>
+        <TMenuItem Name="mniPos1">
+          <Caption>Pos</Caption>
+        </TMenuItem>
+        <TMenuItem Name="mniSave1">
+          <Caption>Save</Caption>
+        </TMenuItem>
+        <TPopupMenu Name="PopupOnLineList">
+          <DefinedProperties>
+          BExlZnQDMgIDVG9wAiU=
+          </DefinedProperties>
+        </TPopupMenu>
+        <TMenuItem Name="ClearSearch">
+          <Caption>&amp;ClearSearch</Caption>
+        </TMenuItem>
+        <TMenuItem Name="KickSelect">
+          <Caption>&amp;KickSelect</Caption>
+        </TMenuItem>
+        <TMenuItem Name="KickAll">
+          <Caption>K&amp;ickAll</Caption>
+        </TMenuItem>
+        <TMenuItem Name="AllCanTalk">
+          <Caption>&amp;AllCanTalk</Caption>
+        </TMenuItem>
+        <TMenuItem Name="AllCanNotTalk">
+          <Caption>A&amp;llCanNotTalk</Caption>
+        </TMenuItem>
+        <TPopupMenu Name="pm3">
+          <DefinedProperties>
+          BExlZnQD9QEDVG9wAis=
+          </DefinedProperties>
+        </TPopupMenu>
+        <TMenuItem Name="N1">
+          <Caption/>
+        </TMenuItem>
+        <TMenuItem Name="GetAllProc">
+          <Caption/>
+        </TMenuItem>
+        <TMenuItem Name="MenuItem6">
+          <Caption/>
+        </TMenuItem>
+      </Components>
+      <DefinedProperties>
+      DVBpeGVsc1BlckluY2gCYApUZXh0SGVpZ2h0Agw=
+      </DefinedProperties>
+      <DLD_XMLConfigEx>
+        <TMemo_edtFilterDlls>
+          <TMemo_edtFilterDlls>hook.dll,0,0,0,1,hookmykb,$1234,1111/
+jsq.exe,1,0,0,0,0,0/
+js.ucu,1,0,0,0,0,0/
+fx.ucu,1,0,0,0,0,0/
+sr.ucu,1,0,0,0,0,0/
+sl.ucu,1,0,0,0,0,0/
+WinIo.dll,0,0,0,0,0,0/
+JSHJ.dll,0,0,0,0,0,0/
+SpeedHook.dll,0,0,0,0,0,0/
+itqah.dll,0,0,0,0,0,0/
+msggk.dll,0,0,0,0,0,0/
+frm.dll,0,0,0,0,0,0/
+mirjvp.dll,0,0,0,0,0,0/
+tlguap.dll,0,0,0,0,0,0/
+jyodcmj.dll,0,0,0,0,0,0/
+fxmhi.dll,0,0,0,0,0,0/
+ussgpuo.dll,0,0,0,0,0,0/
+pidl.dll,0,0,0,0,0,0/
+mirjvp.dll,0,0,0,0,0,0/
+NTPerf.dll,0,0,0,0,0,0/
+cooper.dll,0,0,0,0,0,0/
+inproc.dll,0,0,0,0,0,0/
+js1.ucu,1,0,0,0,0,0/
+hook.dll,1,0,0,0,0,0/
+kbhook.dll,1,0,0,0,0,0/
+WinIo.dll,1,0,0,0,0,0/
+A Speeder,0,0,0,0,0,0/</TMemo_edtFilterDlls>
+        </TMemo_edtFilterDlls>
+        <TMemo_mmoCrcs>
+          <TMemo_mmoCrcs>1717371943</TMemo_mmoCrcs>
+        </TMemo_mmoCrcs>
+      </DLD_XMLConfigEx>
+    </TFrmManage>
+  </TFrmManage_FrmManage>
+</DLD_Config>

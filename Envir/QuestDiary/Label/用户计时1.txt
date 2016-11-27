@@ -1,0 +1,164 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@用户计时1_Main]
+{
+#IF
+gender man
+#ACT
+goto @manfish
+#ELSEACT
+goto @womanfish
+
+[@manfish]
+#IF
+CheckPos 1,394,135,10
+Checkitemw 梭衣（男） 1
+Checkitemw 竹鱼竿 1
+Checkitemw 鱼钩 1
+checkitem 鱼饵 1
+#ACT
+movr 鱼类 17
+goto @finhings
+
+[@womanfish]
+#IF
+CheckPos 1,394,135,15
+Checkitemw 梭衣（女） 1
+Checkitemw 竹鱼竿 1
+Checkitemw 鱼钩 1
+checkitem 鱼饵 1
+#ACT
+movr 鱼类 17
+goto @finhings
+
+[@finhings]
+#IF
+EQUAL 鱼类 0
+#ACT
+sysmsg "没有鱼儿上钩" 1
+break
+
+#IF
+EQUAL 鱼类 1
+#ACT
+give 草鱼 1
+take 鱼饵 1
+sysmsg "草鱼1条,并吃掉您鱼饵1个" 1
+break
+
+#IF
+EQUAL 鱼类 2
+#ACT
+sysmsg "没有鱼儿上钩" 1
+break
+
+#IF
+EQUAL 鱼类 3
+#ACT
+give 鲤鱼 1
+take 鱼饵 1
+sysmsg "鲤鱼1条,并吃掉您鱼饵1个" 1
+break
+
+#IF
+EQUAL 鱼类 4
+#ACT
+sysmsg "没有鱼儿上钩" 1
+break
+
+#IF
+EQUAL 鱼类 5
+#ACT
+give 草鱼 2
+take 鱼饵 1
+sysmsg "草鱼2条,恭喜!并吃掉您鱼饵1个" 1
+break
+
+#IF
+EQUAL 鱼类 6
+#ACT
+sysmsg "没有鱼儿上钩" 1
+break
+
+#IF
+EQUAL 鱼类 7
+#ACT
+give 鲤鱼 2
+take 鱼饵 1
+sysmsg "鲤鱼2条,恭喜!并吃掉您鱼饵1个" 1
+break
+
+#IF
+EQUAL 鱼类 8
+#ACT
+give 带鱼 1
+take 鱼饵 1
+sysmsg "带鱼1条,恭喜!并吃掉您鱼饵1个" 1
+break
+
+#IF
+EQUAL 鱼类 9
+#ACT
+sysmsg "没有鱼儿上钩" 1
+break
+
+#IF
+EQUAL 鱼类 10
+#ACT
+sysmsg "没有鱼儿上钩" 1
+break
+
+#IF
+EQUAL 鱼类 11
+#ACT
+give 带鱼 1
+take 鱼饵 1
+sysmsg "带鱼1条,恭喜!并吃掉您鱼饵1个" 1
+break
+
+#IF
+EQUAL 鱼类 12
+#ACT
+give 梅鱼 1
+take 鱼饵 1
+sysmsg "梅鱼1条,恭喜!并吃掉您鱼饵1个" 1
+break
+
+#IF
+EQUAL 鱼类 13
+#ACT
+sysmsg "没有鱼儿上钩" 1
+break
+
+#IF
+EQUAL 鱼类 14
+#ACT
+give 鲤鱼 1
+take 鱼饵 1
+sysmsg "鲤鱼1条,并吃掉您鱼饵1个" 1
+break
+
+#IF
+EQUAL 鱼类 15
+#ACT
+give 鳗鱼 1
+take 鱼饵 1
+sysmsg "鳗鱼1条,恭喜!恭喜!并吃掉您鱼饵1个" 1
+break
+
+#IF
+EQUAL 鱼类 16
+#ACT
+give 带鱼 1
+take 鱼饵 1
+sysmsg "带鱼1条,恭喜!恭喜!并吃掉您鱼饵1个" 1
+break
+
+#IF
+EQUAL 鱼类 17
+#ACT
+give 梅鱼 1
+take 鱼饵 1
+sysmsg "梅鱼1条,恭喜!恭喜!并吃掉您鱼饵1个" 1
+break
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

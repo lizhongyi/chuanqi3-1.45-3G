@@ -1,0 +1,171 @@
+;;创天网络有限公司原版1.45
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+跟你这种人我无话可说。\ \
+<结束/@exit>
+#ELSEACT
+goto @main_0_0
+
+[@main_0_0]
+#IF
+#SAY
+你是从比奇省来的武士吧。最近好像从比奇来的人越来越多了。不久之前这里还没有几个从比奇来的人呢。我从那时候开始就在这儿跟战士、魔法师和道士学习武功。我还算有点实力的。呵呵，像我这种人有实力的人怎么可能练什么火球术、治愈术、基本剑术这些无足轻重的功夫呢？不是高水平的武功我都不学。<$USERNAME>你要是在修炼中遇到什么困难，我可以以我精练的武功来指导你，不过，这可不是免费的，你得交点儿学费。\
+<查看可解释的武功/@main_0_1>\
+<结束/@exit>
+
+[@main_0_1]
+#IF
+#SAY
+（战士魔法）\ \
+（21 - 30 等级 修炼魔法）\
+<半月弯刀/@Go_Mu_Warrior_Noatom_banwel> , <野蛮冲撞/@Go_Mu_Warrior_Noatom_mute>\ \
+（31 - 40 等级 修炼魔法）\
+<烈火剑法/@Go_Mu_Warrior_Noatom_fire> , <翔空剑法/@Go_Mu_Warrior_Noatom_maeng> , <莲月剑法/@Go_Mu_Warrior_Noatom_double>\ \
+（ 修炼高级魔法 ）\
+<十方斩/@Go_Mu_Warrior_Noatom_qmoon> , <乾坤大挪移/@Go_Mu_Warrior_Noatom_qiakd> , <铁布杉/@Go_Mu_Warrior_Noatom_tiebss>\ \
+<斗转星移/@Go_Mu_Warrior_Noatom_douzxy> , <破血狂杀/@Go_Mu_Warrior_Noatom_poxues> \ \
+（法师魔法）\ \
+（21 - 30 等级 修炼魔法）\
+<疾光电影/@Go_Mu_Wizard_light_line> , <冰沙掌/@Go_Mu_Wizard_bingsa> ,<风震天/@Go_Mu_Wizard_wind_pungjin> , <火墙/@Go_Mu_Wizard_fire_jiyem>\
+<圣言术/@Go_Mu_Wizard_ETC_saja> , <异形换位/@Go_Mu_Wizard_ehyung> , <魔法盾/@Go_Mu_Wizard_fire_shild>\ \
+（31 - 40 等级 修炼魔法）\
+<爆裂火焰/@Go_Mu_Wizard_fire_pokyel> , <地狱雷光/@Go_Mu_Wizard_light_storm> , <冰咆哮/@Go_Mu_Wizard_ice_strom>\
+<龙卷风/@Go_Mu_Wizard_yongsun>\ \
+（ 修炼高级魔法 ）\
+<魄冰刺/@Go_Mu_Wizard_fire_pobci> , <怒神霹雳/@Go_Mu_Wizard_light_nspile> , <焰天火雨/@Go_Mu_Wizard_ice_ythuoy> , <凝血离魂/@Go_Mu_Wizard_ninxlh>\ \
+（道士魔法）\ \
+（21 - 30 等级 修炼魔法）\
+<幽灵盾/@Go_Mu_Taoist_dark_hangma> , <集体隐身术/@Go_Mu_Taoist_dark_masshiden> , <月魂灵波/@Go_Mu_Taoist_holy_Upmoon>\
+<神圣战甲术/@Go_Mu_Taoist_dark_deaji> , <困魔咒/@Go_Mu_Taoist_dark_holy> , <空拳刀法/@Go_Mu_Taoist_dark_musang>\
+<强魔震法/@Go_Mu_Taoist_dark_kangma> , <召唤神兽/@Go_Mu_Taoist_soul_sinsu>\ \
+（31 - 40 等级 修炼魔法）\
+<群体治愈术/@Go_Mu_Taoist_holy_massheal> , <超强召唤骷髅/@Go_Mu_Taoist_jinsoul_skel> , <猛虎强势/@Go_Mu_Taoist_mengho>\
+<回生术/@Go_Mu_Taoist_soseng>\ \
+（ 修炼高级魔法 ）\
+<云寂术/@Go_Mu_Taoist_holy_yunjjs> , <移花接玉/@Go_Mu_Taoist_jinsoul_yihjiy> , <阴阳法环/@Go_Mu_Taoist_yinyfah> , <妙影无踪/@Go_Mu_Taoist_miaywz>\ \
+<结束/@exit>
+
+[@Go_Mu_Warrior_Noatom_banwel]
+#CALL [\MU_Total_Sell\Warrior\banwel.txt] @Mu_Warrior_Noatom_banwel
+
+[@Go_Mu_Warrior_Noatom_mute]
+#CALL [\MU_Total_Sell\Warrior\mute.txt] @Mu_Warrior_Noatom_mute
+
+[@Go_Mu_Warrior_Noatom_maeng]
+#CALL [\MU_Total_Sell\Warrior\maeng.txt] @Mu_Warrior_Noatom_maeng
+
+[@Go_Mu_Warrior_Noatom_fire]
+#CALL [\MU_Total_Sell\Warrior\fire.txt] @Mu_Warrior_Noatom_fire
+
+[@Go_Mu_Warrior_Noatom_double]
+#CALL [\MU_Total_Sell\Warrior\double.txt] @Mu_Warrior_Noatom_double
+
+[@Go_Mu_Warrior_Noatom_qmoon]
+#CALL [\MU_Total_Sell\Warrior\qmoon.txt] @Mu_Warrior_Noatom_qmoon
+
+[@Go_Mu_Warrior_Noatom_qiakd]
+#CALL [\MU_Total_Sell\Warrior\qiakd.txt] @Mu_Warrior_Noatom_qiakd
+
+[@Go_Mu_Warrior_Noatom_tiebss]
+#CALL [\MU_Total_Sell\Warrior\tiebss.txt] @Mu_Warrior_Noatom_tiebss
+
+[@Go_Mu_Warrior_Noatom_douzxy]
+#CALL [\MU_Total_Sell\Warrior\douzxy.txt] @Mu_Warrior_Noatom_douzxy
+
+[@Go_Mu_Warrior_Noatom_poxues]
+#CALL [\MU_Total_Sell\Warrior\poxues.txt] @Mu_Warrior_Noatom_poxues
+
+[@Go_Mu_Wizard_fire_pokyel]
+#CALL [\MU_Total_sell\Wizard\pokyel.txt] @Mu_Wizard_fire_pokyel
+
+[@Go_Mu_Wizard_wind_pungjin]
+#CALL [\MU_Total_sell\Wizard\windLine.txt] @Mu_Wizard_wind_pungjin
+
+[@Go_Mu_Wizard_fire_jiyem]
+#CALL [\MU_Total_sell\Wizard\jiyem.txt] @Mu_Wizard_fire_jiyem
+
+[@Go_Mu_Wizard_fire_shild]
+#CALL [\MU_Total_sell\Wizard\fireShild.txt] @Mu_Wizard_fire_shild
+
+[@Go_Mu_Wizard_light_line]
+#CALL [\MU_Total_sell\Wizard\lightLine.txt] @Mu_Wizard_light_line
+
+[@Go_Mu_Wizard_light_storm]
+#CALL [\MU_Total_sell\Wizard\lightStorm.txt] @Mu_Wizard_light_storm
+
+[@Go_Mu_Wizard_ETC_saja]
+#CALL [\MU_Total_sell\Wizard\saja.txt] @Mu_Wizard_ETC_saja
+
+[@Go_Mu_Wizard_ice_strom]
+#CALL [\MU_Total_sell\Wizard\iceStrom.txt] @Mu_Wizard_ice_strom
+
+[@Go_Mu_Wizard_ehyung]
+#CALL [\MU_Total_sell\Wizard\ehyung.txt] @Mu_Wizard_ehyung
+
+[@Go_Mu_Wizard_bingsa]
+#CALL [\MU_Total_sell\Wizard\iceLine.txt] @Mu_Wizard_bingsa
+
+[@Go_Mu_Wizard_yongsun]
+#CALL [\MU_Total_sell\Wizard\yongsun.txt] @Mu_Wizard_yongsun
+
+[@Go_Mu_Wizard_fire_pobci]
+#CALL [\MU_Total_sell\Wizard\pobci.txt] @Mu_Wizard_pobci
+
+[@Go_Mu_Wizard_light_nspile]
+#CALL [\MU_Total_sell\Wizard\nspile.txt] @Mu_Wizard_nspile
+
+[@Go_Mu_Wizard_ice_ythuoy]
+#CALL [\MU_Total_sell\Wizard\ythuoy.txt] @Mu_Wizard_ythuoy
+
+[@Go_Mu_Wizard_ninxlh]
+#CALL [\MU_Total_sell\Wizard\ninxlh.txt] @Mu_Wizard_ninxlh
+
+[@Go_Mu_Taoist_dark_hangma]
+#CALL [\MU_Total_sell\Taoist\hangma.txt] @Mu_Taoist_dark_hangma
+
+[@Go_Mu_Taoist_dark_masshiden]
+#CALL [\MU_Total_sell\Taoist\masshiden.txt] @Mu_Taoist_dark_masshiden
+
+[@Go_Mu_Taoist_dark_deaji]
+#CALL [\MU_Total_sell\Taoist\deaji.txt] @Mu_Taoist_dark_deaji
+
+[@Go_Mu_Taoist_dark_holy]
+#CALL [\MU_Total_sell\Taoist\holy.txt] @Mu_Taoist_dark_holy
+
+[@Go_Mu_Taoist_holy_Upmoon]
+#CALL [\MU_Total_sell\Taoist\Upmoon.txt] @Mu_Taoist_holy_Upmoon
+
+[@Go_Mu_Taoist_dark_musang]
+#CALL [\MU_Total_sell\Taoist\musang.txt] @Mu_Taoist_dark_musang
+
+[@Go_Mu_Taoist_holy_massheal]
+#CALL [\MU_Total_sell\Taoist\massheal.txt] @Mu_Taoist_holy_massheal
+
+[@Go_Mu_Taoist_dark_kangma]
+#CALL [\MU_Total_sell\Taoist\kangma.txt] @Mu_Taoist_dark_kangma
+
+[@Go_Mu_Taoist_soul_sinsu]
+#CALL [\MU_Total_sell\Taoist\sinsu.txt] @Mu_Taoist_soul_sinsu
+
+[@Go_Mu_Taoist_jinsoul_skel]
+#CALL [\MU_Total_sell\Taoist\jinsoulSkel.txt] @Mu_Taoist_jinsoul_skel
+
+[@Go_Mu_Taoist_mengho]
+#CALL [\MU_Total_sell\Taoist\mengho.txt] @Mu_Taoist_mengho
+
+[@Go_Mu_Taoist_soseng]
+#CALL [\MU_Total_sell\Taoist\soseng.txt] @Mu_Taoist_soseng
+
+[@Go_Mu_Taoist_holy_yunjjs]
+#CALL [\MU_Total_sell\Taoist\yunjjs.txt] @Mu_Taoist_yunjjs
+
+[@Go_Mu_Taoist_jinsoul_yihjiy]
+#CALL [\MU_Total_sell\Taoist\yihjiy.txt] @Mu_Taoist_yihjiy
+
+[@Go_Mu_Taoist_yinyfah]
+#CALL [\MU_Total_sell\Taoist\yinyfah.txt] @Mu_Taoist_yinyfah
+
+[@Go_Mu_Taoist_miaywz]
+#CALL [\MU_Total_sell\Taoist\miaywz.txt] @Mu_Taoist_miaywz

@@ -1,0 +1,299 @@
+;;创天网络有限公司原版1.45
+[@mugong_mutebo]
+{
+#IF
+check [013] 1
+#SAY
+你不是已经收到书吗？那么你为什么还要索要？\ \
+<结束/@exit>
+#ACT
+break
+
+#IF
+check [041] 1
+#SAY
+哦，年纪轻轻好像有相当实力的武功。现在还有这样的战士，找我有什么事情吗？\ \
+<想了解新的武功。/@mugong_mutebo_next>
+#ELSESAY
+嗯。。战士的路即危险又艰辛。从你所带的工具看好像经历了无数的搏斗和考验。。\
+首先将所持的武器刀刃磨光，每个村庄都有加工武器的商人，请他们给修理一下。那些人也许不知道你的心情。。。\
+以后找机会再来！\ \
+<好的，我知道了。/@exit>
+
+[@mugong_mutebo_next]
+#IF
+#SAY
+嗯，你好像在实战中也有些体会。虽然战士总是想在最前方战斗，但是没有这种 {FCOLOR/10}护身术{FCOLOR/12} 。魔法师可以利用瞬息移动魔法消失掉，道士也可以利用隐身术隐藏起自己的行踪，我们只有将敌人打倒后才可以脱身。如果被层层包围，真是死路一条。我也是经历了无数的生死考验，真是为了解决战士的困难才创造了 {FCOLOR/10}野蛮冲撞{FCOLOR/12} 。\ \
+<野蛮冲撞是具有哪种功能的武功？/@mugong_mutebo_next1>
+
+[@mugong_mutebo_next1]
+#IF
+#SAY
+可以推开敌人，是一种简单而实用的武功。虽然表面看起来仅仅凭借力量将敌人推开，但不是使用肌肉的力量，而是集中 {FCOLOR/10}内力和外力{FCOLOR/12} 达到极限的高级武功。如果熟练地掌握了该武功，可以将比自身大几倍的巨物一下子推开。\
+虽然不能给敌人更大的打击，在被敌人包围的状况下可以打出一条 {FCOLOR/10}血路{FCOLOR/12} 。对于在最前方和敌人正面战斗的战士来说是非常重要的武功。\
+但是也不能认为该武功是简单的推挡技术。根据使用者的不同，可以作为 {FCOLOR/10}避免魔法或者连续器{FCOLOR/12} 使用，达到各种各样效果潜在力非常大的武功。\ \
+<请传授野蛮冲撞武功！/@mugong_mutebo_next2>
+
+[@mugong_mutebo_next2]
+#IF
+#SAY
+好的，我的修炼方法非常严格。如果按照此方法学习，我将传授野蛮冲撞给你。\ \
+<我应做的事情是什么？/@mugong_mutebo_next3>
+
+[@mugong_mutebo_next3]
+#IF
+checkbaggage
+#SAY
+带着这个 {FCOLOR/10}书信{FCOLOR/12} ，穿越沙漠。找到隐居在 {FCOLOR/10}绿洲村{FCOLOR/12} 叫 {FCOLOR/10}‘王铁匠’{FCOLOR/12} 的武士，并将书信交给他，他就会告诉你某种秘诀。接受他的指教后再来！\ \
+<结束/@exit>
+#ACT
+give 书信 1
+SET [042] 1
+#ELSESAY
+你的背囊装满了。。请整理些位置再来！\ \
+<结束/@exit>
+}
+
+[@mugon_mutebo_retry]
+{
+#IF
+checkbaggage
+checkitem 书信 1
+#SAY
+沙漠是很远的路。请快些到达！\ \
+#ELSESAY
+书信丢了？让人寒心！重新再给你一本，这次注意拿好。\ \
+<结束/@exit>
+#ELSEACT
+give 书信 1
+break
+}
+
+[@mugong_mutebo_test]
+{
+#IF
+check [043] 1
+#SAY
+需要的东西是诺玛法老出产的 {FCOLOR/10}诺玛石 5个{FCOLOR/12} ，千万记住！\ 
+我将在此等候你回来。\ \
+<结束/@exit>
+#ACT
+break
+#IF
+check [042] 1
+#SAY
+黄河大侠让来的？快点拿来书信。\ \
+<给你书信。/@mugong_mutebo_test_next>
+#ACT
+break
+
+[@mugong_mutebo_test_next]
+#IF
+checkitem 书信 1
+#SAY
+嗯，是黄河大侠派来的。让你来辛苦了。那么快点回去吧！\ \
+<这是什么话？/@mugong_mutebo_test_next1>
+#ACT
+take 书信 1
+SET [043] 1
+#ELSESAY
+没有书信？嗯，那就有些困难。虽然辛苦，请重新拿书信来！\ \
+<结束/@exit>
+
+[@mugong_mutebo_test_next1]
+#IF
+#SAY
+这是你接受的全部测试。黄河大侠 每年将 几名战士 送到我这里 ，我看到书信后，将你们重新送回去即可。\ \
+<还是无法接受哦。/@mugong_mutebo_test_next2>
+
+[@mugong_mutebo_test_next2]
+#IF
+#SAY
+哦，好像发了好大的火。但是请别误解，黄河大侠不会拿你开玩笑的。原来学习武功的方法有数十数百种。让你做这种事情都是有缘由的，不要随意轻举妄动。\ \
+<知道了。/@mugong_mutebo_test_next3>
+
+[@mugong_mutebo_test_next3]
+#IF
+#SAY
+那件事就那样了，我想委托你一个 {FCOLOR/10}个人的委托{FCOLOR/12} 好吗？\ \
+<什么委托？/@mugong_mutebo_test_next4>
+
+[@mugong_mutebo_test_next4]
+#IF
+#SAY
+最近年轻时候受的伤又发作了，即疼痛又很痒，都无法睡觉。听说生活在沙漠中的诺玛族拥有一种有着神奇力量称为 {FCOLOR/10}诺玛石{FCOLOR/12} 的石头，将这个石头捣碎，然后用水冲服可以治疗痼疾。你能帮我找到这个东西吗？\ \
+<不用担心！/@mugong_mutebo_test_next5>
+
+[@mugong_mutebo_test_next5]
+#IF
+#SAY
+非常谢谢！‘诺玛石’被装饰于诺玛族长老 {FCOLOR/10}诺玛法老的手杖{FCOLOR/12} 上。\ \
+<下一步/@mugong_mutebo_test_next6>
+
+[@mugong_mutebo_test_next6]
+#IF
+#SAY
+非常急迫地想掌握新武功吧，别担心！即使那样，我怎么报复？向黄河大侠挑起事端吗？请放心地去吧！我绝对不是一个小气的家伙。\ \
+<我将给你找来。/@mugong_mutebo_test_next7>
+
+[@mugong_mutebo_test_next7]
+#IF
+#SAY
+真的吗？哦，绝对不是故意如此的。‘诺玛石’被装饰于诺玛法老的手杖上，而且请找到该 {FCOLOR/10}诺玛石 5个{FCOLOR/12} 。\ \
+<结束/@exit>
+}
+
+[@mugong_mutebo_test_complete]
+{
+#IF
+checkitem 诺玛石 5
+#SAY
+哦，找到‘诺玛石’了。谢谢！今天晚上开始可以好好地睡觉了。\ \
+<下一步/@mugong_mutebo_test_complete_next>
+#ELSESAY
+我将在此等候你回来。\ \
+<结束/@exit>
+
+[@mugong_mutebo_test_complete_next]
+#IF
+checkitem 诺玛石 5
+#SAY
+非常谢谢！你是一名不忽视别人困难，热心肠的人。希望你以后依然可以不断地帮助有困难的人。\
+这个是对你善意的小小答谢。请将书信转交给 {FCOLOR/10}黄河大侠{FCOLOR/12} 。\ \
+<好的，我将转交。/@mugong_mutebo_test_complete_next1>
+#ACT
+break
+#ELSESAY
+我将在此等候你回来。\ \
+<结束/@exit>
+
+[@mugong_mutebo_test_complete_next1]
+#IF
+gender man
+#ACT
+goto @mugong_mutebo_test_complete_next2_1
+#ELSEACT
+goto @mugong_mutebo_test_complete_next2_2
+
+[@mugong_mutebo_test_complete_next2_1]
+#IF
+checkitem 诺玛石 5
+checkbaggage 
+#ACT
+take 诺玛石 5
+give 诺玛重盔甲（男） 1
+goto @mugong_mutebo_test_complete_next3
+close
+#ELSESAY
+我将在此等候你回来。\ \
+<结束/@exit>
+
+[@mugong_mutebo_test_complete_next2_2]
+#IF
+checkitem 诺玛石 5
+checkbaggage 
+#ACT
+take 诺玛石 5
+give 诺玛重盔甲（女） 1
+goto @mugong_mutebo_test_complete_next3
+close
+#ELSESAY
+我将在此等候你回来。\ \
+<结束/@exit>
+
+[@mugong_mutebo_test_complete_next3]
+#IF
+#ACT
+SET [045] 1
+give 书信 1
+#SAY
+就到这里，请上路吧！要走的路还很远哟。\ \
+<结束/@exit>
+}
+
+[@mugong_mutebo_test_complete_retry]
+{
+#IF
+checkbaggage
+checkitem 书信 1
+#SAY
+边境是很远的路。请快赶去！\ \
+#ELSESAY
+书信丢了？让人寒心！重新再给你一本，这次注意拿好。\ \
+<结束/@exit>
+#ELSEACT
+give 书信 1
+break
+}
+
+[@mugong_mutebo_test_complete_receive]
+{
+#IF
+check [013] 1
+#SAY
+你不是已经掌握该武功吗？请到其它的地方搞恶做剧。我可没有那么好的性格。\ \
+<结束/@exit>
+#ACT
+break
+
+#IF
+checkmagic 野蛮冲撞
+#SAY
+你不是已经掌握该武功吗？请到其它的地方搞恶做剧。\ \
+<结束/@exit>
+#ACT
+break
+
+#IF
+check [045] 1
+check [013] 0
+checkitem 书信 1
+#SAY
+已经转交了书信？辛苦了。\ \
+<下一步/@mugong_mutebo_test_complete_receive_next>
+#ACT
+take 书信 1
+#ELSESAY
+沙漠是很远的路。请快些转交书信！\ \
+<结束/@exit>
+
+[@mugong_mutebo_test_complete_receive_next]
+#IF
+#SAY
+去沙漠走一趟如何？理解我为什么让你做这件事情吗？\ \
+<嗯，没理解。/@mugong_mutebo_test_complete_receive_next1_1> \
+<嗯，好像理解了。/@mugong_mutebo_test_complete_receive_next1_2>
+
+[@mugong_mutebo_test_complete_receive_next1_1]
+#IF
+#SAY
+如此愚钝的人，到现在为止心理都在骂我吧。学习野蛮冲撞需要强大的力量和良好的内力，以及在非常艰苦的境况下也不放弃的体力和精力。为了培养这些功力，身体要处于极限的状态。因此让你横跨沙漠。\ \
+<这是什么话？/@mugong_mutebo_test_complete_receive_next2>
+
+[@mugong_mutebo_test_complete_receive_next1_2]
+#IF
+#SAY
+比看起来理解快嘛。有一种将来可以成功的预感。\ \
+<这是什么话？/@mugong_mutebo_test_complete_receive_next2>
+
+[@mugong_mutebo_test_complete_receive_next2]
+#IF
+#SAY
+很正确哟。请拿着训练书，以后要帮助有困难的人。\ \
+<下一步/@mugong_mutebo_test_complete_receive_next3>
+
+[@mugong_mutebo_test_complete_receive_next3]
+#IF
+check [013] 0
+#ACT
+reset [041] 4
+SET [013] 1
+give 野蛮冲撞（秘籍） 1
+give 金币 30000
+#SAY
+在哪儿、写了些什么？嗯，说你是不顾各种危险并找到药的优秀年轻人。对的，帮助有困难的人是我们有能力的人应该做的事情。非常好！你的行为提高了战士的声誉。\ 
+像你一样的人，我也相信，可以将技术传授给你。\ 
+你已经在其它地方得到了武功密集，我也没有再给你的必要了。我给你一些金币和东西，用在需要的地方。\ 
+希望以后你多做有助于提高战士名誉的事情。\ \
+<结束/@exit>
+}

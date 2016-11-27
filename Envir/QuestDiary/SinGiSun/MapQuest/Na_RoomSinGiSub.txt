@@ -1,0 +1,11 @@
+;;=中国怪客联盟= www.51kiss.net
+[@main]
+#IF
+checkitem 连环明珠 1
+#ACT
+take 连环明珠 1
+enter_ok
+#ELSEACT
+enter_fail
+;;不要删除此行
+

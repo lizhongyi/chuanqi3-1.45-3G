@@ -1,0 +1,42 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@双倍经验_1]
+{
+#IF
+checkcmd CHECKDOUBLEEXP
+#ACT
+mov D0 %P9
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}双{FCOLOR/4}━{FCOLOR/14}倍{FCOLOR/4}━{FCOLOR/14}经{FCOLOR/4}━{FCOLOR/14}验{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+每一位玩家每周都拥有[{FCOLOR/1} 840分钟 {FCOLOR/12}][{FCOLOR/10} 免费双倍经验 {FCOLOR/12}]\
+假设您[{FCOLOR/10} 今日没有领取 {FCOLOR/12}]时间可以[{FCOLOR/10} 自动累积到明天 {FCOLOR/12}]\
+但务必在[{FCOLOR/10} 本周内 {FCOLOR/12}]领完,因每周日[{FCOLOR/10} 24:00 {FCOLOR/12}]将会清零\
+{FCOLOR/4}━━━{FCOLOR/12}[ 您当前还剩余{FCOLOR/1} <$OUTPUT(D0)> {FCOLOR/12}分钟双倍经验时间 ]{FCOLOR/4}━━━{FCOLOR/12}\\
+_            [ <领取 60分钟双倍经验/@doubleexp1hour(60)> ]\\
+_            [ <领取120分钟双倍经验/@doubleexp1hour(120)> ]\\
+_            [ <领取180分钟双倍经验/@doubleexp1hour(180)> ]\\
+_            [ <领取240分钟双倍经验/@doubleexp1hour(240)> ]\
+
+[@doubleexp1hour()]
+#ACT
+mov D7 %ARG(1)
+
+#IF
+SMALL D0 %D7
+#ACT
+SYSMSG "<温馨提示:>您只剩余<$OUTPUT(D0)>分钟,无法领取."
+Break
+
+#IF
+checkcmd ISDUOEXP
+#ACT
+SYSMSG "<温馨提示:>您正处于双倍经验状态,无法领取."
+Break
+
+#IF
+#ACT
+actcmd STARTDOUBLEEXP %D7
+Break
+Close
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

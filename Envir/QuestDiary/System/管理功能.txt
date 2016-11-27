@@ -1,0 +1,380 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;504 506 508 509 512 513
+[@管理功能_1]
+{
+#if
+isadmin
+#ELSEACT
+BREAK
+
+
+#if
+isadmin
+#act
+mov A1 ""
+MOV D1 0
+#SAY
+<栗子树活动/@栗子树活动>\
+;<骷髅活动/@骷髅活动1>  <开区刷怪/@开区刷怪1>  <攻沙巴克/@开区活动x> 
+<沙巴克尸王活动/@尸王活动1>   <盟重白猪活动/@白猪活动1>\\
+<强弱元素/@强弱元素1>   <装备修改/@装备修改1>\\
+<发放黑铁/@发黑铁>   <发放钢玉/@发钢玉>\\
+<清理地面/@周围地面1>   <清理怪物/@@sldm002>\\
+;<刷怪功能/@刷怪功能x>   <设置下雪/@@设置下雪x>\\
+<加经验权限/@@加经验权限>   <去经验权限/@@去经验权限>\\
+<移动走智善/@移动NPC>   <移回来智善/@移动NPC2>
+
+[@移动NPC]
+#ACT
+movenpc "02,247,242,智善大师"  Island01 115 148
+
+[@移动NPC2]
+#ACT
+movenpc "Island01,115,148,智善大师" 02 247 242
+
+[@栗子树活动]
+#ACT
+MongenP "4,260,440,400" 经验宝藏树 100
+SysMsg "操作成功!"
+CLOSE
+
+[@强弱元素1]
+#CALL [SYSTEM\强弱元素.TXT] @强弱元素_1
+
+[@装备修改1]
+#CALL [SYSTEM\装备修改.TXT] @装备修改_1
+
+[@开区刷怪1]
+#ACT
+MongenP "01,460,263,30" 猪 20
+MongenP "01,460,263,30" 牛 20
+MongenP "01,460,263,30" 鸡 20
+
+MongenP "02,265,205,30" 猪 20
+MongenP "02,265,205,30" 牛 20
+MongenP "02,265,205,30" 鸡 20
+
+MongenP "1,424,103,30" 猪 20
+MongenP "1,424,103,30" 牛 20
+MongenP "1,424,103,30" 鸡 20
+CLOSE
+
+[@白猪活动1]
+#ACT
+MongenP "74,323,310,400" 白野猪 50
+MongenP "74,323,310,400" 红野猪 100
+SysMsg "操作成功!"
+CLOSE
+
+[@@加经验权限]
+#ACT
+MOV A1 %INPUTSTR
+SAVEVALUE "ParamControl\经验权限.txt" 经验权限 %A1 1
+Close
+
+[@@去经验权限]
+#ACT
+MOV A1 %INPUTSTR
+SAVEVALUE "ParamControl\经验权限.txt" 经验权限 %A1 0
+Close
+
+[@@设置下雪x]
+#ACT
+MOV A1 %INPUTSTR
+
+#IF
+#ACT
+ChangeMapAttr %A1 "SNOW"
+
+[@骷髅活动1]
+#ACT
+MongenP "3,212,146,50" 骷髅精灵 30
+MongenP "3,212,146,100" 骷髅 100
+SysMsg "操作成功!"
+CLOSE
+
+[@尸王活动1]
+#ACT
+MongenP "3,180,25,350" 尸王 60
+MongenP "3,180,25,350" 僵尸1 50
+MongenP "3,180,25,350" 僵尸3 50
+MongenP "3,180,25,350" 僵尸4 50
+MongenP "3,180,25,350" 僵尸5 50
+SysMsg "操作成功!"
+CLOSE
+
+[@开区活动x]
+#ACT
+MongenP "3,211,161,30" 骷髅弓箭手 50
+MongenP "3,211,161,30" 血巨人 30
+MongenP "3,211,161,30" 潘夜战士 30
+MongenP "3,211,161,30" 大老鼠  30
+MongenP "3,211,161,30" 潘夜鬼将 15
+MongenP "3,211,161,30" 震天守将 15
+MongenP "3,211,161,30" 霸王守卫 8
+MongenP "3,211,161,30" 沃玛护卫 8
+MongenP "3,211,161,30" 骷髅精灵 12
+MongenP "3,211,161,30" 尸王 20
+SysMsg "操作成功!"
+CLOSE
+
+[@第二天刷僵尸]
+#ACT
+MongenP "3,210,165,20" 僵尸1 50
+MongenP "3,210,165,20" 僵尸3 50
+MongenP "3,210,165,20" 僵尸4 50
+MongenP "3,210,165,20" 尸王2 18
+MongenP "3,210,165,20" 尸王 2  
+LineMsg "Grobal" "(*) 大量的僵尸和尸王出现在沙巴克，大家快去抢技能书啊!"
+SysMsg "操作成功!"
+CLOSE
+
+[@第三天刷沃玛]
+#ACT
+MongenP "3,210,165,20" 火焰沃玛 30
+MongenP "3,210,165,20" 暗黑战士 30
+MongenP "3,210,165,20" 沃玛战士 30
+MongenP "3,210,165,20" 沃玛勇士 30
+MongenP "3,210,165,20" 沃玛勇士 30
+MongenP "3,210,165,20" 沃玛教主 1
+LineMsg "Grobal" "(*) 携带宝物的沃玛教主来到了沙巴克，大家快去抢号角啊!"
+SysMsg "操作成功!"
+CLOSE
+
+[@怪物攻城x]
+#SAY
+<刷赤月怪物/@刷赤月怪物>\
+<刷触龙怪物/@刷触龙怪物>\
+<刷骷髅怪物/@刷骷髅怪物>\
+<刷祖玛怪物/@刷祖玛怪物>\
+<刷牛洞怪物/@刷牛洞怪物>\
+<刷真天怪物/@刷真天怪物>\
+<刷船上怪物/@刷船上怪物>\
+<刷诺玛怪物/@刷诺玛怪物>\
+
+[@刷赤月怪物]
+#ACT
+MongenP "3,238,197,20" 血巨人 20
+MongenP "3,238,197,20" 血金刚 20
+MongenP "3,238,197,20" 赤血恶魔 20
+MongenP "3,238,197,20" 灰血恶魔 20
+MongenP "3,238,197,20" 赤月恶魔 1
+LineMsg "Grobal" "(*) 赤月恶魔来了，勇士们小心!"
+SysMsg "操作成功!"
+CLOSE
+
+[@刷触龙怪物]
+#ACT
+MongenP "3,224,173,20" 蜈蚣 30
+MongenP "3,224,173,20" 跳跳蜂 30
+MongenP "3,224,173,20" 蝴蝶虫 30
+MongenP "3,224,173,20" 黑色恶蛆 30
+MongenP "3,224,173,20" 钳虫 30
+MongenP "3,224,173,20" 触龙神 1
+LineMsg "Grobal" "(*) 触龙神来了，勇士们小心!"
+SysMsg "操作成功!"
+CLOSE
+
+[@刷骷髅怪物]
+#ACT
+MongenP "3,210,165,20" 骷髅弓箭手 20
+MongenP "3,210,165,20" 骷髅武士 20
+MongenP "3,210,165,20" 骷髅士兵 20
+MongenP "3,210,165,20" 骷髅武将 20
+MongenP "3,210,165,20" 骷髅教主 1
+LineMsg "Grobal" "(*) 骷髅教主来了，勇士们小心!"
+SysMsg "操作成功!"
+CLOSE
+
+[@刷祖玛怪物]
+#ACT
+MongenP "3,225,134,20" 大老鼠 30
+MongenP "3,225,134,20" 祖玛弓箭手 30
+MongenP "3,225,134,20" 祖玛雕像 20
+MongenP "3,225,134,20" 祖玛卫士 20
+MongenP "3,225,134,20" 祖玛教主 1
+LineMsg "Grobal" "(*) 祖玛教主来了，勇士们小心!"
+SysMsg "操作成功!"
+CLOSE
+
+[@刷牛洞怪物]
+#ACT
+MongenP "3,249,110,20" 潘夜战士 20
+MongenP "3,249,110,20" 潘夜冰魔 20
+MongenP "3,249,110,20" 潘夜云魔 20
+MongenP "3,249,110,20" 潘夜火魔 20
+MongenP "3,249,110,20" 潘夜风魔 20
+MongenP "3,249,110,20" 牛魔王 1
+LineMsg "Grobal" "(*) 牛魔王来了，勇士们小心!"
+SysMsg "操作成功!"
+CLOSE
+
+[@刷真天怪物]
+#ACT
+MongenP "3,210,165,20" 石像狮子 20
+MongenP "3,210,165,20" 火焰狮子 20
+MongenP "3,210,165,20" 地牢女神1 20
+MongenP "3,210,165,20" 地牢女神2 20
+MongenP "3,210,165,20" 武力神将 20
+MongenP "3,210,165,20" 震天魔神 1
+LineMsg "Grobal" "(*) 震天魔神来了，勇士们小心!"
+SysMsg "操作成功!"
+CLOSE
+
+[@刷船上怪物]
+#ACT
+MongenP "3,177,179,20" 犬猴魔 10
+MongenP "3,177,179,20" 轻甲守卫 10
+MongenP "3,177,179,20" 恶形鬼 10
+MongenP "3,177,179,20" 触角神魔 10
+MongenP "3,177,179,20" 海神将领 10
+MongenP "3,177,179,20" 爆毒神魔 10
+MongenP "3,177,179,20" 红衣法师 10
+MongenP "3,177,179,20" 神舰守卫 10
+MongenP "3,177,179,20" 霸王教主 1
+LineMsg "Grobal" "(*) 霸王教主来了，勇士们小心!"
+SysMsg "操作成功!"
+CLOSE
+
+[@刷诺玛怪物]
+#ACT
+MongenP "3,156,212,20" 诺玛骑兵 20
+MongenP "3,156,212,20" 诺玛装甲兵 20
+MongenP "3,156,212,20" 诺玛司令 20
+MongenP "3,156,212,20" 诺玛抛石兵 20
+MongenP "3,156,212,20" 诺玛斧兵 20
+MongenP "3,156,212,20" 诺玛突击队长 1
+MongenP "3,156,212,20" 诺玛教主 1
+LineMsg "Grobal" "(*) 诺玛教主来了，勇士们小心!"
+SysMsg "操作成功!"
+CLOSE
+
+[@发黑铁]
+#ACT
+DropItemMap   "1,400,120,30" 黑铁 1 30
+LineMsg "Grobal" "(*) 注意啦，大量黑铁掉落在了道馆，快去抢啊!"
+CLOSE
+
+[@发钢玉]
+#ACT
+DropItemMap   "1,400,120,30" 钢玉矿石 1 30
+LineMsg "Grobal" "(*) 注意啦，大量钢玉矿石掉落在了道馆，快去抢啊!"
+CLOSE
+
+[@刷怪功能x]
+#SAY
+<地图/@@地图>     <坐标X/@@坐标X>    <坐标Y/@@坐标Y>     <范围/@@范围>\
+<怪物名字/@@怪物名字> <怪物数量/@@怪物数量>\\
+<立即产怪/@产怪了>\
+
+[@@地图]
+#ACT
+mov A1 %INPUTSTR
+
+[@@坐标X]
+#ACT
+mov A2 %INPUTSTR
+
+[@@坐标Y]
+#ACT
+mov A3 %INPUTSTR
+
+[@@范围]
+#ACT
+mov A4 %INPUTSTR
+
+[@@怪物名字]
+#ACT
+mov A5 %INPUTSTR
+
+[@@怪物数量]
+#ACT
+mov A6 %INPUTSTR
+
+[@产怪了]
+#ACT
+MOV A0 ""
+mov A0 %A1
+ADDSTR A0 ","
+ADDSTR A0 %A2
+ADDSTR A0 ","
+ADDSTR A0 %A3
+ADDSTR A0 ","
+ADDSTR A0 %A4
+MonGenP %A0 %A5 %A6 %A7
+SysMsg "操作成功!"
+
+[@制作装备x]
+#SAY
+<装备名字/@@装备名字x>    {FCOLOR/1}<$OUTPUT(A1)> {FCOLOR/12} \\
+<装备数量/@@装备数量x>    {FCOLOR/1}<$OUTPUT(D1)> {FCOLOR/12} \\
+<确定生产/@确定生产X>
+
+[@@装备名字x]
+#ACT
+MOV A1 %INPUTSTR
+GOTO @制作装备x
+BREAK
+
+[@@装备数量x]
+#ACT
+MOV D1 %INPUTNUM
+GOTO @制作装备x
+BREAK
+
+[@确定生产X]
+#IF
+ISADMIN
+#ELSEACT
+BREAK
+
+#IF
+!EQUAL A1 ""
+!EQUAL D1 ""
+#ACT
+GIVE %A1 %D1
+CLOSE
+BREAK
+
+[@@sldm002]
+#ACT
+MOV A3 %INPUTSTR
+
+#IF
+EQUAL A3 ""
+#ACT
+SYSMSG "输入内容不要为空."
+break
+
+#IF
+#ACT
+Monclear  %A3
+#say
+该地图怪物已经清理！
+
+
+[@周围地面1]
+#SAY
+清理中....
+#ACT
+MOV A0 %USERMAP
+MOV A1 %USERX
+MOV A2 %USERY
+MOV A3 ""
+ADDSTR A3 %A0
+ADDSTR A3 ","
+ADDSTR A3 %A1
+ADDSTR A3 ","
+ADDSTR A3 %A2
+ADDSTR A3 ",100"
+Clearitemmap %A3 *
+DELAYGOTO [LOCAL] 1 @OKNOW222
+BREAK
+
+[@OKNOW222]
+#ACT
+CLOSE
+SYSMSG "清理完毕."
+
+
+
+}

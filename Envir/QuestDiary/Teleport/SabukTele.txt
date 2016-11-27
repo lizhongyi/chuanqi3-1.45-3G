@@ -1,0 +1,33 @@
+;;创天网络有限公司原版1.45
+[@Sabuk_Teleport]
+{
+#IF
+IsOnCastleWar Sabuk
+#SAY
+你不是参加沙巴克攻城战的行会成员。\ \
+<结束/@exit>
+#ACT
+break
+
+#IF
+IsOnReadyCastleWar Sabuk
+#SAY
+你不是参加沙巴克攻城战的行会成员。\ \
+<结束/@exit>
+#ACT
+break
+
+#IF
+!CheckPkPoint 2
+#SAY
+六面神石 \ \
+<移动至道馆村所需金钱 : 500 钱/@TelePortRootin(DoGwan,500,Center)> \
+<移动至毒蛇山村所需金钱 : 500 钱/@TelePortRootin(SnakeVally,500,North)> \
+
+#ELSEACT
+mapmove 81 125 274
+break
+
+[@TelePortRootin()]
+#CALL [Teleport\MoveRootin.txt] @TelePortMove
+}

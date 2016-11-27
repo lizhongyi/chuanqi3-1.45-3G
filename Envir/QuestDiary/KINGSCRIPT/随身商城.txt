@@ -1,0 +1,328 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@金币商城_D]
+{
+#SAY
+{FCOLOR/1}随身金币商城物品的价格是城里购买时的双倍.\
+<〖强效太阳水〗/@批量可购D(强效太阳水,2000)>   <〖万年雪霜〗/@批量可购D(万年雪霜,6000)>      <〖回生神水〗/@少量可购D(回生神水,100000)>\\
+<〖发卡〗/@批量可购D(发卡,600000)>         <〖巨龙戒指〗/@少量可购D(巨龙戒指,20000)>      <〖黑铁〗/@少量可购D(黑铁,60000)>\\
+<〖钢玉石〗/@少量可购D(钢玉石,2000000)>       <〖技巧项链〗/@少量可购D(技巧项链,10000000)>      <〖特修神水〗/@少量可购D(特修神水,300000)>\\
+<〖传音喇叭〗/@少量可购D(传音喇叭,4000000)>     <〖体力饺子〗/@批量可购D(饺子（体力）,200000)>      <〖自然饺子〗/@批量可购D(饺子（自然）,200000)>\\
+<〖攻击饺子〗/@批量可购D(饺子（攻击）,200000)>     <〖疾风饺子〗/@批量可购D(饺子（疾风）,200000)>      <〖灵魂饺子〗/@批量可购D(饺子（灵魂）,200000)>\\
+{FCOLOR/10}以下物品都为超大类型,单个数量为10000.{FCOLOR/12}\
+<〖护身符〗/@少量可购D(护身符（超大）,600000)>       <〖暗黑护身符〗/@少量可购D(暗黑护身符（超大）,600000)>    <〖神圣护身符〗/@少量可购D(神圣护身符（超大）,600000)>\\
+<〖火焰护身符〗/@少量可购D(火焰护身符（超大）,600000)>   <〖寒冰护身符〗/@少量可购D(寒冰护身符（超大）,600000)>    <〖霹雷护身符〗/@少量可购D(霹雷护身符（超大）,600000)>\\
+<〖狂风护身符〗/@少量可购D(狂风护身符（超大）,600000)>   <〖黄色药粉〗/@少量可购D(黄色药粉（超大）,600000)>      <〖灰色药粉〗/@少量可购D(灰色药粉（超大）,600000)>\\
+
+
+[@批量可购D()]
+#ACT
+MOV 可购物品 %ARG(1)
+MOV 物品单价 %ARG(2)
+MOV 拥有金币 %UserGold
+
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+Equal 占用格子 46
+#ACT
+SYSMSG "你的包袱格子已经满了,不能装下东西了!"
+break
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+#ACT
+FormatStr "where Name ='%s'" %可购物品
+actcmd READSQL  "king_StdItems" "Weight" "物品重量" %A9
+
+#IF
+Small 剩余负重 %物品重量
+#ACT
+SYSMSG "你的包袱剩余负重为<$OUTPUT(剩余负重)>,不能装下重量为<$OUTPUT(物品重量)>的<$OUTPUT(可购物品)>."
+BREAK
+
+#IF
+#ACT
+MOV P1 %剩余负重
+MOV P2 %物品重量
+DIV P1 P2
+MOV 可购数量 %P9
+
+#IF
+#ACT
+MOV P1 %拥有金币
+MOV P2 %物品单价
+DIV P1 P2
+MOV 能买数量 %P9
+
+#IF
+Elarge 能买数量 %可购数量
+#SAY
+购入物品: {FCOLOR/10}<$OUTPUT(可购物品)>{FCOLOR/12}\
+物品单价: {FCOLOR/10}<$OUTPUT(物品单价)>{FCOLOR/12}\
+物品重量: {FCOLOR/10}<$OUTPUT(物品重量)>{FCOLOR/12}\
+剩余负重: {FCOLOR/10}<$OUTPUT(剩余负重)>{FCOLOR/12}\
+最多可购: {FCOLOR/1}<$OUTPUT(可购数量)>{FCOLOR/12} 个.\\
+<输入要购入的个数/@@大量可购_OKD>
+#ELSESAY
+购入物品: {FCOLOR/10}<$OUTPUT(可购物品)>{FCOLOR/12}\
+物品单价: {FCOLOR/10}<$OUTPUT(物品单价)>{FCOLOR/12}\
+物品重量: {FCOLOR/10}<$OUTPUT(物品重量)>{FCOLOR/12}\
+剩余负重: {FCOLOR/10}<$OUTPUT(剩余负重)>{FCOLOR/12}\
+最多可购: {FCOLOR/1}<$OUTPUT(能买数量)>{FCOLOR/12} 个.\\
+<输入要购入的个数/@@大量可购_OKD>
+
+[@@大量可购_OKD]
+#ACT
+MOV D0 %INPUTNUM
+MOV 拥有金币 %UserGold
+
+#IF
+SMALL D0 1
+#ACT
+SYSMSG "输入错误,请重新输入!"
+BREAK
+
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+Equal 占用格子 46
+#ACT
+SYSMSG "你的包袱格子已经满了,不能装下东西了!"
+break
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+Small 剩余负重 %物品重量
+#ACT
+SYSMSG "你的包袱剩余负重为<$OUTPUT(剩余负重)>,不能装下重量为<$OUTPUT(物品重量)>的<$OUTPUT(可购物品)>."
+BREAK
+
+#IF
+#ACT
+MOV P1 %剩余负重
+MOV P2 %物品重量
+DIV P1 P2
+MOV 可购数量 %P9
+
+#IF
+#ACT
+MOV P1 %拥有金币
+MOV P2 %物品单价
+DIV P1 P2
+MOV 能买数量 %P9
+
+#IF
+Elarge 能买数量 %可购数量
+#ACT
+MOV 真实可购 %可购数量
+#ELSEACT
+MOV 真实可购 %能买数量
+
+#IF
+Large D0 %真实可购
+#ACT
+SYSMSG "你目前最多可购<$OUTPUT(真实可购)>个<$OUTPUT(可购物品)>"
+BREAK
+
+#IF
+#ACT
+MOV P1 %物品单价
+MOV P2 %D0
+MUL P1 P2
+MOV 购物总价 %P9
+
+#IF
+CHECKGOLD %购物总价
+#ACT
+GIVE %可购物品 %D0
+TAKE 金币 %购物总价
+SYSMSG "消耗了<$OUTPUT(购物总价)>金币,获得了<$OUTPUT(D0)>个<$OUTPUT(可购物品)>."
+goto @金币商城_D
+break
+#ELSEACT
+SYSMSG "你身上的金币不足购买<$OUTPUT(D0)>个<$OUTPUT(可购物品)>!"
+BREAK
+
+
+[@少量可购D()]
+#ACT
+MOV 可购物品 %ARG(1)
+MOV 物品单价 %ARG(2)
+MOV 拥有金币 %UserGold
+
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+Equal 占用格子 46
+#ACT
+SYSMSG "你的包袱格子已经满了,不能装下东西了!"
+break
+#ELSEACT
+MOV 剩余格子 46
+DEC 剩余格子 %占用格子
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+#ACT
+FormatStr "where Name ='%s'" %可购物品
+actcmd READSQL  "king_StdItems" "Weight" "物品重量" %A9
+
+#IF
+Small 剩余负重 %物品重量
+#ACT
+SYSMSG "你的包袱剩余负重为<$OUTPUT(剩余负重)>,不能装下重量为<$OUTPUT(物品重量)>的<$OUTPUT(可购物品)>."
+BREAK
+
+#IF
+#ACT
+MOV P1 %剩余负重
+MOV P2 %物品重量
+DIV P1 P2
+MOV 可购数量 %P9
+
+#IF
+#ACT
+MOV P1 %拥有金币
+MOV P2 %物品单价
+DIV P1 P2
+MOV 能买数量 %P9
+
+#IF
+Elarge 能买数量 %可购数量
+#ACT
+MOV 真实可购 %可购数量
+#ELSEACT
+MOV 真实可购 %能买数量
+
+#IF
+Elarge 真实可购 %剩余格子
+#SAY
+购入物品: {FCOLOR/10}<$OUTPUT(可购物品)>{FCOLOR/12}\
+物品单价: {FCOLOR/10}<$OUTPUT(物品单价)>{FCOLOR/12}\
+物品重量: {FCOLOR/10}<$OUTPUT(物品重量)>{FCOLOR/12}\
+剩余负重: {FCOLOR/10}<$OUTPUT(剩余负重)>{FCOLOR/12}\
+剩余格子: {FCOLOR/10}<$OUTPUT(剩余格子)>{FCOLOR/12}\
+最多可购: {FCOLOR/1}<$OUTPUT(剩余格子)>{FCOLOR/12} 个.\\
+<输入要购入的个数/@@少量可购D_OK>
+#ELSESAY
+购入物品: {FCOLOR/10}<$OUTPUT(可购物品)>{FCOLOR/12}\
+物品单价: {FCOLOR/10}<$OUTPUT(物品单价)>{FCOLOR/12}\
+物品重量: {FCOLOR/10}<$OUTPUT(物品重量)>{FCOLOR/12}\
+剩余负重: {FCOLOR/10}<$OUTPUT(剩余负重)>{FCOLOR/12}\
+剩余格子: {FCOLOR/10}<$OUTPUT(剩余格子)>{FCOLOR/12}\
+最多可购: {FCOLOR/1}<$OUTPUT(真实可购)>{FCOLOR/12} 个.\\
+<输入要购入的个数/@@少量可购D_OK>
+
+[@@少量可购D_OK]
+#ACT
+MOV D0 %INPUTNUM
+MOV 拥有金币 %UserGold
+
+#IF
+SMALL D0 1
+#ACT
+SYSMSG "输入错误,请重新输入!"
+BREAK
+
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+Equal 占用格子 46
+#ACT
+SYSMSG "你的包袱格子已经满了,不能装下东西了!"
+break
+#ELSEACT
+MOV 剩余格子 46
+DEC 剩余格子 %占用格子
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+Small 剩余负重 %物品重量
+#ACT
+SYSMSG "你的包袱剩余负重为<$OUTPUT(剩余负重)>,不能装下重量为<$OUTPUT(物品重量)>的<$OUTPUT(可购物品)>."
+BREAK
+
+#IF
+#ACT
+MOV P1 %剩余负重
+MOV P2 %物品重量
+DIV P1 P2
+MOV 可购数量 %P9
+
+#IF
+#ACT
+MOV P1 %拥有金币
+MOV P2 %物品单价
+DIV P1 P2
+MOV 能买数量 %P9
+
+#IF
+Elarge 能买数量 %可购数量
+#ACT
+MOV 真实可购 %可购数量
+#ELSEACT
+MOV 真实可购 %能买数量
+
+#IF
+Elarge 真实可购 %剩余格子
+#ACT
+MOV 最终可购 %剩余格子
+#ELSEACT
+MOV 最终可购 %真实可购
+
+#IF
+Large D0 %最终可购
+#ACT
+SYSMSG "你目前最多可购<$OUTPUT(最终可购)>个<$OUTPUT(可购物品)>"
+BREAK
+
+#IF
+#ACT
+MOV P1 %物品单价
+MOV P2 %D0
+MUL P1 P2
+MOV 购物总价 %P9
+
+#IF
+CHECKGOLD %购物总价
+#ACT
+GIVE %可购物品 %D0
+TAKE 金币 %购物总价
+SYSMSG "消耗了<$OUTPUT(购物总价)>金币,获得了<$OUTPUT(D0)>个<$OUTPUT(可购物品)>."
+goto @金币商城_D
+break
+#ELSEACT
+SYSMSG "你身上的金币不足购买<$OUTPUT(D0)>个<$OUTPUT(可购物品)>!"
+BREAK
+
+
+
+}

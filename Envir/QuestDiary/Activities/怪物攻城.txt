@@ -1,0 +1,560 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@怪物攻城_1]
+{
+#ACT
+MOV  怪攻时间  %CURDAY
+linemsg [grobal] "╔═════════< 系统信息 >═════════╗"
+linemsg [grobal] "║   怪物攻城活动 5 分钟 后开启. 地点[ 比奇城 ]   ║"
+linemsg [grobal] "╚════════════════════════╝"
+Delaygoto [Grobal] 300 @guaigong_1
+SYSMSG "温馨提示:怪物攻城操作成功."
+Close
+
+[@guaigong_1]
+#IF
+ELarge 怪攻时间 30
+#ACT
+GOTO @guaigong_30
+#ELSEACT
+GOTO @guaigong_2
+
+[@guaigong_30]
+#ACT
+linemsg [grobal] "╔═════════< 系统信息 >═════════╗"
+linemsg [grobal] "║   [ 八大教主 ]齐聚[ 比奇城 ]勇士们赶快行动!!   ║"
+linemsg [grobal] "╚════════════════════════╝"
+Delaygoto [Grobal] 120 @guaigong_31
+MongenP "0,404,346,10" 沃玛教主 1
+MongenP "0,404,346,10" 骷髅教主 1
+MongenP "0,404,346,10" 潘夜牛魔王 1
+MongenP "0,404,346,10" 震天魔神 1
+MongenP "0,404,346,10" 霸王教主 1
+MongenP "0,404,346,10" 超级黑野猪 1
+MongenP "0,440,386,0" 赤月恶魔 1
+MongenP "0,436,382,0" 祖玛教主 1
+
+MongenP "0,408,422,10" 沃玛教主 1
+MongenP "0,408,422,10" 骷髅教主 1
+MongenP "0,408,422,10" 潘夜牛魔王 1
+MongenP "0,408,422,10" 震天魔神 1
+MongenP "0,408,422,10" 霸王教主 1
+MongenP "0,408,422,10" 超级黑野猪 1
+
+MongenP "0,486,431,10" 沃玛教主 1
+MongenP "0,486,431,10" 骷髅教主 1
+MongenP "0,486,431,10" 潘夜牛魔王 1
+MongenP "0,486,431,10" 震天魔神 1
+MongenP "0,486,431,10" 霸王教主 1
+MongenP "0,486,431,10" 超级黑野猪 1
+
+ApplyMonMission "0,404,346,100" 沃玛教主  "0,440,387"
+ApplyMonMission "0,404,346,100" 骷髅教主  "0,440,387"
+ApplyMonMission "0,404,346,100" 潘夜牛魔王  "0,440,387"
+ApplyMonMission "0,404,346,100" 震天魔神  "0,440,387"
+ApplyMonMission "0,404,346,100" 霸王教主  "0,440,387"
+ApplyMonMission "0,404,346,100" 超级黑野猪  "0,440,387"
+
+ApplyMonMission "0,408,422,100" 沃玛教主   "0,440,387"
+ApplyMonMission "0,408,422,100" 骷髅教主  "0,440,387"
+ApplyMonMission "0,408,422,100" 潘夜牛魔王  "0,440,387"
+ApplyMonMission "0,408,422,100" 震天魔神  "0,440,387"
+ApplyMonMission "0,408,422,100" 霸王教主  "0,440,387"
+ApplyMonMission "0,408,422,100" 超级黑野猪  "0,440,387"
+
+ApplyMonMission "0,486,431,100" 沃玛教主  "0,440,387"
+ApplyMonMission "0,486,431,100" 骷髅教主  "0,440,387"
+ApplyMonMission "0,486,431,100" 潘夜牛魔王  "0,440,387"
+ApplyMonMission "0,486,431,100" 震天魔神  "0,440,387"
+ApplyMonMission "0,486,431,100" 霸王教主  "0,440,387"
+ApplyMonMission "0,486,431,100" 超级黑野猪  "0,440,387"
+
+[@guaigong_31]
+#ACT
+linemsg [grobal] "╔═════════< 系统信息 >═════════╗"
+linemsg [grobal] "║   [ 诺玛教主 ]带着手下向[ 比奇城 ]发起了进攻   ║"
+linemsg [grobal] "╚════════════════════════╝"
+Delaygoto [Grobal] 120 @guaigong_32
+MongenP "0,404,346,10" 诺玛骑兵 10
+MongenP "0,404,346,10" 诺玛装甲兵 10
+MongenP "0,404,346,10" 诺玛司令 10
+MongenP "0,404,346,10" 诺玛斧兵 10
+MongenP "0,404,346,10" 诺玛突击队长 1
+MongenP "0,404,346,10" 诺玛教主 1
+
+MongenP "0,408,422,10" 诺玛骑兵 10
+MongenP "0,408,422,10" 诺玛装甲兵 10
+MongenP "0,408,422,10" 诺玛司令 10
+MongenP "0,408,422,10" 诺玛斧兵 10
+MongenP "0,408,422,10" 诺玛突击队长 1
+MongenP "0,408,422,10" 诺玛教主 1
+
+MongenP "0,486,431,10" 诺玛骑兵 10
+MongenP "0,486,431,10" 诺玛装甲兵 10
+MongenP "0,486,431,10" 诺玛司令 10
+MongenP "0,486,431,10" 诺玛斧兵 10
+MongenP "0,486,431,10" 诺玛突击队长 1
+MongenP "0,486,431,10" 诺玛教主 1
+
+ApplyMonMission "0,404,346,100" 诺玛骑兵  "0,440,387"
+ApplyMonMission "0,404,346,100" 诺玛装甲兵  "0,440,387"
+ApplyMonMission "0,404,346,100" 诺玛司令  "0,440,387"
+ApplyMonMission "0,404,346,100" 诺玛斧兵  "0,440,387"
+ApplyMonMission "0,404,346,100" 诺玛突击队长  "0,440,387"
+ApplyMonMission "0,404,346,100" 诺玛教主  "0,440,387"
+
+ApplyMonMission "0,408,422,100" 诺玛骑兵   "0,440,387"
+ApplyMonMission "0,408,422,100" 诺玛装甲兵  "0,440,387"
+ApplyMonMission "0,408,422,100" 诺玛司令  "0,440,387"
+ApplyMonMission "0,408,422,100" 诺玛斧兵  "0,440,387"
+ApplyMonMission "0,408,422,100" 诺玛突击队长  "0,440,387"
+ApplyMonMission "0,408,422,100" 诺玛教主  "0,440,387"
+
+ApplyMonMission "0,486,431,100" 诺玛骑兵  "0,440,387"
+ApplyMonMission "0,486,431,100" 诺玛装甲兵  "0,440,387"
+ApplyMonMission "0,486,431,100" 诺玛司令  "0,440,387"
+ApplyMonMission "0,486,431,100" 诺玛斧兵  "0,440,387"
+ApplyMonMission "0,486,431,100" 诺玛突击队长  "0,440,387"
+ApplyMonMission "0,486,431,100" 诺玛教主  "0,440,387"
+
+[@guaigong_32]
+#ACT
+linemsg [grobal] "╔═════════< 系统信息 >═════════╗"
+linemsg [grobal] "║   [ 地天灭王 ]带着手下向[ 比奇城 ]发起了进攻   ║"
+linemsg [grobal] "╚════════════════════════╝"
+Delaygoto [Grobal] 120 @guaigong_33
+MongenP "0,404,346,10" 魔石咆哮者 10
+MongenP "0,404,346,10" 变异刺骨蜥 10
+MongenP "0,404,346,10" 变异毒蜥 10
+MongenP "0,404,346,10" 变异丑蜥 10
+MongenP "0,404,346,10" 魔石守护神 1
+MongenP "0,404,346,10" 地天灭王 1
+
+MongenP "0,408,422,10" 魔石咆哮者 10
+MongenP "0,408,422,10" 变异刺骨蜥 10
+MongenP "0,408,422,10" 变异毒蜥 10
+MongenP "0,408,422,10" 变异丑蜥 10
+MongenP "0,408,422,10" 魔石守护神 1
+MongenP "0,408,422,10" 地天灭王 1
+
+MongenP "0,486,431,10" 魔石咆哮者 10
+MongenP "0,486,431,10" 变异刺骨蜥 10
+MongenP "0,486,431,10" 变异毒蜥 10
+MongenP "0,486,431,10" 变异丑蜥 10
+MongenP "0,486,431,10" 魔石守护神 1
+MongenP "0,486,431,10" 地天灭王 1
+
+ApplyMonMission "0,404,346,100" 魔石咆哮者  "0,440,387"
+ApplyMonMission "0,404,346,100" 变异刺骨蜥  "0,440,387"
+ApplyMonMission "0,404,346,100" 变异毒蜥  "0,440,387"
+ApplyMonMission "0,404,346,100" 变异丑蜥  "0,440,387"
+ApplyMonMission "0,404,346,100" 魔石守护神  "0,440,387"
+ApplyMonMission "0,404,346,100" 地天灭王  "0,440,387"
+
+ApplyMonMission "0,408,422,100" 魔石咆哮者   "0,440,387"
+ApplyMonMission "0,408,422,100" 变异刺骨蜥  "0,440,387"
+ApplyMonMission "0,408,422,100" 变异毒蜥  "0,440,387"
+ApplyMonMission "0,408,422,100" 变异丑蜥  "0,440,387"
+ApplyMonMission "0,408,422,100" 魔石守护神  "0,440,387"
+ApplyMonMission "0,408,422,100" 地天灭王  "0,440,387"
+
+ApplyMonMission "0,486,431,100" 魔石咆哮者  "0,440,387"
+ApplyMonMission "0,486,431,100" 变异刺骨蜥  "0,440,387"
+ApplyMonMission "0,486,431,100" 变异毒蜥  "0,440,387"
+ApplyMonMission "0,486,431,100" 变异丑蜥  "0,440,387"
+ApplyMonMission "0,486,431,100" 魔石守护神  "0,440,387"
+ApplyMonMission "0,486,431,100" 地天灭王  "0,440,387"
+
+[@guaigong_33]
+#ACT
+linemsg [grobal] "╔═════════< 系统信息 >═════════╗"
+linemsg [grobal] "║   [ 冰城帝王 ]带着手下向[ 比奇城 ]发起了进攻   ║"
+linemsg [grobal] "╚════════════════════════╝"
+Delaygoto [Grobal] 120 @guaigong_34
+MongenP "0,404,346,10" 冰魂武士 10
+MongenP "0,404,346,10" 冰宫骑士 10
+MongenP "0,404,346,10" 冰宫巫师 10
+MongenP "0,404,346,10" 冰宫射手 10
+MongenP "0,404,346,10" 寒冰守护神 1
+MongenP "0,404,346,10" 冰城帝王 1
+
+MongenP "0,408,422,10" 冰魂武士 10
+MongenP "0,408,422,10" 冰宫骑士 10
+MongenP "0,408,422,10" 冰宫巫师 10
+MongenP "0,408,422,10" 冰宫射手 10
+MongenP "0,408,422,10" 寒冰守护神 1
+MongenP "0,408,422,10" 冰城帝王 1
+
+MongenP "0,486,431,10" 冰魂武士 10
+MongenP "0,486,431,10" 冰宫骑士 10
+MongenP "0,486,431,10" 冰宫巫师 10
+MongenP "0,486,431,10" 冰宫射手 10
+MongenP "0,486,431,10" 寒冰守护神 1
+MongenP "0,486,431,10" 冰城帝王 1
+
+ApplyMonMission "0,404,346,100" 冰魂武士  "0,440,387"
+ApplyMonMission "0,404,346,100" 冰宫骑士  "0,440,387"
+ApplyMonMission "0,404,346,100" 冰宫巫师  "0,440,387"
+ApplyMonMission "0,404,346,100" 冰宫射手  "0,440,387"
+ApplyMonMission "0,404,346,100" 寒冰守护神  "0,440,387"
+ApplyMonMission "0,404,346,100" 冰城帝王  "0,440,387"
+
+ApplyMonMission "0,408,422,100" 冰魂武士   "0,440,387"
+ApplyMonMission "0,408,422,100" 冰宫骑士  "0,440,387"
+ApplyMonMission "0,408,422,100" 冰宫巫师  "0,440,387"
+ApplyMonMission "0,408,422,100" 冰宫射手  "0,440,387"
+ApplyMonMission "0,408,422,100" 寒冰守护神  "0,440,387"
+ApplyMonMission "0,408,422,100" 冰城帝王  "0,440,387"
+
+ApplyMonMission "0,486,431,100" 冰魂武士  "0,440,387"
+ApplyMonMission "0,486,431,100" 冰宫骑士  "0,440,387"
+ApplyMonMission "0,486,431,100" 冰宫巫师  "0,440,387"
+ApplyMonMission "0,486,431,100" 冰宫射手  "0,440,387"
+ApplyMonMission "0,486,431,100" 寒冰守护神  "0,440,387"
+ApplyMonMission "0,486,431,100" 冰城帝王  "0,440,387"
+
+[@guaigong_34]
+#ACT
+MOV  怪攻时间  %CURDAY
+#IF
+ELarge 怪攻时间 60
+#ACT
+GOTO @guaigong_35
+#ELSEACT
+GOTO @guaigong_jieshu
+
+[@guaigong_35]
+#ACT
+linemsg [grobal] "╔═════════< 系统信息 >═════════╗"
+linemsg [grobal] "║   [ 绝情殿主 ]带着手下向[ 比奇城 ]发起了进攻   ║"
+linemsg [grobal] "╚════════════════════════╝"
+Delaygoto [Grobal] 120 @guaigong_jieshu
+MongenP "0,404,346,10" 绝情红姬 10
+MongenP "0,404,346,10" 绝情绿姬 10
+MongenP "0,404,346,10" 绝情护卫 1
+
+MongenP "0,408,422,10" 绝情红姬 10
+MongenP "0,408,422,10" 绝情绿姬 10
+MongenP "0,408,422,10" 绝情护卫 1
+
+MongenP "0,486,431,10" 绝情红姬 10
+MongenP "0,486,431,10" 绝情绿姬 10
+MongenP "0,486,431,10" 绝情护卫 1
+MongenP "0,440,386,0" 绝情殿主 1
+
+ApplyMonMission "0,404,346,100" 绝情红姬  "0,440,387"
+ApplyMonMission "0,404,346,100" 绝情绿姬  "0,440,387"
+ApplyMonMission "0,404,346,100" 绝情护卫  "0,440,387"
+
+ApplyMonMission "0,408,422,100" 绝情红姬  "0,440,387"
+ApplyMonMission "0,408,422,100" 绝情绿姬  "0,440,387"
+ApplyMonMission "0,408,422,100" 绝情护卫  "0,440,387"
+
+ApplyMonMission "0,486,431,100" 绝情红姬  "0,440,387"
+ApplyMonMission "0,486,431,100" 绝情绿姬  "0,440,387"
+ApplyMonMission "0,486,431,100" 绝情护卫  "0,440,387"
+
+
+[@guaigong_2]
+#ACT
+linemsg [grobal] "╔═════════< 系统信息 >═════════╗"
+linemsg [grobal] "║   [ 沃玛教主 ]带着手下向[ 比奇城 ]发起了进攻   ║"
+linemsg [grobal] "╚════════════════════════╝"
+Delaygoto [Grobal] 120 @guaigong_3
+MongenP "0,404,346,10" 粪虫 10
+MongenP "0,404,346,10" 沃玛战士 10
+MongenP "0,404,346,10" 沃玛勇士 10
+MongenP "0,404,346,10" 沃玛战将 10
+MongenP "0,404,346,10" 火焰沃玛 10
+MongenP "0,404,346,10" 沃玛卫士 1
+MongenP "0,404,346,10" 沃玛教主 1
+
+MongenP "0,408,422,10" 粪虫 10
+MongenP "0,408,422,10" 沃玛战士 10
+MongenP "0,408,422,10" 沃玛勇士 10
+MongenP "0,408,422,10" 沃玛战将 10
+MongenP "0,408,422,10" 火焰沃玛 10
+MongenP "0,408,422,10" 沃玛卫士 1
+MongenP "0,408,422,10" 沃玛教主 1
+
+MongenP "0,486,431,10" 粪虫 10
+MongenP "0,486,431,10" 沃玛战士 10
+MongenP "0,486,431,10" 沃玛勇士 10
+MongenP "0,486,431,10" 沃玛战将 10
+MongenP "0,486,431,10" 火焰沃玛 10
+MongenP "0,486,431,10" 沃玛卫士 1
+MongenP "0,486,431,10" 沃玛教主 1
+
+ApplyMonMission "0,404,346,100" 粪虫  "0,440,387"
+ApplyMonMission "0,404,346,100" 沃玛战士  "0,440,387"
+ApplyMonMission "0,404,346,100" 沃玛勇士  "0,440,387"
+ApplyMonMission "0,404,346,100" 沃玛战将  "0,440,387"
+ApplyMonMission "0,404,346,100" 火焰沃玛  "0,440,387"
+ApplyMonMission "0,404,346,100" 沃玛卫士  "0,440,387"
+ApplyMonMission "0,404,346,100" 沃玛教主  "0,440,387"
+
+ApplyMonMission "0,408,422,100" 粪虫   "0,440,387"
+ApplyMonMission "0,408,422,100" 沃玛战士  "0,440,387"
+ApplyMonMission "0,408,422,100" 沃玛勇士  "0,440,387"
+ApplyMonMission "0,408,422,100" 沃玛战将  "0,440,387"
+ApplyMonMission "0,408,422,100" 火焰沃玛  "0,440,387"
+ApplyMonMission "0,408,422,100" 沃玛卫士  "0,440,387"
+ApplyMonMission "0,408,422,100" 沃玛教主  "0,440,387"
+
+ApplyMonMission "0,486,431,100" 粪虫  "0,440,387"
+ApplyMonMission "0,486,431,100" 沃玛战士  "0,440,387"
+ApplyMonMission "0,486,431,100" 沃玛勇士  "0,440,387"
+ApplyMonMission "0,486,431,100" 沃玛战将  "0,440,387"
+ApplyMonMission "0,486,431,100" 火焰沃玛  "0,440,387"
+ApplyMonMission "0,486,431,100" 沃玛卫士  "0,440,387"
+ApplyMonMission "0,486,431,100" 沃玛教主  "0,440,387"
+
+[@guaigong_3]
+#ACT
+linemsg [grobal] "╔═════════< 系统信息 >═════════╗"
+linemsg [grobal] "║   [ 骷髅教主 ]带着手下向[ 比奇城 ]发起了进攻   ║"
+linemsg [grobal] "╚════════════════════════╝"
+Delaygoto [Grobal] 120 @guaigong_4
+MongenP "0,404,346,10" 骷髅弓箭手 10
+MongenP "0,404,346,10" 骷髅武士 10
+MongenP "0,404,346,10" 骷髅士兵 10
+MongenP "0,404,346,10" 骷髅武将 10
+MongenP "0,404,346,10" 骨鬼将 1
+MongenP "0,404,346,10" 骷髅教主 1
+
+MongenP "0,408,422,10" 骷髅弓箭手 10
+MongenP "0,408,422,10" 骷髅武士 10
+MongenP "0,408,422,10" 骷髅士兵 10
+MongenP "0,408,422,10" 骷髅武将 10
+MongenP "0,408,422,10" 骨鬼将 1
+MongenP "0,408,422,10" 骷髅教主 1
+
+MongenP "0,486,431,10" 骷髅弓箭手 10
+MongenP "0,486,431,10" 骷髅武士 10
+MongenP "0,486,431,10" 骷髅士兵 10
+MongenP "0,486,431,10" 骷髅武将 10
+MongenP "0,486,431,10" 骨鬼将 1
+MongenP "0,486,431,10" 骷髅教主 1
+
+ApplyMonMission "0,404,346,100" 骷髅弓箭手  "0,440,387"
+ApplyMonMission "0,404,346,100" 骷髅武士  "0,440,387"
+ApplyMonMission "0,404,346,100" 骷髅士兵  "0,440,387"
+ApplyMonMission "0,404,346,100" 骷髅武将  "0,440,387"
+ApplyMonMission "0,404,346,100" 骨鬼将  "0,440,387"
+ApplyMonMission "0,404,346,100" 骷髅教主  "0,440,387"
+
+ApplyMonMission "0,408,422,100" 骷髅弓箭手   "0,440,387"
+ApplyMonMission "0,408,422,100" 骷髅武士  "0,440,387"
+ApplyMonMission "0,408,422,100" 骷髅士兵  "0,440,387"
+ApplyMonMission "0,408,422,100" 骷髅武将  "0,440,387"
+ApplyMonMission "0,408,422,100" 骨鬼将  "0,440,387"
+ApplyMonMission "0,408,422,100" 骷髅教主  "0,440,387"
+
+ApplyMonMission "0,486,431,100" 骷髅弓箭手  "0,440,387"
+ApplyMonMission "0,486,431,100" 骷髅武士  "0,440,387"
+ApplyMonMission "0,486,431,100" 骷髅士兵  "0,440,387"
+ApplyMonMission "0,486,431,100" 骷髅武将  "0,440,387"
+ApplyMonMission "0,486,431,100" 骨鬼将  "0,440,387"
+ApplyMonMission "0,486,431,100" 骷髅教主  "0,440,387"
+
+[@guaigong_4]
+#ACT
+linemsg [grobal] "╔═════════< 系统信息 >═════════╗"
+linemsg [grobal] "║   [ 触 龙 神 ]带着手下向[ 比奇城 ]发起了进攻   ║"
+linemsg [grobal] "╚════════════════════════╝"
+Delaygoto [Grobal] 120 @guaigong_5
+MongenP "0,404,346,10" 蜈蚣 10
+MongenP "0,404,346,10" 跳跳蜂 10
+MongenP "0,404,346,10" 黑色恶蛆 10
+MongenP "0,404,346,10" 钳虫 10
+MongenP "0,404,346,10" 邪恶钳虫 1
+MongenP "0,404,346,10" 触龙神 1
+
+MongenP "0,408,422,10" 蜈蚣 10
+MongenP "0,408,422,10" 跳跳蜂 10
+MongenP "0,408,422,10" 黑色恶蛆 10
+MongenP "0,408,422,10" 钳虫 10
+MongenP "0,408,422,10" 邪恶钳虫 1
+MongenP "0,408,422,10" 触龙神 1
+
+MongenP "0,486,431,10" 蜈蚣 10
+MongenP "0,486,431,10" 跳跳蜂 10
+MongenP "0,486,431,10" 黑色恶蛆 10
+MongenP "0,486,431,10" 钳虫 10
+MongenP "0,486,431,10" 邪恶钳虫 1
+MongenP "0,486,431,10" 触龙神 1
+
+ApplyMonMission "0,404,346,100" 蜈蚣  "0,440,387"
+ApplyMonMission "0,404,346,100" 跳跳蜂  "0,440,387"
+ApplyMonMission "0,404,346,100" 黑色恶蛆  "0,440,387"
+ApplyMonMission "0,404,346,100" 钳虫  "0,440,387"
+ApplyMonMission "0,404,346,100" 邪恶钳虫  "0,440,387"
+ApplyMonMission "0,404,346,100" 触龙神  "0,440,387"
+
+ApplyMonMission "0,408,422,100" 蜈蚣   "0,440,387"
+ApplyMonMission "0,408,422,100" 跳跳蜂  "0,440,387"
+ApplyMonMission "0,408,422,100" 黑色恶蛆  "0,440,387"
+ApplyMonMission "0,408,422,100" 钳虫  "0,440,387"
+ApplyMonMission "0,408,422,100" 邪恶钳虫  "0,440,387"
+ApplyMonMission "0,408,422,100" 触龙神  "0,440,387"
+
+ApplyMonMission "0,486,431,100" 蜈蚣  "0,440,387"
+ApplyMonMission "0,486,431,100" 跳跳蜂  "0,440,387"
+ApplyMonMission "0,486,431,100" 黑色恶蛆  "0,440,387"
+ApplyMonMission "0,486,431,100" 钳虫  "0,440,387"
+ApplyMonMission "0,486,431,100" 邪恶钳虫  "0,440,387"
+ApplyMonMission "0,486,431,100" 触龙神  "0,440,387"
+
+[@guaigong_5]
+#ACT
+linemsg [grobal] "╔═════════< 系统信息 >═════════╗"
+linemsg [grobal] "║   [潘夜牛魔王]带着手下向[ 比奇城 ]发起了进攻   ║"
+linemsg [grobal] "╚════════════════════════╝"
+Delaygoto [Grobal] 120 @guaigong_6
+MongenP "0,404,346,10" 潘夜冰魔 10
+MongenP "0,404,346,10" 潘夜火魔 10
+MongenP "0,404,346,10" 潘夜左护卫 10
+MongenP "0,404,346,10" 潘夜右护卫 10
+MongenP "0,404,346,10" 潘夜鬼将 1
+MongenP "0,404,346,10" 潘夜牛魔王 1
+
+MongenP "0,408,422,10" 潘夜冰魔 10
+MongenP "0,408,422,10" 潘夜火魔 10
+MongenP "0,408,422,10" 潘夜左护卫 10
+MongenP "0,408,422,10" 潘夜右护卫 10
+MongenP "0,408,422,10" 潘夜鬼将 1
+MongenP "0,408,422,10" 潘夜牛魔王 1
+
+MongenP "0,486,431,10" 潘夜冰魔 10
+MongenP "0,486,431,10" 潘夜火魔 10
+MongenP "0,486,431,10" 潘夜左护卫 10
+MongenP "0,486,431,10" 潘夜右护卫 10
+MongenP "0,486,431,10" 潘夜鬼将 1
+MongenP "0,486,431,10" 潘夜牛魔王 1
+
+ApplyMonMission "0,404,346,100" 潘夜冰魔  "0,440,387"
+ApplyMonMission "0,404,346,100" 潘夜火魔  "0,440,387"
+ApplyMonMission "0,404,346,100" 潘夜左护卫  "0,440,387"
+ApplyMonMission "0,404,346,100" 潘夜右护卫  "0,440,387"
+ApplyMonMission "0,404,346,100" 潘夜鬼将  "0,440,387"
+ApplyMonMission "0,404,346,100" 潘夜牛魔王  "0,440,387"
+
+ApplyMonMission "0,408,422,100" 潘夜冰魔   "0,440,387"
+ApplyMonMission "0,408,422,100" 潘夜火魔  "0,440,387"
+ApplyMonMission "0,408,422,100" 潘夜左护卫  "0,440,387"
+ApplyMonMission "0,408,422,100" 潘夜右护卫  "0,440,387"
+ApplyMonMission "0,408,422,100" 潘夜鬼将  "0,440,387"
+ApplyMonMission "0,408,422,100" 潘夜牛魔王  "0,440,387"
+
+ApplyMonMission "0,486,431,100" 潘夜冰魔  "0,440,387"
+ApplyMonMission "0,486,431,100" 潘夜火魔  "0,440,387"
+ApplyMonMission "0,486,431,100" 潘夜左护卫  "0,440,387"
+ApplyMonMission "0,486,431,100" 潘夜右护卫  "0,440,387"
+ApplyMonMission "0,486,431,100" 潘夜鬼将  "0,440,387"
+ApplyMonMission "0,486,431,100" 潘夜牛魔王  "0,440,387"
+
+[@guaigong_6]
+#ACT
+linemsg [grobal] "╔═════════< 系统信息 >═════════╗"
+linemsg [grobal] "║   [ 震天魔神 ]带着手下向[ 比奇城 ]发起了进攻   ║"
+linemsg [grobal] "╚════════════════════════╝"
+Delaygoto [Grobal] 120 @guaigong_7
+MongenP "0,404,346,10" 石像狮子 10
+MongenP "0,404,346,10" 火焰狮子 10
+MongenP "0,404,346,10" 地牢女神1 10
+MongenP "0,404,346,10" 武力神将 10
+MongenP "0,404,346,10" 震天首将 1
+MongenP "0,404,346,10" 震天魔神 1
+
+MongenP "0,408,422,10" 石像狮子 10
+MongenP "0,408,422,10" 火焰狮子 10
+MongenP "0,408,422,10" 地牢女神1 10
+MongenP "0,408,422,10" 武力神将 10
+MongenP "0,408,422,10" 震天首将 1
+MongenP "0,408,422,10" 震天魔神 1
+
+MongenP "0,486,431,10" 石像狮子 10
+MongenP "0,486,431,10" 火焰狮子 10
+MongenP "0,486,431,10" 地牢女神1 10
+MongenP "0,486,431,10" 武力神将 10
+MongenP "0,486,431,10" 震天首将 1
+MongenP "0,486,431,10" 震天魔神 1
+
+ApplyMonMission "0,404,346,100" 石像狮子  "0,440,387"
+ApplyMonMission "0,404,346,100" 火焰狮子  "0,440,387"
+ApplyMonMission "0,404,346,100" 地牢女神1  "0,440,387"
+ApplyMonMission "0,404,346,100" 武力神将  "0,440,387"
+ApplyMonMission "0,404,346,100" 震天首将  "0,440,387"
+ApplyMonMission "0,404,346,100" 震天魔神  "0,440,387"
+
+ApplyMonMission "0,408,422,100" 石像狮子   "0,440,387"
+ApplyMonMission "0,408,422,100" 火焰狮子  "0,440,387"
+ApplyMonMission "0,408,422,100" 地牢女神1  "0,440,387"
+ApplyMonMission "0,408,422,100" 武力神将  "0,440,387"
+ApplyMonMission "0,408,422,100" 震天首将  "0,440,387"
+ApplyMonMission "0,408,422,100" 震天魔神  "0,440,387"
+
+ApplyMonMission "0,486,431,100" 石像狮子  "0,440,387"
+ApplyMonMission "0,486,431,100" 火焰狮子  "0,440,387"
+ApplyMonMission "0,486,431,100" 地牢女神1  "0,440,387"
+ApplyMonMission "0,486,431,100" 武力神将  "0,440,387"
+ApplyMonMission "0,486,431,100" 震天首将  "0,440,387"
+ApplyMonMission "0,486,431,100" 震天魔神  "0,440,387"
+
+[@guaigong_7]
+#ACT
+linemsg [grobal] "╔═════════< 系统信息 >═════════╗"
+linemsg [grobal] "║   [ 霸王教主 ]带着手下向[ 比奇城 ]发起了进攻   ║"
+linemsg [grobal] "╚════════════════════════╝"
+Delaygoto [Grobal] 120 @guaigong_jieshu
+MongenP "0,404,346,10" 爆毒神魔 10
+MongenP "0,404,346,10" 触角神魔 10
+MongenP "0,404,346,10" 神舰守卫 10
+MongenP "0,404,346,10" 红衣法师 10
+MongenP "0,404,346,10" 霸王守卫 1
+MongenP "0,404,346,10" 霸王教主 1
+MongenP "0,440,386,0" 赤月恶魔 1
+MongenP "0,436,382,0" 祖玛教主 1
+
+MongenP "0,408,422,10" 爆毒神魔 10
+MongenP "0,408,422,10" 触角神魔 10
+MongenP "0,408,422,10" 神舰守卫 10
+MongenP "0,408,422,10" 红衣法师 10
+MongenP "0,408,422,10" 霸王守卫 1
+MongenP "0,408,422,10" 霸王教主 1
+
+MongenP "0,486,431,10" 爆毒神魔 10
+MongenP "0,486,431,10" 触角神魔 10
+MongenP "0,486,431,10" 神舰守卫 10
+MongenP "0,486,431,10" 红衣法师 10
+MongenP "0,486,431,10" 霸王守卫 1
+MongenP "0,486,431,10" 霸王教主 1
+
+ApplyMonMission "0,404,346,100" 爆毒神魔  "0,440,387"
+ApplyMonMission "0,404,346,100" 触角神魔  "0,440,387"
+ApplyMonMission "0,404,346,100" 神舰守卫  "0,440,387"
+ApplyMonMission "0,404,346,100" 红衣法师  "0,440,387"
+ApplyMonMission "0,404,346,100" 霸王守卫  "0,440,387"
+ApplyMonMission "0,404,346,100" 霸王教主  "0,440,387"
+
+ApplyMonMission "0,408,422,100" 爆毒神魔   "0,440,387"
+ApplyMonMission "0,408,422,100" 触角神魔  "0,440,387"
+ApplyMonMission "0,408,422,100" 神舰守卫  "0,440,387"
+ApplyMonMission "0,408,422,100" 红衣法师  "0,440,387"
+ApplyMonMission "0,408,422,100" 霸王守卫  "0,440,387"
+ApplyMonMission "0,408,422,100" 霸王教主  "0,440,387"
+
+ApplyMonMission "0,486,431,100" 爆毒神魔  "0,440,387"
+ApplyMonMission "0,486,431,100" 触角神魔  "0,440,387"
+ApplyMonMission "0,486,431,100" 神舰守卫  "0,440,387"
+ApplyMonMission "0,486,431,100" 红衣法师  "0,440,387"
+ApplyMonMission "0,486,431,100" 霸王守卫  "0,440,387"
+ApplyMonMission "0,486,431,100" 霸王教主  "0,440,387"
+
+[@guaigong_jieshu]
+#ACT
+linemsg [grobal] "╔═════════< 系统信息 >═════════╗"
+linemsg [grobal] "║ [ 怪物攻城 ]结束了! 每周礼拜五.六.19点准时开启 ║"
+linemsg [grobal] "╚════════════════════════╝"
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

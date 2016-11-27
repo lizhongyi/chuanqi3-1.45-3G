@@ -1,0 +1,224 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@MyHome]
+{
+#IF
+#ACT
+LoadValue B0 "ParamControl\家园数控.ini" [一级家园] 1
+LoadValue B1 "ParamControl\家园数控.ini" [一级家园] 2
+LoadValue B2 "ParamControl\家园数控.ini" [一级家园] 3
+LoadValue B3 "ParamControl\家园数控.ini" [一级家园] 4
+LoadValue B4 "ParamControl\家园数控.ini" [二级家园] 1
+LoadValue B5 "ParamControl\家园数控.ini" [二级家园] 2
+LoadValue B6 "ParamControl\家园数控.ini" [二级家园] 3
+LoadValue B7 "ParamControl\家园数控.ini" [二级家园] 4
+LoadValue B8 "ParamControl\家园数控.ini" [三级家园] 1
+LoadValue B9 "ParamControl\家园数控.ini" [三级家园] 2
+LoadValue A0 "ParamControl\家园数控.ini" [三级家园] 3
+LoadValue A1 "ParamControl\家园数控.ini" [三级家园] 4
+LoadValue A2 "ParamControl\家园数控.ini" [四级家园] 1
+LoadValue A3 "ParamControl\家园数控.ini" [四级家园] 2
+LoadValue A4 "ParamControl\家园数控.ini" [四级家园] 3
+LoadValue A5 "ParamControl\家园数控.ini" [四级家园] 4
+LoadValue A6 "ParamControl\家园数控.ini" [五级家园] 1
+LoadValue A7 "ParamControl\家园数控.ini" [五级家园] 2
+LoadValue A8 "ParamControl\家园数控.ini" [五级家园] 3
+LoadValue A9 "ParamControl\家园数控.ini" [五级家园] 4
+actcmd READSQL "TBL_QUEST" "家园等级" 家园等级
+#say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[{FCOLOR/1} <$USERNAME> {FCOLOR/12}]您好!您拥有元宝 {FCOLOR/10}<$USERJF>{FCOLOR/12} 个,家园等级为 {FCOLOR/10}<$OUTPUT(家园等级)>{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/1}别墅建造过程:{FCOLOR/12}\
+<[ 木屋 ]/@查看木屋>→<[ 泥房 ]/@查看泥房>→<[ 瓦房 ]/@查看瓦房>→<[ 楼房 ]/@查看楼房>→<[ 别墅 ]/@查看别墅>\
+{FCOLOR/10}建造条件:{FCOLOR/12} {FCOLOR/4}请点击浏览{FCOLOR/12}\
+{FCOLOR/10}奖励内容:{FCOLOR/12} {FCOLOR/4}请点击浏览{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+___________<[ 建设家园 ]/@建造一级>   <[ 进入家园 ]/@进入家园>\
+
+[@查看木屋]
+#IF
+#say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[{FCOLOR/1} <$USERNAME> {FCOLOR/12}]您好!您拥有元宝 {FCOLOR/10}<$USERJF>{FCOLOR/12} 个,家园等级为 {FCOLOR/10}<$OUTPUT(家园等级)>{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/1}别墅建造过程:{FCOLOR/12}\
+{FCOLOR/4}[ 木屋 ]{FCOLOR/12}→<[ 泥房 ]/@查看泥房>→<[ 瓦房 ]/@查看瓦房>→<[ 楼房 ]/@查看楼房>→<[ 别墅 ]/@查看别墅>\
+{FCOLOR/10}建造条件:{FCOLOR/12} 需建筑材料 [ {FCOLOR/1}<$OUTPUT(B0)>{FCOLOR/12} ],元宝 [ {FCOLOR/1}<$OUTPUT(B1)>{FCOLOR/12} ] 个.\
+{FCOLOR/10}奖励内容:{FCOLOR/12} 每天领元宝 [ {FCOLOR/1}<$OUTPUT(B2)>{FCOLOR/12} ] 个,经验 [ {FCOLOR/1}<$OUTPUT(B3)>{FCOLOR/12} ].\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+___________<[ 建设家园 ]/@建造一级>   <[ 进入家园 ]/@进入家园>\
+
+
+[@查看泥房]
+#IF
+#say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[{FCOLOR/1} <$USERNAME> {FCOLOR/12}]您好!您拥有元宝 {FCOLOR/10}<$USERJF>{FCOLOR/12} 个,家园等级为 {FCOLOR/10}<$OUTPUT(家园等级)>{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/1}别墅建造过程:{FCOLOR/12}\
+<[ 木屋 ]/@查看木屋>→{FCOLOR/4}[ 泥房 ]{FCOLOR/12}→<[ 瓦房 ]/@查看瓦房>→<[ 楼房 ]/@查看楼房>→<[ 别墅 ]/@查看别墅>\
+{FCOLOR/10}建造条件:{FCOLOR/12} 需建筑材料 [ {FCOLOR/1}<$OUTPUT(B4)>{FCOLOR/12} ],元宝 [ {FCOLOR/1}<$OUTPUT(B5)>{FCOLOR/12} ] 个.\
+{FCOLOR/10}奖励内容:{FCOLOR/12} 每天领元宝 [ {FCOLOR/1}<$OUTPUT(B6)>{FCOLOR/12} ] 个,经验 [ {FCOLOR/1}<$OUTPUT(B7)>{FCOLOR/12} ].\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+___________<[ 建设家园 ]/@建造一级>   <[ 进入家园 ]/@进入家园>\
+
+
+[@查看瓦房]
+#IF
+#say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[{FCOLOR/1} <$USERNAME> {FCOLOR/12}]您好!您拥有元宝 {FCOLOR/10}<$USERJF>{FCOLOR/12} 个,家园等级为 {FCOLOR/10}<$OUTPUT(家园等级)>{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/1}别墅建造过程:{FCOLOR/12}\
+<[ 木屋 ]/@查看木屋>→<[ 泥房 ]/@查看泥房>→{FCOLOR/4}[ 瓦房 ]{FCOLOR/12}→<[ 楼房 ]/@查看楼房>→<[ 别墅 ]/@查看别墅>\
+{FCOLOR/10}建造条件:{FCOLOR/12} 需建筑材料 [ {FCOLOR/1}<$OUTPUT(B8)>{FCOLOR/12} ],元宝 [ {FCOLOR/1}<$OUTPUT(B9)>{FCOLOR/12} ] 个.\
+{FCOLOR/10}奖励内容:{FCOLOR/12} 每天领元宝 [ {FCOLOR/1}<$OUTPUT(A0)>{FCOLOR/12} ] 个,经验 [ {FCOLOR/1}<$OUTPUT(A1)>{FCOLOR/12} ].\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+___________<[ 建设家园 ]/@建造一级>   <[ 进入家园 ]/@进入家园>\
+
+[@查看楼房]
+#IF
+#say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[{FCOLOR/1} <$USERNAME> {FCOLOR/12}]您好!您拥有元宝 {FCOLOR/10}<$USERJF>{FCOLOR/12} 个,家园等级为 {FCOLOR/10}<$OUTPUT(家园等级)>{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/1}别墅建造过程:{FCOLOR/12}\
+<[ 木屋 ]/@查看木屋>→<[ 泥房 ]/@查看泥房>→<[ 瓦房 ]/@查看瓦房>→{FCOLOR/4}[ 楼房 ]{FCOLOR/12}→<[ 别墅 ]/@查看别墅>\
+{FCOLOR/10}建造条件:{FCOLOR/12} 需建筑材料 [ {FCOLOR/1}<$OUTPUT(A2)>{FCOLOR/12} ],元宝 [ {FCOLOR/1}<$OUTPUT(A3)>{FCOLOR/12} ] 个.\
+{FCOLOR/10}奖励内容:{FCOLOR/12} 每天领元宝 [ {FCOLOR/1}<$OUTPUT(A4)>{FCOLOR/12} ] 个,经验 [ {FCOLOR/1}<$OUTPUT(A5)>{FCOLOR/12} ].\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+___________<[ 建设家园 ]/@建造一级>   <[ 进入家园 ]/@进入家园>\
+
+[@查看别墅]
+#IF
+#say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[{FCOLOR/1} <$USERNAME> {FCOLOR/12}]您好!您拥有元宝 {FCOLOR/10}<$USERJF>{FCOLOR/12} 个,家园等级为 {FCOLOR/10}<$OUTPUT(家园等级)>{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/1}别墅建造过程:{FCOLOR/12}\
+<[ 木屋 ]/@查看木屋>→<[ 泥房 ]/@查看泥房>→<[ 瓦房 ]/@查看瓦房>→<[ 楼房 ]/@查看楼房>→{FCOLOR/4}[ 别墅 ]{FCOLOR/12}\
+{FCOLOR/10}建造条件:{FCOLOR/12} 需建筑材料 [ {FCOLOR/1}<$OUTPUT(A6)>{FCOLOR/12} ],元宝 [ {FCOLOR/1}<$OUTPUT(A7)>{FCOLOR/12} ] 个.\
+{FCOLOR/10}奖励内容:{FCOLOR/12} 每天领元宝 [ {FCOLOR/1}<$OUTPUT(A8)>{FCOLOR/12} ] 个,经验 [ {FCOLOR/1}<$OUTPUT(A9)>{FCOLOR/12} ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+___________<[ 建设家园 ]/@建造一级>   <[ 进入家园 ]/@进入家园>\
+
+[@进入家园]
+#IF
+Equal 家园等级 0
+#ACT
+break
+Close
+sysmsg "您还没有自己的家园,请先建立家."
+
+#IF
+Equal 家园等级 1
+#ACT
+map YHMW
+break
+Close
+sysmsg "进入您的一级家园→木屋."
+
+#IF
+Equal 家园等级 2
+#ACT
+map YHNF
+break
+Close
+sysmsg "进入您的二级家园→泥房."
+
+#IF
+Equal 家园等级 3
+#ACT
+map YHWF
+break
+Close
+sysmsg "进入您的三级家园→瓦房."
+
+#IF
+Equal 家园等级 4
+#ACT
+map YHLF
+break
+Close
+sysmsg "进入您的四级家园→楼房."
+
+#IF
+Equal 家园等级 5
+#ACT
+map YHBS
+break
+Close
+sysmsg "进入您的五级家园→别墅."
+
+[@建造一级]
+#IF
+ELarge 家园等级 1
+#say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[{FCOLOR/1} <$USERNAME> {FCOLOR/12}]您好!您拥有元宝 {FCOLOR/10}<$USERJF>{FCOLOR/12} 个,家园等级为 {FCOLOR/10}<$OUTPUT(家园等级)>{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/1}别墅建造过程:{FCOLOR/12}\
+<[ 木屋 ]/@查看木屋>→<[ 泥房 ]/@查看泥房>→<[ 瓦房 ]/@查看瓦房>→<[ 楼房 ]/@查看楼房>→<[ 别墅 ]/@查看别墅>\
+{FCOLOR/10}建造条件:{FCOLOR/12} {FCOLOR/4}请点击浏览{FCOLOR/12}\
+{FCOLOR/10}奖励内容:{FCOLOR/12} {FCOLOR/4}请点击浏览{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+___________[ 建设家园 ]   <[ 进入家园 ]/@进入家园>\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+你已经有家园了,不需要再新建!\
+如果想继续建造更高级家园还是去找你的家园总管吧!\\
+#ACT
+BREAK
+
+#if
+checkitem 建筑材料 %B0
+checkcmd CHECKUSERJF %B1
+#act
+actcmd WRITESQL "TBL_QUEST" "家园等级" 1
+actcmd SETUSERJF - %B1
+take 建筑材料 %B0
+Delaygoto [Grobal] 3 @建造一级_1
+#say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[{FCOLOR/1} <$USERNAME> {FCOLOR/12}]您好!您拥有元宝 {FCOLOR/10}<$USERJF>{FCOLOR/12} 个,家园等级为 {FCOLOR/10}<$OUTPUT(家园等级)>{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/1}别墅建造过程:{FCOLOR/12}\
+<[ 木屋 ]/@查看木屋>→<[ 泥房 ]/@查看泥房>→<[ 瓦房 ]/@查看瓦房>→<[ 楼房 ]/@查看楼房>→<[ 别墅 ]/@查看别墅>\
+{FCOLOR/10}建造条件:{FCOLOR/12} {FCOLOR/4}请点击浏览{FCOLOR/12}\
+{FCOLOR/10}奖励内容:{FCOLOR/12} {FCOLOR/4}请点击浏览{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+___________[ 建设家园 ]   [ 进入家园 ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/1}木屋正在建设中,需要时间....请耐心等待...{FCOLOR/12}\
+#elsesay
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[{FCOLOR/1} <$USERNAME> {FCOLOR/12}]您好!您拥有元宝 {FCOLOR/10}<$USERJF>{FCOLOR/12} 个,家园等级为 {FCOLOR/10}<$OUTPUT(家园等级)>{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/1}别墅建造过程:{FCOLOR/12}\
+<[ 木屋 ]/@查看木屋>→<[ 泥房 ]/@查看泥房>→<[ 瓦房 ]/@查看瓦房>→<[ 楼房 ]/@查看楼房>→<[ 别墅 ]/@查看别墅>\
+{FCOLOR/10}建造条件:{FCOLOR/12} {FCOLOR/4}请点击浏览{FCOLOR/12}\
+{FCOLOR/10}奖励内容:{FCOLOR/12} {FCOLOR/4}请点击浏览{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+___________[ 建设家园 ]   <[ 进入家园 ]/@进入家园>\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/10}您带来的建筑材料不足或者您的元宝不足.\
+没有这些东西我没有办法帮你建造家园的.\
+等准备好材料再来吧..{FCOLOR/12}\\
+
+[@建造一级_1]
+#act
+actcmd READSQL "TBL_QUEST" "家园等级" 家园等级
+#say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[{FCOLOR/1} <$USERNAME> {FCOLOR/12}]您好!您拥有元宝 {FCOLOR/10}<$USERJF>{FCOLOR/12} 个,家园等级为 {FCOLOR/10}<$OUTPUT(家园等级)>{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/1}别墅建造过程:{FCOLOR/12}\
+<[ 木屋 ]/@查看木屋>→<[ 泥房 ]/@查看泥房>→<[ 瓦房 ]/@查看瓦房>→<[ 楼房 ]/@查看楼房>→<[ 别墅 ]/@查看别墅>\
+{FCOLOR/10}建造条件:{FCOLOR/12} {FCOLOR/4}请点击浏览{FCOLOR/12}\
+{FCOLOR/10}奖励内容:{FCOLOR/12} {FCOLOR/4}请点击浏览{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+___________[ 建设家园 ]   <[ 进入家园 ]/@进入家园>\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}家{FCOLOR/4}━{FCOLOR/14}园{FCOLOR/4}━{FCOLOR/14}建{FCOLOR/4}━{FCOLOR/14}设{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/1}恭喜您!已经有了自己的家园,虽是木屋,但也算有个家了!\
+只要您通过努力一定可以建造出高楼大厦的~!{FCOLOR/12}\
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

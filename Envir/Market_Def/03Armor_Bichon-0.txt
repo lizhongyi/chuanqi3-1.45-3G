@@ -1,0 +1,83 @@
+;;创天网络有限公司原版1.45
+%100
++10
++11
++15
++53
+
+[@main]
+#ACT
+LOADVALUE D0 "ParamControl\主线任务.txt" %USERNAME 进度
+LOADVALUE D1 "ParamControl\主线任务.txt" %USERNAME 防具
+
+#IF
+Equal D0 1
+Equal D1 0
+#ACT
+SAVEVALUE "ParamControl\主线任务.txt" %USERNAME 防具 1
+BREAK
+#SAY
+{FCOLOR/1}我这里可以出售衣服头盔和鞋子,欢迎随时光临.{FCOLOR/12}\\
+<回新人指导员/@回指导员>
+
+#IF
+checkpkpoint 2
+#SAY
+像你这样杀气腾腾的人站在商店门口，其他人不敢进来，请你走开\ \
+ <结束/@exit>
+#ELSESAY
+欢迎光临，有什么事吗？\ \
+<购买/@buy>防御工具\
+<出售/@sell>防御工具\
+<修理/@pre_repair>防御工具\
+<结束/@exit>
+
+[@回指导员]
+#ACT
+MAPMOVE 0 410 385
+close
+
+[@buy]
+#SAY
+你要买什么？\ \
+ <前一步/@main>
+
+[@sell]
+#SAY
+请把要出售的衣服拿出来，我来估估价。\
+这里头盔和帽子都收购， 就在这儿卖吧。\ \
+ <前一步/@main>
+
+[@repair]
+#SAY
+衣服，头盔和帽子都可以修理。\ \
+ <前一步/@main>
+
+[~@repair]
+#SAY
+修得不错。\ \
+ <前一步/@main>
+
+[Goods]
+;ItemName      Volume     Hour
+青铜头盔         50         1
+魔法头盔         50         1
+道士头盔         50         1
+布衣（男）       50         1
+布衣（女）       50         1
+轻型盔甲（男）   50         1
+轻型盔甲（女）   50         1
+重盔甲（男）     50         1
+重盔甲（女）     50         1
+灵魂战衣（男）   50         1
+灵魂战衣（女）   50         1
+魔法长袍（男）   50         1
+魔法长袍（女）   50         1
+草鞋	        100         1
+
+
+[@pre_repair]
+#IF
+#SAY
+确实要修理吗？\ \
+<修理/@repair>

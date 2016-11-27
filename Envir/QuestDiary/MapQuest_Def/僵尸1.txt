@@ -1,0 +1,60 @@
+;;王者传奇3 www.mir3w.com
+[@main]
+#act
+LoadValue D0 "ParamControl\任务记录.ini" %USERNAME 任务编号
+LoadValue A0 "ParamControl\任务记录.ini" %USERNAME 任务进度
+
+#IF
+EQUAL A0 "Progress"
+EQUAL D0 114
+#ACT
+MOV A5 "僵尸"
+GOTO @BossQuest_TQCase2
+break
+
+[@BossQuest_TQCase2]
+#CALL [每日任务\QT_TotalMonster.txt] @BossQuest_Monster_Total
+
+[@BiQiJiangShi1]
+#IF
+checkjob warrior
+#ACT
+break
+;
+#IF
+checkjob wizard
+#ACT
+break
+;
+#IF
+check [049] 1
+#ACT
+break
+;
+#IF
+checkhum D400_001 1
+#ACT
+break
+;
+#IF
+check [048] 1
+#ACT
+goto @MapQuest_Upac_Recall1_1
+break
+#ELSEACT
+break
+
+[@MapQuest_Upac_Recall1_1]
+#IF
+random 20
+#ACT
+goto @jiancrs_sszj
+#ELSEACT
+break
+
+[@jiancrs_sszj]
+#ACT
+give 神圣战甲术 1
+TimeRecall 5
+map D400_001
+break

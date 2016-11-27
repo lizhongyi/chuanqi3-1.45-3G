@@ -1,0 +1,84 @@
+;;创天网络有限公司原版1.45
+%100
++5
++6
+[@main]
+#IF
+#SAY
+虽然是沙巴克城 {FCOLOR/10}<$CS_SABUK_OWNER>{FCOLOR/12} 行会的人也是这样降价我的自尊心不许。\
+<制炼武器/@Refine_Cmd> \
+<领取制炼好的武器/@GetBack_Cmd> \ 
+<打听制炼武器/@Refine_Help_Cmd> \
+<支付200万金币换武器的元素。/@Change_Atom_Cmd> \
+<支付100万金币制练武器的名字。[需要武器等级10以上]/@RefineName_Cmd>\\
+<结束/@exit>
+
+[@GetBack_Cmd]
+#ACT
+GetBackUpgItem
+
+[@Refine_Help_Cmd]
+#CALL [\Refine\Help.txt] @Refine_Help
+
+[@Change_Atom_Cmd]
+#CALL [\Refine\ChangeAtom.txt] @ChangeAtom
+
+[@RefineName_Cmd]
+#CALL [\Refine\RefineName.txt] @RefineName
+
+[@Refine_Cmd]
+#CALL [\Refine\Refine.txt] @Refine
+
+;-------------------------------------------------------------------------------
+
+[~@upgradenow_ok]
+#SAY
+我给你修好的。 来吧。。\ \
+<前一步/@main>
+
+[~@upgradenow_ing]
+#SAY
+我这里有个规矩，一人只能制炼一个物品\
+你还是下次再来吧...\ \
+<前一步/@main>\
+
+[~@upgradenow_fail]
+#SAY
+你准备的材料不够。\
+准备好之后再来吧。\
+费用就不用再说了，肯定要的...\ \
+<前一步/@main>\
+
+[~@getbackupgnow_ok]
+#SAY
+在这里呢,我可是尽最大努力了,不过 <成功与否/@Success>\
+等使用之后才能知道,拿出去看看吧。\ \
+<结束/@exit>\
+
+[~@getbackupgnow_duraok]
+#SAY
+祝贺你，持久度提高了.. \ \
+<结束/@exit>\
+
+[@Success]
+#SAY
+武器是否制炼成功，要等使用之后才能知道。\
+使用看看再说...\ \
+<结束/@exit>\
+
+[~@getbackupgnow_ing]
+#SAY
+还没有完成呢,再等一会儿吧...\ \
+<前一步/@main>\
+
+[~@getbackupgnow_fail]
+#SAY
+你在我这儿存放东西了?\
+如果是很久以前的东西，你还是回去吧\
+我记不住那么遥远以前的事情..\ \
+<前一步/@main>\
+
+[~@getbackupgnow_nenoughlv]
+#SAY
+您的武器等级没有上升.. \ \
+<前一步/@main>\

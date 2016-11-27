@@ -1,0 +1,56 @@
+;;创天网络有限公司原版1.45
+[@SnakeVally_Teleport_South]
+{
+#IF
+!CheckPkPoint 2
+#SAY
+六面神石 \ \
+<移动至比奇城所需金钱 : 500 钱/@TelePortRootin(Bichon,500,East)> \ \
+<移动至银杏山村所需金钱 : 1000 钱/@TelePortRootin(EunHang,1000,Center)> \
+<移动至道馆村所需金钱 : 1000 钱/@TelePortRootin(DoGwan,1000,Center)> \
+<移动至边境村庄所需金钱 : 1000 钱/@TelePortRootin(KugKyung,1000,North)> \ \
+<移动至潘夜岛村所需金钱 : 1500 钱/@TelePortRootin(HalfMoon,1500,Center)> \
+<移动至盟重土城所需金钱 : 1500 钱/@TelePortRootin(MongChon,1500,East)> \ \
+<移动至沙漠土城所需金钱 : 2000 钱/@TelePortRootin(Samak,2000,East)> \ \
+<移动至绿洲村所需金钱 : 2500 钱/@TelePortRootin(Oasis,2500,Center)> \ \
+#ELSEACT
+mapmove 81 125 274
+break
+
+[@TelePortRootin()]
+#CALL [Teleport\MoveRootin.txt] @TelePortMove
+}
+
+[@SnakeVally_Teleport_North]
+{
+#IF
+!CheckPkPoint 2
+#SAY
+六面神石 \ \
+
+#ELSEACT
+mapmove 81 125 274
+break
+
+#IF
+!IsOnCastleWar Sabuk
+#SAY
+<移动至攻城战地域所需金钱 : 500 钱/@TelePortRootin(Sabuk,500,Center)> \ \
+#ACT
+break
+
+#IF
+!IsOnReadyCastleWar Sabuk
+#SAY
+<移动至攻城战地域所需金钱 : 500 钱/@TelePortRootin(Sabuk,500,Center)> \ \
+#ACT
+break
+
+#IF
+#SAY
+你不是参加沙巴克攻城战的行会成员。\ \
+<结束/@exit>
+
+[@TelePortRootin()]
+#CALL [Teleport\MoveRootin.txt] @TelePortMove
+}

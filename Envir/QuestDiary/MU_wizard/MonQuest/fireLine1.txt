@@ -1,0 +1,42 @@
+;;创天网络有限公司原版1.45
+[@MapQuest_fireline_test]
+#IF
+check [030] 1
+#ACT
+break
+;
+#IF
+check [054] 1
+#ACT
+break
+;
+#IF
+check [053] 0
+#ACT
+break
+;
+#IF
+#ACT
+goto @MapQuest_fireline_test1
+
+[@MapQuest_fireline_test1]
+#IF
+random 5
+#ACT
+Param1 02_005
+Param2 15
+Param3 14
+MonGen 火焰沃玛61 3 1
+break
+#SAY
+哦。。。（这家伙，在瞎说。好像出现了什么失误。。）\
+#ELSEACT
+Param1 02_005
+Param2 15
+Param3 14
+MonGen 火焰沃玛61 1 1
+break
+#ELSESAY
+哦。。。（这家伙，在瞎说。根本没有什么嘛）\
+
+;;创天网络有限公司原版1.45

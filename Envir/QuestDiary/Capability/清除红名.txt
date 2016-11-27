@@ -1,0 +1,260 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@清除红名_1]
+{
+#IF
+checkpkpoint 1000
+#ACT
+mov   A0   大于十万
+GOTO @清除红名_guowan
+break
+
+#IF
+checkpkpoint 500
+#ACT
+mov   A0   大于五万
+GOTO @清除红名_guowan
+break
+
+#IF
+checkpkpoint 400
+#ACT
+mov   A0   大于四万
+GOTO @清除红名_guowan
+break
+
+#IF
+checkpkpoint 300
+#ACT
+mov   A0   大于三万
+GOTO @清除红名_guowan
+break
+
+#IF
+checkpkpoint 200
+#ACT
+mov   A0   大于二万
+GOTO @清除红名_guowan
+break
+
+#IF
+checkpkpoint 100
+#ACT
+mov   A0   大于一万
+GOTO @清除红名_guowan
+break
+
+#IF
+checkpkpoint 50
+#ACT
+mov   A0   大于五千
+GOTO @清除红名_guoqian
+break
+
+#IF
+checkpkpoint 40
+#ACT
+mov   A0   大于四千
+GOTO @清除红名_guoqian
+break
+
+#IF
+checkpkpoint 30
+#ACT
+mov   A0   大于三千
+GOTO @清除红名_guoqian
+break
+
+#IF
+checkpkpoint 20
+#ACT
+mov   A0   大于二千
+GOTO @清除红名_guoqian
+break
+
+#IF
+checkpkpoint 10
+#ACT
+mov   A0   大于一千
+GOTO @清除红名_guoqian
+break
+
+#IF
+checkpkpoint 9
+#ACT
+mov   A0   800
+GOTO @清除红名_zhengchang
+break
+
+#IF
+checkpkpoint 8
+#ACT
+mov   A0   700
+GOTO @清除红名_zhengchang
+break
+
+#IF
+checkpkpoint 7
+#ACT
+mov   A0   600
+GOTO @清除红名_zhengchang
+break
+
+#IF
+checkpkpoint 6
+#ACT
+mov   A0   500
+GOTO @清除红名_zhengchang
+break
+
+#IF
+checkpkpoint 5
+#ACT
+mov   A0   400
+GOTO @清除红名_zhengchang
+break
+
+#IF
+checkpkpoint 4
+#ACT
+mov   A0   300
+GOTO @清除红名_zhengchang
+break
+
+#IF
+checkpkpoint 3
+#ACT
+mov   A0   200
+GOTO @清除红名_zhengchang
+break
+
+#IF
+checkpkpoint 2
+#ACT
+mov   A0   100
+GOTO @清除红名_zhengchang
+break
+
+#IF
+checkpkpoint 1
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}清{FCOLOR/4}━{FCOLOR/14}洗{FCOLOR/4}━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}名{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+您当前的状态:[ {FCOLOR/1}黄名{FCOLOR/12} ]  危险时期.还是谨慎行事为好\
+在线每{FCOLOR/10}两分钟减少PK值1点{FCOLOR/12},{FCOLOR/10}100点PK值{FCOLOR/12}需要{FCOLOR/10}200分钟{FCOLOR/12}恢复\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}清{FCOLOR/4}━{FCOLOR/14}洗{FCOLOR/4}━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}名{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_      {FCOLOR/10}温馨提示:  黄名状态无PK值可以清除{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}清{FCOLOR/4}━{FCOLOR/14}洗{FCOLOR/4}━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}名{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/10}1个回生水{FCOLOR/12}等于{FCOLOR/10}100万金币{FCOLOR/12}系统会{FCOLOR/10}根据您的输入自动运算{FCOLOR/12}\
+_     [ <请输入您需要购买的→回生水数量←/@@xihong_jb> ]\
+#ACT
+break
+
+#IF
+checkpkpoint 0
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}清{FCOLOR/4}━{FCOLOR/14}洗{FCOLOR/4}━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}名{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+您当前的状态:[ {FCOLOR/1}白名{FCOLOR/12} ]  您还没有被恶魔所左右.恭喜\
+在线每{FCOLOR/10}两分钟减少PK值1点{FCOLOR/12},{FCOLOR/10}100点PK值{FCOLOR/12}需要{FCOLOR/10}200分钟{FCOLOR/12}恢复\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}清{FCOLOR/4}━{FCOLOR/14}洗{FCOLOR/4}━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}名{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_      {FCOLOR/10}温馨提示:  白名状态无PK值可以清除{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}清{FCOLOR/4}━{FCOLOR/14}洗{FCOLOR/4}━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}名{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/10}1个回生水{FCOLOR/12}等于{FCOLOR/10}100万金币{FCOLOR/12}系统会{FCOLOR/10}根据您的输入自动运算{FCOLOR/12}\
+_     [ <请输入您需要购买的→回生水数量←/@@xihong_jb> ]\
+#ACT
+break
+
+[@清除红名_guowan]
+#ACT
+mov   D7   1
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}清{FCOLOR/4}━{FCOLOR/14}洗{FCOLOR/4}━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}名{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+您当前PK值:[ {FCOLOR/1}<$OUTPUT(A0)>{FCOLOR/12} ]  买回生水请注意包裹空格\
+在线每{FCOLOR/10}两分钟减少PK值1点{FCOLOR/12},{FCOLOR/10}100点PK值{FCOLOR/12}需要{FCOLOR/10}200分钟{FCOLOR/12}恢复\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}清{FCOLOR/4}━{FCOLOR/14}洗{FCOLOR/4}━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}名{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+因您的PK值[ {FCOLOR/1}<$OUTPUT(A0)>{FCOLOR/12} ]系统给予方便,我用心!您开心!\
+_ [ <一次性去除PK值:10000点→需消费元宝300个/@yicixihong(300,10000)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}清{FCOLOR/4}━{FCOLOR/14}洗{FCOLOR/4}━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}名{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/10}1个回生水{FCOLOR/12}等于{FCOLOR/10}100万金币{FCOLOR/12}系统会{FCOLOR/10}根据您的输入自动运算{FCOLOR/12}\
+_     [ <请输入您需要购买的→回生水数量←/@@xihong_jb> ]\
+
+[@清除红名_guoqian]
+#ACT
+mov   D7   1
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}清{FCOLOR/4}━{FCOLOR/14}洗{FCOLOR/4}━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}名{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+您当前PK值:[ {FCOLOR/1}<$OUTPUT(A0)>{FCOLOR/12} ]  买回生水请注意包裹空格\
+在线每{FCOLOR/10}两分钟减少PK值1点{FCOLOR/12},{FCOLOR/10}100点PK值{FCOLOR/12}需要{FCOLOR/10}200分钟{FCOLOR/12}恢复\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}清{FCOLOR/4}━{FCOLOR/14}洗{FCOLOR/4}━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}名{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+因您的PK值[ {FCOLOR/1}<$OUTPUT(A0)>{FCOLOR/12} ]系统给予方便,我用心!您开心!\
+_  [ <一次性去除PK值:1000点→需消费元宝30个/@yicixihong(30,1000)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}清{FCOLOR/4}━{FCOLOR/14}洗{FCOLOR/4}━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}名{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/10}1个回生水{FCOLOR/12}等于{FCOLOR/10}100万金币{FCOLOR/12}系统会{FCOLOR/10}根据您的输入自动运算{FCOLOR/12}\
+_     [ <请输入您需要购买的→回生水数量←/@@xihong_jb> ]\
+
+[@清除红名_zhengchang]
+#ACT
+mov   D7   1
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}清{FCOLOR/4}━{FCOLOR/14}洗{FCOLOR/4}━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}名{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+您当前PK值:[ {FCOLOR/1}<$OUTPUT(A0)>{FCOLOR/12} ]  买回生水请注意包裹空格\
+在线每{FCOLOR/10}两分钟减少PK值1点{FCOLOR/12},{FCOLOR/10}100点PK值{FCOLOR/12}需要{FCOLOR/10}200分钟{FCOLOR/12}恢复\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}清{FCOLOR/4}━{FCOLOR/14}洗{FCOLOR/4}━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}名{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_   [ <一次性去除PK值:100点→需消费元宝3个/@yicixihong(3,100)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}清{FCOLOR/4}━{FCOLOR/14}洗{FCOLOR/4}━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}名{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/10}1个回生水{FCOLOR/12}等于{FCOLOR/10}100万金币{FCOLOR/12}系统会{FCOLOR/10}根据您的输入自动运算{FCOLOR/12}\
+_     [ <请输入您需要购买的→回生水数量←/@@xihong_jb> ]\
+
+[@yicixihong()]
+#ACT
+mov  D1  %ARG(1)
+mov  D2  %ARG(2)
+#IF
+Equal  D7  0     ;;防止快速点击
+#ACT
+Close
+SysMsg "温馨提示: 请不要点击过快,谢谢合作"
+
+break
+#IF
+CHECKCMD CHECKUSERJF %D1
+#ACT
+Close
+mov   D7   0
+ACTCMD CHANGEPK - %D2
+actcmd SETUSERJF - %D1 洗红名
+SysMsg  "温馨提示: 清除了<$OUTPUT(D2)>点PK值.消费了<$OUTPUT(D1)>个元宝"
+#Elseact
+Close
+SysMsg  "温馨提示: 您没有 <$OUTPUT(D1)> 个元宝"
+
+[@@xihong_jb]
+#ACT
+mov   D4  %INPUTSTR
+mov   P1  %D4
+mov   P2  1000000
+mul   P1  P2
+mov   D5  %P9
+#IF 
+Small D4 1
+#ACT
+SysMsg  "【温馨提示】请输入大于 1 的数值." 
+break 
+
+#IF 
+Large D4 500
+#ACT 
+SysMsg  "【温馨提示】请输入小于 500 的数值." 
+break
+
+#IF
+checkgold %D5
+#ACT
+Close
+give 回生神水 %D4
+take  金币  %D5
+SysMsg  "【温馨提示】购买了<$OUTPUT(D4)>个回生神水.消费金币:<$OUTPUT(D5)>"
+#Elseact
+Close
+SysMsg  "【温馨提示】您的金币不足.需要金币:<$OUTPUT(D5)>"
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

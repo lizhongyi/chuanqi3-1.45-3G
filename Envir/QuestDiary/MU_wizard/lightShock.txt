@@ -1,0 +1,181 @@
+;;创天网络有限公司原版1.45
+[@mugong_lightwave]
+{
+#IF
+check [026] 1
+#SAY
+还没有给你诱惑之光的解析吗？\ \
+<结束/@exit>
+#ACT
+break
+;
+#IF
+check [035] 1
+#ACT
+goto @mugong_lightwave_next6
+break
+;
+#IF
+check [035] 0
+#ACT
+goto @mugong_lightwave_next
+#ELSESAY
+诱惑之光是一种瞬间里 {FCOLOR/10}发射威力强大的闪电，使得怪物们恐慌的魔法{FCOLOR/12} 。如果使用得当，一时间怪物们都无法行动。尤其是可以 {FCOLOR/10}控制比你能力低很多怪物们精神的可怕魔法{FCOLOR/12} 。\ \ 
+
+[@mugong_lightwave_next]
+#IF
+checkmagic 诱惑之光 
+#SAY
+你还没有掌握称为诱惑之光的魔法吗？\ \
+<结束/@exit>
+#ELSEACT
+goto @mugong_lightwave_next1
+
+[@mugong_lightwave_next1]
+#IF
+checklevel 13
+#ACT
+goto @mugong_lightwave_next2
+#ELSESAY
+你还没有达到修炼诱惑之光的等级。。请继续修炼，达到13级为止。\ \
+<结束/@exit>
+
+[@mugong_lightwave_next2]
+#IF
+checkjob wizard
+#ACT
+goto @mugong_lightwave_next3
+#ELSESAY
+你还不是魔法师吗？如果不是魔法师，还无法修炼该武功。\ \
+<结束/@exit>
+
+[@mugong_lightwave_next3]
+#IF
+#SAY
+想了解诱惑之光？嗯，仅凭单纯的知识是无法修炼诱惑之光的。诱惑之光是使比自己能力低的怪物们 {FCOLOR/10}精神混乱，从而进行控制的一种魔法{FCOLOR/12} 。因此为了掌握诱惑之光，要向怪物们显示自己的威力，使他们服从于你的经验是非常重要的。\ \ 
+<拜托您多指教！/@mugong_lightwave_next4_1> \  
+<我现在好象有些勉强。/mugong_lightwave_next4_2> 
+
+[@mugong_lightwave_next4_1]
+#IF
+#SAY
+方法很简单。现在就开始把你送到训练场，与那个地方出现的怪物搏斗，显示你的威力。虽然有些困难，但绝不可以让怪物们看到你软弱的一面。记住一定要让他们知道你是强者的事实。\
+还有限制时间是2分钟。\ \ 
+<向考场移动！/@mugong_lightwave_next5> \   
+<仔细想想，再移动！/@mugong_lightwave_next6> \
+
+[@mugong_lightwave_next4_2]
+#IF
+#SAY
+跳进去是有些过激的修炼手法。但是又该如何？如果想学习诱惑之光，只有这个方法。。如果做好准备了，请随时来。。\ \ 
+<结束/@exit>
+
+[@mugong_lightwave_next5]
+#IF
+checkhum 02_001 1
+#SAY
+其它魔法师正在接受训练，请等一下。\ \ 
+<结束/@exit>
+#ACT
+SET [035] 1
+break
+#ELSEACT
+SET [035] 1
+Monclear 02_001
+Param1 02_001
+Param2 9
+Param3 12
+Mongen 半兽人61 15 5
+TimeRecall 2
+map 02_001
+goto @youhuozhiguang1
+break
+
+
+
+
+[@youhuozhiguang1]
+#ACT
+mov A3 %USERMAP
+
+#IF
+EQUAL A3 "02_001"
+#ACT
+delaygoto [local] 10 @youhuozhiguang1
+#ELSEACT
+BREAKTIMERECALL
+break
+
+[@mugong_lightwave_next6]
+#IF
+#SAY
+还要再试一次吗？时间是2分钟，让里面的怪物屈服即可。\ \ 
+<向考场移动。/@mugong_lightwave_next5>
+}
+
+[@mugong_lightwave_test]
+{
+#IF
+checkmonmap 02_001 1
+#SAY
+你还没有完全制服半兽人嘛。 剩下的时间不多了。。显示你的威力嘛。\ \
+<结束/@exit>
+#ELSESAY
+怪兽们都屈服了。。请在外面看吧！\ \
+<走出考场。/@mugong_lightwave_test_next>
+
+[@mugong_lightwave_test_next]
+#IF
+#ACT
+SET [036] 1
+mapmove 02 265 146   
+}
+
+[@mugong_lightwave_test_complete]
+{
+#IF
+check [026] 1
+#ACT
+break
+;
+#IF
+check [035] 1
+check [036] 1
+check [026] 0
+#ACT
+goto @mugong_lightwave_test_give1
+#ELSEACT
+break
+
+[@mugong_lightwave_test_give1]
+#IF
+checkmagic 诱惑之光 
+#SAY
+你还没有掌握称为诱惑之光的魔法吗？\ \
+<结束/@exit>
+#ACT
+break
+#IF
+check [026] 0
+#ACT
+give 诱惑之光（秘籍） 1
+give 金币 13000
+give 魔家项链
+reset [035] 1
+SET [026] 1
+#SAY
+辛苦了。我知道你可以赢。你本身的威力越强大，上面的怪物就越服从于你。但是要记住怪物的本性是不能被长时间抑制的。也就是说诱惑之光的威力一定时间之后就没有效果了。\
+在这里拿武功书，剩余的部分你要自己学习。。。\ \
+<结束/@exit>
+#ELSESAY
+你不是已经收到书了吗？那么你为什么还要索要？\ \
+<结束/@exit>
+}
+
+[@mugong_lightwave_explain]
+{
+#IF
+#SAY
+如果想学诱惑之光，在一定时间之内将考场内的怪物们都制服即可。\ \
+<结束/@exit>
+}

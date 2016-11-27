@@ -1,0 +1,26 @@
+;;王者传奇3 www.mir3w.com
+[@main]
+#act
+LoadValue D0 "ParamControl\任务记录.ini" %USERNAME 任务编号
+LoadValue A0 "ParamControl\任务记录.ini" %USERNAME 任务进度
+LOADVALUE A1 "ParamControl\支线任务.ini" %USERNAME 骷髅教主
+lineMsg [Grobal] "玩家<$USERNAME>杀死了骷髅教主."
+
+#IF
+Equal A1 "领取任务"
+#ACT
+SAVEVALUE "ParamControl\支线任务.ini" %USERNAME 骷髅教主 "猎杀完成"
+SYSMSG "支线任务:猎杀[骷髅教主]已经完成." 2
+
+#IF
+EQUAL A0 "Progress"
+EQUAL D0 176
+#ACT
+MOV A5 "骷髅教主"
+GOTO @BossQuest_TQCase2
+break
+#ELSEACT
+break
+
+[@BossQuest_TQCase2]
+#CALL [每日任务\QT_TotalMonster.txt] @BossQuest_Monster_Total

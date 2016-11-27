@@ -1,0 +1,911 @@
+;;创天网络有限公司原版1.45
+[@mugong_fly]
+{
+#IF
+check [027] 1
+#SAY
+你还没有收到瞬息移动秘籍吗？\ \
+<结束/@exit>
+#ACT
+break
+;
+#IF
+check [037] 1
+#ACT
+goto @mugong_fly_next2
+break
+;
+#IF
+checklevel 14
+#SAY
+瞬息移动是一种 {FCOLOR/10}超越空间而且学习起来非常难的魔法{FCOLOR/12} 。魔法的发动者计算好自己的位置和将要移动场所间的距离和方位，制造出超越空间的通道。这个过程要在瞬间之内完成，因此是一种学习起来非常复杂的魔法。\
+训练是非常辛苦的。那还要学习瞬息移动吗？\ \
+<当然要试试。./@mugong_fly_next1_1> \    
+<好像有些勉强。/@mugong_fly_next2_2> \
+#ELSESAY
+瞬息移动是一种 {FCOLOR/10}即使没有地牢逃脱卷也可以回到村子附近的魔法{FCOLOR/12} 。事实上地牢逃脱卷是一种本身带有瞬息移动法力的卷纸。如果连续不断地使用瞬息移动魔法，慢慢地就熟练掌握了该魔法，一次回到村子的概率也将提高。\
+你现在还没有到达修炼的境地，以后再来吧！\ \
+<结束/@exit>
+
+[@mugong_fly_next1_2]
+#IF
+#SAY
+不骄傲虽然很重要，但需要果断的时候还是要果断。如果你的想法如此，我也不干涉。\ \
+<结束/@exit>
+
+[@mugong_fly_next1_1]
+#IF
+checkmagic 瞬息移动
+#SAY
+你虽然还没有掌握瞬息移动，我很忙请回吧！\ 
+#ELSEACT
+goto @mugong_fly_next2
+break
+
+[@mugong_fly_next2]
+#IF
+#ACT
+set [037] 1
+#SAY
+该魔法总是和生死很亲密，即使仔细计算后想超越空间也是几乎不可能的。\
+因此进攻者几乎都是凭借直观力和观察力进行空间超越的。\ \ 
+<如何能获得这种能力呢？/@mugong_fly_next2_1> \
+
+[@mugong_fly_next2_1]
+#IF
+#SAY
+正好有适合培养此种能力的场所，到那里去训练吧。到达该场地的过程中，会出现很多岔道。你要不断地同怪物打斗，时间很紧迫，几乎是凭本能选择一个方向走出岔道。\
+如此经过 {FCOLOR/10}5个岔路口{FCOLOR/12} ，才可以通过考场。当然是指找到正确出口的情况。在考场通道的最后段要解决掉挡着路的叫 {FCOLOR/10}沙漠树魔{FCOLOR/12}  的怪物，然后才可以向 {FCOLOR/10}下一个考场移动{FCOLOR/12} 。\ \
+如果选择了错误的出口。。。你就要重新开始。在规定的时间内，有很多此机会。无论如何，祝你走运。努力试试！\ \
+<没有什么问题。/@mugong_fly_next5> \  
+<有些困难，可以给些帮助吗？/@mugong_fly_next3> \
+
+[@mugong_fly_next3]
+#IF
+#SAY
+嗯，，，好的。.\
+你要选择的 {FCOLOR/10}正确通路{FCOLOR/12} 有 {FCOLOR/10}3条{FCOLOR/12} 。。。我给你讲解其中的一种。\ \ 
+<下一步/@mugong_fly_next4_1> \
+
+[@mugong_fly_next4_1]
+#IF
+random 3
+#SAY
+在第一个岔道口要选择的方向和在第三个岔道口要选择的方向相反 \
+在第二个岔道口要选择的方向和在第四个岔道口要选择的方向相同 \
+在第三个岔道口要选择的方向和在第五个岔道口要选择的方向相同 \ 
+在第五个岔道口要选择的方向和在第二个岔道口要选择的方向相反 \
+记忆好。。5次都要选择正确，发生一次错误都不可以。\ \
+<下一步/@mugong_fly_next5> \ 
+#ELSEACT
+goto @mugong_fly_next4_2
+
+[@mugong_fly_next4_2]
+#IF
+random 3
+#SAY
+在第一个岔道口要选择的方向和在第三个岔道口要选择的方向相反 \ 
+在第二个岔道口要选择的方向和在第四个岔道口要选择的方向相反 \ 
+在第三个岔道口要选择的方向和在第五个岔道口要选择的方向相反 \ 
+在第五个岔道口要选择的方向和在第二个岔道口要选择的方向相反 \ 
+记忆好。。5次都要选择正确，发生一次错误都不可以。\ \ 
+<下一步/@mugong_fly_next5> \ 
+#ELSEACT
+goto @mugong_fly_next4_3
+
+[@mugong_fly_next4_3]
+#IF
+random 3
+#SAY
+在第一个岔道口要选择的方向和在第三个岔道口要选择的方向相同 \ 
+在第二个岔道口要选择的方向和在第四个岔道口要选择的方向相同 \ 
+在第三个岔道口要选择的方向和在第五个岔道口要选择的方向相反 \
+在第五个岔道口要选择的方向和在第二个岔道口要选择的方向相同 \ 
+记忆好。。5次都要选择正确，发生一次错误都不可以。\ \
+<下一步/@mugong_fly_next5>\
+#ELSESAY
+如此没有运气吗？\
+突然想不起来了。一会儿再来。\ \
+<结束/@exit>
+
+[@mugong_fly_next5]
+#IF
+#SAY
+现在送到训练场吧。。。\
+我可以将你送到那儿的时间为10分钟。时间结束后，你将重新回到这里。\ 
+祝你走运。\ \
+< 下一步/@mugong_fly_next6_1> \
+
+[@mugong_fly_next6_1]
+#IF
+checkhum 02_010 1
+#SAY
+已经有人在接受测试，请等一下。 \ \ 
+<结束/@exit>
+#ELSEACT
+goto @mugong_fly_next6_2
+
+[@mugong_fly_next6_2]
+#IF
+checkhum 02_011 1
+#SAY
+已经有人在接受测试，请等一下。 \ \ 
+<结束/@exit>
+#ELSEACT
+goto @mugong_fly_next6_3
+
+[@mugong_fly_next6_3]
+#IF
+checkhum 02_012 1
+#SAY
+已经有人在接受测试，请等一下。 \ \ 
+<结束/@exit>
+#ELSEACT
+goto @mugong_fly_next6_4
+
+[@mugong_fly_next6_4]
+#IF
+checkhum 02_013 1
+#SAY
+已经有人在接受测试，请等一下。 \ \ 
+<结束/@exit>
+#ELSEACT
+goto @mugong_fly_next6_5
+
+[@mugong_fly_next6_5]
+#IF
+checkhum 02_014 1
+#SAY
+已经有人在接受测试，请等一下。 \ \ 
+<结束/@exit>
+#ELSEACT
+set [038] 0
+set [039] 0
+set [040] 0
+set [041] 0
+set [042] 0
+set [043] 0
+set [044] 0
+set [045] 0
+set [046] 0
+set [047] 0
+goto @mugong_fly_next7
+
+[@mugong_fly_next7]
+#IF
+#ACT
+Monclear 02_010
+Monclear 02_011
+Monclear 02_012
+Monclear 02_013
+Monclear 02_014
+goto @mugong_fly_next8_1
+
+[@mugong_fly_next8_1]
+#IF
+#ACT
+Param1 02_010
+Param2 55
+Param3 91
+MonGen 沙漠树魔61  1 0
+goto @mugong_fly_next8_2
+
+[@mugong_fly_next8_2]
+#IF
+#ACT
+Param1 02_010
+Param2 94
+Param3 44
+MonGen 沙漠树魔62  1 0
+goto @mugong_fly_next8_3
+
+[@mugong_fly_next8_3]
+#IF
+#ACT
+Param1 02_010
+Param2 17
+Param3 51
+MonGen 骷髅精灵61  4 5
+goto @mugong_fly_next8_4
+
+[@mugong_fly_next8_4]
+#IF
+#ACT
+Param1 02_010
+Param2 58
+Param3 8
+MonGen 掷斧骷髅61  2 5
+goto @mugong_fly_next8_5
+
+[@mugong_fly_next8_5]
+#IF
+#ACT
+Param1 02_010
+Param2 36
+Param3 29
+MonGen 骷髅战士61  2 5
+goto @mugong_fly_next9_1
+
+[@mugong_fly_next9_1]
+#IF
+#ACT
+Param1 02_011
+Param2 55
+Param3 91
+MonGen 沙漠树魔61  1 0
+goto @mugong_fly_next9_2
+
+[@mugong_fly_next9_2]
+#IF
+#ACT
+Param1 02_011
+Param2 94
+Param3 44
+MonGen 沙漠树魔62  1 0
+goto @mugong_fly_next9_3
+
+[@mugong_fly_next9_3]
+#IF
+#ACT
+Param1 02_011
+Param2 17
+Param3 51
+MonGen  沃玛勇士61 4 5
+goto @mugong_fly_next9_4
+
+[@mugong_fly_next9_4]
+#IF
+#ACT
+Param1 02_011
+Param2 58
+Param3 8
+MonGen 沃玛勇士61 4 5
+goto @mugong_fly_next9_5
+
+[@mugong_fly_next9_5]
+#IF
+#ACT
+Param1 02_011
+Param2 36
+Param3 29
+MonGen 火焰沃玛61  2 5
+goto @mugong_fly_next10_1
+
+[@mugong_fly_next10_1]
+#IF
+#ACT
+Param1 02_012
+Param2 55
+Param3 91
+MonGen 沙漠树魔61  1 0
+goto @mugong_fly_next10_2
+
+[@mugong_fly_next10_2]
+#IF
+#ACT
+Param1 02_012
+Param2 94
+Param3 44
+MonGen 沙漠树魔62  1 0
+goto @mugong_fly_next10_3
+
+[@mugong_fly_next10_3]
+#IF
+#ACT
+Param1 02_012
+Param2 17
+Param3 51
+MonGen 掷斧骷髅61  4 5
+goto @mugong_fly_next10_4
+
+[@mugong_fly_next10_4]
+#IF
+#ACT
+Param1 02_012
+Param2 58
+Param3 8
+MonGen 骷髅精灵61  4 5
+goto @mugong_fly_next10_5
+
+[@mugong_fly_next10_5]
+#IF
+#ACT
+Param1 02_012
+Param2 36
+Param3 29
+MonGen 骷髅战士61  3 5
+goto @mugong_fly_next11_1
+
+[@mugong_fly_next11_1]
+#IF
+#ACT
+Param1 02_013
+Param2 55
+Param3 91
+MonGen 沙漠树魔61  1 0
+goto @mugong_fly_next11_2
+
+[@mugong_fly_next11_2]
+#IF
+#ACT
+Param1 02_013
+Param2 94
+Param3 44
+MonGen 沙漠树魔62  1 0
+goto @mugong_fly_next11_3
+
+[@mugong_fly_next11_3]
+#IF
+#ACT
+Param1 02_013
+Param2 17
+Param3 51
+MonGen  沃玛勇士61 4 5
+goto @mugong_fly_next11_4
+
+[@mugong_fly_next11_4]
+#IF
+#ACT
+Param1 02_013
+Param2 58
+Param3 8
+MonGen 沃玛勇士61 4 5
+goto @mugong_fly_next11_5
+
+[@mugong_fly_next11_5]
+#IF
+#ACT
+Param1 02_013
+Param2 36
+Param3 29
+MonGen 火焰沃玛61  3 5
+goto @mugong_fly_next12_1
+
+[@mugong_fly_next12_1]
+#IF
+#ACT
+Param1 02_014
+Param2 55
+Param3 91
+MonGen 沙漠树魔61 2 0
+goto @mugong_fly_next12_2
+
+[@mugong_fly_next12_2]
+#IF
+#ACT
+Param1 02_014
+Param2 94
+Param3 44
+MonGen 沙漠树魔62  2 0
+goto @mugong_fly_next12_3
+
+[@mugong_fly_next12_3]
+#IF
+#ACT
+Param1 02_014
+Param2 17
+Param3 51
+MonGen 骷髅精灵61  4 5
+goto @mugong_fly_next12_4
+
+[@mugong_fly_next12_4]
+#IF
+#ACT
+Param1 02_014
+Param2 58
+Param3 8
+MonGen 掷斧骷髅61  3 5
+goto @mugong_fly_next12_5
+
+[@mugong_fly_next12_5]
+#IF
+#ACT
+Param1 02_014
+Param2 36
+Param3 29
+MonGen 骷髅战士61  3 5
+goto @mugong_fly_next13
+
+[@mugong_fly_next13]
+#IF
+#ACT
+TimeRecall 10
+mapmove 02_010 17 8
+goto @shunyirenwu2
+break
+
+
+[@shunyirenwu2]
+#ACT
+mov A3 %USERMAP
+
+#IF
+EQUAL A3 "02_010"
+#ACT
+delaygoto [local] 10 @shunyirenwu2
+#ELSEACT
+BREAKTIMERECALL
+break
+
+}
+
+[@MapQuest_fly_check1]
+{
+#IF
+check [038] 1
+check [039] 0
+check [040] 1
+check [041] 0
+check [042] 0
+check [043] 1
+check [044] 1
+check [045] 0
+check [046] 0
+check [047] 1
+#ACT
+goto @mugong_fly_success
+#ELSEACT
+goto @mugong_fly_check2
+
+[@mugong_fly_check2]
+#IF
+check [038] 0
+check [039] 1
+check [040] 1
+check [041] 0
+check [042] 1
+check [043] 0
+check [044] 0
+check [045] 1
+check [046] 0
+check [047] 1
+#ACT
+goto @mugong_fly_success
+#ELSEACT
+goto @mugong_fly_check3
+
+[@mugong_fly_check3]
+#IF
+check [038] 1
+check [039] 0
+check [040] 1
+check [041] 1
+check [042] 1
+check [043] 0
+check [044] 0
+check [045] 1
+check [046] 0
+check [047] 1
+#ACT
+goto @mugong_fly_success
+#ELSEACT
+goto @mugong_fly_failure
+
+[@mugong_fly_success]
+#IF
+#ACT
+Delaygoto [local] 2 @mugong_fly_success1
+#SAY
+（不知道为什么好像可以成功。。嘿嘿）\ \ 
+<结束/@exit>
+
+[@mugong_fly_success1]
+#IF
+#ACT
+set [048] 1
+BreakTimeRecall
+Mapmove 02 265 145
+break
+
+[@mugong_fly_failure]
+#IF
+#ACT
+Delaygoto [local] 2 @mugong_fly_restart0
+#SAY
+（嗯。。。有些混淆，无论如何好像需要重新开始）。\ \ 
+<结束/@exit>
+
+[@mugong_fly_restart0]
+#IF
+#ACT
+reset [038] 9
+goto @mugong_fly_restart1
+
+[@mugong_fly_restart1]
+#IF
+#ACT
+Monclear 02_010
+Monclear 02_011
+Monclear 02_012
+Monclear 02_013
+Monclear 02_014
+goto @mugong_fly_restart1_1
+
+[@mugong_fly_restart1_1]
+#IF
+#ACT
+Param1 02_010
+Param2 55
+Param3 91
+MonGen 沙漠树魔61  1 0
+goto @mugong_fly_restart1_2
+
+[@mugong_fly_restart1_2]
+#IF
+#ACT
+Param1 02_010
+Param2 94
+Param3 44
+MonGen 沙漠树魔62  1 0
+goto @mugong_fly_restart1_3
+
+[@mugong_fly_restart1_3]
+#IF
+#ACT
+Param1 02_010
+Param2 17
+Param3 51
+MonGen 骷髅精灵61  4 5
+goto @mugong_fly_restart1_4
+
+[@mugong_fly_restart1_4]
+#IF
+#ACT
+Param1 02_010
+Param2 58
+Param3 8
+MonGen 掷斧骷髅61  2 5
+goto @mugong_fly_restart1_5
+
+[@mugong_fly_restart1_5]
+#IF
+#ACT
+Param1 02_010
+Param2 36
+Param3 29
+MonGen 骷髅战士61  1 5
+goto @mugong_fly_restart2_1
+
+[@mugong_fly_restart2_1]
+#IF
+#ACT
+Param1 02_011
+Param2 55
+Param3 91
+MonGen 沙漠树魔61  1 0
+goto @mugong_fly_restart2_2
+
+[@mugong_fly_restart2_2]
+#IF
+#ACT
+Param1 02_011
+Param2 94
+Param3 44
+MonGen 沙漠树魔62  1 0
+goto @mugong_fly_restart2_3
+
+[@mugong_fly_restart2_3]
+#IF
+#ACT
+Param1 02_011
+Param2 17
+Param3 51
+MonGen  沃玛勇士61 4 5
+goto @mugong_fly_restart2_4
+
+[@mugong_fly_restart2_4]
+#IF
+#ACT
+Param1 02_011
+Param2 58
+Param3 8
+MonGen 沃玛勇士61 4 5
+goto @mugong_fly_restart2_5
+
+[@mugong_fly_restart2_5]
+#IF
+#ACT
+Param1 02_011
+Param2 36
+Param3 29
+MonGen 火焰沃玛61  2 5
+goto @mugong_fly_restart3_1
+
+[@mugong_fly_restart3_1]
+#IF
+#ACT
+Param1 02_012
+Param2 55
+Param3 91
+MonGen 沙漠树魔61  1 0
+goto @mugong_fly_restart3_2
+
+[@mugong_fly_restart3_2]
+#IF
+#ACT
+Param1 02_012
+Param2 94
+Param3 44
+MonGen 沙漠树魔62  1 0
+goto @mugong_fly_restart3_3
+
+[@mugong_fly_restart3_3]
+#IF
+#ACT
+Param1 02_012
+Param2 17
+Param3 51
+MonGen 掷斧骷髅61  4 5
+goto @mugong_fly_restart3_4
+
+[@mugong_fly_restart3_4]
+#IF
+#ACT
+Param1 02_012
+Param2 58
+Param3 8
+MonGen 骷髅精灵61  4 5
+goto @mugong_fly_restart3_5
+
+[@mugong_fly_restart3_5]
+#IF
+#ACT
+Param1 02_012
+Param2 36
+Param3 29
+MonGen 骷髅战士61  3 5
+goto @mugong_fly_restart4_1
+
+[@mugong_fly_restart4_1]
+#IF
+#ACT
+Param1 02_013
+Param2 55
+Param3 91
+MonGen 沙漠树魔61  1 0
+goto @mugong_fly_restart4_2
+
+[@mugong_fly_restart4_2]
+#IF
+#ACT
+Param1 02_013
+Param2 94
+Param3 44
+MonGen 沙漠树魔62  1 0
+goto @mugong_fly_restart4_3
+
+[@mugong_fly_restart4_3]
+#IF
+#ACT
+Param1 02_013
+Param2 17
+Param3 51
+MonGen  沃玛勇士61 4 5
+goto @mugong_fly_restart4_4
+
+[@mugong_fly_restart4_4]
+#IF
+#ACT
+Param1 02_013
+Param2 58
+Param3 8
+MonGen 沃玛勇士61 3 5
+goto @mugong_fly_restart4_5
+
+[@mugong_fly_restart4_5]
+#IF
+#ACT
+Param1 02_013
+Param2 36
+Param3 29
+MonGen 火焰沃玛61  3 20
+goto @mugong_fly_restart5_1
+
+[@mugong_fly_restart5_1]
+#IF
+#ACT
+Param1 02_014
+Param2 55
+Param3 91
+MonGen 沙漠树魔61 2 0
+goto @mugong_fly_restart5_2
+
+[@mugong_fly_restart5_2]
+#IF
+#ACT
+Param1 02_014
+Param2 94
+Param3 44
+MonGen 沙漠树魔62  2 0
+goto @mugong_fly_restart5_3
+
+[@mugong_fly_restart5_3]
+#IF
+#ACT
+Param1 02_014
+Param2 17
+Param3 51
+MonGen 骷髅精灵61  4 5
+goto @mugong_fly_restart5_4
+
+[@mugong_fly_restart5_4]
+#IF
+#ACT
+Param1 02_014
+Param2 58
+Param3 8
+MonGen 掷斧骷髅61  3 5
+goto @mugong_fly_restart5_5
+
+[@mugong_fly_restart5_5]
+#IF
+#ACT
+Param1 02_014
+Param2 36
+Param3 29
+MonGen 骷髅战士61  3 5
+goto @mugong_fly_restart6
+
+[@mugong_fly_restart6]
+#IF
+#ACT
+TimeRecall 10
+mapmove 02_010 17 8
+goto @shunyirenwu1
+break
+
+
+
+
+[@shunyirenwu1]
+#ACT
+mov A3 %USERMAP
+
+#IF
+EQUAL A3 "02_010"
+#ACT
+delaygoto [local] 10 @shunyirenwu1
+#ELSEACT
+BREAKTIMERECALL
+break
+
+}
+
+[@MapQuest_move_1to2L]
+{
+#IF
+#ACT
+SET [038] 1
+Mapmove 02_011 17 8
+SysMsg "(第一次选择左侧。...) "
+}
+
+[@MapQuest_move_1to2R]
+{
+#IF
+#ACT
+SET [039] 1
+Mapmove 02_011 17 8
+SysMsg "(第一次选择右侧。。)"
+}
+
+[@MapQuest_move_2to3L]
+{
+#IF
+#ACT
+SET [040] 1
+Mapmove 02_012 17 8
+SysMsg "(第二次选择左侧。。)"
+}
+
+[@MapQuest_move_2to3R]
+{
+#IF
+#ACT
+SET [041] 1
+Mapmove 02_012 17 8
+SysMsg "(第二次选择右侧...)"
+}
+
+[@MapQuest_move_3to4L]
+{
+#IF
+#ACT
+SET [042] 1
+Mapmove 02_013 17 8
+SysMsg "(第三次选择左侧。。)"
+}
+
+[@MapQuest_move_3to4R]
+{
+#IF
+#ACT
+SET [043] 1
+Mapmove 02_013 17 8
+SysMsg "(第三次选择右侧。。)"
+}
+
+[@MapQuest_move_4to5L]
+{
+#IF
+#ACT
+SET [044] 1
+Mapmove 02_014 17 8
+SysMsg "(第四次选择左侧。)"
+}
+
+[@MapQuest_move_4to5R]
+{
+#IF
+#ACT
+SET [045] 1
+Mapmove 02_014 17 8
+SysMsg "(第四次选择右侧。。)"
+}
+
+[@MapQuest_move_5to0L]
+{
+#IF
+check [047] 0
+#ACT
+SET [046] 1
+#SAY
+（最后第五次选择 左侧。。。现在有2头怪兽拦着路）\
+#ELSESAY
+（既然已经选择了左边... 就往那儿走吧。） \
+}
+
+[@MapQuest_move_5to0R]
+{
+#IF
+check [046] 0
+#ACT
+SET [047] 1
+#SAY
+（最后第五次选择 右侧。。。现在有2头怪兽拦着路）\
+#ELSESAY
+（既然选择了右边... 就往那儿走吧。） \
+}
+
+[@mugong_fly_complete]
+{
+#IF
+check [037] 1
+check [048] 1
+check [027] 0
+#ACT
+goto @mugong_fly_give
+#ELSESAY
+不知道和你说什么好了\
+
+[@mugong_fly_give]
+#IF
+checkmagic 瞬息移动
+#SAY
+你不是已经掌握了瞬息移动，请回去吧！我很忙。\\
+<结束/@exit>
+#ACT
+break
+#IF
+check [027] 0
+#ACT
+give 瞬息移动（秘籍） 1
+give 金币 19000
+give 变形银蛇戒指 1
+reset [037] 11
+set [027] 1
+#SAY
+这里有可以掌握瞬息移动的武功书（秘籍）。。好好使用吧。\ \ 
+<结束/@exit>
+#ELSESAY
+你不是已经收到书了吗？那么你为什么还要索要？\ \
+<结束/@exit>
+}
+
+[@mugong_fly_explain]
+{
+#IF
+#SAY
+为了学习瞬息移动，在考场之内要 {FCOLOR/10}选择5次岔路口{FCOLOR/12} 。只有5次都选择正确了，才可以回到我这里。如果错了，又要重新回到起点。训练场之间移动的方法是解决掉挡着路的叫 {FCOLOR/10}沙漠树魔{FCOLOR/12} 的怪物，通路中间尽最大可能地回避怪物即可。\ \
+<结束/@exit>
+}

@@ -1,0 +1,71 @@
+;;创天网络有限公司原版1.45
+%100
++5
++6
++43
+
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+我不愿意和你这样丧尽天良的人进行交易。\ \
+<结束/@exit>
+#ELSEACT
+goto @main_0_0
+
+[@main_0_0]
+#SAY
+这里是 沙巴克城 {FCOLOR/10}<$CS_SABUK_OWNER>{FCOLOR/12} 行会的领地。\
+这里是道馆寄存武器的地方，你需要什么武器吗？\
+<购买/@buy>武器\
+<出售/@sell>武器\
+<修理/@pre_repair>武器\
+<特殊修理/@Special_Repair(1)>武器\
+<结束/@exit>
+
+[@Special_Repair()]
+#CALL [\Repair\TotalRepair.txt] @SRepairItem
+
+[@buy]
+#SAY
+各种武器在这里保存得很好。\
+你想要什么武器？\ \
+<前一步/@main>
+
+[@sell]
+#SAY
+你想卖掉手里拿的武器？\
+让我看看。\ \
+<前一步/@main>
+
+[@repair]
+#SAY
+你的武器太旧了，请稍等。\
+请选择你要修理的武器。\ \
+<前一步/@main>
+
+[~@repair]
+#SAY
+修理完毕。\ \
+<前一步/@main>
+
+[Goods]
+;ItemName      Volume     Hour
+木剑            100        1
+匕首            100        1
+青铜剑          100        1
+铁剑            100        1
+乌木剑          100        1
+短剑            100        1
+青铜斧          100        1
+八荒            100        1
+凌风            100        1
+斩马刀          100        1
+半月            100        1
+海魂            100        1
+
+[@pre_repair]
+#IF
+#SAY
+请把要修理的武器放上去。\ \
+<修理/@repair>

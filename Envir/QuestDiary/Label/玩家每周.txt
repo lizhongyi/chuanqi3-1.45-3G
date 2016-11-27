@@ -1,0 +1,12 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@玩家每周_Main]
+{
+#IF
+!checkcmd ISTESTSERVER
+#ACT
+actcmd SETDOUBLEEXP = 50400000
+sysmsg "温馨提示: 双倍经验时间重置"
+break
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

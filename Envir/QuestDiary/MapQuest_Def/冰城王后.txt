@@ -1,0 +1,18 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@main]
+#ACT
+lineMsg [Grobal] "<$USERNAME>杀死了冰城王后!"
+Delaygoto [local] 120 @jinru7x
+#SAY
+恭喜你杀死冰城王后,7层里面有强大的冰城帝王,2分钟后您会被系统传进冰七层.\
+
+[@jinru7x]
+#ACT
+MOV A1 %USERMAP
+
+#IF
+EQUAL A1 D2106
+#ACT
+lineMsg [Grobal] "<$USERNAME>进入冰七层挑战冰城帝王!"
+map d2107
+break

@@ -1,0 +1,37 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@°²È«Çø_Main]
+{
+#ACT
+SetAreaAttr "0,465,372,15" "SAFE"
+SetAreaAttr "02,265,207,10" "SAFE"
+SetAreaAttr "02,247,199,10" "SAFE"
+SetAreaAttr "1,423,102,20" "SAFE"
+SetAreaAttr "1,405,124,20" "SAFE"
+SetAreaAttr "5,227,127,10" "SAFE"
+SetAreaAttr "81,130,273,10" "SAFE"
+SetAreaAttr "82,270,175" "SAFE"
+SetAreaAttr "02,249,144,5" "SAFE"
+SetAreaAttr "02,249,145,5" "SAFE"
+SetAreaAttr "1,416,180,5" "SAFE"
+SetAreaAttr "5,204,290,5" "SAFE"
+SetAreaAttr "5,112,178,5" "SAFE"
+SetAreaAttr "6,273,732,5" "SAFE"
+SetAreaAttr "81,127,266,5" "SAFE"
+SetAreaAttr "0,465,372,15" "NoLack"
+SetAreaAttr "02,265,207,10" "NoLack"
+SetAreaAttr "02,247,199,10" "NoLack"
+SetAreaAttr "1,423,102,20" "NoLack"
+SetAreaAttr "1,405,124,20" "NoLack"
+SetAreaAttr "5,227,127,10" "NoLack"
+SetAreaAttr "81,130,273,10" "NoLack"
+SetAreaAttr "82,270,175" "NoLack"
+SetAreaAttr "02,249,144,5" "NoLack"
+SetAreaAttr "02,249,145,5" "NoLack"
+SetAreaAttr "1,416,180,5" "NoLack"
+SetAreaAttr "5,204,290,5" "NoLack"
+SetAreaAttr "5,112,178,5" "NoLack"
+SetAreaAttr "6,273,732,5" "NoLack"
+SetAreaAttr "81,127,266,5" "NoLack"
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

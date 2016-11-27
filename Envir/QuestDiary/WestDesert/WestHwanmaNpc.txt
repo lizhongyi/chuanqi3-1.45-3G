@@ -1,0 +1,272 @@
+;;
+[@WestDesert_open]
+{
+#ACT
+FormatStr "FLD_SinUSERNAME='%s'" %USERNAME
+
+ReadValueSql "TBL_WestDesertQuest" %A9 "FLD_SinUSERNAME,FLD_SinMAINSTEP,FLD_SinSTEP_READY" [@WestDesertMain_1_0]
+
+[@WestDesertMain_1_0()]
+#ACT
+mov A1 %ARG(1)
+mov D1 %ARG(2)
+mov D2 %ARG(3)
+
+#IF
+Equal A1 ""
+#SAY
+来打听西沙漠地宫情况的人，你是怎么来到这里的……我可没什么好告诉你的。\\
+<关 闭/@Exit>
+#ACT
+break
+
+#IF
+Equal D1 3
+Equal D2 2
+checkitem 地天灭王印记 1
+#ACT
+goto @WestQuest_Pachun
+break
+
+#IF
+Equal D1 3
+Equal D2 1
+#ACT
+goto @WestQuest_Pachun_start
+break
+
+#IF
+Equal D1 2
+Equal D2 3
+checkitem 圣灵枯骨 1
+#ACT
+goto @WestQuest_End
+break
+
+#IF
+Equal D1 2
+Equal D2 2
+#ACT
+goto @WestQuest_SeeAgain_1
+break
+
+#IF
+Equal D1 2
+Equal D2 1
+#ACT
+goto @WestQuest_SeeAgain
+break
+
+#IF
+Equal D1 2
+Equal D2 0
+#ACT
+goto @WestQuest_Spritstest_Check_1
+break
+
+#IF
+Equal D1 1
+Equal D2 4
+checkitem 圣灵牌 1
+#ACT
+goto @WestQuest_Spritstest_Check
+break
+
+#IF
+Equal D1 1
+Equal D2 3
+checkitem 圣灵牌 1
+#ACT
+goto @WestQuest_Spritstest_retry
+break
+
+#IF
+Equal D1 1
+Equal D2 2
+checkitem 圣灵牌 1
+#ACT
+goto @WestQuest_Spritstest
+break
+
+#IF
+#ACT
+goto @WestQuest_Pachun_start_0
+break
+
+[@WestQuest_Spritstest]
+#IF
+#SAY
+你找我有何事情啊？\\
+<你就是圣灵守护者？/@WestQuest_Spritstest_0>
+
+[@WestQuest_Spritstest_0]
+#IF
+#SAY
+是啊，你就是要替我实现愿望的那个人？呵呵，让我来考验考验你。地宫拥有强大的魔力，显示一下你的能力吧。\\
+<不，等一下！/@WestQuest_Spritstest_1>
+
+[@WestQuest_Spritstest_1]
+#ACT
+FormatStr "FLD_SinUSERNAME='%s'" %USERNAME
+ReadValueSql "TBL_WestDesertQuest" %A9 "FLD_SinMAINSTEP,FLD_SinSTEP_READY" [@WestDesertREAD_1_2]
+
+[@WestDesertREAD_1_2()]
+#ACT
+mov D1 %ARG(1)
+mov D2 %ARG(2)
+
+#IF
+Equal D1 1
+Equal D2 2
+#SAY
+你力所能及地去打败变异毒蜥吧，在我面前显示你的力量吧。\\
+<关 闭/@exit>
+#ACT
+FormatStr "FLD_SinUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_WestDesertQuest" %A9 "FLD_SinMAINSTEP=1"
+UpdateValueSql "TBL_WestDesertQuest" %A9 "FLD_SinSTEP_READY=3"
+set [494] 1
+
+[@WestQuest_Spritstest_retry]
+#SAY
+还没准备好吗？……或者你的力量就仅此而已？\
+去打败变异毒蜥吧，直到我满意为止。 \\
+<关 闭/@Exit>
+
+[@WestQuest_Spritstest_Check]
+#SAY
+我对考验结果很满意。\\
+你的牌是……我朋友的……怎么会在你的手里。\\
+<朋友？你怎么会……/@WestDesert_Spritstest_Check2>
+
+[@WestDesert_Spritstest_Check2]
+#IF
+checkitem 圣灵牌 1
+#SAY
+知道了，把这个送给你，你的命运掌握在你的手里，选择好命运后，再来找我吧。\\
+<那我回去了。/@WestDesert_Spritstest_Check3>
+#ACT
+FormatStr "FLD_SinUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_WestDesertQuest" %A9 "FLD_SinMAINSTEP=2"
+UpdateValueSql "TBL_WestDesertQuest" %A9 "FLD_SinSTEP_READY=0"
+take 圣灵牌 1
+give 圣史记 1
+#ELSESAY
+圣灵牌怎么不见了？没有圣灵牌，我无法帮助你。\\
+<关 闭/@Exit>
+
+[@WestDesert_Spritstest_Check3]
+#IF
+#ACT
+mapmove 4 437 76
+
+[@WestQuest_Spritstest_Check_1]
+#SAY
+把圣史记带给我的朋友。\\
+<那我回去了。/@WestDesert_Spritstest_Check3>
+
+[@WestQuest_SeeAgain]
+#ACT
+FormatStr "FLD_SinUSERNAME='%s'" %USERNAME
+ReadValueSql "TBL_WestDesertQuest" %A9 "FLD_SinMAINSTEP,FLD_SinSTEP_READY" [@WestDesertREAD_2_1]
+
+[@WestDesertREAD_2_1()]
+#ACT
+mov D1 %ARG(1)
+mov D2 %ARG(2)
+
+#IF
+Equal D1 2
+Equal D2 1
+#ACT
+FormatStr "FLD_SinUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_WestDesertQuest" %A9 "FLD_SinMAINSTEP=2"
+UpdateValueSql "TBL_WestDesertQuest" %A9 "FLD_SinSTEP_READY=2"
+set [494] 1
+#SAY
+我已知道你会回来找我的。\
+我是魔石守护神的信从？不，我只是它的旧随从。去找一下我的主人吧，他以前很善良，直到被地天灭王强大的力量征服后就变身成为了魔石守护神。\\
+<听不明白他说什么……/@exit>
+
+[@WestQuest_SeeAgain_1]
+#SAY
+魔石守护神是我以前的主人，它将会征服我的意志与我合为一体……\
+去找我可怜的主人吧。\
+一旦合体，就没人阻止得了了。\\
+<关 闭/@Exit>
+
+[@WestQuest_End]
+#IF
+checkitem 圣灵枯骨 1
+#ACT
+LOADVALUE D0 "ParamControl\官阶值.ini" 官阶值 %USERNAME
+INC D0 900
+SAVEVALUE "ParamControl\官阶值.ini" 官阶值 %USERNAME %D0
+SetUserExp + 90000000
+GIVEGOLDEX 900000
+FormatStr "FLD_SinUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_WestDesertQuest" %A9 "FLD_SinMAINSTEP=3,FLD_SinSTEP_READY=0"
+BREAK
+#SAY
+我终于可以见到我的主人了……把我主人的枯骨带给我的朋友吧。\
+替我传话给朋友，我很感激他。\\
+<这次的冒险就这么结束了吗？/@exit>
+#ELSESAY
+我的主人……我的主人……到底在哪儿？去把我主人的枯骨找回来……\\
+<关 闭/@Exit>
+
+[@WestQuest_Pachun]
+#IF
+checkitem 地天灭王印记 1
+#SAY
+你把地天灭王给……\
+把地天灭王印记交给我，我给你这个……\
+从很久很久以前开始，我就渴望得到强大的“力量”。\
+在某一次战斗中，我使用了那个力量。\
+太感谢你了……\\
+<关 闭/@exit>
+#ACT
+LOADVALUE D0 "ParamControl\官阶值.ini" 官阶值 %USERNAME
+INC D0 1000
+SAVEVALUE "ParamControl\官阶值.ini" 官阶值 %USERNAME %D0
+SetUserExp + 100000000
+GIVEGOLDEX 1000000
+set [493] 1
+take 地天灭王印记 1
+FormatStr "FLD_SinUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_WestDesertQuest" %A9 "FLD_SinMAINSTEP=4,FLD_SinSTEP_READY=0"
+break
+
+
+[@WestQuest_Pachun_start]
+#IF
+checkitem 地洞之眼 1
+#SAY
+这里栖息着神秘的地宫生物... \
+虽然你拥有神灵赋予你的力量，但是也要小心啊. \
+它们很让人惧怕，因为它们移动的速度很快，如果被他们追赶，只能杀掉它，否则一定会丧命的.\
+<原来这样啊.../@WestQuest_Pachun_start_1> \
+#ELSEACT
+goto @WestQuest_Pachun_start_0
+break
+
+[@WestQuest_Pachun_start_0]
+#SAY
+只要打败地宫之王地天灭王，就能减弱地宫的神秘力量。\
+你能帮我打败地天灭王吗？\
+它不会死亡，只是暂时隐藏躯体而已。\
+<关 闭/@Exit>
+
+[@WestQuest_Pachun_start_1]
+#SAY
+幸好你带着 地洞之眼。\
+把地洞之眼交给我，我会帮你穿过诅咒石门。\
+但是，我的力量只能让你在里头待2个小时。\
+所以你必须在2个小时内除掉地天灭王。\
+打败地天灭王后，把{FCOLOR/10}地天灭王印记{FCOLOR/12}交给我。\
+地天灭王印记可以使地宫的力量渐渐消失.\
+拜托你一定要打败地天灭王，把地天灭王印记交给我。\
+好吧，你可以进去了……\\
+<关 闭/@Exit>
+}
+;;

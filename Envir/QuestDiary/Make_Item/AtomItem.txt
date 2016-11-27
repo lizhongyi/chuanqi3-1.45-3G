@@ -1,0 +1,6620 @@
+;影子制作
+[@rustaccessory_Main]
+{
+#IF
+#SAY
+_村庄附近的诺玛遗址里经常出现古代勇士们使用过的元素饰品. 有些饰品因为生锈而失去了原有的功能.\
+_但不要小瞧它们,更不要乱丢.用诺玛族秘传的方法可以让它们恢复原貌.\
+_不过,如果你想让手中生锈的饰品恢复原貌,就要支付一定费用. 嗯,对了,你还可以反复更换复原饰品的攻击元素,不过只有耐久完好的饰品才可以变换攻击元素.\\
+<支付200万金币,将生锈的饰品恢复原貌./@Make_AtomItem>\
+<支付400万金币,更换元素饰品的攻击元素./@Change_ItemAtom_2>\
+<讯问元素道具./@Help_ItemAtom>\
+<关闭./@exit>
+
+[@Make_AtomItem]
+#IF
+checkgold 2000000
+#ACT
+goto @Check_OldItem
+#ELSESAY
+_因为金币不够,所以不能帮你恢复饰品的原貌.\ \
+_<关闭/@exit>
+
+[@Check_OldItem]
+#IF
+checkitem 生锈师承戒指 1
+#ACT
+goto @Make_AtomItem_1
+break
+
+#IF
+checkitem 生锈龙马戒指 1
+#ACT
+goto @Make_AtomItem_1
+break
+
+#IF
+checkitem 生锈青云戒指 1
+#ACT
+goto @Make_AtomItem_1
+break
+
+#IF
+checkitem 生锈破荒项链 1
+#ACT
+goto @Make_AtomItem_1
+break
+
+#IF
+checkitem 生锈魔云项链 1
+#ACT
+goto @Make_AtomItem_1
+break
+
+#IF
+checkitem 生锈定心项链 1
+#ACT
+goto @Make_AtomItem_1
+break
+
+#IF
+checkitem 生锈金棱手镯 1
+#ACT
+goto @Make_AtomItem_1
+break
+
+#IF
+checkitem 生锈思过手镯 1
+#ACT
+goto @Make_AtomItem_1
+break
+
+#IF
+checkitem 生锈世尊手镯 1
+#ACT
+goto @Make_AtomItem_1
+
+#ELSESAY
+_你弄错了吧,这不是古代勇士们使用过的生锈饰品,得到它们之后再来找我吧.\ \
+_<关闭/@exit>
+
+[@Make_AtomItem_1]
+#IF
+#SAY
+_想恢复生锈饰品的哪一种攻击元素属性呢?\ \
+_<火元素./@Atom_Fire>\
+_<冰元素./@Atom_Ice>\
+_<雷元素./@Atom_Light>\
+_<风元素./@Atom_Wind>\
+_<神圣元素./@Atom_Holy>\
+_<暗黑元素./@Atom_Dark>\
+_<幻影元素./@Atom_Phantom>\ \
+_<再想一想./@exit>
+
+[@Atom_Fire]
+#IF
+checkgold 2000000
+checkitem 生锈师承戒指 1
+#ACT
+take 生锈师承戒指 1
+take 金币 2000000
+give 师承戒指（火） 1
+break
+#SAY
+_得到师承戒指(火).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈龙马戒指 1
+#ACT
+take 生锈龙马戒指 1
+take 金币 2000000
+give 龙马戒指（火） 1
+break
+#SAY
+_得到龙马戒指(火).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈青云戒指 1
+#ACT
+take 生锈青云戒指 1
+take 金币 2000000
+give 青云戒指（火） 1
+break
+#SAY
+_得到青云戒指(火).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈破荒项链 1
+#ACT
+take 生锈破荒项链 1
+take 金币 2000000
+give 破荒项链（火） 1
+break
+#SAY
+_得到破荒项链(火).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈魔云项链 1
+#ACT
+take 生锈魔云项链 1
+take 金币 2000000
+give 魔云项链（火） 1
+break
+#SAY
+_得到魔云项链(火).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈定心项链 1
+#ACT
+take 生锈定心项链 1
+take 金币 2000000
+give 定心项链（火） 1
+break
+#SAY
+_得到定心项链(火).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈金棱手镯 1
+#ACT
+take 生锈金棱手镯 1
+take 金币 2000000
+give 金棱手镯（火） 1
+break
+#SAY
+_得到金棱手镯(火).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈思过手镯 1
+#ACT
+take 生锈思过手镯 1
+take 金币 2000000
+give 思过手镯（火） 1
+break
+#SAY
+_得到思过手镯(火).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈世尊手镯 1
+#ACT
+take 生锈世尊手镯 1
+take 金币 2000000
+give 世尊手镯（火） 1
+break
+#SAY
+_得到世尊手镯(火).\ \
+_<关闭/@exit>
+
+#ELSESAY
+_你弄错了吧,这不是古代勇士们使用过的生锈饰品,得到它们之后再来找我吧.\ \
+_<关闭/@exit>
+
+[@Atom_Ice]
+#IF
+checkgold 2000000
+checkitem 生锈师承戒指 1
+#ACT
+take 生锈师承戒指 1
+take 金币 2000000
+give 师承戒指（冰） 1
+break
+#SAY
+_得到师承戒指(冰).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈龙马戒指 1
+#ACT
+take 生锈龙马戒指 1
+take 金币 2000000
+give 龙马戒指（冰） 1
+break
+#SAY
+_得到龙马戒指(冰).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈青云戒指 1
+#ACT
+take 生锈青云戒指 1
+take 金币 2000000
+give 青云戒指（冰） 1
+break
+#SAY
+_得到青云戒指(冰).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈破荒项链 1
+#ACT
+take 生锈破荒项链 1
+take 金币 2000000
+give 破荒项链（冰） 1
+break
+#SAY
+_得到破荒项链(冰).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈魔云项链 1
+#ACT
+take 生锈魔云项链 1
+take 金币 2000000
+give 魔云项链（冰） 1
+break
+#SAY
+_得到魔云项链(冰).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈定心项链 1
+#ACT
+take 生锈定心项链 1
+take 金币 2000000
+give 定心项链（冰） 1
+break
+#SAY
+_得到定心项链(冰).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈金棱手镯 1
+#ACT
+take 生锈金棱手镯 1
+take 金币 2000000
+give 金棱手镯（冰） 1
+break
+#SAY
+_得到金棱手镯(冰).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈思过手镯 1
+#ACT
+take 生锈思过手镯 1
+take 金币 2000000
+give 思过手镯（冰） 1
+break
+#SAY
+_得到思过手镯(冰).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈世尊手镯 1
+#ACT
+take 生锈世尊手镯 1
+take 金币 2000000
+give 世尊手镯（冰） 1
+break
+#SAY
+_得到世尊手镯(冰).\ \
+_<关闭/@exit>
+
+#ELSESAY
+_你弄错了吧,这不是古代勇士们使用过的生锈饰品,得到它们之后再来找我吧.\ \
+_<关闭/@exit>
+
+[@Atom_Light]
+#IF
+checkgold 2000000
+checkitem 生锈师承戒指 1
+#ACT
+take 生锈师承戒指 1
+take 金币 2000000
+give 师承戒指（雷） 1
+break
+#SAY
+_得到师承戒指(雷).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈龙马戒指 1
+#ACT
+take 生锈龙马戒指 1
+take 金币 2000000
+give 龙马戒指（雷） 1
+break
+#SAY
+_得到龙马戒指(雷).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈青云戒指 1
+#ACT
+take 生锈青云戒指 1
+take 金币 2000000
+give 青云戒指（雷） 1
+break
+#SAY
+_得到青云戒指(雷).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈破荒项链 1
+#ACT
+take 生锈破荒项链 1
+take 金币 2000000
+give 破荒项链（雷） 1
+break
+#SAY
+_得到破荒项链(雷).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈魔云项链 1
+#ACT
+take 生锈魔云项链 1
+take 金币 2000000
+give 魔云项链（雷） 1
+break
+#SAY
+_得到魔云项链(雷).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈定心项链 1
+#ACT
+take 生锈定心项链 1
+take 金币 2000000
+give 定心项链（雷） 1
+break
+#SAY
+_得到定心项链(雷).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈金棱手镯 1
+#ACT
+take 生锈金棱手镯 1
+take 金币 2000000
+give 金棱手镯（雷） 1
+break
+#SAY
+_得到金棱手镯(雷).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈思过手镯 1
+#ACT
+take 生锈思过手镯 1
+take 金币 2000000
+give 思过手镯（雷） 1
+break
+#SAY
+_得到思过手镯(雷).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈世尊手镯 1
+#ACT
+take 生锈世尊手镯 1
+take 金币 2000000
+give 世尊手镯（雷） 1
+break
+#SAY
+_得到世尊手镯(雷).\ \
+_<关闭/@exit>
+
+#ELSESAY
+_你弄错了吧,这不是古代勇士们使用过的生锈饰品,得到它们之后再来找我吧.\ \
+_<关闭/@exit>
+
+[@Atom_Wind]
+#IF
+checkgold 2000000
+checkitem 生锈师承戒指 1
+#ACT
+take 生锈师承戒指 1
+take 金币 2000000
+give 师承戒指（风） 1
+break
+#SAY
+_得到师承戒指(风).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈龙马戒指 1
+#ACT
+take 生锈龙马戒指 1
+take 金币 2000000
+give 龙马戒指（风） 1
+break
+#SAY
+_得到龙马戒指(风).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈青云戒指 1
+#ACT
+take 生锈青云戒指 1
+take 金币 2000000
+give 青云戒指（风） 1
+break
+#SAY
+_得到青云戒指(风).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈破荒项链 1
+#ACT
+take 生锈破荒项链 1
+take 金币 2000000
+give 破荒项链（风） 1
+break
+#SAY
+_得到破荒项链(风).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈魔云项链 1
+#ACT
+take 生锈魔云项链 1
+take 金币 2000000
+give 魔云项链（风） 1
+break
+#SAY
+_得到魔云项链(风).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈定心项链 1
+#ACT
+take 生锈定心项链 1
+take 金币 2000000
+give 定心项链（风） 1
+break
+#SAY
+_得到定心项链(风).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈金棱手镯 1
+#ACT
+take 生锈金棱手镯 1
+take 金币 2000000
+give 金棱手镯（风） 1
+break
+#SAY
+_得到金棱手镯(风).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈思过手镯 1
+#ACT
+take 生锈思过手镯 1
+take 金币 2000000
+give 思过手镯（风） 1
+break
+#SAY
+_得到思过手镯(风).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈世尊手镯 1
+#ACT
+take 生锈世尊手镯 1
+take 金币 2000000
+give 世尊手镯（风） 1
+break
+#SAY
+_得到世尊手镯(风).\ \
+_<关闭/@exit>
+
+#ELSESAY
+_你弄错了吧,这不是古代勇士们使用过的生锈饰品,得到它们之后再来找我吧.\ \
+_<关闭/@exit>
+
+[@Atom_Holy]
+#IF
+checkgold 2000000
+checkitem 生锈师承戒指 1
+#ACT
+take 生锈师承戒指 1
+take 金币 2000000
+give 师承戒指（神圣） 1
+break
+#SAY
+_得到师承戒指(神圣).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈龙马戒指 1
+#ACT
+take 生锈龙马戒指 1
+take 金币 2000000
+give 龙马戒指（神圣） 1
+break
+#SAY
+_得到龙马戒指(神圣).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈青云戒指 1
+#ACT
+take 生锈青云戒指 1
+take 金币 2000000
+give 青云戒指（神圣） 1
+break
+#SAY
+_得到青云戒指(神圣).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈破荒项链 1
+#ACT
+take 生锈破荒项链 1
+take 金币 2000000
+give 破荒项链（神圣） 1
+break
+#SAY
+_得到破荒项链(神圣).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈魔云项链 1
+#ACT
+take 生锈魔云项链 1
+take 金币 2000000
+give 魔云项链（神圣） 1
+break
+#SAY
+_得到魔云项链(神圣).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈定心项链 1
+#ACT
+take 生锈定心项链 1
+take 金币 2000000
+give 定心项链（神圣） 1
+break
+#SAY
+_得到定心项链(神圣).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈金棱手镯 1
+#ACT
+take 生锈金棱手镯 1
+take 金币 2000000
+give 金棱手镯（神圣） 1
+break
+#SAY
+_得到金棱手镯(神圣).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈思过手镯 1
+#ACT
+take 生锈思过手镯 1
+take 金币 2000000
+give 思过手镯（神圣） 1
+break
+#SAY
+_得到思过手镯(神圣).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈世尊手镯 1
+#ACT
+take 生锈世尊手镯 1
+take 金币 2000000
+give 世尊手镯（神圣） 1
+break
+#SAY
+_得到世尊手镯(神圣).\ \
+_<关闭/@exit>
+
+#ELSESAY
+_你弄错了吧,这不是古代勇士们使用过的生锈饰品,得到它们之后再来找我吧.\ \
+_<关闭/@exit>
+
+[@Atom_Dark]
+#IF
+checkgold 2000000
+checkitem 生锈师承戒指 1
+#ACT
+take 生锈师承戒指 1
+take 金币 2000000
+give 师承戒指（暗黑） 1
+break
+#SAY
+_得到师承戒指(暗黑).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈龙马戒指 1
+#ACT
+take 生锈龙马戒指 1
+take 金币 2000000
+give 龙马戒指（暗黑） 1
+break
+#SAY
+_得到龙马戒指(暗黑).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈青云戒指 1
+#ACT
+take 生锈青云戒指 1
+take 金币 2000000
+give 青云戒指（暗黑） 1
+break
+#SAY
+_得到青云戒指(暗黑).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈破荒项链 1
+#ACT
+take 生锈破荒项链 1
+take 金币 2000000
+give 破荒项链（暗黑） 1
+break
+#SAY
+_得到破荒项链(暗黑).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈魔云项链 1
+#ACT
+take 生锈魔云项链 1
+take 金币 2000000
+give 魔云项链（暗黑） 1
+break
+#SAY
+_得到魔云项链(暗黑).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈定心项链 1
+#ACT
+take 生锈定心项链 1
+take 金币 2000000
+give 定心项链（暗黑） 1
+break
+#SAY
+_得到定心项链(暗黑).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈金棱手镯 1
+#ACT
+take 生锈金棱手镯 1
+take 金币 2000000
+give 金棱手镯（暗黑） 1
+break
+#SAY
+_得到金棱手镯(暗黑).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈思过手镯 1
+#ACT
+take 生锈思过手镯 1
+take 金币 2000000
+give 思过手镯（暗黑） 1
+break
+#SAY
+_得到思过手镯(暗黑).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈世尊手镯 1
+#ACT
+take 生锈世尊手镯 1
+take 金币 2000000
+give 世尊手镯（暗黑） 1
+break
+#SAY
+_得到世尊手镯(暗黑).\ \
+_<关闭/@exit>
+
+
+#ELSESAY
+_你弄错了吧,这不是古代勇士们使用过的生锈饰品,得到它们之后再来找我吧.\ \
+_<关闭/@exit>
+
+[@Atom_Phantom]
+#IF
+checkgold 2000000
+checkitem 生锈师承戒指 1
+#ACT
+take 生锈师承戒指 1
+take 金币 2000000
+give 师承戒指（幻影） 1
+break
+#SAY
+_得到师承戒指(幻影).\\
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈龙马戒指 1
+#ACT
+take 生锈龙马戒指 1
+take 金币 2000000
+give 龙马戒指（幻影） 1
+break
+#SAY
+_得到龙马戒指(幻影).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈青云戒指 1
+#ACT
+take 生锈青云戒指 1
+take 金币 2000000
+give 青云戒指（幻影） 1
+break
+#SAY
+_得到青云戒指(幻影).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈破荒项链 1
+#ACT
+take 生锈破荒项链 1
+take 金币 2000000
+give 破荒项链（幻影） 1
+break
+#SAY
+_得到破荒项链(幻影).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈魔云项链 1
+#ACT
+take 生锈魔云项链 1
+take 金币 2000000
+give 魔云项链（幻影） 1
+break
+#SAY
+_得到魔云项链(幻影).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈定心项链 1
+#ACT
+take 生锈定心项链 1
+take 金币 2000000
+give 定心项链（幻影） 1
+break
+#SAY
+_得到定心项链(幻影).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈金棱手镯 1
+#ACT
+take 生锈金棱手镯 1
+take 金币 2000000
+give 金棱手镯（幻影） 1
+break
+#SAY
+_得到金棱手镯(幻影).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈思过手镯 1
+#ACT
+take 生锈思过手镯 1
+take 金币 2000000
+give 思过手镯（幻影） 1
+break
+#SAY
+_得到思过手镯(幻影).\ \
+_<关闭/@exit>
+
+#IF
+checkgold 2000000
+checkitem 生锈世尊手镯 1
+#ACT
+take 生锈世尊手镯 1
+take 金币 2000000
+give 世尊手镯（幻影） 1
+break
+#SAY
+_得到世尊手镯(幻影).\ \
+_<关闭/@exit>
+#ELSESAY
+_你弄错了吧,这不是古代勇士们使用过的生锈饰品,得到它们之后再来找我吧.\ \
+_<关闭/@exit>
+
+[@Change_ItemAtom]
+#IF
+checkgold 4000000
+#ACT
+goto @Change_ItemAtom_1
+#ELSESAY
+_因为金币不够,所以不能帮你恢复饰品原貌.\ \
+_<关闭/@exit>
+
+[@Change_ItemAtom_1]
+#IF
+checkitem 师承戒指（火） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 师承戒指（冰） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 师承戒指（雷） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 师承戒指（风） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 师承戒指（神圣） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 师承戒指（暗黑） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 师承戒指（幻影） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 龙马戒指（火） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 龙马戒指（冰） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 龙马戒指（雷） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 龙马戒指（风） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 龙马戒指（神圣） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 龙马戒指（暗黑） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 龙马戒指（幻影） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 青云戒指（火） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 青云戒指（冰） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 青云戒指（雷） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 青云戒指（风） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 青云戒指（神圣） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 青云戒指（暗黑） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 青云戒指（幻影） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 破荒项链（火） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 破荒项链（冰） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 破荒项链（雷） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 破荒项链（风） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 破荒项链（神圣） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 破荒项链（暗黑） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 破荒项链（幻影） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 魔云项链（火） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 魔云项链（冰） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 魔云项链（雷） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 魔云项链（风） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 魔云项链（神圣） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 魔云项链（暗黑） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 魔云项链（幻影） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 定心项链（火） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 定心项链（冰） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 定心项链（雷） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 定心项链（风） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 定心项链（神圣） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 定心项链（暗黑） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 定心项链（幻影） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 金棱手镯（火） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 金棱手镯（冰） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 金棱手镯（雷） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 金棱手镯（风） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 金棱手镯（神圣） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 金棱手镯（暗黑） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 金棱手镯（幻影） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 思过手镯（火） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 思过手镯（冰） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 思过手镯（雷） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 思过手镯（风） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 思过手镯（神圣） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 思过手镯（暗黑） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 思过手镯（幻影） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 世尊手镯（火） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 世尊手镯（冰） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 世尊手镯（雷） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 世尊手镯（风） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 世尊手镯（神圣） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 世尊手镯（暗黑） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#IF
+checkitem 世尊手镯（幻影） 1
+#ACT
+goto @Change_ItemAtom_3
+break
+
+#ELSESAY
+_如果你想要得到元素饰品,首先要带古代勇士们使用过的生锈饰品来.像你这样空手而来,我就毫无办法了.\ \
+_<关闭/@exit>
+
+[@Change_ItemAtom_2]
+#IF
+#SAY
+_<更换为攻击元素(火)./@Change_ItemAtom_Fire>\
+_<更换为攻击元素(冰)./@Change_ItemAtom_Ice>\
+_<更换为攻击元素(雷)./@Change_ItemAtom_Light>\
+_<更换为攻击元素(风)./@Change_ItemAtom_Wind>\
+_<更换为攻击元素(神圣)./@Change_ItemAtom_Holy>\
+_<更换为攻击元素(暗黑)./@Change_ItemAtom_Dark>\
+_<更换为攻击元素(幻影)./@Change_ItemAtom_Phantom>\ \
+_<关闭/@exit>
+
+[@Change_ItemAtom_Fire]
+#IF
+checkitem 师承戒指（火） 1
+checkgold 4000000
+#ACT
+take 师承戒指（火） 1
+take 金币 4000000
+give 师承戒指（火） 1
+break
+#SAY
+_得到师承戒指(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（冰） 1
+checkgold 4000000
+#ACT
+take 师承戒指（冰） 1
+take 金币 4000000
+give 师承戒指（火） 1
+break
+#SAY
+_得到师承戒指(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（雷） 1
+checkgold 4000000
+#ACT
+take 师承戒指（雷） 1
+take 金币 4000000
+give 师承戒指（火） 1
+break
+#SAY
+_得到师承戒指(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（风） 1
+checkgold 4000000
+#ACT
+take 师承戒指（风） 1
+take 金币 4000000
+give 师承戒指（火） 1
+break
+#SAY
+_得到师承戒指(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（神圣） 1
+checkgold 4000000
+#ACT
+take 师承戒指（神圣） 1
+take 金币 4000000
+give 师承戒指（火） 1
+break
+#SAY
+_得到师承戒指(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（暗黑） 1
+checkgold 4000000
+#ACT
+take 师承戒指（暗黑） 1
+take 金币 4000000
+give 师承戒指（火） 1
+break
+#SAY
+_得到师承戒指(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（幻影） 1
+checkgold 4000000
+#ACT
+take 师承戒指（幻影） 1
+take 金币 4000000
+give 师承戒指（火） 1
+break
+#SAY
+_得到师承戒指(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（火） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（火） 1
+take 金币 4000000
+give 龙马戒指（火） 1
+break
+#SAY
+_得到龙马戒指(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（冰） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（冰） 1
+take 金币 4000000
+give 龙马戒指（火） 1
+break
+#SAY
+_得到龙马戒指(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（雷） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（雷） 1
+take 金币 4000000
+give 龙马戒指（火） 1
+break
+#SAY
+_得到龙马戒指(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（风） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（风） 1
+take 金币 4000000
+give 龙马戒指（火） 1
+break
+#SAY
+_得到龙马戒指(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（神圣） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（神圣） 1
+take 金币 4000000
+give 龙马戒指（火） 1
+break
+#SAY
+_得到龙马戒指(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（暗黑） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（暗黑） 1
+take 金币 4000000
+give 龙马戒指（火） 1
+break
+#SAY
+_得到龙马戒指(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（幻影） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（幻影） 1
+take 金币 4000000
+give 龙马戒指（火） 1
+break
+#SAY
+_得到龙马戒指(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（火） 1
+checkgold 4000000
+#ACT
+take 青云戒指（火） 1
+take 金币 4000000
+give 青云戒指（火） 1
+break
+#SAY
+_得到青云戒指(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（冰） 1
+checkgold 4000000
+#ACT
+take 青云戒指（冰） 1
+take 金币 4000000
+give 青云戒指（火） 1
+break
+#SAY
+_得到青云戒指(火).\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（雷） 1
+checkgold 4000000
+#ACT
+take 青云戒指（雷） 1
+take 金币 4000000
+give 青云戒指（火） 1
+break
+#SAY
+_得到青云戒指(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（风） 1
+checkgold 4000000
+#ACT
+take 青云戒指（风） 1
+take 金币 4000000
+give 青云戒指（火） 1
+break
+#SAY
+_得到青云戒指(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（神圣） 1
+checkgold 4000000
+#ACT
+take 青云戒指（神圣） 1
+take 金币 4000000
+give 青云戒指（火） 1
+break
+#SAY
+_得到青云戒指(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（暗黑） 1
+checkgold 4000000
+#ACT
+take 青云戒指（暗黑） 1
+take 金币 4000000
+give 青云戒指（火） 1
+break
+#SAY
+_得到青云戒指(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（幻影） 1
+checkgold 4000000
+#ACT
+take 青云戒指（幻影） 1
+take 金币 4000000
+give 青云戒指（火） 1
+break
+#SAY
+_得到青云戒指(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（火） 1
+checkgold 4000000
+#ACT
+take 破荒项链（火） 1
+take 金币 4000000
+give 破荒项链（火） 1
+break
+#SAY
+_得到破荒项链(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（冰） 1
+checkgold 4000000
+#ACT
+take 破荒项链（冰） 1
+take 金币 4000000
+give 破荒项链（火） 1
+break
+#SAY
+_得到破荒项链(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（雷） 1
+checkgold 4000000
+#ACT
+take 破荒项链（雷） 1
+take 金币 4000000
+give 破荒项链（火） 1
+break
+#SAY
+_得到破荒项链(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（风） 1
+checkgold 4000000
+#ACT
+take 破荒项链（风） 1
+take 金币 4000000
+give 破荒项链（火） 1
+break
+#SAY
+_得到破荒项链(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（神圣） 1
+checkgold 4000000
+#ACT
+take 破荒项链（神圣） 1
+take 金币 4000000
+give 破荒项链（火） 1
+break
+#SAY
+_得到破荒项链(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（暗黑） 1
+checkgold 4000000
+#ACT
+take 破荒项链（暗黑） 1
+take 金币 4000000
+give 破荒项链（火） 1
+break
+#SAY
+_得到破荒项链(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（幻影） 1
+checkgold 4000000
+#ACT
+take 破荒项链（幻影） 1
+take 金币 4000000
+give 破荒项链（火） 1
+break
+#SAY
+_得到破荒项链(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（火） 1
+checkgold 4000000
+#ACT
+take 魔云项链（火） 1
+take 金币 4000000
+give 魔云项链（火） 1
+break
+#SAY
+_得到魔云项链(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（冰） 1
+checkgold 4000000
+#ACT
+take 魔云项链（冰） 1
+take 金币 4000000
+give 魔云项链（火） 1
+break
+#SAY
+_得到魔云项链(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（雷） 1
+checkgold 4000000
+#ACT
+take 魔云项链（雷） 1
+take 金币 4000000
+give 魔云项链（火） 1
+break
+#SAY
+_得到魔云项链(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（风） 1
+checkgold 4000000
+#ACT
+take 魔云项链（风） 1
+take 金币 4000000
+give 魔云项链（火） 1
+break
+#SAY
+_得到魔云项链(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（神圣） 1
+checkgold 4000000
+#ACT
+take 魔云项链（神圣） 1
+take 金币 4000000
+give 魔云项链（火） 1
+break
+#SAY
+_得到魔云项链(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（暗黑） 1
+checkgold 4000000
+#ACT
+take 魔云项链（暗黑） 1
+take 金币 4000000
+give 魔云项链（火） 1
+break
+#SAY
+_得到魔云项链(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（幻影） 1
+checkgold 4000000
+#ACT
+take 魔云项链（幻影） 1
+take 金币 4000000
+give 魔云项链（火） 1
+break
+#SAY
+_得到魔云项链(火).\ \
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（火） 1
+checkgold 4000000
+#ACT
+take 定心项链（火） 1
+take 金币 4000000
+give 定心项链（火） 1
+break
+#SAY
+_得到定心项链(火).\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（冰） 1
+checkgold 4000000
+#ACT
+take 定心项链（冰） 1
+take 金币 4000000
+give 定心项链（火） 1
+break
+#SAY
+_得到定心项链(火).\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（雷） 1
+checkgold 4000000
+#ACT
+take 定心项链（雷） 1
+take 金币 4000000
+give 定心项链（火） 1
+break
+#SAY
+_得到定心项链(火).\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（风） 1
+checkgold 4000000
+#ACT
+take 定心项链（风） 1
+take 金币 4000000
+give 定心项链（火） 1
+break
+#SAY
+_得到定心项链(火).\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（神圣） 1
+checkgold 4000000
+#ACT
+take 定心项链（神圣） 1
+take 金币 4000000
+give 定心项链（火） 1
+break
+#SAY
+_得到定心项链(火).\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（暗黑） 1
+checkgold 4000000
+#ACT
+take 定心项链（暗黑） 1
+take 金币 4000000
+give 定心项链（火） 1
+break
+#SAY
+_得到定心项链(火).\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（幻影） 1
+checkgold 4000000
+#ACT
+take 定心项链（幻影） 1
+take 金币 4000000
+give 定心项链（火） 1
+break
+#SAY
+_得到定心项链(火).\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（火） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（火） 1
+take 金币 4000000
+give 金棱手镯（火） 1
+break
+#SAY
+_得到金棱手镯（火）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（冰） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（冰） 1
+take 金币 4000000
+give 金棱手镯（火） 1
+break
+#SAY
+_得到金棱手镯（火）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（雷） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（雷） 1
+take 金币 4000000
+give 金棱手镯（火） 1
+break
+#SAY
+_得到金棱手镯（火）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（风） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（风） 1
+take 金币 4000000
+give 金棱手镯（火） 1
+break
+#SAY
+_得到金棱手镯（火）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（神圣） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（神圣） 1
+take 金币 4000000
+give 金棱手镯（火） 1
+break
+#SAY
+_得到金棱手镯（火）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（暗黑） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（暗黑） 1
+take 金币 4000000
+give 金棱手镯（火） 1
+break
+#SAY
+_得到金棱手镯（火）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（幻影） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（幻影） 1
+take 金币 4000000
+give 金棱手镯（火） 1
+break
+#SAY
+_得到金棱手镯（火）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（火） 1
+checkgold 4000000
+#ACT
+take 思过手镯（火） 1
+take 金币 4000000
+give 思过手镯（火） 1
+break
+#SAY
+_得到思过手镯（火）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（冰） 1
+checkgold 4000000
+#ACT
+take 思过手镯（冰） 1
+take 金币 4000000
+give 思过手镯（火） 1
+break
+#SAY
+_得到思过手镯（火）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（雷） 1
+checkgold 4000000
+#ACT
+take 思过手镯（雷） 1
+take 金币 4000000
+give 思过手镯（火） 1
+break
+#SAY
+_得到思过手镯（火）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（风） 1
+checkgold 4000000
+#ACT
+take 思过手镯（风） 1
+take 金币 4000000
+give 思过手镯（火） 1
+break
+#SAY
+_得到思过手镯（火）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（神圣） 1
+checkgold 4000000
+#ACT
+take 思过手镯（神圣） 1
+take 金币 4000000
+give 思过手镯（火） 1
+break
+#SAY
+_得到思过手镯（火）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（暗黑） 1
+checkgold 4000000
+#ACT
+take 思过手镯（暗黑） 1
+take 金币 4000000
+give 思过手镯（火） 1
+break
+#SAY
+_得到思过手镯（火）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（幻影） 1
+checkgold 4000000
+#ACT
+take 思过手镯（幻影） 1
+take 金币 4000000
+give 思过手镯（火） 1
+break
+#SAY
+_得到思过手镯（火）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（火） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（火） 1
+take 金币 4000000
+give 世尊手镯（火） 1
+break
+#SAY
+_得到世尊手镯（火）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（冰） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（冰） 1
+take 金币 4000000
+give 世尊手镯（火） 1
+break
+#SAY
+_得到世尊手镯（火）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（雷） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（雷） 1
+take 金币 4000000
+give 世尊手镯（火） 1
+break
+#SAY
+_得到世尊手镯（火）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（风） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（风） 1
+take 金币 4000000
+give 世尊手镯（火） 1
+break
+#SAY
+_得到世尊手镯（火）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（神圣） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（神圣） 1
+take 金币 4000000
+give 世尊手镯（火） 1
+break
+#SAY
+_得到世尊手镯（火）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（暗黑） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（暗黑） 1
+take 金币 4000000
+give 世尊手镯（火） 1
+break
+#SAY
+_得到世尊手镯（火）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（幻影） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（幻影） 1
+take 金币 4000000
+give 世尊手镯（火） 1
+break
+#SAY
+_得到世尊手镯（火）.\ \
+_<关闭/@exit>
+
+#ELSESAY
+_如果你想要得到元素饰品,首先要带古代勇士们使用过的生锈饰品来.像你这样空手而来,我就毫无办法了.\ \
+_<关闭/@exit>
+
+[@Change_ItemAtom_Ice]
+#IF
+checkitem 师承戒指（火） 1
+checkgold 4000000
+#ACT
+take 师承戒指（火） 1
+take 金币 4000000
+give 师承戒指（冰） 1
+break
+#SAY
+_得到师承戒指（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（冰） 1
+checkgold 4000000
+#ACT
+take 师承戒指（冰） 1
+take 金币 4000000
+give 师承戒指（冰） 1
+break
+#SAY
+_得到师承戒指（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（雷） 1
+checkgold 4000000
+#ACT
+take 师承戒指（雷） 1
+take 金币 4000000
+give 师承戒指（冰） 1
+break
+#SAY
+_得到师承戒指（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（风） 1
+checkgold 4000000
+#ACT
+take 师承戒指（风） 1
+take 金币 4000000
+give 师承戒指（冰） 1
+break
+#SAY
+_得到师承戒指（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（神圣） 1
+checkgold 4000000
+#ACT
+take 师承戒指（神圣） 1
+take 金币 4000000
+give 师承戒指（冰） 1
+break
+#SAY
+_得到师承戒指（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（暗黑） 1
+checkgold 4000000
+#ACT
+take 师承戒指（暗黑） 1
+take 金币 4000000
+give 师承戒指（冰） 1
+break
+#SAY
+_得到师承戒指（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（幻影） 1
+checkgold 4000000
+#ACT
+take 师承戒指（幻影） 1
+take 金币 4000000
+give 师承戒指（冰） 1
+break
+#SAY
+_得到师承戒指（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（火） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（火） 1
+take 金币 4000000
+give 龙马戒指（冰） 1
+break
+#SAY
+_得到龙马戒指（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（冰） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（冰） 1
+take 金币 4000000
+give 龙马戒指（冰） 1
+break
+#SAY
+_得到龙马戒指（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（雷） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（雷） 1
+take 金币 4000000
+give 龙马戒指（冰） 1
+break
+#SAY
+_得到龙马戒指（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（风） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（风） 1
+take 金币 4000000
+give 龙马戒指（冰） 1
+break
+#SAY
+_得到龙马戒指（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（神圣） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（神圣） 1
+take 金币 4000000
+give 龙马戒指（冰） 1
+break
+#SAY
+_得到龙马戒指（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（暗黑） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（暗黑） 1
+take 金币 4000000
+give 龙马戒指（冰） 1
+break
+#SAY
+_得到龙马戒指（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（幻影） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（幻影） 1
+take 金币 4000000
+give 龙马戒指（冰） 1
+break
+#SAY
+_得到龙马戒指（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（火） 1
+checkgold 4000000
+#ACT
+take 青云戒指（火） 1
+take 金币 4000000
+give 青云戒指（冰） 1
+break
+#SAY
+_得到青云戒指（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（冰） 1
+checkgold 4000000
+#ACT
+take 青云戒指（冰） 1
+take 金币 4000000
+give 青云戒指（冰） 1
+break
+#SAY
+_得到青云戒指（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（雷） 1
+checkgold 4000000
+#ACT
+take 青云戒指（雷） 1
+take 金币 4000000
+give 青云戒指（冰） 1
+break
+#SAY
+_得到青云戒指（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（风） 1
+checkgold 4000000
+#ACT
+take 青云戒指（风） 1
+take 金币 4000000
+give 青云戒指（冰） 1
+break
+#SAY
+_得到青云戒指（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（神圣） 1
+checkgold 4000000
+#ACT
+take 青云戒指（神圣） 1
+take 金币 4000000
+give 青云戒指（冰） 1
+break
+#SAY
+_得到青云戒指（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（暗黑） 1
+checkgold 4000000
+#ACT
+take 青云戒指（暗黑） 1
+take 金币 4000000
+give 青云戒指（冰） 1
+break
+#SAY
+_得到青云戒指（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（幻影） 1
+checkgold 4000000
+#ACT
+take 青云戒指（幻影） 1
+take 金币 4000000
+give 青云戒指（冰） 1
+break
+#SAY
+_得到青云戒指（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（火） 1
+checkgold 4000000
+#ACT
+take 破荒项链（火） 1
+take 金币 4000000
+give 破荒项链（冰） 1
+break
+#SAY
+_得到破荒项链（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（冰） 1
+checkgold 4000000
+#ACT
+take 破荒项链（冰） 1
+take 金币 4000000
+give 破荒项链（冰） 1
+break
+#SAY
+_得到破荒项链（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（雷） 1
+checkgold 4000000
+#ACT
+take 破荒项链（雷） 1
+take 金币 4000000
+give 破荒项链（冰） 1
+break
+#SAY
+_得到破荒项链（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（风） 1
+checkgold 4000000
+#ACT
+take 破荒项链（风） 1
+take 金币 4000000
+give 破荒项链（冰） 1
+break
+#SAY
+_得到破荒项链（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（神圣） 1
+checkgold 4000000
+#ACT
+take 破荒项链（神圣） 1
+take 金币 4000000
+give 破荒项链（冰） 1
+break
+#SAY
+_得到破荒项链（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（暗黑） 1
+checkgold 4000000
+#ACT
+take 破荒项链（暗黑） 1
+take 金币 4000000
+give 破荒项链（冰） 1
+break
+#SAY
+_得到破荒项链（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（幻影） 1
+checkgold 4000000
+#ACT
+take 破荒项链（幻影） 1
+take 金币 4000000
+give 破荒项链（冰） 1
+break
+#SAY
+_得到破荒项链（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（火） 1
+checkgold 4000000
+#ACT
+take 魔云项链（火） 1
+take 金币 4000000
+give 魔云项链（冰） 1
+break
+#SAY
+_得到魔云项链（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（冰） 1
+checkgold 4000000
+#ACT
+take 魔云项链（冰） 1
+take 金币 4000000
+give 魔云项链（冰） 1
+break
+#SAY
+_得到魔云项链（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（雷） 1
+checkgold 4000000
+#ACT
+take 魔云项链（雷） 1
+take 金币 4000000
+give 魔云项链（冰） 1
+break
+#SAY
+_得到魔云项链（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（风） 1
+checkgold 4000000
+#ACT
+take 魔云项链（风） 1
+take 金币 4000000
+give 魔云项链（冰） 1
+break
+#SAY
+_得到魔云项链（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（神圣） 1
+checkgold 4000000
+#ACT
+take 魔云项链（神圣） 1
+take 金币 4000000
+give 魔云项链（冰） 1
+break
+#SAY
+_得到魔云项链（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（暗黑） 1
+checkgold 4000000
+#ACT
+take 魔云项链（暗黑） 1
+take 金币 4000000
+give 魔云项链（冰） 1
+break
+#SAY
+_得到魔云项链（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（幻影） 1
+checkgold 4000000
+#ACT
+take 魔云项链（幻影） 1
+take 金币 4000000
+give 魔云项链（冰） 1
+break
+#SAY
+_得到魔云项链（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（火） 1
+checkgold 4000000
+#ACT
+take 定心项链（火） 1
+take 金币 4000000
+give 定心项链（冰） 1
+break
+#SAY
+_得到定心项链（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（冰） 1
+checkgold 4000000
+#ACT
+take 定心项链（冰） 1
+take 金币 4000000
+give 定心项链（冰） 1
+break
+#SAY
+_得到定心项链（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（雷） 1
+checkgold 4000000
+#ACT
+take 定心项链（雷） 1
+take 金币 4000000
+give 定心项链（冰） 1
+break
+#SAY
+_得到定心项链（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（风） 1
+checkgold 4000000
+#ACT
+take 定心项链（风） 1
+take 金币 4000000
+give 定心项链（冰） 1
+break
+#SAY
+_得到定心项链（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（神圣） 1
+checkgold 4000000
+#ACT
+take 定心项链（神圣） 1
+take 金币 4000000
+give 定心项链（冰） 1
+break
+#SAY
+_得到定心项链（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（暗黑） 1
+checkgold 4000000
+#ACT
+take 定心项链（暗黑） 1
+take 金币 4000000
+give 定心项链（冰） 1
+break
+#SAY
+_得到定心项链（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（幻影） 1
+checkgold 4000000
+#ACT
+take 定心项链（幻影） 1
+take 金币 4000000
+give 定心项链（冰） 1
+break
+#SAY
+_得到定心项链（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（火） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（火） 1
+take 金币 4000000
+give 金棱手镯（冰） 1
+break
+#SAY
+_得到金棱手镯（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（冰） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（冰） 1
+take 金币 4000000
+give 金棱手镯（冰） 1
+break
+#SAY
+_得到金棱手镯（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（雷） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（雷） 1
+take 金币 4000000
+give 金棱手镯（冰） 1
+break
+#SAY
+_得到金棱手镯（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（风） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（风） 1
+take 金币 4000000
+give 金棱手镯（冰） 1
+break
+#SAY
+_得到金棱手镯（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（神圣） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（神圣） 1
+take 金币 4000000
+give 金棱手镯（冰） 1
+break
+#SAY
+_得到金棱手镯（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（暗黑） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（暗黑） 1
+take 金币 4000000
+give 金棱手镯（冰） 1
+break
+#SAY
+_得到金棱手镯（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（幻影） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（幻影） 1
+take 金币 4000000
+give 金棱手镯（冰） 1
+break
+#SAY
+_得到金棱手镯（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（火） 1
+checkgold 4000000
+#ACT
+take 思过手镯（火） 1
+take 金币 4000000
+give 思过手镯（冰） 1
+break
+#SAY
+_得到思过手镯（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（冰） 1
+checkgold 4000000
+#ACT
+take 思过手镯（冰） 1
+take 金币 4000000
+give 思过手镯（冰） 1
+break
+#SAY
+_得到思过手镯（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（雷） 1
+checkgold 4000000
+#ACT
+take 思过手镯（雷） 1
+take 金币 4000000
+give 思过手镯（冰） 1
+break
+#SAY
+_得到思过手镯（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（风） 1
+checkgold 4000000
+#ACT
+take 思过手镯（风） 1
+take 金币 4000000
+give 思过手镯（冰） 1
+break
+#SAY
+_得到思过手镯（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（神圣） 1
+checkgold 4000000
+#ACT
+take 思过手镯（神圣） 1
+take 金币 4000000
+give 思过手镯（冰） 1
+break
+#SAY
+_得到思过手镯（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（暗黑） 1
+checkgold 4000000
+#ACT
+take 思过手镯（暗黑） 1
+take 金币 4000000
+give 思过手镯（冰） 1
+break
+#SAY
+_得到思过手镯（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（幻影） 1
+checkgold 4000000
+#ACT
+take 思过手镯（幻影） 1
+take 金币 4000000
+give 思过手镯（冰） 1
+break
+#SAY
+_得到思过手镯（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（火） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（火） 1
+take 金币 4000000
+give 世尊手镯（冰） 1
+break
+#SAY
+_得到世尊手镯（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（冰） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（冰） 1
+take 金币 4000000
+give 世尊手镯（冰） 1
+break
+#SAY
+_得到世尊手镯（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（雷） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（雷） 1
+take 金币 4000000
+give 世尊手镯（冰） 1
+break
+#SAY
+_得到世尊手镯（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（风） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（风） 1
+take 金币 4000000
+give 世尊手镯（冰） 1
+break
+#SAY
+_得到世尊手镯（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（神圣） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（神圣） 1
+take 金币 4000000
+give 世尊手镯（冰） 1
+break
+#SAY
+_得到世尊手镯（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（暗黑） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（暗黑） 1
+take 金币 4000000
+give 世尊手镯（冰） 1
+break
+#SAY
+_得到世尊手镯（冰）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（幻影） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（幻影） 1
+take 金币 4000000
+give 世尊手镯（冰） 1
+break
+#SAY
+_得到世尊手镯（冰）.\ \
+_<关闭/@exit>
+
+
+#ELSESAY
+_如果你想要得到元素饰品,首先要带古代勇士们使用过的生锈饰品来.像你这样空手而来,我就毫无办法了.\ \
+_<关闭/@exit>
+
+[@Change_ItemAtom_Light]
+#IF
+checkitem 师承戒指（火） 1
+checkgold 4000000
+#ACT
+take 师承戒指（火） 1
+take 金币 4000000
+give 师承戒指（雷） 1
+break
+#SAY
+_得到师承戒指（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（冰） 1
+checkgold 4000000
+#ACT
+take 师承戒指（冰） 1
+take 金币 4000000
+give 师承戒指（雷） 1
+break
+#SAY
+_得到师承戒指（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（雷） 1
+checkgold 4000000
+#ACT
+take 师承戒指（雷） 1
+take 金币 4000000
+give 师承戒指（雷） 1
+break
+#SAY
+_得到师承戒指（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（风） 1
+checkgold 4000000
+#ACT
+take 师承戒指（风） 1
+take 金币 4000000
+give 师承戒指（雷） 1
+break
+#SAY
+_得到师承戒指（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（神圣） 1
+checkgold 4000000
+#ACT
+take 师承戒指（神圣） 1
+take 金币 4000000
+give 师承戒指（雷） 1
+break
+#SAY
+_得到师承戒指（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（暗黑） 1
+checkgold 4000000
+#ACT
+take 师承戒指（暗黑） 1
+take 金币 4000000
+give 师承戒指（雷） 1
+break
+#SAY
+_得到师承戒指（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（幻影） 1
+checkgold 4000000
+#ACT
+take 师承戒指（幻影） 1
+take 金币 4000000
+give 师承戒指（雷） 1
+break
+#SAY
+_得到师承戒指（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（火） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（火） 1
+take 金币 4000000
+give 龙马戒指（雷） 1
+break
+#SAY
+_得到龙马戒指（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（冰） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（冰） 1
+take 金币 4000000
+give 龙马戒指（雷） 1
+break
+#SAY
+_得到龙马戒指（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（雷） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（雷） 1
+take 金币 4000000
+give 龙马戒指（雷） 1
+break
+#SAY
+_得到龙马戒指（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（风） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（风） 1
+take 金币 4000000
+give 龙马戒指（雷） 1
+break
+#SAY
+_得到龙马戒指（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（神圣） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（神圣） 1
+take 金币 4000000
+give 龙马戒指（雷） 1
+break
+#SAY
+_得到龙马戒指（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（暗黑） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（暗黑） 1
+take 金币 4000000
+give 龙马戒指（雷） 1
+break
+#SAY
+_得到龙马戒指（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（幻影） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（幻影） 1
+take 金币 4000000
+give 龙马戒指（雷） 1
+break
+#SAY
+_得到龙马戒指（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（火） 1
+checkgold 4000000
+#ACT
+take 青云戒指（火） 1
+take 金币 4000000
+give 青云戒指（雷） 1
+break
+#SAY
+_得到青云戒指（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（冰） 1
+checkgold 4000000
+#ACT
+take 青云戒指（冰） 1
+take 金币 4000000
+give 青云戒指（雷） 1
+break
+#SAY
+_得到青云戒指（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（雷） 1
+checkgold 4000000
+#ACT
+take 青云戒指（雷） 1
+take 金币 4000000
+give 青云戒指（雷） 1
+break
+#SAY
+_得到青云戒指（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（风） 1
+checkgold 4000000
+#ACT
+take 青云戒指（风） 1
+take 金币 4000000
+give 青云戒指（雷） 1
+break
+#SAY
+_得到青云戒指（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（神圣） 1
+checkgold 4000000
+#ACT
+take 青云戒指（神圣） 1
+take 金币 4000000
+give 青云戒指（雷） 1
+break
+#SAY
+_得到青云戒指（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（暗黑） 1
+checkgold 4000000
+#ACT
+take 青云戒指（暗黑） 1
+take 金币 4000000
+give 青云戒指（雷） 1
+break
+#SAY
+_得到青云戒指（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（幻影） 1
+checkgold 4000000
+#ACT
+take 青云戒指（幻影） 1
+take 金币 4000000
+give 青云戒指（雷） 1
+break
+#SAY
+_得到青云戒指（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（火） 1
+checkgold 4000000
+#ACT
+take 破荒项链（火） 1
+take 金币 4000000
+give 破荒项链（雷） 1
+break
+#SAY
+_得到破荒项链（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（冰） 1
+checkgold 4000000
+#ACT
+take 破荒项链（冰） 1
+take 金币 4000000
+give 破荒项链（雷） 1
+break
+#SAY
+_得到破荒项链（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（雷） 1
+checkgold 4000000
+#ACT
+take 破荒项链（雷） 1
+take 金币 4000000
+give 破荒项链（雷） 1
+break
+#SAY
+_得到破荒项链（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（风） 1
+checkgold 4000000
+#ACT
+take 破荒项链（风） 1
+take 金币 4000000
+give 破荒项链（雷） 1
+break
+#SAY
+_得到破荒项链（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（神圣） 1
+checkgold 4000000
+#ACT
+take 破荒项链（神圣） 1
+take 金币 4000000
+give 破荒项链（雷） 1
+break
+#SAY
+_得到破荒项链（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（暗黑） 1
+checkgold 4000000
+#ACT
+take 破荒项链（暗黑） 1
+take 金币 4000000
+give 破荒项链（雷） 1
+break
+#SAY
+_得到破荒项链（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（幻影） 1
+checkgold 4000000
+#ACT
+take 破荒项链（幻影） 1
+take 金币 4000000
+give 破荒项链（雷） 1
+break
+#SAY
+_得到破荒项链（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（火） 1
+checkgold 4000000
+#ACT
+take 魔云项链（火） 1
+take 金币 4000000
+give 魔云项链（雷） 1
+break
+#SAY
+_得到魔云项链（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（冰） 1
+checkgold 4000000
+#ACT
+take 魔云项链（冰） 1
+take 金币 4000000
+give 魔云项链（雷） 1
+break
+#SAY
+_得到魔云项链（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（雷） 1
+checkgold 4000000
+#ACT
+take 魔云项链（雷） 1
+take 金币 4000000
+give 魔云项链（雷） 1
+break
+#SAY
+_得到魔云项链（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（风） 1
+checkgold 4000000
+#ACT
+take 魔云项链（风） 1
+take 金币 4000000
+give 魔云项链（雷） 1
+break
+#SAY
+_得到魔云项链（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（神圣） 1
+checkgold 4000000
+#ACT
+take 魔云项链（神圣） 1
+take 金币 4000000
+give 魔云项链（雷） 1
+break
+#SAY
+_得到魔云项链（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（暗黑） 1
+checkgold 4000000
+#ACT
+take 魔云项链（暗黑） 1
+take 金币 4000000
+give 魔云项链（雷） 1
+break
+#SAY
+_得到魔云项链（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（幻影） 1
+checkgold 4000000
+#ACT
+take 魔云项链（幻影） 1
+take 金币 4000000
+give 魔云项链（雷） 1
+break
+#SAY
+_得到魔云项链（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（火） 1
+checkgold 4000000
+#ACT
+take 定心项链（火） 1
+take 金币 4000000
+give 定心项链（雷） 1
+break
+#SAY
+_得到定心项链（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（冰） 1
+checkgold 4000000
+#ACT
+take 定心项链（冰） 1
+take 金币 4000000
+give 定心项链（雷） 1
+break
+#SAY
+_得到定心项链（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（雷） 1
+checkgold 4000000
+#ACT
+take 定心项链（雷） 1
+take 金币 4000000
+give 定心项链（雷） 1
+break
+#SAY
+_得到定心项链（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（风） 1
+checkgold 4000000
+#ACT
+take 定心项链（风） 1
+take 金币 4000000
+give 定心项链（雷） 1
+break
+#SAY
+_得到定心项链（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（神圣） 1
+checkgold 4000000
+#ACT
+take 定心项链（神圣） 1
+take 金币 4000000
+give 定心项链（雷） 1
+break
+#SAY
+_得到定心项链（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（暗黑） 1
+checkgold 4000000
+#ACT
+take 定心项链（暗黑） 1
+take 金币 4000000
+give 定心项链（雷） 1
+break
+#SAY
+_得到定心项链（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（幻影） 1
+checkgold 4000000
+#ACT
+take 定心项链（幻影） 1
+take 金币 4000000
+give 定心项链（雷） 1
+break
+#SAY
+_得到定心项链（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（火） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（火） 1
+take 金币 4000000
+give 金棱手镯（雷） 1
+break
+#SAY
+_得到金棱手镯（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（冰） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（冰） 1
+take 金币 4000000
+give 金棱手镯（雷） 1
+break
+#SAY
+_得到金棱手镯（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（雷） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（雷） 1
+take 金币 4000000
+give 金棱手镯（雷） 1
+break
+#SAY
+_得到金棱手镯（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（风） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（风） 1
+take 金币 4000000
+give 金棱手镯（雷） 1
+break
+#SAY
+_得到金棱手镯（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（神圣） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（神圣） 1
+take 金币 4000000
+give 金棱手镯（雷） 1
+break
+#SAY
+_得到金棱手镯（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（暗黑） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（暗黑） 1
+take 金币 4000000
+give 金棱手镯（雷） 1
+break
+#SAY
+_得到金棱手镯（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（幻影） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（幻影） 1
+take 金币 4000000
+give 金棱手镯（雷） 1
+break
+#SAY
+_得到金棱手镯（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（火） 1
+checkgold 4000000
+#ACT
+take 思过手镯（火） 1
+take 金币 4000000
+give 思过手镯（雷） 1
+break
+#SAY
+_得到思过手镯（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（冰） 1
+checkgold 4000000
+#ACT
+take 思过手镯（冰） 1
+take 金币 4000000
+give 思过手镯（雷） 1
+break
+#SAY
+_得到思过手镯（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（雷） 1
+checkgold 4000000
+#ACT
+take 思过手镯（雷） 1
+take 金币 4000000
+give 思过手镯（雷） 1
+break
+#SAY
+_得到思过手镯（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（风） 1
+checkgold 4000000
+#ACT
+take 思过手镯（风） 1
+take 金币 4000000
+give 思过手镯（雷） 1
+break
+#SAY
+_得到思过手镯（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（神圣） 1
+checkgold 4000000
+#ACT
+take 思过手镯（神圣） 1
+take 金币 4000000
+give 思过手镯（雷） 1
+break
+#SAY
+_得到思过手镯（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（暗黑） 1
+checkgold 4000000
+#ACT
+take 思过手镯（暗黑） 1
+take 金币 4000000
+give 思过手镯（雷） 1
+break
+#SAY
+_得到思过手镯（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（幻影） 1
+checkgold 4000000
+#ACT
+take 思过手镯（幻影） 1
+take 金币 4000000
+give 思过手镯（雷） 1
+break
+#SAY
+_得到思过手镯（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（火） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（火） 1
+take 金币 4000000
+give 世尊手镯（雷） 1
+break
+#SAY
+_得到世尊手镯（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（冰） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（冰） 1
+take 金币 4000000
+give 世尊手镯（雷） 1
+break
+#SAY
+_得到世尊手镯（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（雷） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（雷） 1
+take 金币 4000000
+give 世尊手镯（雷） 1
+break
+#SAY
+_得到世尊手镯（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（风） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（风） 1
+take 金币 4000000
+give 世尊手镯（雷） 1
+break
+#SAY
+_得到世尊手镯（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（神圣） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（神圣） 1
+take 金币 4000000
+give 世尊手镯（雷） 1
+break
+#SAY
+_得到世尊手镯（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（暗黑） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（暗黑） 1
+take 金币 4000000
+give 世尊手镯（雷） 1
+break
+#SAY
+_得到世尊手镯（雷）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（幻影） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（幻影） 1
+take 金币 4000000
+give 世尊手镯（雷） 1
+break
+#SAY
+_得到世尊手镯（雷）.\ \
+_<关闭/@exit>
+#ELSESAY
+_如果你想要得到元素饰品,首先要带古代勇士们使用过的生锈饰品来.像你这样空手而来,我就毫无办法了.\ \
+_<关闭/@exit>
+
+[@Change_ItemAtom_Wind]
+#IF
+checkitem 师承戒指（火） 1
+checkgold 4000000
+#ACT
+take 师承戒指（火） 1
+take 金币 4000000
+give 师承戒指（风） 1
+break
+#SAY
+_得到师承戒指（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（冰） 1
+checkgold 4000000
+#ACT
+take 师承戒指（冰） 1
+take 金币 4000000
+give 师承戒指（风） 1
+break
+#SAY
+_得到师承戒指（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（雷） 1
+checkgold 4000000
+#ACT
+take 师承戒指（雷） 1
+take 金币 4000000
+give 师承戒指（风） 1
+break
+#SAY
+_得到师承戒指（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（风） 1
+checkgold 4000000
+#ACT
+take 师承戒指（风） 1
+take 金币 4000000
+give 师承戒指（风） 1
+break
+#SAY
+_得到师承戒指（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（神圣） 1
+checkgold 4000000
+#ACT
+take 师承戒指（神圣） 1
+take 金币 4000000
+give 师承戒指（风） 1
+break
+#SAY
+_得到师承戒指（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（暗黑） 1
+checkgold 4000000
+#ACT
+take 师承戒指（暗黑） 1
+take 金币 4000000
+give 师承戒指（风） 1
+break
+#SAY
+_得到师承戒指（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（幻影） 1
+checkgold 4000000
+#ACT
+take 师承戒指（幻影） 1
+take 金币 4000000
+give 师承戒指（风） 1
+break
+#SAY
+_得到师承戒指（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（火） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（火） 1
+take 金币 4000000
+give 龙马戒指（风） 1
+break
+#SAY
+_得到龙马戒指（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（冰） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（冰） 1
+take 金币 4000000
+give 龙马戒指（风） 1
+break
+#SAY
+_得到龙马戒指（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（雷） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（雷） 1
+take 金币 4000000
+give 龙马戒指（风） 1
+break
+#SAY
+_得到龙马戒指（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（风） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（风） 1
+take 金币 4000000
+give 龙马戒指（风） 1
+break
+#SAY
+_得到龙马戒指（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（神圣） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（神圣） 1
+take 金币 4000000
+give 龙马戒指（风） 1
+break
+#SAY
+_得到龙马戒指（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（暗黑） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（暗黑） 1
+take 金币 4000000
+give 龙马戒指（风） 1
+break
+#SAY
+_得到龙马戒指（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（幻影） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（幻影） 1
+take 金币 4000000
+give 龙马戒指（风） 1
+break
+#SAY
+_得到龙马戒指（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（火） 1
+checkgold 4000000
+#ACT
+take 青云戒指（火） 1
+take 金币 4000000
+give 青云戒指（风） 1
+break
+#SAY
+_得到青云戒指（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（冰） 1
+checkgold 4000000
+#ACT
+take 青云戒指（冰） 1
+take 金币 4000000
+give 青云戒指（风） 1
+break
+#SAY
+_得到青云戒指（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（雷） 1
+checkgold 4000000
+#ACT
+take 青云戒指（雷） 1
+take 金币 4000000
+give 青云戒指（风） 1
+break
+#SAY
+_得到青云戒指（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（风） 1
+checkgold 4000000
+#ACT
+take 青云戒指（风） 1
+take 金币 4000000
+give 青云戒指（风） 1
+break
+#SAY
+_得到青云戒指（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（神圣） 1
+checkgold 4000000
+#ACT
+take 青云戒指（神圣） 1
+take 金币 4000000
+give 青云戒指（风） 1
+break
+#SAY
+_得到青云戒指（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（暗黑） 1
+checkgold 4000000
+#ACT
+take 青云戒指（暗黑） 1
+take 金币 4000000
+give 青云戒指（风） 1
+break
+#SAY
+_得到青云戒指（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（幻影） 1
+checkgold 4000000
+#ACT
+take 青云戒指（幻影） 1
+take 金币 4000000
+give 青云戒指（风） 1
+break
+#SAY
+_得到青云戒指（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（火） 1
+checkgold 4000000
+#ACT
+take 破荒项链（火） 1
+take 金币 4000000
+give 破荒项链（风） 1
+break
+#SAY
+_得到破荒项链（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（冰） 1
+checkgold 4000000
+#ACT
+take 破荒项链（冰） 1
+take 金币 4000000
+give 破荒项链（风） 1
+break
+#SAY
+_得到破荒项链（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（雷） 1
+checkgold 4000000
+#ACT
+take 破荒项链（雷） 1
+take 金币 4000000
+give 破荒项链（风） 1
+break
+#SAY
+_得到破荒项链（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（风） 1
+checkgold 4000000
+#ACT
+take 破荒项链（风） 1
+take 金币 4000000
+give 破荒项链（风） 1
+break
+#SAY
+_得到破荒项链（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（神圣） 1
+checkgold 4000000
+#ACT
+take 破荒项链（神圣） 1
+take 金币 4000000
+give 破荒项链（风） 1
+break
+#SAY
+_得到破荒项链（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（暗黑） 1
+checkgold 4000000
+#ACT
+take 破荒项链（暗黑） 1
+take 金币 4000000
+give 破荒项链（风） 1
+break
+#SAY
+_得到破荒项链（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（幻影） 1
+checkgold 4000000
+#ACT
+take 破荒项链（幻影） 1
+take 金币 4000000
+give 破荒项链（风） 1
+break
+#SAY
+_得到破荒项链（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（火） 1
+checkgold 4000000
+#ACT
+take 魔云项链（火） 1
+take 金币 4000000
+give 魔云项链（风） 1
+break
+#SAY
+_得到魔云项链（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（冰） 1
+checkgold 4000000
+#ACT
+take 魔云项链（冰） 1
+take 金币 4000000
+give 魔云项链（风） 1
+break
+#SAY
+_得到魔云项链（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（雷） 1
+checkgold 4000000
+#ACT
+take 魔云项链（雷） 1
+take 金币 4000000
+give 魔云项链（风） 1
+break
+#SAY
+_得到魔云项链（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（风） 1
+checkgold 4000000
+#ACT
+take 魔云项链（风） 1
+take 金币 4000000
+give 魔云项链（风） 1
+break
+#SAY
+_得到魔云项链（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（神圣） 1
+checkgold 4000000
+#ACT
+take 魔云项链（神圣） 1
+take 金币 4000000
+give 魔云项链（风） 1
+break
+#SAY
+_得到魔云项链（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（暗黑） 1
+checkgold 4000000
+#ACT
+take 魔云项链（暗黑） 1
+take 金币 4000000
+give 魔云项链（风） 1
+break
+#SAY
+_得到魔云项链（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（幻影） 1
+checkgold 4000000
+#ACT
+take 魔云项链（幻影） 1
+take 金币 4000000
+give 魔云项链（风） 1
+break
+#SAY
+_得到魔云项链（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（火） 1
+checkgold 4000000
+#ACT
+take 定心项链（火） 1
+take 金币 4000000
+give 定心项链（风） 1
+break
+#SAY
+_得到定心项链（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（冰） 1
+checkgold 4000000
+#ACT
+take 定心项链（冰） 1
+take 金币 4000000
+give 定心项链（风） 1
+break
+#SAY
+_得到定心项链（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（雷） 1
+checkgold 4000000
+#ACT
+take 定心项链（雷） 1
+take 金币 4000000
+give 定心项链（风） 1
+break
+#SAY
+_得到定心项链（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（风） 1
+checkgold 4000000
+#ACT
+take 定心项链（风） 1
+take 金币 4000000
+give 定心项链（风） 1
+break
+#SAY
+_得到定心项链（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（神圣） 1
+checkgold 4000000
+#ACT
+take 定心项链（神圣） 1
+take 金币 4000000
+give 定心项链（风） 1
+break
+#SAY
+_得到定心项链（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（暗黑） 1
+checkgold 4000000
+#ACT
+take 定心项链（暗黑） 1
+take 金币 4000000
+give 定心项链（风） 1
+break
+#SAY
+_得到定心项链（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（幻影） 1
+checkgold 4000000
+#ACT
+take 定心项链（幻影） 1
+take 金币 4000000
+give 定心项链（风） 1
+break
+#SAY
+_得到定心项链（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（火） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（火） 1
+take 金币 4000000
+give 金棱手镯（风） 1
+break
+#SAY
+_得到金棱手镯（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（冰） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（冰） 1
+take 金币 4000000
+give 金棱手镯（风） 1
+break
+#SAY
+_得到金棱手镯（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（雷） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（雷） 1
+take 金币 4000000
+give 金棱手镯（风） 1
+break
+#SAY
+_得到金棱手镯（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（风） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（风） 1
+take 金币 4000000
+give 金棱手镯（风） 1
+break
+#SAY
+_得到金棱手镯（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（神圣） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（神圣） 1
+take 金币 4000000
+give 金棱手镯（风） 1
+break
+#SAY
+_得到金棱手镯（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（暗黑） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（暗黑） 1
+take 金币 4000000
+give 金棱手镯（风） 1
+break
+#SAY
+_得到金棱手镯（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（幻影） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（幻影） 1
+take 金币 4000000
+give 金棱手镯（风） 1
+break
+#SAY
+_得到金棱手镯（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（火） 1
+checkgold 4000000
+#ACT
+take 思过手镯（火） 1
+take 金币 4000000
+give 思过手镯（风） 1
+break
+#SAY
+_得到思过手镯（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（冰） 1
+checkgold 4000000
+#ACT
+take 思过手镯（冰） 1
+take 金币 4000000
+give 思过手镯（风） 1
+break
+#SAY
+_得到思过手镯（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（雷） 1
+checkgold 4000000
+#ACT
+take 思过手镯（雷） 1
+take 金币 4000000
+give 思过手镯（风） 1
+break
+#SAY
+_得到思过手镯（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（风） 1
+checkgold 4000000
+#ACT
+take 思过手镯（风） 1
+take 金币 4000000
+give 思过手镯（风） 1
+break
+#SAY
+_得到思过手镯（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（神圣） 1
+checkgold 4000000
+#ACT
+take 思过手镯（神圣） 1
+take 金币 4000000
+give 思过手镯（风） 1
+break
+#SAY
+_得到思过手镯（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（暗黑） 1
+checkgold 4000000
+#ACT
+take 思过手镯（暗黑） 1
+take 金币 4000000
+give 思过手镯（风） 1
+break
+#SAY
+_得到思过手镯（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（幻影） 1
+checkgold 4000000
+#ACT
+take 思过手镯（幻影） 1
+take 金币 4000000
+give 思过手镯（风） 1
+break
+#SAY
+_得到思过手镯（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（火） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（火） 1
+take 金币 4000000
+give 世尊手镯（风） 1
+break
+#SAY
+_得到世尊手镯（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（冰） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（冰） 1
+take 金币 4000000
+give 世尊手镯（风） 1
+break
+#SAY
+_得到世尊手镯（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（雷） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（雷） 1
+take 金币 4000000
+give 世尊手镯（风） 1
+break
+#SAY
+_得到世尊手镯（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（风） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（风） 1
+take 金币 4000000
+give 世尊手镯（风） 1
+break
+#SAY
+_得到世尊手镯（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（神圣） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（神圣） 1
+take 金币 4000000
+give 世尊手镯（风） 1
+break
+#SAY
+_得到世尊手镯（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（暗黑） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（暗黑） 1
+take 金币 4000000
+give 世尊手镯（风） 1
+break
+#SAY
+_得到世尊手镯（风）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（幻影） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（幻影） 1
+take 金币 4000000
+give 世尊手镯（风） 1
+break
+#SAY
+_得到世尊手镯（风）.\ \
+_<关闭/@exit>
+#ELSESAY
+_如果你想要得到元素饰品,首先要带古代勇士们使用过的生锈饰品来.像你这样空手而来,我就毫无办法了.\ \
+_<关闭/@exit>
+
+[@Change_ItemAtom_Holy]
+#IF
+checkitem 师承戒指（火） 1
+checkgold 4000000
+#ACT
+take 师承戒指（火） 1
+take 金币 4000000
+give 师承戒指（神圣） 1
+break
+#SAY
+_得到师承戒指（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（冰） 1
+checkgold 4000000
+#ACT
+take 师承戒指（冰） 1
+take 金币 4000000
+give 师承戒指（神圣） 1
+break
+#SAY
+_得到师承戒指（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（雷） 1
+checkgold 4000000
+#ACT
+take 师承戒指（雷） 1
+take 金币 4000000
+give 师承戒指（神圣） 1
+break
+#SAY
+_得到师承戒指（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（风） 1
+checkgold 4000000
+#ACT
+take 师承戒指（风） 1
+take 金币 4000000
+give 师承戒指（神圣） 1
+break
+#SAY
+_得到师承戒指（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（神圣） 1
+checkgold 4000000
+#ACT
+take 师承戒指（神圣） 1
+take 金币 4000000
+give 师承戒指（神圣） 1
+break
+#SAY
+_得到师承戒指（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（暗黑） 1
+checkgold 4000000
+#ACT
+take 师承戒指（暗黑） 1
+take 金币 4000000
+give 师承戒指（神圣） 1
+break
+#SAY
+_得到师承戒指（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（幻影） 1
+checkgold 4000000
+#ACT
+take 师承戒指（幻影） 1
+take 金币 4000000
+give 师承戒指（神圣） 1
+break
+#SAY
+_得到师承戒指（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（火） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（火） 1
+take 金币 4000000
+give 龙马戒指（神圣） 1
+break
+#SAY
+_得到龙马戒指（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（冰） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（冰） 1
+take 金币 4000000
+give 龙马戒指（神圣） 1
+break
+#SAY
+_得到龙马戒指（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（雷） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（雷） 1
+take 金币 4000000
+give 龙马戒指（神圣） 1
+break
+#SAY
+_得到龙马戒指（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（风） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（风） 1
+take 金币 4000000
+give 龙马戒指（神圣） 1
+break
+#SAY
+_得到龙马戒指（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（神圣） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（神圣） 1
+take 金币 4000000
+give 龙马戒指（神圣） 1
+break
+#SAY
+_得到龙马戒指（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（暗黑） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（暗黑） 1
+take 金币 4000000
+give 龙马戒指（神圣） 1
+break
+#SAY
+_得到龙马戒指（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（幻影） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（幻影） 1
+take 金币 4000000
+give 龙马戒指（神圣） 1
+break
+#SAY
+_得到龙马戒指（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（火） 1
+checkgold 4000000
+#ACT
+take 青云戒指（火） 1
+take 金币 4000000
+give 青云戒指（神圣） 1
+break
+#SAY
+_得到青云戒指（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（冰） 1
+checkgold 4000000
+#ACT
+take 青云戒指（冰） 1
+take 金币 4000000
+give 青云戒指（神圣） 1
+break
+#SAY
+_得到青云戒指（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（雷） 1
+checkgold 4000000
+#ACT
+take 青云戒指（雷） 1
+take 金币 4000000
+give 青云戒指（神圣） 1
+break
+#SAY
+_得到青云戒指（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（风） 1
+checkgold 4000000
+#ACT
+take 青云戒指（风） 1
+take 金币 4000000
+give 青云戒指（神圣） 1
+break
+#SAY
+_得到青云戒指（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（神圣） 1
+checkgold 4000000
+#ACT
+take 青云戒指（神圣） 1
+take 金币 4000000
+give 青云戒指（神圣） 1
+break
+#SAY
+_得到青云戒指（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（暗黑） 1
+checkgold 4000000
+#ACT
+take 青云戒指（暗黑） 1
+take 金币 4000000
+give 青云戒指（神圣） 1
+break
+#SAY
+_得到青云戒指（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（幻影） 1
+checkgold 4000000
+#ACT
+take 青云戒指（幻影） 1
+take 金币 4000000
+give 青云戒指（神圣） 1
+break
+#SAY
+_得到青云戒指（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（火） 1
+checkgold 4000000
+#ACT
+take 破荒项链（火） 1
+take 金币 4000000
+give 破荒项链（神圣） 1
+break
+#SAY
+_得到破荒项链（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（冰） 1
+checkgold 4000000
+#ACT
+take 破荒项链（冰） 1
+take 金币 4000000
+give 破荒项链（神圣） 1
+break
+#SAY
+_得到破荒项链（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（雷） 1
+checkgold 4000000
+#ACT
+take 破荒项链（雷） 1
+take 金币 4000000
+give 破荒项链（神圣） 1
+break
+#SAY
+_得到破荒项链（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（风） 1
+checkgold 4000000
+#ACT
+take 破荒项链（风） 1
+take 金币 4000000
+give 破荒项链（神圣） 1
+break
+#SAY
+_得到破荒项链（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（神圣） 1
+checkgold 4000000
+#ACT
+take 破荒项链（神圣） 1
+take 金币 4000000
+give 破荒项链（神圣） 1
+break
+#SAY
+_得到破荒项链（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（暗黑） 1
+checkgold 4000000
+#ACT
+take 破荒项链（暗黑） 1
+take 金币 4000000
+give 破荒项链（神圣） 1
+break
+#SAY
+_得到破荒项链（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（幻影） 1
+checkgold 4000000
+#ACT
+take 破荒项链（幻影） 1
+take 金币 4000000
+give 破荒项链（神圣） 1
+break
+#SAY
+_得到破荒项链（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（火） 1
+checkgold 4000000
+#ACT
+take 魔云项链（火） 1
+take 金币 4000000
+give 魔云项链（神圣） 1
+break
+#SAY
+_得到魔云项链（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（冰） 1
+checkgold 4000000
+#ACT
+take 魔云项链（冰） 1
+take 金币 4000000
+give 魔云项链（神圣） 1
+break
+#SAY
+_得到魔云项链（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（雷） 1
+checkgold 4000000
+#ACT
+take 魔云项链（雷） 1
+take 金币 4000000
+give 魔云项链（神圣） 1
+break
+#SAY
+_得到魔云项链（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（风） 1
+checkgold 4000000
+#ACT
+take 魔云项链（风） 1
+take 金币 4000000
+give 魔云项链（神圣） 1
+break
+#SAY
+_得到魔云项链（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（神圣） 1
+checkgold 4000000
+#ACT
+take 魔云项链（神圣） 1
+take 金币 4000000
+give 魔云项链（神圣） 1
+break
+#SAY
+_得到魔云项链（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（暗黑） 1
+checkgold 4000000
+#ACT
+take 魔云项链（暗黑） 1
+take 金币 4000000
+give 魔云项链（神圣） 1
+break
+#SAY
+_得到魔云项链（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（幻影） 1
+checkgold 4000000
+#ACT
+take 魔云项链（幻影） 1
+take 金币 4000000
+give 魔云项链（神圣） 1
+break
+#SAY
+_得到魔云项链（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（火） 1
+checkgold 4000000
+#ACT
+take 定心项链（火） 1
+take 金币 4000000
+give 定心项链（神圣） 1
+break
+#SAY
+_得到定心项链（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（冰） 1
+checkgold 4000000
+#ACT
+take 定心项链（冰） 1
+take 金币 4000000
+give 定心项链（神圣） 1
+break
+#SAY
+_得到定心项链（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（雷） 1
+checkgold 4000000
+#ACT
+take 定心项链（雷） 1
+take 金币 4000000
+give 定心项链（神圣） 1
+break
+#SAY
+_得到定心项链（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（风） 1
+checkgold 4000000
+#ACT
+take 定心项链（风） 1
+take 金币 4000000
+give 定心项链（神圣） 1
+break
+#SAY
+_得到定心项链（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（神圣） 1
+checkgold 4000000
+#ACT
+take 定心项链（神圣） 1
+take 金币 4000000
+give 定心项链（神圣） 1
+break
+#SAY
+_得到定心项链（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（暗黑） 1
+checkgold 4000000
+#ACT
+take 定心项链（暗黑） 1
+take 金币 4000000
+give 定心项链（神圣） 1
+break
+#SAY
+_得到定心项链（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（幻影） 1
+checkgold 4000000
+#ACT
+take 定心项链（幻影） 1
+take 金币 4000000
+give 定心项链（神圣） 1
+break
+#SAY
+_得到定心项链（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（火） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（火） 1
+take 金币 4000000
+give 金棱手镯（神圣） 1
+break
+#SAY
+_得到金棱手镯（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（冰） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（冰） 1
+take 金币 4000000
+give 金棱手镯（神圣） 1
+break
+#SAY
+_得到金棱手镯（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（雷） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（雷） 1
+take 金币 4000000
+give 金棱手镯（神圣） 1
+break
+#SAY
+_得到金棱手镯（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（风） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（风） 1
+take 金币 4000000
+give 金棱手镯（神圣） 1
+break
+#SAY
+_得到金棱手镯（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（神圣） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（神圣） 1
+take 金币 4000000
+give 金棱手镯（神圣） 1
+break
+#SAY
+_得到金棱手镯（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（暗黑） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（暗黑） 1
+take 金币 4000000
+give 金棱手镯（神圣） 1
+break
+#SAY
+_得到金棱手镯（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（幻影） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（幻影） 1
+take 金币 4000000
+give 金棱手镯（神圣） 1
+break
+#SAY
+_得到金棱手镯（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（火） 1
+checkgold 4000000
+#ACT
+take 思过手镯（火） 1
+take 金币 4000000
+give 思过手镯（神圣） 1
+break
+#SAY
+_得到思过手镯（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（冰） 1
+checkgold 4000000
+#ACT
+take 思过手镯（冰） 1
+take 金币 4000000
+give 思过手镯（神圣） 1
+break
+#SAY
+_得到思过手镯（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（雷） 1
+checkgold 4000000
+#ACT
+take 思过手镯（雷） 1
+take 金币 4000000
+give 思过手镯（神圣） 1
+break
+#SAY
+_得到思过手镯（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（风） 1
+checkgold 4000000
+#ACT
+take 思过手镯（风） 1
+take 金币 4000000
+give 思过手镯（神圣） 1
+break
+#SAY
+_得到思过手镯（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（神圣） 1
+checkgold 4000000
+#ACT
+take 思过手镯（神圣） 1
+take 金币 4000000
+give 思过手镯（神圣） 1
+break
+#SAY
+_得到思过手镯（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（暗黑） 1
+checkgold 4000000
+#ACT
+take 思过手镯（暗黑） 1
+take 金币 4000000
+give 思过手镯（神圣） 1
+break
+#SAY
+_得到思过手镯（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（幻影） 1
+checkgold 4000000
+#ACT
+take 思过手镯（幻影） 1
+take 金币 4000000
+give 思过手镯（神圣） 1
+break
+#SAY
+_得到思过手镯（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（火） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（火） 1
+take 金币 4000000
+give 世尊手镯（神圣） 1
+break
+#SAY
+_得到世尊手镯（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（冰） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（冰） 1
+take 金币 4000000
+give 世尊手镯（神圣） 1
+break
+#SAY
+_得到世尊手镯（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（雷） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（雷） 1
+take 金币 4000000
+give 世尊手镯（神圣） 1
+break
+#SAY
+_得到世尊手镯（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（风） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（风） 1
+take 金币 4000000
+give 世尊手镯（神圣） 1
+break
+#SAY
+_得到世尊手镯（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（神圣） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（神圣） 1
+take 金币 4000000
+give 世尊手镯（神圣） 1
+break
+#SAY
+_得到世尊手镯（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（暗黑） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（暗黑） 1
+take 金币 4000000
+give 世尊手镯（神圣） 1
+break
+#SAY
+_得到世尊手镯（神圣）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（幻影） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（幻影） 1
+take 金币 4000000
+give 世尊手镯（神圣） 1
+break
+#SAY
+_得到世尊手镯（神圣）.\ \
+_<关闭/@exit>
+#ELSESAY
+_如果你想要得到元素饰品,首先要带古代勇士们使用过的生锈饰品来.像你这样空手而来,我就毫无办法了.\ \
+_<关闭/@exit>
+
+[@Change_ItemAtom_Dark]
+#IF
+checkitem 师承戒指（火） 1
+checkgold 4000000
+#ACT
+take 师承戒指（火） 1
+take 金币 4000000
+give 师承戒指（暗黑） 1
+break
+#SAY
+_得到师承戒指（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（冰） 1
+checkgold 4000000
+#ACT
+take 师承戒指（冰） 1
+take 金币 4000000
+give 师承戒指（暗黑） 1
+break
+#SAY
+_得到师承戒指（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（雷） 1
+checkgold 4000000
+#ACT
+take 师承戒指（雷） 1
+take 金币 4000000
+give 师承戒指（暗黑） 1
+break
+#SAY
+_得到师承戒指（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（风） 1
+checkgold 4000000
+#ACT
+take 师承戒指（风） 1
+take 金币 4000000
+give 师承戒指（暗黑） 1
+break
+#SAY
+_得到师承戒指（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（神圣） 1
+checkgold 4000000
+#ACT
+take 师承戒指（神圣） 1
+take 金币 4000000
+give 师承戒指（暗黑） 1
+break
+#SAY
+_得到师承戒指（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（暗黑） 1
+checkgold 4000000
+#ACT
+take 师承戒指（暗黑） 1
+take 金币 4000000
+give 师承戒指（暗黑） 1
+break
+#SAY
+_得到师承戒指（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（幻影） 1
+checkgold 4000000
+#ACT
+take 师承戒指（幻影） 1
+take 金币 4000000
+give 师承戒指（暗黑） 1
+break
+#SAY
+_得到师承戒指（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（火） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（火） 1
+take 金币 4000000
+give 龙马戒指（暗黑） 1
+break
+#SAY
+_得到龙马戒指（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（冰） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（冰） 1
+take 金币 4000000
+give 龙马戒指（暗黑） 1
+break
+#SAY
+_得到龙马戒指（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（雷） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（雷） 1
+take 金币 4000000
+give 龙马戒指（暗黑） 1
+break
+#SAY
+_得到龙马戒指（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（风） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（风） 1
+take 金币 4000000
+give 龙马戒指（暗黑） 1
+break
+#SAY
+_得到龙马戒指（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（神圣） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（神圣） 1
+take 金币 4000000
+give 龙马戒指（暗黑） 1
+break
+#SAY
+_得到龙马戒指（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（暗黑） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（暗黑） 1
+take 金币 4000000
+give 龙马戒指（暗黑） 1
+break
+#SAY
+_得到龙马戒指（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（幻影） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（幻影） 1
+take 金币 4000000
+give 龙马戒指（暗黑） 1
+break
+#SAY
+_得到龙马戒指（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（火） 1
+checkgold 4000000
+#ACT
+take 青云戒指（火） 1
+take 金币 4000000
+give 青云戒指（暗黑） 1
+break
+#SAY
+_得到青云戒指（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（冰） 1
+checkgold 4000000
+#ACT
+take 青云戒指（冰） 1
+take 金币 4000000
+give 青云戒指（暗黑） 1
+break
+#SAY
+_得到青云戒指（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（雷） 1
+checkgold 4000000
+#ACT
+take 青云戒指（雷） 1
+take 金币 4000000
+give 青云戒指（暗黑） 1
+break
+#SAY
+_得到青云戒指（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（风） 1
+checkgold 4000000
+#ACT
+take 青云戒指（风） 1
+take 金币 4000000
+give 青云戒指（暗黑） 1
+break
+#SAY
+_得到青云戒指（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（神圣） 1
+checkgold 4000000
+#ACT
+take 青云戒指（神圣） 1
+take 金币 4000000
+give 青云戒指（暗黑） 1
+break
+#SAY
+_得到青云戒指（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（暗黑） 1
+checkgold 4000000
+#ACT
+take 青云戒指（暗黑） 1
+take 金币 4000000
+give 青云戒指（暗黑） 1
+break
+#SAY
+_得到青云戒指（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（幻影） 1
+checkgold 4000000
+#ACT
+take 青云戒指（幻影） 1
+take 金币 4000000
+give 青云戒指（暗黑） 1
+break
+#SAY
+_得到青云戒指（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（火） 1
+checkgold 4000000
+#ACT
+take 破荒项链（火） 1
+take 金币 4000000
+give 破荒项链（暗黑） 1
+break
+#SAY
+_得到破荒项链（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（冰） 1
+checkgold 4000000
+#ACT
+take 破荒项链（冰） 1
+take 金币 4000000
+give 破荒项链（暗黑） 1
+break
+#SAY
+_得到破荒项链（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（雷） 1
+checkgold 4000000
+#ACT
+take 破荒项链（雷） 1
+take 金币 4000000
+give 破荒项链（暗黑） 1
+break
+#SAY
+_得到破荒项链（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（风） 1
+checkgold 4000000
+#ACT
+take 破荒项链（风） 1
+take 金币 4000000
+give 破荒项链（暗黑） 1
+break
+#SAY
+_得到破荒项链（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（神圣） 1
+checkgold 4000000
+#ACT
+take 破荒项链（神圣） 1
+take 金币 4000000
+give 破荒项链（暗黑） 1
+break
+#SAY
+_得到破荒项链（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（暗黑） 1
+checkgold 4000000
+#ACT
+take 破荒项链（暗黑） 1
+take 金币 4000000
+give 破荒项链（暗黑） 1
+break
+#SAY
+_得到破荒项链（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（幻影） 1
+checkgold 4000000
+#ACT
+take 破荒项链（幻影） 1
+take 金币 4000000
+give 破荒项链（暗黑） 1
+break
+#SAY
+_得到破荒项链（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（火） 1
+checkgold 4000000
+#ACT
+take 魔云项链（火） 1
+take 金币 4000000
+give 魔云项链（暗黑） 1
+break
+#SAY
+_得到魔云项链（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（冰） 1
+checkgold 4000000
+#ACT
+take 魔云项链（冰） 1
+take 金币 4000000
+give 魔云项链（暗黑） 1
+break
+#SAY
+_得到魔云项链（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（雷） 1
+checkgold 4000000
+#ACT
+take 魔云项链（雷） 1
+take 金币 4000000
+give 魔云项链（暗黑） 1
+break
+#SAY
+_得到魔云项链（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（风） 1
+checkgold 4000000
+#ACT
+take 魔云项链（风） 1
+take 金币 4000000
+give 魔云项链（暗黑） 1
+break
+#SAY
+_得到魔云项链（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（神圣） 1
+checkgold 4000000
+#ACT
+take 魔云项链（神圣） 1
+take 金币 4000000
+give 魔云项链（暗黑） 1
+break
+#SAY
+_得到魔云项链（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（暗黑） 1
+checkgold 4000000
+#ACT
+take 魔云项链（暗黑） 1
+take 金币 4000000
+give 魔云项链（暗黑） 1
+break
+#SAY
+_得到魔云项链（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（幻影） 1
+checkgold 4000000
+#ACT
+take 魔云项链（幻影） 1
+take 金币 4000000
+give 魔云项链（暗黑） 1
+break
+#SAY
+_得到魔云项链（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（火） 1
+checkgold 4000000
+#ACT
+take 定心项链（火） 1
+take 金币 4000000
+give 定心项链（暗黑） 1
+break
+#SAY
+_得到定心项链（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（冰） 1
+checkgold 4000000
+#ACT
+take 定心项链（冰） 1
+take 金币 4000000
+give 定心项链（暗黑） 1
+break
+#SAY
+_得到定心项链（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（雷） 1
+checkgold 4000000
+#ACT
+take 定心项链（雷） 1
+take 金币 4000000
+give 定心项链（暗黑） 1
+break
+#SAY
+_得到定心项链（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（风） 1
+checkgold 4000000
+#ACT
+take 定心项链（风） 1
+take 金币 4000000
+give 定心项链（暗黑） 1
+break
+#SAY
+_得到定心项链（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（神圣） 1
+checkgold 4000000
+#ACT
+take 定心项链（神圣） 1
+take 金币 4000000
+give 定心项链（暗黑） 1
+break
+#SAY
+_得到定心项链（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（暗黑） 1
+checkgold 4000000
+#ACT
+take 定心项链（暗黑） 1
+take 金币 4000000
+give 定心项链（暗黑） 1
+break
+#SAY
+_得到定心项链（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（幻影） 1
+checkgold 4000000
+#ACT
+take 定心项链（幻影） 1
+take 金币 4000000
+give 定心项链（暗黑） 1
+break
+#SAY
+_得到定心项链（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（火） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（火） 1
+take 金币 4000000
+give 金棱手镯（暗黑） 1
+break
+#SAY
+_得到金棱手镯（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（冰） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（冰） 1
+take 金币 4000000
+give 金棱手镯（暗黑） 1
+break
+#SAY
+_得到金棱手镯（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（雷） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（雷） 1
+take 金币 4000000
+give 金棱手镯（暗黑） 1
+break
+#SAY
+_得到金棱手镯（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（风） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（风） 1
+take 金币 4000000
+give 金棱手镯（暗黑） 1
+break
+#SAY
+_得到金棱手镯（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（神圣） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（神圣） 1
+take 金币 4000000
+give 金棱手镯（暗黑） 1
+break
+#SAY
+_得到金棱手镯（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（暗黑） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（暗黑） 1
+take 金币 4000000
+give 金棱手镯（暗黑） 1
+break
+#SAY
+_得到金棱手镯（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（幻影） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（幻影） 1
+take 金币 4000000
+give 金棱手镯（暗黑） 1
+break
+#SAY
+_得到金棱手镯（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（火） 1
+checkgold 4000000
+#ACT
+take 思过手镯（火） 1
+take 金币 4000000
+give 思过手镯（暗黑） 1
+break
+#SAY
+_得到思过手镯（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（冰） 1
+checkgold 4000000
+#ACT
+take 思过手镯（冰） 1
+take 金币 4000000
+give 思过手镯（暗黑） 1
+break
+#SAY
+_得到思过手镯（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（雷） 1
+checkgold 4000000
+#ACT
+take 思过手镯（雷） 1
+take 金币 4000000
+give 思过手镯（暗黑） 1
+break
+#SAY
+_得到思过手镯（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（风） 1
+checkgold 4000000
+#ACT
+take 思过手镯（风） 1
+take 金币 4000000
+give 思过手镯（暗黑） 1
+break
+#SAY
+_得到思过手镯（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（神圣） 1
+checkgold 4000000
+#ACT
+take 思过手镯（神圣） 1
+take 金币 4000000
+give 思过手镯（暗黑） 1
+break
+#SAY
+_得到思过手镯（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（暗黑） 1
+checkgold 4000000
+#ACT
+take 思过手镯（暗黑） 1
+take 金币 4000000
+give 思过手镯（暗黑） 1
+break
+#SAY
+_得到思过手镯（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（幻影） 1
+checkgold 4000000
+#ACT
+take 思过手镯（幻影） 1
+take 金币 4000000
+give 思过手镯（暗黑） 1
+break
+#SAY
+_得到思过手镯（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（火） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（火） 1
+take 金币 4000000
+give 世尊手镯（暗黑） 1
+break
+#SAY
+_得到世尊手镯（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（冰） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（冰） 1
+take 金币 4000000
+give 世尊手镯（暗黑） 1
+break
+#SAY
+_得到世尊手镯（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（雷） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（雷） 1
+take 金币 4000000
+give 世尊手镯（暗黑） 1
+break
+#SAY
+_得到世尊手镯（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（风） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（风） 1
+take 金币 4000000
+give 世尊手镯（暗黑） 1
+break
+#SAY
+_得到世尊手镯（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（神圣） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（神圣） 1
+take 金币 4000000
+give 世尊手镯（暗黑） 1
+break
+#SAY
+_得到世尊手镯（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（暗黑） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（暗黑） 1
+take 金币 4000000
+give 世尊手镯（暗黑） 1
+break
+#SAY
+_得到世尊手镯（暗黑）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（幻影） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（幻影） 1
+take 金币 4000000
+give 世尊手镯（暗黑） 1
+break
+#SAY
+_得到世尊手镯（暗黑）.\ \
+_<关闭/@exit>
+#ELSESAY
+_如果你想要得到元素饰品,首先要带古代勇士们使用过的生锈饰品来.像你这样空手而来,我就毫无办法了.\ \
+_<关闭/@exit>
+
+[@Change_ItemAtom_Phantom]
+#IF
+checkitem 师承戒指（火） 1
+checkgold 4000000
+#ACT
+take 师承戒指（火） 1
+take 金币 4000000
+give 师承戒指（幻影） 1
+break
+#SAY
+_得到师承戒指（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（冰） 1
+checkgold 4000000
+#ACT
+take 师承戒指（冰） 1
+take 金币 4000000
+give 师承戒指（幻影） 1
+break
+#SAY
+_得到师承戒指（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（雷） 1
+checkgold 4000000
+#ACT
+take 师承戒指（雷） 1
+take 金币 4000000
+give 师承戒指（幻影） 1
+break
+#SAY
+_得到师承戒指（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（风） 1
+checkgold 4000000
+#ACT
+take 师承戒指（风） 1
+take 金币 4000000
+give 师承戒指（幻影） 1
+break
+#SAY
+_得到师承戒指（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（神圣） 1
+checkgold 4000000
+#ACT
+take 师承戒指（神圣） 1
+take 金币 4000000
+give 师承戒指（幻影） 1
+break
+#SAY
+_得到师承戒指（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（暗黑） 1
+checkgold 4000000
+#ACT
+take 师承戒指（暗黑） 1
+take 金币 4000000
+give 师承戒指（幻影） 1
+break
+#SAY
+_得到师承戒指（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 师承戒指（幻影） 1
+checkgold 4000000
+#ACT
+take 师承戒指（幻影） 1
+take 金币 4000000
+give 师承戒指（幻影） 1
+break
+#SAY
+_得到师承戒指（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（火） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（火） 1
+take 金币 4000000
+give 龙马戒指（幻影） 1
+break
+#SAY
+_得到龙马戒指（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（冰） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（冰） 1
+take 金币 4000000
+give 龙马戒指（幻影） 1
+break
+#SAY
+_得到龙马戒指（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（雷） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（雷） 1
+take 金币 4000000
+give 龙马戒指（幻影） 1
+break
+#SAY
+_得到龙马戒指（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（风） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（风） 1
+take 金币 4000000
+give 龙马戒指（幻影） 1
+break
+#SAY
+_得到龙马戒指（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（神圣） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（神圣） 1
+take 金币 4000000
+give 龙马戒指（幻影） 1
+break
+#SAY
+_得到龙马戒指（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（暗黑） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（暗黑） 1
+take 金币 4000000
+give 龙马戒指（幻影） 1
+break
+#SAY
+_得到龙马戒指（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 龙马戒指（幻影） 1
+checkgold 4000000
+#ACT
+take 龙马戒指（幻影） 1
+take 金币 4000000
+give 龙马戒指（幻影） 1
+break
+#SAY
+_得到龙马戒指（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（火） 1
+checkgold 4000000
+#ACT
+take 青云戒指（火） 1
+take 金币 4000000
+give 青云戒指（幻影） 1
+break
+#SAY
+_得到青云戒指（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（冰） 1
+checkgold 4000000
+#ACT
+take 青云戒指（冰） 1
+take 金币 4000000
+give 青云戒指（幻影） 1
+break
+#SAY
+_得到青云戒指（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（雷） 1
+checkgold 4000000
+#ACT
+take 青云戒指（雷） 1
+take 金币 4000000
+give 青云戒指（幻影） 1
+break
+#SAY
+_得到青云戒指（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（风） 1
+checkgold 4000000
+#ACT
+take 青云戒指（风） 1
+take 金币 4000000
+give 青云戒指（幻影） 1
+break
+#SAY
+_得到青云戒指（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（神圣） 1
+checkgold 4000000
+#ACT
+take 青云戒指（神圣） 1
+take 金币 4000000
+give 青云戒指（幻影） 1
+break
+#SAY
+_得到青云戒指（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（暗黑） 1
+checkgold 4000000
+#ACT
+take 青云戒指（暗黑） 1
+take 金币 4000000
+give 青云戒指（幻影） 1
+break
+#SAY
+_得到青云戒指（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 青云戒指（幻影） 1
+checkgold 4000000
+#ACT
+take 青云戒指（幻影） 1
+take 金币 4000000
+give 青云戒指（幻影） 1
+break
+#SAY
+_得到青云戒指（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（火） 1
+checkgold 4000000
+#ACT
+take 破荒项链（火） 1
+take 金币 4000000
+give 破荒项链（幻影） 1
+break
+#SAY
+_得到破荒项链（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（冰） 1
+checkgold 4000000
+#ACT
+take 破荒项链（冰） 1
+take 金币 4000000
+give 破荒项链（幻影） 1
+break
+#SAY
+_得到破荒项链（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（雷） 1
+checkgold 4000000
+#ACT
+take 破荒项链（雷） 1
+take 金币 4000000
+give 破荒项链（幻影） 1
+break
+#SAY
+_得到破荒项链（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（风） 1
+checkgold 4000000
+#ACT
+take 破荒项链（风） 1
+take 金币 4000000
+give 破荒项链（幻影） 1
+break
+#SAY
+_得到破荒项链（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（神圣） 1
+checkgold 4000000
+#ACT
+take 破荒项链（神圣） 1
+take 金币 4000000
+give 破荒项链（幻影） 1
+break
+#SAY
+_得到破荒项链（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（暗黑） 1
+checkgold 4000000
+#ACT
+take 破荒项链（暗黑） 1
+take 金币 4000000
+give 破荒项链（幻影） 1
+break
+#SAY
+_得到破荒项链（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 破荒项链（幻影） 1
+checkgold 4000000
+#ACT
+take 破荒项链（幻影） 1
+take 金币 4000000
+give 破荒项链（幻影） 1
+break
+#SAY
+_得到破荒项链（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（火） 1
+checkgold 4000000
+#ACT
+take 魔云项链（火） 1
+take 金币 4000000
+give 魔云项链（幻影） 1
+break
+#SAY
+_得到魔云项链（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（冰） 1
+checkgold 4000000
+#ACT
+take 魔云项链（冰） 1
+take 金币 4000000
+give 魔云项链（幻影） 1
+break
+#SAY
+_得到魔云项链（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（雷） 1
+checkgold 4000000
+#ACT
+take 魔云项链（雷） 1
+take 金币 4000000
+give 魔云项链（幻影） 1
+break
+#SAY
+_得到魔云项链（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（风） 1
+checkgold 4000000
+#ACT
+take 魔云项链（风） 1
+take 金币 4000000
+give 魔云项链（幻影） 1
+break
+#SAY
+_得到魔云项链（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（神圣） 1
+checkgold 4000000
+#ACT
+take 魔云项链（神圣） 1
+take 金币 4000000
+give 魔云项链（幻影） 1
+break
+#SAY
+_得到魔云项链（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（暗黑） 1
+checkgold 4000000
+#ACT
+take 魔云项链（暗黑） 1
+take 金币 4000000
+give 魔云项链（幻影） 1
+break
+#SAY
+_得到魔云项链（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 魔云项链（幻影） 1
+checkgold 4000000
+#ACT
+take 魔云项链（幻影） 1
+take 金币 4000000
+give 魔云项链（幻影） 1
+break
+#SAY
+_得到魔云项链（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（火） 1
+checkgold 4000000
+#ACT
+take 定心项链（火） 1
+take 金币 4000000
+give 定心项链（幻影） 1
+break
+#SAY
+_得到定心项链（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（冰） 1
+checkgold 4000000
+#ACT
+take 定心项链（冰） 1
+take 金币 4000000
+give 定心项链（幻影） 1
+break
+#SAY
+_得到定心项链（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（雷） 1
+checkgold 4000000
+#ACT
+take 定心项链（雷） 1
+take 金币 4000000
+give 定心项链（幻影） 1
+break
+#SAY
+_得到定心项链（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（风） 1
+checkgold 4000000
+#ACT
+take 定心项链（风） 1
+take 金币 4000000
+give 定心项链（幻影） 1
+break
+#SAY
+_得到定心项链（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（神圣） 1
+checkgold 4000000
+#ACT
+take 定心项链（神圣） 1
+take 金币 4000000
+give 定心项链（幻影） 1
+break
+#SAY
+_得到定心项链（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（暗黑） 1
+checkgold 4000000
+#ACT
+take 定心项链（暗黑） 1
+take 金币 4000000
+give 定心项链（幻影） 1
+break
+#SAY
+_得到定心项链（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 定心项链（幻影） 1
+checkgold 4000000
+#ACT
+take 定心项链（幻影） 1
+take 金币 4000000
+give 定心项链（幻影） 1
+break
+#SAY
+_得到定心项链（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（火） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（火） 1
+take 金币 4000000
+give 金棱手镯（幻影） 1
+break
+#SAY
+_得到金棱手镯（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（冰） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（冰） 1
+take 金币 4000000
+give 金棱手镯（幻影） 1
+break
+#SAY
+_得到金棱手镯（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（雷） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（雷） 1
+take 金币 4000000
+give 金棱手镯（幻影） 1
+break
+#SAY
+_得到金棱手镯（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（风） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（风） 1
+take 金币 4000000
+give 金棱手镯（幻影） 1
+break
+#SAY
+_得到金棱手镯（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（神圣） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（神圣） 1
+take 金币 4000000
+give 金棱手镯（幻影） 1
+break
+#SAY
+_得到金棱手镯（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（暗黑） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（暗黑） 1
+take 金币 4000000
+give 金棱手镯（幻影） 1
+break
+#SAY
+_得到金棱手镯（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 金棱手镯（幻影） 1
+checkgold 4000000
+#ACT
+take 金棱手镯（幻影） 1
+take 金币 4000000
+give 金棱手镯（幻影） 1
+break
+#SAY
+_得到金棱手镯（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（火） 1
+checkgold 4000000
+#ACT
+take 思过手镯（火） 1
+take 金币 4000000
+give 思过手镯（幻影） 1
+break
+#SAY
+_得到思过手镯（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（冰） 1
+checkgold 4000000
+#ACT
+take 思过手镯（冰） 1
+take 金币 4000000
+give 思过手镯（幻影） 1
+break
+#SAY
+_得到思过手镯（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（雷） 1
+checkgold 4000000
+#ACT
+take 思过手镯（雷） 1
+take 金币 4000000
+give 思过手镯（幻影） 1
+break
+#SAY
+_得到思过手镯（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（风） 1
+checkgold 4000000
+#ACT
+take 思过手镯（风） 1
+take 金币 4000000
+give 思过手镯（幻影） 1
+break
+#SAY
+_得到思过手镯（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（神圣） 1
+checkgold 4000000
+#ACT
+take 思过手镯（神圣） 1
+take 金币 4000000
+give 思过手镯（幻影） 1
+break
+#SAY
+_得到思过手镯（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（暗黑） 1
+checkgold 4000000
+#ACT
+take 思过手镯（暗黑） 1
+take 金币 4000000
+give 思过手镯（幻影） 1
+break
+#SAY
+_得到思过手镯（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 思过手镯（幻影） 1
+checkgold 4000000
+#ACT
+take 思过手镯（幻影） 1
+take 金币 4000000
+give 思过手镯（幻影） 1
+break
+#SAY
+_得到思过手镯（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（火） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（火） 1
+take 金币 4000000
+give 世尊手镯（幻影） 1
+break
+#SAY
+_得到世尊手镯（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（冰） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（冰） 1
+take 金币 4000000
+give 世尊手镯（幻影） 1
+break
+#SAY
+_得到世尊手镯（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（雷） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（雷） 1
+take 金币 4000000
+give 世尊手镯（幻影） 1
+break
+#SAY
+_得到世尊手镯（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（风） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（风） 1
+take 金币 4000000
+give 世尊手镯（幻影） 1
+break
+#SAY
+_得到世尊手镯（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（神圣） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（神圣） 1
+take 金币 4000000
+give 世尊手镯（幻影） 1
+break
+#SAY
+_得到世尊手镯（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（暗黑） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（暗黑） 1
+take 金币 4000000
+give 世尊手镯（幻影） 1
+break
+#SAY
+_得到世尊手镯（幻影）.\\
+_<关闭/@exit>
+
+#IF
+checkitem 世尊手镯（幻影） 1
+checkgold 4000000
+#ACT
+take 世尊手镯（幻影） 1
+take 金币 4000000
+give 世尊手镯（幻影） 1
+break
+#SAY
+_得到世尊手镯（幻影）.\ \
+_<关闭/@exit>
+#ELSESAY
+_如果你想要得到元素饰品,首先要带古代勇士们使用过的生锈饰品来.像你这样空手而来,我就毫无办法了.\ \
+_<关闭/@exit>
+
+[@Help_ItemAtom]
+#IF
+#SAY
+_我所能恢复的饰品有 {FCOLOR/10}生锈的师承戒指, 生锈的龙马戒指, 生锈的青云戒指, 生锈的破荒项链, 生锈的魔云项链, 生锈的定心项链, 生锈的金棱手镯, 生锈的思过手镯, 生锈的世尊手镯{FCOLOR/12}. 这些都是古代勇士曾经使用过的饰品,只要你支付一定费用,我会帮你恢复饰品的原貌.\ \
+_恢复原貌的饰品,还可以反复地更换攻击元素.\ \
+_<关闭/@exit>
+
+}
+

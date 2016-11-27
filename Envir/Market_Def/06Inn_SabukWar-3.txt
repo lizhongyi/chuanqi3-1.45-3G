@@ -1,0 +1,23 @@
+;;创天网络有限公司原版1.45
+%100
+
+[@main]
+#IF
+#SAY
+嗯，是否充分的准备好战争准备了？\
+战争中沙巴克的大部分商人都会去避难，如果不先预备点药的话，还要跑到毒蛇山谷去买药哦。\
+那么数一下看你的仓库里储备了多少药好吗？\ \
+<取回/@PreGetback>寄存的物品\
+<仓库 密码 管理/@StgPassword>\
+<结束/@exit>
+
+[@StgPassword]
+#CALL [\PassWord\PassWord.txt] @Manage_PassWord
+
+[@PreGetback]
+#CALL [\PassWord\PassWord.txt] @Input_PassWord
+
+[@getback]
+#SAY
+已经没药了吗？ 快去看看储备的药够不够。还得去帮一下你的行会成员呢？\ \
+<前一步/@main>

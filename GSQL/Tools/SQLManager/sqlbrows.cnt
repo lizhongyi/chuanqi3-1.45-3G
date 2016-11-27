@@ -1,0 +1,5 @@
+:base sqlbrows.hlp
+查找帐户=IDH_find_account
+全局组成员资格=IDH_global_memb
+本地组成员资格=IDH_local_memb
+SQL Server 登录属性 - 新登录=IDH_login_newlogin

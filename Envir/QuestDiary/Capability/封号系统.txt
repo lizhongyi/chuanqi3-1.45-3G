@@ -1,0 +1,257 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@封号系统_1]
+{
+#if
+#say
+___您好!欢迎使用封号系统,您还有{FCOLOR/10}<$USERJF>个元宝{FCOLOR/12}\
+想不想让自己{FCOLOR/10}超凡脱俗,出类拔萃,风流倜傥,玉树临风,特立独行,与众不同,妻妾成群,鹤立鸡群...{FCOLOR/12}\
+哦,说多了,总的来说就是让你看起来更加的有魅力!\
+简单说就是我可以让你的名字下方增加一行你喜欢的个人说明\\
+
+
+<[增加封号]/@@AddFH>        (200元宝)\
+<[修改封号]/@@ChangeFH>        (100元宝)\
+<[取消封号]/@取消封号1>        (免费)\\
+
+{FCOLOR/1}注意:管理员有权未经通知删除任何有争议和不合理的封号!{FCOLOR/12}\\
+
+<[ 返 回 ]/@youxijifen>\
+
+
+[@@AddFH]
+#ACT
+mov 您的封号 %INPUTSTR
+
+#IF
+equal 您的封号 %USERNAME
+#SAY
+对不起,不能加自己名字为封号!\
+<[输入封号名称]/@@AddFH>\
+#ACT
+break
+
+#IF
+  equal 您的封号 ""
+#SAY
+_人物名称不能为空\\
+<[输入封号名称]/@@AddFH>\
+#ACT
+break
+
+#IF
+  equal 您的封号 " "
+#SAY
+_人物名称不能为空格\\
+<[输入封号名称]/@@AddFH>\
+#ACT
+break
+
+#IF
+  equal 您的封号 "  "
+#SAY
+_人物名称不能为空格\\
+<[输入封号名称]/@@AddFH>\
+#ACT
+break
+
+#IF
+  equal 您的封号 "   "
+#SAY
+_人物名称不能为空格\\
+<[输入封号名称]/@@AddFH>\
+#ACT
+break
+
+#IF
+  equal 您的封号 "    "
+#SAY
+_人物名称不能为空格\\
+<[输入封号名称]/@@AddFH>\
+#ACT
+break
+
+#IF
+  equal 您的封号 "     "
+#SAY
+_人物名称不能为空格\\
+<[输入封号名称]/@@AddFH>\
+#ACT
+break
+
+#IF
+  equal 您的封号 "      "
+#SAY
+_人物名称不能为空格\\
+<[输入封号名称]/@@AddFH>\
+#ACT
+break
+
+#IF
+  equal 您的封号 "       "
+#SAY
+_人物名称不能为空格\\
+<[输入封号名称]/@@AddFH>\
+#ACT
+break
+
+#IF
+  equal 您的封号 "        "
+#SAY
+_人物名称不能为空格\\
+<[输入封号名称]/@@AddFH>\
+#ACT
+break
+
+
+#IF
+  equal 您的封号 "操"
+#SAY
+_人物名称不能为“操”\\
+<[输入封号名称]/@@AddFH>\
+#ACT
+break
+
+#if
+!checkcmd CHECKUSERJF 200
+#ACT
+SYSMSG "对不起，您的元宝不足200" 1
+break
+
+#if
+CheckNickName
+#act
+SetNickName "%您的封号"
+actcmd SETUSERJF - 200 封号系统
+#say
+恭喜，您拥有了新的封号!\
+<离开/@exit>
+#ELSESAY
+对不起，你有封号了,不能重复增加.\\
+<关闭/@exit>
+
+
+[@@ChangeFH]
+#ACT
+mov 改的封号 %INPUTSTR
+
+#IF
+equal 改的封号 %USERNAME
+#SAY
+对不起,不能加自己名字为封号!\
+<[输入封号名称]/@@AddFH>\
+#ACT
+break
+
+#IF
+  equal 改的封号 ""
+#SAY
+_人物名称不能为空\\
+<[输入封号名称]/@@AddFH>\
+#ACT
+break
+
+#IF
+  equal 改的封号 " "
+#SAY
+_人物名称不能为空格\\
+<[输入封号名称]/@@AddFH>\
+#ACT
+break
+
+#IF
+  equal 改的封号 "  "
+#SAY
+_人物名称不能为空格\\
+<[输入封号名称]/@@AddFH>\
+#ACT
+break
+
+#IF
+  equal 改的封号 "   "
+#SAY
+_人物名称不能为空格\\
+<[输入封号名称]/@@AddFH>\
+#ACT
+break
+
+#IF
+  equal 改的封号 "    "
+#SAY
+_人物名称不能为空格\\
+<[输入封号名称]/@@AddFH>\
+#ACT
+break
+
+#IF
+  equal 改的封号 "     "
+#SAY
+_人物名称不能为空格\\
+<[输入封号名称]/@@AddFH>\
+#ACT
+break
+
+#IF
+  equal 改的封号 "      "
+#SAY
+_人物名称不能为空格\\
+<[输入封号名称]/@@AddFH>\
+#ACT
+break
+
+#IF
+  equal 改的封号 "       "
+#SAY
+_人物名称不能为空格\\
+<[输入封号名称]/@@AddFH>\
+#ACT
+break
+
+#IF
+  equal 改的封号 "        "
+#SAY
+_人物名称不能为空格\\
+<[输入封号名称]/@@AddFH>\
+#ACT
+break
+
+
+#IF
+  equal 改的封号 "操"
+#SAY
+_人物名称不能为“操”\\
+<[输入封号名称]/@@AddFH>\
+#ACT
+break
+
+#if
+!checkcmd CHECKUSERJF 100
+#ACT
+SYSMSG "对不起，您的元宝不足100" 1
+break
+
+#if
+!CheckNickName
+#act
+SetNickName "%改的封号"
+actcmd SETUSERJF - 100 改封号系统
+#say
+恭喜，您拥有了新的封号!\
+<离开/@exit>
+#ELSESAY
+对不起，你都没有封号,请先添加封号.\\
+<关闭/@exit>
+
+
+
+[@取消封号1]
+#if
+!CheckNickName
+#ACT
+SetNickName ""
+#say
+清理完毕。
+#ELSESAY
+对不起，你都没有封号,请先添加封号.\\
+<关闭/@exit>
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

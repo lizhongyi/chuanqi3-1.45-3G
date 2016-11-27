@@ -1,0 +1,79 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@套装取下1]
+{
+#Act
+Mov 套装摘下 %ARG(1)
+
+#IF
+Equal 狂战套 "生效"
+!CHECKITEMW 狂战项链 1
+#ACT
+mov 狂战套 ""
+ATTRIBUTECLEAR HP 100
+BREAK
+
+#IF
+Equal 狂战套 "生效"
+!CHECKITEMW 狂战手镯 1
+#ACT
+mov 狂战套 ""
+ATTRIBUTECLEAR HP 100
+BREAK
+
+#IF
+Equal 狂战套 "生效"
+!CHECKITEMW 狂战戒指 1
+#ACT
+mov 狂战套 ""
+ATTRIBUTECLEAR HP 100
+BREAK
+
+#IF
+Equal 天丛套 "生效"
+!CHECKITEMW 天丛项链 1
+#ACT
+mov 天丛套 ""
+ATTRIBUTECLEAR HP 100
+BREAK
+
+#IF
+Equal 天丛套 "生效"
+!CHECKITEMW 天丛手镯 1
+#ACT
+mov 天丛套 ""
+ATTRIBUTECLEAR HP 100
+BREAK
+
+#IF
+Equal 天丛套 "生效"
+!CHECKITEMW 天丛戒指 1
+#ACT
+mov 天丛套 ""
+ATTRIBUTECLEAR HP 100
+BREAK
+
+#IF
+Equal 焰魔套 "生效"
+!CHECKITEMW 转轮项链 1
+#ACT
+mov 焰魔套 ""
+ATTRIBUTECLEAR HP 50
+BREAK
+
+#IF
+Equal 焰魔套 "生效"
+!CHECKITEMW 焰魔手镯 1
+#ACT
+mov 焰魔套 ""
+ATTRIBUTECLEAR HP 50
+BREAK
+
+#IF
+Equal 焰魔套 "生效"
+!CHECKITEMW 焰魔戒指 1
+#ACT
+mov 焰魔套 ""
+ATTRIBUTECLEAR HP 50
+BREAK
+
+}

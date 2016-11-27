@@ -1,0 +1,380 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@main]
+#SAY
+内测期间只要在线,每分钟都可以获得{FCOLOR/10}1张金币卷{FCOLOR/12}.\\
+别忘记在内测结束前把金币卷存入,开区48小时后每张金币卷可以兑换{FCOLOR/10}1000金币{FCOLOR/12}.\\
+<购买体验装备/@购买体验装备>\\
+<内测金币卷存入/@内测金币卷存入>\\
+<输入内测泡点资格码/@@泡点资格码>\\
+
+
+[@@泡点资格码]
+#ACT
+MOV A0 %INPUTSTR
+LOADVALUE A1 "ParamControl\内测秘钥.ini" [CDKey] %A0
+LOADVALUE A2 "ParamControl\内测资格.ini" [激活] %USERNAME
+
+#IF
+Equal A2 ""
+#ELSEACT
+BREAK
+#ELSESAY
+你已经激活过了,无须反复激活.\\
+<关闭/@exit>
+
+#IF
+Equal A1 "未激活"
+#ACT
+SAVEVALUE "ParamControl\内测资格.ini" [激活] %USERNAME %A0
+SAVEVALUE "ParamControl\内测秘钥.ini" [CDKey] %A0 "激活"
+BREAK
+#SAY
+恭喜你激活了内测泡点资格.\\
+<关闭/@exit>
+
+#IF
+Equal A1 "激活"
+#ACT
+BREAK
+#SAY
+这个激活码已经被激活了.\\
+<关闭/@exit>
+
+#IF
+Equal A1 ""
+#ACT
+BREAK
+#SAY
+输入的激活码有误,请核对后重新输入.\\
+<关闭/@exit>
+
+
+[@内测金币卷存入]
+#ACT
+LOADVALUE D1 "ParamControl\内测金币卷.ini" [金币卷] %USERID
+
+#IF
+#SAY
+你当前存入的金币卷数量为:{FCOLOR/10}<$OUTPUT(D1)>{FCOLOR/12}张.\\
+<输入存入个数/@@金币卷数量>
+
+[@@金币卷数量]
+#ACT
+MOV D0 %INPUTNUM
+LOADVALUE D1 "ParamControl\内测金币卷.ini" [金币卷] %USERID
+
+#IF
+Small D0 1
+#ACT
+SYSMSG "输入数量错误,请重新输入!"
+BREAK
+
+#IF
+Large D0 1000
+#ACT
+SYSMSG "单次存入最大数量为1000张!"
+BREAK
+
+#IF
+CHECKITEM 金币卷 %D0
+#ACT
+INC D1 %D0
+SAVEVALUE "ParamControl\内测金币卷.ini" [金币卷] %USERID %D1
+TAKE 金币卷 %D0
+SYSMSG "你存入了<$OUTPUT(D0)>张金币卷,目前总数为<$OUTPUT(D1)>张."
+goto @内测金币卷存入
+BREAK
+#ELSESAY
+你的包袱里没有{FCOLOR/1}<$OUTPUT(D0)>{FCOLOR/12}张金币卷,请核对后再来.\\
+<关闭/@Exit>
+
+[@购买体验装备]
+#SAY
+<内测武器类/@内测武器>\
+<内测防具类/@内测防具>\
+<内测首饰类/@内测首饰>\
+<内测杂货类/@内测杂货>\
+
+[@内测杂货]
+#SAY
+<祝福油/@内测大量购(祝福油)>\
+<武器强化油 /@内测大量购(武器强化油)>\
+<沃玛号角/@内测少量购(沃玛号角)>\
+<黑铁/@内测少量购(黑铁)>\
+<钢玉石/@内测少量购(钢玉石)>\
+<[ 返 回 ]/@main>
+
+[@内测首饰]
+#SAY
+<阎罗手套/@内测少量购(阎罗手套)>\
+<魔令手镯/@内测少量购(魔令手镯)>\
+<六棱戒/@内测少量购(六棱戒)>\
+<紫金环/@内测少量购(紫金环)>\
+<武圣之戒/@内测少量购(武圣之戒)>\
+<火玉手镯/@内测少量购(火玉手镯)>\
+<流星项链/@内测少量购(流星项链)>\
+<毁灭魔链/@内测少量购(毁灭魔链)>\
+<气血项链/@内测少量购(气血项链)>\
+<七彩金环/@内测少量购(七彩金环)>\
+<心魔戒指/@内测少量购(心魔戒指)>\
+<毁灭手镯/@内测少量购(毁灭手镯)>\
+<五行神镜/@内测少量购(五行神镜)>\
+<天机戒指/@内测少量购(天机戒指)>\
+<虚空道环/@内测少量购(虚空道环)>\
+<如来手镯/@内测少量购(如来手镯)>\
+<乾坤一气/@内测少量购(乾坤一气)>\
+<虹魔项链/@内测少量购(虹魔项链)>\
+<虹魔手镯/@内测少量购(虹魔手镯)>\
+<虹魔戒指/@内测少量购(虹魔戒指)>\
+<魔血项链/@内测少量购(魔血项链)>\
+<魔血手镯/@内测少量购(魔血手镯)>\
+<魔血戒指/@内测少量购(魔血戒指)>\
+<金刚铃铛/@内测少量购(金刚铃铛)>\
+<金刚魔法手镯/@内测少量购(金刚魔法手镯)>\
+<金刚防御手镯/@内测少量购(金刚防御手镯)>\
+<金刚精神戒指/@内测少量购(金刚精神戒指)>\
+<金刚魔法指环/@内测少量购(金刚魔法指环)>\
+<[ 返 回 ]/@main>
+
+[@内测武器]
+#SAY
+<霹雷/@内测少量购(霹雷)>\
+<嗜魂法杖/@内测少量购(嗜魂法杖)>\
+<龙纹剑/@内测少量购(龙纹剑)>\
+<屠龙/@内测少量购(屠龙)>\
+<铁轮/@内测少量购(铁轮)>\
+<逍遥扇/@内测少量购(逍遥扇)>\
+<破山剑/@内测少量购(破山剑)>\
+<天神法杖/@内测少量购(天神法杖)>\
+<泰轮拂尘/@内测少量购(泰轮拂尘)>\
+<[ 返 回 ]/@main>
+
+[@内测防具]
+#SAY
+<麒麟宝铠（男）/@内测少量购(麒麟宝铠（男）)>\
+<麒麟宝铠（女）/@内测少量购(麒麟宝铠（女）)>\
+<仙风神袍（男）/@内测少量购(仙风神袍（男）)>\
+<仙风神袍（女）/@内测少量购(仙风神袍（女）)>\
+<阴阳圣衣（男）/@内测少量购(阴阳圣衣（男）)>\
+<阴阳圣衣（女）/@内测少量购(阴阳圣衣（女）)>\
+<战神头盔/@内测少量购(战神头盔)>\
+<虎面头盔/@内测少量购(虎面头盔)>\
+<武神之靴/@内测少量购(武神之靴)>\\
+<[ 返 回 ]/@main>
+
+[@内测少量购()]
+#ACT
+MOV 内测物品 %ARG(1)
+
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+Equal 占用格子 46
+#ACT
+SYSMSG "你的包袱格子已经满了,不能装下东西了!"
+break
+#ELSEACT
+MOV 格子剩余 46
+DEC 格子剩余 %占用格子
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+#ACT
+FormatStr "where Name ='%s'" %内测物品
+actcmd READSQL  "king_StdItems" "Weight" "物品重量" %A9
+
+#IF
+Small 剩余负重 %物品重量
+#ACT
+SYSMSG "你的包袱剩余负重为<$OUTPUT(剩余负重)>,不能装下重量为<$OUTPUT(物品重量)>的<$OUTPUT(内测物品)>."
+BREAK
+
+#IF
+#ACT
+MOV P1 %剩余负重
+MOV P2 %物品重量
+DIV P1 P2
+MOV 可购数量 %P9
+
+#IF
+ELarge 格子剩余 %可购数量
+#ACT
+BREAK
+#SAY
+购入物品: {FCOLOR/10}<$OUTPUT(内测物品)>{FCOLOR/12}\
+物品重量: {FCOLOR/10}<$OUTPUT(物品重量)>{FCOLOR/12}\
+剩余负重: {FCOLOR/10}<$OUTPUT(剩余负重)>{FCOLOR/12}\
+剩余格子: {FCOLOR/10}<$OUTPUT(格子剩余)>{FCOLOR/12}\
+最多可购: {FCOLOR/1}<$OUTPUT(可购数量)>{FCOLOR/12} 件.\\
+<输入要购入的个数/@@内测少量购_OK>
+#ELSESAY
+购入物品: {FCOLOR/10}<$OUTPUT(内测物品)>{FCOLOR/12}\
+物品重量: {FCOLOR/10}<$OUTPUT(物品重量)>{FCOLOR/12}\
+剩余负重: {FCOLOR/10}<$OUTPUT(剩余负重)>{FCOLOR/12}\
+剩余格子: {FCOLOR/10}<$OUTPUT(格子剩余)>{FCOLOR/12}\
+最多可购: {FCOLOR/1}<$OUTPUT(格子剩余)>{FCOLOR/12} 件.\\
+<输入要购入的个数/@@内测少量购_OK>
+
+[@@内测少量购_OK]
+#ACT
+MOV D0 %INPUTNUM
+
+#IF
+SMALL D0 1
+#ACT
+SYSMSG "输入错误,请重新输入!"
+BREAK
+
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+Equal 占用格子 46
+#ACT
+SYSMSG "你的包袱格子已经满了,不能装下东西了!"
+break
+#ELSEACT
+MOV 格子剩余 46
+DEC 格子剩余 %占用格子
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+Small 剩余负重 %物品重量
+#ACT
+SYSMSG "你的包袱剩余负重为<$OUTPUT(剩余负重)>,不能装下重量为<$OUTPUT(物品重量)>的<$OUTPUT(内测物品)>."
+BREAK
+
+#IF
+#ACT
+MOV P1 %剩余负重
+MOV P2 %物品重量
+DIV P1 P2
+MOV 可购数量 %P9
+
+#IF
+ELarge 格子剩余 %可购数量
+#ACT
+MOV D1 %可购数量
+#ELSEACT
+MOV D1 %格子剩余
+
+#IF
+Elarge D1 %D0
+#ACT
+GIVE %内测物品 %D0
+close
+BREAK
+#ELSEACT
+SYSMSG "你的包袱不能装下<$OUTPUT(D0)>个<$OUTPUT(内测物品)>."
+BREAK
+
+
+
+[@内测大量购()]
+#ACT
+MOV 内测物品 %ARG(1)
+
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+Equal 占用格子 46
+#ACT
+SYSMSG "你的包袱格子已经满了,不能装下东西了!"
+break
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+#ACT
+FormatStr "where Name ='%s'" %内测物品
+actcmd READSQL  "king_StdItems" "Weight" "物品重量" %A9
+
+#IF
+Small 剩余负重 %物品重量
+#ACT
+SYSMSG "你的包袱剩余负重为<$OUTPUT(剩余负重)>,不能装下重量为<$OUTPUT(物品重量)>的<$OUTPUT(内测物品)>."
+BREAK
+
+#IF
+#ACT
+MOV P1 %剩余负重
+MOV P2 %物品重量
+DIV P1 P2
+MOV 可购数量 %P9
+
+#IF
+#SAY
+购入物品: {FCOLOR/10}<$OUTPUT(内测物品)>{FCOLOR/12}\
+物品重量: {FCOLOR/10}<$OUTPUT(物品重量)>{FCOLOR/12}\
+剩余负重: {FCOLOR/10}<$OUTPUT(剩余负重)>{FCOLOR/12}\
+最多可购: {FCOLOR/1}<$OUTPUT(可购数量)>{FCOLOR/12} 个.\\
+<输入要购入的个数/@@内测大量购_OK>
+
+
+[@@内测大量购_OK]
+#ACT
+MOV D0 %INPUTNUM
+
+#IF
+SMALL D0 1
+#ACT
+SYSMSG "输入错误,请重新输入!"
+BREAK
+
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+Equal 占用格子 46
+#ACT
+SYSMSG "你的包袱格子已经满了,不能装下东西了!"
+break
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+Small 剩余负重 %物品重量
+#ACT
+SYSMSG "你的包袱剩余负重为<$OUTPUT(剩余负重)>,不能装下重量为<$OUTPUT(物品重量)>的<$OUTPUT(内测物品)>."
+BREAK
+
+#IF
+#ACT
+MOV P1 %剩余负重
+MOV P2 %物品重量
+DIV P1 P2
+MOV 可购数量 %P9
+
+#IF
+ELarge 可购数量 %D0
+#ACT
+GIVE %内测物品 %D0
+close
+BREAK
+#ELSEACT
+SYSMSG "你的包袱不能装下<$OUTPUT(D0)>个<$OUTPUT(内测物品)>."
+BREAK

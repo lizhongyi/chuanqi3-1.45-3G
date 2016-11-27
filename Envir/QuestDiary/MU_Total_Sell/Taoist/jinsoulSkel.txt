@@ -1,0 +1,60 @@
+;;创天网络有限公司原版1.45
+[@Mu_Taoist_jinsoul_skel]
+{
+#IF
+checkitem 超强召唤骷髅 1
+#ACT
+goto @Mu_Taoist_jinsoul_skel_next_1
+#ELSESAY
+喂，您不是已经找到超强召唤骷髅秘籍了吗。\ \
+<结束/@exit>
+
+[@Mu_Taoist_jinsoul_skel_next_1]
+#IF
+#SAY
+如果想学超强召唤骷髅，请支付3300钱。与获得武功相比这个金额是微不足道的。\ \
+<请写武功秘籍！/@Mu_Taoist_jinsoul_skel_next_2>\
+<结束/@Mu_Taoist_jinsoul_skel_next_5>
+
+[@Mu_Taoist_jinsoul_skel_next_2]
+#IF
+checkitem 超强召唤骷髅 1
+#ACT
+goto @Mu_Taoist_jinsoul_skel_next_3
+#ELSESAY
+请首先找到武功书。不拿武功书来，却让解释，真让人生气！\ \
+<结束/@exit>
+
+[@Mu_Taoist_jinsoul_skel_next_3]
+#IF
+checkgold 3300
+checkitem 超强召唤骷髅 1
+#ELSEACT
+BREAK
+#ELSESAY
+喂！我没有说我不能免费传授武功吗？难道让我挖沙子吃活着吗？快点拿学费来！\ \
+<结束/@exit>
+
+#IF
+random 3
+#ACT
+take 超强召唤骷髅 1
+take 金币 3300
+#SAY
+难道你是说让我解释如此陈旧的书吗。书不是都破碎了嘛。请拿像样的书来，像样的书！！\ \
+<结束/@exit>
+#ELSESAY
+这里有秘诀。天气很热，看很旧的书进行解释，直出冷汗。下次，请拿保存状态稍好写的书来。\ \
+<结束/@exit>
+#ELSEACT
+take 超强召唤骷髅 1
+take 金币 3300
+give 超强召唤骷髅（秘籍） 1
+break
+
+[@Mu_Taoist_jinsoul_skel_next_5]
+#IF
+#SAY
+嗯！现在在耍我吗？如果真的没有什么事情可做，请到沙漠抓诺玛吧。\ \
+<结束/@exit>
+}

@@ -1,0 +1,107 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@元宝在线商城_Main]
+{
+#ACT
+Mov Temp 0
+LoadValue 当前金额 "QuestDiary\Pay\Pay.ini" [%UserID] [RMB]
+ReadSql "TBL_QUEST" "累计消费额" "累计消费"
+
+#IF
+EQUAL 当前金额 ""
+#ACT
+MOV 当前金额 0
+
+#IF
+EQUAL 累计消费 ""
+#ACT
+MOV 累计消费 0
+
+#IF
+#ACT
+formatstr "当前金额: {FCOLOR/1}%-15s{FCOLOR/12}  累计消费: {FCOLOR/1}%s{FCOLOR/12}" %当前金额,%累计消费
+mov 商城个人信息 %A9
+#SAY
+_   <$OUTPUT(商城个人信息)>\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}在{FCOLOR/4}━{FCOLOR/14}线{FCOLOR/4}━{FCOLOR/14}商{FCOLOR/4}━{FCOLOR/14}城{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <用 50元金额 可兑换 1200个元宝/@金额兑换元宝(50,1200,4)> ] 赠送 {FCOLOR/10}4{FCOLOR/12}个经验宝盒\
+{FCOLOR/12}[ <用100元金额 可兑换 2600个元宝/@金额兑换元宝(100,2600,8)> ] 赠送 {FCOLOR/10}8{FCOLOR/12}个经验宝盒\
+{FCOLOR/12}[ <用200元金额 可兑换 5300个元宝/@金额兑换元宝(200,5300,16)> ] 赠送{FCOLOR/10}16{FCOLOR/12}个经验宝盒\
+{FCOLOR/12}[ <用300元金额 可兑换 8100个元宝/@金额兑换元宝(300,8100,26)> ] 赠送{FCOLOR/10}26{FCOLOR/12}个经验宝盒\
+{FCOLOR/12}[ <用400元金额 可兑换11000个元宝/@金额兑换元宝(400,1100,36)> ] 赠送{FCOLOR/10}36{FCOLOR/12}个经验宝盒\
+{FCOLOR/12}[ <用500元金额 可兑换14000个元宝/@金额兑换元宝(500,14000,46)> ] 赠送{FCOLOR/10}46{FCOLOR/12}个经验宝盒\
+{FCOLOR/12}[ <用600元金额 可兑换17100个元宝/@金额兑换元宝(600,17100,56)> ] 赠送{FCOLOR/10}56{FCOLOR/12}个经验宝盒\
+{FCOLOR/12}[ <用700元金额 可兑换20300个元宝/@金额兑换元宝(700,20300,66)> ] 赠送{FCOLOR/10}66{FCOLOR/12}个经验宝盒\
+{FCOLOR/12}[ <用800元金额 可兑换23600个元宝/@金额兑换元宝(800,23600,76)> ] 赠送{FCOLOR/10}76{FCOLOR/12}个经验宝盒\
+{FCOLOR/12}[ <用900元金额 可兑换27000个元宝/@金额兑换元宝(900,27000,86)> ] 赠送{FCOLOR/10}86{FCOLOR/12}个经验宝盒\
+{FCOLOR/12}[ <用1千元金额 可兑换30500个元宝/@金额兑换元宝(1000,30500,96)> ] 赠送{FCOLOR/10}96{FCOLOR/12}个经验宝盒\
+{FCOLOR/12}[ <请输入自定义金额/@@金额兑换元宝8> ]{FCOLOR/1}1{FCOLOR/12}元金额={FCOLOR/1}20{FCOLOR/12}元宝({FCOLOR/1}不赠送经验宝盒{FCOLOR/12})\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}在{FCOLOR/4}━{FCOLOR/14}线{FCOLOR/4}━{FCOLOR/14}商{FCOLOR/4}━{FCOLOR/14}城{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+
+[@金额兑换元宝()]
+#ACT
+MOV 商城金额 %ARG(1)
+MOV 商城元宝 %ARG(2)
+MOV 商城赠送 %ARG(3)
+LoadValue 当前金额 "QuestDiary\Pay\Pay.ini" [%UserID] [RMB]
+ReadSql "TBL_QUEST" "累计消费额" "累计消费"
+
+#IF
+ELarge 当前金额 %商城金额
+EQUAL Temp 0
+#ACT
+Mov Temp 1
+SetUserJF + %商城元宝
+Give 经验宝盒 %商城赠送
+DEC 当前金额 %商城金额
+SaveValue "QuestDiary\Pay\Pay.ini" [%UserID] [RMB] %当前金额
+INC 累计消费 %商城金额
+ACTCMD WRITESQL "TBL_QUEST" "累计消费额" %累计消费
+SYSMSG "温馨提示: 您用<$OUTPUT(商城金额)>元金额兑换了<$OUTPUT(商城元宝)>个元宝,赠送您<$OUTPUT(商城赠送)>个经验宝盒"
+Break
+Close
+#ELSEACT
+SYSMSG "温馨提示: 对不起您的金额不足<$OUTPUT(商城金额)>元无法兑换元宝！"
+Break
+
+[@@金额兑换元宝8]
+#ACT
+Mov D3 %INPUTSTR
+LoadValue 当前金额 "QuestDiary\Pay\Pay.ini" [%UserID] [RMB]
+ReadSql "TBL_QUEST" "累计消费额" "累计消费"
+
+#IF
+Small D3 1
+#ACT
+SysMsg "<系统信息:>输入的金额数必须大于0"
+Break
+
+#IF
+Large D3 1000
+#ACT
+SysMsg "<系统信息:>输入的金额数必须小于或等于1000"
+Break
+
+#IF
+ELarge 当前金额 %D3
+EQUAL Temp 0
+#ACT
+Mov Temp 1
+Mov P1 %D3
+Mov P2 20
+Mul P1 P2
+Mov D4 %P9
+SetUserJF + %D4
+DEC 当前金额 %D3
+SaveValue "QuestDiary\Pay\Pay.ini" [%UserID] [RMB] %当前金额
+INC 累计消费 %D3
+ACTCMD WRITESQL "TBL_QUEST" "累计消费额" %累计消费
+SYSMSG "温馨提示: 您用<$OUTPUT(D3)>元金额兑换了<$OUTPUT(D4)>个元宝"
+Break
+Close
+#ELSEACT
+SysMsg "温馨提示: 对不起您的金额不足<$OUTPUT(D3)>元无法兑换元宝！"
+Break
+Close
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

@@ -1,0 +1,9 @@
+;;
+[@main]
+#ACT
+goto @WestDesertMap_z013
+break
+
+[@WestDesertMap_z013]
+#CALL [WestDesert\Map_WestDesertMain.txt] @ExitWestDesert_1
+;;

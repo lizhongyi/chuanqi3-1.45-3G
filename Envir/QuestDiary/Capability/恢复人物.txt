@@ -1,0 +1,86 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@恢复人物]
+{
+#IF
+#ACT
+   mov    A0      %ARG(1)
+   mov    D1      %ARG(2)
+   mov    S1     2
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}恢{FCOLOR/4}━{FCOLOR/14}复{FCOLOR/4}━{FCOLOR/14}人{FCOLOR/4}━{FCOLOR/14}物{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+在我这里可以恢复被你错误删除的人物.恢复一个人物需\
+要{FCOLOR/1}20{FCOLOR/12}个元宝。你要恢复人物吗？要恢复就请输入名字。\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}恢{FCOLOR/4}━{FCOLOR/14}复{FCOLOR/4}━{FCOLOR/14}人{FCOLOR/4}━{FCOLOR/14}物{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_            [ <输入被删除的人物名字/@@shuru> ]\
+
+
+[@@shuru]
+#ACT
+mov  A4  %INPUTSTR
+
+#IF
+#ACT
+   FormatStr "FLD_CHARACTER='%s'" %A4
+   ReadValueSql  "TBL_CHARACTER"  %A9  "FLD_CHARACTER,FLD_DELETED"  [@shanchu]
+
+[@shanchu()]
+#ACT
+   mov    A1      %ARG(1)
+   mov    A2      %ARG(2)
+   goto @quedingmzi
+
+[@quedingmzi]
+#IF
+   equal  A1 ""
+#SAY
+查无此人！请输入正确名字.\\
+<返 回/@恢复人物>\
+<离 开/@exit>\
+#IF
+   equal  A1 %A4
+   equal  A2 "0"
+
+#SAY
+人物 {FCOLOR/10}<$OUTPUT(A4)>{FCOLOR/12} 没被删除.\\
+<返 回/@恢复人物>\
+<离 开/@exit>\
+#IF
+   equal  A1 %A4
+   equal  A2 "1"
+#SAY
+人物 {FCOLOR/10}<$OUTPUT(A4)>{FCOLOR/12} 被删除了，你现在确定要恢复吗？\\
+<恢复人物/@hueifurw>\
+<离 开/@exit>\
+
+[@hueifurw]
+#SAY
+一个ID最多能存在4个人物.你确定还有空位吗?\
+<确定/@hueifurenwu>\
+
+[@hueifurenwu]
+#IF
+checkcmd CHECKUSERJF 20
+#ACT
+actcmd SETUSERJF - 20 恢复人物
+goto @hueifurenwu+
+
+#ELSESAY
+您的元宝不够.无法执行恢复人物的功能.\
+<离 开/@exit>\
+
+
+[@hueifurenwu+]
+#IF
+#ACT
+   FormatStr "FLD_CHARACTER='%s'" %A4
+   mov   A8     %A9
+   mov   A3      0
+   FormatStr "FLD_DELETED='%s'" %A3
+   UPDATEVALUESQL "TBL_CHARACTER" %A8 %A9
+#SAY
+人物 {FCOLOR/1}<$OUTPUT(A4)>{FCOLOR/12} 被成功恢复.\\
+<离 开/@EXIT>\
+
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

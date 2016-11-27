@@ -1,0 +1,74 @@
+;;创天网络有限公司原版1.45
+[@mugong_heal]
+{
+#IF
+check [014] 1
+#SAY
+你不是已经收到书吗？那么你为什么还要索要？\ \
+<结束/@exit>
+#ACT
+break
+
+#IF
+checkmagic 治愈术
+#SAY
+我看你正在修炼治愈术。\ \
+<结束/@exit>
+#ELSEACT
+goto @mugong_heal_next
+
+[@mugong_heal_next]
+#IF
+checklevel 7
+#ACT
+goto @mugong_heal_next1
+#ELSESAY
+如果想熟练治愈术，武功级别最少要达7级以上。\ \
+<结束/@exit>
+
+[@mugong_heal_next1]
+#IF
+checkitem 治愈术 1
+#ACT
+goto @mugong_heal_next2
+#ELSESAY
+有了治愈术魔法书，我可以教你魔法。\ \
+<结束/@exit>
+
+[@mugong_heal_next2]
+#IF
+#SAY
+想学习治愈术的样子。练习武功的过程中将遇到各种困难，我将给你进行详细地说明。\ 
+那么，在给你武功秘籍之前，先对武功进行进行简单的说明吗？\ \
+<拜托了！/@mugong_heal_next3>\
+<没有必要 /@exit>
+
+[@mugong_heal_next3]
+#IF
+#SAY
+治愈术是将消磨尽的 {FCOLOR/10} 自身体力或者别人的体力在瞬间之内使之恢复{FCOLOR/12} 的武功，是道士最重要的武功。\ \ 
+<很基础的魔法嘛。/@mugong_heal_next4>
+
+[@mugong_heal_next4]
+#IF
+check [014] 0
+checkitem 治愈术 1
+#ACT
+take 治愈术 1
+give 治愈术（秘籍） 1
+set [014] 1
+#SAY
+你现在已经有治愈术秘籍了，以前不理解的部分也可以理解了。\ \ 
+<结束/@exit>
+#ELSESAY
+有了治愈术魔法书，我可以教你魔法。\ \
+<结束/@exit>
+}
+
+[@mugong_heal_explain]
+{
+#IF
+#SAY
+如果想学习治愈术，基本的修炼结束后，请再来找我！\ \ 
+<结束/@exit>
+}

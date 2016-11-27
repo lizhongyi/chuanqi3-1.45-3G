@@ -1,0 +1,161 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@佩戴_Main]
+{
+#Act
+Mov 佩戴索引 %ARG(3)
+
+#If
+small 佩戴索引 1
+#Act
+break
+
+#If
+Equal 佩戴索引 ""
+#Act
+break
+
+#If
+!Equal 佩戴索引 ""
+#Act
+FormatStr "where FLD_MAKEINDEX = %s" %佩戴索引
+ACTCMD READSQL "TBL_Jewel" "Display1,Display2,Display3,Display4,Display5" "佩戴显示信息1,佩戴显示信息2,佩戴显示信息3,佩戴显示信息4,佩戴显示信息5" %A9
+
+#If
+!Equal 佩戴显示信息1 ""
+#Act
+FormatStr "where Name = '%s'" %佩戴显示信息1
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "佩戴破坏1,佩戴自然1,佩戴灵魂1" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "佩戴物防1,佩戴魔防1,佩戴体力1" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "佩戴魔力1" %A9
+
+#If
+!Equal 佩戴显示信息2 ""
+#Act
+FormatStr "where Name = '%s'" %佩戴显示信息2
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "佩戴破坏2,佩戴自然2,佩戴灵魂2" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "佩戴物防2,佩戴魔防2,佩戴体力2" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "佩戴魔力2" %A9
+
+#If
+!Equal 佩戴显示信息3 ""
+#Act
+FormatStr "where Name = '%s'" %佩戴显示信息3
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "佩戴破坏3,佩戴自然3,佩戴灵魂3" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "佩戴物防3,佩戴魔防3,佩戴体力3" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "佩戴魔力3" %A9
+
+#If
+!Equal 佩戴显示信息4 ""
+#Act
+FormatStr "where Name = '%s'" %佩戴显示信息4
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "佩戴破坏4,佩戴自然4,佩戴灵魂4" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "佩戴物防4,佩戴魔防4,佩戴体力4" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "佩戴魔力4" %A9
+
+#If
+!Equal 佩戴显示信息5 ""
+#Act
+FormatStr "where Name = '%s'" %佩戴显示信息5
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "佩戴破坏5,佩戴自然5,佩戴灵魂5" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "佩戴物防5,佩戴魔防5,佩戴体力5" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "佩戴魔力5" %A9
+
+#If
+#Act
+Mov 佩戴破坏 %佩戴破坏1
+Inc 佩戴破坏 %佩戴破坏2
+Inc 佩戴破坏 %佩戴破坏3
+Inc 佩戴破坏 %佩戴破坏4
+Inc 佩戴破坏 %佩戴破坏5
+Mov 佩戴自然 %佩戴自然1
+Inc 佩戴自然 %佩戴自然2
+Inc 佩戴自然 %佩戴自然3
+Inc 佩戴自然 %佩戴自然4
+Inc 佩戴自然 %佩戴自然5
+Mov 佩戴灵魂 %佩戴灵魂1
+Inc 佩戴灵魂 %佩戴灵魂2
+Inc 佩戴灵魂 %佩戴灵魂3
+Inc 佩戴灵魂 %佩戴灵魂4
+Inc 佩戴灵魂 %佩戴灵魂5
+Mov 佩戴物防 %佩戴物防1
+Inc 佩戴物防 %佩戴物防2
+Inc 佩戴物防 %佩戴物防3
+Inc 佩戴物防 %佩戴物防4
+Inc 佩戴物防 %佩戴物防5
+Mov 佩戴魔防 %佩戴魔防1
+Inc 佩戴魔防 %佩戴魔防2
+Inc 佩戴魔防 %佩戴魔防3
+Inc 佩戴魔防 %佩戴魔防4
+Inc 佩戴魔防 %佩戴魔防5
+Mov 佩戴体力 %佩戴体力1
+Inc 佩戴体力 %佩戴体力2
+Inc 佩戴体力 %佩戴体力3
+Inc 佩戴体力 %佩戴体力4
+Inc 佩戴体力 %佩戴体力5
+Mov 佩戴魔力 %佩戴魔力1
+Inc 佩戴魔力 %佩戴魔力2
+Inc 佩戴魔力 %佩戴魔力3
+Inc 佩戴魔力 %佩戴魔力4
+Inc 佩戴魔力 %佩戴魔力5
+
+#If
+#Act
+ATTRIBUTEADD DC %佩戴破坏
+ATTRIBUTEADD MC %佩戴自然
+ATTRIBUTEADD SC %佩戴灵魂
+ATTRIBUTEADD AC %佩戴物防
+ATTRIBUTEADD MAC %佩戴魔防
+ATTRIBUTEADD HP %佩戴体力
+ATTRIBUTEADD MP %佩戴魔力
+Mov 佩戴破坏 ""
+Mov 佩戴自然 ""
+Mov 佩戴灵魂 ""
+Mov 佩戴物防 ""
+Mov 佩戴魔防 ""
+Mov 佩戴体力 ""
+Mov 佩戴魔力 ""
+Mov 佩戴破坏1 ""
+Mov 佩戴自然1 ""
+Mov 佩戴灵魂1 ""
+Mov 佩戴物防1 ""
+Mov 佩戴魔防1 ""
+Mov 佩戴体力1 ""
+Mov 佩戴魔力1 ""
+Mov 佩戴破坏2 ""
+Mov 佩戴自然2 ""
+Mov 佩戴灵魂2 ""
+Mov 佩戴物防2 ""
+Mov 佩戴魔防2 ""
+Mov 佩戴体力2 ""
+Mov 佩戴魔力2 ""
+Mov 佩戴破坏3 ""
+Mov 佩戴自然3 ""
+Mov 佩戴灵魂3 ""
+Mov 佩戴物防3 ""
+Mov 佩戴魔防3 ""
+Mov 佩戴体力3 ""
+Mov 佩戴魔力3 ""
+Mov 佩戴破坏4 ""
+Mov 佩戴自然4 ""
+Mov 佩戴灵魂4 ""
+Mov 佩戴物防4 ""
+Mov 佩戴魔防4 ""
+Mov 佩戴体力4 ""
+Mov 佩戴魔力4 ""
+Mov 佩戴破坏5 ""
+Mov 佩戴自然5 ""
+Mov 佩戴灵魂5 ""
+Mov 佩戴物防5 ""
+Mov 佩戴魔防5 ""
+Mov 佩戴体力5 ""
+Mov 佩戴魔力5 ""
+Mov 佩戴显示信息1 ""
+Mov 佩戴显示信息2 ""
+Mov 佩戴显示信息3 ""
+Mov 佩戴显示信息4 ""
+Mov 佩戴显示信息5 ""
+Break
+
+}
+
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

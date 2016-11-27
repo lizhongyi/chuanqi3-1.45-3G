@@ -1,0 +1,26 @@
+[Config]
+Count     =2
+
+ID1       =15
+Name1     ="查询分析器"
+FileIco1  ="$TPisqlw.exe"
+IcoIndex1 =0
+FileEXE1  ="$TPisqlw.exe"
+FilePara1 ="-S $ConName"
+RegEXE1   ="$TPReg.Bat"
+RegPara1  =""
+FilePath1 ="$TP"
+Hint11    ="非常方便的管理数据库的工具"
+Hint21    ="(点击注册可支持关键字加亮等功能)"
+
+ID2       =60
+Name2     ="事件探查器"
+FileIco2  ="$TPprofiler.exe"
+IcoIndex2 =0
+FileEXE2  ="$TPprofiler.exe"
+FilePara2 =""
+RegEXE2   =""
+RegPara2  =""
+FilePath2 ="$TP"
+Hint12    ="分析SQLServer运行SQL的必备工具"
+Hint22    ="(可以查出别的软件运行什么语句了)"

@@ -1,0 +1,669 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@高级打孔_Main]
+{
+#Act
+Mov 打孔显示信息1 ""
+Mov 打孔显示信息2 ""
+Mov 打孔显示信息3 ""
+Mov 打孔显示信息4 ""
+Mov 打孔显示信息5 ""
+Mov Temp 0
+Mov D8 0
+#Say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}高{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━{FCOLOR/14}打{FCOLOR/4}━{FCOLOR/14}孔{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_请选择你需要操作装备的种类且身上已穿戴该类型的装备\
+_       本系统可以{FCOLOR/1}1转以上{FCOLOR/12}装备进行打孔插槽\
+_           (注:打凿插槽有{FCOLOR/10}60%{FCOLOR/12}的成功率)\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}高{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━{FCOLOR/14}打{FCOLOR/4}━{FCOLOR/14}孔{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_[ <打凿武器/@打孔面板_高级(武器,1,5)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <打凿衣服/@打孔面板_高级(衣服,0,2)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <打凿头盔/@打孔面板_高级(头盔,4,2)> ]\\
+_[ <打凿项链/@打孔面板_高级(项链,3,2)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <打凿左镯/@打孔面板_高级(左手镯,5,2)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <打凿右镯/@打孔面板_高级(右手镯,6,2)> ]\\
+_[ <打凿鞋子/@打孔面板_高级(鞋子,10,2)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <打凿左戒/@打孔面板_高级(左戒指,7,2)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <打凿右戒/@打孔面板_高级(右戒指,8,2)> ]\\
+_                   [ <返  回/@菜单_Main> ]\
+
+;************************打孔面板************************
+[@打孔面板_高级()]
+#Act
+Mov 打孔装备名字 %ARG(1)
+Mov 打孔装备位置 %ARG(2)
+Mov 打孔最多个数 %ARG(3)
+Goto @打孔物品信息读取_高级
+#IF
+!checkcmd CHECKITEMINFO %打孔装备位置 0       ;;;检测是否带装备
+#ACT
+SysMsg  "温馨提示: 您的[ <$OUTPUT(打孔装备名字)> ]位置没有佩带任何装备"
+break
+
+#If
+!Equal 镶嵌值 2
+#ACT
+SysMsg  "温馨提示: 您当前的[ <$OUTPUT(打孔装备名字)> ]不可以使用源质钨钢金钻打孔"
+break
+
+#If
+#Say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}高{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━{FCOLOR/14}面{FCOLOR/4}━{FCOLOR/14}板{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_          您选择了 {FCOLOR/1}<$OUTPUT(打孔装备名字)>{FCOLOR/12} 来操作本功能\
+_     每次打凿插槽需要花费 {FCOLOR/1}1{FCOLOR/12} 个源质钨钢金钻\
+_        该件装备只可最多打凿 {FCOLOR/1}<$OUTPUT(打孔最多个数)>{FCOLOR/12} 个插槽\\
+#If
+EQUAL 打孔装备位置 1	;;武器
+#Say
+_           [ <为装备打凿1个红色插槽/@打孔操作_高级5(红色插槽)> ]\\
+_           [ <为装备打凿1个白色插槽/@打孔操作_高级5(白色插槽)> ]\\
+_           [ <为装备打凿1个蓝色插槽/@打孔操作_高级5(蓝色插槽)> ]\\
+
+#If
+EQUAL 打孔装备位置 0	;;衣服
+#Say
+_           [ <为装备打凿1个紫色插槽/@打孔操作_高级2(紫色插槽)> ]\\
+_           [ <为装备打凿1个橙色插槽/@打孔操作_高级2(橙色插槽)> ]\\
+
+#If
+EQUAL 打孔装备位置 4	;;头盔
+#Say
+_           [ <为装备打凿1个黄色插槽/@打孔操作_高级2(黄色插槽)> ]\\
+_           [ <为装备打凿1个绿色插槽/@打孔操作_高级2(绿色插槽)> ]\\
+
+#If
+EQUAL 打孔装备位置 3	;;项链
+#Say
+_           [ <为装备打凿1个红色插槽/@打孔操作_高级2(红色插槽)> ]\\
+_           [ <为装备打凿1个白色插槽/@打孔操作_高级2(白色插槽)> ]\\
+_           [ <为装备打凿1个蓝色插槽/@打孔操作_高级2(蓝色插槽)> ]\\
+
+#If
+EQUAL 打孔装备位置 10	;;鞋子
+#Say
+_           [ <为装备打凿1个紫色插槽/@打孔操作_高级2(紫色插槽)> ]\\
+_           [ <为装备打凿1个橙色插槽/@打孔操作_高级2(橙色插槽)> ]\\
+
+#If
+EQUAL 打孔装备位置 5	;;左手镯
+#Say
+_           [ <为装备打凿1个黄色插槽/@打孔操作_高级2(黄色插槽)> ]\\
+_           [ <为装备打凿1个绿色插槽/@打孔操作_高级2(绿色插槽)> ]\\
+
+#If
+EQUAL 打孔装备位置 6	;;右手镯
+#Say
+_           [ <为装备打凿1个黄色插槽/@打孔操作_高级2(黄色插槽)> ]\\
+_           [ <为装备打凿1个绿色插槽/@打孔操作_高级2(绿色插槽)> ]\\
+
+#If
+EQUAL 打孔装备位置 7	;;左戒指
+#Say
+_           [ <为装备打凿1个红色插槽/@打孔操作_高级2(红色插槽)> ]\\
+_           [ <为装备打凿1个白色插槽/@打孔操作_高级2(白色插槽)> ]\\
+_           [ <为装备打凿1个蓝色插槽/@打孔操作_高级2(蓝色插槽)> ]\\
+
+#If
+EQUAL 打孔装备位置 8	;;右戒指
+#Say
+_           [ <为装备打凿1个红色插槽/@打孔操作_高级2(红色插槽)> ]\\
+_           [ <为装备打凿1个白色插槽/@打孔操作_高级2(白色插槽)> ]\\
+_           [ <为装备打凿1个蓝色插槽/@打孔操作_高级2(蓝色插槽)> ]\\
+#If
+#Say
+_                   [ <返  回/@高级打孔_Main> ]\\
+
+[@打孔操作_高级5()]
+#Act
+Mov 插槽名字 %ARG(1)
+Movr D8 100
+Goto @打孔物品信息读取_高级
+
+#If
+!Equal 镶嵌值 2
+#ACT
+SysMsg  "<系统提示:>您当前的[ <$OUTPUT(打孔装备名字)> ]不可以使用源质钨钢金钻打孔"
+break
+
+#IF
+!checkitem 源质钨钢金钻 1
+#ACT
+SYSMSG "<系统提示:>您没有源质钨钢金钻无法进行打孔."
+Break
+
+#IF
+ESMALL D8 40
+EQUAL Temp 0
+#ACT
+Mov Temp 1
+GOTO @打孔操作_高级5成功
+Break
+
+#IF
+LARGE D8 40
+EQUAL Temp 0
+#ACT
+Mov Temp 1
+GOTO @打孔操作_高级5失败
+Break
+
+[@打孔操作_高级5失败]
+#If
+!EQUAL 打孔显示信息1 ""
+!EQUAL 打孔显示信息2 ""
+!EQUAL 打孔显示信息3 ""
+!EQUAL 打孔显示信息4 ""
+!EQUAL 打孔显示信息5 ""
+#Act
+SysMsg "<系统提示:>您的装备已经打凿了5个插槽了,无法再次打凿！"
+Break
+Close
+
+#IF
+#ACT
+Take 源质钨钢金钻 1
+SysMsg "<系统提示>打凿[ <$OUTPUT(插槽名字)> ]失败,再接再厉.."
+Break
+Close
+
+[@打孔操作_高级5成功]
+#If
+EQUAL 打孔显示信息1 ""
+EQUAL 打孔显示信息2 ""
+EQUAL 打孔显示信息3 ""
+EQUAL 打孔显示信息4 ""
+EQUAL 打孔显示信息5 ""
+#Act
+take 源质钨钢金钻 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 打孔索引 %A9
+FormatStr "%s,'%s'" %FLD_MAKEINDEX,%插槽名字
+Mov 打孔写入 %A9
+ACTCMD WRITESQL "TBL_Jewel" "FLD_MAKEINDEX,Display1" %打孔写入 %打孔索引
+SysMsg "恭喜您成功打凿1个[ <$OUTPUT(插槽名字)> ]"
+Break
+Close
+
+#If
+!EQUAL 打孔显示信息1 ""
+EQUAL 打孔显示信息2 ""
+EQUAL 打孔显示信息3 ""
+EQUAL 打孔显示信息4 ""
+EQUAL 打孔显示信息5 ""
+#Act
+take 源质钨钢金钻 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 打孔索引 %A9
+FormatStr "%s,'%s'" %FLD_MAKEINDEX,%插槽名字
+Mov 打孔写入 %A9
+ACTCMD WRITESQL "TBL_Jewel" "FLD_MAKEINDEX,Display2" %打孔写入 %打孔索引
+SysMsg "恭喜您成功打凿1个[ <$OUTPUT(插槽名字)> ]"
+Break
+Close
+
+#If
+!EQUAL 打孔显示信息1 ""
+!EQUAL 打孔显示信息2 ""
+EQUAL 打孔显示信息3 ""
+EQUAL 打孔显示信息4 ""
+EQUAL 打孔显示信息5 ""
+#Act
+take 源质钨钢金钻 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 打孔索引 %A9
+FormatStr "%s,'%s'" %FLD_MAKEINDEX,%插槽名字
+Mov 打孔写入 %A9
+ACTCMD WRITESQL "TBL_Jewel" "FLD_MAKEINDEX,Display3" %打孔写入 %打孔索引
+SysMsg "恭喜您成功打凿1个[ <$OUTPUT(插槽名字)> ]"
+Break
+Close
+
+#If
+!EQUAL 打孔显示信息1 ""
+!EQUAL 打孔显示信息2 ""
+!EQUAL 打孔显示信息3 ""
+EQUAL 打孔显示信息4 ""
+EQUAL 打孔显示信息5 ""
+#Act
+take 源质钨钢金钻 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 打孔索引 %A9
+FormatStr "%s,'%s'" %FLD_MAKEINDEX,%插槽名字
+Mov 打孔写入 %A9
+ACTCMD WRITESQL "TBL_Jewel" "FLD_MAKEINDEX,Display4" %打孔写入 %打孔索引
+SysMsg "恭喜您成功打凿1个[ <$OUTPUT(插槽名字)> ]"
+Break
+Close
+
+#If
+!EQUAL 打孔显示信息1 ""
+!EQUAL 打孔显示信息2 ""
+!EQUAL 打孔显示信息3 ""
+!EQUAL 打孔显示信息4 ""
+EQUAL 打孔显示信息5 ""
+#Act
+take 源质钨钢金钻 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 打孔索引 %A9
+FormatStr "%s,'%s'" %FLD_MAKEINDEX,%插槽名字
+Mov 打孔写入 %A9
+ACTCMD WRITESQL "TBL_Jewel" "FLD_MAKEINDEX,Display5" %打孔写入 %打孔索引
+SysMsg "恭喜您成功打凿1个[ <$OUTPUT(插槽名字)> ]"
+Break
+Close
+
+#If
+!EQUAL 打孔显示信息1 ""
+!EQUAL 打孔显示信息2 ""
+!EQUAL 打孔显示信息3 ""
+!EQUAL 打孔显示信息4 ""
+!EQUAL 打孔显示信息5 ""
+#Act
+SysMsg "<系统提示:>您的装备已经打凿了5个插槽了,无法再次打凿！"
+Break
+Close
+
+[@打孔操作_高级4()]
+#Act
+Mov 插槽名字 %ARG(1)
+Movr D8 100
+Goto @打孔物品信息读取_高级
+
+#If
+!Equal 镶嵌值 2
+#ACT
+SysMsg  "<系统提示:>您当前的[ <$OUTPUT(打孔装备名字)> ]不可以使用源质钨钢金钻打孔"
+break
+
+#IF
+!checkitem 源质钨钢金钻 1
+#ACT
+SYSMSG "<系统提示:>您没有源质钨钢金钻无法进行打孔."
+Break
+
+#IF
+ESMALL D8 40
+EQUAL Temp 0
+#ACT
+Mov Temp 1
+GOTO @打孔操作_高级4成功
+Break
+
+#IF
+LARGE D8 40
+EQUAL Temp 0
+#ACT
+Mov Temp 1
+GOTO @打孔操作_高级4失败
+Break
+
+[@打孔操作_高级4失败]
+#If
+!EQUAL 打孔显示信息1 ""
+!EQUAL 打孔显示信息2 ""
+!EQUAL 打孔显示信息3 ""
+!EQUAL 打孔显示信息4 ""
+#Act
+SysMsg "<系统提示:>您的装备已经打凿了4个插槽了,无法再次打凿！"
+Break
+Close
+
+#IF
+#ACT
+Take 源质钨钢金钻 1
+SysMsg "<系统提示>打凿[ <$OUTPUT(插槽名字)> ]失败,再接再厉.."
+Break
+Close
+
+[@打孔操作_高级4成功]
+#If
+EQUAL 打孔显示信息1 ""
+EQUAL 打孔显示信息2 ""
+EQUAL 打孔显示信息3 ""
+EQUAL 打孔显示信息4 ""
+#Act
+take 源质钨钢金钻 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 打孔索引 %A9
+FormatStr "%s,'%s'" %FLD_MAKEINDEX,%插槽名字
+Mov 打孔写入 %A9
+ACTCMD WRITESQL "TBL_Jewel" "FLD_MAKEINDEX,Display1" %打孔写入 %打孔索引
+SysMsg "恭喜您成功打凿1个[ <$OUTPUT(插槽名字)> ]"
+Break
+Close
+
+#If
+!EQUAL 打孔显示信息1 ""
+EQUAL 打孔显示信息2 ""
+EQUAL 打孔显示信息3 ""
+EQUAL 打孔显示信息4 ""
+#Act
+take 源质钨钢金钻 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 打孔索引 %A9
+FormatStr "%s,'%s'" %FLD_MAKEINDEX,%插槽名字
+Mov 打孔写入 %A9
+ACTCMD WRITESQL "TBL_Jewel" "FLD_MAKEINDEX,Display2" %打孔写入 %打孔索引
+SysMsg "恭喜您成功打凿1个[ <$OUTPUT(插槽名字)> ]"
+Break
+Close
+
+#If
+!EQUAL 打孔显示信息1 ""
+!EQUAL 打孔显示信息2 ""
+EQUAL 打孔显示信息3 ""
+EQUAL 打孔显示信息4 ""
+#Act
+take 源质钨钢金钻 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 打孔索引 %A9
+FormatStr "%s,'%s'" %FLD_MAKEINDEX,%插槽名字
+Mov 打孔写入 %A9
+ACTCMD WRITESQL "TBL_Jewel" "FLD_MAKEINDEX,Display3" %打孔写入 %打孔索引
+SysMsg "恭喜您成功打凿1个[ <$OUTPUT(插槽名字)> ]"
+Break
+Close
+
+#If
+!EQUAL 打孔显示信息1 ""
+!EQUAL 打孔显示信息2 ""
+!EQUAL 打孔显示信息3 ""
+EQUAL 打孔显示信息4 ""
+#Act
+take 源质钨钢金钻 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 打孔索引 %A9
+FormatStr "%s,'%s'" %FLD_MAKEINDEX,%插槽名字
+Mov 打孔写入 %A9
+ACTCMD WRITESQL "TBL_Jewel" "FLD_MAKEINDEX,Display4" %打孔写入 %打孔索引
+SysMsg "恭喜您成功打凿1个[ <$OUTPUT(插槽名字)> ]"
+Break
+Close
+
+#If
+!EQUAL 打孔显示信息1 ""
+!EQUAL 打孔显示信息2 ""
+!EQUAL 打孔显示信息3 ""
+!EQUAL 打孔显示信息4 ""
+#Act
+SysMsg "<系统提示:>您的装备已经打凿了4个插槽了,无法再次打凿！"
+Break
+Close
+
+[@打孔操作_高级3()]
+#Act
+Mov 插槽名字 %ARG(1)
+Movr D8 100
+Goto @打孔物品信息读取_高级
+
+#If
+!Equal 镶嵌值 2
+#ACT
+SysMsg  "<系统提示:>您当前的[ <$OUTPUT(打孔装备名字)> ]不可以使用源质钨钢金钻打孔"
+break
+
+#IF
+!checkitem 源质钨钢金钻 1
+#ACT
+SYSMSG "<系统提示:>您没有源质钨钢金钻无法进行打孔."
+Break
+
+#IF
+ESMALL D8 40
+EQUAL Temp 0
+#ACT
+Mov Temp 1
+GOTO @打孔操作_高级3成功
+Break
+
+#IF
+LARGE D8 40
+EQUAL Temp 0
+#ACT
+Mov Temp 1
+GOTO @打孔操作_高级3失败
+Break
+
+[@打孔操作_高级3失败]
+#If
+!EQUAL 打孔显示信息1 ""
+!EQUAL 打孔显示信息2 ""
+!EQUAL 打孔显示信息3 ""
+#Act
+SysMsg "<系统提示:>您的装备已经打凿了3个插槽了,无法再次打凿！"
+Break
+Close
+
+#IF
+#ACT
+Take 源质钨钢金钻 1
+SysMsg "<系统提示>打凿[ <$OUTPUT(插槽名字)> ]失败,再接再厉.."
+Break
+Close
+
+[@打孔操作_高级3成功]
+#If
+EQUAL 打孔显示信息1 ""
+EQUAL 打孔显示信息2 ""
+EQUAL 打孔显示信息3 ""
+#Act
+take 源质钨钢金钻 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 打孔索引 %A9
+FormatStr "%s,'%s'" %FLD_MAKEINDEX,%插槽名字
+Mov 打孔写入 %A9
+ACTCMD WRITESQL "TBL_Jewel" "FLD_MAKEINDEX,Display1" %打孔写入 %打孔索引
+SysMsg "恭喜您成功打凿1个[ <$OUTPUT(插槽名字)> ]"
+Break
+Close
+
+#If
+!EQUAL 打孔显示信息1 ""
+EQUAL 打孔显示信息2 ""
+EQUAL 打孔显示信息3 ""
+#Act
+take 源质钨钢金钻 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 打孔索引 %A9
+FormatStr "%s,'%s'" %FLD_MAKEINDEX,%插槽名字
+Mov 打孔写入 %A9
+ACTCMD WRITESQL "TBL_Jewel" "FLD_MAKEINDEX,Display2" %打孔写入 %打孔索引
+SysMsg "恭喜您成功打凿1个[ <$OUTPUT(插槽名字)> ]"
+Break
+Close
+
+#If
+!EQUAL 打孔显示信息1 ""
+!EQUAL 打孔显示信息2 ""
+EQUAL 打孔显示信息3 ""
+#Act
+take 源质钨钢金钻 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 打孔索引 %A9
+FormatStr "%s,'%s'" %FLD_MAKEINDEX,%插槽名字
+Mov 打孔写入 %A9
+ACTCMD WRITESQL "TBL_Jewel" "FLD_MAKEINDEX,Display3" %打孔写入 %打孔索引
+SysMsg "恭喜您成功打凿1个[ <$OUTPUT(插槽名字)> ]"
+Break
+Close
+
+#If
+!EQUAL 打孔显示信息1 ""
+!EQUAL 打孔显示信息2 ""
+!EQUAL 打孔显示信息3 ""
+#Act
+SysMsg "<系统提示:>您的装备已经打凿了3个插槽了,无法再次打凿！"
+Break
+Close
+
+[@打孔操作_高级2()]
+#Act
+Mov 插槽名字 %ARG(1)
+Movr D8 100
+Goto @打孔物品信息读取_高级
+
+#If
+!Equal 镶嵌值 2
+#ACT
+SysMsg  "<系统提示:>您当前的[ <$OUTPUT(打孔装备名字)> ]不可以使用源质钨钢金钻打孔"
+break
+
+#IF
+!checkitem 源质钨钢金钻 1
+#ACT
+SYSMSG "<系统提示:>您没有源质钨钢金钻无法进行打孔."
+Break
+
+#IF
+ESMALL D8 40
+EQUAL Temp 0
+#ACT
+Mov Temp 1
+GOTO @打孔操作_高级2成功
+Break
+
+#IF
+LARGE D8 40
+EQUAL Temp 0
+#ACT
+Mov Temp 1
+GOTO @打孔操作_高级2失败
+Break
+
+[@打孔操作_高级2失败]
+#If
+!EQUAL 打孔显示信息1 ""
+!EQUAL 打孔显示信息2 ""
+#Act
+SysMsg "<系统提示:>您的装备已经打凿了2个插槽了,无法再次打凿！"
+Break
+Close
+
+#IF
+#ACT
+Take 源质钨钢金钻 1
+SysMsg "<系统提示>打凿[ <$OUTPUT(插槽名字)> ]失败,再接再厉.."
+Break
+Close
+
+[@打孔操作_高级2成功]
+#If
+EQUAL 打孔显示信息1 ""
+EQUAL 打孔显示信息2 ""
+#Act
+take 源质钨钢金钻 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 打孔索引 %A9
+FormatStr "%s,'%s'" %FLD_MAKEINDEX,%插槽名字
+Mov 打孔写入 %A9
+ACTCMD WRITESQL "TBL_Jewel" "FLD_MAKEINDEX,Display1" %打孔写入 %打孔索引
+SysMsg "恭喜您成功打凿1个[ <$OUTPUT(插槽名字)> ]"
+Break
+Close
+
+#If
+!EQUAL 打孔显示信息1 ""
+EQUAL 打孔显示信息2 ""
+#Act
+take 源质钨钢金钻 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 打孔索引 %A9
+FormatStr "%s,'%s'" %FLD_MAKEINDEX,%插槽名字
+Mov 打孔写入 %A9
+ACTCMD WRITESQL "TBL_Jewel" "FLD_MAKEINDEX,Display2" %打孔写入 %打孔索引
+SysMsg "恭喜您成功打凿1个[ <$OUTPUT(插槽名字)> ]"
+Break
+Close
+
+#If
+!EQUAL 打孔显示信息1 ""
+!EQUAL 打孔显示信息2 ""
+#Act
+SysMsg "<系统提示:>您的装备已经打凿了2个插槽了,无法再次打凿！"
+Break
+Close
+
+[@打孔操作_高级1()]
+#Act
+Mov 插槽名字 %ARG(1)
+Movr D8 100
+Goto @打孔物品信息读取_高级
+
+#If
+!Equal 镶嵌值 2
+#ACT
+SysMsg  "<系统提示:>您当前的[ <$OUTPUT(打孔装备名字)> ]不可以使用源质钨钢金钻打孔"
+break
+
+#IF
+!checkitem 源质钨钢金钻 1
+#ACT
+SYSMSG "<系统提示:>您没有源质钨钢金钻无法进行打孔."
+Break
+
+#IF
+ESMALL D8 40
+EQUAL Temp 0
+#ACT
+Mov Temp 1
+GOTO @打孔操作_高级1成功
+Break
+
+#IF
+LARGE D8 40
+EQUAL Temp 0
+#ACT
+Mov Temp 1
+GOTO @打孔操作_高级1失败
+Break
+
+[@打孔操作_高级1失败]
+#If
+!EQUAL 打孔显示信息1 ""
+#Act
+SysMsg "<系统提示:>您的装备已经打凿了1个插槽了,无法再次打凿！"
+Break
+Close
+
+#IF
+#ACT
+Take 源质钨钢金钻 1
+SysMsg "<系统提示>打凿[ <$OUTPUT(插槽名字)> ]失败,再接再厉.."
+Break
+Close
+
+[@打孔操作_高级1成功]
+#If
+EQUAL 打孔显示信息1 ""
+#Act
+take 源质钨钢金钻 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 打孔索引 %A9
+FormatStr "%s,'%s'" %FLD_MAKEINDEX,%插槽名字
+Mov 打孔写入 %A9
+ACTCMD WRITESQL "TBL_Jewel" "FLD_MAKEINDEX,Display1" %打孔写入 %打孔索引
+SysMsg "恭喜您成功打凿1个[ <$OUTPUT(插槽名字)> ]"
+Break
+Close
+
+#If
+!EQUAL 打孔显示信息1 ""
+#Act
+SysMsg "<系统提示:>您的装备已经打凿了2个插槽了,无法再次打凿！"
+Break
+Close
+
+[@打孔物品信息读取_高级]
+#If
+checkcmd CHECKITEMINFO %打孔装备位置
+
+#IF
+!checkcmd CHECKITEMINFO %打孔装备位置 0       ;;;检测是否带装备
+#ACT
+break
+
+#If
+#Act
+Mov 装备的名字 %FLD_NAME
+FormatStr "where FLD_MAKEINDEX = %s" %FLD_MAKEINDEX
+ACTCMD READSQL "TBL_Jewel" "Display1,Display2,Display3,Display4,Display5" "打孔显示信息1,打孔显示信息2,打孔显示信息3,打孔显示信息4,打孔显示信息5" %A9
+FormatStr "Where Name = '%s'" %装备的名字
+ACTCMD READSQL "King_Stditems" "ShowItemInfo" "镶嵌值" %A9
+Break
+
+}
+
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

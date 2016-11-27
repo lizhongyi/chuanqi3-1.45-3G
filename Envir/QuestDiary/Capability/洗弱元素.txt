@@ -1,0 +1,34 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@洗弱元素_1]
+{
+#say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}洗{FCOLOR/4}━{FCOLOR/14}弱{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_  {FCOLOR/10}去掉装备{FCOLOR/12}上的{FCOLOR/1}弱元素{FCOLOR/12}→ 所需要的费用是: {FCOLOR/1}30{FCOLOR/12} 元宝\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}洗{FCOLOR/4}━{FCOLOR/14}弱{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_{FCOLOR/12}[ <头盔/@ClearBad(4,头盔)> ] [ <衣服/@ClearBad(0,衣服)> ] [ <左手镯/@ClearBad(5,左手镯)> ] [ <右手镯/@ClearBad(6,右手镯)> ] [ <靴子/@ClearBad(10,靴子)> ]\
+
+[@ClearBad()]
+#ACT
+mov D0 %ARG(1)
+mov A0 %ARG(2)
+#IF
+CHECKITEMINFO %D0
+Esmall FLD_DESC6 0
+#ACT
+Close
+SYSMSG "失败提示: <$OUTPUT(A0)> 上不存在 弱元素 ."
+break
+
+#IF
+CHECKITEMINFO %D0
+checkcmd CHECKUSERJF 30
+#ACT
+Close
+actcmd SETUSERJF - 30
+ACTCMD EDITITEM FLD_DESC6 = 0
+SYSMSG "成功提示: <$OUTPUT(A0)> 上的 弱元素 不见了."
+#Elseact
+Close
+SYSMSG "温馨提示: 元宝不足.或者您没有佩带该装备."
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

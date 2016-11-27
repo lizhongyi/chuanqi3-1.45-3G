@@ -1,0 +1,212 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@充值系统_1]
+{
+#ACT
+LOADVALUE D0 "ParamControl\充值余额.ini" %USERID RMB
+LOADVALUE D1 "ParamControl\累积消费.ini" %USERID RMB
+
+#IF
+#SAY
+{FCOLOR/13}点击登录器上的在线充值按钮无需联系客服即可快速到账.{FCOLOR/12}\
+目前剩余的金额为 {FCOLOR/1}<$OUTPUT(D0)>{FCOLOR/12} 赞助币,累积消费 {FCOLOR/1}<$OUTPUT(D1)>{FCOLOR/12} 赞助币.\
+
+#IF
+Elarge D1 500
+#SAY
+<累积消费满500抽奖/@累积抽奖1>\
+
+#IF
+#SAY
+<【进入金币商城】/@金币商城1>      <【赞助币兑换铜钱】/@赞助币实物1>\
+<10赞助币进行服装染色/@服装染色1>\
+<10赞助币进行首饰美化/@首饰美化1>\
+<10赞助币进行装备刻名/@装备刻名1>\
+<50赞助币进行转换性别/@转换性别1>\
+<1赞助币购买赞助勋章（火）1个/@商城兑换物品(1,赞助勋章（火）)>\
+<1赞助币购买赞助勋章（冰）1个/@商城兑换物品(1,赞助勋章（冰）)>\
+<1赞助币购买赞助勋章（雷）1个/@商城兑换物品(1,赞助勋章（雷）)>\
+<1赞助币购买赞助勋章（风）1个/@商城兑换物品(1,赞助勋章（风）)>\
+<1赞助币购买赞助勋章（神圣）1个/@商城兑换物品(1,赞助勋章（神圣）)>\
+<1赞助币购买赞助勋章（暗黑）1个/@商城兑换物品(1,赞助勋章（暗黑）)>\
+<1赞助币购买赞助勋章（幻影）1个/@商城兑换物品(1,赞助勋章（幻影）)>\
+<10赞助币购买烟花（小）1个/@商城兑换物品(10,烟花（小）)>\
+<50赞助币购买烟花（大）1个/@商城兑换物品(50,烟花（大）)>\
+<10赞助币购买发卡1个/@商城兑换物品(10,发卡)>\
+<10赞助币购买传音喇叭1个/@商城兑换物品(10,传音喇叭)>\
+<10赞助币可以换取金币70W/@商城兑换金币(10,700000)>\
+<100赞助币可以换取金币700W/@商城兑换金币(100,7000000)>\
+<1000赞助币可以换取金币7000W/@商城兑换金币(1000,70000000)>\
+
+[@赞助币实物1]
+#ACT
+LOADVALUE D0 "ParamControl\充值余额.ini" %USERID RMB
+#SAY
+目前剩余的金额为 {FCOLOR/1}<$OUTPUT(D0)>{FCOLOR/12} 赞助币,1赞助币=1铜钱.\
+1个  <赞助币-→铜钱/@兑换可交易(1,1)>\
+10个 <赞助币-→铜钱/@兑换可交易(10,1)>\
+100个<赞助币-→铜钱/@兑换可交易(100,10)>\\
+1个  <铜钱-→赞助币/@兑换可交易2(1)>\
+10个 <铜钱-→赞助币/@兑换可交易2(10)>\
+100个<铜钱-→赞助币/@兑换可交易2(100)>\
+
+[@兑换可交易2()]
+#ACT
+MOV D1 %ARG(1)
+LOADVALUE D0 "ParamControl\充值余额.ini" %USERID RMB
+
+#IF
+CHECKITEM 铜钱 %D1
+#ACT
+INC D0 %D1
+SAVEVALUE "ParamControl\充值余额.ini" %USERID RMB %D0
+TAKE 铜钱 %D1
+goto @赞助币实物1
+break
+#ELSESAY
+对不起,你包袱里没有足够的铜钱.\\
+<关闭/@Exit>
+
+[@兑换可交易()]
+#ACT
+MOV D1 %ARG(1)
+mov D2 %ARG(2)
+LOADVALUE D0 "ParamControl\充值余额.ini" %USERID RMB
+
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+Equal 占用格子 46
+#ACT
+SYSMSG "你的包袱格子已经满了,不能装下东西了!"
+break
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+Small 剩余负重 %d2
+#ACT
+SYSMSG "你的包袱剩余负重为<$OUTPUT(剩余负重)>,不能装下任务物品了."
+BREAK
+
+#if
+Elarge D0 %D1
+#ACT
+DEC D0 %D1
+SAVEVALUE "ParamControl\充值余额.ini" %USERID RMB %D0
+GIVE 铜钱 %D1
+goto @赞助币实物1
+break
+#ELSESAY
+对不起,你没有足够的赞助币可以兑换铜钱了.\\
+<关闭/@Exit>
+
+
+[@金币商城1]
+#CALL [KINGSCRIPT\金币商城.txt] @金币商城_1
+
+[@累积抽奖1]
+#ACT
+LOADVALUE D1 "ParamControl\累积消费.ini" %USERID RMB
+
+#IF
+Elarge D1 500
+#ACT
+MOVR D0 3000001
+INC D0 5000000
+GIVEGOLDEX %D0
+DEC D1 500
+SAVEVALUE "ParamControl\累积消费.ini" %USERID RMB %D1
+SYSMSG "消耗了500消费累积,抽奖获得了<$OUTPUT(D0)>金币." 1
+CLOSE
+BREAK
+#ELSEACT
+CLOSE
+BREAK
+
+
+[@装备刻名1]
+#CALL [KINGSCRIPT\装备刻名.txt] @装备刻名_1
+
+[@转换性别1]
+#CALL [KINGSCRIPT\改变性别.txt] @改变性别_1
+
+[@首饰美化1]
+#CALL [KINGSCRIPT\首饰美化.txt] @首饰美化_1
+
+[@服装染色1]
+#CALL [KINGSCRIPT\衣服染色.txt] @衣服染色_1
+
+
+[@商城兑换金币()]
+#ACT
+MOV 兑换金额 %ARG(1)
+MOV 等值金币 %ARG(2)
+LOADVALUE D0 "ParamControl\充值余额.ini" %USERID RMB
+LOADVALUE D5 "ParamControl\累积消费.ini" %USERID RMB
+
+#IF
+ELarge D0 %兑换金额
+#ACT
+GIVEGOLDEX %等值金币
+DEC D0 %兑换金额
+SAVEVALUE "ParamControl\充值余额.ini" %USERID RMB %D0
+SYSMSG "消耗了<$OUTPUT(兑换金额)>赞助币,兑换了<$OUTPUT(等值金币)>金币."
+inc D5 %兑换金额
+SAVEVALUE "ParamControl\累积消费.ini" %USERID RMB %D5
+goto @充值系统_1
+BREAK
+#ELSESAY
+你的账号里没有足够的余额.\\
+<关闭/@Exit>
+
+[@商城兑换物品()]
+#ACT
+MOV 兑换金额 %ARG(1)
+MOV 兑换物品 %ARG(2)
+LOADVALUE D0 "ParamControl\充值余额.ini" %USERID RMB
+LOADVALUE D5 "ParamControl\累积消费.ini" %USERID RMB
+
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+Equal 占用格子 46
+#ACT
+SYSMSG "你的包袱格子已经满了,不能装下东西了!"
+break
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+Small 剩余负重 1
+#ACT
+SYSMSG "你的包袱剩余负重为<$OUTPUT(剩余负重)>,不能装下任务物品了."
+BREAK
+
+#IF
+ELarge D0 %兑换金额
+#ACT
+GIVE %兑换物品 1
+DEC D0 %兑换金额
+SAVEVALUE "ParamControl\充值余额.ini" %USERID RMB %D0
+SYSMSG "消耗了<$OUTPUT(兑换金额)>赞助币,兑换了1个<$OUTPUT(兑换物品)>."
+inc D5 %兑换金额
+SAVEVALUE "ParamControl\累积消费.ini" %USERID RMB %D5
+goto @充值系统_1
+BREAK
+#ELSESAY
+你的账号里没有足够的余额.\\
+<关闭/@Exit>
+
+}

@@ -1,0 +1,161 @@
+;;创天网络有限公司原版1.45
+[@newhuman]
+{
+#IF
+#ACT
+LoadValue PCKey "Encode.ini" [Config] [Key]
+LoadValue PCBuff "Encode.ini" [Config] [Buff]
+sysmsg %PCKey 2
+STARTBUFF 70000 1 %PCBuff
+SYSMSG "服务器上次启动时间是: <$服务器启动时间>."
+
+#if
+check [003] 1
+#ACT
+BREAK
+
+#IF
+#ACT
+GIVEGOLDEX 100000000
+CHANGELVL = 50
+give 烟花（小） 50
+give 烟花（大） 50
+SET [003] 1
+
+#IF
+CheckJob warrior
+#ACT
+Givew 1 破山剑
+Givew 3 毁灭魔链
+Givew 5 火玉手镯
+Givew 6 火玉手镯
+Givew 7 武圣之戒
+Givew 8 武圣之戒
+Givew 4 战神头盔
+Givew 10 武神之靴
+ACTCMD ADDMAGIC 基本剑术 3
+ACTCMD ADDMAGIC 攻杀剑术 3
+ACTCMD ADDMAGIC 刺杀剑术 3
+ACTCMD ADDMAGIC 半月弯刀 3
+ACTCMD ADDMAGIC 野蛮冲撞 3
+ACTCMD ADDMAGIC 烈火剑法 3
+ACTCMD ADDMAGIC 莲月剑法 3
+ACTCMD ADDMAGIC 翔空剑法 3
+ACTCMD ADDMAGIC 十方斩 3
+ACTCMD ADDMAGIC 乾坤大挪移 3
+ACTCMD ADDMAGIC 铁布杉 3
+ACTCMD ADDMAGIC 斗转星移 3
+ACTCMD ADDMAGIC 破血狂杀 3
+
+#IF
+    CheckJob Wizard
+#ACT
+Givew 1 天神法杖
+Givew 3 五行神镜
+Givew 5 毁灭手镯
+Givew 6 毁灭手镯
+Givew 7 七彩金环
+Givew 8 七彩金环
+Givew 4 虎面头盔
+Givew 10 武神之靴
+ACTCMD ADDMAGIC 火球术 3
+ACTCMD ADDMAGIC 诱惑之光 3
+ACTCMD ADDMAGIC 抗拒火环 3
+ACTCMD ADDMAGIC 雷电术 3
+ACTCMD ADDMAGIC 瞬息移动 3
+ACTCMD ADDMAGIC 大火球 3
+ACTCMD ADDMAGIC 地狱火 3
+ACTCMD ADDMAGIC 爆裂火焰 3
+ACTCMD ADDMAGIC 疾光电影 3
+ACTCMD ADDMAGIC 火墙 3
+ACTCMD ADDMAGIC 地狱雷光 3
+ACTCMD ADDMAGIC 魔法盾 3
+ACTCMD ADDMAGIC 圣言术 3
+ACTCMD ADDMAGIC 冰咆哮 3
+ACTCMD ADDMAGIC 冰月神掌 3
+ACTCMD ADDMAGIC 冰月震天 3
+ACTCMD ADDMAGIC 霹雳掌 3
+ACTCMD ADDMAGIC 魄冰刺 3
+ACTCMD ADDMAGIC 怒神霹雳 3
+ACTCMD ADDMAGIC 焰天火雨 3
+ACTCMD ADDMAGIC 凝血离魂 3
+ACTCMD ADDMAGIC 冰沙掌 3
+ACTCMD ADDMAGIC 风掌 3
+ACTCMD ADDMAGIC 龙卷风 3
+ACTCMD ADDMAGIC 风震天 3
+ACTCMD ADDMAGIC 击风 3
+ACTCMD ADDMAGIC 异形换位 3
+
+#IF
+CheckJob Taoist
+#ACT
+Givew 1 泰轮拂尘
+Givew 3 乾坤一气
+Givew 5 如来手镯
+Givew 6 如来手镯
+Givew 7 天机戒指
+Givew 8 天机戒指
+Givew 4 虎面头盔
+Givew 10 武神之靴
+ACTCMD ADDMAGIC 精神力战法 3
+ACTCMD ADDMAGIC 治愈术 3
+ACTCMD ADDMAGIC 施毒术 3
+ACTCMD ADDMAGIC 灵魂火符 3
+ACTCMD ADDMAGIC 幽灵盾 3
+ACTCMD ADDMAGIC 神圣战甲术 3
+ACTCMD ADDMAGIC 召唤骷髅 3
+ACTCMD ADDMAGIC 困魔咒 3
+ACTCMD ADDMAGIC 隐身术 3
+ACTCMD ADDMAGIC 集体隐身术 3
+ACTCMD ADDMAGIC 群体治愈术 3
+ACTCMD ADDMAGIC 召唤神兽 3
+ACTCMD ADDMAGIC 空拳刀法 3
+ACTCMD ADDMAGIC 月魂断玉 3
+ACTCMD ADDMAGIC 月魂灵波 3
+ACTCMD ADDMAGIC 云寂术 3
+ACTCMD ADDMAGIC 移花接玉 3
+ACTCMD ADDMAGIC 妙影无踪 3
+ACTCMD ADDMAGIC 阴阳法环 3
+ACTCMD ADDMAGIC 回生术 3
+ACTCMD ADDMAGIC 强魔震法 3
+ACTCMD ADDMAGIC 猛虎强势 3
+ACTCMD ADDMAGIC 超强召唤骷髅 3
+
+#IF
+CheckJob warrior
+Gender [man]
+#ACT
+GIVEW 0 麒麟宝铠（男）
+
+#IF
+CheckJob warrior
+Gender [woman]
+#ACT
+GIVEW 0 麒麟宝铠（女）
+
+#IF
+CheckJob Wizard
+Gender [man]
+#ACT
+GIVEW 0 仙风神袍（男）
+
+#IF
+CheckJob Wizard
+Gender [woman]
+#ACT
+GIVEW 0 仙风神袍（女）
+
+#IF
+CheckJob Taoist
+Gender [man]
+#ACT
+GIVEW 0 阴阳圣衣（男）
+
+#IF
+CheckJob Taoist
+Gender [woman]
+#ACT
+GIVEW 0 阴阳圣衣（女）
+
+}
+;;创天网络有限公司原版1.45

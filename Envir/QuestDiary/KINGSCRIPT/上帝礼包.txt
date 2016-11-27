@@ -1,0 +1,113 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@上帝礼包_1]
+{
+#ACT
+LOADVALUE D0 "ParamControl\上帝礼包.ini" %USERNAME 天数
+
+#IF
+Large D0 %CURDAY
+#ACT
+DEC D0 %CURDAY
+#SAY
+上帝礼包兑换后可以增加{FCOLOR/10}30{FCOLOR/12}天领取资格,领取物品为:{FCOLOR/14}上帝老白干10个,千年雪霜300个,金币200W{FCOLOR/12}.\\
+你的上帝礼包兑换资格还剩余:{FCOLOR/1}<$OUTPUT(D0)>{FCOLOR/12}天.\\
+<〖兑换礼包〗/@上帝兑换>\\
+<〖领取奖励〗/@上帝奖励>\\
+#ELSESAY
+上帝礼包兑换后可以获得{FCOLOR/10}30{FCOLOR/12}天领取资格,领取物品为:{FCOLOR/14}上帝老白干10个,千年雪霜300个,金币200W{FCOLOR/12}.\\
+<〖兑换礼包〗/@上帝兑换>\\
+
+[@上帝兑换]
+#ACT
+LOADVALUE D0 "ParamControl\上帝礼包.ini" %USERNAME 天数
+
+#IF
+CHECKITEM 上帝礼包 1
+#ELSEACT
+BREAK
+#ELSESAY
+对不起,你的包袱里没有{FCOLOR/1}上帝礼包{FCOLOR/12}.\\
+<关闭/@exit>
+
+#IF
+large D0 %CURDAY
+#ACT
+TAKE 上帝礼包 1
+INC D0 30
+SAVEVALUE "ParamControl\上帝礼包.ini" %USERNAME 天数 %D0
+BREAK
+#SAY
+兑换成功,你的上帝礼包领取资格增加了{FCOLOR/10}30{FCOLOR/12}天.\\
+<关闭/@exit>
+
+#IF
+#ACT
+give 武器MAX15凭证 1
+GIVE 魔晶石 2
+GIVEGOLDEX 80000000
+TAKE 上帝礼包 1
+MOV D1 %CURDAY
+INC D1 30
+SAVEVALUE "ParamControl\上帝礼包.ini" %USERNAME 天数 %D1
+BREAK
+#SAY
+兑换成功,你获得了{FCOLOR/10}30{FCOLOR/12}天的上帝礼包领取资格.\\
+<关闭/@exit>
+
+[@上帝奖励]
+#ACT
+LOADVALUE D0 "ParamControl\上帝礼包.ini" %USERNAME 天数
+LOADVALUE D1 "ParamControl\上帝礼包.ini" %USERNAME 领取
+
+#IF
+Equal D1 %CURDAY
+#ACT
+BREAK
+#SAY
+{FCOLOR/1}你今天已经领取过上帝礼包奖励了.\\
+<关闭/@Exit>
+
+#IF
+large D0 %CURDAY
+#ELSEACT
+BREAK
+#ELSESAY
+{FCOLOR/1}对不起,你没有获得领取上帝礼包的资格.\\
+<关闭/@exit>
+
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+Elarge 占用格子 45
+#ACT
+BREAK
+#SAY
+请将包袱整理出{FCOLOR/1}2{FCOLOR/12}个空位再来领取.\\
+<关闭/@exit>
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+Elarge 剩余负重 310
+#ACT
+GIVEGOLDEX 2000000
+GIVE 千年雪霜 300
+GIVE 上帝老白干 10
+SAVEVALUE "ParamControl\上帝礼包.ini" %USERNAME 领取 %CURDAY
+lineMsg [Grobal] "<$USERNAME>领取了今天的上帝礼包,获得了200W金币,10个上帝老白干和300个千年雪霜."
+break
+#SAY
+{FCOLOR/1}你领取了今天的上帝礼包.\\
+<关闭/@exit>
+#ELSESAY
+请将包袱整理出{FCOLOR/1}310{FCOLOR/12}点以上的负重再来领取.\\
+<关闭/@exit>
+
+
+}

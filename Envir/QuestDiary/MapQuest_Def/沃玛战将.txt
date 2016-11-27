@@ -1,0 +1,58 @@
+;;王者传奇3 www.mir3w.com
+[@main]
+#act
+LoadValue D0 "ParamControl\任务记录.ini" %USERNAME 任务编号
+LoadValue A0 "ParamControl\任务记录.ini" %USERNAME 任务进度
+
+#IF
+EQUAL A0 "Progress"
+EQUAL D0 129
+#ACT
+MOV A5 "沃玛战将"
+GOTO @BossQuest_TQCase2
+break
+
+#ELSEACT
+GOTO @WoMaZhanJiang1
+break
+
+[@BossQuest_TQCase2]
+#CALL [每日任务\QT_TotalMonster.txt] @BossQuest_Monster_Total
+
+[@WoMaZhanJiang1]
+#IF
+checkjob warrior
+#ACT
+break
+;
+#IF
+checkjob wizard
+#ACT
+break
+;
+#IF
+check [020] 1
+#ACT
+break
+
+#IF
+check [047] 1
+#ACT
+break
+
+#IF
+check [046] 1
+#ACT
+goto @giveitem_jt
+break
+
+[@giveitem_jt]
+#IF
+random 20
+#SAY
+(现在回到清明子那儿，并将 '成致日志'拿给他，就可以学习'集体隐身术'了...)\
+#ACT
+give 成致日志 1
+SET [047] 1
+#ELSEACT
+break

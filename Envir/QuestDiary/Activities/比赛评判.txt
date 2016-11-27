@@ -1,0 +1,183 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@比赛评判_1]
+{
+#IF
+checkjob warrior
+#ACT
+GOTO @战士PK_1
+break
+
+#IF
+checkjob wizard
+#ACT
+GOTO @法师PK_1
+break
+#ELSEACT
+GOTO @道士PK_1
+
+[@战士PK_1]
+#ACT
+LOADVALUE D0 "ParamControl\PK场检查.ini" 比赛场 战士PK注码
+
+#IF
+checkhum 01_003 1
+equal D0  1
+#SAY
+{FCOLOR/8}
+─────────战士职业PK赛─────────\
+{FCOLOR/13}【温馨提示】{FCOLOR/12}:  {FCOLOR/10}对手还没来 你就要放弃吗?{FCOLOR/8}\
+─────────战士职业PK赛─────────\
+_   [ <赶时间要出去/@战士赶时间要出去> ]        [ <关闭对话窗口/@exit> ]\
+─────────战士职业PK赛─────────{FCOLOR/12}\
+#ACT
+break
+
+#IF
+checkhum 01_003 2
+equal D0  2
+#ACT
+Close
+SYSMSG "【温馨提示】比赛正在进行中...."
+break
+
+#IF
+checkhum 01_003 1
+equal D0  2
+#SAY
+{FCOLOR/8}
+─────────战士职业PK赛─────────\
+{FCOLOR/13}【恭喜】{FCOLOR/12}: {FCOLOR/10}恭喜您获得了胜利.要继续努力,保持记录哦{FCOLOR/8}\
+─────────战士职业PK赛─────────\
+_       [ <战 士 P K 赛 获 胜 回 城/@战士领取赌注> ]\
+─────────战士职业PK赛─────────{FCOLOR/12}\
+#ELSESAY
+你想干什么......\
+<[关闭]/@exit>
+
+[@战士赶时间要出去]
+#ACT
+Give 金币 500000
+mapmove 1 394 134
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 战士PK注码 0
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 战士PK场 0
+
+[@战士领取赌注]
+#ACT
+LoadValue A1 "ParamControl\PK场检查.ini" [比赛场] 战士落败
+mapmove 1 394 134
+LineMsg "Grobal" "战士→<$USERNAME>←挑战→<$OUTPUT(A1)>←.获胜归来"
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 战士PK场 0
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 战士PK注码 0
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 战士PK王 %USERNAME
+
+[@法师PK_1]
+#ACT
+LOADVALUE D0 "ParamControl\PK场检查.ini" 比赛场 法师PK注码
+
+#IF
+checkhum 02_0011 1
+equal D0  1
+#SAY
+{FCOLOR/8}
+─────────法师职业PK赛─────────\
+{FCOLOR/13}【温馨提示】{FCOLOR/12}:  {FCOLOR/10}对手还没来 你就要放弃吗?{FCOLOR/8}\
+─────────法师职业PK赛─────────\
+_   [ <赶时间要出去/@法师赶时间要出去> ]        [ <关闭对话窗口/@exit> ]\
+─────────法师职业PK赛─────────{FCOLOR/12}\
+#ACT
+break
+
+#IF
+checkhum 02_0011 2
+equal D0  2
+#ACT
+Close
+SYSMSG "【温馨提示】比赛正在进行中...."
+break
+
+#IF
+checkhum 02_0011 1
+equal D0  2
+#SAY
+{FCOLOR/8}
+─────────法师职业PK赛─────────\
+{FCOLOR/13}【恭喜】{FCOLOR/12}: {FCOLOR/10}恭喜您获得了胜利.要继续努力,保持记录哦{FCOLOR/8}\
+─────────法师职业PK赛─────────\
+_       [ <法 师 P K 赛 获 胜 回 城/@法师领取赌注> ]\
+─────────法师职业PK赛─────────{FCOLOR/12}\
+#ELSESAY
+你想干什么......\
+<关闭/@exit>
+
+[@法师赶时间要出去]
+#ACT
+Give 金币 500000
+mapmove 1 394 134
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 法师PK注码 0
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 法师PK场 0
+
+[@法师领取赌注]
+#ACT
+LoadValue A1 "ParamControl\PK场检查.ini" [比赛场] 法师落败
+mapmove 1 394 134
+LineMsg "Grobal" "法师→<$USERNAME>←挑战→<$OUTPUT(A1)>←.获胜归来"
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 法师PK场 0
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 法师PK注码 0
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 法师PK王 %USERNAME
+
+[@道士PK_1]
+#ACT
+LOADVALUE D0 "ParamControl\PK场检查.ini" 比赛场 道士PK注码
+
+#IF
+checkhum 1_012 1
+equal D0  1
+#SAY
+{FCOLOR/8}
+─────────道士职业PK赛─────────\
+{FCOLOR/13}【温馨提示】{FCOLOR/12}:  {FCOLOR/10}对手还没来 你就要放弃吗?{FCOLOR/8}\
+─────────道士职业PK赛─────────\
+_   [ <赶时间要出去/@道士赶时间要出去> ]        [ <关闭对话窗口/@exit> ]\
+─────────道士职业PK赛─────────{FCOLOR/12}\
+#ACT
+break
+
+#IF
+checkhum 1_012 2
+equal D0  2
+#ACT
+Close
+SYSMSG "【温馨提示】比赛正在进行中...."
+break
+
+#IF
+checkhum 1_012 1
+equal D0  2
+#SAY
+{FCOLOR/8}
+─────────道士职业PK赛─────────\
+{FCOLOR/13}【恭喜】{FCOLOR/12}: {FCOLOR/10}恭喜您获得了胜利.要继续努力,保持记录哦{FCOLOR/8}\
+─────────道士职业PK赛─────────\
+_       [ <道 士 P K 赛 获 胜 回 城/@道士领取赌注> ]\
+─────────道士职业PK赛─────────{FCOLOR/12}\
+#ELSESAY
+你想干什么......\
+<关闭/@exit>
+
+[@道士赶时间要出去]
+#ACT
+Give 金币 500000
+mapmove 1 394 134
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 道士PK注码 0
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 道士PK场 0
+
+[@道士领取赌注]
+#ACT
+LoadValue A1 "ParamControl\PK场检查.ini" [比赛场] 道士落败
+mapmove 1 394 134
+LineMsg "Grobal" "道士→<$USERNAME>←挑战→<$OUTPUT(A1)>←.获胜归来"
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 道士PK场 0
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 道士PK注码 0
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 道士PK王 %USERNAME
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

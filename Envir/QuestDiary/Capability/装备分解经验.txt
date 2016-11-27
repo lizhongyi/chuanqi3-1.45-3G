@@ -1,0 +1,55 @@
+;;
+[@装备分解经验_Main]
+{
+#Say
+{FCOLOR/4}━━━{FCOLOR/1}★{FCOLOR/4}━━━{FCOLOR/14}装{FCOLOR/4}━{FCOLOR/14}备{FCOLOR/4}━{FCOLOR/14}炼{FCOLOR/4}━{FCOLOR/14}制{FCOLOR/4}━{FCOLOR/14}经{FCOLOR/4}━{FCOLOR/14}验{FCOLOR/4}━━━{FCOLOR/1}★{FCOLOR/4}━━━{FCOLOR/12}\
+本系统{FCOLOR/1}65级以上的装备{FCOLOR/12}可以分解兑换成{FCOLOR/1}经验值{FCOLOR/12}。您可以把\
+鼠标放在装备上即可在装备显示属性界面里看到您选中装\
+备的{FCOLOR/1}可回收的经验值{FCOLOR/12}。本系统请慎重考虑是否分解装备兑\
+换经验，一旦操作装备将被系统分解无法还原。如果您考\
+虑好分解哪件装备请点击下面的按钮弹出分解窗口，然后\
+选择您需要分解的装备{FCOLOR/1}点击右键{FCOLOR/12}或者{FCOLOR/1}分解按键{FCOLOR/12}进行分解并\
+且获得经验。属性栏如不显示回收经验说明无法分解装备\\
+_          {FCOLOR/12}[ <使 用 装 备 兑 换 经 验 值/@!UseItemExp> ]\
+
+
+[@!UseItemExp]
+#Say
+{FCOLOR/4}━━━{FCOLOR/1}★{FCOLOR/4}━━━{FCOLOR/14}装{FCOLOR/4}━{FCOLOR/14}备{FCOLOR/4}━{FCOLOR/14}炼{FCOLOR/4}━{FCOLOR/14}制{FCOLOR/4}━{FCOLOR/14}经{FCOLOR/4}━{FCOLOR/14}验{FCOLOR/4}━━━{FCOLOR/1}★{FCOLOR/4}━━━{FCOLOR/12}\
+本系统{FCOLOR/1}60级以上的装备{FCOLOR/12}可以分解兑换成{FCOLOR/1}经验值{FCOLOR/12}。您可以把\
+鼠标放在装备上即可在装备显示属性界面里看到您选中装\
+备的{FCOLOR/1}可回收的经验值{FCOLOR/12}。本系统请慎重考虑是否分解装备兑\
+换经验，一旦操作装备将被系统分解无法还原。如果您考\
+虑好分解哪件装备请点击下面的按钮弹出分解窗口，然后\
+选择您需要分解的装备{FCOLOR/1}点击右键{FCOLOR/12}或者{FCOLOR/1}分解按键{FCOLOR/12}进行分解并\
+且获得经验。属性栏如不显示回收经验说明无法分解装备\\
+_           {FCOLOR/1}请选择您要分解兑换的装备{FCOLOR/12}\
+
+[@~~InputName()]
+#ACT
+mov 分解装备名字 %ARG(1)  ;物品名称
+mov 分解装备索引 %ARG(2)  ;物品索引
+FormatStr "Where Name = '%s'" %分解装备名字
+ACTCMD READSQL "King_Stditems" "BackExp" "经验回收值" %A9 
+
+#IF
+EQUAL 经验回收值 0
+#ACT
+sysmsg "温馨提示：该物品不能被分解,无法换取经验."
+break
+
+#IF
+checkitem %分解装备名字 1
+checkcmd CHECKITEMINFO %分解装备索引 2
+#ACT
+actcmd takeitembyidx %分解装备索引
+actcmd SetUserExp + %经验回收值
+sysmsg "你成功分解[ <$OUTPUT(分解装备名字)> ]换取了[ <$OUTPUT(经验回收值)> ]经验值."
+break
+#ELSEACT
+sysmsg "没有找到该物品,请刷新包裹"
+Break
+
+}
+
+;;

@@ -1,0 +1,184 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@用户计时2_Main]
+{
+#IF
+IsTestServer
+#ACT
+GOTO @内测用户计时2
+#ELSEACT
+GOTO @公测用户计时2
+
+;;━━━━━━━━━━━━━公测用户计时2━━━━━━━━━━━━━━━
+[@公测用户计时2]
+#IF
+checklevel 0
+#ACT
+mov 等级 %P9
+MOV 所在地图 %USERMAP
+
+#IF
+!Equal 所在地图 0
+!Equal 所在地图 1
+!Equal 所在地图 02
+#act
+break
+#ELSEACT
+
+#IF
+Small 等级 38
+#ACT
+break
+
+#IF
+Small 等级 50
+#ACT
+actcmd GIVEEXPEX 1200000
+break
+
+#IF
+Small 等级 55
+#ACT
+actcmd GIVEEXPEX 2000000
+break
+
+#IF
+Small 等级 60
+#ACT
+actcmd GIVEEXPEX 3000000
+break
+
+#IF
+checkitem 泡点神石 1
+#ACT
+take 泡点神石 1
+MOV 经验 4000000
+#ELSEACT
+MOV 经验 2000000
+
+#IF
+Small 等级 65
+#ACT
+MOV p1 %经验
+MOV p2 2
+mul P1 p2
+mov 泡点经验 %P9
+actcmd GIVEEXPEX %泡点经验
+break
+
+#IF
+Small 等级 75
+#ACT
+MOV p1 %经验
+MOV p2 3
+mul P1 p2
+mov 泡点经验 %P9
+actcmd GIVEEXPEX %泡点经验
+break
+
+#IF
+Small 等级 85
+#ACT
+MOV p1 %经验
+MOV p2 4
+mul P1 p2
+mov 泡点经验 %P9
+actcmd GIVEEXPEX %泡点经验
+break
+
+#IF
+Small 等级 100
+#ACT
+MOV p1 %经验
+MOV p2 5
+mul P1 p2
+mov 泡点经验 %P9
+actcmd GIVEEXPEX %泡点经验
+break
+
+#IF
+ELarge 等级 100
+#ACT
+MOV p1 %经验
+MOV p2 7
+mul P1 p2
+mov 泡点经验 %P9
+actcmd GIVEEXPEX %泡点经验
+break
+
+;;━━━━━━━━━━━━━公内测用户计时2━━━━━━━━━━━━━━━
+[@内测用户计时2]
+#IF
+#ACT
+MOV 所在地图 %USERMAP
+movr 泡点几率 10
+
+#IF
+!Equal 所在地图 0
+!Equal 所在地图 1
+!Equal 所在地图 02
+#act
+break
+#ELSEACT
+
+#IF
+Equal 泡点几率 0
+#ACT
+Give 元宝 1
+lineMsg [Grobal] "恭喜[ <$USERNAME> ]得到了财神的眷顾.得到元宝[ 1 ]个!"
+break
+
+#IF
+Equal 泡点几率 1
+#ACT
+break
+
+#IF
+Equal 泡点几率 2
+#ACT
+Give 元宝 2
+lineMsg [Grobal] "恭喜[ <$USERNAME> ]得到了财神的眷顾.得到元宝[ 2 ]个!"
+break
+
+#IF
+Equal 泡点几率 3
+#ACT
+break
+
+#IF
+Equal 泡点几率 4
+#ACT
+Give 元宝 3
+lineMsg [Grobal] "恭喜[ <$USERNAME> ]得到了财神的眷顾.得到元宝[ 3 ]个!"
+break
+
+#IF
+Equal 泡点几率 5
+#ACT
+break
+
+#IF
+Equal 泡点几率 6
+#ACT
+Give 元宝 4
+lineMsg [Grobal] "恭喜[ <$USERNAME> ]得到了财神的眷顾.得到元宝[ 4 ]个!"
+break
+
+#IF
+Equal 泡点几率 7
+#ACT
+break
+
+#IF
+Equal 泡点几率 8
+#ACT
+Give 元宝 5
+lineMsg [Grobal] "恭喜[ <$USERNAME> ]得到了财神的眷顾.得到元宝[ 5 ]个!"
+break
+
+#IF
+Equal 泡点几率 9
+#ACT
+break
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

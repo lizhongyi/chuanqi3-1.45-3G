@@ -1,0 +1,189 @@
+
+<microsoft_search_schema
+    filetype="catalog configuration"
+    version="1.0">
+
+<column
+    name="KEY"
+    description="KEY"
+    propid="CDD24D50-6FD9-11d1-8983-00C04FD611D7/2"
+    index="no"
+    retrieve="yes">
+</column>
+
+<column
+    name="HostName"
+    description="Name of the host"
+    type="VT_LPWSTR"
+    propid="0b63e343-9ccc-11d0-bcdb-00805fccce04/4"
+    index="no"
+    retrieve="no">
+</column>
+
+<column
+    name="DocAddress"
+    description="Absolute URL to the doc, including the filename. Index Server calls this property VPath and stores a relative URL, from the Query propset"
+    type="VT_LPWSTR"
+    propid="49691c90-7e17-101a-a91c-08002b2ecda9/9"
+    index="no"
+    retrieve="no">
+</column>
+
+<column
+    name="Description"
+    description="If an HTML meta name=description tag exists, it is mapped to this. If the description tag does not exist, the catalog builder puts the DocSubject first, if it exists, and then 'AutodescriptionLength' characters of the file contents in this property. 'AutodescriptionLength' is defined in Gathrprm.txt.  Both PropSet and Property name are 'characterization'"
+    type="VT_LPWSTR"
+    propid="560c36c0-503a-11cf-baa1-00004c752a9a/2"
+    index="no"
+    retrieve="no">
+</column>
+
+<column
+    name="DetectedLanguage"
+    description="Automatically detected language of the document. May have multiple values. From the NetLibraryInfo propset"
+    propid="c82bf596-b831-11d0-b733-00aa00a1ebd2/2"
+    index="no"
+    retrieve="no">
+</column>
+
+<column
+    name="CrawlNumberModified"
+    description="The crawl number when the document was last updated in the catalog."
+    type="VT_UI4"
+    propid="0b63e350-9ccc-11d0-bcdb-00805fccce04/4"
+    index="no"
+    retrieve="no">
+</column>
+
+<column
+    name="MimeType"
+    description="The MIME type of the document, if known."
+    type="VT_LPWSTR"
+    propid="0b63e350-9ccc-11d0-bcdb-00805fccce04/5"
+    index="no"
+    retrieve="no">
+</column>
+
+<column
+    name="DocSignature"
+    description="MD5 digest, a checksum on the document that can be used to eliminate duplicates, from the NetLibrary propset"
+    type="VT_LPWSTR"
+    propid="0b63e350-9ccc-11d0-bcdb-00805fccce04/6"
+    index="no"
+    retrieve="no">
+</column>
+
+<column
+    name="FileName"
+    description="Long file name, from Storage propset"
+    type="VT_LPWSTR"
+    propid="b725f130-47ef-101a-a5f1-02608c9eebac/10"
+    index="no"
+    retrieve="no">
+</column>
+
+<column
+    name="DefaultCodePage"
+    description="Useful for displaying URLs."
+    type="VT_UI4"
+    propid="0b63e343-9ccc-11d0-bcdb-00805fccce04/DefaultCodePage"
+    index="no"
+    retrieve="no">
+</column>
+
+<column
+    name="DocTitle"
+    description="Document title"
+    type="VT_LPWSTR"
+    propid="f29f85e0-4ff9-1068-ab91-08002b27b3d9/2"
+    index="no"
+    retrieve="no">
+</column>
+
+<column
+    name="Reverse FileName"
+    description="Reverse of the FileName, from Query propset"
+    type="VT_LPWSTR"
+    propid="49691c90-7e17-101a-a91c-08002b2ecda9/8"
+    index="no"
+    retrieve="no">
+</column>
+
+<stoplist
+    language="English_US"
+    file="noise.enu"
+    primarylanguage=9
+    sublanguage=1>
+
+<stoplist
+    language="English_UK"
+    file="noise.eng"
+    primarylanguage=9
+    sublanguage=2>
+
+<stoplist
+    language="Neutral"
+    file="noise.dat"
+    primarylanguage=0
+    sublanguage=0>
+
+<stoplist
+    language="German_German"
+    file="noise.deu"
+    primarylanguage=7
+    sublanguage=1>
+
+<stoplist
+    language="Spanish_Modern"
+    file="noise.esn"
+    primarylanguage=10
+    sublanguage=3>
+
+<stoplist
+    language="Swedish_Default"
+    file="noise.sve"
+    primarylanguage=29
+    sublanguage=0>
+
+<stoplist
+    language="Dutch_Dutch"
+    file="noise.nld"
+    primarylanguage=19
+    sublanguage=1>
+
+<stoplist
+    language="French_French"
+    file="noise.fra"
+    primarylanguage=12
+    sublanguage=1>
+
+<stoplist
+    language="Italian_Italian"
+    file="noise.ita"
+    primarylanguage=16
+    sublanguage=1>
+
+<stoplist
+    language="Japanese_Default"
+    file="noise.jpn"
+    primarylanguage=17
+    sublanguage=0>
+
+<stoplist
+    language="Chinese_Simplified"
+    file="noise.chs"
+    primarylanguage=4
+    sublanguage=2>
+
+<stoplist
+    language="Chinese_Traditional"
+    file="noise.cht"
+    primarylanguage=4
+    sublanguage=1>
+
+<stoplist
+    language="Korean_Default"
+    file="noise.kor"
+    primarylanguage=18
+    sublanguage=1>
+</microsoft_search_schema>

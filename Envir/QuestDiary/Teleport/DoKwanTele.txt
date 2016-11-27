@@ -1,0 +1,81 @@
+;;创天网络有限公司原版1.45
+[@DoKwan_Teleport]
+{
+#IF
+!CheckPkPoint 2
+#SAY
+六面神石 \ \
+<移动至比奇城所需金钱   : 免费/@TeleBichon> \ 
+<移动至银杏山村所需金钱 : 免费/@TeleEunHang> \
+<移动至边境村庄所需金钱 : 免费/@TeleKugKyung> \\
+<移动至毒蛇山村所需金钱 : 1000 钱/@TelePortRootin(SnakeVally,1000,South)> \
+<移动至潘夜岛村所需金钱 : 1500 钱/@TelePortRootin(HalfMoon,1500,Center)> \
+<移动至盟重土城所需金钱 : 1500 钱/@TelePortRootin(MongChon,1500,East)> \ \
+<移动至沙漠土城所需金钱 : 2000 钱/@TelePortRootin(Samak,2000,East)> \ \
+<移动至绿洲村所需金钱   : 2500 钱/@TelePortRootin(Oasis,2500,Center)> \ \
+<移动至失乐园所需金钱   : 2500 钱/@TelePortRootin(shileyuan,2500,Center)> \ \
+<移动至西沙漠所需金钱   : 2500 钱/@TelePortRootin(xishamo,2500,Center)> \
+#ELSEACT
+mapmove 81 125 274
+break
+
+#IF
+!IsOnCastleWar Sabuk
+#SAY
+<移动至攻城战地域所需金钱 : 500 钱/@TelePortRootin(SaBuk,500,Center)> \
+#ACT
+break
+
+#IF
+!IsOnReadyCastleWar Sabuk
+#SAY
+<移动至攻城战地域所需金钱 : 500 钱/@TelePortRootin(Sabuk,500,Center)> \
+#ACT
+break
+
+[@Teletianwaitian]
+#IF
+CHECKGOLD 10000
+#ACT
+TAKE 金币 10000
+mapmove D2201  207,386
+BREAK
+#ELSESAY
+你身上没有1W金币.
+
+[@TeleBinggong]
+#if
+checkgold 10000
+#ACT
+TAKE 金币 10000
+MAPMOVE D005 280 281
+BREAK
+#ELSESAY
+你身上没有1W金币.
+
+[@TeleBinggong2]
+#if
+checkgold 10000
+#ACT
+TAKE 金币 10000
+MAPMOVE 82 51 324
+BREAK
+#ELSESAY
+你身上没有1W金币.
+
+[@TeleKugKyung]
+#ACT
+mapmove 01 456 217
+
+[@TeleEunHang]
+#ACT
+mapmove 02 249 145
+
+[@TeleBichon]
+#ACT
+mapmove 0 370 335
+
+[@TelePortRootin()]
+#CALL [Teleport\MoveRootin.txt] @TelePortMove
+
+}

@@ -1,0 +1,431 @@
+;;--------------------------;;购买请联系鱼的眼泪,QQ:16487549
+[@sinGisun_open]
+{
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+ReadValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINUSERNAME,FLD_SINMAINSTEP,FLD_SINSTEP_READY" [@SinGiMain_1_0]
+
+[@SinGiMain_1_0()]
+#ACT
+mov A1 %ARG(1)
+mov D1 %ARG(2)
+mov D2 %ARG(3)
+
+#IF
+Equal A1 ""
+#SAY
+来打听神舰情况的人,你是怎么来到这里的……我可没什么好告诉你的.\ \
+<关 闭/@Exit>
+#ACT
+break
+
+#IF
+Equal D1 3
+Equal D2 2
+checkitem 霸王教主雕像 1
+#ACT
+goto @SinQuest_Pachun
+break
+
+#IF
+Equal D1 3
+Equal D2 1
+#ACT
+goto @SinQuest_Pachun_start
+break
+
+#IF
+Equal D1 2
+Equal D2 3
+checkitem 遗骸 1
+#ACT
+goto @SinQuest_End
+break
+
+#IF
+Equal D1 2
+Equal D2 2
+#ACT
+goto @SinQuest_SeeAgain_1
+break
+
+#IF
+Equal D1 2
+Equal D2 1
+#ACT
+goto @SinQuest_SeeAgain
+break
+
+#IF
+Equal D1 2
+Equal D2 0
+#ACT
+goto @SinQuest_Spritstest_Check_1
+break
+
+#IF
+Equal D1 1
+Equal D2 4
+checkitem 魔灵牌 1
+#ACT
+goto @SinQuest_Spritstest_Check
+break
+
+#IF
+Equal D1 1
+Equal D2 3
+checkitem 魔灵牌 1
+#ACT
+goto @SinQuest_Spritstest_retry
+break
+
+#IF
+Equal D1 1
+Equal D2 2
+checkitem 魔灵牌 1
+#ACT
+goto @SinQuest_Spritstest
+break
+
+#IF
+#ACT
+goto @SinQuest_Pachun_start_0
+break
+
+[@SinQuest_Spritstest]
+#IF
+#SAY
+你找我有何事情?\
+<你就是霸王幽灵?/@SinQuest_Spritstest_0>
+
+[@SinQuest_Spritstest_0]
+#IF
+#SAY
+是啊,你就是要替我实现愿望的那个人?呵呵,让我来考验考验你.异界既没有形体也没有死亡.显示一下你的能力吧.\ \
+<不,等一下!/@SinQuest_Spritstest_1>
+
+[@SinQuest_Spritstest_1]
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+ReadValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINUSERNAME,FLD_SINMAINSTEP,FLD_SINSTEP_READY" [@SinGiMain_start_1]
+
+[@SinGiMain_start_1()]
+#ACT
+mov A1 %ARG(1)
+mov D1 %ARG(2)
+mov D2 %ARG(3)
+
+#IF
+Equal D1 1
+Equal D2 2
+checkitem 魔灵牌 1
+#ELSEACT
+break
+
+#IF
+checkhum D90323 1
+#SAY
+暂时不能送到异界空间,那个空间里已经有勇士在挑战了!\
+#ELSEACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINMAINSTEP=1"
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINSTEP_READY=3"
+set [067] 1
+monclear D90323
+Param1 D90323
+Param2 16
+Param3 11
+MonGen 轻甲守卫 2 3
+mapmove D90323 16 11
+
+[@SinQuest_Spritstest_retry]
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+ReadValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINUSERNAME,FLD_SINMAINSTEP,FLD_SINSTEP_READY" [@SinGiMain_start_2]
+
+[@SinGiMain_start_2()]
+#ACT
+mov A1 %ARG(1)
+mov D1 %ARG(2)
+mov D2 %ARG(3)
+
+#IF
+Equal D1 1
+Equal D2 3
+checkitem 魔灵牌 1
+#ELSEACT
+break
+
+#IF
+checkhum D90323 1
+#SAY
+暂时不能送到异界空间,那个空间里已经有勇士在挑战了!\
+#ELSEACT
+monclear D90323
+Param1 D90323
+Param2 16
+Param3 11
+MonGen 轻甲守卫 2 3
+mapmove D90323 16 11
+
+[@SinQuest_Spritstest_Check]
+#SAY
+我对考验结果很满意.\ \
+你的牌是……我朋友的……怎么会在你的手里.\ \
+<朋友?你怎么会……/@SinGiSun_Spritstest_Check2>
+
+[@SinGiSun_Spritstest_Check2]
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+ReadValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINUSERNAME,FLD_SINMAINSTEP,FLD_SINSTEP_READY" [@SinGiMain_start_3]
+
+[@SinGiMain_start_3()]
+#ACT
+mov A1 %ARG(1)
+mov D1 %ARG(2)
+mov D2 %ARG(3)
+
+#IF
+Equal D1 1
+Equal D2 4
+checkitem 魔灵牌 1
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINMAINSTEP=2"
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINSTEP_READY=0"
+take 魔灵牌 1
+give 航海日志 1
+#SAY
+知道了,把这个送给你,你的命运掌握在你的手里,选择好命运后,再来找我吧.\ \
+<那我回去了./@SinGiSun_Spritstest_Check3>
+#ELSESAY
+魔灵牌怎么不见了?没有魔灵牌,我无法帮助你.\ \
+<关 闭/@Exit>
+
+[@SinGiSun_Spritstest_Check3]
+#IF
+#ACT
+mapmove 4 437 76
+
+[@SinQuest_Spritstest_Check_1]
+#SAY
+把航海日志带给我的朋友.\ \
+<那我回去了./@SinGiSun_Spritstest_Check3>
+
+[@SinQuest_SeeAgain]
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+ReadValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINUSERNAME,FLD_SINMAINSTEP,FLD_SINSTEP_READY" [@SinGiMain_start_4]
+
+[@SinGiMain_start_4()]
+#ACT
+mov A1 %ARG(1)
+mov D1 %ARG(2)
+mov D2 %ARG(3)
+
+#IF
+Equal D1 2
+Equal D2 1
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINMAINSTEP=2"
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINSTEP_READY=2"
+set [067] 1
+#SAY
+我已知道你会回来找我的.\
+我是霸王守卫?不,我只是它的灵魂.去找一下我的躯体吧,再把躯体弄没.\ \
+<听不明白他说什么……/@exit>
+
+[@SinQuest_SeeAgain_1]
+#SAY
+霸王守卫是躯体,我是它的灵魂.霸王守卫和灵魂即将要合为一体……\
+你去寻找我的躯体-霸王守卫吧.\
+躯体复活了就不得了……必须找到霸王守卫.\ \
+<关 闭/@Exit>
+
+[@SinQuest_End]
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+ReadValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINUSERNAME,FLD_SINMAINSTEP,FLD_SINSTEP_READY" [@SinGiMain_start_5]
+
+[@SinGiMain_start_5()]
+#ACT
+mov A1 %ARG(1)
+mov D1 %ARG(2)
+mov D2 %ARG(3)
+
+#IF
+Equal D1 2
+Equal D2 3
+checkjob warrior
+checkitem 遗骸 1
+#ACT
+give 追风项链 1
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINMAINSTEP=3,FLD_SINSTEP_READY=0"
+BREAK
+#SAY
+我终于可以回到我的肉身了……把我的遗骸带给我的朋友吧.\
+替我传话给朋友,我很感激他.\ \
+<这次的冒险就这么结束了吗?/@exit>
+
+#IF
+Equal D1 2
+Equal D2 3
+checkjob wizard
+checkitem 遗骸 1
+#ACT
+give 追魂项链 1
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINMAINSTEP=3,FLD_SINSTEP_READY=0"
+BREAK
+#SAY
+我终于可以回到我的肉身了……把我的遗骸带给我的朋友吧.\
+替我传话给朋友,我很感激他.\ \
+<这次的冒险就这么结束了吗?/@exit>
+
+#IF
+Equal D1 2
+Equal D2 3
+checkjob taoist
+checkitem 遗骸 1
+#ACT
+give 魔令项链 1
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINMAINSTEP=3,FLD_SINSTEP_READY=0"
+BREAK
+#SAY
+我终于可以回到我的肉身了……把我的遗骸带给我的朋友吧.\
+替我传话给朋友,我很感激他.\ \
+<这次的冒险就这么结束了吗?/@exit>
+
+#IF
+#SAY
+我的肉身……我的肉身……到底在哪儿?去把我的遗骸找回来……\ \
+<关 闭/@Exit>
+
+[@SinQuest_Pachun]
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+ReadValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINUSERNAME,FLD_SINMAINSTEP,FLD_SINSTEP_READY" [@SinGiMain_start_8]
+
+[@SinGiMain_start_8()]
+#ACT
+mov A1 %ARG(1)
+mov D1 %ARG(2)
+mov D2 %ARG(3)
+
+#IF
+Equal D1 3
+Equal D2 2
+checkitem 霸王教主雕像 1
+#ELSEACT
+BREAK
+
+#IF
+checkjob warrior
+#SAY
+你把霸王教主给……\
+把霸王教主雕像交给我,我给你这个……\
+从很久很久以前开始,我就渴望得到强大的“力量”.\
+在某一次战斗中,我使用了那个力量,神舰也随之出现了.\
+现在该去关闭异界之门了,我终于可以实现我的愿望了……\
+太感谢你了……\ \
+<关 闭/@exit>
+#ACT
+GIVE 旋风流星刀 1
+give 黑皮靴子 1
+set [066] 1
+take 霸王教主雕像 1
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINMAINSTEP=4,FLD_SINSTEP_READY=0"
+break
+
+#IF
+checkjob wizard
+#SAY
+你把霸王教主给……\
+把霸王教主雕像交给我,我给你这个……\
+从很久很久以前开始,我就渴望得到强大的“力量”.\
+在某一次战斗中,我使用了那个力量,神舰也随之出现了.\
+现在该去关闭异界之门了,我终于可以实现我的愿望了……\
+太感谢你了……\ \
+<关 闭/@exit>
+#ACT
+GIVE 飞魂魔刃 1
+give 黑皮靴子  1
+set [066] 1
+take 霸王教主雕像 1
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINMAINSTEP=4,FLD_SINSTEP_READY=0"
+break
+
+#IF
+checkjob taoist
+#SAY
+你把霸王教主给……\
+把霸王教主雕像交给我,我给你这个……\
+从很久很久以前开始,我就渴望得到强大的“力量”.\
+在某一次战斗中,我使用了那个力量,神舰也随之出现了.\
+现在该去关闭异界之门了,我终于可以实现我的愿望了……\
+太感谢你了……\ \
+<关 闭/@exit>
+#ACT
+give 封魔剑   1
+GIVE 黑皮靴子 1
+set [066] 1
+take 霸王教主雕像 1
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINMAINSTEP=4,FLD_SINSTEP_READY=0"
+break
+
+#IF
+#SAY
+你好像是杀死了霸王教主... \
+你把霸王教主雕像丢到哪里了? \ \
+<关 闭/@exit>
+
+[@SinQuest_Pachun_start]
+#IF
+checkitem 连环明珠 1
+#SAY
+这里栖息着异界的亡灵,相信你应该看到它们了... \
+虽然看不到它们的形体,但它们确确实实存在着. \
+它们属于不死系. \
+杀死它们最后见到的也只是一身盔甲...\ \
+<怪不得杀死它们只能看到盔甲.../@SinQuest_Pachun_start_1> \
+#ELSEACT
+goto @SinQuest_Pachun_start_0
+break
+
+[@SinQuest_Pachun_start_0]
+#if
+checkitem 霸王教主雕像 1
+#ACT
+TAKE 霸王教主雕像 1 
+GIVE 魔令手镯 1
+
+#if
+#SAY
+只要打败异界之王霸王教主,就能减弱异界的力量.\
+你能帮我打败霸王教主吗?\
+它不会死亡,只是暂时隐藏躯体而已.\
+所以要趁那个机会关闭异界之门.\ \
+<关 闭/@Exit>
+
+[@SinQuest_Pachun_start_1]
+#SAY
+幸好你带着连环明珠.\
+把连环明珠交给我,我会帮你穿过困魔石.\
+但是,我的力量只能让你在里头待2个小时.\
+所以你必须在2个小时内除掉霸王教主.\
+打败霸王教主后,把{FCOLOR/10}霸王教主雕像{FCOLOR/12}交给我.\
+用霸王教主雕像可以关闭异界之门.\
+拜托你一定要打败霸王教主,把霸王教主雕像交给我.\
+好吧,你可以进去了……\ \
+<关 闭/@Exit>
+
+
+
+}
+;;-------------------------;;购买请联系鱼的眼泪,QQ:16487549

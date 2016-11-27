@@ -1,0 +1,59 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@寄售系统_Main]
+{
+#Say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}寄{FCOLOR/4}━{FCOLOR/14}售{FCOLOR/4}━{FCOLOR/14}系{FCOLOR/4}━{FCOLOR/14}统{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <使用金币寄售系统/@金币寄售> ]          [ <使用元宝寄售系统/@元宝寄售> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}寄{FCOLOR/4}━{FCOLOR/14}售{FCOLOR/4}━{FCOLOR/14}系{FCOLOR/4}━{FCOLOR/14}统{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+
+[@金币寄售]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}寄{FCOLOR/4}━{FCOLOR/14}售{FCOLOR/4}━{FCOLOR/14}寄{FCOLOR/4}━{FCOLOR/14}统{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ {FCOLOR/1}使用金币寄售系统{FCOLOR/12} ]          [ <使用元宝寄售系统/@元宝寄售> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}金{FCOLOR/4}━{FCOLOR/14}币{FCOLOR/4}━{FCOLOR/14}系{FCOLOR/4}━{FCOLOR/14}售{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_   {FCOLOR/8}金币寄售手续 {FCOLOR/1}5{FCOLOR/8} 万,每人最多寄售 {FCOLOR/1}20{FCOLOR/8} 件物品{FCOLOR/12}\\
+{FCOLOR/12}[ <查看衣服类/@buyfromusermarket(1)> ]    [ <查看头盔类/@buyfromusermarket(5)> ]    [ <查看鞋子类/@buyfromusermarket(11)> ]\\
+{FCOLOR/12}[ <查看项链类/@buyfromusermarket(4)> ]    [ <查看手镯类/@buyfromusermarket(6)> ]    [ <查看戒指类/@buyfromusermarket(8)> ]\\
+{FCOLOR/12}[ <查看武器类/@buyfromusermarket(2)> ]    [ <查看药品类/@buyfromusermarket(21)> ]    [ <查看其他类/@buyfromusermarket(23)> ]\\
+{FCOLOR/12}[ <查看所有类/@buyfromusermarket(0)> ]    [ <查看所有的卖出的物品进行结账/@checksold> ]\
+
+[@buyfromusermarket()]
+#ACT
+SetTypeUserMarket %ARG(1)
+OpenUserMarket
+
+[@checksold]
+#ACT
+CheckSoldItemsUserMarket
+
+[@元宝寄售]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}寄{FCOLOR/4}━{FCOLOR/14}售{FCOLOR/4}━{FCOLOR/14}系{FCOLOR/4}━{FCOLOR/14}统{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <使用金币寄售系统/@金币寄售> ]          [ {FCOLOR/1}使用元宝寄售系统{FCOLOR/12} ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}寄{FCOLOR/4}━{FCOLOR/14}售{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_{FCOLOR/8}元宝直接出售或购买物品,元宝显示 {FCOLOR/1}0{FCOLOR/8} 的物品无法卖出{FCOLOR/12}\\
+{FCOLOR/12}[ <查看武器类/@jfbuy(0)> ]    [ <查看头盔类/@jfbuy(2)> ]    [ <查看手镯类/@jfbuy(4)> ]\\
+{FCOLOR/12}[ <查看鞋子类/@jfbuy(6)> ]    [ <查看衣服类/@jfbuy(1)> ]    [ <查看项链类/@jfbuy(3)> ]\\
+{FCOLOR/12}[ <查看戒指类/@jfbuy(5)> ]    [ <查看杂货类/@jfbuy(7)> ]    [ <元宝售物品/@jfsell> ]\
+
+[@jfbuy()]
+#ACT
+Mov        D3     %ARG(1)     ;;物品代码
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}寄{FCOLOR/4}━{FCOLOR/14}售{FCOLOR/4}━{FCOLOR/14}系{FCOLOR/4}━{FCOLOR/14}统{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <使用金币寄售系统/@金币寄售> ]          [ {FCOLOR/1}使用元宝寄售系统{FCOLOR/12} ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}寄{FCOLOR/4}━{FCOLOR/14}售{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_               {FCOLOR/8}选择您要购买的物品.{FCOLOR/14}\
+_                   {FCOLOR/12}[ <返 回/@元宝寄售> ]\
+
+[@jfsell]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}寄{FCOLOR/4}━{FCOLOR/14}售{FCOLOR/4}━{FCOLOR/14}系{FCOLOR/4}━{FCOLOR/14}统{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <使用金币寄售系统/@金币寄售> ]          [ {FCOLOR/1}使用元宝寄售系统{FCOLOR/12} ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}寄{FCOLOR/4}━{FCOLOR/14}售{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\\
+_               {FCOLOR/8}选择您要出售的物品.{FCOLOR/14}\
+_                   {FCOLOR/12}[ <返 回/@元宝寄售> ]\
+
+}
+
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

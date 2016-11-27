@@ -1,0 +1,3 @@
+;;创天网络有限公司原版1.45
+[@main]
+#CALL [\CastleWar\Explan.txt] @CastleWar_Explan

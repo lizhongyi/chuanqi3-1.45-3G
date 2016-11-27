@@ -1,0 +1,16 @@
+;;王者传奇3 www.mir3w.com
+[@main]
+#act
+LoadValue D0 "ParamControl\任务记录.ini" %USERNAME 任务编号
+LoadValue A0 "ParamControl\任务记录.ini" %USERNAME 任务进度
+
+#IF
+EQUAL A0 "Progress"
+EQUAL D0 165
+#ACT
+MOV A5 "沙鬼"
+GOTO @BossQuest_TQCase2
+break
+
+[@BossQuest_TQCase2]
+#CALL [每日任务\QT_TotalMonster.txt] @BossQuest_Monster_Total

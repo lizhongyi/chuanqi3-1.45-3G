@@ -1,0 +1,134 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@属性查询_1]
+{
+#SAY
+100W金币可以为你查询到玩家的属性信息.\\
+{FCOLOR/1}注意{FCOLOR/12}:如果{FCOLOR/10}玩家在线{FCOLOR/12}时查询到的信息{FCOLOR/14}非即时信息{FCOLOR/12}.\\
+<【输入你要查询的玩家名字】/@@chaxunshux>
+
+[@@chaxunshux]
+#ACT
+MOV 被查名字 ""
+MOV 查询名字 ""
+MOV 查询级别 ""
+MOV 查询经验 ""
+MOV 查询性别 ""
+MOV 查询职业 ""
+MOV 查询金币 ""
+MOV 查询红名 ""
+MOV 玩家性别 ""
+MOV 玩家职业 ""
+MOV 加点次数 ""
+MOV 体力值 ""
+MOV 魔力值 ""
+MOV 防御值 ""
+MOV 魔御值 ""
+MOV 破坏值 ""
+MOV 自然值 ""
+MOV 灵魂值 ""
+MOV 元素火 ""
+MOV 元素冰 ""
+MOV 元素雷 ""
+MOV 元素风 ""
+MOV 元素圣 ""
+MOV 元素暗 ""
+MOV 元素幻 ""
+mov 被查名字 %INPUTSTR
+
+#if
+equal 被查名字 ""
+#ACT
+SYSMSG "输入错误,请重新输入!"
+break
+
+#if
+checkgold 1000000
+#ELSEACT
+SYSMSG "您没有100万金币,无法查询人物属性."
+break
+
+#IF
+#ACT
+FormatStr "where FLD_CHARACTER='%s'" %被查名字
+actcmd READSQL  "TBL_ABILITY" "FLD_CHARACTER,FLD_LEVEL,FLD_EXP" "查询名字,查询级别,查询经验" %A9
+
+#IF
+equal 查询名字 ""
+#ACT
+SYSMSG "查无此人,请检查是否输入错误!"
+break
+
+#IF
+#ACT
+TAKE 金币 1000000
+FormatStr "where FLD_CHARACTER='%s'" %被查名字
+actcmd READSQL  "TBL_CHARACTER" "FLD_SEX,FLD_JOB,FLD_GOLD,FLD_PKPOINT" "查询性别,查询职业,查询金币,查询红名" %A9
+
+#if
+equal 查询性别 0
+#act
+mov 玩家性别 "男"
+#elseact
+mov 玩家性别 "女"
+
+#if
+equal 查询职业 0
+#act
+mov 玩家职业 "战士"
+
+#if
+equal 查询职业 1
+#act
+mov 玩家职业 "法师"
+
+#if
+equal 查询职业 2
+#act
+mov 玩家职业 "道士"
+
+#IF
+#ACT
+FormatStr "where FLD_CHARACTER='%s'" %查询名字
+actcmd READSQL  "TBL_CHARACTER" "FLD_LEVELBONUS,FLD_EXTRAHP,FLD_EXTRAMP,FLD_EXTRAPWRS0,FLD_EXTRAPWRS1" "加点次数,体力值,魔力值,防御值,魔御值" %A9
+
+#IF
+#ACT
+FormatStr "where FLD_CHARACTER='%s'" %查询名字
+actcmd READSQL  "TBL_CHARACTER" "FLD_EXTRAPWRS2,FLD_EXTRAPWRS3,FLD_EXTRAPWRS4" "破坏值,自然值,灵魂值" %A9
+
+#IF
+#ACT
+FormatStr "where FLD_CHARACTER='%s'" %查询名字
+actcmd READSQL  "TBL_CHARACTER" "FLD_EXTRAPWRS5,FLD_EXTRAPWRS6,FLD_EXTRAPWRS7,FLD_EXTRAPWRS8" "元素火,元素冰,元素雷,元素风" %A9
+
+#IF
+#ACT
+FormatStr "where FLD_CHARACTER='%s'" %查询名字
+actcmd READSQL  "TBL_CHARACTER" "FLD_EXTRAPWRS9,FLD_EXTRAPWRS10,FLD_EXTRAPWRS11" "元素圣,元素暗,元素幻" %A9
+
+#if
+#say
+查询人物:{FCOLOR/13}<$OUTPUT(查询名字)>{FCOLOR/12},详细信息如下:\
+{FCOLOR/1}人物等级：{FCOLOR/10}           <$OUTPUT(查询级别)>\
+{FCOLOR/1}人物经验：{FCOLOR/10}           <$OUTPUT(查询经验)>\
+{FCOLOR/1}人物性别：{FCOLOR/10}           <$OUTPUT(玩家性别)>\
+{FCOLOR/1}人物职业：{FCOLOR/10}           <$OUTPUT(玩家职业)>\
+{FCOLOR/1}人物金币：{FCOLOR/10}           <$OUTPUT(查询金币)>\
+{FCOLOR/1}人物PK值：{FCOLOR/10}           <$OUTPUT(查询红名)>\
+{FCOLOR/1}加点次数：{FCOLOR/10}           <$OUTPUT(加点次数)>\
+{FCOLOR/1}加点血量：{FCOLOR/10}           <$OUTPUT(体力值)>\
+{FCOLOR/1}加点魔量：{FCOLOR/10}           <$OUTPUT(魔力值)>\
+{FCOLOR/1}加点防御：{FCOLOR/10}           <$OUTPUT(防御值)>\
+{FCOLOR/1}加点魔御：{FCOLOR/10}           <$OUTPUT(魔御值)>\
+{FCOLOR/1}加点破坏：{FCOLOR/10}           <$OUTPUT(破坏值)>\
+{FCOLOR/1}加点自然：{FCOLOR/10}           <$OUTPUT(自然值)>\
+{FCOLOR/1}加点灵魂：{FCOLOR/10}           <$OUTPUT(灵魂值)>\
+{FCOLOR/1}加点火元素：{FCOLOR/10}         <$OUTPUT(元素火)>\
+{FCOLOR/1}加点冰元素：{FCOLOR/10}         <$OUTPUT(元素冰)>\
+{FCOLOR/1}加点雷元素：{FCOLOR/10}         <$OUTPUT(元素雷)>\
+{FCOLOR/1}加点风元素：{FCOLOR/10}         <$OUTPUT(元素风)>\
+{FCOLOR/1}加点圣元素：{FCOLOR/10}         <$OUTPUT(元素圣)>\
+{FCOLOR/1}加点暗元素：{FCOLOR/10}         <$OUTPUT(元素暗)>\
+{FCOLOR/1}加点幻元素：{FCOLOR/10}         <$OUTPUT(元素幻)>\\
+
+}

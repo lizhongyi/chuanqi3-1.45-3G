@@ -1,0 +1,86 @@
+;;-----------------------;;购买请联系鱼的眼泪,QQ:16487549
+[@KyungGab_Quest1]
+{
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+ReadValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINMAINSTEP,FLD_SINSTEP_READY" [@KyungGab_Quest2_0]
+
+[@KyungGab_Quest2_0()]
+#ACT
+mov D1 %ARG(1)
+mov D2 %ARG(2)
+
+#IF
+Equal D1 1
+Equal D2 3
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINMAINSTEP=1"
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINSTEP_READY=4"
+set [067] 0
+Delaygoto [local] 5 @main_2xxx
+break
+#SAY
+该回去见霸王幽灵了……\ \
+#ELSEACT
+break
+
+[@main_2xxx]
+#ACT
+mapmove D903 55 55
+
+
+}
+
+[@HwanMa_Quest1]
+{
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+ReadValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINMAINSTEP,FLD_SINSTEP_READY" [@KyungGab_Quest2_0]
+
+[@KyungGab_Quest2_0()]
+#ACT
+mov D1 %ARG(1)
+mov D2 %ARG(2)
+
+#IF
+Equal D1 2
+Equal D2 2
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINMAINSTEP=2"
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINSTEP_READY=3"
+give 遗骸 1
+set [067] 0
+break
+#SAY
+（这是何物?难道是遗骸……?霸王幽灵不是没形体的吗?怎么会……）\ \
+<关 闭/@exit>
+#ELSEACT
+break
+}
+
+[@PaChun_Quest1]
+{
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+ReadValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINMAINSTEP,FLD_SINSTEP_READY" [@PaChun_Quest1_0]
+
+[@PaChun_Quest1_0()]
+#ACT
+mov D1 %ARG(1)
+mov D2 %ARG(2)
+
+#IF
+Equal D1 3
+Equal D2 1
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINMAINSTEP=3"
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINSTEP_READY=2"
+set [067] 0
+#SAY
+（终于打败了霸王教主,该带着霸王教主雕像去见霸王幽灵了.）\
+
+}
+;;;购买请联系鱼的眼泪,QQ:16487549

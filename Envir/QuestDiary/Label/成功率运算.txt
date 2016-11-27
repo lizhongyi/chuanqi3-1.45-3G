@@ -1,0 +1,1883 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@成功率运算]
+{
+#IF
+Equal 成功率 100
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+#ACT
+MOV D0 0
+MOVR D0 100
+MOV 成功率函数 %D0
+
+#IF
+Equal 成功率 95
+#ACT
+GOTO @成功率为95
+break
+
+#IF
+Equal 成功率 90
+#ACT
+GOTO @成功率为90
+break
+
+#IF
+Equal 成功率 85
+#ACT
+GOTO @成功率为85
+break
+
+#IF
+Equal 成功率 80
+#ACT
+GOTO @成功率为80
+break
+
+#IF
+Equal 成功率 75
+#ACT
+GOTO @成功率为75
+break
+
+#IF
+Equal 成功率 70
+#ACT
+GOTO @成功率为70
+break
+
+#IF
+Equal 成功率 65
+#ACT
+GOTO @成功率为65
+break
+
+#IF
+Equal 成功率 60
+#ACT
+GOTO @成功率为60
+break
+
+#IF
+Equal 成功率 55
+#ACT
+GOTO @成功率为55
+break
+
+#IF
+Equal 成功率 50
+#ACT
+GOTO @成功率为50
+break
+
+#IF
+Equal 成功率 45
+#ACT
+GOTO @成功率为45
+break
+
+#IF
+Equal 成功率 40
+#ACT
+GOTO @成功率为40
+break
+
+#IF
+Equal 成功率 35
+#ACT
+GOTO @成功率为35
+break
+
+#IF
+Equal 成功率 30
+#ACT
+GOTO @成功率为30
+break
+
+#IF
+Equal 成功率 25
+#ACT
+GOTO @成功率为25
+break
+
+#IF
+Equal 成功率 20
+#ACT
+GOTO @成功率为20
+break
+
+#IF
+Equal 成功率 15
+#ACT
+GOTO @成功率为15
+break
+
+#IF
+Equal 成功率 10
+#ACT
+GOTO @成功率为10
+break
+
+#IF
+Equal 成功率 5
+#ACT
+GOTO @成功率为5
+break
+
+#IF
+Equal 成功率 0
+#ACT
+GOTO @成功率为0
+break
+
+[@成功率为95]
+#IF
+Equal 成功率函数 91
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 87
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 86
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 83
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 80
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 79
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 75
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 72
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 70
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 66
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 64
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 62
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 60
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 58
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 56
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 55
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 52
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 48
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 46
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 45
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 44
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 39
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 34
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 32
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 30
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 25
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 24
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 22
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 21
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 17
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 15
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 13
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 12
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 8
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 6
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 4
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 1
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+#ACT
+MOV 是否成功 "失败"
+GOTO %合成项目
+break
+
+[@成功率为90]
+#IF
+Equal 成功率函数 90
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 87
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 83
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 80
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 79
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 72
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 70
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 64
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 62
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 60
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 58
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 55
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 52
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 46
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 45
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 44
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 34
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 32
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 25
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 24
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 21
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 17
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 15
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 12
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+
+#IF
+Equal 成功率函数 4
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 1
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+#ACT
+MOV 是否成功 "失败"
+GOTO %合成项目
+break
+
+[@成功率为85]
+#IF
+Equal 成功率函数 90
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 87
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 83
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 80
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 79
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 72
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 62
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 60
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 58
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 55
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 45
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 44
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 34
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 32
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 25
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 21
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 17
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 12
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+
+#IF
+Equal 成功率函数 4
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 1
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+#ACT
+MOV 是否成功 "失败"
+GOTO %合成项目
+break
+
+[@成功率为80]
+#IF
+Equal 成功率函数 97
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 87
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 83
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 80
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 72
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 62
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 60
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 58
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 45
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 44
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 32
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 25
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 21
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 17
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 12
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+
+#IF
+Equal 成功率函数 4
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 1
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+#ACT
+MOV 是否成功 "失败"
+GOTO %合成项目
+break
+
+[@成功率为75]
+#IF
+Equal 成功率函数 97
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 87
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 83
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 72
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 62
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 60
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 58
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 44
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 32
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 25
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 21
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 17
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 12
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 4
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 1
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+#ACT
+MOV 是否成功 "失败"
+GOTO %合成项目
+break
+
+[@成功率为70]
+#IF
+Equal 成功率函数 97
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 87
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 72
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 62
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 60
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 58
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 44
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 32
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 25
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 21
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 17
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 12
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 4
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 1
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+#ACT
+MOV 是否成功 "失败"
+GOTO %合成项目
+break
+
+[@成功率为65]
+#IF
+Equal 成功率函数 97
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 87
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 72
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 62
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 58
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 44
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 32
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 25
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 21
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 17
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 12
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 4
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 1
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+#ACT
+MOV 是否成功 "失败"
+GOTO %合成项目
+break
+
+[@成功率为60]
+#IF
+Equal 成功率函数 97
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 87
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 72
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 62
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 58
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 44
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 32
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 25
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 21
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 17
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 12
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 4
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+#ACT
+MOV 是否成功 "失败"
+GOTO %合成项目
+break
+
+[@成功率为55]
+#IF
+Equal 成功率函数 97
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 87
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 72
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 62
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 44
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 32
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 25
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 21
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 17
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 12
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 4
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+#ACT
+MOV 是否成功 "失败"
+GOTO %合成项目
+break
+
+[@成功率为50]
+#IF
+Equal 成功率函数 97
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 87
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 72
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 62
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 44
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 32
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 25
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 21
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 12
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 4
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+#ACT
+MOV 是否成功 "失败"
+GOTO %合成项目
+break
+
+[@成功率为45]
+#IF
+Equal 成功率函数 97
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 87
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 62
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 44
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 32
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 25
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 21
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 12
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 4
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+#ACT
+MOV 是否成功 "失败"
+GOTO %合成项目
+break
+
+[@成功率为40]
+#IF
+Equal 成功率函数 97
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 87
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 62
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 44
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 32
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 25
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 12
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 4
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+#ACT
+MOV 是否成功 "失败"
+GOTO %合成项目
+break
+
+[@成功率为35]
+#IF
+Equal 成功率函数 97
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 87
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 62
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 44
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 32
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 25
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 12
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+#ACT
+MOV 是否成功 "失败"
+GOTO %合成项目
+break
+
+[@成功率为30]
+#IF
+Equal 成功率函数 97
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 87
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 62
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 32
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 25
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 12
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+#ACT
+MOV 是否成功 "失败"
+GOTO %合成项目
+break
+
+[@成功率为25]
+#IF
+Equal 成功率函数 97
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 87
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 62
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 25
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 12
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+#ACT
+MOV 是否成功 "失败"
+GOTO %合成项目
+break
+
+[@成功率为20]
+#IF
+Equal 成功率函数 97
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 87
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 62
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 25
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 12
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+#ACT
+MOV 是否成功 "失败"
+GOTO %合成项目
+break
+
+[@成功率为15]
+#IF
+Equal 成功率函数 97
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 87
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 62
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 25
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 12
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+#ACT
+MOV 是否成功 "失败"
+GOTO %合成项目
+break
+
+[@成功率为10]
+#IF
+Equal 成功率函数 97
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 87
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 62
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 25
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 12
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+#ACT
+MOV 是否成功 "失败"
+GOTO %合成项目
+break
+
+[@成功率为5]
+#IF
+Equal 成功率函数 97
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 87
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 62
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+Equal 成功率函数 12
+#ACT
+MOV 是否成功 "成功"
+GOTO %合成项目
+break
+
+#IF
+#ACT
+MOV 是否成功 "失败"
+GOTO %合成项目
+break
+
+[@成功率为0]
+#IF
+#ACT
+MOV 是否成功 "失败"
+GOTO %合成项目
+break
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

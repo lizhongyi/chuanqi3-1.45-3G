@@ -1,0 +1,196 @@
+;;创天网络有限公司原版1.45
+[@Change]
+{
+#SAY
+好吧，我有事求你。\\
+<了解和金条有关的事情/@gold100>\
+<了解和金条包有关的事情/@gold500>\
+<了解和金盒有关的事情/@gold1000>\
+<结束/@exit>
+
+[@gold100]
+#SAY
+金条的价值为100万金币。你要求我什么事？\
+<把钱换成金条/@Change1>\
+<把金条换成钱/@Reverse1>\
+<前一步/@main>
+
+[@gold500]
+#SAY
+金条包的价值等于5根金条。那你要我干什么？\
+<把金条换成金条包/@Change5Set>\
+<把用金条包换金条/@Reverse5Set>\
+<前一步/@main>
+
+[@gold1000]
+#say
+金盒的价值等于2根金条包。那你要我干什么？\
+<把金条包换成金盒/@Change10Set>\
+<把金盒换成金条包/@Reverse10Set>\
+<前一步/@main>
+
+[@Change1]
+#IF
+checkgold 1000000
+#SAY
+用钱换金条需要2000金币的手续费。那你也要换？\\
+<换/@Change1_1>\
+<结束./@exit>
+#ELSESAY
+你连那些钱都没有，换什么呀？ 等你准备好足够的钱再来吧。\\
+<前一步/@main>
+
+[@Change1_1]
+#IF
+checkbaggage
+checkgold 1002000
+#ACT
+take 金币 1002000
+give 金条 1
+#SAY
+把钱换成金条了。你还想换吗？\\
+<换/@Change1_1>\
+<不换/@exit>
+#ELSESAY
+要是书包已经满了，或者你没有手续费就不能换。你再确认一下。\\
+<结束/@exit>
+
+[@Reverse1]
+#IF
+checkitem 金条 1
+#SAY
+用金条换钱需要2000金币的手续费，那你也要换？\\
+<换/@Reverse1_1>\
+<结束/@exit>
+#ELSESAY
+你连金条都没有，还让我给你换？\
+你想骗人？ 赶快给我消失！ \\
+<结束./@exit>
+
+[@Reverse1_1]
+#IF
+checkitem 金条 1
+!CheckGold 99000000
+#ACT
+take 金条 1
+give 金币 998000
+#SAY
+把金条换成钱了，你还要换？\\
+<换/@Reverse1_1>\
+<不换/@exit>
+#ELSESAY
+我虽然想给你换钱，\
+可你的钱太多了，我换不了。\\
+<结束./@exit>
+
+[@Change5Set]
+#IF
+checkitem 金条 5
+#SAY
+要把金条换成金条包，需要12000金币的手续费。那你也要换？\\
+<换/@Change5Set_1>\
+<结束/@exit>
+#ELSESAY
+你连5根金条都没有，换什么钱哪？等你有了足够的金条以后再来吧。\\
+<前一步/@main>
+
+[@Change5Set_1]
+#IF
+checkitem 金条 5
+checkgold 12000
+#ACT
+take 金条 5
+take 金币 12000
+give 金条包 1
+#SAY
+把金条换成金条包了。你还想换吗？\\
+<换/@Change5Set_1>\
+<不换/@exit>
+#ELSESAY
+要是没有金条，或者没有足够的手续费，就不能换。 你再确认一下。\\
+<结束./@exit>
+
+[@Reverse5Set]
+#IF
+checkitem 金条包 1
+#SAY
+把金条包换成金条需要12000金币的手续费，那你也要换？\\
+<换/@Reverse5Set_1>\
+<结束/@exit>
+#ELSESAY
+你连金条包都没有，换什么钱哪？ 等你准备好金条包以后再来吧。\\
+<前一步/@main>
+
+[@Reverse5Set_1]
+#IF
+checkbaggage
+checkitem 金条包 1
+checkgold 12000
+#ACT
+take 金条包 1
+take 金币 12000
+give 金条 5
+#SAY
+把金条包换成金条了。你还想换吗？\\
+<换/@Reverse5Set_1>\
+<不换/@exit>
+#ELSESAY
+要是没有金条包，或者没有足够的手续费，就不能换。 你再确认一下。\\
+<结束./@exit>
+
+[@Change10Set]
+#IF
+checkitem 金条包 2
+#SAY
+用金条包换金盒需要10000金币的手续费，那你也要换？\\
+<换/@Change10Set_1>\
+<结束/@exit>
+#ELSESAY
+你连2个金条包都没有，换什么钱哪？ 等你准备好足够的金条以后再来吧。\\
+<前一步/@main>
+
+[@Change10Set_1]
+#IF
+checkitem 金条包 2
+checkgold 10000
+#ACT
+take 金条包 2
+take 金币 10000
+give 金盒 1
+#SAY
+把金条包换成金盒了。你还想换吗？\\
+<换/@Change10Set_1>\
+<不换/@exit>
+#ELSESAY
+要是没有金条包，或者没有足够的手续费，就不能换。 你再确认一下。\\
+<结束./@exit>
+
+[@Reverse10Set]
+#IF
+checkitem 金盒 1
+#SAY
+用金盒换金条包需要10000金币的手续费，那你也要换？\\
+<换/@Reverse10Set_1>\
+<结束/@exit>
+#ELSESAY
+你连金盒都没有，换什么钱哪？ 等你准备好金盒以后再来吧。\\
+<前一步/@main>
+
+[@Reverse10Set_1]
+#IF
+checkbaggage
+checkitem 金盒 1
+checkgold 10000
+#ACT
+take 金盒 1
+take 金币 10000
+give 金条包 2
+#SAY
+把金盒换成金条包了。你还想换吗？\\
+<换/@Reverse10Set_1>\
+<不换/@exit>
+#ELSESAY
+要是没有金盒，或者没有足够的手续费，就不能换。 你再确认一下。\\
+<结束/@exit>
+
+}

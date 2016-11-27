@@ -1,0 +1,41 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@用户计时3_Main]
+{
+#Act
+;GOTO @封加速检测
+GOTO @冰冠堡垒检测
+
+;[@封加速检测]
+;#CALL [Label\Lock.dll] @Lock_Main_01
+
+[@冰冠堡垒检测]
+#ACT
+MOV 冰冠当地 %USERMAP
+
+#IF
+EQUAL 冰冠当地 "ICC1"
+OR EQUAL 冰冠当地 "ICC2"
+#ACT
+GOTO @冰冠开始检测
+
+[@冰冠开始检测]
+#ACT
+LoadValue 冰冠每日次数 "ParamControl\冰冠堡垒记录.ini" [%UserName] [冰冠堡垒每日次数]
+
+#IF
+SMALL USERREBORNCOUNT 7
+#ACT
+MAPMOVE 1 400 123
+SYSMSG "【温馨提示】您的转生不足7转,被系统传送出去"
+break
+
+#IF
+ELARGE 冰冠每日次数 1
+#ACT
+MAPMOVE 1 400 123
+SYSMSG "【温馨提示】您今天参加过1次冰冠堡垒挑战,被系统传送出去"
+break
+
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

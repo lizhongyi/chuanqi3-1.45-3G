@@ -1,0 +1,45 @@
+:base sqlns80.hlp
+1 SQL-NS Reference
+1 SQL-NS Reference=_SQL.2d.NS_Reference_add1
+2 SQL-NS Objects
+2 SQL-NS Objects=_SQL.2d.NS_Objects_add1
+2 SQLNamespace Object=_SQLNamespace_Objectns_add1
+2 SQLNamespaceCommand Object=_SQLNamespaceCommand_Objectns_add1
+2 SQLNamespaceCommands Object=_SQLNamespaceCommands_Objectns_add1
+2 SQLNamespaceObject Object=_SQLNamespaceObject_Objectns_add1
+2 SQL-NS Properties
+2 SQL-NS Properties=_SQL.2d.NS_Properties_add1
+2 CommandID Property=_CommandID_Propertyns_add1
+2 Commands Property=_Commands_Propertyns_add1
+2 Count Property=_Count_Propertyns_add1
+2 Handle Property=_Handle_Propertyns_add1
+2 HelpString Property=_HelpString_Propertyns_add1
+2 Name Property=_Name_Propertyns_add1
+2 Type Property=_Type_Propertyns_add1
+2 SQL-NS Methods
+2 SQL-NS Methods=_SQL.2d.NS_Methods_add1
+2 Execute Method=_Execute_Methodns_add1
+2 ExecuteCommandByID Method=_ExecuteCommandByID_Methodns_add1
+2 ExecuteCommandByName Method=_ExecuteCommandByName_Methodns_add1
+2 ExecuteWithParam Method=_executewithparam_method_(sql-ns)
+2 GetChildrenCount Method=_GetChildrenCount_Methodns_add1
+2 GetFirstChildItem Method=_GetFirstChildItem_Methodns_add1
+2 GetName Method=_GetName_Methodns_add1
+2 GetNextSiblingItem Method=_GetNextSiblingItem_Methodns_add1
+2 GetParentItem Method=_GetParentItem_Methodns_add1
+2 GetPreviousSiblingItem Method=_GetPreviousSiblingItem_Methodns_add1
+2 GetRootItem Method=_GetRootItem_Methodns_add1
+2 GetSQLDMOObject Method=_GetSQLDMOObject_Methodns_add1
+2 GetSQLNamespaceObject Method=_GetSQLNamespaceObject_Methodns_add1
+2 GetType Method=_GetType_Methodns_add1
+2 Initialize Method=_Initialize_Methodns_add1
+2 Item Method=_Item_Methodns_add1
+2 Refresh Method=_Refresh_Methodns_add1
+2 SetLCID Method=_SetLCID_Methodns_add1
+2 SQL-NS Constants
+2 SQL-NS Constants=_SQL.2d.NS_Constants_add1
+2 SQLNSCommandID=_SQLNSCommandIDns_add1
+2 SQLNSErrors=_SQLNSErrorsns_add1
+2 SQLNSModality=_SQLNSModalityns_add1
+2 SQLNSObjectType=_SQLNSObjectTypens_add1
+2 SQLNSRootType=_SQLNSRootTypens_add1

@@ -1,0 +1,26 @@
+;;创天网络有限公司原版1.45
+%100
+
+[@main]
+#SAY
+欢迎光临！您可以把东西存放在我这里。 \ \
+<寄存/@storage>物品\
+<取回/@PreGetback>寄存的物品\
+<仓库 密码 管理/@StgPassword>\
+<结束/@exit>
+
+[@StgPassword]
+#CALL [\PassWord\PassWord.txt] @Manage_PassWord
+
+[@PreGetback]
+#CALL [\PassWord\PassWord.txt] @Input_PassWord
+
+[@storage]
+#SAY
+把东西存放在这里，您可放心。 \ \
+ <前一步/@main>
+
+[@getback]
+#SAY
+您是来取东西的？领取什么物品呢?\ \
+ <前一步/@main>

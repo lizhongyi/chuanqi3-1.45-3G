@@ -1,0 +1,375 @@
+;;
+[@装备附魔_Main]
+{
+#ACT
+MOV 成功几率 10
+MOV 附魔属性 2
+MOV 毁灭数量 2
+MOV 余烬数量 2
+MOV Temp 0
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}装{FCOLOR/4}━{FCOLOR/14}备{FCOLOR/4}━{FCOLOR/14}升{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+每件装备均有{FCOLOR/1}1{FCOLOR/12}次附魔属性的机会。附魔属性需花费{FCOLOR/1}2{FCOLOR/12}个毁\
+灭精华和{FCOLOR/1}2{FCOLOR/12}个永恒余烬,默认成功率为{FCOLOR/1}10％{FCOLOR/12},附魔属性为{FCOLOR/1}2{FCOLOR/12}点\
+每增加{FCOLOR/1}2{FCOLOR/12}个毁灭精华增加{FCOLOR/1}8％{FCOLOR/12}的成功率,每增加{FCOLOR/1}2{FCOLOR/12}个永恒余烬\
+附魔属性增加{FCOLOR/1}1{FCOLOR/12}点.进最多放入{FCOLOR/1}22{FCOLOR/12}个毁灭精华和{FCOLOR/1}22{FCOLOR/12}个永恒余\
+烬。{FCOLOR/1}1{FCOLOR/12}点体力或{FCOLOR/1}1{FCOLOR/12}点魔力={FCOLOR/1}50{FCOLOR/12}点体力或{FCOLOR/1}50{FCOLOR/12}点魔力.装备原附\
+加属性不计算在内。\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}选{FCOLOR/4}━{FCOLOR/14}择{FCOLOR/4}━{FCOLOR/14}部{FCOLOR/4}━{FCOLOR/14}位{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <衣  服/@升级检测(0,战衣)> ]   [ <头  盔/@升级检测(4,头盔)> ]   [ <鞋  子/@升级检测(10,鞋子)> ]   [ <项  链/@升级检测(3,项链)> ]\
+{FCOLOR/12}[ <左手镯/@升级检测(5,左手镯)> ]   [ <右手镯/@升级检测(6,右手镯)> ]   [ <左戒指/@升级检测(7,左戒指)> ]   [ <右戒指/@升级检测(8,右戒指)> ]\
+
+[@升级检测()]
+#ACT
+mov  装备位置  %ARG(1)
+mov  装备说明  %ARG(2)
+
+#IF
+!checkcmd CHECKITEMINFO %装备位置 0       ;;;检测是否带装备
+#ACT
+Close
+SysMsg  "温馨提示: 您的[ <$OUTPUT(装备说明)> ]位置没有佩带任何装备"
+break
+
+#IF
+#ACT
+GOTO @升级检测完毕
+
+[@升级检测完毕]
+#IF
+Equal 装备位置 0
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}装{FCOLOR/4}━{FCOLOR/14}备{FCOLOR/4}━{FCOLOR/14}升{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+每件装备均有{FCOLOR/1}1{FCOLOR/12}次附魔属性的机会。附魔属性需花费{FCOLOR/1}2{FCOLOR/12}个毁\
+灭精华和{FCOLOR/1}2{FCOLOR/12}个永恒余烬,默认成功率为{FCOLOR/1}10％{FCOLOR/12},附魔属性为{FCOLOR/1}2{FCOLOR/12}点\
+每增加{FCOLOR/1}2{FCOLOR/12}个毁灭精华增加{FCOLOR/1}8％{FCOLOR/12}的成功率,每增加{FCOLOR/1}2{FCOLOR/12}个永恒余烬\
+附魔属性增加{FCOLOR/1}1{FCOLOR/12}点.进最多放入{FCOLOR/1}22{FCOLOR/12}个毁灭精华和{FCOLOR/1}22{FCOLOR/12}个永恒余\
+烬。{FCOLOR/1}1{FCOLOR/12}点体力或{FCOLOR/1}1{FCOLOR/12}点魔力={FCOLOR/1}50{FCOLOR/12}点体力或{FCOLOR/1}50{FCOLOR/12}点魔力.装备原附\
+加属性不计算在内。\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}选{FCOLOR/4}━{FCOLOR/14}择{FCOLOR/4}━{FCOLOR/14}部{FCOLOR/4}━{FCOLOR/14}位{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ {FCOLOR/1}衣  服{FCOLOR/12} ]   [ <头  盔/@升级检测(4,头盔)> ]   [ <鞋  子/@升级检测(10,鞋子)> ]   [ <项  链/@升级检测(3,项链)> ]\
+{FCOLOR/12}[ <左手镯/@升级检测(5,左手镯)> ]   [ <右手镯/@升级检测(6,右手镯)> ]   [ <左戒指/@升级检测(7,左戒指)> ]   [ <右戒指/@升级检测(8,右戒指)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}放{FCOLOR/4}━{FCOLOR/14}入{FCOLOR/4}━{FCOLOR/14}材{FCOLOR/4}━{FCOLOR/14}料{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_ <增加毁灭精华/@增加毁灭精华_附魔>[{FCOLOR/1} <$OUTPUT(毁灭数量)> {FCOLOR/12}]{FCOLOR/12}<减少毁灭精华/@减少毁灭精华_附魔>   成功率{FCOLOR/12}[{FCOLOR/1} <$OUTPUT(成功几率)>% {FCOLOR/12}]\
+_ <增加永恒余烬/@增加永恒余烬_附魔>[{FCOLOR/1} <$OUTPUT(余烬数量)> {FCOLOR/12}]{FCOLOR/12}<减少永恒余烬/@减少永恒余烬_附魔>   属性点{FCOLOR/12}[{FCOLOR/1} <$OUTPUT(附魔属性)> {FCOLOR/12}]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}选{FCOLOR/4}━{FCOLOR/14}择{FCOLOR/4}━{FCOLOR/14}属{FCOLOR/4}━{FCOLOR/14}性{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_   {FCOLOR/12}[ <破  坏/@开始提升属性A(FLD_DESC2,破坏)> ]     [ <全系列/@开始提升属性A(FLD_DESC3,全系列)> ]     [ <体  力/@开始提升属性B(FLD_DESC8,体力)> ]\
+_   {FCOLOR/12}[ <魔  力/@开始提升属性B(FLD_DESC9,体力)> ]     [ <物  防/@开始提升属性A(FLD_DESC0,物防)> ]     [ <魔  防/@开始提升属性A(FLD_DESC1,魔防)> ]\
+
+#IF
+Equal 装备位置 3
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}装{FCOLOR/4}━{FCOLOR/14}备{FCOLOR/4}━{FCOLOR/14}升{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+每件装备均有{FCOLOR/1}1{FCOLOR/12}次附魔属性的机会。附魔属性需花费{FCOLOR/1}2{FCOLOR/12}个毁\
+灭精华和{FCOLOR/1}2{FCOLOR/12}个永恒余烬,默认成功率为{FCOLOR/1}10％{FCOLOR/12},附魔属性为{FCOLOR/1}2{FCOLOR/12}点\
+每增加{FCOLOR/1}2{FCOLOR/12}个毁灭精华增加{FCOLOR/1}8％{FCOLOR/12}的成功率,每增加{FCOLOR/1}2{FCOLOR/12}个永恒余烬\
+附魔属性增加{FCOLOR/1}1{FCOLOR/12}点.进最多放入{FCOLOR/1}22{FCOLOR/12}个毁灭精华和{FCOLOR/1}22{FCOLOR/12}个永恒余\
+烬。{FCOLOR/1}1{FCOLOR/12}点体力或{FCOLOR/1}1{FCOLOR/12}点魔力={FCOLOR/1}50{FCOLOR/12}点体力或{FCOLOR/1}50{FCOLOR/12}点魔力.装备原附\
+加属性不计算在内。\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}选{FCOLOR/4}━{FCOLOR/14}择{FCOLOR/4}━{FCOLOR/14}部{FCOLOR/4}━{FCOLOR/14}位{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <衣  服/@升级检测(0,战衣)> ]   [ <头  盔/@升级检测(4,头盔)> ]   [ <鞋  子/@升级检测(10,鞋子)> ]   [ {FCOLOR/1}项  链{FCOLOR/12} ]\
+{FCOLOR/12}[ <左手镯/@升级检测(5,左手镯)> ]   [ <右手镯/@升级检测(6,右手镯)> ]   [ <左戒指/@升级检测(7,左戒指)> ]   [ <右戒指/@升级检测(8,右戒指)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}放{FCOLOR/4}━{FCOLOR/14}入{FCOLOR/4}━{FCOLOR/14}材{FCOLOR/4}━{FCOLOR/14}料{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_ <增加毁灭精华/@增加毁灭精华_附魔>[{FCOLOR/1} <$OUTPUT(毁灭数量)> {FCOLOR/12}]{FCOLOR/12}<减少毁灭精华/@减少毁灭精华_附魔>   成功率{FCOLOR/12}[{FCOLOR/1} <$OUTPUT(成功几率)>% {FCOLOR/12}]\
+_ <增加永恒余烬/@增加永恒余烬_附魔>[{FCOLOR/1} <$OUTPUT(余烬数量)> {FCOLOR/12}]{FCOLOR/12}<减少永恒余烬/@减少永恒余烬_附魔>   属性点{FCOLOR/12}[{FCOLOR/1} <$OUTPUT(附魔属性)> {FCOLOR/12}]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}选{FCOLOR/4}━{FCOLOR/14}择{FCOLOR/4}━{FCOLOR/14}属{FCOLOR/4}━{FCOLOR/14}性{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_      {FCOLOR/12}[ <破  坏/@开始提升属性A(FLD_DESC2,破坏)> ]                [ <全系列/@开始提升属性A(FLD_DESC3,全系列)> ]\
+
+#IF
+Equal 装备位置 4
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}装{FCOLOR/4}━{FCOLOR/14}备{FCOLOR/4}━{FCOLOR/14}升{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+每件装备均有{FCOLOR/1}1{FCOLOR/12}次附魔属性的机会。附魔属性需花费{FCOLOR/1}2{FCOLOR/12}个毁\
+灭精华和{FCOLOR/1}2{FCOLOR/12}个永恒余烬,默认成功率为{FCOLOR/1}10％{FCOLOR/12},附魔属性为{FCOLOR/1}2{FCOLOR/12}点\
+每增加{FCOLOR/1}2{FCOLOR/12}个毁灭精华增加{FCOLOR/1}8％{FCOLOR/12}的成功率,每增加{FCOLOR/1}2{FCOLOR/12}个永恒余烬\
+附魔属性增加{FCOLOR/1}1{FCOLOR/12}点.进最多放入{FCOLOR/1}22{FCOLOR/12}个毁灭精华和{FCOLOR/1}22{FCOLOR/12}个永恒余\
+烬。{FCOLOR/1}1{FCOLOR/12}点体力或{FCOLOR/1}1{FCOLOR/12}点魔力={FCOLOR/1}50{FCOLOR/12}点体力或{FCOLOR/1}50{FCOLOR/12}点魔力.装备原附\
+加属性不计算在内。\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}选{FCOLOR/4}━{FCOLOR/14}择{FCOLOR/4}━{FCOLOR/14}部{FCOLOR/4}━{FCOLOR/14}位{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <衣  服/@升级检测(0,战衣)> ]   [ {FCOLOR/1}头  盔{FCOLOR/12} ]   [ <鞋  子/@升级检测(10,鞋子)> ]   [ <项  链/@升级检测(3,项链)> ]\
+{FCOLOR/12}[ <左手镯/@升级检测(5,左手镯)> ]   [ <右手镯/@升级检测(6,右手镯)> ]   [ <左戒指/@升级检测(7,左戒指)> ]   [ <右戒指/@升级检测(8,右戒指)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}放{FCOLOR/4}━{FCOLOR/14}入{FCOLOR/4}━{FCOLOR/14}材{FCOLOR/4}━{FCOLOR/14}料{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_ <增加毁灭精华/@增加毁灭精华_附魔>[{FCOLOR/1} <$OUTPUT(毁灭数量)> {FCOLOR/12}]{FCOLOR/12}<减少毁灭精华/@减少毁灭精华_附魔>   成功率{FCOLOR/12}[{FCOLOR/1} <$OUTPUT(成功几率)>% {FCOLOR/12}]\
+_ <增加永恒余烬/@增加永恒余烬_附魔>[{FCOLOR/1} <$OUTPUT(余烬数量)> {FCOLOR/12}]{FCOLOR/12}<减少永恒余烬/@减少永恒余烬_附魔>   属性点{FCOLOR/12}[{FCOLOR/1} <$OUTPUT(附魔属性)> {FCOLOR/12}]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}选{FCOLOR/4}━{FCOLOR/14}择{FCOLOR/4}━{FCOLOR/14}属{FCOLOR/4}━{FCOLOR/14}性{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <破  坏/@开始提升属性A(FLD_DESC2,破坏)> ]   [ <全系列/@开始提升属性A(FLD_DESC3,全系列)> ]   [ <防  御/@开始提升属性A(FLD_DESC0,防御)> ]   [ <魔  御/@开始提升属性A(FLD_DESC1,魔御)> ]\
+
+#IF
+Equal 装备位置 5
+#say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}装{FCOLOR/4}━{FCOLOR/14}备{FCOLOR/4}━{FCOLOR/14}升{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+每件装备均有{FCOLOR/1}1{FCOLOR/12}次附魔属性的机会。附魔属性需花费{FCOLOR/1}2{FCOLOR/12}个毁\
+灭精华和{FCOLOR/1}2{FCOLOR/12}个永恒余烬,默认成功率为{FCOLOR/1}10％{FCOLOR/12},附魔属性为{FCOLOR/1}2{FCOLOR/12}点\
+每增加{FCOLOR/1}2{FCOLOR/12}个毁灭精华增加{FCOLOR/1}8％{FCOLOR/12}的成功率,每增加{FCOLOR/1}2{FCOLOR/12}个永恒余烬\
+附魔属性增加{FCOLOR/1}1{FCOLOR/12}点.进最多放入{FCOLOR/1}22{FCOLOR/12}个毁灭精华和{FCOLOR/1}22{FCOLOR/12}个永恒余\
+烬。{FCOLOR/1}1{FCOLOR/12}点体力或{FCOLOR/1}1{FCOLOR/12}点魔力={FCOLOR/1}50{FCOLOR/12}点体力或{FCOLOR/1}50{FCOLOR/12}点魔力.装备原附\
+加属性不计算在内。\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}选{FCOLOR/4}━{FCOLOR/14}择{FCOLOR/4}━{FCOLOR/14}部{FCOLOR/4}━{FCOLOR/14}位{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <衣  服/@升级检测(0,战衣)> ]   [ <头  盔/@升级检测(4,头盔)> ]   [ <鞋  子/@升级检测(10,鞋子)> ]   [ <项  链/@升级检测(3,项链)> ]\
+{FCOLOR/12}[ {FCOLOR/1}左手镯{FCOLOR/12} ]   [ <右手镯/@升级检测(6,右手镯)> ]   [ <左戒指/@升级检测(7,左戒指)> ]   [ <右戒指/@升级检测(8,右戒指)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}放{FCOLOR/4}━{FCOLOR/14}入{FCOLOR/4}━{FCOLOR/14}材{FCOLOR/4}━{FCOLOR/14}料{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_ <增加毁灭精华/@增加毁灭精华_附魔>[{FCOLOR/1} <$OUTPUT(毁灭数量)> {FCOLOR/12}]{FCOLOR/12}<减少毁灭精华/@减少毁灭精华_附魔>   成功率{FCOLOR/12}[{FCOLOR/1} <$OUTPUT(成功几率)>% {FCOLOR/12}]\
+_ <增加永恒余烬/@增加永恒余烬_附魔>[{FCOLOR/1} <$OUTPUT(余烬数量)> {FCOLOR/12}]{FCOLOR/12}<减少永恒余烬/@减少永恒余烬_附魔>   属性点{FCOLOR/12}[{FCOLOR/1} <$OUTPUT(附魔属性)> {FCOLOR/12}]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}选{FCOLOR/4}━{FCOLOR/14}择{FCOLOR/4}━{FCOLOR/14}属{FCOLOR/4}━{FCOLOR/14}性{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <破  坏/@开始提升属性A(FLD_DESC2,破坏)> ]   [ <全系列/@开始提升属性A(FLD_DESC3,全系列)> ]   [ <防  御/@开始提升属性A(FLD_DESC0,防御)> ]   [ <魔  御/@开始提升属性A(FLD_DESC1,魔御)> ]\
+_    准确和敏捷类装备  准确=防御   敏捷=魔御\
+
+#IF
+Equal 装备位置 6
+#say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}装{FCOLOR/4}━{FCOLOR/14}备{FCOLOR/4}━{FCOLOR/14}升{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+每件装备均有{FCOLOR/1}1{FCOLOR/12}次附魔属性的机会。附魔属性需花费{FCOLOR/1}2{FCOLOR/12}个毁\
+灭精华和{FCOLOR/1}2{FCOLOR/12}个永恒余烬,默认成功率为{FCOLOR/1}10％{FCOLOR/12},附魔属性为{FCOLOR/1}2{FCOLOR/12}点\
+每增加{FCOLOR/1}2{FCOLOR/12}个毁灭精华增加{FCOLOR/1}8％{FCOLOR/12}的成功率,每增加{FCOLOR/1}2{FCOLOR/12}个永恒余烬\
+附魔属性增加{FCOLOR/1}1{FCOLOR/12}点.进最多放入{FCOLOR/1}22{FCOLOR/12}个毁灭精华和{FCOLOR/1}22{FCOLOR/12}个永恒余\
+烬。{FCOLOR/1}1{FCOLOR/12}点体力或{FCOLOR/1}1{FCOLOR/12}点魔力={FCOLOR/1}50{FCOLOR/12}点体力或{FCOLOR/1}50{FCOLOR/12}点魔力.装备原附\
+加属性不计算在内。\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}选{FCOLOR/4}━{FCOLOR/14}择{FCOLOR/4}━{FCOLOR/14}部{FCOLOR/4}━{FCOLOR/14}位{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <衣  服/@升级检测(0,战衣)> ]   [ <头  盔/@升级检测(4,头盔)> ]   [ <鞋  子/@升级检测(10,鞋子)> ]   [ <项  链/@升级检测(3,项链)> ]\
+{FCOLOR/12}[ <左手镯/@升级检测(5,左手镯)> ]   [ {FCOLOR/1}右手镯{FCOLOR/12} ]   [ <左戒指/@升级检测(7,左戒指)> ]   [ <右戒指/@升级检测(8,右戒指)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}放{FCOLOR/4}━{FCOLOR/14}入{FCOLOR/4}━{FCOLOR/14}材{FCOLOR/4}━{FCOLOR/14}料{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_ <增加毁灭精华/@增加毁灭精华_附魔>[{FCOLOR/1} <$OUTPUT(毁灭数量)> {FCOLOR/12}]{FCOLOR/12}<减少毁灭精华/@减少毁灭精华_附魔>   成功率{FCOLOR/12}[{FCOLOR/1} <$OUTPUT(成功几率)>% {FCOLOR/12}]\
+_ <增加永恒余烬/@增加永恒余烬_附魔>[{FCOLOR/1} <$OUTPUT(余烬数量)> {FCOLOR/12}]{FCOLOR/12}<减少永恒余烬/@减少永恒余烬_附魔>   属性点{FCOLOR/12}[{FCOLOR/1} <$OUTPUT(附魔属性)> {FCOLOR/12}]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}选{FCOLOR/4}━{FCOLOR/14}择{FCOLOR/4}━{FCOLOR/14}属{FCOLOR/4}━{FCOLOR/14}性{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <破  坏/@开始提升属性A(FLD_DESC2,破坏)> ]   [ <全系列/@开始提升属性A(FLD_DESC3,全系列)> ]   [ <防  御/@开始提升属性A(FLD_DESC0,防御)> ]   [ <魔  御/@开始提升属性A(FLD_DESC1,魔御)> ]\
+_    准确和敏捷类装备  准确=防御   敏捷=魔御\
+
+#IF
+Equal 装备位置 7
+#say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}装{FCOLOR/4}━{FCOLOR/14}备{FCOLOR/4}━{FCOLOR/14}升{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+每件装备均有{FCOLOR/1}1{FCOLOR/12}次附魔属性的机会。附魔属性需花费{FCOLOR/1}2{FCOLOR/12}个毁\
+灭精华和{FCOLOR/1}2{FCOLOR/12}个永恒余烬,默认成功率为{FCOLOR/1}10％{FCOLOR/12},附魔属性为{FCOLOR/1}2{FCOLOR/12}点\
+每增加{FCOLOR/1}2{FCOLOR/12}个毁灭精华增加{FCOLOR/1}8％{FCOLOR/12}的成功率,每增加{FCOLOR/1}2{FCOLOR/12}个永恒余烬\
+附魔属性增加{FCOLOR/1}1{FCOLOR/12}点.进最多放入{FCOLOR/1}22{FCOLOR/12}个毁灭精华和{FCOLOR/1}22{FCOLOR/12}个永恒余\
+烬。{FCOLOR/1}1{FCOLOR/12}点体力或{FCOLOR/1}1{FCOLOR/12}点魔力={FCOLOR/1}50{FCOLOR/12}点体力或{FCOLOR/1}50{FCOLOR/12}点魔力.装备原附\
+加属性不计算在内。\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}选{FCOLOR/4}━{FCOLOR/14}择{FCOLOR/4}━{FCOLOR/14}部{FCOLOR/4}━{FCOLOR/14}位{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <衣  服/@升级检测(0,战衣)> ]   [ <头  盔/@升级检测(4,头盔)> ]   [ <鞋  子/@升级检测(10,鞋子)> ]   [ <项  链/@升级检测(3,项链)> ]\
+{FCOLOR/12}[ <左手镯/@升级检测(5,左手镯)> ]   [ <右手镯/@升级检测(6,右手镯)> ]   [ {FCOLOR/1}左戒指{FCOLOR/12} ]   [ <右戒指/@升级检测(8,右戒指)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}放{FCOLOR/4}━{FCOLOR/14}入{FCOLOR/4}━{FCOLOR/14}材{FCOLOR/4}━{FCOLOR/14}料{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_ <增加毁灭精华/@增加毁灭精华_附魔>[{FCOLOR/1} <$OUTPUT(毁灭数量)> {FCOLOR/12}]{FCOLOR/12}<减少毁灭精华/@减少毁灭精华_附魔>   成功率{FCOLOR/12}[{FCOLOR/1} <$OUTPUT(成功几率)>% {FCOLOR/12}]\
+_ <增加永恒余烬/@增加永恒余烬_附魔>[{FCOLOR/1} <$OUTPUT(余烬数量)> {FCOLOR/12}]{FCOLOR/12}<减少永恒余烬/@减少永恒余烬_附魔>   属性点{FCOLOR/12}[{FCOLOR/1} <$OUTPUT(附魔属性)> {FCOLOR/12}]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}选{FCOLOR/4}━{FCOLOR/14}择{FCOLOR/4}━{FCOLOR/14}属{FCOLOR/4}━{FCOLOR/14}性{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_      {FCOLOR/12}[ <破  坏/@开始提升属性A(FLD_DESC2,破坏)> ]                [ <全系列/@开始提升属性A(FLD_DESC3,全系列)> ]\
+
+#IF
+Equal 装备位置 8
+#say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}装{FCOLOR/4}━{FCOLOR/14}备{FCOLOR/4}━{FCOLOR/14}升{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+每件装备均有{FCOLOR/1}1{FCOLOR/12}次附魔属性的机会。附魔属性需花费{FCOLOR/1}2{FCOLOR/12}个毁\
+灭精华和{FCOLOR/1}2{FCOLOR/12}个永恒余烬,默认成功率为{FCOLOR/1}10％{FCOLOR/12},附魔属性为{FCOLOR/1}2{FCOLOR/12}点\
+每增加{FCOLOR/1}2{FCOLOR/12}个毁灭精华增加{FCOLOR/1}8％{FCOLOR/12}的成功率,每增加{FCOLOR/1}2{FCOLOR/12}个永恒余烬\
+附魔属性增加{FCOLOR/1}1{FCOLOR/12}点.进最多放入{FCOLOR/1}22{FCOLOR/12}个毁灭精华和{FCOLOR/1}22{FCOLOR/12}个永恒余\
+烬。{FCOLOR/1}1{FCOLOR/12}点体力或{FCOLOR/1}1{FCOLOR/12}点魔力={FCOLOR/1}50{FCOLOR/12}点体力或{FCOLOR/1}50{FCOLOR/12}点魔力.装备原附\
+加属性不计算在内。\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}选{FCOLOR/4}━{FCOLOR/14}择{FCOLOR/4}━{FCOLOR/14}部{FCOLOR/4}━{FCOLOR/14}位{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <衣  服/@升级检测(0,战衣)> ]   [ <头  盔/@升级检测(4,头盔)> ]   [ <鞋  子/@升级检测(10,鞋子)> ]   [ <项  链/@升级检测(3,项链)> ]\
+{FCOLOR/12}[ <左手镯/@升级检测(5,左手镯)> ]   [ <右手镯/@升级检测(6,右手镯)> ]   [ <左戒指/@升级检测(7,左戒指)> ]   [ {FCOLOR/1}右戒指{FCOLOR/12} ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}放{FCOLOR/4}━{FCOLOR/14}入{FCOLOR/4}━{FCOLOR/14}材{FCOLOR/4}━{FCOLOR/14}料{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_ <增加毁灭精华/@增加毁灭精华_附魔>[{FCOLOR/1} <$OUTPUT(毁灭数量)> {FCOLOR/12}]{FCOLOR/12}<减少毁灭精华/@减少毁灭精华_附魔>   成功率{FCOLOR/12}[{FCOLOR/1} <$OUTPUT(成功几率)>% {FCOLOR/12}]\
+_ <增加永恒余烬/@增加永恒余烬_附魔>[{FCOLOR/1} <$OUTPUT(余烬数量)> {FCOLOR/12}]{FCOLOR/12}<减少永恒余烬/@减少永恒余烬_附魔>   属性点{FCOLOR/12}[{FCOLOR/1} <$OUTPUT(附魔属性)> {FCOLOR/12}]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}选{FCOLOR/4}━{FCOLOR/14}择{FCOLOR/4}━{FCOLOR/14}属{FCOLOR/4}━{FCOLOR/14}性{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_      {FCOLOR/12}[ <破  坏/@开始提升属性A(FLD_DESC2,破坏)> ]                [ <全系列/@开始提升属性A(FLD_DESC3,全系列)> ]\
+
+#IF
+Equal 装备位置 10
+#say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}装{FCOLOR/4}━{FCOLOR/14}备{FCOLOR/4}━{FCOLOR/14}升{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+每件装备均有{FCOLOR/1}1{FCOLOR/12}次附魔属性的机会。附魔属性需花费{FCOLOR/1}2{FCOLOR/12}个毁\
+灭精华和{FCOLOR/1}2{FCOLOR/12}个永恒余烬,默认成功率为{FCOLOR/1}10％{FCOLOR/12},附魔属性为{FCOLOR/1}2{FCOLOR/12}点\
+每增加{FCOLOR/1}2{FCOLOR/12}个毁灭精华增加{FCOLOR/1}8％{FCOLOR/12}的成功率,每增加{FCOLOR/1}2{FCOLOR/12}个永恒余烬\
+附魔属性增加{FCOLOR/1}1{FCOLOR/12}点.进最多放入{FCOLOR/1}22{FCOLOR/12}个毁灭精华和{FCOLOR/1}22{FCOLOR/12}个永恒余\
+烬。{FCOLOR/1}1{FCOLOR/12}点体力或{FCOLOR/1}1{FCOLOR/12}点魔力={FCOLOR/1}50{FCOLOR/12}点体力或{FCOLOR/1}50{FCOLOR/12}点魔力.装备原附\
+加属性不计算在内。\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}选{FCOLOR/4}━{FCOLOR/14}择{FCOLOR/4}━{FCOLOR/14}部{FCOLOR/4}━{FCOLOR/14}位{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <衣  服/@升级检测(0,战衣)> ]   [ <头  盔/@升级检测(4,头盔)> ]   [ {FCOLOR/1}鞋  子{FCOLOR/12} ]   [ <项  链/@升级检测(3,项链)> ]\
+{FCOLOR/12}[ <左手镯/@升级检测(5,左手镯)> ]   [ <右手镯/@升级检测(6,右手镯)> ]   [ <左戒指/@升级检测(7,左戒指)> ]   [ <右戒指/@升级检测(8,右戒指)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}放{FCOLOR/4}━{FCOLOR/14}入{FCOLOR/4}━{FCOLOR/14}材{FCOLOR/4}━{FCOLOR/14}料{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_ <增加毁灭精华/@增加毁灭精华_附魔>[{FCOLOR/1} <$OUTPUT(毁灭数量)> {FCOLOR/12}]{FCOLOR/12}<减少毁灭精华/@减少毁灭精华_附魔>   成功率{FCOLOR/12}[{FCOLOR/1} <$OUTPUT(成功几率)>% {FCOLOR/12}]\
+_ <增加永恒余烬/@增加永恒余烬_附魔>[{FCOLOR/1} <$OUTPUT(余烬数量)> {FCOLOR/12}]{FCOLOR/12}<减少永恒余烬/@减少永恒余烬_附魔>   属性点{FCOLOR/12}[{FCOLOR/1} <$OUTPUT(附魔属性)> {FCOLOR/12}]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}选{FCOLOR/4}━{FCOLOR/14}择{FCOLOR/4}━{FCOLOR/14}属{FCOLOR/4}━{FCOLOR/14}性{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_{FCOLOR/12}[ <舒  适/@开始提升属性A(FLD_DESC0,舒适)> ]         [ <体  力/@开始提升属性B(FLD_DESC8,体力)> ]         [ <魔  力/@开始提升属性B(FLD_DESC9,魔力)> ]\
+
+[@增加毁灭精华_附魔]
+#IF
+ELARGE 毁灭数量 11
+#ACT
+SYSMSG "温馨提示: 无法再增加投入数量."
+Break
+
+#IF
+#ACT
+INC 毁灭数量 1
+INC 成功几率 8
+GOTO @升级检测完毕
+
+[@减少毁灭精华_附魔]
+#IF
+ESMALL 毁灭数量 1
+#ACT
+SYSMSG "温馨提示: 无法再减少投入数量."
+Break
+
+#IF
+#ACT
+DEC 毁灭数量 1
+DEC 成功几率 8
+GOTO @升级检测完毕
+
+[@增加永恒余烬_附魔]
+#IF
+ELARGE 余烬数量 11
+#ACT
+SYSMSG "温馨提示: 无法再增加投入数量."
+Break
+
+#IF
+#ACT
+INC 余烬数量 1
+INC 附魔属性 1
+GOTO @升级检测完毕
+
+[@减少永恒余烬_附魔]
+#IF
+ESMALL 余烬数量 1
+#ACT
+SYSMSG "温馨提示: 无法再减少投入数量."
+Break
+
+#IF
+#ACT
+DEC 余烬数量 1
+DEC 附魔属性 1
+GOTO @升级检测完毕
+
+[@开始提升属性A()]
+#ACT
+MOV 属性类别 %ARG(1)
+MOV 属性说明 %ARG(2)
+MOVR 附魔随机 100
+INC 附魔随机 1
+
+#IF
+!checkcmd CHECKITEMINFO %装备位置 0       ;;;检测是否带装备
+#ACT
+SysMsg  "温馨提示: 您的[ <$OUTPUT(装备说明)> ]位置没有佩带任何装备"
+Close
+break
+
+#IF
+!CHECKITEM 毁灭精华 %毁灭数量
+#ACT
+SYSMSG "温馨提示: 您的[ 毁灭精华 ]不足[ <$OUTPUT(毁灭数量)> ]个"
+Break
+
+#IF
+!CHECKITEM 永恒余烬 %余烬数量
+#ACT
+SYSMSG "温馨提示: 您的[ 永恒余烬 ]不足[ <$OUTPUT(余烬数量)> ]个"
+Break
+
+#IF
+CHECKITEMINFO %装备位置
+ELARGE FLD_DESC10 1
+#ACT
+Close
+SysMsg  "温馨提示: 您的装备已经提升过了,无法再次提升."
+break
+
+#IF
+EQUAL Temp 1
+#ACT
+Break
+
+#IF
+ESmall 附魔随机 %成功几率
+#ACT
+MOV Temp 1
+TAKE 毁灭精华 %毁灭数量
+TAKE 永恒余烬 %余烬数量
+ACTCMD EDITITEM %属性类别 + %附魔属性
+ACTCMD EDITITEM FLD_DESC10 + 1
+SysMsg  "温馨提示: 您[ <$OUTPUT(装备说明)> ]的[ <$OUTPUT(属性说明)> ]属性提升[ <$OUTPUT(附魔属性)> ]点.恭喜！！！"
+Break
+Close
+#ELSEACT
+MOV Temp 1
+TAKE 毁灭精华 %毁灭数量
+TAKE 永恒余烬 %余烬数量
+SysMsg  "温馨提示: 您[ <$OUTPUT(装备说明)> ]的[ <$OUTPUT(属性说明)> ]属性提升失败！！！"
+Break
+Close
+
+[@开始提升属性B()]
+#ACT
+MOV 属性类别 %ARG(1)
+MOV 属性说明 %ARG(2)
+MOVR 附魔随机 100
+INC 附魔随机 1
+MOV P1 %附魔属性
+MOV P2 5
+MUL P1 P2
+MOV 最终属性 %P9
+
+MOV P1 %最终属性
+MOV P2 10
+MUL P1 P2
+MOV 最终显示 %P9
+
+#IF
+!checkcmd CHECKITEMINFO %装备位置 0       ;;;检测是否带装备
+#ACT
+SysMsg  "温馨提示: 您的[ <$OUTPUT(装备说明)> ]位置没有佩带任何装备"
+Close
+break
+
+#IF
+!CHECKITEM 毁灭精华 %毁灭数量
+#ACT
+SYSMSG "温馨提示: 您的[ 毁灭精华 ]不足[ <$OUTPUT(毁灭数量)> ]个"
+Break
+
+#IF
+!CHECKITEM 永恒余烬 %余烬数量
+#ACT
+SYSMSG "温馨提示: 您的[ 永恒余烬 ]不足[ <$OUTPUT(余烬数量)> ]个"
+Break
+
+#IF
+CHECKITEMINFO %装备位置
+ELARGE FLD_DESC10 1
+#ACT
+Close
+SysMsg  "温馨提示: 您的装备已经提升过了,无法再次提升."
+break
+
+#IF
+EQUAL Temp 1
+#ACT
+Break
+
+#IF
+ESMall 附魔随机 %成功几率
+#ACT
+MOV Temp 1
+Take 金币 1000000
+TAKE 毁灭精华 %毁灭数量
+TAKE 永恒余烬 %余烬数量
+ACTCMD EDITITEM %属性类别 + %最终属性
+ACTCMD EDITITEM FLD_DESC10 + 1
+SysMsg  "温馨提示: 您[ <$OUTPUT(装备说明)> ]的[ <$OUTPUT(属性说明)> ]属性提升[ <$OUTPUT(最终显示)> ]点.恭喜！！！"
+Break
+Close
+#ELSEACT
+MOV Temp 1
+Take 金币 1000000
+TAKE 毁灭精华 %毁灭数量
+TAKE 永恒余烬 %余烬数量
+SysMsg  "温馨提示: 您[ <$OUTPUT(装备说明)> ]的[ <$OUTPUT(属性说明)> ]属性提升失败！！！"
+Break
+Close
+
+}
+
+;;

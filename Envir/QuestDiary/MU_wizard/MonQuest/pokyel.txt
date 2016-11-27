@@ -1,0 +1,36 @@
+;;创天网络有限公司原版1.45
+[@main]
+#IF
+checkjob taoist
+#ACT
+break
+;
+#IF
+checkjob warrior
+#ACT
+break
+;
+#IF
+check [032] 1
+#ACT
+break
+;
+#IF
+check [060] 1
+#ACT
+break
+;
+#IF
+check [059] 1
+#ACT
+goto @main-11_2
+break
+
+[@main-11_2]
+#IF
+#SAY
+(把'七点白蛇胆汁'带给化天先生，这样就可以修炼魔法了....)\
+#ACT
+give 七点白蛇胆 1
+SET [060] 1
+break

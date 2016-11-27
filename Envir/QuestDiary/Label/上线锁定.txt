@@ -1,0 +1,60 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@上线锁定_Main]
+{
+#IF
+checkcmd CHECKONLINELOCKPASSOK
+#ACT
+break
+#ELSEACT
+mov 密码错误次数 3
+delaygoto [local] 60 @kickuserq
+#ELSESAY
+══════[{FCOLOR/13}  您开启了人物保护功能  {FCOLOR/12}]══════\\
+{FCOLOR/10}1分钟内{FCOLOR/12}不输密码或者{FCOLOR/10}密码错误3次{FCOLOR/12}将会断开与游戏的连接\
+所有 {FCOLOR/10}仓库NPC{FCOLOR/12}都可以进行{FCOLOR/10}[开启] 或 [关闭]{FCOLOR/12}人物保护功能\
+输入正确密码前请不要关闭此窗口,否则将无法正常游戏.\
+_    {FCOLOR/10}温馨提示: 此密码与仓库密码不同,请牢记{FCOLOR/12}\
+══════[  <请输入正确的解锁密码/@@*inputunlockpswd>  ]══════\
+
+[@@*inputunlockpswd]
+#IF
+#ACT
+mov A0 %ONLINEPASSWORD
+mov A1 %INPUTSTR
+
+#IF
+equal A0 %A1
+#ACT
+actcmd SETONLINELOCKPASSOK
+sysmsg "温馨提示: 解锁成功"
+close
+break
+
+#IF
+EQUAL 密码错误次数 1
+#ACT
+sysmsg "温馨提示: 密码错误3次,断开连接...."
+actcmd KICKUSER
+break
+
+#ELSEACT
+DEC 密码错误次数 1
+#ELSEsay
+══════[{FCOLOR/13}  您开启了人物保护功能  {FCOLOR/12}]══════\\
+{FCOLOR/10}1分钟内{FCOLOR/12}不输密码或者{FCOLOR/10}密码错误3次{FCOLOR/12}将会断开与游戏的连接\
+所有 {FCOLOR/10}仓库NPC{FCOLOR/12}都可以进行{FCOLOR/10}[开启] 或 [关闭]{FCOLOR/12}人物保护功能\
+输入正确密码前请不要关闭此窗口,否则将无法正常游戏.\
+_         {FCOLOR/10}温馨提示: 此密码与仓库密码相同{FCOLOR/12}\
+══════[  <请输入正确的解锁密码/@@*inputunlockpswd>  ]══════\
+_       对不起,密码不正确. 你还有{FCOLOR/1} <$OUTPUT(P8)> {FCOLOR/12}次机会\
+
+[@kickuserq]
+#IF
+checkcmd CHECKONLINELOCKPASSOK
+#ELSEACT
+actcmd KICKUSER
+#ELSESAY
+输入密码超时........请重新登陆.....\
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

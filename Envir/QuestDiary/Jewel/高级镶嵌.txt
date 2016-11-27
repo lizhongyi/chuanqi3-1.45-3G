@@ -1,0 +1,512 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@高级镶嵌_Main]
+{
+#Act
+Mov 镶嵌显示信息1 ""
+Mov 镶嵌显示信息2 ""
+Mov 镶嵌显示信息3 ""
+Mov 镶嵌显示信息4 ""
+Mov 镶嵌显示信息5 ""
+Mov TempY 0
+Mov TempZ 0
+#Say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}高{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━{FCOLOR/14}镶{FCOLOR/4}━{FCOLOR/14}嵌{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_请选择你需要操作装备的种类且身上已穿戴该类型的装备\
+_       本系统可以{FCOLOR/1}1转以上{FCOLOR/12}装备进行镶嵌宝石\
+_           (注:镶嵌宝石是{FCOLOR/10}100%{FCOLOR/12}的成功率)\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}高{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━{FCOLOR/14}镶{FCOLOR/4}━{FCOLOR/14}嵌{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_[ <镶嵌武器/@镶嵌面板_高级(武器,1,3)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <镶嵌衣服/@镶嵌面板_高级(衣服,0,2)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <镶嵌头盔/@镶嵌面板_高级(头盔,4,2)> ]\\
+_[ <镶嵌项链/@镶嵌面板_高级(项链,3,2)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <镶嵌左镯/@镶嵌面板_高级(左手镯,5,2)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <镶嵌右镯/@镶嵌面板_高级(右手镯,6,2)> ]\\
+_[ <镶嵌鞋子/@镶嵌面板_高级(鞋子,10,2)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <镶嵌左戒/@镶嵌面板_高级(左戒指,7,2)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <镶嵌右戒/@镶嵌面板_高级(右戒指,8,2)> ]\\
+_                   [ <返  回/@菜单_Main> ]\
+
+;************************镶嵌面板************************
+[@镶嵌面板_高级()]
+#Act
+Mov 镶嵌装备名字 %ARG(1)
+Mov 镶嵌装备位置 %ARG(2)
+Mov 镶嵌最多个数 %ARG(3)
+Goto @镶嵌物品信息读取_高级
+#IF
+!checkcmd CHECKITEMINFO %镶嵌装备位置 0       ;;;检测是否带装备
+#ACT
+SysMsg  "温馨提示: 您的[ <$OUTPUT(镶嵌装备名字)> ]位置没有佩带任何装备"
+break
+
+#IF
+!EQUAL 镶嵌值 2
+#ACT
+SysMsg  "温馨提示: 您当前的[ <$OUTPUT(镶嵌装备名字)> ]不可以镶嵌高级宝石"
+Break
+
+#If
+#Say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}高{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━{FCOLOR/14}面{FCOLOR/4}━{FCOLOR/14}板{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_            您选择了 {FCOLOR/1}<$OUTPUT(镶嵌装备名字)>{FCOLOR/12} 来操作本功能\
+_            该件装备只可最多镶嵌 {FCOLOR/1}<$OUTPUT(镶嵌最多个数)>{FCOLOR/12} 个宝石\
+
+#If
+EQUAL 镶嵌装备位置 1	;;武器
+#Say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}色{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_           [ <为装备镶嵌1个闪耀皇后榴石/@镶嵌操作_高级5(红色插槽,闪耀皇后榴石)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}白{FCOLOR/4}━{FCOLOR/14}色{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_           [ <为装备镶嵌1个秘法皇后榴石/@镶嵌操作_高级5(白色插槽,秘法皇后榴石)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}蓝{FCOLOR/4}━{FCOLOR/14}色{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_           [ <为装备镶嵌1个圆润皇后榴石/@镶嵌操作_高级5(蓝色插槽,圆润皇后榴石)> ]\\
+
+#If
+EQUAL 镶嵌装备位置 0	;;衣服
+#Say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}紫{FCOLOR/4}━{FCOLOR/14}色{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_           [ <为装备镶嵌1个复苏皇后榴石/@镶嵌操作_高级2(紫色插槽,复苏皇后榴石)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}橙{FCOLOR/4}━{FCOLOR/14}色{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_           [ <为装备镶嵌1个光辉皇后榴石/@镶嵌操作_高级2(橙色插槽,光辉皇后榴石)> ]\\
+
+#If
+EQUAL 镶嵌装备位置 4	;;头盔
+#Say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}黄{FCOLOR/4}━{FCOLOR/14}色{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_           [ <为装备镶嵌1个迅捷皇后榴石/@镶嵌操作_高级2(黄色插槽,迅捷皇后榴石)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}绿{FCOLOR/4}━{FCOLOR/14}色{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_           [ <为装备镶嵌1个机敏皇后榴石/@镶嵌操作_高级2(绿色插槽,机敏皇后榴石)> ]\\
+
+#If
+EQUAL 镶嵌装备位置 3	;;项链
+#Say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}色{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_           [ <为装备镶嵌1个闪耀皇后榴石/@镶嵌操作_高级2(红色插槽,闪耀皇后榴石)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}白{FCOLOR/4}━{FCOLOR/14}色{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_           [ <为装备镶嵌1个秘法皇后榴石/@镶嵌操作_高级2(白色插槽,秘法皇后榴石)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}蓝{FCOLOR/4}━{FCOLOR/14}色{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_           [ <为装备镶嵌1个圆润皇后榴石/@镶嵌操作_高级2(蓝色插槽,圆润皇后榴石)> ]\\
+
+#If
+EQUAL 镶嵌装备位置 10	;;鞋子
+#Say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}紫{FCOLOR/4}━{FCOLOR/14}色{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_           [ <为装备镶嵌1个复苏皇后榴石/@镶嵌操作_高级2(紫色插槽,复苏皇后榴石)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}橙{FCOLOR/4}━{FCOLOR/14}色{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_           [ <为装备镶嵌1个光辉皇后榴石/@镶嵌操作_高级2(橙色插槽,光辉皇后榴石)> ]\\
+
+#If
+EQUAL 镶嵌装备位置 5	;;左手镯
+#Say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}黄{FCOLOR/4}━{FCOLOR/14}色{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_           [ <为装备镶嵌1个迅捷皇后榴石/@镶嵌操作_高级2(黄色插槽,迅捷皇后榴石)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}绿{FCOLOR/4}━{FCOLOR/14}色{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_           [ <为装备镶嵌1个机敏皇后榴石/@镶嵌操作_高级2(绿色插槽,机敏皇后榴石)> ]\\
+
+#If
+EQUAL 镶嵌装备位置 6	;;右手镯
+#Say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}黄{FCOLOR/4}━{FCOLOR/14}色{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_           [ <为装备镶嵌1个迅捷皇后榴石/@镶嵌操作_高级2(黄色插槽,迅捷皇后榴石)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}绿{FCOLOR/4}━{FCOLOR/14}色{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_           [ <为装备镶嵌1个机敏皇后榴石/@镶嵌操作_高级2(绿色插槽,机敏皇后榴石)> ]\\
+
+#If
+EQUAL 镶嵌装备位置 7	;;左戒指
+#Say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}色{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_           [ <为装备镶嵌1个闪耀皇后榴石/@镶嵌操作_高级2(红色插槽,闪耀皇后榴石)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}白{FCOLOR/4}━{FCOLOR/14}色{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_           [ <为装备镶嵌1个秘法皇后榴石/@镶嵌操作_高级2(白色插槽,秘法皇后榴石)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}蓝{FCOLOR/4}━{FCOLOR/14}色{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_           [ <为装备镶嵌1个圆润皇后榴石/@镶嵌操作_高级2(蓝色插槽,圆润皇后榴石)> ]\\
+
+#If
+EQUAL 镶嵌装备位置 8	;;右戒指
+#Say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}色{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_            [ <为装备镶嵌1个闪耀皇后榴石/@镶嵌操作_高级2(红色插槽,闪耀皇后榴石)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}白{FCOLOR/4}━{FCOLOR/14}色{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_           [ <为装备镶嵌1个秘法皇后榴石/@镶嵌操作_高级2(白色插槽,秘法皇后榴石)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}蓝{FCOLOR/4}━{FCOLOR/14}色{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_           [ <为装备镶嵌1个圆润皇后榴石/@镶嵌操作_高级2(蓝色插槽,圆润皇后榴石)> ]\\
+#If
+#Say
+_                   [ <返  回/@高级镶嵌_Main> ]\
+
+[@镶嵌操作_高级5()]
+#Act
+Mov 镶嵌插槽名字 %ARG(1)
+Mov 镶嵌宝石名字 %ARG(2)
+
+#IF
+!EQUAL 镶嵌值 2
+#ACT
+SysMsg  "温馨提示: 您当前的[ <$OUTPUT(镶嵌装备名字)> ]不可以镶嵌高级宝石"
+Break
+
+#If
+EQUAL 镶嵌显示信息1 %镶嵌插槽名字
+checkitem %镶嵌宝石名字 1
+EQUAL TempY 0
+#Act
+Mov TempY 1
+take %镶嵌宝石名字 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 镶嵌宝石索引 %A9
+FormatStr "'%s'" %镶嵌宝石名字
+Mov 镶嵌宝石名称 %A9
+WRITESQL "TBL_Jewel" "Display1" %镶嵌宝石名称 %镶嵌宝石索引
+SysMsg "您当前的[ <$OUTPUT(镶嵌装备名字)> ]成功镶嵌一颗[ <$OUTPUT(镶嵌宝石名字)> ]！！"
+GOTO @宝石加属性_高级
+Break
+Close
+
+#If
+EQUAL 镶嵌显示信息2 %镶嵌插槽名字
+checkitem %镶嵌宝石名字 1
+EQUAL TempY 0
+#Act
+Mov TempY 1
+take %镶嵌宝石名字 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 镶嵌宝石索引 %A9
+FormatStr "'%s'" %镶嵌宝石名字
+Mov 镶嵌宝石名称 %A9
+WRITESQL "TBL_Jewel" "Display2" %镶嵌宝石名称 %镶嵌宝石索引
+SysMsg "您当前的[ <$OUTPUT(镶嵌装备名字)> ]成功镶嵌一颗[ <$OUTPUT(镶嵌宝石名字)> ]！！"
+GOTO @宝石加属性_高级
+Break
+Close
+
+#If
+EQUAL 镶嵌显示信息3 %镶嵌插槽名字
+checkitem %镶嵌宝石名字 1
+EQUAL TempY 0
+#Act
+Mov TempY 1
+take %镶嵌宝石名字 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 镶嵌宝石索引 %A9
+FormatStr "'%s'" %镶嵌宝石名字
+Mov 镶嵌宝石名称 %A9
+WRITESQL "TBL_Jewel" "Display3" %镶嵌宝石名称 %镶嵌宝石索引
+SysMsg "您当前的[ <$OUTPUT(镶嵌装备名字)> ]成功镶嵌一颗[ <$OUTPUT(镶嵌宝石名字)> ]！！"
+GOTO @宝石加属性_高级
+Break
+Close
+
+#If
+EQUAL 镶嵌显示信息4 %镶嵌插槽名字
+checkitem %镶嵌宝石名字 1
+EQUAL TempY 0
+#Act
+Mov TempY 1
+take %镶嵌宝石名字 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 镶嵌宝石索引 %A9
+FormatStr "'%s'" %镶嵌宝石名字
+Mov 镶嵌宝石名称 %A9
+WRITESQL "TBL_Jewel" "Display4" %镶嵌宝石名称 %镶嵌宝石索引
+SysMsg "您当前的[ <$OUTPUT(镶嵌装备名字)> ]成功镶嵌一颗[ <$OUTPUT(镶嵌宝石名字)> ]！！"
+GOTO @宝石加属性_高级
+Break
+Close
+
+#If
+EQUAL 镶嵌显示信息5 %镶嵌插槽名字
+checkitem %镶嵌宝石名字 1
+EQUAL TempY 0
+#Act
+Mov TempY 1
+take %镶嵌宝石名字 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 镶嵌宝石索引 %A9
+FormatStr "'%s'" %镶嵌宝石名字
+Mov 镶嵌宝石名称 %A9
+WRITESQL "TBL_Jewel" "Display5" %镶嵌宝石名称 %镶嵌宝石索引
+SysMsg "您当前的[ <$OUTPUT(镶嵌装备名字)> ]成功镶嵌一颗[ <$OUTPUT(镶嵌宝石名字)> ]！！"
+GOTO @宝石加属性_高级
+Break
+Close
+
+#ElseAct
+SysMsg "您的[ <$OUTPUT(镶嵌装备名字)> ]不能镶嵌[ <$OUTPUT(镶嵌宝石名字)> ],原因是无对应插槽或者包裹里没有宝石~"
+Break
+Close
+
+[@镶嵌操作_高级4()]
+#Act
+Mov 镶嵌插槽名字 %ARG(1)
+Mov 镶嵌宝石名字 %ARG(2)
+
+#IF
+!EQUAL 镶嵌值 2
+#ACT
+SysMsg  "温馨提示: 您当前的[ <$OUTPUT(镶嵌装备名字)> ]不可以镶嵌高级宝石"
+Break
+
+#If
+EQUAL 镶嵌显示信息1 %镶嵌插槽名字
+checkitem %镶嵌宝石名字 1
+EQUAL TempY 0
+#Act
+Mov TempY 1
+take %镶嵌宝石名字 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 镶嵌宝石索引 %A9
+FormatStr "'%s'" %镶嵌宝石名字
+Mov 镶嵌宝石名称 %A9
+WRITESQL "TBL_Jewel" "Display1" %镶嵌宝石名称 %镶嵌宝石索引
+SysMsg "您当前的[ <$OUTPUT(镶嵌装备名字)> ]成功镶嵌一颗[ <$OUTPUT(镶嵌宝石名字)> ]！！"
+GOTO @宝石加属性_高级
+Break
+Close
+
+#If
+EQUAL 镶嵌显示信息2 %镶嵌插槽名字
+checkitem %镶嵌宝石名字 1
+EQUAL TempY 0
+#Act
+Mov TempY 1
+take %镶嵌宝石名字 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 镶嵌宝石索引 %A9
+FormatStr "'%s'" %镶嵌宝石名字
+Mov 镶嵌宝石名称 %A9
+WRITESQL "TBL_Jewel" "Display2" %镶嵌宝石名称 %镶嵌宝石索引
+SysMsg "您当前的[ <$OUTPUT(镶嵌装备名字)> ]成功镶嵌一颗[ <$OUTPUT(镶嵌宝石名字)> ]！！"
+GOTO @宝石加属性_高级
+Break
+Close
+
+#If
+EQUAL 镶嵌显示信息3 %镶嵌插槽名字
+checkitem %镶嵌宝石名字 1
+EQUAL TempY 0
+#Act
+Mov TempY 1
+take %镶嵌宝石名字 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 镶嵌宝石索引 %A9
+FormatStr "'%s'" %镶嵌宝石名字
+Mov 镶嵌宝石名称 %A9
+WRITESQL "TBL_Jewel" "Display3" %镶嵌宝石名称 %镶嵌宝石索引
+SysMsg "您当前的[ <$OUTPUT(镶嵌装备名字)> ]成功镶嵌一颗[ <$OUTPUT(镶嵌宝石名字)> ]！！"
+GOTO @宝石加属性_高级
+Break
+Close
+
+#If
+EQUAL 镶嵌显示信息4 %镶嵌插槽名字
+checkitem %镶嵌宝石名字 1
+EQUAL TempY 0
+#Act
+Mov TempY 1
+take %镶嵌宝石名字 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 镶嵌宝石索引 %A9
+FormatStr "'%s'" %镶嵌宝石名字
+Mov 镶嵌宝石名称 %A9
+WRITESQL "TBL_Jewel" "Display4" %镶嵌宝石名称 %镶嵌宝石索引
+SysMsg "您当前的[ <$OUTPUT(镶嵌装备名字)> ]成功镶嵌一颗[ <$OUTPUT(镶嵌宝石名字)> ]！！"
+GOTO @宝石加属性_高级
+Break
+Close
+
+#ElseAct
+SysMsg "您的[ <$OUTPUT(镶嵌装备名字)> ]不能镶嵌[ <$OUTPUT(镶嵌宝石名字)> ],原因是无对应插槽或者包裹里没有宝石~"
+Break
+Close
+
+[@镶嵌操作_高级3()]
+#Act
+Mov 镶嵌插槽名字 %ARG(1)
+Mov 镶嵌宝石名字 %ARG(2)
+
+#IF
+!EQUAL 镶嵌值 2
+#ACT
+SysMsg  "温馨提示: 您当前的[ <$OUTPUT(镶嵌装备名字)> ]不可以镶嵌高级宝石"
+Break
+
+#If
+EQUAL 镶嵌显示信息1 %镶嵌插槽名字
+checkitem %镶嵌宝石名字 1
+EQUAL TempY 0
+#Act
+Mov TempY 1
+take %镶嵌宝石名字 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 镶嵌宝石索引 %A9
+FormatStr "'%s'" %镶嵌宝石名字
+Mov 镶嵌宝石名称 %A9
+WRITESQL "TBL_Jewel" "Display1" %镶嵌宝石名称 %镶嵌宝石索引
+SysMsg "您当前的[ <$OUTPUT(镶嵌装备名字)> ]成功镶嵌一颗[ <$OUTPUT(镶嵌宝石名字)> ]！！"
+GOTO @宝石加属性_高级
+Break
+Close
+
+#If
+EQUAL 镶嵌显示信息2 %镶嵌插槽名字
+checkitem %镶嵌宝石名字 1
+EQUAL TempY 0
+#Act
+Mov TempY 1
+take %镶嵌宝石名字 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 镶嵌宝石索引 %A9
+FormatStr "'%s'" %镶嵌宝石名字
+Mov 镶嵌宝石名称 %A9
+WRITESQL "TBL_Jewel" "Display2" %镶嵌宝石名称 %镶嵌宝石索引
+SysMsg "您当前的[ <$OUTPUT(镶嵌装备名字)> ]成功镶嵌一颗[ <$OUTPUT(镶嵌宝石名字)> ]！！"
+GOTO @宝石加属性_高级
+Break
+Close
+
+#If
+EQUAL 镶嵌显示信息3 %镶嵌插槽名字
+checkitem %镶嵌宝石名字 1
+EQUAL TempY 0
+#Act
+Mov TempY 1
+take %镶嵌宝石名字 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 镶嵌宝石索引 %A9
+FormatStr "'%s'" %镶嵌宝石名字
+Mov 镶嵌宝石名称 %A9
+WRITESQL "TBL_Jewel" "Display3" %镶嵌宝石名称 %镶嵌宝石索引
+SysMsg "您当前的[ <$OUTPUT(镶嵌装备名字)> ]成功镶嵌一颗[ <$OUTPUT(镶嵌宝石名字)> ]！！"
+GOTO @宝石加属性_高级
+Break
+Close
+
+#ElseAct
+SysMsg "您的[ <$OUTPUT(镶嵌装备名字)> ]不能镶嵌[ <$OUTPUT(镶嵌宝石名字)> ],原因是无对应插槽或者包裹里没有宝石~"
+Break
+Close
+
+[@镶嵌操作_高级2()]
+#Act
+Mov 镶嵌插槽名字 %ARG(1)
+Mov 镶嵌宝石名字 %ARG(2)
+
+#IF
+!EQUAL 镶嵌值 2
+#ACT
+SysMsg  "温馨提示: 您当前的[ <$OUTPUT(镶嵌装备名字)> ]不可以镶嵌高级宝石"
+Break
+
+#If
+EQUAL 镶嵌显示信息1 %镶嵌插槽名字
+checkitem %镶嵌宝石名字 1
+EQUAL TempY 0
+#Act
+Mov TempY 1
+take %镶嵌宝石名字 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 镶嵌宝石索引 %A9
+FormatStr "'%s'" %镶嵌宝石名字
+Mov 镶嵌宝石名称 %A9
+WRITESQL "TBL_Jewel" "Display1" %镶嵌宝石名称 %镶嵌宝石索引
+SysMsg "您当前的[ <$OUTPUT(镶嵌装备名字)> ]成功镶嵌一颗[ <$OUTPUT(镶嵌宝石名字)> ]！！"
+GOTO @宝石加属性_高级
+Break
+Close
+
+#If
+EQUAL 镶嵌显示信息2 %镶嵌插槽名字
+checkitem %镶嵌宝石名字 1
+EQUAL TempY 0
+#Act
+Mov TempY 1
+take %镶嵌宝石名字 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 镶嵌宝石索引 %A9
+FormatStr "'%s'" %镶嵌宝石名字
+Mov 镶嵌宝石名称 %A9
+WRITESQL "TBL_Jewel" "Display2" %镶嵌宝石名称 %镶嵌宝石索引
+SysMsg "您当前的[ <$OUTPUT(镶嵌装备名字)> ]成功镶嵌一颗[ <$OUTPUT(镶嵌宝石名字)> ]！！"
+GOTO @宝石加属性_高级
+Break
+Close
+#ElseAct
+SysMsg "您的[ <$OUTPUT(镶嵌装备名字)> ]不能镶嵌[ <$OUTPUT(镶嵌宝石名字)> ],原因是无对应插槽或者包裹里没有宝石~"
+Break
+Close
+
+[@镶嵌操作_高级1()]
+#Act
+Mov 镶嵌插槽名字 %ARG(1)
+Mov 镶嵌宝石名字 %ARG(2)
+
+#IF
+!EQUAL 镶嵌值 2
+#ACT
+SysMsg  "温馨提示: 您当前的[ <$OUTPUT(镶嵌装备名字)> ]不可以镶嵌高级宝石"
+Break
+
+#If
+EQUAL 镶嵌显示信息1 %镶嵌插槽名字
+checkitem %镶嵌宝石名字 1
+EQUAL TempY 0
+#Act
+Mov TempY 1
+take %镶嵌宝石名字 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+Mov 镶嵌宝石索引 %A9
+FormatStr "'%s'" %镶嵌宝石名字
+Mov 镶嵌宝石名称 %A9
+WRITESQL "TBL_Jewel" "Display1" %镶嵌宝石名称 %镶嵌宝石索引
+SysMsg "您当前的[ <$OUTPUT(镶嵌装备名字)> ]成功镶嵌一颗[ <$OUTPUT(镶嵌宝石名字)> ]！！"
+GOTO @宝石加属性_高级
+Break
+Close
+#ElseAct
+SysMsg "您的[ <$OUTPUT(镶嵌装备名字)> ]不能镶嵌[ <$OUTPUT(镶嵌宝石名字)> ],原因是无对应插槽或者包裹里没有宝石~"
+Break
+Close
+
+[@镶嵌物品信息读取_高级]
+#If
+checkcmd CHECKITEMINFO %镶嵌装备位置
+
+#IF
+!checkcmd CHECKITEMINFO %镶嵌装备位置 0       ;;;检测是否带装备
+#ACT
+break
+
+#If
+#Act
+FormatStr "where FLD_MAKEINDEX = %s" %FLD_MAKEINDEX
+actcmd READSQL "TBL_Jewel" "Display1,Display2,Display3,Display4,Display5" "镶嵌显示信息1,镶嵌显示信息2,镶嵌显示信息3,镶嵌显示信息4,镶嵌显示信息5" %A9
+Mov 装备的名字 %FLD_NAME
+FormatStr "Where Name = '%s'" %装备的名字
+ACTCMD READSQL "King_Stditems" "ShowItemInfo" "镶嵌值" %A9
+Break
+
+[@宝石加属性_高级]
+#Act
+FormatStr "where Name = '%s'" %镶嵌宝石名字
+Mov 镶嵌宝石名字_1 %A9
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "镶嵌破坏,镶嵌自然,镶嵌灵魂" %镶嵌宝石名字_1
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "镶嵌物防,镶嵌魔防,镶嵌体力" %镶嵌宝石名字_1
+ACTCMD READSQL "King_Stditems" "ExMp" "镶嵌魔力1" %镶嵌宝石名字_1
+
+#If
+Equal TempZ 0
+#Act
+Mov TempZ 1
+ATTRIBUTEADD DC %镶嵌破坏
+ATTRIBUTEADD MC %镶嵌自然
+ATTRIBUTEADD SC %镶嵌灵魂
+ATTRIBUTEADD AC %镶嵌物防
+ATTRIBUTEADD MAC %镶嵌魔防
+ATTRIBUTEADD HP %镶嵌体力
+ATTRIBUTEADD MP %镶嵌魔力
+Mov 镶嵌破坏 ""
+Mov 镶嵌自然 ""
+Mov 镶嵌灵魂 ""
+Mov 镶嵌物防 ""
+Mov 镶嵌魔防 ""
+Mov 镶嵌体力 ""
+Mov 镶嵌魔力 ""
+Break
+
+}
+
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

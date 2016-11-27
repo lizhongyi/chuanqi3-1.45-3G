@@ -1,0 +1,52 @@
+;;创天网络有限公司原版1.45
+%100
++5
++6
+
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+我不想和你这种坏人做生意。\ \
+<结束/@exit>
+#ELSEACT
+goto @main_0_0
+
+[@main_0_0]
+#SAY
+很高兴见到你，有什么事吗？\ \ 
+<特殊修理/@Special_Repair(1)>武器\
+<请求把剑从手分离开/@remove_sword>\
+<结束/@exit>
+
+[@Special_Repair()]
+#CALL [\Repair\TotalRepair.txt] @SRepairItem
+
+[@remove_sword]
+#IF
+checkitemw 攻杀铁剑 1
+#ACT
+takew 攻杀铁剑 1
+#SAY
+你是怎么会让手粘在剑上呢 。。。\
+你看看现在是不是已经摘下来了。。。 这种没用的剑我来替你保管吧。。。\ \
+ <前一步/@main>
+#ELSEACT
+goto @remove_sword_1
+
+
+[@remove_sword_1]
+#IF
+checkitemw 焱火剑 1
+#ACT
+takew 攻杀铁剑 1
+takew 焱火剑 1
+#SAY
+你是怎么会让手粘在剑上呢 。。。\
+你看看现在是不是已经摘下来了。。。 这种没用的剑我来替你保管吧。。。\ \
+ <前一步/@main>
+
+#ELSESAY
+你的手没有粘在剑上。。。\
+听说{FCOLOR/10}攻杀铁剑{FCOLOR/12}和 {FCOLOR/10}焱火剑{FCOLOR/12}一旦到手上就摘不下来。\ \
+ <前一步/@main>

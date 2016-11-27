@@ -1,0 +1,70 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@强弱元素_1]
+{
+#say
+{FCOLOR/10}加强元素功能{FCOLOR/12}\
+请选择你要升级的装备类型，注意：{FCOLOR/1}装备必须穿在身上.{FCOLOR/10}\
+{FCOLOR/14}强元素不会叠加，只会变成你要加的。如果要改变成强元素，请直接重加.{FCOLOR/12}\\
+<添加弱元素/@addruoys>\
+<头盔/@UpDescatom8(4)>  <衣服/@UpDescatom8(0)>\
+<左手镯/@UpDescatom8(5)>  <右手镯/@UpDescatom8(6)>\
+<靴子/@UpDescatom8(10)>\
+<返回/@gmserv>
+
+[@UpDescatom8()]
+#ACT
+mov  D0  %ARG(1)
+#say
+请选择您要加的强元素类型：\
+请选择一个您最需要的强元素：\\
+装备加单强\\
+<火/@addclo8(1)>   <冰/@addclo8(2)>  <风/@addclo8(8)>  <雷/@addclo8(4)>  <神圣/@addclo8(16)>  <暗黑/@addclo8(32)>  <幻影/@addclo8(64)>\\
+装备加双强\\
+<火冰/@addclo8(3)>  <火风/@addclo8(9)>  <火雷/@addclo8(5)>  <火圣/@addclo8(17)>  <火暗/@addclo8(33)>  <火幻/@addclo8(65)>  <冰风/@addclo8(10)>  <冰雷/@addclo8(6)>  <冰圣/@addclo8(18)>
+<冰暗/@addclo8(34)>  <冰幻/@addclo8(66)>  <风雷/@addclo8(12)>  <风圣/@addclo8(24)>  <风暗/@addclo8(40)>  <风幻/@addclo8(72)>  <雷圣/@addclo8(20)>  <雷暗/@addclo8(36)>  <雷幻/@addclo8(68)>
+<圣暗/@addclo8(48)>  <圣幻/@addclo8(80)>  <暗幻/@addclo8(96)>\
+装备加三强\\
+<火冰风/@addclo8(11)>  <火冰雷/@addclo8(7)>  <火冰圣/@addclo8(19)>  <火冰暗/@addclo8(35)>  <火冰幻/@addclo8(67)>  <火风雷/@addclo8(13)>\
+<火风圣/@addclo8(25)>  <火风暗/@addclo8(41)>  <火风幻/@addclo8(73)>  <火雷圣/@addclo8(21)>  <火雷暗/@addclo8(37)>  <火雷幻/@addclo8(69)>\
+<火圣暗/@addclo8(49)>  <火圣幻/@addclo8(81)>  <火暗幻/@addclo8(97)>  <冰风雷/@addclo8(14)>  <冰风圣/@addclo8(26)>  <冰风暗/@addclo8(42)>\
+<冰风幻/@addclo8(74)>  <冰雷圣/@addclo8(22)>  <冰雷暗/@addclo8(38)>  <冰雷幻/@addclo8(70)>  <冰圣暗/@addclo8(50)>  <冰圣幻/@addclo8(82)>\
+<冰暗幻/@addclo8(98)>  <风雷圣/@addclo8(28)>  <风雷暗/@addclo8(44)>  <风雷幻/@addclo8(76)>  <风圣暗/@addclo8(56)>  <风圣幻/@addclo8(88)>\
+<风暗幻/@addclo8(104)>  <雷圣暗/@addclo8(52)>  <雷圣幻/@addclo8(84)>  <雷暗幻/@addclo8(100)>  <圣暗幻/@addclo8(112)>\
+<返回/@ssksjaqys>
+
+[@addclo8()]
+#ACT
+mov D1 %ARG(1)
+;SETUseItemProp %D0 5 %D1
+#SAY
+加强元素成功，请取下装备看到装备变化\
+<返回/@ssksjaqys>
+
+[@addruoys]
+#say
+_{FCOLOR/10}加弱元素功能{FCOLOR/12}\
+请选择你要升级的装备类型，注意：{FCOLOR/1}装备必须穿在身上.{FCOLOR/10}\
+{FCOLOR/14}弱元素不会叠加，只会变成你要加的。如果要改变成弱元素，请直接重加.{FCOLOR/12}\\
+<头盔/@dowDescatom8(4)>  <衣服/@dowDescatom8(0)>\
+<左手镯/@dowDescatom8(5)>  <右手镯/@dowDescatom8(6)>\
+<靴子/@dowDescatom8(10)>\
+<返回/@ssksjaqys>
+
+[@dowDescatom8()]
+#ACT
+mov  D0  %ARG(1)
+#say
+请选择一个您最需要的弱元素：\\
+<火/@dowclo8(1)>   <冰/@dowclo8(2)>  <风/@dowclo8(8)>  <雷/@dowclo8(4)>  <神圣/@dowclo8(16)>  <暗黑/@dowclo8(32)>  <幻影/@dowclo8(64)>\\
+<返回/@ssksjaqys>
+
+[@dowclo8()]
+#ACT
+mov D1 %ARG(1)
+;SETUseItemProp %D0 6 %D1
+#SAY
+加弱元素成功，请取下装备看到装备变化\
+<返回/@ssksjaqys>
+
+}
+;影子制作1.45原版

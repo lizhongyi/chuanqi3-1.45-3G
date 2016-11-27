@@ -1,0 +1,26 @@
+-- =============================================
+-- Create procedure with OUTPUT Parameters
+-- =============================================
+-- creating the store procedure
+IF EXISTS (SELECT name 
+	   FROM   sysobjects 
+	   WHERE  name = N'<procedure_name, sysname, proc_test>' 
+	   AND 	  type = 'P')
+    DROP PROCEDURE <procedure_name, sysname, proc_test>
+GO
+
+CREATE PROCEDURE <procedure_name, sysname, proc_test> 
+	<@param1, sysname, @p1> <datatype_for_param1, , int> = <default_value_for_param1, , 0>, 
+	<@param2, sysname, @p2> <datatype_for_param2, , int>  OUTPUT
+AS
+	SELECT @p2 = @p2 + @p1
+GO
+
+-- =============================================
+-- example to execute the store procedure
+-- =============================================
+DECLARE <@variable_for_output_parameter, sysname, @p2_output> <datatype_for_output_parameter, , int>
+EXECUTE <procedure_name, sysname, proc_test> <value_for_param1, , 1>, <@variable_for_output_parameter, sysname, @p2_output> OUTPUT
+SELECT <@variable_for_output_parameter, sysname, @p2_output>
+GO
+

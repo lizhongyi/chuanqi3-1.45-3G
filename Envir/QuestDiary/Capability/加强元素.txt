@@ -1,0 +1,1309 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@加强元素_1]
+{
+#if
+CHECKLEVEL 44
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <头盔/@加强(4,头盔)> ] [ <衣服/@加强(0,衣服)> ] [ <左手镯/@加强(5,左手镯)> ] [ <右手镯/@加强(6,右手镯)> ] [ <鞋子/@加强(10,鞋子)> ]
+#elsesay
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ {FCOLOR/1}头盔{FCOLOR/12} ] [ {FCOLOR/1}衣服{FCOLOR/12} ] [ {FCOLOR/1}左手镯{FCOLOR/12} ] [ {FCOLOR/1}右手镯{FCOLOR/12} ] [ {FCOLOR/1}鞋子{FCOLOR/12} ]
+_             {FCOLOR/13}等级不足 44级 无法使用此功能{FCOLOR/12}\
+
+[@加强()]
+#ACT
+MOV D9 %ARG(1)
+MOV 装备说明 %ARG(2)
+MOV D5 0
+
+#IF
+!checkcmd CHECKITEMINFO %D9 0       ;;;检测是否带装备
+#ACT
+Close
+SysMsg  "温馨提示: 您的[ <$OUTPUT(装备说明)> ]位置没有佩带任何装备"
+break
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 0
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}   无任何强元素   {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 1
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}        火        {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     加强[ 火 ]元素      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 2
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}        冰        {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     加强[ 冰 ]元素      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 4
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}        雷        {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     加强[ 雷 ]元素      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 8
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}        风        {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     加强[ 风 ]元素          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 16
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}       神圣       {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      加强[ 神圣 ]元素\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 32
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}       暗黑       {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      加强[ 暗黑 ]元素\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 64
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}       幻影       {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      加强[ 幻影 ]元素\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 3
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}     火 ， 冰     {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     加强[ 火 ]元素      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     加强[ 冰 ]元素      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 5
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}     火 ， 雷     {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     加强[ 火 ]元素      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     加强[ 雷 ]元素      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 9
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}     火 ， 风     {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     加强[ 火 ]元素      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     加强[ 风 ]元素          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 17
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}    火 ， 神圣    {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     加强[ 火 ]元素      加强[ 神圣 ]元素\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 33
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}    火 ， 暗黑    {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     加强[ 火 ]元素      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      加强[ 暗黑 ]元素\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 65
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}    火 ， 幻影    {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     加强[ 火 ]元素      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      加强[ 幻影 ]元素\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 6
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}     冰 ， 雷     {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     加强[ 冰 ]元素      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     加强[ 雷 ]元素      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 10
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}     冰 ， 风     {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     加强[ 冰 ]元素      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     加强[ 风 ]元素          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 18
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}    冰 ， 神圣    {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      加强[ 神圣 ]元素\\
+_     加强[ 冰 ]元素      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 34
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}    冰 ， 暗黑    {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     加强[ 冰 ]元素      加强[ 暗黑 ]元素\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 66
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}    冰 ， 幻影    {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     加强[ 冰 ]元素      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      加强[ 幻影 ]元素\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 12
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}     雷 ， 风     {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     加强[ 雷 ]元素      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     加强[ 风 ]元素          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 20
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}    雷 ， 神圣    {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      加强[ 神圣 ]元素\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     加强[ 雷 ]元素      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 36
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}    雷 ， 暗黑    {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      加强[ 暗黑 ]元素\\
+_     加强[ 雷 ]元素      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 68
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}    雷 ， 幻影    {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     加强[ 雷 ]元素      加强[ 幻影 ]元素\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 24
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}    风 ， 神圣    {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      加强[ 神圣 ]元素\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     加强[ 风 ]元素          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 40
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}    风 ， 暗黑    {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      加强[ 暗黑 ]元素\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     加强[ 风 ]元素          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 72
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}    风 ， 幻影    {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      加强[ 幻影 ]元素\\
+_     加强[ 风 ]元素          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 48
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}   神圣 ， 暗黑   {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      加强[ 神圣 ]元素\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      加强[ 暗黑 ]元素\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 80
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}   神圣 ， 幻影   {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      加强[ 神圣 ]元素\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      加强[ 幻影 ]元素\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 96
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}   暗黑 ， 幻影   {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      加强[ 暗黑 ]元素\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      加强[ 幻影 ]元素\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 7
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}  火 ， 冰 ， 雷  {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     加强[ 火 ]元素      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     加强[ 冰 ]元素      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     加强[ 雷 ]元素      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 11
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}  火 ， 冰 ， 风  {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     加强[ 火 ]元素      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     加强[ 冰 ]元素      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     加强[ 风 ]元素          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 19
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1} 火 ， 冰 ， 神圣 {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     加强[ 火 ]元素      加强[ 神圣 ]元素\\
+_     加强[ 冰 ]元素      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 35
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1} 火 ， 冰 ， 暗黑 {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     加强[ 火 ]元素      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     加强[ 冰 ]元素      加强[ 暗黑 ]元素\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 67
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1} 火 ， 冰 ， 幻影 {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     加强[ 火 ]元素      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     加强[ 冰 ]元素      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      加强[ 幻影 ]元素\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 13
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}  火 ， 雷 ， 风  {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     加强[ 火 ]元素      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     加强[ 雷 ]元素      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     加强[ 风 ]元素          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 21
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1} 火 ， 雷 ， 神圣 {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     加强[ 火 ]元素      加强[ 神圣 ]元素\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     加强[ 雷 ]元素      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 37
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1} 火 ， 雷 ， 暗黑 {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     加强[ 火 ]元素      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      加强[ 暗黑 ]元素\\
+_     加强[ 雷 ]元素      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 69
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1} 火 ， 雷 ， 幻影 {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     加强[ 火 ]元素      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     加强[ 雷 ]元素      加强[ 幻影 ]元素\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 25
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1} 火 ， 风 ， 神圣 {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     加强[ 火 ]元素      加强[ 神圣 ]元素\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     加强[ 风 ]元素          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 41
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1} 火 ， 风 ， 暗黑 {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     加强[ 火 ]元素      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      加强[ 暗黑 ]元素\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     加强[ 风 ]元素          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 73
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1} 火 ， 风 ， 幻影 {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     加强[ 火 ]元素      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      加强[ 幻影 ]元素\\
+_     加强[ 风 ]元素          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 49
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}火 ， 神圣 ， 暗黑{FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     加强[ 火 ]元素      加强[ 神圣 ]元素\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      加强[ 暗黑 ]元素\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 81
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}火 ， 神圣 ， 幻影{FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     加强[ 火 ]元素      加强[ 神圣 ]元素\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      加强[ 幻影 ]元素\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 97
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}火 ， 暗黑 ， 幻影{FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     加强[ 火 ]元素      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      加强[ 暗黑 ]元素\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      加强[ 幻影 ]元素\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 14
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}  冰 ， 雷 ， 风  {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     加强[ 冰 ]元素      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     加强[ 雷 ]元素      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     加强[ 风 ]元素          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 22
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1} 冰 ， 雷 ， 神圣 {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      加强[ 神圣 ]元素\\
+_     加强[ 冰 ]元素      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     加强[ 雷 ]元素      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 38
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1} 冰 ， 雷 ， 暗黑 {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     加强[ 冰 ]元素      加强[ 暗黑 ]元素\\
+_     加强[ 雷 ]元素      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 70
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1} 冰 ， 雷 ， 幻影 {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     加强[ 冰 ]元素      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     加强[ 雷 ]元素      加强[ 幻影 ]元素\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 26
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1} 冰 ， 风 ， 神圣 {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      加强[ 神圣 ]元素\\
+_     加强[ 冰 ]元素      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     加强[ 风 ]元素          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 42
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1} 冰 ， 风 ， 暗黑 {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     加强[ 冰 ]元素      加强[ 暗黑 ]元素\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     加强[ 风 ]元素          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 74
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1} 冰 ， 风 ， 幻影 {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     加强[ 冰 ]元素      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      加强[ 幻影 ]元素\\
+_     加强[ 风 ]元素          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 50
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}冰 ， 神圣 ， 暗黑{FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      加强[ 神圣 ]元素\\
+_     加强[ 冰 ]元素      加强[ 暗黑 ]元素\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 82
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}冰 ， 神圣 ， 幻影{FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      加强[ 神圣 ]元素\\
+_     加强[ 冰 ]元素      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      加强[ 幻影 ]元素\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 98
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}冰 ， 暗黑 ， 幻影{FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     加强[ 冰 ]元素      加强[ 暗黑 ]元素\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      加强[ 幻影 ]元素\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 28
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1} 雷 ， 风 ， 神圣 {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      加强[ 神圣 ]元素\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     加强[ 雷 ]元素      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     加强[ 风 ]元素          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 44
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1} 雷 ， 风 ， 暗黑 {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      加强[ 暗黑 ]元素\\
+_     加强[ 雷 ]元素      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     加强[ 风 ]元素          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 76
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1} 雷 ， 风 ， 幻影 {FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     加强[ 雷 ]元素      加强[ 幻影 ]元素\\
+_     加强[ 风 ]元素          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 52
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}雷 ， 神圣 ， 暗黑{FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      加强[ 神圣 ]元素\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      加强[ 暗黑 ]元素\\
+_     加强[ 雷 ]元素      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 84
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}雷 ， 神圣 ， 幻影{FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      加强[ 神圣 ]元素\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     加强[ 雷 ]元素      加强[ 幻影 ]元素\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 100
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}雷 ， 暗黑 ， 幻影{FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      加强[ 暗黑 ]元素\\
+_     加强[ 雷 ]元素      加强[ 幻影 ]元素\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 56
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}风 ， 神圣 ， 暗黑{FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      加强[ 神圣 ]元素\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      加强[ 暗黑 ]元素\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      <加强[ 幻影 ]元素/@开始加(64,幻影)>\\
+_     加强[ 风 ]元素          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 88
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}风 ， 神圣 ， 幻影{FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      加强[ 神圣 ]元素\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      <加强[ 暗黑 ]元素/@开始加(32,暗黑)>\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      加强[ 幻影 ]元素\\
+_     加强[ 风 ]元素          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 104
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}风 ， 暗黑 ， 幻影{FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      <加强[ 神圣 ]元素/@开始加(16,神圣)>\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      加强[ 暗黑 ]元素\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      加强[ 幻影 ]元素\\
+_     加强[ 风 ]元素          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D9
+Equal  FLD_DESC5 112
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[ 原有元素 ]─────────\
+您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]当前{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1}神圣 ，暗黑 ，幻影{FCOLOR/12}]\
+────────[ 可增加强元素 ]────────\\
+
+_     <加强[ 火 ]元素/@开始加(1,火)>      加强[ 神圣 ]元素\\
+_     <加强[ 冰 ]元素/@开始加(2,冰)>      加强[ 暗黑 ]元素\\
+_     <加强[ 雷 ]元素/@开始加(4,雷)>      加强[ 幻影 ]元素\\
+_     <加强[ 风 ]元素/@开始加(8,风)>          <[ 退出 ]/@exit>\
+#ACT
+BREAK
+
+#ELSEACT
+Close
+SYSMSG "温馨提示: 您的[ <$OUTPUT(装备说明)> ]已经拥有 4种 强元素" 
+
+[@开始加()]
+#ACT
+MOV D3 %ARG(1)
+MOV 注入元素 %ARG(2)
+LoadValue N7 "ParamControl\装备强元素记录.ini" [%USERNAME] [INDEX]
+getdate
+mov 月份 %P8
+mov 日期 %P9
+GETTIME
+mov 小时 %P8
+mov 分钟 %P9
+
+#IF
+EQUAL D5 1
+#ACT
+Close
+SYSMSG "温馨提示: 防快速点击系统生效"
+BREAK
+
+#IF
+checkcmd CHECKUSERJF 100
+#ACT
+MOV D5 1
+actcmd SETUSERJF - 30
+ACTCMD EDITITEM FLD_DESC5 + %D3
+    Mov A7 "日期: "
+    AddStr A7 %月份
+    AddStr A7 "月"
+    AddStr A7 %日期
+    AddStr A7 "日"
+    AddStr A7 %小时
+    AddStr A7 "点"
+    AddStr A7 %分钟
+    AddStr A7 "分.给[ "
+    AddStr A7 %装备说明
+    AddStr A7 " ]注入强元素[ "
+    AddStr A7 %注入元素
+    AddStr A7 " ]"
+inc N7 1
+SaveValue "ParamControl\装备强元素记录.ini" [%USERNAME] [INDEX] %N7
+SaveValue "ParamControl\装备强元素记录.ini" [%USERNAME] [%N7] %A7
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}强{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}素{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+最多[ {FCOLOR/10}4种{FCOLOR/12} ]强元素. 每个强元素需[ {FCOLOR/10}2个永恒余烬{FCOLOR/12} ]\
+{FCOLOR/1}温馨提示{FCOLOR/12}: →本系统加强[{FCOLOR/10} 当场生效 {FCOLOR/12}]不需要小号超作\
+加强前请确认[{FCOLOR/10} 装备拦所佩带的装备 {FCOLOR/12}]  不可随意更换\
+─────────[{FCOLOR/1} 选择装备 {FCOLOR/12}]─────────\
+{FCOLOR/12}[ <头盔/@加强(4,头盔)> ] [ <衣服/@加强(0,衣服)> ] [ <左手镯/@加强(5,左手镯)> ] [ <右手镯/@加强(6,右手镯)> ] [ <鞋子/@加强(10,鞋子)> ]\
+─────────[ 加强成功 ]─────────\
+_   您的[{FCOLOR/10} <$OUTPUT(装备说明)> {FCOLOR/12}]成功注入{FCOLOR/10}强元素{FCOLOR/12} → [{FCOLOR/1} <$OUTPUT(注入元素)> {FCOLOR/12}]\
+#ELSEACT
+Close
+SYSMSG "温馨提示: 您没的元宝不足"
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

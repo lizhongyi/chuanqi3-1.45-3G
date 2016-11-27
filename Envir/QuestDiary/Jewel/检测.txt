@@ -1,0 +1,1022 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@检测_Main]
+{
+#Act
+delaygoto [local] 1 @上线设置镶嵌属性
+
+[@上线设置镶嵌属性]
+#Act
+Goto @上线检测衣服
+Goto @上线检测武器
+Goto @上线检测项链
+Goto @上线检测头盔
+Goto @上线检测左手镯
+Goto @上线检测右手镯
+Goto @上线检测左戒指
+Goto @上线检测右戒指
+Goto @上线检测鞋子
+Goto @上线检测圣物
+
+[@上线检测衣服]
+#If
+CHECKITEMINFO 0 0
+
+#If
+CHECKITEMINFO 0 0
+#Act
+Mov 衣服索引 %FLD_MAKEINDEX
+FormatStr "where FLD_MAKEINDEX = %s" %衣服索引
+ACTCMD READSQL "TBL_Jewel" "Display1,Display2,Display3,Display4,Display5" "上线显示信息1_0,上线显示信息2_0,上线显示信息3_0,上线显示信息4_0,上线显示信息5_0" %A9
+
+#If
+!Equal 上线显示信息1_0 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息1_0
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏1_0,上线自然1_0,上线灵魂1_0" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防1_0,上线魔防1_0,上线体力1_0" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力1_0" %A9
+
+#If
+!Equal 上线显示信息2_0 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息2_0
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏2_0,上线自然2_0,上线灵魂2_0" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防2_0,上线魔防2_0,上线体力2_0" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力2_0" %A9
+
+#If
+!Equal 上线显示信息3_0 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息3_0
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏3_0,上线自然3_0,上线灵魂3_0" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防3_0,上线魔防3_0,上线体力3_0" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力3_0" %A9
+
+#If
+!Equal 上线显示信息4_0 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息4_0
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏4_0,上线自然4_0,上线灵魂4_0" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防4_0,上线魔防4_0,上线体力4_0" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力4_0" %A9
+
+#If
+!Equal 上线显示信息3_0 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息5_0
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏5_0,上线自然5_0,上线灵魂5_0" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防5_0,上线魔防5_0,上线体力5_0" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力5_0" %A9
+
+#If
+#Act
+Mov 上线破坏_0 %上线破坏1_0
+Inc 上线破坏_0 %上线破坏2_0
+Inc 上线破坏_0 %上线破坏3_0
+Inc 上线破坏_0 %上线破坏4_0
+Inc 上线破坏_0 %上线破坏5_0
+Mov 上线自然_0 %上线自然1_0
+Inc 上线自然_0 %上线自然2_0
+Inc 上线自然_0 %上线自然3_0
+Inc 上线自然_0 %上线自然4_0
+Inc 上线自然_0 %上线自然5_0
+Mov 上线灵魂_0 %上线灵魂1_0
+Inc 上线灵魂_0 %上线灵魂2_0
+Inc 上线灵魂_0 %上线灵魂3_0
+Inc 上线灵魂_0 %上线灵魂4_0
+Inc 上线灵魂_0 %上线灵魂5_0
+Mov 上线物防_0 %上线物防1_0
+Inc 上线物防_0 %上线物防2_0
+Inc 上线物防_0 %上线物防3_0
+Inc 上线物防_0 %上线物防4_0
+Inc 上线物防_0 %上线物防5_0
+Mov 上线魔防_0 %上线魔防1_0
+Inc 上线魔防_0 %上线魔防2_0
+Inc 上线魔防_0 %上线魔防3_0
+Inc 上线魔防_0 %上线魔防4_0
+Inc 上线魔防_0 %上线魔防5_0
+Mov 上线体力_0 %上线体力1_0
+Inc 上线体力_0 %上线体力2_0
+Inc 上线体力_0 %上线体力3_0
+Inc 上线体力_0 %上线体力4_0
+Inc 上线体力_0 %上线体力5_0
+Mov 上线魔力_0 %上线魔力1_0
+Inc 上线魔力_0 %上线魔力2_0
+Inc 上线魔力_0 %上线魔力3_0
+Inc 上线魔力_0 %上线魔力4_0
+Inc 上线魔力_0 %上线魔力5_0
+
+#If
+#Act
+ATTRIBUTEADD DC %上线破坏_0
+ATTRIBUTEADD MC %上线自然_0
+ATTRIBUTEADD SC %上线灵魂_0
+ATTRIBUTEADD AC %上线物防_0
+ATTRIBUTEADD MAC %上线魔防_0
+ATTRIBUTEADD HP %上线体力_0
+ATTRIBUTEADD MP %上线魔力_0
+Break
+
+[@上线检测武器]
+#If
+CHECKITEMINFO 1 0
+
+#If
+CHECKITEMINFO 1 0
+#Act
+Mov 武器索引 %FLD_MAKEINDEX
+FormatStr "where FLD_MAKEINDEX = %s" %武器索引
+ACTCMD READSQL "TBL_Jewel" "Display1,Display2,Display3,Display4,Display5" "上线显示信息1_1,上线显示信息2_1,上线显示信息3_1,上线显示信息4_1,上线显示信息5_1" %A9
+
+#If
+!Equal 上线显示信息1_1 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息1_1
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏1_1,上线自然1_1,上线灵魂1_1" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防1_1,上线魔防1_1,上线体力1_1" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力1_1" %A9
+
+#If
+!Equal 上线显示信息2_1 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息2_1
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏2_1,上线自然2_1,上线灵魂2_1" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防2_1,上线魔防2_1,上线体力2_1" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力2_1" %A9
+
+#If
+!Equal 上线显示信息3_1 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息3_1
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏3_1,上线自然3_1,上线灵魂3_1" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防3_1,上线魔防3_1,上线体力3_1" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力3_1" %A9
+
+#If
+!Equal 上线显示信息4_1 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息4_1
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏4_1,上线自然4_1,上线灵魂4_1" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防4_1,上线魔防4_1,上线体力4_1" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力4_1" %A9
+
+#If
+!Equal 上线显示信息5_1 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息5_1
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏5_1,上线自然5_1,上线灵魂5_1" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防5_1,上线魔防5_1,上线体力5_1" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力5_1" %A9
+
+#If
+#Act
+Mov 上线破坏_1 %上线破坏1_1
+Inc 上线破坏_1 %上线破坏2_1
+Inc 上线破坏_1 %上线破坏3_1
+Inc 上线破坏_1 %上线破坏4_1
+Inc 上线破坏_1 %上线破坏5_1
+Mov 上线自然_1 %上线自然1_1
+Inc 上线自然_1 %上线自然2_1
+Inc 上线自然_1 %上线自然3_1
+Inc 上线自然_1 %上线自然4_1
+Inc 上线自然_1 %上线自然5_1
+Mov 上线灵魂_1 %上线灵魂1_1
+Inc 上线灵魂_1 %上线灵魂2_1
+Inc 上线灵魂_1 %上线灵魂3_1
+Inc 上线灵魂_1 %上线灵魂4_1
+Inc 上线灵魂_1 %上线灵魂5_1
+Mov 上线物防_1 %上线物防1_1
+Inc 上线物防_1 %上线物防2_1
+Inc 上线物防_1 %上线物防3_1
+Inc 上线物防_1 %上线物防4_1
+Inc 上线物防_1 %上线物防5_1
+Mov 上线魔防_1 %上线魔防1_1
+Inc 上线魔防_1 %上线魔防2_1
+Inc 上线魔防_1 %上线魔防3_1
+Inc 上线魔防_1 %上线魔防4_1
+Inc 上线魔防_1 %上线魔防5_1
+Mov 上线体力_1 %上线体力1_1
+Inc 上线体力_1 %上线体力2_1
+Inc 上线体力_1 %上线体力3_1
+Inc 上线体力_1 %上线体力4_1
+Inc 上线体力_1 %上线体力5_1
+Mov 上线魔力_1 %上线魔力1_1
+Inc 上线魔力_1 %上线魔力2_1
+Inc 上线魔力_1 %上线魔力3_1
+Inc 上线魔力_1 %上线魔力4_1
+Inc 上线魔力_1 %上线魔力5_1
+
+#If
+#Act
+ATTRIBUTEADD DC %上线破坏_1
+ATTRIBUTEADD MC %上线自然_1
+ATTRIBUTEADD SC %上线灵魂_1
+ATTRIBUTEADD AC %上线物防_1
+ATTRIBUTEADD MAC %上线魔防_1
+ATTRIBUTEADD HP %上线体力_1
+ATTRIBUTEADD MP %上线魔力_1
+Break
+
+[@上线检测项链]
+#If
+CHECKITEMINFO 3 0
+
+#If
+CHECKITEMINFO 3 0
+#Act
+Mov 项链索引 %FLD_MAKEINDEX
+FormatStr "where FLD_MAKEINDEX = %s" %项链索引
+ACTCMD READSQL "TBL_Jewel" "Display1,Display2,Display3,Display4,Display5" "上线显示信息1_3,上线显示信息2_3,上线显示信息3_3,上线显示信息4_3,上线显示信息5_3" %A9
+
+#If
+!Equal 上线显示信息1_3 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息1_3
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏1_3,上线自然1_3,上线灵魂1_3" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防1_3,上线魔防1_3,上线体力1_3" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力1_3" %A9
+
+#If
+!Equal 上线显示信息2_3 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息2_3
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏2_3,上线自然2_3,上线灵魂2_3" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防2_3,上线魔防2_3,上线体力2_3" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力2_3" %A9
+
+#If
+!Equal 上线显示信息3_3 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息3_3
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏3_3,上线自然3_3,上线灵魂3_3" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防3_3,上线魔防3_3,上线体力3_3" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力3_3" %A9
+
+#If
+!Equal 上线显示信息4_3 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息4_3
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏4_3,上线自然4_3,上线灵魂4_3" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防4_3,上线魔防4_3,上线体力4_3" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力4_3" %A9
+
+#If
+!Equal 上线显示信息5_3 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息5_3
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏5_3,上线自然5_3,上线灵魂5_3" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防5_3,上线魔防5_3,上线体力5_3" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力5_3" %A9
+
+#If
+#Act
+Mov 上线破坏_3 %上线破坏1_3
+Inc 上线破坏_3 %上线破坏2_3
+Inc 上线破坏_3 %上线破坏3_3
+Inc 上线破坏_3 %上线破坏4_3
+Inc 上线破坏_3 %上线破坏5_3
+Mov 上线自然_3 %上线自然1_3
+Inc 上线自然_3 %上线自然2_3
+Inc 上线自然_3 %上线自然3_3
+Inc 上线自然_3 %上线自然4_3
+Inc 上线自然_3 %上线自然5_3
+Mov 上线灵魂_3 %上线灵魂1_3
+Inc 上线灵魂_3 %上线灵魂2_3
+Inc 上线灵魂_3 %上线灵魂3_3
+Inc 上线灵魂_3 %上线灵魂4_3
+Inc 上线灵魂_3 %上线灵魂5_3
+Mov 上线物防_3 %上线物防1_3
+Inc 上线物防_3 %上线物防2_3
+Inc 上线物防_3 %上线物防3_3
+Inc 上线物防_3 %上线物防4_3
+Inc 上线物防_3 %上线物防5_3
+Mov 上线魔防_3 %上线魔防1_3
+Inc 上线魔防_3 %上线魔防2_3
+Inc 上线魔防_3 %上线魔防3_3
+Inc 上线魔防_3 %上线魔防4_3
+Inc 上线魔防_3 %上线魔防5_3
+Mov 上线体力_3 %上线体力1_3
+Inc 上线体力_3 %上线体力2_3
+Inc 上线体力_3 %上线体力3_3
+Inc 上线体力_3 %上线体力4_3
+Inc 上线体力_3 %上线体力5_3
+Mov 上线魔力_3 %上线魔力1_3
+Inc 上线魔力_3 %上线魔力2_3
+Inc 上线魔力_3 %上线魔力3_3
+Inc 上线魔力_3 %上线魔力4_3
+Inc 上线魔力_3 %上线魔力5_3
+
+#If
+#Act
+ATTRIBUTEADD DC %上线破坏_3
+ATTRIBUTEADD MC %上线自然_3
+ATTRIBUTEADD SC %上线灵魂_3
+ATTRIBUTEADD AC %上线物防_3
+ATTRIBUTEADD MAC %上线魔防_3
+ATTRIBUTEADD HP %上线体力_3
+ATTRIBUTEADD MP %上线魔力_3
+Break
+
+[@上线检测头盔]
+#If
+CHECKITEMINFO 4 0
+
+#If
+CHECKITEMINFO 4 0
+#Act
+Mov 头盔索引 %FLD_MAKEINDEX
+FormatStr "where FLD_MAKEINDEX = %s" %头盔索引
+ACTCMD READSQL "TBL_Jewel" "Display1,Display2,Display3,Display4,Display5" "上线显示信息1_4,上线显示信息2_4,上线显示信息3_4,上线显示信息4_4,上线显示信息5_4" %A9
+
+#If
+!Equal 上线显示信息1_4 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息1_4
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏1_4,上线自然1_4,上线灵魂1_4" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防1_4,上线魔防1_4,上线体力1_4" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力1_4" %A9
+
+#If
+!Equal 上线显示信息2_4 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息2_4
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏2_4,上线自然2_4,上线灵魂2_4" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防2_4,上线魔防2_4,上线体力2_4" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力2_4" %A9
+
+#If
+!Equal 上线显示信息3_4 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息3_4
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏3_4,上线自然3_4,上线灵魂3_4" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防3_4,上线魔防3_4,上线体力3_4" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力3_4" %A9
+
+#If
+!Equal 上线显示信息4_4 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息4_4
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏4_4,上线自然4_4,上线灵魂4_4" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防4_4,上线魔防4_4,上线体力4_4" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力4_4" %A9
+
+#If
+!Equal 上线显示信息5_4 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息5_4
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏5_4,上线自然5_4,上线灵魂5_4" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防5_4,上线魔防5_4,上线体力5_4" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力5_4" %A9
+
+#If
+#Act
+Mov 上线破坏_4 %上线破坏1_4
+Inc 上线破坏_4 %上线破坏2_4
+Inc 上线破坏_4 %上线破坏3_4
+Inc 上线破坏_4 %上线破坏4_4
+Inc 上线破坏_4 %上线破坏5_4
+Mov 上线自然_4 %上线自然1_4
+Inc 上线自然_4 %上线自然2_4
+Inc 上线自然_4 %上线自然3_4
+Inc 上线自然_4 %上线自然4_4
+Inc 上线自然_4 %上线自然5_4
+Mov 上线灵魂_4 %上线灵魂1_4
+Inc 上线灵魂_4 %上线灵魂2_4
+Inc 上线灵魂_4 %上线灵魂3_4
+Inc 上线灵魂_4 %上线灵魂4_4
+Inc 上线灵魂_4 %上线灵魂5_4
+Mov 上线物防_4 %上线物防1_4
+Inc 上线物防_4 %上线物防2_4
+Inc 上线物防_4 %上线物防3_4
+Inc 上线物防_4 %上线物防4_4
+Inc 上线物防_4 %上线物防5_4
+Mov 上线魔防_4 %上线魔防1_4
+Inc 上线魔防_4 %上线魔防2_4
+Inc 上线魔防_4 %上线魔防3_4
+Inc 上线魔防_4 %上线魔防4_4
+Inc 上线魔防_4 %上线魔防5_4
+Mov 上线体力_4 %上线体力1_4
+Inc 上线体力_4 %上线体力2_4
+Inc 上线体力_4 %上线体力3_4
+Inc 上线体力_4 %上线体力4_4
+Inc 上线体力_4 %上线体力5_4
+Mov 上线魔力_4 %上线魔力1_4
+Inc 上线魔力_4 %上线魔力2_4
+Inc 上线魔力_4 %上线魔力3_4
+Inc 上线魔力_4 %上线魔力4_4
+Inc 上线魔力_4 %上线魔力5_4
+
+#If
+#Act
+ATTRIBUTEADD DC %上线破坏_4
+ATTRIBUTEADD MC %上线自然_4
+ATTRIBUTEADD SC %上线灵魂_4
+ATTRIBUTEADD AC %上线物防_4
+ATTRIBUTEADD MAC %上线魔防_4
+ATTRIBUTEADD HP %上线体力_4
+ATTRIBUTEADD MP %上线魔力_4
+Break
+
+[@上线检测左手镯]
+#If
+CHECKITEMINFO 5 0
+
+#If
+CHECKITEMINFO 5 0
+#Act
+Mov 左手镯索引 %FLD_MAKEINDEX
+FormatStr "where FLD_MAKEINDEX = %s" %左手镯索引
+ACTCMD READSQL "TBL_Jewel" "Display1,Display2,Display3,Display4,Display5" "上线显示信息1_5,上线显示信息2_5,上线显示信息3_5,上线显示信息4_5,上线显示信息5_5" %A9
+
+#If
+!Equal 上线显示信息1_5 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息1_5
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏1_5,上线自然1_5,上线灵魂1_5" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防1_5,上线魔防1_5,上线体力1_5" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力1_5" %A9
+
+#If
+!Equal 上线显示信息2_5 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息2_5
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏2_5,上线自然2_5,上线灵魂2_5" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防2_5,上线魔防2_5,上线体力2_5" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力2_5" %A9
+
+#If
+!Equal 上线显示信息3_5 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息3_5
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏3_5,上线自然3_5,上线灵魂3_5" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防3_5,上线魔防3_5,上线体力3_5" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力3_5" %A9
+
+#If
+!Equal 上线显示信息4_5 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息4_5
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏4_5,上线自然4_5,上线灵魂4_5" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防4_5,上线魔防4_5,上线体力4_5" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力4_5" %A9
+
+#If
+!Equal 上线显示信息5_5 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息5_5
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏5_5,上线自然5_5,上线灵魂5_5" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防5_5,上线魔防5_5,上线体力5_5" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力5_5" %A9
+
+#If
+#Act
+Mov 上线破坏_5 %上线破坏1_5
+Inc 上线破坏_5 %上线破坏2_5
+Inc 上线破坏_5 %上线破坏3_5
+Inc 上线破坏_5 %上线破坏4_5
+Inc 上线破坏_5 %上线破坏5_5
+Mov 上线自然_5 %上线自然1_5
+Inc 上线自然_5 %上线自然2_5
+Inc 上线自然_5 %上线自然3_5
+Inc 上线自然_5 %上线自然4_5
+Inc 上线自然_5 %上线自然5_5
+Mov 上线灵魂_5 %上线灵魂1_5
+Inc 上线灵魂_5 %上线灵魂2_5
+Inc 上线灵魂_5 %上线灵魂3_5
+Inc 上线灵魂_5 %上线灵魂4_5
+Inc 上线灵魂_5 %上线灵魂5_5
+Mov 上线物防_5 %上线物防1_5
+Inc 上线物防_5 %上线物防2_5
+Inc 上线物防_5 %上线物防3_5
+Inc 上线物防_5 %上线物防4_5
+Inc 上线物防_5 %上线物防5_5
+Mov 上线魔防_5 %上线魔防1_5
+Inc 上线魔防_5 %上线魔防2_5
+Inc 上线魔防_5 %上线魔防3_5
+Inc 上线魔防_5 %上线魔防4_5
+Inc 上线魔防_5 %上线魔防5_5
+Mov 上线体力_5 %上线体力1_5
+Inc 上线体力_5 %上线体力2_5
+Inc 上线体力_5 %上线体力3_5
+Inc 上线体力_5 %上线体力4_5
+Inc 上线体力_5 %上线体力5_5
+Mov 上线魔力_5 %上线魔力1_5
+Inc 上线魔力_5 %上线魔力2_5
+Inc 上线魔力_5 %上线魔力3_5
+Inc 上线魔力_5 %上线魔力4_5
+Inc 上线魔力_5 %上线魔力5_5
+
+#If
+#Act
+ATTRIBUTEADD DC %上线破坏_5
+ATTRIBUTEADD MC %上线自然_5
+ATTRIBUTEADD SC %上线灵魂_5
+ATTRIBUTEADD AC %上线物防_5
+ATTRIBUTEADD MAC %上线魔防_5
+ATTRIBUTEADD HP %上线体力_5
+ATTRIBUTEADD MP %上线魔力_5
+Break
+
+[@上线检测右手镯]
+#If
+CHECKITEMINFO 6 0
+
+#If
+CHECKITEMINFO 6 0
+#Act
+Mov 右手镯索引 %FLD_MAKEINDEX
+FormatStr "where FLD_MAKEINDEX = %s" %右手镯索引
+ACTCMD READSQL "TBL_Jewel" "Display1,Display2,Display3,Display4,Display5" "上线显示信息1_6,上线显示信息2_6,上线显示信息3_6,上线显示信息4_6,上线显示信息5_6" %A9
+
+#If
+!Equal 上线显示信息1_6 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息1_6
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏1_6,上线自然1_6,上线灵魂1_6" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防1_6,上线魔防1_6,上线体力1_6" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力1_6" %A9
+
+#If
+!Equal 上线显示信息2_6 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息2_6
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏2_6,上线自然2_6,上线灵魂2_6" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防2_6,上线魔防2_6,上线体力2_6" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力2_6" %A9
+
+#If
+!Equal 上线显示信息3_6 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息3_6
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏3_6,上线自然3_6,上线灵魂3_6" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防3_6,上线魔防3_6,上线体力3_6" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力3_6" %A9
+
+#If
+!Equal 上线显示信息4_6 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息4_6
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏4_6,上线自然4_6,上线灵魂4_6" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防4_6,上线魔防4_6,上线体力4_6" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力4_6" %A9
+
+#If
+!Equal 上线显示信息5_6 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息5_6
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏5_6,上线自然5_6,上线灵魂5_6" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防5_6,上线魔防5_6,上线体力5_6" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力5_6" %A9
+
+#If
+#Act
+Mov 上线破坏_6 %上线破坏1_6
+Inc 上线破坏_6 %上线破坏2_6
+Inc 上线破坏_6 %上线破坏3_6
+Inc 上线破坏_6 %上线破坏4_6
+Inc 上线破坏_6 %上线破坏5_6
+Mov 上线自然_6 %上线自然1_6
+Inc 上线自然_6 %上线自然2_6
+Inc 上线自然_6 %上线自然3_6
+Inc 上线自然_6 %上线自然4_6
+Inc 上线自然_6 %上线自然5_6
+Mov 上线灵魂_6 %上线灵魂1_6
+Inc 上线灵魂_6 %上线灵魂2_6
+Inc 上线灵魂_6 %上线灵魂3_6
+Inc 上线灵魂_6 %上线灵魂4_6
+Inc 上线灵魂_6 %上线灵魂5_6
+Mov 上线物防_6 %上线物防1_6
+Inc 上线物防_6 %上线物防2_6
+Inc 上线物防_6 %上线物防3_6
+Inc 上线物防_6 %上线物防4_6
+Inc 上线物防_6 %上线物防5_6
+Mov 上线魔防_6 %上线魔防1_6
+Inc 上线魔防_6 %上线魔防2_6
+Inc 上线魔防_6 %上线魔防3_6
+Inc 上线魔防_6 %上线魔防4_6
+Inc 上线魔防_6 %上线魔防5_6
+Mov 上线体力_6 %上线体力1_6
+Inc 上线体力_6 %上线体力2_6
+Inc 上线体力_6 %上线体力3_6
+Inc 上线体力_6 %上线体力4_6
+Inc 上线体力_6 %上线体力5_6
+Mov 上线魔力_6 %上线魔力1_6
+Inc 上线魔力_6 %上线魔力2_6
+Inc 上线魔力_6 %上线魔力3_6
+Inc 上线魔力_6 %上线魔力4_6
+Inc 上线魔力_6 %上线魔力5_6
+
+#If
+#Act
+ATTRIBUTEADD DC %上线破坏_6
+ATTRIBUTEADD MC %上线自然_6
+ATTRIBUTEADD SC %上线灵魂_6
+ATTRIBUTEADD AC %上线物防_6
+ATTRIBUTEADD MAC %上线魔防_6
+ATTRIBUTEADD HP %上线体力_6
+ATTRIBUTEADD MP %上线魔力_6
+Break
+
+[@上线检测左戒指]
+#If
+CHECKITEMINFO 7 0
+
+#If
+CHECKITEMINFO 7 0
+#Act
+Mov 左戒指索引 %FLD_MAKEINDEX
+FormatStr "where FLD_MAKEINDEX = %s" %左戒指索引
+ACTCMD READSQL "TBL_Jewel" "Display1,Display2,Display3,Display4,Display5" "上线显示信息1_7,上线显示信息2_7,上线显示信息3_7,上线显示信息4_7,上线显示信息5_7" %A9
+
+#If
+!Equal 上线显示信息1_7 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息1_7
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏1_7,上线自然1_7,上线灵魂1_7" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防1_7,上线魔防1_7,上线体力1_7" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力1_7" %A9
+
+#If
+!Equal 上线显示信息2_7 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息2_7
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏2_7,上线自然2_7,上线灵魂2_7" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防2_7,上线魔防2_7,上线体力2_7" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力2_7" %A9
+
+#If
+!Equal 上线显示信息3_7 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息3_7
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏3_7,上线自然3_7,上线灵魂3_7" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防3_7,上线魔防3_7,上线体力3_7" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力3_7" %A9
+
+#If
+!Equal 上线显示信息4_7 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息4_7
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏4_7,上线自然4_7,上线灵魂4_7" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防4_7,上线魔防4_7,上线体力4_7" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力4_7" %A9
+
+#If
+!Equal 上线显示信息5_7 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息5_7
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏5_7,上线自然5_7,上线灵魂5_7" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防5_7,上线魔防5_7,上线体力5_7" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力5_7" %A9
+
+#If
+#Act
+Mov 上线破坏_7 %上线破坏1_7
+Inc 上线破坏_7 %上线破坏2_7
+Inc 上线破坏_7 %上线破坏3_7
+Inc 上线破坏_7 %上线破坏4_7
+Inc 上线破坏_7 %上线破坏5_7
+Mov 上线自然_7 %上线自然1_7
+Inc 上线自然_7 %上线自然2_7
+Inc 上线自然_7 %上线自然3_7
+Inc 上线自然_7 %上线自然4_7
+Inc 上线自然_7 %上线自然5_7
+Mov 上线灵魂_7 %上线灵魂1_7
+Inc 上线灵魂_7 %上线灵魂2_7
+Inc 上线灵魂_7 %上线灵魂3_7
+Inc 上线灵魂_7 %上线灵魂4_7
+Inc 上线灵魂_7 %上线灵魂5_7
+Mov 上线物防_7 %上线物防1_7
+Inc 上线物防_7 %上线物防2_7
+Inc 上线物防_7 %上线物防3_7
+Inc 上线物防_7 %上线物防4_7
+Inc 上线物防_7 %上线物防5_7
+Mov 上线魔防_7 %上线魔防1_7
+Inc 上线魔防_7 %上线魔防2_7
+Inc 上线魔防_7 %上线魔防3_7
+Inc 上线魔防_7 %上线魔防4_7
+Inc 上线魔防_7 %上线魔防5_7
+Mov 上线体力_7 %上线体力1_7
+Inc 上线体力_7 %上线体力2_7
+Inc 上线体力_7 %上线体力3_7
+Inc 上线体力_7 %上线体力4_7
+Inc 上线体力_7 %上线体力5_7
+Mov 上线魔力_7 %上线魔力1_7
+Inc 上线魔力_7 %上线魔力2_7
+Inc 上线魔力_7 %上线魔力3_7
+Inc 上线魔力_7 %上线魔力4_7
+Inc 上线魔力_7 %上线魔力5_7
+
+#If
+#Act
+ATTRIBUTEADD DC %上线破坏_7
+ATTRIBUTEADD MC %上线自然_7
+ATTRIBUTEADD SC %上线灵魂_7
+ATTRIBUTEADD AC %上线物防_7
+ATTRIBUTEADD MAC %上线魔防_7
+ATTRIBUTEADD HP %上线体力_7
+ATTRIBUTEADD MP %上线魔力_7
+Break
+
+[@上线检测右戒指]
+#If
+CHECKITEMINFO 8 0
+
+#If
+CHECKITEMINFO 8 0
+#Act
+Mov 右戒指索引 %FLD_MAKEINDEX
+FormatStr "where FLD_MAKEINDEX = %s" %右戒指索引
+ACTCMD READSQL "TBL_Jewel" "Display1,Display2,Display3,Display4,Display5" "上线显示信息1_8,上线显示信息2_8,上线显示信息3_8,上线显示信息4_8,上线显示信息5_8" %A9
+
+#If
+!Equal 上线显示信息1_8 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息1_8
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏1_8,上线自然1_8,上线灵魂1_8" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防1_8,上线魔防1_8,上线体力1_8" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力1_8" %A9
+
+#If
+!Equal 上线显示信息2_8 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息2_8
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏2_8,上线自然2_8,上线灵魂2_8" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防2_8,上线魔防2_8,上线体力2_8" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力2_8" %A9
+
+#If
+!Equal 上线显示信息3_8 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息3_8
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏3_8,上线自然3_8,上线灵魂3_8" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防3_8,上线魔防3_8,上线体力3_8" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力3_8" %A9
+
+#If
+!Equal 上线显示信息4_8 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息4_8
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏4_8,上线自然4_8,上线灵魂4_8" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防4_8,上线魔防4_8,上线体力4_8" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力4_8" %A9
+
+#If
+!Equal 上线显示信息5_8 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息5_8
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏5_8,上线自然5_8,上线灵魂5_8" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防5_8,上线魔防5_8,上线体力5_8" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力5_8" %A9
+
+#If
+#Act
+Mov 上线破坏_8 %上线破坏1_8
+Inc 上线破坏_8 %上线破坏2_8
+Inc 上线破坏_8 %上线破坏3_8
+Inc 上线破坏_8 %上线破坏4_8
+Inc 上线破坏_8 %上线破坏5_8
+Mov 上线自然_8 %上线自然1_8
+Inc 上线自然_8 %上线自然2_8
+Inc 上线自然_8 %上线自然3_8
+Inc 上线自然_8 %上线自然4_8
+Inc 上线自然_8 %上线自然5_8
+Mov 上线灵魂_8 %上线灵魂1_8
+Inc 上线灵魂_8 %上线灵魂2_8
+Inc 上线灵魂_8 %上线灵魂3_8
+Inc 上线灵魂_8 %上线灵魂4_8
+Inc 上线灵魂_8 %上线灵魂5_8
+Mov 上线物防_8 %上线物防1_8
+Inc 上线物防_8 %上线物防2_8
+Inc 上线物防_8 %上线物防3_8
+Inc 上线物防_8 %上线物防4_8
+Inc 上线物防_8 %上线物防5_8
+Mov 上线魔防_8 %上线魔防1_8
+Inc 上线魔防_8 %上线魔防2_8
+Inc 上线魔防_8 %上线魔防3_8
+Inc 上线魔防_8 %上线魔防4_8
+Inc 上线魔防_8 %上线魔防5_8
+Mov 上线体力_8 %上线体力1_8
+Inc 上线体力_8 %上线体力2_8
+Inc 上线体力_8 %上线体力3_8
+Inc 上线体力_8 %上线体力4_8
+Inc 上线体力_8 %上线体力5_8
+Mov 上线魔力_8 %上线魔力1_8
+Inc 上线魔力_8 %上线魔力2_8
+Inc 上线魔力_8 %上线魔力3_8
+Inc 上线魔力_8 %上线魔力4_8
+Inc 上线魔力_8 %上线魔力5_8
+
+#If
+#Act
+ATTRIBUTEADD DC %上线破坏_8
+ATTRIBUTEADD MC %上线自然_8
+ATTRIBUTEADD SC %上线灵魂_8
+ATTRIBUTEADD AC %上线物防_8
+ATTRIBUTEADD MAC %上线魔防_8
+ATTRIBUTEADD HP %上线体力_8
+ATTRIBUTEADD MP %上线魔力_8
+Break
+
+[@上线检测鞋子]
+#If
+CHECKITEMINFO 10 0
+
+#If
+CHECKITEMINFO 10 0
+#Act
+Mov 鞋子索引 %FLD_MAKEINDEX
+FormatStr "where FLD_MAKEINDEX = %s" %鞋子索引
+ACTCMD READSQL "TBL_Jewel" "Display1,Display2,Display3,Display4,Display5" "上线显示信息1_10,上线显示信息2_10,上线显示信息3_10,上线显示信息4_10,上线显示信息5_10" %A9
+
+#If
+!Equal 上线显示信息1_10 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息1_10
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏1_10,上线自然1_10,上线灵魂1_10" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防1_10,上线魔防1_10,上线体力1_10" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力1_10" %A9
+
+#If
+!Equal 上线显示信息2_10 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息2_10
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏2_10,上线自然2_10,上线灵魂2_10" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防2_10,上线魔防2_10,上线体力2_10" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力2_10" %A9
+
+#If
+!Equal 上线显示信息3_10 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息3_10
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏3_10,上线自然3_10,上线灵魂3_10" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防3_10,上线魔防3_10,上线体力3_10" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力3_10" %A9
+
+#If
+!Equal 上线显示信息4_10 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息4_10
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏4_10,上线自然4_10,上线灵魂4_10" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防4_10,上线魔防4_10,上线体力4_10" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力4_10" %A9
+
+#If
+!Equal 上线显示信息5_10 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息5_10
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏5_10,上线自然5_10,上线灵魂5_10" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防5_10,上线魔防5_10,上线体力5_10" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力5_10" %A9
+
+#If
+#Act
+Mov 上线破坏_10 %上线破坏1_10
+Inc 上线破坏_10 %上线破坏2_10
+Inc 上线破坏_10 %上线破坏3_10
+Inc 上线破坏_10 %上线破坏4_10
+Inc 上线破坏_10 %上线破坏5_10
+Mov 上线自然_10 %上线自然1_10
+Inc 上线自然_10 %上线自然2_10
+Inc 上线自然_10 %上线自然3_10
+Inc 上线自然_10 %上线自然4_10
+Inc 上线自然_10 %上线自然5_10
+Mov 上线灵魂_10 %上线灵魂1_10
+Inc 上线灵魂_10 %上线灵魂2_10
+Inc 上线灵魂_10 %上线灵魂3_10
+Inc 上线灵魂_10 %上线灵魂4_10
+Inc 上线灵魂_10 %上线灵魂5_10
+Mov 上线物防_10 %上线物防1_10
+Inc 上线物防_10 %上线物防2_10
+Inc 上线物防_10 %上线物防3_10
+Inc 上线物防_10 %上线物防4_10
+Inc 上线物防_10 %上线物防5_10
+Mov 上线魔防_10 %上线魔防1_10
+Inc 上线魔防_10 %上线魔防2_10
+Inc 上线魔防_10 %上线魔防3_10
+Inc 上线魔防_10 %上线魔防4_10
+Inc 上线魔防_10 %上线魔防5_10
+Mov 上线体力_10 %上线体力1_10
+Inc 上线体力_10 %上线体力2_10
+Inc 上线体力_10 %上线体力3_10
+Inc 上线体力_10 %上线体力4_10
+Inc 上线体力_10 %上线体力5_10
+Mov 上线魔力_10 %上线魔力1_10
+Inc 上线魔力_10 %上线魔力2_10
+Inc 上线魔力_10 %上线魔力3_10
+Inc 上线魔力_10 %上线魔力4_10
+Inc 上线魔力_10 %上线魔力5_10
+
+#If
+#Act
+ATTRIBUTEADD DC %上线破坏_10
+ATTRIBUTEADD MC %上线自然_10
+ATTRIBUTEADD SC %上线灵魂_10
+ATTRIBUTEADD AC %上线物防_10
+ATTRIBUTEADD MAC %上线魔防_10
+ATTRIBUTEADD HP %上线体力_10
+ATTRIBUTEADD MP %上线魔力_10
+Break
+
+[@上线检测圣物]
+#If
+CHECKITEMINFO 11 0
+
+#If
+CHECKITEMINFO 11 0
+#Act
+Mov 圣物索引 %FLD_MAKEINDEX
+FormatStr "where FLD_MAKEINDEX = %s" %圣物索引
+ACTCMD READSQL "TBL_Jewel" "Display1,Display2,Display3,Display4,Display5" "上线显示信息1_11,上线显示信息2_11,上线显示信息3_11,上线显示信息4_11,上线显示信息5_11" %A9
+
+#If
+!Equal 上线显示信息1_11 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息1_11
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏1_11,上线自然1_11,上线灵魂1_11" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防1_11,上线魔防1_11,上线体力1_11" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力1_11" %A9
+
+#If
+!Equal 上线显示信息2_11 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息2_11
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏2_11,上线自然2_11,上线灵魂2_11" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防2_11,上线魔防2_11,上线体力2_11" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力2_11" %A9
+
+#If
+!Equal 上线显示信息3_11 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息3_11
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏3_11,上线自然3_11,上线灵魂3_11" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防3_11,上线魔防3_11,上线体力3_11" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力3_11" %A9
+
+#If
+!Equal 上线显示信息4_11 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息4_11
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏4_11,上线自然4_11,上线灵魂4_11" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防4_11,上线魔防4_11,上线体力4_11" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力4_11" %A9
+
+#If
+!Equal 上线显示信息5_11 ""
+#Act
+FormatStr "where Name = '%s'" %上线显示信息5_11
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "上线破坏5_11,上线自然5_11,上线灵魂5_11" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "上线物防5_11,上线魔防5_11,上线体力5_11" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "上线魔力5_11" %A9
+
+#If
+#Act
+Mov 上线破坏_11 %上线破坏1_11
+Inc 上线破坏_11 %上线破坏2_11
+Inc 上线破坏_11 %上线破坏3_11
+Inc 上线破坏_11 %上线破坏4_11
+Inc 上线破坏_11 %上线破坏5_11
+Mov 上线自然_11 %上线自然1_11
+Inc 上线自然_11 %上线自然2_11
+Inc 上线自然_11 %上线自然3_11
+Inc 上线自然_11 %上线自然4_11
+Inc 上线自然_11 %上线自然5_11
+Mov 上线灵魂_11 %上线灵魂1_11
+Inc 上线灵魂_11 %上线灵魂2_11
+Inc 上线灵魂_11 %上线灵魂3_11
+Inc 上线灵魂_11 %上线灵魂4_11
+Inc 上线灵魂_11 %上线灵魂5_11
+Mov 上线物防_11 %上线物防1_11
+Inc 上线物防_11 %上线物防2_11
+Inc 上线物防_11 %上线物防3_11
+Inc 上线物防_11 %上线物防4_11
+Inc 上线物防_11 %上线物防5_11
+Mov 上线魔防_11 %上线魔防1_11
+Inc 上线魔防_11 %上线魔防2_11
+Inc 上线魔防_11 %上线魔防3_11
+Inc 上线魔防_11 %上线魔防4_11
+Inc 上线魔防_11 %上线魔防5_11
+Mov 上线体力_11 %上线体力1_11
+Inc 上线体力_11 %上线体力2_11
+Inc 上线体力_11 %上线体力3_11
+Inc 上线体力_11 %上线体力4_11
+Inc 上线体力_11 %上线体力5_11
+Mov 上线魔力_11 %上线魔力1_11
+Inc 上线魔力_11 %上线魔力2_11
+Inc 上线魔力_11 %上线魔力3_11
+Inc 上线魔力_11 %上线魔力4_11
+Inc 上线魔力_11 %上线魔力5_11
+
+#If
+#Act
+ATTRIBUTEADD DC %上线破坏_11
+ATTRIBUTEADD MC %上线自然_11
+ATTRIBUTEADD SC %上线灵魂_11
+ATTRIBUTEADD AC %上线物防_11
+ATTRIBUTEADD MAC %上线魔防_11
+ATTRIBUTEADD HP %上线体力_11
+ATTRIBUTEADD MP %上线魔力_11
+Break
+
+}
+
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

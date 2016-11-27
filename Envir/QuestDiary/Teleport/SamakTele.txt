@@ -1,0 +1,37 @@
+;;创天网络有限公司原版1.45
+[@Samak_Teleport_East]
+{
+#IF
+!CheckPkPoint 2
+#SAY
+六面神石 \ \
+<移动至盟重土城所需金钱 : 500 钱/@TelePortRootin(MongChon,500,West)> \
+<移动至边境村庄所需金钱 : 1000 钱/@TelePortRootin(KugKyung,1000,West)> \ \
+<移动至比奇城所需金钱 : 1500 钱/@TelePortRootin(Bichon,1500,West)> \
+<移动至潘夜岛村所需金钱 : 1500 钱/@TelePortRootin(HalfMoon,1500,Center)> \ \
+<移动至道馆村所需金钱 : 2000 钱/@TelePortRootin(DoGwan,2000,Center)> \
+<移动至毒蛇山村所需金钱 : 2000 钱/@TelePortRootin(SnakeVally,2000,South)> \
+<移动至银杏山村所需金钱 : 2000 钱/@TelePortRootin(EunHang,2000,Center)> \
+
+#ELSEACT
+mapmove 81 125 274
+break
+
+[@TelePortRootin()]
+#CALL [Teleport\MoveRootin.txt] @TelePortMove
+}
+
+[@Samak_Teleport_West]
+{
+#IF
+!CheckPkPoint 2
+#SAY
+六面神石 \ \
+<移动至绿洲村所需的金钱 : 500 钱/@TelePortRootin(Oasis,500,Center)> \ \
+#ELSEACT
+mapmove 81 125 274
+break
+
+[@TelePortRootin()]
+#CALL [Teleport\MoveRootin.txt] @TelePortMove
+}

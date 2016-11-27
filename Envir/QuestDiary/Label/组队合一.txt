@@ -1,0 +1,64 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@组队合一_Main]
+{
+#IF
+!CHECKCMD CHECKMAPFLAG MAPGROUP 1
+#ACT
+SYSMSG "对不起,该地图禁止使用该物品"
+Close
+
+#IF
+Small USERREBORNCOUNT 8
+#ACT
+SYSMSG "对不起,您转生未达到8转,不能使用该功能!" 1
+close
+BREAK
+
+#IF
+!checkitem 队长召唤令 1
+#ACT
+SYSMSG "对不起,您包裹没有队长召唤令,无法使用该功能!" 1
+close
+BREAK
+
+#IF
+#SAY
+你可以使用{FCOLOR/1}队长召唤令{FCOLOR/12},把团队里所有成员召唤至您身边。
+\\
+<输入要队长传送/@Oneteamgo_1> \\
+<离开/@exit>
+
+
+[@Oneteamgo_1]
+#act
+mov A1 %USERMAP
+mov A2 %USERX
+mov A3 %USERY
+mov A4 1
+
+ADDSTR A1 ","
+ADDSTR A1 %A2
+ADDSTR A1 ","
+ADDSTR A1 %A3
+ADDSTR A1 ","
+ADDSTR A1 %A4
+
+#if
+!Checkgroupcount 1
+#ACT
+SYSMSG "对不起,你没有组队不能使用!"
+BREAK
+
+#IF 
+checkitem 队长召唤令 1
+ISGROUPOWNER
+#act
+take 队长召唤令 1
+GROUPMOVE "%A1" %USERNAME
+sysmsg "温馨提示:召唤成功!"
+close
+#elseact
+close
+sysmsg "温馨提示:对不起,你没有队长召唤令!"
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

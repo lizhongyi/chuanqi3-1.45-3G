@@ -1,0 +1,456 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@冲级赛登记_1]
+{
+#IF
+checklevel 0
+#ACT
+mov D0 %P9
+
+#IF
+EQUAL D0 50
+#act
+GOTO @50jichufa567
+break
+
+#IF
+EQUAL D0 60
+#act
+GOTO @60jichufa567
+break
+
+#IF
+EQUAL D0 70
+#act
+GOTO @70jichufa567
+break
+
+[@50jichufa567]
+#IF
+checkjob warrior
+#ACT
+goto @zhanshi50
+BREAK
+
+#IF
+checkjob wizard
+#ACT
+goto @fashi50
+#elseact
+goto @daoshi50
+
+[@60jichufa567]
+#IF
+checkjob warrior
+#ACT
+goto @zhanshi60
+BREAK
+
+#IF
+checkjob wizard
+#ACT
+goto @fashi60
+#elseact
+goto @daoshi60
+
+[@70jichufa567]
+#IF
+checkjob warrior
+#ACT
+goto @zhanshi70
+BREAK
+
+#IF
+checkjob wizard
+#ACT
+goto @fashi70
+#elseact
+goto @daoshi70
+
+;;=========战士50前3========
+[@zhanshi50]
+#ACT
+LoadValue A0 "ParamControl\全民冲级变量.ini"  [战士变量]  战士50变量
+#if
+EQUAL A0 0
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 50级 战士第1名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 50级 战士第1名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [战士]  战士50第1 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [战士变量]  战士50变量 1
+savevalue "ParamControl\天下第一.ini" [天下第一] [第一战士] %USERNAME
+break
+
+#if
+EQUAL A0 1
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 50级 战士第2名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 50级 战士第2名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [战士]  战士50第2 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [战士变量]  战士50变量 2
+break
+
+#if
+EQUAL A0 2
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 50级 战士第3名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 50级 战士第3名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [战士]  战士50第3 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [战士变量]  战士50变量 3
+break
+
+#if
+EQUAL A0 3
+#act
+BREAK
+
+;;=========法师50前3========
+[@fashi50]
+#ACT
+LoadValue A0 "ParamControl\全民冲级变量.ini"  [法师变量]  法师50变量
+#if
+EQUAL A0 0
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 50级 法师第1名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 50级 法师第1名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [法师]  法师50第1 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [法师变量]  法师50变量 1
+savevalue "ParamControl\天下第一.ini" [天下第一] [第一法师] %USERNAME
+break
+
+#if
+EQUAL A0 1
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 50级 法师第2名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 50级 法师第2名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [法师]  法师50第2 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [法师变量]  法师50变量 2
+break
+
+#if
+EQUAL A0 2
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 50级 法师第3名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 50级 法师第3名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [法师]  法师50第3 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [法师变量]  法师50变量 3
+break
+
+#if
+EQUAL A0 3
+#act
+BREAK
+
+;;=========道士50前3========
+[@daoshi50]
+#ACT
+LoadValue A0 "ParamControl\全民冲级变量.ini"  [道士变量]  道士50变量
+#if
+EQUAL A0 0
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 50级 道士第1名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 50级 道士第1名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [道士]  道士50第1 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [道士变量]  道士50变量 1
+savevalue "ParamControl\天下第一.ini" [天下第一] [第一道士] %USERNAME
+break
+
+#if
+EQUAL A0 1
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 50级 道士第2名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 50级 道士第2名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [道士]  道士50第2 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [道士变量]  道士50变量 2
+break
+
+#if
+EQUAL A0 2
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 50级 道士第3名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 50级 道士第3名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [道士]  道士50第3 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [道士变量]  道士50变量 3
+break
+
+#if
+EQUAL A0 3
+#act
+BREAK
+
+;;=========战士60前3========
+[@zhanshi60]
+#ACT
+LoadValue A0 "ParamControl\全民冲级变量.ini"  [战士变量]  战士60变量
+#if
+EQUAL A0 0
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 60级 战士第1名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 60级 战士第1名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [战士]  战士60第1 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [战士变量]  战士60变量 1
+savevalue "ParamControl\天下第一.ini" [天下第一] [第一战士] %USERNAME
+break
+
+#if
+EQUAL A0 1
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 60级 战士第2名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 60级 战士第2名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [战士]  战士60第2 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [战士变量]  战士60变量 2
+break
+
+#if
+EQUAL A0 2
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 60级 战士第3名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 60级 战士第3名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [战士]  战士60第3 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [战士变量]  战士60变量 3
+break
+
+#if
+EQUAL A0 3
+#act
+BREAK
+
+;;=========法师60前3========
+[@fashi60]
+#ACT
+LoadValue A0 "ParamControl\全民冲级变量.ini"  [法师变量]  法师60变量
+#if
+EQUAL A0 0
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 60级 法师第1名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 60级 法师第1名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [法师]  法师60第1 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [法师变量]  法师60变量 1
+savevalue "ParamControl\天下第一.ini" [天下第一] [第一法师] %USERNAME
+break
+
+#if
+EQUAL A0 1
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 60级 法师第2名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 60级 法师第2名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [法师]  法师60第2 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [法师变量]  法师60变量 2
+break
+
+#if
+EQUAL A0 2
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 60级 法师第3名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 60级 法师第3名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [法师]  法师60第3 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [法师变量]  法师60变量 3
+break
+
+#if
+EQUAL A0 3
+#act
+BREAK
+
+;;=========道士60前3========
+[@daoshi60]
+#ACT
+LoadValue A0 "ParamControl\全民冲级变量.ini"  [道士变量]  道士60变量
+#if
+EQUAL A0 0
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 60级 道士第1名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 60级 道士第1名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [道士]  道士60第1 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [道士变量]  道士60变量 1
+savevalue "ParamControl\天下第一.ini" [天下第一] [第一道士] %USERNAME
+break
+
+#if
+EQUAL A0 1
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 60级 道士第2名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 60级 道士第2名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [道士]  道士60第2 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [道士变量]  道士60变量 2
+break
+
+#if
+EQUAL A0 2
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 60级 道士第3名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 60级 道士第3名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [道士]  道士60第3 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [道士变量]  道士60变量 3
+break
+
+#if
+EQUAL A0 3
+#act
+BREAK
+
+;;=========战士70前3========
+[@zhanshi70]
+#ACT
+LoadValue A0 "ParamControl\全民冲级变量.ini"  [战士变量]  战士70变量
+#if
+EQUAL A0 0
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 70级 战士第1名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 70级 战士第1名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [战士]  战士70第1 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [战士变量]  战士70变量 1
+savevalue "ParamControl\天下第一.ini" [天下第一] [第一战士] %USERNAME
+break
+
+#if
+EQUAL A0 1
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 70级 战士第2名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 70级 战士第2名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [战士]  战士70第2 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [战士变量]  战士70变量 2
+break
+
+#if
+EQUAL A0 2
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 70级 战士第3名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 70级 战士第3名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [战士]  战士70第3 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [战士变量]  战士70变量 3
+break
+
+#if
+EQUAL A0 3
+#act
+BREAK
+
+;;=========法师70前3========
+[@fashi70]
+#ACT
+LoadValue A0 "ParamControl\全民冲级变量.ini"  [法师变量]  法师70变量
+#if
+EQUAL A0 0
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 70级 法师第1名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 70级 法师第1名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [法师]  法师70第1 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [法师变量]  法师70变量 1
+savevalue "ParamControl\天下第一.ini" [天下第一] [第一法师] %USERNAME
+break
+
+#if
+EQUAL A0 1
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 70级 法师第2名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 70级 法师第2名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [法师]  法师70第2 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [法师变量]  法师70变量 2
+break
+
+#if
+EQUAL A0 2
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 70级 法师第3名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 70级 法师第3名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [法师]  法师70第3 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [法师变量]  法师70变量 3
+break
+
+#if
+EQUAL A0 3
+#act
+BREAK
+
+;;=========道士70前3========
+[@daoshi70]
+#ACT
+LoadValue A0 "ParamControl\全民冲级变量.ini"  [道士变量]  道士70变量
+#if
+EQUAL A0 0
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 70级 道士第1名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 70级 道士第1名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [道士]  道士70第1 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [道士变量]  道士70变量 1
+savevalue "ParamControl\天下第一.ini" [天下第一] [第一道士] %USERNAME
+break
+
+#if
+EQUAL A0 1
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 70级 道士第2名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 70级 道士第2名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [道士]  道士70第2 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [道士变量]  道士70变量 2
+break
+
+#if
+EQUAL A0 2
+#act
+LineMsg "Grobal" "═══════════< 号外号外 >═══════════"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 70级 道士第3名.掌声响起!"
+LineMsg "Grobal" "玩家: <$USERNAME> ,获得了冲级赛 70级 道士第3名.掌声响起!"
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+SaveValue "ParamControl\全民冲级名单.ini"  [道士]  道士70第3 %USERNAME
+SaveValue "ParamControl\全民冲级变量.ini"  [道士变量]  道士70变量 3
+break
+
+#if
+EQUAL A0 3
+#act
+BREAK
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

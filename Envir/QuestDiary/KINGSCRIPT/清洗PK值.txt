@@ -1,0 +1,36 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@清洗PK值_1]
+{
+#IF
+checkpkpoint 2
+#SAY
+您的现在的PK值为{FCOLOR/1} <$USERPK> {FCOLOR/12}点.\\
+每次清除{FCOLOR/10}1000{FCOLOR/12}点PK值,需要{FCOLOR/10}100W{FCOLOR/12}金币.\\
+<〖确认操作〗/@清除PK进行X>\
+#elsesay
+{FCOLOR/12}您没有红名,无需清除.{FCOLOR/12}\\
+<关闭/@Exit>
+
+[@清除PK进行X]
+#IF
+checkpkpoint 2
+#ELSEACT
+BREAK
+#elsesay
+您已经不是红名了,不要浪费金币哦.\\
+<关闭/@Exit>
+
+#IF
+CheckGold 1000000
+#ACT
+CHANGEPK - 1000
+Take 金币 1000000
+BREAK
+#SAY
+操作成功,你现在的PK值为{FCOLOR/1}<$USERPK>{FCOLOR/12}点.\\
+<〖继续清除〗/@清除PK进行X>\\
+<关闭/@Exit>
+#elsesay
+你的身上金币已经不足100W了.\\
+<关闭/@Exit>
+}

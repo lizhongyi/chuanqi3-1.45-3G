@@ -1,0 +1,53 @@
+;;创天网络有限公司原版1.45
+[@MapQuest_holycircle_complete]
+#IF
+checkjob warrior
+#ACT
+break
+;
+#IF
+checkjob wizard
+#ACT
+break
+;
+#IF
+checkmagic 困魔咒
+#SAY
+(首先试着离开这个地方...)
+#ACT
+break
+#IF
+check [022] 1
+#SAY
+(首先试着离开这个地方...)
+#ACT
+break
+#IF
+check [055] 1
+#ACT
+goto @MapQuest_holycircle_complete_check1
+break
+#ELSESAY
+(我怎么会在这里呢? 难道我的魂被什么勾住了? ) \
+#ELSEACT
+break
+
+[@MapQuest_holycircle_complete_check1]
+#IF
+checkmonmap 1_019  1
+#SAY
+(这里还没有彻底净化...)
+#ELSEACT
+goto @MapQuest_holycircle_complete_book
+
+[@MapQuest_holycircle_complete_book]
+#IF
+check [022] 0
+#ACT
+reset [050] 5
+SET [022] 1
+give 困魔咒（秘籍） 1
+give 黑除魔戒指  1
+give 金币 28000
+#SAY
+(终于找到了困魔咒秘籍...)\

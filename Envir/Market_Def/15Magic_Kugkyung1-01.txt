@@ -1,0 +1,115 @@
+;;创天网络有限公司原版1.45
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+跟你这种人我无话可说。\ \
+<结束/@exit>
+#ELSEACT
+goto @main_00
+
+[@main_00]
+#IF
+checkjob warrior
+#ACT
+goto @yong_main
+#ELSEACT
+goto @yong_other_class
+
+[@yong_other_class]
+#IF
+checkjob wizard
+#SAY
+人们都叫我龙血先生， 因为我专门帮助那些想成为战士的年轻人。\
+不过，你不是战士。魔法师应该去银杏山谷。\ \
+<结束/@exit>
+#ELSESAY
+人们叫都我龙血先生， 因为我专门帮助那些想成为战士的年轻人。\
+不过，你不是战士。道士应该去道馆\ \
+<结束/@exit>
+
+[@yong_main]
+#SAY
+每当我看到那些专心修炼武功的年轻人，我就觉得自己所做的事很有意义。呵呵呵，你找我有什么事吗？\
+<寻求武功指导/@yong_mugong_main>\
+<结束/@exit>
+
+[@yong_mugong_main]
+#IF
+#SAY
+我可以指导你以下这些武功。\
+（1 - 10 等级 修炼魔法）\
+<基本剑术/@wesu_test_start>\
+（11 - 25 等级 修炼魔法）\
+<攻杀剑术/@yedo_test_start> , <刺杀剑术/@asword_test_start>\ \
+
+<需要更高级的魔法/@warrior_hight>\\
+
+<不需要武功指导/@exit>\
+
+[@wesu_test_start]
+#IF
+check [010] 1
+#SAY
+你不是已经收到基本剑术秘籍吗？\ \
+<结束/@exit>
+#ACT
+break
+
+#IF
+#ACT
+goto @wesu_begin
+break
+
+[@wesu_begin]
+#CALL [\MU_warrior\wesu.txt] @mugong_wesu
+
+[@yedo_test_start]
+#IF
+check [034] 1
+check [011] 0
+#ACT
+goto @yedo_complete
+break
+
+#IF
+check [035] 1
+#ACT
+goto @yedo_retry
+break
+
+#IF
+#ACT
+goto @yedo_begin
+break
+
+[@yedo_begin]
+#CALL [\MU_warrior\wedo.txt] @mugong_yedo
+
+[@yedo_retry]
+#CALL [\MU_warrior\wedo.txt] @mugong_yedo_retry
+
+[@yedo_complete]
+#CALL [\MU_warrior\wedo.txt] @mugong_yedo_complete
+
+[@asword_test_start]
+#IF
+check [037] 1
+check [012] 0
+#ACT
+goto @asword_complete
+break
+#IF
+#ACT
+goto @asword_begin
+
+[@asword_begin]
+#CALL [\MU_warrior\asword.txt] @mugong_asword
+
+[@asword_complete]
+#CALL [\MU_warrior\asword.txt] @mugong_asword_complete
+
+[@warrior_hight]
+#CALL [\MU_warrior\asword.txt] @mugong_mute_explan_armor_m
+
+;;创天网络有限公司原版1.45

@@ -1,0 +1,36 @@
+;;创天网络有限公司原版1.45
+[@MapQuest_fireline_test_exit]
+#IF
+check [030] 1
+#ACT
+break
+;
+#IF
+check [054] 1
+#ACT
+break
+;
+#IF
+check [053] 0
+#ACT
+break
+;
+#IF
+#ACT
+goto @MapQuest_fireline_test_exit1
+
+[@MapQuest_fireline_test_exit1]
+#IF
+#ACT
+set [054] 1
+Monclear 02_005
+goto @MapQuest_fireline_test_exit2
+#SAY
+(嘿，终于通过了学习地狱火的测试。)\
+
+[@MapQuest_fireline_test_exit2]
+#IF
+#ACT
+BreakTimeRecall
+mapmove 02   266   146
+break

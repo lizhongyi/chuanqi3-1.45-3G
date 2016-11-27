@@ -1,0 +1,141 @@
+;;创天网络有限公司原版1.45
+[@MapQuest_holycircle_moveTo1]
+#IF
+check [050] 1
+#ACT
+set [050] 0
+enter_fail
+break
+;
+#IF
+check [022] 1
+#SAY
+(现在也没有进去的必要了...)
+#ACT
+enter_fail
+break
+;
+#IF
+checkmagic 困魔咒
+#SAY
+(现在也没有进去的必要了...)
+#ACT
+enter_fail
+break
+;
+#IF
+check [055] 1
+check [022] 0
+#ACT
+goto @MapQuest_holycircle_hcheck1_1
+#ELSESAY
+(现在好像进不去了...)
+#ELSEACT
+enter_fail
+break
+
+[@MapQuest_holycircle_hcheck1_1]
+#IF
+checkhum 1_015 1
+#SAY
+(好像有谁在里面？有声音...)
+#ACT
+enter_fail
+#ELSEACT
+goto @MapQuest_holycircle_hcheck1_2
+
+[@MapQuest_holycircle_hcheck1_2]
+#IF
+checkhum 1_016 1
+#SAY
+(好像有谁在里面？有声音...)
+#ACT
+enter_fail
+#ELSEACT
+goto @MapQuest_holycircle_hcheck1_3
+
+[@MapQuest_holycircle_hcheck1_3]
+#IF
+checkhum 1_017 1
+#SAY
+(好像有谁在里面？有声音...)
+#ACT
+enter_fail
+#ELSEACT
+goto @MapQuest_holycircle_hcheck1_4
+
+[@MapQuest_holycircle_hcheck1_4]
+#IF
+checkhum 1_018 1
+#SAY
+(好像有谁在里面？有声音...)
+#ACT
+enter_fail
+#ELSEACT
+goto @MapQuest_holycircle_hcheck1_5
+
+[@MapQuest_holycircle_hcheck1_5]
+#IF
+checkhum 1_019 1
+#SAY
+(好像有谁在里面？有声音...)
+#ACT
+enter_fail
+#ELSEACT
+goto @MapQuest_holycircle_moveTo1_1
+
+
+[@MapQuest_holycircle_moveTo1_1]
+#IF
+checkitem 第一困魔石  1
+;;#SAY
+;;(现在进入的是困魔咒间吗？..)\
+#ACT
+take 第一困魔石  1
+;
+Monclear 1_015
+Monclear 1_016
+Monclear 1_017
+Monclear 1_018
+Monclear 1_019
+;
+Param1 1_015
+Param2 20
+Param3 23
+MonGen 山洞蝙蝠61   5  5
+MonGen 暗黑战士61    2  5
+;
+Param1 1_016
+Param2 20
+Param3 23
+MonGen 沃玛战士61  3  5
+MonGen 沃玛勇士61  1  5
+;
+Param1 1_017
+Param2 20
+Param3 23
+MonGen 山洞蝙蝠61  10  5
+MonGen 沃玛战将61  1  5
+;
+Param1 1_018
+Param2 20
+Param3 23
+MonGen 沃玛勇士61  3  5
+MonGen 火焰沃玛61  1  5
+;
+Param1 1_019
+Param2 29
+Param3 29
+MonGen 沃玛战将61  3  5
+MonGen 沃玛护卫61  1  5
+;
+set [050] 1
+set [051] 0
+set [052] 0
+set [053] 0
+set [054] 0
+enter_ok
+#ELSEACT
+enter_fail
+#ELSESAY
+(如果想进入第一个困魔咒间的入口，要找到第一困魔石哟...) \

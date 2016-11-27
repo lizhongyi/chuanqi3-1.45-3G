@@ -1,0 +1,30 @@
+00:49:14 Startup DB Server
+00:49:14 Connected to LoginServer.
+00:49:14 KillTimer : TIMER_CONNLOGINSERVER, StartTimer : TIMER_KEEPALIVE
+00:49:28 [127.0.0.1:1907] GameServer connected.
+00:50:43 [127.0.0.1:1914] RunGate connected.
+00:57:15 [127.0.0.1:1907] GameServer disconnected.
+00:57:35 [127.0.0.1:5600] LoginServer disconnected.
+00:57:35 StartTimer : TIMER_CONNLOGINSERVER
+00:57:38 Cleanup DB Server
+01:04:21 Startup DB Server
+01:04:21 Connected to LoginServer.
+01:04:21 KillTimer : TIMER_CONNLOGINSERVER, StartTimer : TIMER_KEEPALIVE
+01:04:57 [127.0.0.1:1976] GameServer connected.
+01:07:22 [127.0.0.1:1990] RunGate connected.
+01:14:08 [127.0.0.1:1976] GameServer disconnected.
+01:14:57 [127.0.0.1:2053] GameServer connected.
+01:34:09 [127.0.0.1:2053] GameServer disconnected.
+01:34:15 [127.0.0.1:5600] LoginServer disconnected.
+01:34:15 StartTimer : TIMER_CONNLOGINSERVER
+01:34:18 Cleanup DB Server
+01:35:30 Startup DB Server
+01:35:30 Connected to LoginServer.
+01:35:30 KillTimer : TIMER_CONNLOGINSERVER, StartTimer : TIMER_KEEPALIVE
+01:35:52 [127.0.0.1:2145] GameServer connected.
+01:36:31 [127.0.0.1:2152] RunGate connected.
+03:33:09 [127.0.0.1:2145] GameServer disconnected.
+03:33:57 [127.0.0.1:2152] RunGate disconnected.
+03:34:02 [127.0.0.1:5600] LoginServer disconnected.
+03:34:02 StartTimer : TIMER_CONNLOGINSERVER
+03:34:06 Cleanup DB Server

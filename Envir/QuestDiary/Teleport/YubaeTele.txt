@@ -1,0 +1,31 @@
+;;创天网络有限公司原版1.45
+[@RedZone_Teleport]
+{
+#IF
+!CheckPkPoint 2
+#SAY
+六面神石 \ \
+<移动至潘夜岛村所需金钱 : 免费/@TeleHalfMoon> \
+
+#ELSESAY
+六面神石 \ \
+<移动至潘夜岛村所需金钱 : 藏罪据证/@Special_Teleport> \
+
+
+[@TeleHalfMoon]
+#ACT
+mapmove 8 288 242 
+
+[@Special_Teleport]
+#IF
+checkitem 藏罪据证 1
+#ACT
+take 藏罪据证 1
+mapmove 8 288 242
+#ELSESAY
+(你没有藏罪据证...)\ \
+<结束/@exit>
+
+[@TelePortRootin()]
+#CALL [Teleport\MoveRootin.txt] @TelePortMove
+}

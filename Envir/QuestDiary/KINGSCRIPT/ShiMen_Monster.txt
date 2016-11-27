@@ -1,0 +1,45 @@
+;;王者传奇3 www.mir3w.com
+[@ShiMen_Mon]
+{
+#ACT
+LoadValue D1 "师门任务\师门记录.ini" %USERNAME 任务日期
+LoadValue A0 "师门任务\师门记录.ini" %USERNAME 任务进度
+LoadValue A4 "师门任务\师门记录.ini" %USERNAME 任务怪物
+LoadValue D0 "师门任务\师门记录.ini" %USERNAME 怪物数量
+LoadValue D3 "师门任务\师门记录.ini" %USERNAME 怪物总数
+
+#IF
+EQUAL D1 %CURDAY
+#ELSEACT
+BREAK
+
+#IF
+Equal A4 %A5
+#ELSEACT
+BREAK
+
+#IF
+Equal A0 "PreEnd"
+or Equal A0 "End"
+#ACT
+break
+
+#IF
+#ACT
+INC D0 1
+
+#IF
+small D0 %D3
+#ACT
+SaveValue "师门任务\师门记录.ini" %USERNAME 怪物数量 %D0
+sysmsg "(师门任务):击杀[<$OUTPUT(A4)>]进度[<$OUTPUT(D0)>/<$OUTPUT(D3)>]." 2
+break
+#ELSEACT
+SaveValue "师门任务\师门记录.ini" %USERNAME 任务进度 PreEnd
+sysmsg "(师门任务):击杀[<$OUTPUT(A4)>]已经击杀够了." 2
+BREAK
+#ELSESAY
+师门任务需要击杀的[<$OUTPUT(A4)>]已经击杀够了..\\
+<关闭/@Exit>
+
+}

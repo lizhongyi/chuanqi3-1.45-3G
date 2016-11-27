@@ -1,0 +1,79 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@诺玛材料循环_1]
+{
+#SAY
+遗物是个好东西啊,如果你能帮我收集到{FCOLOR/10}15个遗物{FCOLOR/12}的话,我会给你丰厚的奖励了.\\
+<提交遗物/@提交遗物1> {FCOLOR/1}每天3次.{FCOLOR/12}
+
+[@提交遗物1]
+#ACT
+LOADVALUE D0 "ParamControl\诺玛材料.ini" %USERNAME %CURDAY
+
+#IF
+Elarge D0 3
+#act
+break
+#SAY
+{FCOLOR/1}你今天已经提交了3次了,请明天再来吧.\\
+<关闭/@Exit>
+
+#IF
+CHECKITEM 遗物 15
+#ACT
+TAKE 遗物 15
+INC D0 1
+SAVEVALUE "ParamControl\诺玛材料.ini" %USERNAME %CURDAY %D0
+#ELSEACT
+BREAK
+#ELSESAY
+{FCOLOR/1}对不起,你的包袱里没有15个遗物.\\
+<关闭/@Exit>
+
+
+#IF
+#ACT
+MOVR D3 6
+
+#IF
+Equal D3 0
+#ACT
+SetUserExp + 5000000
+SYSMSG "完成诺玛循环任务,获得了500W经验的奖励." 1
+BREAK
+
+#IF
+Equal D3 1
+#ACT
+SetUserExp + 4800000
+SYSMSG "完成诺玛循环任务,获得了480W经验的奖励." 1
+BREAK
+
+#IF
+Equal D3 2
+#ACT
+SetUserExp + 4600000
+SYSMSG "完成诺玛循环任务,获得了460W经验的奖励." 1
+BREAK
+
+#IF
+Equal D3 3
+#ACT
+SetUserExp + 4400000
+SYSMSG "完成诺玛循环任务,获得了440W经验的奖励." 1
+BREAK
+
+#IF
+Equal D3 4
+#ACT
+SetUserExp + 4200000
+SYSMSG "完成诺玛循环任务,获得了420W经验的奖励." 1
+BREAK
+
+#IF
+Equal D3 5
+#ACT
+SetUserExp + 4000000
+SYSMSG "完成诺玛循环任务,获得了400W经验的奖励." 1
+BREAK
+
+}

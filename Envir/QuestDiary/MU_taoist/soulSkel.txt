@@ -1,0 +1,478 @@
+;;创天网络有限公司原版1.45
+[@mugong_recallskel]
+{
+#IF
+check [017] 1
+#SAY
+你不是已经收到召唤骷髅秘籍吗？\ 
+或者把它丢失在在那儿了？\ \
+<结束/@exit>
+#ACT
+break
+
+#IF
+check [037] 1
+#SAY
+如果没有回应召唤的 {FCOLOR/10}守护灵{FCOLOR/12} ，即使明白了召唤骷髅的道理也没有任何作用。\ 
+再次去地牢空间吗？\ \ 
+<好的，去地牢空间。/@mugong_recallskel_retry1> \
+<准备好了，再来！/@mugong_recallskel_retry2>
+#IF
+#ACT
+goto @mugong_recallskel_next1
+break
+
+[@mugong_recallskel_next1]
+#IF
+checkmagic 召唤骷髅
+#SAY
+感受到保护你的正气了吧!\ 
+你已经修炼了 {FCOLOR/10}召唤骷髅{FCOLOR/12} ，也没有必要在接受我的指教了。
+<结束/@exit>
+#ELSEACT
+goto @mugong_recallskel_next2
+
+[@mugong_recallskel_next2]
+#IF
+checklevel 17
+#SAY
+召唤骷髅是将在地牢空间里彷徨 {FCOLOR/10}战士的灵魂召唤回来，一起进行战斗的魔法{FCOLOR/12} 。
+由于是召唤回已经死去的人，他们对死亡没有任何的恐惧，只有和敌人战斗的意志，因此可以称为真正的战士。
+也就是可以称为非常适合一起战斗的同僚。\ \
+<请向我传授召唤骷髅的魔法吧！/@mugong_recallskel_next3>
+#ELSESAY
+召唤骷髅是将在地牢空间里彷徨 {FCOLOR/10}战士的灵魂召唤回来，一起进行战斗的魔法{FCOLOR/12} 。
+由于是召唤回已经死去的人，他们对死亡没有任何的恐惧，只有和敌人战斗的意志，因此可以称为真正的战士。
+也就是可以称为非常适合一起战斗的同僚。你现在修炼的程度还不够，在修炼一下再来！\ \
+<结束/@exit>
+
+[@mugong_recallskel_next3]
+#IF
+#ACT
+set [037] 1
+#SAY
+好的，那么你利用守护灵帮助完成见到 {FCOLOR/10}战士灵魂{FCOLOR/12} 的合同。但是我能做的就是使你可以遇见战士们的灵魂送你去地牢空间，那以后的事情你要自己看着处理。\ 
+如果搞不好，就永远无法从地牢空间回来，并且有可能和他们一样成为彷徨的灵魂。\
+喔，怎么办？\ \
+<没关系，请送到地牢空间。/@mugong_recallskel_next4_1> \
+<准备好了，再来！/@mugong_recallskel_next5>
+
+[@mugong_recallskel_next5]
+#IF
+#SAY
+说实话是很危险的地方，但是只有冒险也才可以得到东西。请做好 {FCOLOR/10}完备的准备{FCOLOR/12} ，再来！ \ \
+<结束/@exit>
+
+[@mugong_recallskel_next4_1]
+#IF
+#SAY
+那么就使你向合适的地牢空间移动。 重复讲一下千万记住那个地方发生的事情你自己都要看着解决。地牢空间是没有任何发表资料的未知空间，时时刻刻要小心。\
+给你的时间是不是10分钟。\
+那么，请安全地回来！\ \
+<移动/@mugong_recallskel_next4_2>
+
+[@mugong_recallskel_next4_2]
+#IF
+checkhum 1_013  1
+#SAY
+已经有人在接受测试哟... 请等一下..\ \
+<结束/@exit>
+#ELSEACT
+goto @mugong_recallskel_next4_3
+
+[@mugong_recallskel_next4_3]
+#IF
+checkhum 1_014  1
+#SAY
+已经有人在接受测试哟... 请等一下..\ \
+<结束/@exit>
+#ELSEACT
+Monclear 1_013
+Monclear 1_014
+TimeRecall 10
+map 1_013
+goto @zhaohuankulou
+break
+
+[@zhaohuankulou]
+#ACT
+mov A3 %USERMAP
+
+#IF
+EQUAL A3 "1_013"
+OR EQUAL A3 "1_014"
+#ACT
+delaygoto [local] 10 @zhaohuankulou
+#ELSEACT
+BREAKTIMERECALL
+break
+
+
+[@mugong_recallskel_retry1]
+#IF
+#SAY
+知道了。\
+精神要集中，希望这次一定可以成功。。。\ \
+<移动/@mugong_recallskel_next4_2>
+
+[@mugong_recallskel_retry2]
+#IF
+#SAY
+这种情况下，做好 {FCOLOR/10}万全的准备{FCOLOR/12} 还是很明智的。被称为地牢空间的地方是进进出出没有一块儿好地方的场所。\
+<结束/@exit>
+}
+
+[@mugong_recallskel_test_mainskel]
+{
+#IF
+check [017] 1
+#ACT
+break
+
+#IF
+check [039] 1
+#ACT
+goto  @mugong_recallskel_test_mainskel_complete1
+break
+
+#IF
+check [038] 1
+#ACT
+goto  @mugong_recallskel_test_mainskel_retry1
+break
+
+#IF
+check [037] 0
+#ACT
+break
+
+#IF
+#ACT
+goto @mugong_recallskel_test_mainskel1
+break
+
+[@mugong_recallskel_test_mainskel1]
+#IF
+#SAY
+听见喊声了哦。\  
+叫我的声音。。。\
+你是谁? \ \
+<为了寻找守护灵而来。/@mugong_recallskel_test_mainskel2>
+
+[@mugong_recallskel_test_mainskel2]
+#IF
+#SAY
+嘿嘿嘿。。\
+不害怕，找到地牢空间来了。\
+你也有可能成为这个样子，不害怕吗？\ \
+<当然恐惧。/@mugong_recallskel_test_mainskel3>
+
+[@mugong_recallskel_test_mainskel3]
+#IF
+#SAY
+很奇怪。。。\
+感受到了 {FCOLOR/10}命运之手的召唤{FCOLOR/12} ，我已经不是我了。\ 
+哦。。好象凭借谁的法力来到这里，在发生更大的事情之前快些离开这里。\
+或者死了，或者成为连死都不行的样子。\ \ 
+<死一点也不害怕，害怕的是没有实现自己的意愿。/@mugong_recallskel_test_mainskel4>
+
+[@mugong_recallskel_test_mainskel4]
+#IF
+#SAY
+... \
+现在知道了。平静的心脏在怦怦地跳动。。。\ 
+感觉到惊心动魄的兴奋。啊，我希望的东西就在这里。\
+我感觉到了 {FCOLOR/10}战斗的宿命{FCOLOR/12} 
+好的，我将按照指示做。\
+但是，有一个 {FCOLOR/10}条件{FCOLOR/12} 。\ \
+<什么条件?/@mugong_recallskel_test_mainskel5>
+
+[@mugong_recallskel_test_mainskel5]
+#IF
+#SAY
+我是战士。\
+认为名义是最高的价值。。。同时我知道的只有这个。\
+哦，条件很简单。 {FCOLOR/10}和我搏斗，战胜我，使我屈服。{FCOLOR/12}  \ 
+如何？ 打吗？\ \
+<好的，现在当场开始吧。/@mugong_recallskel_test_mainskel6_1> \
+<准备好了，再来！/@mugong_recallskel_test_mainskel7_1>
+
+[@mugong_recallskel_test_mainskel7_1]
+#IF
+#SAY
+软弱的人。。。随你的便。\
+我要在这个地方等到何时？\ \
+<首先逃出这个地方，重新回到清明子那儿.../@mugong_recallskel_test_mainskel7_2>
+
+[@mugong_recallskel_test_mainskel7_2]
+#IF
+#ACT
+mapmove  1  350 402
+break  
+
+[@mugong_recallskel_test_mainskel6_1]
+#IF
+#ACT
+set [038] 1
+#SAY
+好的。接受 {FCOLOR/10}你的挑战{FCOLOR/12} 。\
+那么现在一起去对决场吧。。。\ \
+<移动/@mugong_recallskel_test_mainskel6_2>
+
+[@mugong_recallskel_test_mainskel6_2]
+#IF
+#ACT
+Monclear 1_014
+goto @mugong_recallskel_test_mainskel6_3
+
+[@mugong_recallskel_test_mainskel6_3]
+#IF
+#ACT
+Param1 1_014
+Param2 27
+Param3 20
+MonGen 变异骷髅  1 1
+goto @mugong_recallskel_test_mainskel6_4
+
+[@mugong_recallskel_test_mainskel6_4]
+#IF
+#ACT
+mapmove 1_014  23  24
+break
+
+[@mugong_recallskel_test_mainskel_complete1]
+#IF
+#SAY
+金属相碰飞溅的火花，呼呼的喘气声，还有战场上面的血腥味儿。。。但是即使在极限的状况下，我也无法放弃的名义。。。\ 
+这是给从和我的战斗中取得胜利的你的 {FCOLOR/10}礼物{FCOLOR/12} 。谢谢使我想起忘却的东西。 {FCOLOR/10}现在跟随着你重新回到战场{FCOLOR/12} 。 \
+如果需要的帮助，请随时联系。\ \
+<首先要离开这个地方.../@mugong_recallskel_test_mainskel_complete2>
+#ACT
+give 幻影玉珠  1
+break
+
+[@mugong_recallskel_test_mainskel_complete2]
+#IF
+#ACT
+Delaygoto [local] 2 @mugong_recallskel_test_mainskel_complete3
+#SAY
+(虽然很辛苦, 但是能拥有这么好的伙伴真是很开心啊...)
+
+[@mugong_recallskel_test_mainskel_complete3]
+#IF
+#ACT
+BreakTimeRecall
+mapmove 1_002 12 11
+break
+
+[@mugong_recallskel_test_mainskel_retry1]
+#IF
+#SAY
+为了战斗又来了。\
+好的，再试一次吗？\ \
+<好的，现在就开始。/@mugong_recallskel_test_mainskel6_1>\
+<准备好了，再来！/@mugong_recallskel_test_mainskel7_1>
+}
+
+
+[@mugong_recallskel_test_skel1]
+{
+#IF
+check [038] 1
+#ACT
+break
+
+#IF
+check [037] 0
+#ACT
+break
+
+#IF
+#SAY
+哈哈哈。。像你这种家伙还是看不到我原来的样子。\ 
+在哪儿了。。我要休息的地方。。。\ \
+<不知道为什么，好象不是人。/@exit>
+}
+
+[@mugong_recallskel_test_skel2]
+{
+#IF
+check [037] 0
+#ACT
+break
+#IF
+#SAY
+啊！别问！什么都别问！\ \
+<很奇怪.../@exit>
+}
+
+[@mugong_recallskel_test_skel3]
+{
+#IF
+check [037] 0
+#ACT
+break
+#IF
+#SAY
+哈哈哈。。像你这种家伙还是看不到我原来的样子。\ 
+长久战斗的日子。但是我们得到的东西什么都没有。。。\ 
+嗯？我正在说什么话？\ \
+<哈哈哈，象你长得一样竟说傻话儿.../@mugong_recallskel_test_skel3_1> \
+<好象很长时间一个人了...不幸的灵魂。/@exit>
+
+[@mugong_recallskel_test_skel3_1]
+#IF
+random 2
+#ACT
+Param1 1_013
+Param2 23
+Param3 25
+MonGen 骷髅战将61  2 1
+#SAY
+愚笨的人，你讲的话使人后悔。\ \
+<什么意义? 这种.../@exit>
+#ELSESAY
+愚笨的人，要知道今天运气很好。\ \
+<结束/@exit>
+}
+
+[@mugong_recallskel_test_skel4]
+{
+#IF
+check [037] 0
+#ACT
+break
+#IF
+#SAY
+不要随便进行随机传送。\ 
+没有做好，将成为我现在的样子哟。哈哈哈 \ \
+<什么话儿?/@exit>
+}
+
+[@mugong_recallskel_test_skel5]
+{
+#IF
+check [037] 0
+#ACT
+break
+#IF
+#SAY
+你现在还有带有活人的痕迹，但是马上就会变成我们的样子哟。\ \
+<别说假话。根本不可能的事儿.../@mugong_recallskel_test_skel5_1> \
+<不幸的灵魂啊...别花心思！/@exit>
+
+[@mugong_recallskel_test_skel5_1]
+#IF
+random 2
+#ACT
+Param1 1_013
+Param2 25
+Param3 23
+MonGen 骷髅战将61  2 1
+#SAY
+果真如此吗？哈哈哈。。。\ \
+<这种...阴险的家伙。/@exit>
+#ELSESAY
+要知道今天运气很好。\ \
+<结束/@exit>
+}
+
+[@mugong_recallskel_test_skel6]
+{
+#IF
+check [037] 0
+#ACT
+break
+#IF
+#SAY
+我是自豪的远征队的队员！\
+这些半兽人，都给我猛扑上。\ \
+<说以前是远征队的/@exit>
+}
+
+[@mugong_recallskel_test_skel7]
+{
+#IF
+check [037] 0
+#ACT
+break
+#IF
+#SAY
+想回故乡。。。\ \
+<哈哈哈, 忘记了家乡在哪儿？/@mugong_recallskel_test_skel3_1> \
+<快点回家乡吧.../@exit>
+
+[@mugong_recallskel_test_skel3_1]
+#IF
+#ACT
+Param1 1_013
+Param2 10
+Param3 24
+MonGen 骷髅战将61  2  1
+#SAY
+唐突的家伙，一点也不考虑别人的处境...  \ \
+<出现了这种...失误?/@exit>
+}
+
+[@mugong_recallskel_complete]
+{
+#IF
+check [017] 1
+#ACT
+break
+
+#IF
+check [038] 0
+#ACT
+break
+
+#IF
+check [037] 0
+#ACT
+break
+
+#IF
+check [037] 1
+check [038] 1
+check [039] 1
+#ACT
+goto  @mugong_recallskel_complete1
+break
+#ELSEACT
+break
+
+[@mugong_recallskel_complete1]
+#IF
+checkmagic 召唤骷髅
+#SAY
+感受到保护你的正气了吧!\ 
+你已经修炼了 {FCOLOR/10}召唤骷髅{FCOLOR/12} ，也没有必要在接受我的指教了。
+<结束/@exit>
+#ACT
+break
+#IF
+check [017] 0
+#ACT
+give 召唤骷髅（秘籍） 1
+give 金币 19000
+reset [037] 2
+SET [017] 1
+#SAY
+哦, {FCOLOR/10}和守护灵的合同{FCOLOR/12} 成功了？如此这样，现在学习召唤骷髅就没有什么大问题了。。\
+你已经在其它地方得到了武功秘籍，我也没有再给你的必要了。如果可以熟练地掌握这本书，以后即使你一个人修炼没有什么问题。\
+那么更加进步吧！\ \ 
+<结束/@exit>
+#ELSESAY
+你不是已经收到召唤骷髅秘籍吗？\ 
+或者把它丢失在在那儿了？\ \
+<结束/@exit>
+}
+
+[@mugong_recallskel_explain]
+{
+#IF
+#SAY
+如果想学习召唤骷髅，请到地牢空间和将要成为自己 {FCOLOR/10}守护灵{FCOLOR/12} 的骷髅直接对决吧。
+如果对决赢了，这个骷髅将成为你的守护灵。\ \ 
+<结束/@exit>
+}

@@ -1,0 +1,33 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@系统每天_Main]
+{
+#ACT
+GOTO @家园远古
+GOTO @副本初始化
+
+[@家园远古]
+#IF
+#ACT
+WRITESQL "TBL_QUEST" "家园次数,远古迷宫,原地复活" "0,0,0" "where FLD_CHARACTER <> ''"
+
+[@副本初始化]
+#ACT
+UpdateValueSql "TBL_QUEST" "1=1" "炼制经验次数=炼制经验次数+1"
+UpdateValueSql "TBL_QUEST" "1=1" "永恒之井次数=永恒之井次数+1"
+UpdateValueSql "TBL_QUEST" "1=1" "永恒之眼次数=永恒之眼次数+1"
+DELFILE ".\Envir\ParamControl\挑战恶魔记录.ini"
+DELFILE ".\Envir\ParamControl\旋云之巅记录.ini"
+DELFILE ".\Envir\ParamControl\永恒之井记录.ini"
+DELFILE ".\Envir\ParamControl\永恒之眼记录.ini"
+DELFILE ".\Envir\ParamControl\黑翼血环记录.ini"
+DELFILE ".\Envir\ParamControl\潮汐王座记录.ini"
+DELFILE ".\Envir\ParamControl\灵魂烘炉记录.ini"
+DELFILE ".\Envir\ParamControl\冰冠堡垒记录.ini"
+DELFILE ".\Envir\ParamControl\超级攻击领取记录.ini"
+DELFILE ".\Envir\ParamControl\超级经验领取记录.ini"
+DELFILE ".\Envir\ParamControl\每日在线时间.ini"
+linemsg [grobal] "系统公告：所有副本已重新初始化记录."
+Break
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

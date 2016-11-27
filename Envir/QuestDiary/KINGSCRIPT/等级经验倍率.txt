@@ -1,0 +1,25 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@经验倍率_1]
+{
+#IF
+!CheckLevel 40
+#ACT
+StartExpRate = 1
+STARTBUFF 17 -1 "[经验加成]\玩家等级1-39级可以获得2倍经验收益."
+BREAK
+
+#IF
+CheckLevel 40
+!CheckLevel 47
+#ACT
+StartExpRate = 0.5
+STARTBUFF 17 -1 "[经验加成]\玩家等级40-47级可以获得1.5倍经验收益."
+BREAK
+
+#IF
+CheckLevel 48
+#ACT
+STARTBUFF 17 0
+StartExpRate = 0
+BREAK
+}

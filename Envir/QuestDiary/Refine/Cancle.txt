@@ -1,0 +1,86 @@
+;;创天网络有限公司原版1.45
+[@checkRefinePoints]
+{
+begin
+	#SAY
+想要初始化武器的等级和其它选项吗? \
+带来了 1百万金币、魔晶石和必要的一些饰品了吧。\
+_我会从你的包裹中拿走5个武器初始化操作必须的饰品，请察看一下包裹里是否有不希望我拿走的饰品。\ \
+<虽然有风险，我还是想试一下，相信我的运气。/@CancleRefine> \
+<下次再说吧。/@exit> \
+
+[@CancleRefine]
+	begin
+		#ACT
+		   TestRefinePoints
+		#IF
+		   !checkitem 魔晶石 1
+		#SAY
+你没有带魔晶石，没有它不能进行初始化修炼的。\ \
+<关闭/@exit>
+		#ACT
+		   break
+
+		#IF
+		   IsAdmin
+
+		#SAY
+		   Refine points = <$OUTPUT(P9)>\
+		
+		#IF
+		   ESmall  P9  20
+		#SAY
+_根据我的经验，用这些材料成功率不是很高，也就是说很有可能失去你十分珍惜的武器，说实话，我想劝你不要冒险。不过如果你执意要做，我也不加阻拦。\ \
+_怎么样？要试一下运气吗？\ \
+<现在修炼。/@DoResetRefine>\
+<下次再来。/@exit>\
+		#ACT
+		   break
+		
+		#IF
+		   ESmall  P9  30
+		#SAY
+_都是些不错的材料啊，相信拿这些材料修炼的话，成功率还是挺高的。我了解你很爱惜自己的武器，虽然说成功率比较高，但毕竟不是100%，相信你下决心也比较难。\ \
+_但是希望你理解这种操作的确很难，失败在所难免。
+_怎么样？决定现在修炼，还是去准备更好的材料再来？\ \
+<现在修炼。/@DoResetRefine>\
+<下次再来。/@exit>\
+		#ACT
+		   break
+		
+		#IF
+		#SAY
+_从哪里找来了这么好的材料。最近很少能看到有谁拿这么好的材料来。有了这么好的材料，我一定要尽全力为你修练好\
+_怎么样？试一下吧？\ \
+<好，试就试。/@DoResetRefine>\
+<下次再说。/@exit>\
+		#ACT
+		   break
+	end
+
+[@DoResetRefine]
+	begin
+#IF
+         checkweaponlevel 1
+#ELSESAY
+您没有完全具备初始化修炼的条件，不能进行初始化修炼。 \ \
+<关闭/@exit>
+#ELSEACT
+break
+	
+#IF
+CheckAccessory  5
+checkgold 1000000
+checkitem  魔晶石 1
+#ACT
+take 魔晶石 1
+take 金币 1000000
+ResetRefineWeapon
+close
+#ELSESAY
+您没有完全具备初始化修炼的条件，不能进行初始化修炼。 \ \
+<下次再来。/@exit>
+	end
+end
+}
+

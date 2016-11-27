@@ -1,0 +1,23 @@
+;;创天网络有限公司原版1.45
+%100
++54
+
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+你要打我？？哎呦，太可怕了，呜呜;;\ \
+<结束/@exit>
+
+#ELSESAY
+欢迎光临，进来看看吧。\
+<购买/@buy>武器\
+<结束/@exit>
+
+[@buy]
+#SAY
+你要购买哪种兵器？\ \
+<前一步/@main>
+
+[Goods]
+;ItemName      Volume     Hour

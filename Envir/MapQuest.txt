@@ -1,0 +1,1877 @@
+; Log in
+3              [0]      0         [Enter]           *                   *         [KINGSCRIPT\进入沙巴克] [@Main] 
+D2106          [0]      0         [MonDie]      冰城王后      *         [MapQuest_Def\冰城王后]      [@main] Group
+D2107          [0]      0         [MonDie]      冰城帝王      *         [MapQuest_Def\冰城帝王]      [@main] Group
+D2005    [0]      0         [Enter]      *              *         [MapQuest_Def\Map_Z011]      [@main]
+
+4        [043]   1         [MonDie]      诺玛法老      *         [MU_warrior\MonQuest\mute]       [@MapQuest_mutebo_stone]
+6        [043]   1         [MonDie]      诺玛法老      *         [MU_warrior\MonQuest\mute]       [@MapQuest_mutebo_stone]
+;-----------------------------------------------------------------------------------------------------------------------------------
+;;-------------- Teleport(Agonhangbub) Quest
+;-----------------------------------------------------------------------------------------------------------------------------------
+;; MonQuest
+02_010   [037]   1         [MonDie]      沙漠树魔61    *         [MU_wizard\MonQuest\QMteleport1L]     [@main]
+02_010   [037]   1         [MonDie]      沙漠树魔62    *         [MU_wizard\MonQuest\QMteleport1R]     [@main]
+02_011   [037]   1         [MonDie]      沙漠树魔61    *         [MU_wizard\MonQuest\QMteleport2L]     [@main]
+02_011   [037]   1         [MonDie]      沙漠树魔62    *         [MU_wizard\MonQuest\QMteleport2R]     [@main]
+02_012   [037]   1         [MonDie]      沙漠树魔61    *         [MU_wizard\MonQuest\QMteleport3L]     [@main]
+02_012   [037]   1         [MonDie]      沙漠树魔62    *         [MU_wizard\MonQuest\QMteleport3R]     [@main]
+02_013   [037]   1         [MonDie]      沙漠树魔61    *         [MU_wizard\MonQuest\QMteleport4L]     [@main]
+02_013   [037]   1         [MonDie]      沙漠树魔62    *         [MU_wizard\MonQuest\QMteleport4R]     [@main]
+02_014   [037]   1         [MonDie]      沙漠树魔61    *         [MU_wizard\MonQuest\QMteleport5L]     [@main]
+02_014   [037]   1         [MonDie]      沙漠树魔62    *         [MU_wizard\MonQuest\QMteleport5R]     [@main]
+;-----------------------------------------------------------------------------------------------------------------------------------
+;;-------------- LightRecall(Gangkuk) Quest
+;-----------------------------------------------------------------------------------------------------------------------------------
+;; MonQuest
+02_006   [051]   1         [MonDie]      僧侣僵尸61    *   [MU_wizard\MonQuest\lightRecall1]   [@MapQuest_lightstick_mon1]
+02_006   [051]   1         [MonDie]      僵尸461       *   [MU_wizard\MonQuest\lightRecall2]   [@MapQuest_lightstick_mon2]
+02_006   [051]   1         [MonDie]      掷斧骷髅61    *   [MU_wizard\MonQuest\lightRecall2]   [@MapQuest_lightstick_mon2]
+;-----------------------------------------------------------------------------------------------------------------------------------
+;;-------------- FireLine(Yumsajang) Quest
+;-----------------------------------------------------------------------------------------------------------------------------------
+;; MonQuest
+02_005   [053]   1         [MonDie]      火焰沃玛61    *       [MU_wizard\MonQuest\fireLine1]   [@MapQuest_fireline_test]
+02_005   [053]   1         [GetItem]     火焰沃玛62   新火镜   [MU_wizard\MonQuest\fireLine2]  [@MapQuest_fireline_test_exit]
+;-----------------------------------------------------------------------------------------------------------------------------------
+;;-------------- LightLine(Roinjang) Quest
+;-----------------------------------------------------------------------------------------------------------------------------------
+;; MonQuest
+D011     [055]   1         [MonDie]      洞蛆          *         [MU_wizard\MonQuest\lightLine1]       [@main]
+D021     [057]   1         [MonDie]      山洞蝙蝠      *         [MU_wizard\MonQuest\lightLine2]       [@main]
+;-----------------------------------------------------------------------------------------------------------------------------------
+;;-------------- Pokyelpa Quest
+;-----------------------------------------------------------------------------------------------------------------------------------
+;; MonQuest
+2        [059]   1         [MonDie]      七点白蛇      *         [MU_wizard\MonQuest\pokyel]           [@main]
+;-----------------------------------------------------------------------------------------------------------------------------------
+;;-------------- Ilgang gumbub Quest
+;-----------------------------------------------------------------------------------------------------------------------------------
+;; MonQuest
+1_012    [033]   1         [MonDie]      半兽战士61    *         [MU_taoist\MonQuest\ilgang1]     [@MapQuest_ilgang_mon1]
+1_012    [033]   1         [MonDie]      半兽人61      *         [MU_taoist\MonQuest\ilgang2]     [@MapQuest_ilgang_mon2]
+;-----------------------------------------------------------------------------------------------------------------------------------
+;;-------------- SoulSkel(Bakgolsohwansul) Quest
+;-----------------------------------------------------------------------------------------------------------------------------------
+;; MonQuest
+1_014    [038]   1         [MonDie]      变异骷髅   *   [MU_taoist\MonQuest\soulSkel]  [@mugong_recallskel_test_mainskel_win]
+;-----------------------------------------------------------------------------------------------------------------------------------
+;;-------------- Hangma jinbub Quest
+;-----------------------------------------------------------------------------------------------------------------------------------
+D401     [042]   1         [MonDie]      僵尸1         *       [MU_taoist\MonQuest\hangma]     [@MapQuest_hangma_getitem]
+D402     [042]   1         [MonDie]      僵尸1         *       [MU_taoist\MonQuest\hangma]     [@MapQuest_hangma_getitem]
+D403     [042]   1         [MonDie]      僵尸1         *       [MU_taoist\MonQuest\hangma]     [@MapQuest_hangma_getitem]
+D404     [042]   1         [MonDie]      僵尸1         *       [MU_taoist\MonQuest\hangma]     [@MapQuest_hangma_getitem]
+D405     [042]   1         [MonDie]      僵尸1         *       [MU_taoist\MonQuest\hangma]     [@MapQuest_hangma_getitem]
+D406     [042]   1         [MonDie]      僵尸1         *       [MU_taoist\MonQuest\hangma]     [@MapQuest_hangma_getitem]
+D421     [042]   1         [MonDie]      僵尸1         *       [MU_taoist\MonQuest\hangma]     [@MapQuest_hangma_getitem]
+D422     [042]   1         [MonDie]      僵尸1         *       [MU_taoist\MonQuest\hangma]     [@MapQuest_hangma_getitem]
+D435     [042]   1         [MonDie]      僵尸1         *       [MU_taoist\MonQuest\hangma]     [@MapQuest_hangma_getitem]
+D436     [042]   1         [MonDie]      僵尸1         *       [MU_taoist\MonQuest\hangma]     [@MapQuest_hangma_getitem]
+D451     [042]   1         [MonDie]      僵尸1         *       [MU_taoist\MonQuest\hangma]     [@MapQuest_hangma_getitem]
+D452     [042]   1         [MonDie]      僵尸1         *       [MU_taoist\MonQuest\hangma]     [@MapQuest_hangma_getitem]
+;-----------------------------------------------------------------------------------------------------------------------------------
+;;-------------- Masshiden(Deeunsinsul) Quest
+;-----------------------------------------------------------------------------------------------------------------------------------
+D022     [046]   1         [MonDie]      沃玛战将      *       [MU_taoist\MonQuest\masshiden]   [@mugong_masshiding_test]
+D032     [046]   1         [MonDie]      沃玛战将      *       [MU_taoist\MonQuest\masshiden]   [@mugong_masshiding_test]
+D042     [046]   1         [MonDie]      沃玛战将      *       [MU_taoist\MonQuest\masshiden]   [@mugong_masshiding_test]
+D023     [046]   1         [MonDie]      沃玛战将      *       [MU_taoist\MonQuest\masshiden]   [@mugong_masshiding_test]
+D033     [046]   1         [MonDie]      沃玛战将      *       [MU_taoist\MonQuest\masshiden]   [@mugong_masshiding_test]
+D043     [046]   1         [MonDie]      沃玛战将      *       [MU_taoist\MonQuest\masshiden]   [@mugong_masshiding_test]
+;-----------------------------------------------------------------------------------------------------------------------------------
+;;-------------- Deaji wonho Quest
+;-----------------------------------------------------------------------------------------------------------------------------------
+D401     [048]   1         [MonDie]      僵尸1         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D401     [048]   1         [MonDie]      僵尸2         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D401     [048]   1         [MonDie]      僵尸3         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D401     [048]   1         [MonDie]      僵尸4         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D401     [048]   1         [MonDie]      僵尸5         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D401     [048]   1         [MonDie]      僵尸10        *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D401     [048]   1         [MonDie]      僵尸20        *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D401     [048]   1         [MonDie]      僵尸30        *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D401     [048]   1         [MonDie]      僵尸40        *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+;
+D402     [048]   1         [MonDie]      僵尸1         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D402     [048]   1         [MonDie]      僵尸2         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D402     [048]   1         [MonDie]      僵尸3         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D402     [048]   1         [MonDie]      僵尸4         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D402     [048]   1         [MonDie]      僵尸5         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D402     [048]   1         [MonDie]      僵尸20        *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D402     [048]   1         [MonDie]      僵尸30        *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D402     [048]   1         [MonDie]      僵尸40        *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D402     [048]   1         [MonDie]      僵尸50        *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+;
+D403     [048]   1         [MonDie]      僵尸1         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D403     [048]   1         [MonDie]      僵尸2         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D403     [048]   1         [MonDie]      僵尸3         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D403     [048]   1         [MonDie]      僵尸4         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D403     [048]   1         [MonDie]      僵尸5         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D403     [048]   1         [MonDie]      僵尸10        *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D403     [048]   1         [MonDie]      僵尸30        *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D403     [048]   1         [MonDie]      僵尸40        *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D403     [048]   1         [MonDie]      僵尸50        *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D403     [048]   1         [MonDie]      僧侣僵尸      *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+;
+D404     [048]   1         [MonDie]      僵尸1         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D404     [048]   1         [MonDie]      僵尸2         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D404     [048]   1         [MonDie]      僵尸3         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D404     [048]   1         [MonDie]      僵尸4         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D404     [048]   1         [MonDie]      僵尸5         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D404     [048]   1         [MonDie]      僵尸10        *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D404     [048]   1         [MonDie]      僵尸20        *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D404     [048]   1         [MonDie]      僵尸40        *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D404     [048]   1         [MonDie]      僵尸50        *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D404     [048]   1         [MonDie]      僧侣僵尸      *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+;
+D405     [048]   1         [MonDie]      僵尸1         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D405     [048]   1         [MonDie]      僵尸2         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D405     [048]   1         [MonDie]      僵尸3         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D405     [048]   1         [MonDie]      僵尸4         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D405     [048]   1         [MonDie]      僵尸5         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D405     [048]   1         [MonDie]      僵尸10        *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D405     [048]   1         [MonDie]      僵尸20        *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D405     [048]   1         [MonDie]      僵尸40        *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D405     [048]   1         [MonDie]      僵尸50        *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D405     [048]   1         [MonDie]      僧侣僵尸      *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D405     [048]   1         [MonDie]      雷电僵尸      *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+;
+D406     [048]   1         [MonDie]      僵尸1         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D406     [048]   1         [MonDie]      僵尸2         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D406     [048]   1         [MonDie]      僵尸3         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D406     [048]   1         [MonDie]      僵尸4         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D406     [048]   1         [MonDie]      僵尸5         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D406     [048]   1         [MonDie]      僵尸10        *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D406     [048]   1         [MonDie]      僵尸20        *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D406     [048]   1         [MonDie]      僵尸30        *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D406     [048]   1         [MonDie]      僵尸50        *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D406     [048]   1         [MonDie]      僧侣僵尸      *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D406     [048]   1         [MonDie]      雷电僵尸      *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+;
+D411     [048]   1         [MonDie]      僵尸1         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D411     [048]   1         [MonDie]      僵尸2         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D411     [048]   1         [MonDie]      僵尸3         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D411     [048]   1         [MonDie]      僵尸4         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D411     [048]   1         [MonDie]      僵尸5         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+;
+D412     [048]   1         [MonDie]      僵尸1         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D412     [048]   1         [MonDie]      僵尸2         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D412     [048]   1         [MonDie]      僵尸3         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D412     [048]   1         [MonDie]      僵尸4         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D412     [048]   1         [MonDie]      僵尸5         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+;
+D413     [048]   1         [MonDie]      僵尸1         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D413     [048]   1         [MonDie]      僵尸2         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D413     [048]   1         [MonDie]      僵尸3         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D413     [048]   1         [MonDie]      僵尸4         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D413     [048]   1         [MonDie]      僵尸5         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+;
+D414     [048]   1         [MonDie]      僵尸1         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D414     [048]   1         [MonDie]      僵尸2         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D414     [048]   1         [MonDie]      僵尸3         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D414     [048]   1         [MonDie]      僵尸4         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D414     [048]   1         [MonDie]      僵尸5         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+;
+D415     [048]   1         [MonDie]      僵尸1         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D415     [048]   1         [MonDie]      僵尸2         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D415     [048]   1         [MonDie]      僵尸3         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D415     [048]   1         [MonDie]      僵尸4         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D415     [048]   1         [MonDie]      僵尸5         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D416     [048]   1         [MonDie]      僵尸1         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D416     [048]   1         [MonDie]      僵尸2         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D416     [048]   1         [MonDie]      僵尸3         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D416     [048]   1         [MonDie]      僵尸4         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+D416     [048]   1         [MonDie]      僵尸5         *         [MU_taoist\MonQuest\deaji1]           [@MapQuest_Upac_Recall1]
+;
+D400_001 [048]   1         [MonDie]      尸王61        *         [MU_taoist\MonQuest\deaji2]           [@MapQuest_Upac_gipokstone]
+;-----------------------------------------------------------------------------------------------------------------------------------
+1_019    [055]   1         [MonDie]      沃玛护卫61    *         [MU_taoist\MonQuest\holy2]            [@MapQuest_holycircle_complete]
+1_019    [055]   1         [MonDie]      沃玛战将61    *         [MU_taoist\MonQuest\holy2]            [@MapQuest_holycircle_complete]
+;; MapQuest
+1_015    [0]     0         [Enter]       *             *         [MU_taoist\MonQuest\holy3]            [@MapQuest_holycircle_moveTo1]
+1_016    [0]     0         [Enter]       *             *         [MU_taoist\MonQuest\holy4]            [@MapQuest_holycircle_moveTo2]
+1_017    [0]     0         [Enter]       *             *         [MU_taoist\MonQuest\holy5]            [@MapQuest_holycircle_moveTo3]
+1_018    [0]     0         [Enter]       *             *         [MU_taoist\MonQuest\holy6]            [@MapQuest_holycircle_moveTo4]
+1_019    [0]     0         [Enter]       *             *         [MU_taoist\MonQuest\holy7]            [@MapQuest_holycircle_moveTo5]
+;-----------------------------------------------------------------------------------------------------------------------------------
+;;-------------- Massheal(Dehwoiboksul) Quest
+;-----------------------------------------------------------------------------------------------------------------------------------
+1_023    [057]   1         [MonDie]      沃毒蜈蚣62    *         [MU_taoist\MonQuest\massheal1]        [@MapQuest_massheal_cave_complete]
+1_023    [057]   1         [MonDie]      蜈蚣61        *         [MU_taoist\MonQuest\massheal2]        [@MapQuest_massheal_cave_mon1]
+;; MapQuest
+1_020    [0]     0         [Enter]       *             *         [MU_taoist\MapQuest\massheal]         [@MapQuest_massheal_cave]
+;-----------------------------------------------------------------------------------------------------------------------------------
+;;-------------- Sinkisun Quest
+;-----------------------------------------------------------------------------------------------------------------------------------
+D9033     [0]    0      [Enter]     *           *            [SinGiSun\MapQuest\Na_RoomSinGiSub] [@main]
+D90323    [0]    0      [MonDie]  轻甲守卫      *            [SinGiSun\MapQuest\Mon_KyungGab] [@Main]
+D903      [0]    0      [MonDie]  霸王守卫      *            [SinGiSun\MapQuest\Mon_HwanMa] [@Main] Group
+D904      [0]    0      [GetItem] 霸王教主  霸王教主雕像     [SinGiSun\MapQuest\Mon_PaChun] [@Main] Group
+Z013      [0]    0      [Enter]     *           *            [SinGiSun\MapQuest\Map_QD1405] [@Main] 
+z014      [0]    0      [Enter]     *           *            [SinGiSun\MapQuest\Na_RoomSinGiKing] [@main]
+
+D001     [0]      0         [MonDie]     骷髅          *         [MapQuest_Def\骷髅]      [@main] Group
+D002     [0]      0         [MonDie]     骷髅          *         [MapQuest_Def\骷髅]      [@main] Group
+D003     [0]      0         [MonDie]     骷髅          *         [MapQuest_Def\骷髅]      [@main] Group
+D011     [0]      0         [MonDie]     骷髅          *         [MapQuest_Def\骷髅]      [@main] Group
+D012     [0]      0         [MonDie]     骷髅          *         [MapQuest_Def\骷髅]      [@main] Group
+E001     [0]      0         [MonDie]     骷髅          *         [MapQuest_Def\骷髅]      [@main] Group
+E002     [0]      0         [MonDie]     骷髅          *         [MapQuest_Def\骷髅]      [@main] Group
+E401     [0]      0         [MonDie]     骷髅          *         [MapQuest_Def\骷髅]      [@main] Group
+D403     [0]      0         [MonDie]     骷髅          *         [MapQuest_Def\骷髅]      [@main] Group
+
+D001     [0]      0         [MonDie]     骷髅战士          *         [MapQuest_Def\骷髅战士]      [@main] Group
+D002     [0]      0         [MonDie]     骷髅战士          *         [MapQuest_Def\骷髅战士]      [@main] Group
+D003     [0]      0         [MonDie]     骷髅战士          *         [MapQuest_Def\骷髅战士]      [@main] Group
+D011     [0]      0         [MonDie]     骷髅战士          *         [MapQuest_Def\骷髅战士]      [@main] Group
+D012     [0]      0         [MonDie]     骷髅战士          *         [MapQuest_Def\骷髅战士]      [@main] Group
+E001     [0]      0         [MonDie]     骷髅战士          *         [MapQuest_Def\骷髅战士]      [@main] Group
+E002     [0]      0         [MonDie]     骷髅战士          *         [MapQuest_Def\骷髅战士]      [@main] Group
+E401     [0]      0         [MonDie]     骷髅战士          *         [MapQuest_Def\骷髅战士]      [@main] Group
+D403     [0]      0         [MonDie]     骷髅战士          *         [MapQuest_Def\骷髅战士]      [@main] Group
+
+D001     [0]      0         [MonDie]     骷髅战将          *         [MapQuest_Def\骷髅战将]      [@main] Group
+D002     [0]      0         [MonDie]     骷髅战将          *         [MapQuest_Def\骷髅战将]      [@main] Group
+D003     [0]      0         [MonDie]     骷髅战将          *         [MapQuest_Def\骷髅战将]      [@main] Group
+D011     [0]      0         [MonDie]     骷髅战将          *         [MapQuest_Def\骷髅战将]      [@main] Group
+D012     [0]      0         [MonDie]     骷髅战将          *         [MapQuest_Def\骷髅战将]      [@main] Group
+E001     [0]      0         [MonDie]     骷髅战将          *         [MapQuest_Def\骷髅战将]      [@main] Group
+E002     [0]      0         [MonDie]     骷髅战将          *         [MapQuest_Def\骷髅战将]      [@main] Group
+E401     [0]      0         [MonDie]     骷髅战将          *         [MapQuest_Def\骷髅战将]      [@main] Group
+D403     [0]      0         [MonDie]     骷髅战将          *         [MapQuest_Def\骷髅战将]      [@main] Group
+
+D001     [0]      0         [MonDie]     掷斧骷髅          *         [MapQuest_Def\掷斧骷髅]      [@main] Group
+D002     [0]      0         [MonDie]     掷斧骷髅          *         [MapQuest_Def\掷斧骷髅]      [@main] Group
+D003     [0]      0         [MonDie]     掷斧骷髅          *         [MapQuest_Def\掷斧骷髅]      [@main] Group
+D011     [0]      0         [MonDie]     掷斧骷髅          *         [MapQuest_Def\掷斧骷髅]      [@main] Group
+D012     [0]      0         [MonDie]     掷斧骷髅          *         [MapQuest_Def\掷斧骷髅]      [@main] Group
+E001     [0]      0         [MonDie]     掷斧骷髅          *         [MapQuest_Def\掷斧骷髅]      [@main] Group
+E002     [0]      0         [MonDie]     掷斧骷髅          *         [MapQuest_Def\掷斧骷髅]      [@main] Group
+E401     [0]      0         [MonDie]     掷斧骷髅          *         [MapQuest_Def\掷斧骷髅]      [@main] Group
+D403     [0]      0         [MonDie]     掷斧骷髅          *         [MapQuest_Def\掷斧骷髅]      [@main] Group
+
+D001     [0]      0         [MonDie]     骷髅精灵          *         [MapQuest_Def\骷髅精灵]      [@main] Group
+D002     [0]      0         [MonDie]     骷髅精灵          *         [MapQuest_Def\骷髅精灵]      [@main] Group
+D003     [0]      0         [MonDie]     骷髅精灵          *         [MapQuest_Def\骷髅精灵]      [@main] Group
+D011     [0]      0         [MonDie]     骷髅精灵          *         [MapQuest_Def\骷髅精灵]      [@main] Group
+D012     [0]      0         [MonDie]     骷髅精灵          *         [MapQuest_Def\骷髅精灵]      [@main] Group
+E001     [0]      0         [MonDie]     骷髅精灵          *         [MapQuest_Def\骷髅精灵]      [@main] Group
+E002     [0]      0         [MonDie]     骷髅精灵          *         [MapQuest_Def\骷髅精灵]      [@main] Group
+E401     [0]      0         [MonDie]     骷髅精灵          *         [MapQuest_Def\骷髅精灵]      [@main] Group
+D403     [0]      0         [MonDie]     骷髅精灵          *         [MapQuest_Def\骷髅精灵]      [@main] Group
+
+D401     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸1]      [@main] Group
+D411     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸1]      [@main] Group
+D413     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸1]      [@main] Group
+D402     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸1]      [@main] Group
+D414     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸1]      [@main] Group
+D403     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸1]      [@main] Group
+D412     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸1]      [@main] Group
+D404     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸1]      [@main] Group
+D416     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸1]      [@main] Group
+D405     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸1]      [@main] Group
+D415     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸1]      [@main] Group
+D406     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸1]      [@main] Group
+
+D401     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸1]      [@main] Group
+D411     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸1]      [@main] Group
+D413     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸1]      [@main] Group
+D402     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸1]      [@main] Group
+D414     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸1]      [@main] Group
+D403     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸1]      [@main] Group
+D412     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸1]      [@main] Group
+D404     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸1]      [@main] Group
+D416     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸1]      [@main] Group
+D405     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸1]      [@main] Group
+D415     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸1]      [@main] Group
+D406     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸1]      [@main] Group
+
+D401     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸1]      [@main] Group
+D411     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸1]      [@main] Group
+D413     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸1]      [@main] Group
+D402     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸1]      [@main] Group
+D414     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸1]      [@main] Group
+D403     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸1]      [@main] Group
+D412     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸1]      [@main] Group
+D404     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸1]      [@main] Group
+D416     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸1]      [@main] Group
+D405     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸1]      [@main] Group
+D415     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸1]      [@main] Group
+D406     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸1]      [@main] Group
+
+D401     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸1]      [@main] Group
+D411     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸1]      [@main] Group
+D413     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸1]      [@main] Group
+D402     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸1]      [@main] Group
+D414     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸1]      [@main] Group
+D403     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸1]      [@main] Group
+D412     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸1]      [@main] Group
+D404     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸1]      [@main] Group
+D416     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸1]      [@main] Group
+D405     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸1]      [@main] Group
+D415     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸1]      [@main] Group
+D406     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸1]      [@main] Group
+
+D401     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸1]      [@main] Group
+D411     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸1]      [@main] Group
+D413     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸1]      [@main] Group
+D402     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸1]      [@main] Group
+D414     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸1]      [@main] Group
+D403     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸1]      [@main] Group
+D412     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸1]      [@main] Group
+D404     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸1]      [@main] Group
+D416     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸1]      [@main] Group
+D405     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸1]      [@main] Group
+D415     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸1]      [@main] Group
+D406     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸1]      [@main] Group
+
+D421     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸2]      [@main] Group
+D422     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸2]      [@main] Group
+D431     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸2]      [@main] Group
+D441     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸2]      [@main] Group
+D443     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸2]      [@main] Group
+D432     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸2]      [@main] Group
+D444     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸2]      [@main] Group
+D433     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸2]      [@main] Group
+D442     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸2]      [@main] Group
+D434     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸2]      [@main] Group
+D446     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸2]      [@main] Group
+D435     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸2]      [@main] Group
+D445     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸2]      [@main] Group
+D436     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸2]      [@main] Group
+D451     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸2]      [@main] Group
+D452     [0]      0         [MonDie]     僵尸1          *         [MapQuest_Def\僵尸2]      [@main] Group
+
+D421     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸2]      [@main] Group
+D422     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸2]      [@main] Group
+D431     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸2]      [@main] Group
+D441     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸2]      [@main] Group
+D443     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸2]      [@main] Group
+D432     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸2]      [@main] Group
+D444     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸2]      [@main] Group
+D433     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸2]      [@main] Group
+D442     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸2]      [@main] Group
+D434     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸2]      [@main] Group
+D446     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸2]      [@main] Group
+D435     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸2]      [@main] Group
+D445     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸2]      [@main] Group
+D436     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸2]      [@main] Group
+D451     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸2]      [@main] Group
+D452     [0]      0         [MonDie]     僵尸2          *         [MapQuest_Def\僵尸2]      [@main] Group
+
+D421     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸2]      [@main] Group
+D422     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸2]      [@main] Group
+D431     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸2]      [@main] Group
+D441     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸2]      [@main] Group
+D443     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸2]      [@main] Group
+D432     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸2]      [@main] Group
+D444     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸2]      [@main] Group
+D433     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸2]      [@main] Group
+D442     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸2]      [@main] Group
+D434     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸2]      [@main] Group
+D446     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸2]      [@main] Group
+D435     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸2]      [@main] Group
+D445     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸2]      [@main] Group
+D436     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸2]      [@main] Group
+D451     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸2]      [@main] Group
+D452     [0]      0         [MonDie]     僵尸3          *         [MapQuest_Def\僵尸2]      [@main] Group
+
+D421     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸2]      [@main] Group
+D422     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸2]      [@main] Group
+D431     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸2]      [@main] Group
+D441     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸2]      [@main] Group
+D443     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸2]      [@main] Group
+D432     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸2]      [@main] Group
+D444     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸2]      [@main] Group
+D433     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸2]      [@main] Group
+D442     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸2]      [@main] Group
+D434     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸2]      [@main] Group
+D446     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸2]      [@main] Group
+D435     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸2]      [@main] Group
+D445     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸2]      [@main] Group
+D436     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸2]      [@main] Group
+D451     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸2]      [@main] Group
+D452     [0]      0         [MonDie]     僵尸4          *         [MapQuest_Def\僵尸2]      [@main] Group
+
+D421     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸2]      [@main] Group
+D422     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸2]      [@main] Group
+D431     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸2]      [@main] Group
+D441     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸2]      [@main] Group
+D443     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸2]      [@main] Group
+D432     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸2]      [@main] Group
+D444     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸2]      [@main] Group
+D433     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸2]      [@main] Group
+D442     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸2]      [@main] Group
+D434     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸2]      [@main] Group
+D446     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸2]      [@main] Group
+D435     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸2]      [@main] Group
+D445     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸2]      [@main] Group
+D436     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸2]      [@main] Group
+D451     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸2]      [@main] Group
+D452     [0]      0         [MonDie]     僵尸5          *         [MapQuest_Def\僵尸2]      [@main] Group
+
+D401     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D411     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D413     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D402     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D414     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D403     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D412     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D404     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D416     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D405     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D415     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D406     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D421     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D422     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D431     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D441     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D443     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D432     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D444     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D433     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D442     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D434     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D446     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D435     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D445     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D436     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D451     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+D452     [0]      0         [MonDie]     尸王          *         [MapQuest_Def\尸王]      [@main] Group
+
+
+D401     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D411     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D413     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D402     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D414     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D403     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D412     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D404     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D416     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D405     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D415     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D406     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D421     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D422     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D431     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D441     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D443     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D432     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D444     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D433     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D442     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D434     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D446     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D435     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D445     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D436     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D451     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+D452     [0]      0         [MonDie]     尸王2          *         [MapQuest_Def\尸王]      [@main] Group
+
+D8001    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8002    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8003    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8004    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D801    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D802    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8021    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8022    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D803    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8031    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8032    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8033    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D804    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8041    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D805    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8051    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D806    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8061    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8062    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D807    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8071    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8072    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+
+D8101    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8102    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8103    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8104    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D811    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D812    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8121    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8122    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D813    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8131    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8132    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8133    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D814    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8141    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D815    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8151    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D816    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8161    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8162    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D817    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8171    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8172    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+
+D8201    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8202    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8203    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8204    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D821    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D822    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8221    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8222    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D823    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8231    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8232    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8233    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D824    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8241    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D825    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8251    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D826    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8261    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8262    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D827    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8271    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+D8272    [0]      0         [MonDie]     劳动蚂蚁          *         [MapQuest_Def\劳动蚂蚁]      [@main] Group
+
+
+D8001    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8002    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8003    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8004    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D801    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D802    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8021    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8022    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D803    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8031    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8032    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8033    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D804    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8041    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D805    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8051    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D806    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8061    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8062    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D807    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8071    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8072    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+
+D8101    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8102    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8103    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8104    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D811    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D812    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8121    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8122    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D813    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8131    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8132    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8133    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D814    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8141    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D815    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8151    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D816    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8161    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8162    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D817    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8171    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8172    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+
+D8201    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8202    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8203    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8204    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D821    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D822    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8221    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8222    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D823    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8231    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8232    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8233    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D824    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8241    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D825    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8251    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D826    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8261    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8262    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D827    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8271    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+D8272    [0]      0         [MonDie]     蚂蚁战士          *         [MapQuest_Def\蚂蚁战士]      [@main] Group
+
+D8001    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8002    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8003    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8004    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D801    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D802    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8021    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8022    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D803    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8031    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8032    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8033    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D804    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8041    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D805    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8051    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D806    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8061    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8062    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D807    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8071    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8072    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+
+D8101    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8102    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8103    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8104    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D811    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D812    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8121    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8122    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D813    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8131    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8132    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8133    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D814    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8141    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D815    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8151    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D816    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8161    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8162    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D817    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8171    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8172    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+
+D8201    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8202    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8203    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8204    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D821    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D822    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8221    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8222    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D823    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8231    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8232    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8233    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D824    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8241    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D825    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8251    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D826    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8261    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8262    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D827    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8271    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+D8272    [0]      0         [MonDie]     爆毒蚂蚁          *         [MapQuest_Def\爆毒蚂蚁]      [@main] Group
+
+D8001    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8002    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8003    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8004    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D801    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D802    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8021    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8022    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D803    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8031    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8032    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8033    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D804    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8041    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D805    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8051    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D806    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8061    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8062    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D807    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8071    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8072    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+
+D8101    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8102    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8103    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8104    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D811    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D812    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8121    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8122    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D813    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8131    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8132    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8133    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D814    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8141    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D815    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8151    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D816    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8161    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8162    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D817    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8171    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8172    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+
+D8201    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8202    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8203    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8204    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D821    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D822    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8221    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8222    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D823    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8231    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8232    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8233    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D824    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8241    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D825    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8251    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D826    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8261    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8262    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D827    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8271    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+D8272    [0]      0         [MonDie]     盔甲蚂蚁          *         [MapQuest_Def\盔甲蚂蚁]      [@main] Group
+
+D8001    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8002    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8003    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8004    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D801    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D802    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8021    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8022    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D803    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8031    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8032    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8033    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D804    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8041    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D805    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8051    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D806    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8061    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8062    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D807    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8071    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8072    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+
+D8101    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8102    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8103    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8104    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D811    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D812    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8121    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8122    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D813    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8131    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8132    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8133    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D814    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8141    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D815    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8151    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D816    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8161    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8162    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D817    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8171    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8172    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+
+D8201    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8202    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8203    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8204    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D821    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D822    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8221    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8222    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D823    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8231    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8232    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8233    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D824    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8241    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D825    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8251    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D826    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8261    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8262    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D827    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8271    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+D8272    [0]      0         [MonDie]     蚂蚁道士          *         [MapQuest_Def\蚂蚁道士]      [@main] Group
+
+D8001    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8002    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8003    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8004    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D801    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D802    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8021    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8022    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D803    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8031    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8032    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8033    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D804    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8041    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D805    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8051    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D806    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8061    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8062    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D807    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8071    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8072    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+
+D8101    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8102    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8103    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8104    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D811    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D812    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8121    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8122    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D813    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8131    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8132    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8133    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D814    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8141    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D815    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8151    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D816    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8161    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8162    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D817    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8171    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8172    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+
+D8201    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8202    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8203    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8204    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D821    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D822    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8221    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8222    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D823    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8231    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8232    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8233    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D824    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8241    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D825    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8251    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D826    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8261    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8262    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D827    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8271    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+D8272    [0]      0         [MonDie]     蚂蚁将军          *         [MapQuest_Def\蚂蚁将军]      [@main] Group
+
+D022    [0]      0         [MonDie]     粪虫          *         [MapQuest_Def\粪虫]      [@main] Group
+D032    [0]      0         [MonDie]     粪虫          *         [MapQuest_Def\粪虫]      [@main] Group
+D042    [0]      0         [MonDie]     粪虫          *         [MapQuest_Def\粪虫]      [@main] Group
+D023    [0]      0         [MonDie]     粪虫          *         [MapQuest_Def\粪虫]      [@main] Group
+D033    [0]      0         [MonDie]     粪虫          *         [MapQuest_Def\粪虫]      [@main] Group
+D043    [0]      0         [MonDie]     粪虫          *         [MapQuest_Def\粪虫]      [@main] Group
+D024    [0]      0         [MonDie]     粪虫          *         [MapQuest_Def\粪虫]      [@main] Group
+
+D022    [0]      0         [MonDie]     沃玛战士          *         [MapQuest_Def\沃玛战士]      [@main] Group
+D032    [0]      0         [MonDie]     沃玛战士          *         [MapQuest_Def\沃玛战士]      [@main] Group
+D042    [0]      0         [MonDie]     沃玛战士          *         [MapQuest_Def\沃玛战士]      [@main] Group
+D023    [0]      0         [MonDie]     沃玛战士          *         [MapQuest_Def\沃玛战士]      [@main] Group
+D033    [0]      0         [MonDie]     沃玛战士          *         [MapQuest_Def\沃玛战士]      [@main] Group
+D043    [0]      0         [MonDie]     沃玛战士          *         [MapQuest_Def\沃玛战士]      [@main] Group
+D024    [0]      0         [MonDie]     沃玛战士          *         [MapQuest_Def\沃玛战士]      [@main] Group
+
+D022    [0]      0         [MonDie]     沃玛勇士          *         [MapQuest_Def\沃玛勇士]      [@main] Group
+D032    [0]      0         [MonDie]     沃玛勇士          *         [MapQuest_Def\沃玛勇士]      [@main] Group
+D042    [0]      0         [MonDie]     沃玛勇士          *         [MapQuest_Def\沃玛勇士]      [@main] Group
+D023    [0]      0         [MonDie]     沃玛勇士          *         [MapQuest_Def\沃玛勇士]      [@main] Group
+D033    [0]      0         [MonDie]     沃玛勇士          *         [MapQuest_Def\沃玛勇士]      [@main] Group
+D043    [0]      0         [MonDie]     沃玛勇士          *         [MapQuest_Def\沃玛勇士]      [@main] Group
+D024    [0]      0         [MonDie]     沃玛勇士10          *         [MapQuest_Def\沃玛勇士]      [@main] Group
+
+D022    [0]      0         [MonDie]     沃玛战将          *         [MapQuest_Def\沃玛战将]      [@main] Group
+D032    [0]      0         [MonDie]     沃玛战将          *         [MapQuest_Def\沃玛战将]      [@main] Group
+D042    [0]      0         [MonDie]     沃玛战将          *         [MapQuest_Def\沃玛战将]      [@main] Group
+D023    [0]      0         [MonDie]     沃玛战将          *         [MapQuest_Def\沃玛战将]      [@main] Group
+D033    [0]      0         [MonDie]     沃玛战将          *         [MapQuest_Def\沃玛战将]      [@main] Group
+D043    [0]      0         [MonDie]     沃玛战将          *         [MapQuest_Def\沃玛战将]      [@main] Group
+D024    [0]      0         [MonDie]     沃玛战将20          *         [MapQuest_Def\沃玛战将]      [@main] Group
+
+D022    [0]      0         [MonDie]     火焰沃玛          *         [MapQuest_Def\火焰沃玛]      [@main] Group
+D032    [0]      0         [MonDie]     火焰沃玛          *         [MapQuest_Def\火焰沃玛]      [@main] Group
+D042    [0]      0         [MonDie]     火焰沃玛          *         [MapQuest_Def\火焰沃玛]      [@main] Group
+D023    [0]      0         [MonDie]     火焰沃玛          *         [MapQuest_Def\火焰沃玛]      [@main] Group
+D033    [0]      0         [MonDie]     火焰沃玛          *         [MapQuest_Def\火焰沃玛]      [@main] Group
+D043    [0]      0         [MonDie]     火焰沃玛          *         [MapQuest_Def\火焰沃玛]      [@main] Group
+D024    [0]      0         [MonDie]     火焰沃玛30          *         [MapQuest_Def\火焰沃玛]      [@main] Group
+
+D022    [0]      0         [MonDie]     沃玛卫士          *         [MapQuest_Def\沃玛卫士]      [@main] Group
+D032    [0]      0         [MonDie]     沃玛卫士          *         [MapQuest_Def\沃玛卫士]      [@main] Group
+D042    [0]      0         [MonDie]     沃玛卫士          *         [MapQuest_Def\沃玛卫士]      [@main] Group
+D023    [0]      0         [MonDie]     沃玛卫士          *         [MapQuest_Def\沃玛卫士]      [@main] Group
+D033    [0]      0         [MonDie]     沃玛卫士          *         [MapQuest_Def\沃玛卫士]      [@main] Group
+D043    [0]      0         [MonDie]     沃玛卫士          *         [MapQuest_Def\沃玛卫士]      [@main] Group
+D024    [0]      0         [MonDie]     沃玛卫士          *         [MapQuest_Def\沃玛卫士]      [@main] Group
+
+D024    [0]      0         [MonDie]     沃玛教主          *         [MapQuest_Def\沃玛教主]      [@main] Group
+
+D6011    [0]      0         [MonDie]     蜈蚣          *         [MapQuest_Def\蜈蚣]      [@main] Group
+D6012    [0]      0         [MonDie]     蜈蚣          *         [MapQuest_Def\蜈蚣]      [@main] Group
+D60131    [0]      0         [MonDie]     蜈蚣          *         [MapQuest_Def\蜈蚣]      [@main] Group
+D60132    [0]      0         [MonDie]     蜈蚣          *         [MapQuest_Def\蜈蚣]      [@main] Group
+D60133    [0]      0         [MonDie]     蜈蚣          *         [MapQuest_Def\蜈蚣]      [@main] Group
+D60134    [0]      0         [MonDie]     蜈蚣          *         [MapQuest_Def\蜈蚣]      [@main] Group
+D60135    [0]      0         [MonDie]     蜈蚣          *         [MapQuest_Def\蜈蚣]      [@main] Group
+D6014    [0]      0         [MonDie]     蜈蚣          *         [MapQuest_Def\蜈蚣]      [@main] Group
+D6015    [0]      0         [MonDie]     蜈蚣          *         [MapQuest_Def\蜈蚣]      [@main] Group
+D60011    [0]      0         [MonDie]     蜈蚣          *         [MapQuest_Def\蜈蚣]      [@main] Group
+D60012    [0]      0         [MonDie]     蜈蚣          *         [MapQuest_Def\蜈蚣]      [@main] Group
+D60013    [0]      0         [MonDie]     蜈蚣          *         [MapQuest_Def\蜈蚣]      [@main] Group
+D60021    [0]      0         [MonDie]     蜈蚣          *         [MapQuest_Def\蜈蚣]      [@main] Group
+D60022    [0]      0         [MonDie]     蜈蚣          *         [MapQuest_Def\蜈蚣]      [@main] Group
+D6004    [0]      0         [MonDie]     蜈蚣          *         [MapQuest_Def\蜈蚣]      [@main] Group
+
+D6011    [0]      0         [MonDie]     跳跳蜂          *         [MapQuest_Def\跳跳蜂]      [@main] Group
+D6012    [0]      0         [MonDie]     跳跳蜂          *         [MapQuest_Def\跳跳蜂]      [@main] Group
+D60131    [0]      0         [MonDie]     跳跳蜂          *         [MapQuest_Def\跳跳蜂]      [@main] Group
+D60132    [0]      0         [MonDie]     跳跳蜂          *         [MapQuest_Def\跳跳蜂]      [@main] Group
+D60133    [0]      0         [MonDie]     跳跳蜂          *         [MapQuest_Def\跳跳蜂]      [@main] Group
+D60134    [0]      0         [MonDie]     跳跳蜂          *         [MapQuest_Def\跳跳蜂]      [@main] Group
+D60135    [0]      0         [MonDie]     跳跳蜂          *         [MapQuest_Def\跳跳蜂]      [@main] Group
+D6014    [0]      0         [MonDie]     跳跳蜂          *         [MapQuest_Def\跳跳蜂]      [@main] Group
+D6015    [0]      0         [MonDie]     跳跳蜂          *         [MapQuest_Def\跳跳蜂]      [@main] Group
+D60011    [0]      0         [MonDie]     跳跳蜂          *         [MapQuest_Def\跳跳蜂]      [@main] Group
+D60012    [0]      0         [MonDie]     跳跳蜂          *         [MapQuest_Def\跳跳蜂]      [@main] Group
+D60013    [0]      0         [MonDie]     跳跳蜂          *         [MapQuest_Def\跳跳蜂]      [@main] Group
+D60021    [0]      0         [MonDie]     跳跳蜂          *         [MapQuest_Def\跳跳蜂]      [@main] Group
+D60022    [0]      0         [MonDie]     跳跳蜂          *         [MapQuest_Def\跳跳蜂]      [@main] Group
+D6004    [0]      0         [MonDie]     跳跳蜂          *         [MapQuest_Def\跳跳蜂]      [@main] Group
+
+D6011    [0]      0         [MonDie]     蝴蝶虫          *         [MapQuest_Def\蝴蝶虫]      [@main] Group
+D6012    [0]      0         [MonDie]     蝴蝶虫          *         [MapQuest_Def\蝴蝶虫]      [@main] Group
+D60131    [0]      0         [MonDie]     蝴蝶虫          *         [MapQuest_Def\蝴蝶虫]      [@main] Group
+D60132    [0]      0         [MonDie]     蝴蝶虫          *         [MapQuest_Def\蝴蝶虫]      [@main] Group
+D60133    [0]      0         [MonDie]     蝴蝶虫          *         [MapQuest_Def\蝴蝶虫]      [@main] Group
+D60134    [0]      0         [MonDie]     蝴蝶虫          *         [MapQuest_Def\蝴蝶虫]      [@main] Group
+D60135    [0]      0         [MonDie]     蝴蝶虫          *         [MapQuest_Def\蝴蝶虫]      [@main] Group
+D6014    [0]      0         [MonDie]     蝴蝶虫          *         [MapQuest_Def\蝴蝶虫]      [@main] Group
+D6015    [0]      0         [MonDie]     蝴蝶虫          *         [MapQuest_Def\蝴蝶虫]      [@main] Group
+D60011    [0]      0         [MonDie]     蝴蝶虫          *         [MapQuest_Def\蝴蝶虫]      [@main] Group
+D60012    [0]      0         [MonDie]     蝴蝶虫          *         [MapQuest_Def\蝴蝶虫]      [@main] Group
+D60013    [0]      0         [MonDie]     蝴蝶虫          *         [MapQuest_Def\蝴蝶虫]      [@main] Group
+D60021    [0]      0         [MonDie]     蝴蝶虫          *         [MapQuest_Def\蝴蝶虫]      [@main] Group
+D60022    [0]      0         [MonDie]     蝴蝶虫          *         [MapQuest_Def\蝴蝶虫]      [@main] Group
+D6004    [0]      0         [MonDie]     蝴蝶虫          *         [MapQuest_Def\蝴蝶虫]      [@main] Group
+
+D6011    [0]      0         [MonDie]     黑色恶蛆          *         [MapQuest_Def\黑色恶蛆]      [@main] Group
+D6012    [0]      0         [MonDie]     黑色恶蛆          *         [MapQuest_Def\黑色恶蛆]      [@main] Group
+D60131    [0]      0         [MonDie]     黑色恶蛆          *         [MapQuest_Def\黑色恶蛆]      [@main] Group
+D60132    [0]      0         [MonDie]     黑色恶蛆          *         [MapQuest_Def\黑色恶蛆]      [@main] Group
+D60133    [0]      0         [MonDie]     黑色恶蛆          *         [MapQuest_Def\黑色恶蛆]      [@main] Group
+D60134    [0]      0         [MonDie]     黑色恶蛆          *         [MapQuest_Def\黑色恶蛆]      [@main] Group
+D60135    [0]      0         [MonDie]     黑色恶蛆          *         [MapQuest_Def\黑色恶蛆]      [@main] Group
+D6014    [0]      0         [MonDie]     黑色恶蛆          *         [MapQuest_Def\黑色恶蛆]      [@main] Group
+D6015    [0]      0         [MonDie]     黑色恶蛆          *         [MapQuest_Def\黑色恶蛆]      [@main] Group
+D60011    [0]      0         [MonDie]     黑色恶蛆          *         [MapQuest_Def\黑色恶蛆]      [@main] Group
+D60012    [0]      0         [MonDie]     黑色恶蛆          *         [MapQuest_Def\黑色恶蛆]      [@main] Group
+D60013    [0]      0         [MonDie]     黑色恶蛆          *         [MapQuest_Def\黑色恶蛆]      [@main] Group
+D60021    [0]      0         [MonDie]     黑色恶蛆          *         [MapQuest_Def\黑色恶蛆]      [@main] Group
+D60022    [0]      0         [MonDie]     黑色恶蛆          *         [MapQuest_Def\黑色恶蛆]      [@main] Group
+D6004    [0]      0         [MonDie]     黑色恶蛆          *         [MapQuest_Def\黑色恶蛆]      [@main] Group
+
+D6011    [0]      0         [MonDie]     钳虫          *         [MapQuest_Def\钳虫]      [@main] Group
+D6012    [0]      0         [MonDie]     钳虫          *         [MapQuest_Def\钳虫]      [@main] Group
+D60131    [0]      0         [MonDie]     钳虫          *         [MapQuest_Def\钳虫]      [@main] Group
+D60132    [0]      0         [MonDie]     钳虫          *         [MapQuest_Def\钳虫]      [@main] Group
+D60133    [0]      0         [MonDie]     钳虫          *         [MapQuest_Def\钳虫]      [@main] Group
+D60134    [0]      0         [MonDie]     钳虫          *         [MapQuest_Def\钳虫]      [@main] Group
+D60135    [0]      0         [MonDie]     钳虫          *         [MapQuest_Def\钳虫]      [@main] Group
+D6014    [0]      0         [MonDie]     钳虫          *         [MapQuest_Def\钳虫]      [@main] Group
+D6015    [0]      0         [MonDie]     钳虫          *         [MapQuest_Def\钳虫]      [@main] Group
+D60011    [0]      0         [MonDie]     钳虫          *         [MapQuest_Def\钳虫]      [@main] Group
+D60012    [0]      0         [MonDie]     钳虫          *         [MapQuest_Def\钳虫]      [@main] Group
+D60013    [0]      0         [MonDie]     钳虫          *         [MapQuest_Def\钳虫]      [@main] Group
+D60021    [0]      0         [MonDie]     钳虫          *         [MapQuest_Def\钳虫]      [@main] Group
+D60022    [0]      0         [MonDie]     钳虫          *         [MapQuest_Def\钳虫]      [@main] Group
+D6004    [0]      0         [MonDie]     钳虫          *         [MapQuest_Def\钳虫]      [@main] Group
+
+D6021    [0]      0         [MonDie]     沃角钳虫          *         [MapQuest_Def\沃角钳虫]      [@main] Group
+D6022    [0]      0         [MonDie]     沃角钳虫          *         [MapQuest_Def\沃角钳虫]      [@main] Group
+D6023    [0]      0         [MonDie]     沃角钳虫          *         [MapQuest_Def\沃角钳虫]      [@main] Group
+D6024    [0]      0         [MonDie]     沃角钳虫          *         [MapQuest_Def\沃角钳虫]      [@main] Group
+D6025    [0]      0         [MonDie]     沃角钳虫          *         [MapQuest_Def\沃角钳虫]      [@main] Group
+
+D6021    [0]      0         [MonDie]     沃毒黑色恶蛆          *         [MapQuest_Def\沃毒黑色恶蛆]      [@main] Group
+D6022    [0]      0         [MonDie]     沃毒黑色恶蛆          *         [MapQuest_Def\沃毒黑色恶蛆]      [@main] Group
+D6023    [0]      0         [MonDie]     沃毒黑色恶蛆          *         [MapQuest_Def\沃毒黑色恶蛆]      [@main] Group
+D6024    [0]      0         [MonDie]     沃毒黑色恶蛆          *         [MapQuest_Def\沃毒黑色恶蛆]      [@main] Group
+D6025    [0]      0         [MonDie]     沃毒黑色恶蛆          *         [MapQuest_Def\沃毒黑色恶蛆]      [@main] Group
+
+D6021    [0]      0         [MonDie]     金刚黑色恶蛆          *         [MapQuest_Def\金刚黑色恶蛆]      [@main] Group
+D6022    [0]      0         [MonDie]     金刚黑色恶蛆          *         [MapQuest_Def\金刚黑色恶蛆]      [@main] Group
+D6023    [0]      0         [MonDie]     金刚黑色恶蛆          *         [MapQuest_Def\金刚黑色恶蛆]      [@main] Group
+D6024    [0]      0         [MonDie]     金刚黑色恶蛆          *         [MapQuest_Def\金刚黑色恶蛆]      [@main] Group
+D6025    [0]      0         [MonDie]     金刚黑色恶蛆          *         [MapQuest_Def\金刚黑色恶蛆]      [@main] Group
+
+D6021    [0]      0         [MonDie]     白月黑色恶蛆          *         [MapQuest_Def\白月黑色恶蛆]      [@main] Group
+D6022    [0]      0         [MonDie]     白月黑色恶蛆          *         [MapQuest_Def\白月黑色恶蛆]      [@main] Group
+D6023    [0]      0         [MonDie]     白月黑色恶蛆          *         [MapQuest_Def\白月黑色恶蛆]      [@main] Group
+D6024    [0]      0         [MonDie]     白月黑色恶蛆          *         [MapQuest_Def\白月黑色恶蛆]      [@main] Group
+D6025    [0]      0         [MonDie]     白月黑色恶蛆          *         [MapQuest_Def\白月黑色恶蛆]      [@main] Group
+
+D6021    [0]      0         [MonDie]     洞穴蜈蚣          *         [MapQuest_Def\洞穴蜈蚣]      [@main] Group
+D6022    [0]      0         [MonDie]     洞穴蜈蚣          *         [MapQuest_Def\洞穴蜈蚣]      [@main] Group
+D6023    [0]      0         [MonDie]     洞穴蜈蚣          *         [MapQuest_Def\洞穴蜈蚣]      [@main] Group
+D6024    [0]      0         [MonDie]     洞穴蜈蚣          *         [MapQuest_Def\洞穴蜈蚣]      [@main] Group
+D6025    [0]      0         [MonDie]     洞穴蜈蚣          *         [MapQuest_Def\洞穴蜈蚣]      [@main] Group
+
+D6021    [0]      0         [MonDie]     沃毒蜈蚣          *         [MapQuest_Def\沃毒蜈蚣]      [@main] Group
+D6022    [0]      0         [MonDie]     沃毒蜈蚣          *         [MapQuest_Def\沃毒蜈蚣]      [@main] Group
+D6023    [0]      0         [MonDie]     沃毒蜈蚣          *         [MapQuest_Def\沃毒蜈蚣]      [@main] Group
+D6024    [0]      0         [MonDie]     沃毒蜈蚣          *         [MapQuest_Def\沃毒蜈蚣]      [@main] Group
+D6025    [0]      0         [MonDie]     沃毒蜈蚣          *         [MapQuest_Def\沃毒蜈蚣]      [@main] Group
+
+D6011    [0]      0         [MonDie]     邪恶钳虫          *         [MapQuest_Def\邪恶钳虫]      [@main] Group
+D6012    [0]      0         [MonDie]     邪恶钳虫          *         [MapQuest_Def\邪恶钳虫]      [@main] Group
+D6014    [0]      0         [MonDie]     邪恶钳虫          *         [MapQuest_Def\邪恶钳虫]      [@main] Group
+D6015    [0]      0         [MonDie]     邪恶钳虫          *         [MapQuest_Def\邪恶钳虫]      [@main] Group
+D60011    [0]      0         [MonDie]     邪恶钳虫          *         [MapQuest_Def\邪恶钳虫]      [@main] Group
+D60012    [0]      0         [MonDie]     邪恶钳虫          *         [MapQuest_Def\邪恶钳虫]      [@main] Group
+D60013    [0]      0         [MonDie]     邪恶钳虫          *         [MapQuest_Def\邪恶钳虫]      [@main] Group
+D60021    [0]      0         [MonDie]     邪恶钳虫          *         [MapQuest_Def\邪恶钳虫]      [@main] Group
+D60022    [0]      0         [MonDie]     邪恶钳虫          *         [MapQuest_Def\邪恶钳虫]      [@main] Group
+D6004    [0]      0         [MonDie]     邪恶钳虫          *         [MapQuest_Def\邪恶钳虫]      [@main] Group
+
+D6015    [0]      0         [MonDie]     触龙神          *         [MapQuest_Def\触龙神]      [@main] Group
+
+D711    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D712    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D713    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D714    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D715    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71601    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71602    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71603    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71604    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71605    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71606    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71607    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71608    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71609    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71610    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71611    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71612    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71613    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71614    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71615    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71616    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71617    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71618    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71619    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71620    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71621    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71622    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71623    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71624    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71625    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71650    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71651    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71652    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D71653    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D716    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+D717    [0]      0         [MonDie]     红野猪          *         [MapQuest_Def\红野猪]      [@main] Group
+
+D711    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D712    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D713    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D714    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D715    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71601    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71602    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71603    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71604    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71605    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71606    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71607    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71608    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71609    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71610    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71611    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71612    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71613    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71614    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71615    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71616    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71617    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71618    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71619    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71620    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71621    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71622    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71623    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71624    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71625    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71650    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71651    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71652    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D71653    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D716    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+D717    [0]      0         [MonDie]     黑野猪          *         [MapQuest_Def\黑野猪]      [@main] Group
+
+D711    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D712    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D713    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D714    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D715    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71601    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71602    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71603    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71604    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71605    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71606    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71607    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71608    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71609    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71610    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71611    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71612    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71613    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71614    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71615    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71616    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71617    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71618    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71619    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71620    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71621    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71622    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71623    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71624    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71625    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71650    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71651    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71652    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D71653    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D716    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+D717    [0]      0         [MonDie]     蝎蛇          *         [MapQuest_Def\蝎蛇]      [@main] Group
+
+D711    [0]      0         [MonDie]     白野猪          *         [MapQuest_Def\白野猪]      [@main] Group
+D712    [0]      0         [MonDie]     白野猪          *         [MapQuest_Def\白野猪]      [@main] Group
+D713    [0]      0         [MonDie]     白野猪          *         [MapQuest_Def\白野猪]      [@main] Group
+D714    [0]      0         [MonDie]     白野猪          *         [MapQuest_Def\白野猪]      [@main] Group
+D715    [0]      0         [MonDie]     白野猪          *         [MapQuest_Def\白野猪]      [@main] Group
+D717    [0]      0         [MonDie]     白野猪          *         [MapQuest_Def\白野猪]      [@main] Group
+
+12    [0]      0         [MonDie]     独眼蜘蛛          *         [MapQuest_Def\独眼蜘蛛]      [@main] Group
+121    [0]      0         [MonDie]     独眼蜘蛛          *         [MapQuest_Def\独眼蜘蛛]      [@main] Group
+122    [0]      0         [MonDie]     独眼蜘蛛          *         [MapQuest_Def\独眼蜘蛛]      [@main] Group
+123    [0]      0         [MonDie]     独眼蜘蛛          *         [MapQuest_Def\独眼蜘蛛]      [@main] Group
+124    [0]      0         [MonDie]     独眼蜘蛛          *         [MapQuest_Def\独眼蜘蛛]      [@main] Group
+125    [0]      0         [MonDie]     独眼蜘蛛          *         [MapQuest_Def\独眼蜘蛛]      [@main] Group
+
+12    [0]      0         [MonDie]     花色蜘蛛          *         [MapQuest_Def\花色蜘蛛]      [@main] Group
+121    [0]      0         [MonDie]     花色蜘蛛          *         [MapQuest_Def\花色蜘蛛]      [@main] Group
+122    [0]      0         [MonDie]     花色蜘蛛          *         [MapQuest_Def\花色蜘蛛]      [@main] Group
+123    [0]      0         [MonDie]     花色蜘蛛          *         [MapQuest_Def\花色蜘蛛]      [@main] Group
+124    [0]      0         [MonDie]     花色蜘蛛          *         [MapQuest_Def\花色蜘蛛]      [@main] Group
+125    [0]      0         [MonDie]     花色蜘蛛          *         [MapQuest_Def\花色蜘蛛]      [@main] Group
+
+12    [0]      0         [MonDie]     黑角蜘蛛          *         [MapQuest_Def\黑角蜘蛛]      [@main] Group
+121    [0]      0         [MonDie]     黑角蜘蛛          *         [MapQuest_Def\黑角蜘蛛]      [@main] Group
+122    [0]      0         [MonDie]     黑角蜘蛛          *         [MapQuest_Def\黑角蜘蛛]      [@main] Group
+123    [0]      0         [MonDie]     黑角蜘蛛          *         [MapQuest_Def\黑角蜘蛛]      [@main] Group
+124    [0]      0         [MonDie]     黑角蜘蛛          *         [MapQuest_Def\黑角蜘蛛]      [@main] Group
+125    [0]      0         [MonDie]     黑角蜘蛛          *         [MapQuest_Def\黑角蜘蛛]      [@main] Group
+
+12    [0]      0         [MonDie]     月魔蜘蛛          *         [MapQuest_Def\月魔蜘蛛]      [@main] Group
+121    [0]      0         [MonDie]     月魔蜘蛛          *         [MapQuest_Def\月魔蜘蛛]      [@main] Group
+122    [0]      0         [MonDie]     月魔蜘蛛          *         [MapQuest_Def\月魔蜘蛛]      [@main] Group
+123    [0]      0         [MonDie]     月魔蜘蛛          *         [MapQuest_Def\月魔蜘蛛]      [@main] Group
+124    [0]      0         [MonDie]     月魔蜘蛛          *         [MapQuest_Def\月魔蜘蛛]      [@main] Group
+125    [0]      0         [MonDie]     月魔蜘蛛          *         [MapQuest_Def\月魔蜘蛛]      [@main] Group
+
+12    [0]      0         [MonDie]     天狼蜘蛛          *         [MapQuest_Def\天狼蜘蛛]      [@main] Group
+121    [0]      0         [MonDie]     天狼蜘蛛          *         [MapQuest_Def\天狼蜘蛛]      [@main] Group
+122    [0]      0         [MonDie]     天狼蜘蛛          *         [MapQuest_Def\天狼蜘蛛]      [@main] Group
+123    [0]      0         [MonDie]     天狼蜘蛛          *         [MapQuest_Def\天狼蜘蛛]      [@main] Group
+124    [0]      0         [MonDie]     天狼蜘蛛          *         [MapQuest_Def\天狼蜘蛛]      [@main] Group
+125    [0]      0         [MonDie]     天狼蜘蛛          *         [MapQuest_Def\天狼蜘蛛]      [@main] Group
+
+12    [0]      0         [MonDie]     幻影蜘蛛          *         [MapQuest_Def\幻影蜘蛛]      [@main] Group
+121    [0]      0         [MonDie]     幻影蜘蛛          *         [MapQuest_Def\幻影蜘蛛]      [@main] Group
+122    [0]      0         [MonDie]     幻影蜘蛛          *         [MapQuest_Def\幻影蜘蛛]      [@main] Group
+123    [0]      0         [MonDie]     幻影蜘蛛          *         [MapQuest_Def\幻影蜘蛛]      [@main] Group
+124    [0]      0         [MonDie]     幻影蜘蛛          *         [MapQuest_Def\幻影蜘蛛]      [@main] Group
+125    [0]      0         [MonDie]     幻影蜘蛛          *         [MapQuest_Def\幻影蜘蛛]      [@main] Group
+
+12    [0]      0         [MonDie]     八脚首领          *         [MapQuest_Def\八脚首领]      [@main] Group
+121    [0]      0         [MonDie]     八脚首领          *         [MapQuest_Def\八脚首领]      [@main] Group
+122    [0]      0         [MonDie]     八脚首领          *         [MapQuest_Def\八脚首领]      [@main] Group
+123    [0]      0         [MonDie]     八脚首领          *         [MapQuest_Def\八脚首领]      [@main] Group
+124    [0]      0         [MonDie]     八脚首领          *         [MapQuest_Def\八脚首领]      [@main] Group
+125    [0]      0         [MonDie]     八脚首领          *         [MapQuest_Def\八脚首领]      [@main] Group
+
+6    [0]      0         [MonDie]     诺玛将士          *         [MapQuest_Def\诺玛将士]      [@main] Group
+41    [0]      0         [MonDie]     诺玛将士          *         [MapQuest_Def\诺玛将士]      [@main] Group
+42    [0]      0         [MonDie]     诺玛将士          *         [MapQuest_Def\诺玛将士]      [@main] Group
+43    [0]      0         [MonDie]     诺玛将士          *         [MapQuest_Def\诺玛将士]      [@main] Group
+44    [0]      0         [MonDie]     诺玛将士          *         [MapQuest_Def\诺玛将士]      [@main] Group
+76    [0]      0         [MonDie]     诺玛将士          *         [MapQuest_Def\诺玛将士]      [@main] Group
+77    [0]      0         [MonDie]     诺玛将士          *         [MapQuest_Def\诺玛将士]      [@main] Group
+78    [0]      0         [MonDie]     诺玛将士          *         [MapQuest_Def\诺玛将士]      [@main] Group
+4    [0]      0         [MonDie]     诺玛将士          *         [MapQuest_Def\诺玛将士]      [@main] Group
+
+6    [0]      0         [MonDie]     诺玛法老          *         [MapQuest_Def\诺玛法老]      [@main] Group
+41    [0]      0         [MonDie]     诺玛法老          *         [MapQuest_Def\诺玛法老]      [@main] Group
+42    [0]      0         [MonDie]     诺玛法老          *         [MapQuest_Def\诺玛法老]      [@main] Group
+43    [0]      0         [MonDie]     诺玛法老          *         [MapQuest_Def\诺玛法老]      [@main] Group
+44    [0]      0         [MonDie]     诺玛法老          *         [MapQuest_Def\诺玛法老]      [@main] Group
+76    [0]      0         [MonDie]     诺玛法老          *         [MapQuest_Def\诺玛法老]      [@main] Group
+77    [0]      0         [MonDie]     诺玛法老          *         [MapQuest_Def\诺玛法老]      [@main] Group
+78    [0]      0         [MonDie]     诺玛法老          *         [MapQuest_Def\诺玛法老]      [@main] Group
+4    [0]      0         [MonDie]     诺玛法老          *         [MapQuest_Def\诺玛法老]      [@main] Group
+
+6    [0]      0         [MonDie]     沙漠石人          *         [MapQuest_Def\沙漠石人]      [@main] Group
+41    [0]      0         [MonDie]     沙漠石人          *         [MapQuest_Def\沙漠石人]      [@main] Group
+42    [0]      0         [MonDie]     沙漠石人          *         [MapQuest_Def\沙漠石人]      [@main] Group
+43    [0]      0         [MonDie]     沙漠石人          *         [MapQuest_Def\沙漠石人]      [@main] Group
+44    [0]      0         [MonDie]     沙漠石人          *         [MapQuest_Def\沙漠石人]      [@main] Group
+76    [0]      0         [MonDie]     沙漠石人          *         [MapQuest_Def\沙漠石人]      [@main] Group
+77    [0]      0         [MonDie]     沙漠石人          *         [MapQuest_Def\沙漠石人]      [@main] Group
+78    [0]      0         [MonDie]     沙漠石人          *         [MapQuest_Def\沙漠石人]      [@main] Group
+4    [0]      0         [MonDie]     沙漠石人          *         [MapQuest_Def\沙漠石人]      [@main] Group
+
+6    [0]      0         [MonDie]     沙漠树魔          *         [MapQuest_Def\沙漠树魔]      [@main] Group
+41    [0]      0         [MonDie]     沙漠树魔          *         [MapQuest_Def\沙漠树魔]      [@main] Group
+42    [0]      0         [MonDie]     沙漠树魔          *         [MapQuest_Def\沙漠树魔]      [@main] Group
+43    [0]      0         [MonDie]     沙漠树魔          *         [MapQuest_Def\沙漠树魔]      [@main] Group
+44    [0]      0         [MonDie]     沙漠树魔          *         [MapQuest_Def\沙漠树魔]      [@main] Group
+76    [0]      0         [MonDie]     沙漠树魔          *         [MapQuest_Def\沙漠树魔]      [@main] Group
+77    [0]      0         [MonDie]     沙漠树魔          *         [MapQuest_Def\沙漠树魔]      [@main] Group
+78    [0]      0         [MonDie]     沙漠树魔          *         [MapQuest_Def\沙漠树魔]      [@main] Group
+4    [0]      0         [MonDie]     沙漠树魔          *         [MapQuest_Def\沙漠树魔]      [@main] Group
+
+6    [0]      0         [MonDie]     沙鬼          *         [MapQuest_Def\沙鬼]      [@main] Group
+41    [0]      0         [MonDie]     沙鬼          *         [MapQuest_Def\沙鬼]      [@main] Group
+42    [0]      0         [MonDie]     沙鬼          *         [MapQuest_Def\沙鬼]      [@main] Group
+43    [0]      0         [MonDie]     沙鬼          *         [MapQuest_Def\沙鬼]      [@main] Group
+44    [0]      0         [MonDie]     沙鬼          *         [MapQuest_Def\沙鬼]      [@main] Group
+76    [0]      0         [MonDie]     沙鬼          *         [MapQuest_Def\沙鬼]      [@main] Group
+77    [0]      0         [MonDie]     沙鬼          *         [MapQuest_Def\沙鬼]      [@main] Group
+78    [0]      0         [MonDie]     沙鬼          *         [MapQuest_Def\沙鬼]      [@main] Group
+4    [0]      0         [MonDie]     沙鬼          *         [MapQuest_Def\沙鬼]      [@main] Group
+
+6    [0]      0         [MonDie]     沙漠鱼魔          *         [MapQuest_Def\沙漠鱼魔]      [@main] Group
+41    [0]      0         [MonDie]     沙漠鱼魔          *         [MapQuest_Def\沙漠鱼魔]      [@main] Group
+42    [0]      0         [MonDie]     沙漠鱼魔          *         [MapQuest_Def\沙漠鱼魔]      [@main] Group
+43    [0]      0         [MonDie]     沙漠鱼魔          *         [MapQuest_Def\沙漠鱼魔]      [@main] Group
+44    [0]      0         [MonDie]     沙漠鱼魔          *         [MapQuest_Def\沙漠鱼魔]      [@main] Group
+76    [0]      0         [MonDie]     沙漠鱼魔          *         [MapQuest_Def\沙漠鱼魔]      [@main] Group
+77    [0]      0         [MonDie]     沙漠鱼魔          *         [MapQuest_Def\沙漠鱼魔]      [@main] Group
+78    [0]      0         [MonDie]     沙漠鱼魔          *         [MapQuest_Def\沙漠鱼魔]      [@main] Group
+4    [0]      0         [MonDie]     沙漠鱼魔          *         [MapQuest_Def\沙漠鱼魔]      [@main] Group
+
+6    [0]      0         [MonDie]     沙漠风魔          *         [MapQuest_Def\沙漠风魔]      [@main] Group
+41    [0]      0         [MonDie]     沙漠风魔          *         [MapQuest_Def\沙漠风魔]      [@main] Group
+42    [0]      0         [MonDie]     沙漠风魔          *         [MapQuest_Def\沙漠风魔]      [@main] Group
+43    [0]      0         [MonDie]     沙漠风魔          *         [MapQuest_Def\沙漠风魔]      [@main] Group
+44    [0]      0         [MonDie]     沙漠风魔          *         [MapQuest_Def\沙漠风魔]      [@main] Group
+76    [0]      0         [MonDie]     沙漠风魔          *         [MapQuest_Def\沙漠风魔]      [@main] Group
+77    [0]      0         [MonDie]     沙漠风魔          *         [MapQuest_Def\沙漠风魔]      [@main] Group
+78    [0]      0         [MonDie]     沙漠风魔          *         [MapQuest_Def\沙漠风魔]      [@main] Group
+4    [0]      0         [MonDie]     沙漠风魔          *         [MapQuest_Def\沙漠风魔]      [@main] Group
+
+6    [0]      0         [MonDie]     大法老          *         [MapQuest_Def\大法老]      [@main] Group
+41    [0]      0         [MonDie]     大法老          *         [MapQuest_Def\大法老]      [@main] Group
+42    [0]      0         [MonDie]     大法老          *         [MapQuest_Def\大法老]      [@main] Group
+43    [0]      0         [MonDie]     大法老          *         [MapQuest_Def\大法老]      [@main] Group
+44    [0]      0         [MonDie]     大法老          *         [MapQuest_Def\大法老]      [@main] Group
+76    [0]      0         [MonDie]     大法老          *         [MapQuest_Def\大法老]      [@main] Group
+77    [0]      0         [MonDie]     大法老          *         [MapQuest_Def\大法老]      [@main] Group
+78    [0]      0         [MonDie]     大法老          *         [MapQuest_Def\大法老]      [@main] Group
+4    [0]      0         [MonDie]     大法老          *         [MapQuest_Def\大法老]      [@main] Group
+
+D1211    [0]      0         [MonDie]     骷髅弓箭手          *         [MapQuest_Def\骷髅弓箭手]      [@main] Group
+D12121    [0]      0         [MonDie]     骷髅弓箭手          *         [MapQuest_Def\骷髅弓箭手]      [@main] Group
+D1213    [0]      0         [MonDie]     骷髅弓箭手          *         [MapQuest_Def\骷髅弓箭手]      [@main] Group
+D1214    [0]      0         [MonDie]     骷髅弓箭手          *         [MapQuest_Def\骷髅弓箭手]      [@main] Group
+D1215    [0]      0         [MonDie]     骷髅弓箭手          *         [MapQuest_Def\骷髅弓箭手]      [@main] Group
+
+D1211    [0]      0         [MonDie]     骷髅武士          *         [MapQuest_Def\骷髅武士]      [@main] Group
+D12121    [0]      0         [MonDie]     骷髅武士          *         [MapQuest_Def\骷髅武士]      [@main] Group
+D1213    [0]      0         [MonDie]     骷髅武士          *         [MapQuest_Def\骷髅武士]      [@main] Group
+D1214    [0]      0         [MonDie]     骷髅武士          *         [MapQuest_Def\骷髅武士]      [@main] Group
+D1215    [0]      0         [MonDie]     骷髅武士          *         [MapQuest_Def\骷髅武士]      [@main] Group
+
+D1211    [0]      0         [MonDie]     骷髅士兵          *         [MapQuest_Def\骷髅士兵]      [@main] Group
+D12121    [0]      0         [MonDie]     骷髅士兵          *         [MapQuest_Def\骷髅士兵]      [@main] Group
+D1213    [0]      0         [MonDie]     骷髅士兵          *         [MapQuest_Def\骷髅士兵]      [@main] Group
+D1214    [0]      0         [MonDie]     骷髅士兵          *         [MapQuest_Def\骷髅士兵]      [@main] Group
+D1215    [0]      0         [MonDie]     骷髅士兵          *         [MapQuest_Def\骷髅士兵]      [@main] Group
+
+D1211    [0]      0         [MonDie]     骷髅武将          *         [MapQuest_Def\骷髅武将]      [@main] Group
+D12121    [0]      0         [MonDie]     骷髅武将          *         [MapQuest_Def\骷髅武将]      [@main] Group
+D1213    [0]      0         [MonDie]     骷髅武将          *         [MapQuest_Def\骷髅武将]      [@main] Group
+D1214    [0]      0         [MonDie]     骷髅武将          *         [MapQuest_Def\骷髅武将]      [@main] Group
+D1215    [0]      0         [MonDie]     骷髅武将          *         [MapQuest_Def\骷髅武将]      [@main] Group
+
+D1211    [0]      0         [MonDie]     骨鬼将          *         [MapQuest_Def\骨鬼将]      [@main] Group
+D12121    [0]      0         [MonDie]     骨鬼将          *         [MapQuest_Def\骨鬼将]      [@main] Group
+D1213    [0]      0         [MonDie]     骨鬼将          *         [MapQuest_Def\骨鬼将]      [@main] Group
+D1214    [0]      0         [MonDie]     骨鬼将          *         [MapQuest_Def\骨鬼将]      [@main] Group
+D1215    [0]      0         [MonDie]     骨鬼将          *         [MapQuest_Def\骨鬼将]      [@main] Group
+
+D1215    [0]      0         [MonDie]     骷髅教主          *         [MapQuest_Def\骷髅教主]      [@main] Group
+
+D1001    [0]      0         [MonDie]     血巨人          *         [MapQuest_Def\血巨人]      [@main] Group
+D1002    [0]      0         [MonDie]     血巨人          *         [MapQuest_Def\血巨人]      [@main] Group
+D10031    [0]      0         [MonDie]     血巨人          *         [MapQuest_Def\血巨人]      [@main] Group
+D10032    [0]      0         [MonDie]     血巨人          *         [MapQuest_Def\血巨人]      [@main] Group
+D1004    [0]      0         [MonDie]     血巨人          *         [MapQuest_Def\血巨人]      [@main] Group
+D10051    [0]      0         [MonDie]     血巨人          *         [MapQuest_Def\血巨人]      [@main] Group
+D10052    [0]      0         [MonDie]     血巨人          *         [MapQuest_Def\血巨人]      [@main] Group
+D1011    [0]      0         [MonDie]     血巨人          *         [MapQuest_Def\血巨人]      [@main] Group
+D1012    [0]      0         [MonDie]     血巨人          *         [MapQuest_Def\血巨人]      [@main] Group
+D10131    [0]      0         [MonDie]     血巨人          *         [MapQuest_Def\血巨人]      [@main] Group
+D10132    [0]      0         [MonDie]     血巨人          *         [MapQuest_Def\血巨人]      [@main] Group
+D1014    [0]      0         [MonDie]     血巨人          *         [MapQuest_Def\血巨人]      [@main] Group
+D10151    [0]      0         [MonDie]     血巨人          *         [MapQuest_Def\血巨人]      [@main] Group
+D10152    [0]      0         [MonDie]     血巨人          *         [MapQuest_Def\血巨人]      [@main] Group
+D1021    [0]      0         [MonDie]     血巨人          *         [MapQuest_Def\血巨人]      [@main] Group
+D1022    [0]      0         [MonDie]     血巨人          *         [MapQuest_Def\血巨人]      [@main] Group
+D10231    [0]      0         [MonDie]     血巨人          *         [MapQuest_Def\血巨人]      [@main] Group
+D10232    [0]      0         [MonDie]     血巨人          *         [MapQuest_Def\血巨人]      [@main] Group
+D1024    [0]      0         [MonDie]     血巨人          *         [MapQuest_Def\血巨人]      [@main] Group
+D10251    [0]      0         [MonDie]     血巨人          *         [MapQuest_Def\血巨人]      [@main] Group
+D10252    [0]      0         [MonDie]     血巨人          *         [MapQuest_Def\血巨人]      [@main] Group
+
+D1001    [0]      0         [MonDie]     血金刚          *         [MapQuest_Def\血金刚]      [@main] Group
+D1002    [0]      0         [MonDie]     血金刚          *         [MapQuest_Def\血金刚]      [@main] Group
+D10031    [0]      0         [MonDie]     血金刚          *         [MapQuest_Def\血金刚]      [@main] Group
+D10032    [0]      0         [MonDie]     血金刚          *         [MapQuest_Def\血金刚]      [@main] Group
+D1004    [0]      0         [MonDie]     血金刚          *         [MapQuest_Def\血金刚]      [@main] Group
+D10051    [0]      0         [MonDie]     血金刚          *         [MapQuest_Def\血金刚]      [@main] Group
+D10052    [0]      0         [MonDie]     血金刚          *         [MapQuest_Def\血金刚]      [@main] Group
+D1011    [0]      0         [MonDie]     血金刚          *         [MapQuest_Def\血金刚]      [@main] Group
+D1012    [0]      0         [MonDie]     血金刚          *         [MapQuest_Def\血金刚]      [@main] Group
+D10131    [0]      0         [MonDie]     血金刚          *         [MapQuest_Def\血金刚]      [@main] Group
+D10132    [0]      0         [MonDie]     血金刚          *         [MapQuest_Def\血金刚]      [@main] Group
+D1014    [0]      0         [MonDie]     血金刚          *         [MapQuest_Def\血金刚]      [@main] Group
+D10151    [0]      0         [MonDie]     血金刚          *         [MapQuest_Def\血金刚]      [@main] Group
+D10152    [0]      0         [MonDie]     血金刚          *         [MapQuest_Def\血金刚]      [@main] Group
+D1021    [0]      0         [MonDie]     血金刚          *         [MapQuest_Def\血金刚]      [@main] Group
+D1022    [0]      0         [MonDie]     血金刚          *         [MapQuest_Def\血金刚]      [@main] Group
+D10231    [0]      0         [MonDie]     血金刚          *         [MapQuest_Def\血金刚]      [@main] Group
+D10232    [0]      0         [MonDie]     血金刚          *         [MapQuest_Def\血金刚]      [@main] Group
+D1024    [0]      0         [MonDie]     血金刚          *         [MapQuest_Def\血金刚]      [@main] Group
+D10251    [0]      0         [MonDie]     血金刚          *         [MapQuest_Def\血金刚]      [@main] Group
+D10252    [0]      0         [MonDie]     血金刚          *         [MapQuest_Def\血金刚]      [@main] Group
+
+D1001    [0]      0         [MonDie]     赤血恶魔          *         [MapQuest_Def\赤血恶魔]      [@main] Group
+D1002    [0]      0         [MonDie]     赤血恶魔          *         [MapQuest_Def\赤血恶魔]      [@main] Group
+D10031    [0]      0         [MonDie]     赤血恶魔          *         [MapQuest_Def\赤血恶魔]      [@main] Group
+D10032    [0]      0         [MonDie]     赤血恶魔          *         [MapQuest_Def\赤血恶魔]      [@main] Group
+D1004    [0]      0         [MonDie]     赤血恶魔          *         [MapQuest_Def\赤血恶魔]      [@main] Group
+D10051    [0]      0         [MonDie]     赤血恶魔          *         [MapQuest_Def\赤血恶魔]      [@main] Group
+D10052    [0]      0         [MonDie]     赤血恶魔          *         [MapQuest_Def\赤血恶魔]      [@main] Group
+D1011    [0]      0         [MonDie]     赤血恶魔          *         [MapQuest_Def\赤血恶魔]      [@main] Group
+D1012    [0]      0         [MonDie]     赤血恶魔          *         [MapQuest_Def\赤血恶魔]      [@main] Group
+D10131    [0]      0         [MonDie]     赤血恶魔          *         [MapQuest_Def\赤血恶魔]      [@main] Group
+D10132    [0]      0         [MonDie]     赤血恶魔          *         [MapQuest_Def\赤血恶魔]      [@main] Group
+D1014    [0]      0         [MonDie]     赤血恶魔          *         [MapQuest_Def\赤血恶魔]      [@main] Group
+D10151    [0]      0         [MonDie]     赤血恶魔          *         [MapQuest_Def\赤血恶魔]      [@main] Group
+D10152    [0]      0         [MonDie]     赤血恶魔          *         [MapQuest_Def\赤血恶魔]      [@main] Group
+D1021    [0]      0         [MonDie]     赤血恶魔          *         [MapQuest_Def\赤血恶魔]      [@main] Group
+D1022    [0]      0         [MonDie]     赤血恶魔          *         [MapQuest_Def\赤血恶魔]      [@main] Group
+D10231    [0]      0         [MonDie]     赤血恶魔          *         [MapQuest_Def\赤血恶魔]      [@main] Group
+D10232    [0]      0         [MonDie]     赤血恶魔          *         [MapQuest_Def\赤血恶魔]      [@main] Group
+D1024    [0]      0         [MonDie]     赤血恶魔          *         [MapQuest_Def\赤血恶魔]      [@main] Group
+D10251    [0]      0         [MonDie]     赤血恶魔          *         [MapQuest_Def\赤血恶魔]      [@main] Group
+D10252    [0]      0         [MonDie]     赤血恶魔          *         [MapQuest_Def\赤血恶魔]      [@main] Group
+
+D1001    [0]      0         [MonDie]     灰血恶魔          *         [MapQuest_Def\灰血恶魔]      [@main] Group
+D1002    [0]      0         [MonDie]     灰血恶魔          *         [MapQuest_Def\灰血恶魔]      [@main] Group
+D10031    [0]      0         [MonDie]     灰血恶魔          *         [MapQuest_Def\灰血恶魔]      [@main] Group
+D10032    [0]      0         [MonDie]     灰血恶魔          *         [MapQuest_Def\灰血恶魔]      [@main] Group
+D1004    [0]      0         [MonDie]     灰血恶魔          *         [MapQuest_Def\灰血恶魔]      [@main] Group
+D10051    [0]      0         [MonDie]     灰血恶魔          *         [MapQuest_Def\灰血恶魔]      [@main] Group
+D10052    [0]      0         [MonDie]     灰血恶魔          *         [MapQuest_Def\灰血恶魔]      [@main] Group
+D1011    [0]      0         [MonDie]     灰血恶魔          *         [MapQuest_Def\灰血恶魔]      [@main] Group
+D1012    [0]      0         [MonDie]     灰血恶魔          *         [MapQuest_Def\灰血恶魔]      [@main] Group
+D10131    [0]      0         [MonDie]     灰血恶魔          *         [MapQuest_Def\灰血恶魔]      [@main] Group
+D10132    [0]      0         [MonDie]     灰血恶魔          *         [MapQuest_Def\灰血恶魔]      [@main] Group
+D1014    [0]      0         [MonDie]     灰血恶魔          *         [MapQuest_Def\灰血恶魔]      [@main] Group
+D10151    [0]      0         [MonDie]     灰血恶魔          *         [MapQuest_Def\灰血恶魔]      [@main] Group
+D10152    [0]      0         [MonDie]     灰血恶魔          *         [MapQuest_Def\灰血恶魔]      [@main] Group
+D1021    [0]      0         [MonDie]     灰血恶魔          *         [MapQuest_Def\灰血恶魔]      [@main] Group
+D1022    [0]      0         [MonDie]     灰血恶魔          *         [MapQuest_Def\灰血恶魔]      [@main] Group
+D10231    [0]      0         [MonDie]     灰血恶魔          *         [MapQuest_Def\灰血恶魔]      [@main] Group
+D10232    [0]      0         [MonDie]     灰血恶魔          *         [MapQuest_Def\灰血恶魔]      [@main] Group
+D1024    [0]      0         [MonDie]     灰血恶魔          *         [MapQuest_Def\灰血恶魔]      [@main] Group
+D10251    [0]      0         [MonDie]     灰血恶魔          *         [MapQuest_Def\灰血恶魔]      [@main] Group
+D10252    [0]      0         [MonDie]     灰血恶魔          *         [MapQuest_Def\灰血恶魔]      [@main] Group
+
+D1001    [0]      0         [MonDie]     神鬼王          *         [MapQuest_Def\神鬼王]      [@main] Group
+D1002    [0]      0         [MonDie]     神鬼王          *         [MapQuest_Def\神鬼王]      [@main] Group
+D10031    [0]      0         [MonDie]     神鬼王          *         [MapQuest_Def\神鬼王]      [@main] Group
+D10032    [0]      0         [MonDie]     神鬼王          *         [MapQuest_Def\神鬼王]      [@main] Group
+D1004    [0]      0         [MonDie]     神鬼王          *         [MapQuest_Def\神鬼王]      [@main] Group
+D10051    [0]      0         [MonDie]     神鬼王          *         [MapQuest_Def\神鬼王]      [@main] Group
+D10052    [0]      0         [MonDie]     神鬼王          *         [MapQuest_Def\神鬼王]      [@main] Group
+D1011    [0]      0         [MonDie]     神鬼王          *         [MapQuest_Def\神鬼王]      [@main] Group
+D1012    [0]      0         [MonDie]     神鬼王          *         [MapQuest_Def\神鬼王]      [@main] Group
+D10131    [0]      0         [MonDie]     神鬼王          *         [MapQuest_Def\神鬼王]      [@main] Group
+D10132    [0]      0         [MonDie]     神鬼王          *         [MapQuest_Def\神鬼王]      [@main] Group
+D1014    [0]      0         [MonDie]     神鬼王          *         [MapQuest_Def\神鬼王]      [@main] Group
+D10151    [0]      0         [MonDie]     神鬼王          *         [MapQuest_Def\神鬼王]      [@main] Group
+D10152    [0]      0         [MonDie]     神鬼王          *         [MapQuest_Def\神鬼王]      [@main] Group
+D1021    [0]      0         [MonDie]     神鬼王          *         [MapQuest_Def\神鬼王]      [@main] Group
+D1022    [0]      0         [MonDie]     神鬼王          *         [MapQuest_Def\神鬼王]      [@main] Group
+D10231    [0]      0         [MonDie]     神鬼王          *         [MapQuest_Def\神鬼王]      [@main] Group
+D10232    [0]      0         [MonDie]     神鬼王          *         [MapQuest_Def\神鬼王]      [@main] Group
+D1024    [0]      0         [MonDie]     神鬼王          *         [MapQuest_Def\神鬼王]      [@main] Group
+D10251    [0]      0         [MonDie]     神鬼王          *         [MapQuest_Def\神鬼王]      [@main] Group
+D10252    [0]      0         [MonDie]     神鬼王          *         [MapQuest_Def\神鬼王]      [@main] Group
+
+D10162    [0]      0         [MonDie]     赤月恶魔          *         [MapQuest_Def\赤月恶魔]      [@main] Group
+
+9    [0]      0         [MonDie]     魔神怪1          *         [MapQuest_Def\魔神怪]      [@main] Group
+9    [0]      0         [MonDie]     魔神怪2          *         [MapQuest_Def\魔神怪]      [@main] Group
+9    [0]      0         [MonDie]     猿猴战将          *         [MapQuest_Def\猿猴战将]      [@main] Group
+9    [0]      0         [MonDie]     猿猴战士          *         [MapQuest_Def\猿猴战士]      [@main] Group
+9    [0]      0         [MonDie]     巨象兽          *         [MapQuest_Def\巨象兽]      [@main] Group
+9    [0]      0         [MonDie]     疯狂魔神盗          *         [MapQuest_Def\疯狂魔神盗]      [@main] Group
+
+D1101    [0]      0         [MonDie]     潘夜战士          *         [MapQuest_Def\潘夜战士]      [@main] Group
+D1102    [0]      0         [MonDie]     潘夜战士          *         [MapQuest_Def\潘夜战士]      [@main] Group
+D11031    [0]      0         [MonDie]     潘夜战士          *         [MapQuest_Def\潘夜战士]      [@main] Group
+D11032    [0]      0         [MonDie]     潘夜战士          *         [MapQuest_Def\潘夜战士]      [@main] Group
+D1104    [0]      0         [MonDie]     潘夜战士          *         [MapQuest_Def\潘夜战士]      [@main] Group
+D1105    [0]      0         [MonDie]     潘夜战士          *         [MapQuest_Def\潘夜战士]      [@main] Group
+D1110    [0]      0         [MonDie]     潘夜战士          *         [MapQuest_Def\潘夜战士]      [@main] Group
+D1111    [0]      0         [MonDie]     潘夜战士          *         [MapQuest_Def\潘夜战士]      [@main] Group
+D1112    [0]      0         [MonDie]     潘夜战士          *         [MapQuest_Def\潘夜战士]      [@main] Group
+D1113    [0]      0         [MonDie]     潘夜战士          *         [MapQuest_Def\潘夜战士]      [@main] Group
+D11141    [0]      0         [MonDie]     潘夜战士          *         [MapQuest_Def\潘夜战士]      [@main] Group
+D11142    [0]      0         [MonDie]     潘夜战士          *         [MapQuest_Def\潘夜战士]      [@main] Group
+D1115    [0]      0         [MonDie]     潘夜战士          *         [MapQuest_Def\潘夜战士]      [@main] Group
+D1116    [0]      0         [MonDie]     潘夜战士          *         [MapQuest_Def\潘夜战士]      [@main] Group
+
+D1101    [0]      0         [MonDie]     潘夜冰魔          *         [MapQuest_Def\潘夜冰魔]      [@main] Group
+D1102    [0]      0         [MonDie]     潘夜冰魔          *         [MapQuest_Def\潘夜冰魔]      [@main] Group
+D11031    [0]      0         [MonDie]     潘夜冰魔          *         [MapQuest_Def\潘夜冰魔]      [@main] Group
+D11032    [0]      0         [MonDie]     潘夜冰魔          *         [MapQuest_Def\潘夜冰魔]      [@main] Group
+D1104    [0]      0         [MonDie]     潘夜冰魔          *         [MapQuest_Def\潘夜冰魔]      [@main] Group
+D1105    [0]      0         [MonDie]     潘夜冰魔          *         [MapQuest_Def\潘夜冰魔]      [@main] Group
+D1110    [0]      0         [MonDie]     潘夜冰魔          *         [MapQuest_Def\潘夜冰魔]      [@main] Group
+D1111    [0]      0         [MonDie]     潘夜冰魔          *         [MapQuest_Def\潘夜冰魔]      [@main] Group
+D1112    [0]      0         [MonDie]     潘夜冰魔          *         [MapQuest_Def\潘夜冰魔]      [@main] Group
+D1113    [0]      0         [MonDie]     潘夜冰魔          *         [MapQuest_Def\潘夜冰魔]      [@main] Group
+D11141    [0]      0         [MonDie]     潘夜冰魔          *         [MapQuest_Def\潘夜冰魔]      [@main] Group
+D11142    [0]      0         [MonDie]     潘夜冰魔          *         [MapQuest_Def\潘夜冰魔]      [@main] Group
+D1115    [0]      0         [MonDie]     潘夜冰魔          *         [MapQuest_Def\潘夜冰魔]      [@main] Group
+D1116    [0]      0         [MonDie]     潘夜冰魔          *         [MapQuest_Def\潘夜冰魔]      [@main] Group
+
+D1101    [0]      0         [MonDie]     潘夜云魔          *         [MapQuest_Def\潘夜云魔]      [@main] Group
+D1102    [0]      0         [MonDie]     潘夜云魔          *         [MapQuest_Def\潘夜云魔]      [@main] Group
+D11031    [0]      0         [MonDie]     潘夜云魔          *         [MapQuest_Def\潘夜云魔]      [@main] Group
+D11032    [0]      0         [MonDie]     潘夜云魔          *         [MapQuest_Def\潘夜云魔]      [@main] Group
+D1104    [0]      0         [MonDie]     潘夜云魔          *         [MapQuest_Def\潘夜云魔]      [@main] Group
+D1105    [0]      0         [MonDie]     潘夜云魔          *         [MapQuest_Def\潘夜云魔]      [@main] Group
+D1110    [0]      0         [MonDie]     潘夜云魔          *         [MapQuest_Def\潘夜云魔]      [@main] Group
+D1111    [0]      0         [MonDie]     潘夜云魔          *         [MapQuest_Def\潘夜云魔]      [@main] Group
+D1112    [0]      0         [MonDie]     潘夜云魔          *         [MapQuest_Def\潘夜云魔]      [@main] Group
+D1113    [0]      0         [MonDie]     潘夜云魔          *         [MapQuest_Def\潘夜云魔]      [@main] Group
+D11141    [0]      0         [MonDie]     潘夜云魔          *         [MapQuest_Def\潘夜云魔]      [@main] Group
+D11142    [0]      0         [MonDie]     潘夜云魔          *         [MapQuest_Def\潘夜云魔]      [@main] Group
+D1115    [0]      0         [MonDie]     潘夜云魔          *         [MapQuest_Def\潘夜云魔]      [@main] Group
+D1116    [0]      0         [MonDie]     潘夜云魔          *         [MapQuest_Def\潘夜云魔]      [@main] Group
+
+D1101    [0]      0         [MonDie]     潘夜火魔          *         [MapQuest_Def\潘夜火魔]      [@main] Group
+D1102    [0]      0         [MonDie]     潘夜火魔          *         [MapQuest_Def\潘夜火魔]      [@main] Group
+D11031    [0]      0         [MonDie]     潘夜火魔          *         [MapQuest_Def\潘夜火魔]      [@main] Group
+D11032    [0]      0         [MonDie]     潘夜火魔          *         [MapQuest_Def\潘夜火魔]      [@main] Group
+D1104    [0]      0         [MonDie]     潘夜火魔          *         [MapQuest_Def\潘夜火魔]      [@main] Group
+D1105    [0]      0         [MonDie]     潘夜火魔          *         [MapQuest_Def\潘夜火魔]      [@main] Group
+D1110    [0]      0         [MonDie]     潘夜火魔          *         [MapQuest_Def\潘夜火魔]      [@main] Group
+D1111    [0]      0         [MonDie]     潘夜火魔          *         [MapQuest_Def\潘夜火魔]      [@main] Group
+D1112    [0]      0         [MonDie]     潘夜火魔          *         [MapQuest_Def\潘夜火魔]      [@main] Group
+D1113    [0]      0         [MonDie]     潘夜火魔          *         [MapQuest_Def\潘夜火魔]      [@main] Group
+D11141    [0]      0         [MonDie]     潘夜火魔          *         [MapQuest_Def\潘夜火魔]      [@main] Group
+D11142    [0]      0         [MonDie]     潘夜火魔          *         [MapQuest_Def\潘夜火魔]      [@main] Group
+D1115    [0]      0         [MonDie]     潘夜火魔          *         [MapQuest_Def\潘夜火魔]      [@main] Group
+D1116    [0]      0         [MonDie]     潘夜火魔          *         [MapQuest_Def\潘夜火魔]      [@main] Group
+
+D1101    [0]      0         [MonDie]     潘夜风魔          *         [MapQuest_Def\潘夜风魔]      [@main] Group
+D1102    [0]      0         [MonDie]     潘夜风魔          *         [MapQuest_Def\潘夜风魔]      [@main] Group
+D11031    [0]      0         [MonDie]     潘夜风魔          *         [MapQuest_Def\潘夜风魔]      [@main] Group
+D11032    [0]      0         [MonDie]     潘夜风魔          *         [MapQuest_Def\潘夜风魔]      [@main] Group
+D1104    [0]      0         [MonDie]     潘夜风魔          *         [MapQuest_Def\潘夜风魔]      [@main] Group
+D1105    [0]      0         [MonDie]     潘夜风魔          *         [MapQuest_Def\潘夜风魔]      [@main] Group
+D1110    [0]      0         [MonDie]     潘夜风魔          *         [MapQuest_Def\潘夜风魔]      [@main] Group
+D1111    [0]      0         [MonDie]     潘夜风魔          *         [MapQuest_Def\潘夜风魔]      [@main] Group
+D1112    [0]      0         [MonDie]     潘夜风魔          *         [MapQuest_Def\潘夜风魔]      [@main] Group
+D1113    [0]      0         [MonDie]     潘夜风魔          *         [MapQuest_Def\潘夜风魔]      [@main] Group
+D11141    [0]      0         [MonDie]     潘夜风魔          *         [MapQuest_Def\潘夜风魔]      [@main] Group
+D11142    [0]      0         [MonDie]     潘夜风魔          *         [MapQuest_Def\潘夜风魔]      [@main] Group
+D1115    [0]      0         [MonDie]     潘夜风魔          *         [MapQuest_Def\潘夜风魔]      [@main] Group
+D1116    [0]      0         [MonDie]     潘夜风魔          *         [MapQuest_Def\潘夜风魔]      [@main] Group
+
+D1101    [0]      0         [MonDie]     潘夜左护卫          *         [MapQuest_Def\潘夜左护卫]      [@main] Group
+D1102    [0]      0         [MonDie]     潘夜左护卫          *         [MapQuest_Def\潘夜左护卫]      [@main] Group
+D11031    [0]      0         [MonDie]     潘夜左护卫          *         [MapQuest_Def\潘夜左护卫]      [@main] Group
+D11032    [0]      0         [MonDie]     潘夜左护卫          *         [MapQuest_Def\潘夜左护卫]      [@main] Group
+D1104    [0]      0         [MonDie]     潘夜左护卫          *         [MapQuest_Def\潘夜左护卫]      [@main] Group
+D1105    [0]      0         [MonDie]     潘夜左护卫          *         [MapQuest_Def\潘夜左护卫]      [@main] Group
+D1110    [0]      0         [MonDie]     潘夜左护卫          *         [MapQuest_Def\潘夜左护卫]      [@main] Group
+D1111    [0]      0         [MonDie]     潘夜左护卫          *         [MapQuest_Def\潘夜左护卫]      [@main] Group
+D1112    [0]      0         [MonDie]     潘夜左护卫          *         [MapQuest_Def\潘夜左护卫]      [@main] Group
+D1113    [0]      0         [MonDie]     潘夜左护卫          *         [MapQuest_Def\潘夜左护卫]      [@main] Group
+D11141    [0]      0         [MonDie]     潘夜左护卫          *         [MapQuest_Def\潘夜左护卫]      [@main] Group
+D11142    [0]      0         [MonDie]     潘夜左护卫          *         [MapQuest_Def\潘夜左护卫]      [@main] Group
+D1115    [0]      0         [MonDie]     潘夜左护卫          *         [MapQuest_Def\潘夜左护卫]      [@main] Group
+D1116    [0]      0         [MonDie]     潘夜左护卫94          *         [MapQuest_Def\潘夜左护卫]      [@main] Group
+
+D1101    [0]      0         [MonDie]     潘夜右护卫          *         [MapQuest_Def\潘夜右护卫]      [@main] Group
+D1102    [0]      0         [MonDie]     潘夜右护卫          *         [MapQuest_Def\潘夜右护卫]      [@main] Group
+D11031    [0]      0         [MonDie]     潘夜右护卫          *         [MapQuest_Def\潘夜右护卫]      [@main] Group
+D11032    [0]      0         [MonDie]     潘夜右护卫          *         [MapQuest_Def\潘夜右护卫]      [@main] Group
+D1104    [0]      0         [MonDie]     潘夜右护卫          *         [MapQuest_Def\潘夜右护卫]      [@main] Group
+D1105    [0]      0         [MonDie]     潘夜右护卫          *         [MapQuest_Def\潘夜右护卫]      [@main] Group
+D1110    [0]      0         [MonDie]     潘夜右护卫          *         [MapQuest_Def\潘夜右护卫]      [@main] Group
+D1111    [0]      0         [MonDie]     潘夜右护卫          *         [MapQuest_Def\潘夜右护卫]      [@main] Group
+D1112    [0]      0         [MonDie]     潘夜右护卫          *         [MapQuest_Def\潘夜右护卫]      [@main] Group
+D1113    [0]      0         [MonDie]     潘夜右护卫          *         [MapQuest_Def\潘夜右护卫]      [@main] Group
+D11141    [0]      0         [MonDie]     潘夜右护卫          *         [MapQuest_Def\潘夜右护卫]      [@main] Group
+D11142    [0]      0         [MonDie]     潘夜右护卫          *         [MapQuest_Def\潘夜右护卫]      [@main] Group
+D1115    [0]      0         [MonDie]     潘夜右护卫          *         [MapQuest_Def\潘夜右护卫]      [@main] Group
+D1116    [0]      0         [MonDie]     潘夜右护卫95          *         [MapQuest_Def\潘夜右护卫]      [@main] Group
+
+D1101    [0]      0         [MonDie]     潘夜鬼将          *         [MapQuest_Def\潘夜鬼将]      [@main] Group
+D1102    [0]      0         [MonDie]     潘夜鬼将          *         [MapQuest_Def\潘夜鬼将]      [@main] Group
+D11031    [0]      0         [MonDie]     潘夜鬼将          *         [MapQuest_Def\潘夜鬼将]      [@main] Group
+D11032    [0]      0         [MonDie]     潘夜鬼将          *         [MapQuest_Def\潘夜鬼将]      [@main] Group
+D1104    [0]      0         [MonDie]     潘夜鬼将          *         [MapQuest_Def\潘夜鬼将]      [@main] Group
+D1105    [0]      0         [MonDie]     潘夜鬼将          *         [MapQuest_Def\潘夜鬼将]      [@main] Group
+D1110    [0]      0         [MonDie]     潘夜鬼将          *         [MapQuest_Def\潘夜鬼将]      [@main] Group
+D1111    [0]      0         [MonDie]     潘夜鬼将          *         [MapQuest_Def\潘夜鬼将]      [@main] Group
+D1112    [0]      0         [MonDie]     潘夜鬼将          *         [MapQuest_Def\潘夜鬼将]      [@main] Group
+D1113    [0]      0         [MonDie]     潘夜鬼将          *         [MapQuest_Def\潘夜鬼将]      [@main] Group
+D11141    [0]      0         [MonDie]     潘夜鬼将          *         [MapQuest_Def\潘夜鬼将]      [@main] Group
+D11142    [0]      0         [MonDie]     潘夜鬼将          *         [MapQuest_Def\潘夜鬼将]      [@main] Group
+D1115    [0]      0         [MonDie]     潘夜鬼将          *         [MapQuest_Def\潘夜鬼将]      [@main] Group
+D1116    [0]      0         [MonDie]     潘夜鬼将          *         [MapQuest_Def\潘夜鬼将]      [@main] Group
+
+D1116    [0]      0         [MonDie]     潘夜牛魔王          *         [MapQuest_Def\潘夜牛魔王]      [@main] Group
+
+D501    [0]      0         [MonDie]     大老鼠          *         [MapQuest_Def\大老鼠]      [@main] Group
+D502    [0]      0         [MonDie]     大老鼠          *         [MapQuest_Def\大老鼠]      [@main] Group
+D503    [0]      0         [MonDie]     大老鼠          *         [MapQuest_Def\大老鼠]      [@main] Group
+D504    [0]      0         [MonDie]     大老鼠          *         [MapQuest_Def\大老鼠]      [@main] Group
+D505    [0]      0         [MonDie]     大老鼠          *         [MapQuest_Def\大老鼠]      [@main] Group
+D5071    [0]      0         [MonDie]     大老鼠          *         [MapQuest_Def\大老鼠]      [@main] Group
+D5072    [0]      0         [MonDie]     大老鼠          *         [MapQuest_Def\大老鼠]      [@main] Group
+D5073    [0]      0         [MonDie]     大老鼠          *         [MapQuest_Def\大老鼠]      [@main] Group
+D5074    [0]      0         [MonDie]     大老鼠          *         [MapQuest_Def\大老鼠]      [@main] Group
+D515    [0]      0         [MonDie]     大老鼠          *         [MapQuest_Def\大老鼠]      [@main] Group
+
+D501    [0]      0         [MonDie]     祖玛弓箭手          *         [MapQuest_Def\祖玛弓箭手]      [@main] Group
+D502    [0]      0         [MonDie]     祖玛弓箭手          *         [MapQuest_Def\祖玛弓箭手]      [@main] Group
+D503    [0]      0         [MonDie]     祖玛弓箭手          *         [MapQuest_Def\祖玛弓箭手]      [@main] Group
+D504    [0]      0         [MonDie]     祖玛弓箭手          *         [MapQuest_Def\祖玛弓箭手]      [@main] Group
+D505    [0]      0         [MonDie]     祖玛弓箭手          *         [MapQuest_Def\祖玛弓箭手]      [@main] Group
+D5071    [0]      0         [MonDie]     祖玛弓箭手          *         [MapQuest_Def\祖玛弓箭手]      [@main] Group
+D5072    [0]      0         [MonDie]     祖玛弓箭手          *         [MapQuest_Def\祖玛弓箭手]      [@main] Group
+D5073    [0]      0         [MonDie]     祖玛弓箭手          *         [MapQuest_Def\祖玛弓箭手]      [@main] Group
+D5074    [0]      0         [MonDie]     祖玛弓箭手          *         [MapQuest_Def\祖玛弓箭手]      [@main] Group
+D515    [0]      0         [MonDie]     祖玛弓箭手          *         [MapQuest_Def\祖玛弓箭手]      [@main] Group
+
+D501    [0]      0         [MonDie]     祖玛雕像          *         [MapQuest_Def\祖玛雕像]      [@main] Group
+D502    [0]      0         [MonDie]     祖玛雕像          *         [MapQuest_Def\祖玛雕像]      [@main] Group
+D503    [0]      0         [MonDie]     祖玛雕像          *         [MapQuest_Def\祖玛雕像]      [@main] Group
+D504    [0]      0         [MonDie]     祖玛雕像          *         [MapQuest_Def\祖玛雕像]      [@main] Group
+D505    [0]      0         [MonDie]     祖玛雕像          *         [MapQuest_Def\祖玛雕像]      [@main] Group
+D5071    [0]      0         [MonDie]     祖玛雕像          *         [MapQuest_Def\祖玛雕像]      [@main] Group
+D5072    [0]      0         [MonDie]     祖玛雕像          *         [MapQuest_Def\祖玛雕像]      [@main] Group
+D5073    [0]      0         [MonDie]     祖玛雕像          *         [MapQuest_Def\祖玛雕像]      [@main] Group
+D5074    [0]      0         [MonDie]     祖玛雕像          *         [MapQuest_Def\祖玛雕像]      [@main] Group
+D515    [0]      0         [MonDie]     祖玛雕像          *         [MapQuest_Def\祖玛雕像]      [@main] Group
+
+D501    [0]      0         [MonDie]     祖玛卫士          *         [MapQuest_Def\祖玛卫士]      [@main] Group
+D502    [0]      0         [MonDie]     祖玛卫士          *         [MapQuest_Def\祖玛卫士]      [@main] Group
+D503    [0]      0         [MonDie]     祖玛卫士          *         [MapQuest_Def\祖玛卫士]      [@main] Group
+D504    [0]      0         [MonDie]     祖玛卫士          *         [MapQuest_Def\祖玛卫士]      [@main] Group
+D505    [0]      0         [MonDie]     祖玛卫士          *         [MapQuest_Def\祖玛卫士]      [@main] Group
+D5071    [0]      0         [MonDie]     祖玛卫士          *         [MapQuest_Def\祖玛卫士]      [@main] Group
+D5072    [0]      0         [MonDie]     祖玛卫士          *         [MapQuest_Def\祖玛卫士]      [@main] Group
+D5073    [0]      0         [MonDie]     祖玛卫士          *         [MapQuest_Def\祖玛卫士]      [@main] Group
+D5074    [0]      0         [MonDie]     祖玛卫士          *         [MapQuest_Def\祖玛卫士]      [@main] Group
+D515    [0]      0         [MonDie]     祖玛卫士          *         [MapQuest_Def\祖玛卫士]      [@main] Group
+
+D501    [0]      0         [MonDie]     护法天          *         [MapQuest_Def\护法天]      [@main] Group
+D502    [0]      0         [MonDie]     护法天          *         [MapQuest_Def\护法天]      [@main] Group
+D503    [0]      0         [MonDie]     护法天          *         [MapQuest_Def\护法天]      [@main] Group
+D504    [0]      0         [MonDie]     护法天          *         [MapQuest_Def\护法天]      [@main] Group
+D505    [0]      0         [MonDie]     护法天          *         [MapQuest_Def\护法天]      [@main] Group
+D5071    [0]      0         [MonDie]     护法天          *         [MapQuest_Def\护法天]      [@main] Group
+D5072    [0]      0         [MonDie]     护法天          *         [MapQuest_Def\护法天]      [@main] Group
+D5073    [0]      0         [MonDie]     护法天          *         [MapQuest_Def\护法天]      [@main] Group
+D5074    [0]      0         [MonDie]     护法天          *         [MapQuest_Def\护法天]      [@main] Group
+D515    [0]      0         [MonDie]     护法天          *         [MapQuest_Def\护法天]      [@main] Group
+
+D515    [0]      0         [MonDie]     祖玛教主          *         [MapQuest_Def\祖玛教主]      [@main] Group
+
+D1500    [0]      0         [MonDie]     石像狮子          *         [MapQuest_Def\石像狮子]      [@main] Group
+D15011    [0]      0         [MonDie]     石像狮子          *         [MapQuest_Def\石像狮子]      [@main] Group
+D15012    [0]      0         [MonDie]     石像狮子          *         [MapQuest_Def\石像狮子]      [@main] Group
+D15013    [0]      0         [MonDie]     石像狮子          *         [MapQuest_Def\石像狮子]      [@main] Group
+D15014    [0]      0         [MonDie]     石像狮子          *         [MapQuest_Def\石像狮子]      [@main] Group
+D15021    [0]      0         [MonDie]     石像狮子          *         [MapQuest_Def\石像狮子]      [@main] Group
+D15022    [0]      0         [MonDie]     石像狮子          *         [MapQuest_Def\石像狮子]      [@main] Group
+D15023    [0]      0         [MonDie]     石像狮子          *         [MapQuest_Def\石像狮子]      [@main] Group
+D15024    [0]      0         [MonDie]     石像狮子          *         [MapQuest_Def\石像狮子]      [@main] Group
+D15032    [0]      0         [MonDie]     石像狮子          *         [MapQuest_Def\石像狮子]      [@main] Group
+D15033    [0]      0         [MonDie]     石像狮子          *         [MapQuest_Def\石像狮子]      [@main] Group
+D15034    [0]      0         [MonDie]     石像狮子          *         [MapQuest_Def\石像狮子]      [@main] Group
+D15043    [0]      0         [MonDie]     石像狮子          *         [MapQuest_Def\石像狮子]      [@main] Group
+D15044    [0]      0         [MonDie]     石像狮子          *         [MapQuest_Def\石像狮子]      [@main] Group
+D15054    [0]      0         [MonDie]     石像狮子          *         [MapQuest_Def\石像狮子]      [@main] Group
+D1510    [0]      0         [MonDie]     石像狮子          *         [MapQuest_Def\石像狮子]      [@main] Group
+D15111    [0]      0         [MonDie]     石像狮子          *         [MapQuest_Def\石像狮子]      [@main] Group
+D15112    [0]      0         [MonDie]     石像狮子          *         [MapQuest_Def\石像狮子]      [@main] Group
+D1512    [0]      0         [MonDie]     石像狮子          *         [MapQuest_Def\石像狮子]      [@main] Group
+D1513    [0]      0         [MonDie]     石像狮子          *         [MapQuest_Def\石像狮子]      [@main] Group
+
+D1500    [0]      0         [MonDie]     火焰狮子          *         [MapQuest_Def\火焰狮子]      [@main] Group
+D15011    [0]      0         [MonDie]     火焰狮子          *         [MapQuest_Def\火焰狮子]      [@main] Group
+D15012    [0]      0         [MonDie]     火焰狮子          *         [MapQuest_Def\火焰狮子]      [@main] Group
+D15013    [0]      0         [MonDie]     火焰狮子          *         [MapQuest_Def\火焰狮子]      [@main] Group
+D15014    [0]      0         [MonDie]     火焰狮子          *         [MapQuest_Def\火焰狮子]      [@main] Group
+D15021    [0]      0         [MonDie]     火焰狮子          *         [MapQuest_Def\火焰狮子]      [@main] Group
+D15022    [0]      0         [MonDie]     火焰狮子          *         [MapQuest_Def\火焰狮子]      [@main] Group
+D15023    [0]      0         [MonDie]     火焰狮子          *         [MapQuest_Def\火焰狮子]      [@main] Group
+D15024    [0]      0         [MonDie]     火焰狮子          *         [MapQuest_Def\火焰狮子]      [@main] Group
+D15032    [0]      0         [MonDie]     火焰狮子          *         [MapQuest_Def\火焰狮子]      [@main] Group
+D15033    [0]      0         [MonDie]     火焰狮子          *         [MapQuest_Def\火焰狮子]      [@main] Group
+D15034    [0]      0         [MonDie]     火焰狮子          *         [MapQuest_Def\火焰狮子]      [@main] Group
+D15043    [0]      0         [MonDie]     火焰狮子          *         [MapQuest_Def\火焰狮子]      [@main] Group
+D15044    [0]      0         [MonDie]     火焰狮子          *         [MapQuest_Def\火焰狮子]      [@main] Group
+D15054    [0]      0         [MonDie]     火焰狮子          *         [MapQuest_Def\火焰狮子]      [@main] Group
+D1510    [0]      0         [MonDie]     火焰狮子          *         [MapQuest_Def\火焰狮子]      [@main] Group
+D15111    [0]      0         [MonDie]     火焰狮子          *         [MapQuest_Def\火焰狮子]      [@main] Group
+D15112    [0]      0         [MonDie]     火焰狮子          *         [MapQuest_Def\火焰狮子]      [@main] Group
+D1512    [0]      0         [MonDie]     火焰狮子          *         [MapQuest_Def\火焰狮子]      [@main] Group
+D1513    [0]      0         [MonDie]     火焰狮子          *         [MapQuest_Def\火焰狮子]      [@main] Group
+
+D1500    [0]      0         [MonDie]     武力神将          *         [MapQuest_Def\武力神将]      [@main] Group
+D15011    [0]      0         [MonDie]     武力神将          *         [MapQuest_Def\武力神将]      [@main] Group
+D15012    [0]      0         [MonDie]     武力神将          *         [MapQuest_Def\武力神将]      [@main] Group
+D15013    [0]      0         [MonDie]     武力神将          *         [MapQuest_Def\武力神将]      [@main] Group
+D15014    [0]      0         [MonDie]     武力神将          *         [MapQuest_Def\武力神将]      [@main] Group
+D15021    [0]      0         [MonDie]     武力神将          *         [MapQuest_Def\武力神将]      [@main] Group
+D15022    [0]      0         [MonDie]     武力神将          *         [MapQuest_Def\武力神将]      [@main] Group
+D15023    [0]      0         [MonDie]     武力神将          *         [MapQuest_Def\武力神将]      [@main] Group
+D15024    [0]      0         [MonDie]     武力神将          *         [MapQuest_Def\武力神将]      [@main] Group
+D15032    [0]      0         [MonDie]     武力神将          *         [MapQuest_Def\武力神将]      [@main] Group
+D15033    [0]      0         [MonDie]     武力神将          *         [MapQuest_Def\武力神将]      [@main] Group
+D15034    [0]      0         [MonDie]     武力神将          *         [MapQuest_Def\武力神将]      [@main] Group
+D15043    [0]      0         [MonDie]     武力神将          *         [MapQuest_Def\武力神将]      [@main] Group
+D15044    [0]      0         [MonDie]     武力神将          *         [MapQuest_Def\武力神将]      [@main] Group
+D15054    [0]      0         [MonDie]     武力神将          *         [MapQuest_Def\武力神将]      [@main] Group
+D1510    [0]      0         [MonDie]     武力神将          *         [MapQuest_Def\武力神将]      [@main] Group
+D15111    [0]      0         [MonDie]     武力神将          *         [MapQuest_Def\武力神将]      [@main] Group
+D15112    [0]      0         [MonDie]     武力神将          *         [MapQuest_Def\武力神将]      [@main] Group
+D1512    [0]      0         [MonDie]     武力神将          *         [MapQuest_Def\武力神将]      [@main] Group
+D1513    [0]      0         [MonDie]     武力神将          *         [MapQuest_Def\武力神将]      [@main] Group
+
+D1500    [0]      0         [MonDie]     地牢女神1          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15011    [0]      0         [MonDie]     地牢女神1          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15012    [0]      0         [MonDie]     地牢女神1          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15013    [0]      0         [MonDie]     地牢女神1          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15014    [0]      0         [MonDie]     地牢女神1          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15021    [0]      0         [MonDie]     地牢女神1          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15022    [0]      0         [MonDie]     地牢女神1          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15023    [0]      0         [MonDie]     地牢女神1          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15024    [0]      0         [MonDie]     地牢女神1          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15032    [0]      0         [MonDie]     地牢女神1          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15033    [0]      0         [MonDie]     地牢女神1          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15034    [0]      0         [MonDie]     地牢女神1          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15043    [0]      0         [MonDie]     地牢女神1          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15044    [0]      0         [MonDie]     地牢女神1          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15054    [0]      0         [MonDie]     地牢女神1          *         [MapQuest_Def\地牢女神]      [@main] Group
+D1510    [0]      0         [MonDie]     地牢女神1          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15111    [0]      0         [MonDie]     地牢女神1          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15112    [0]      0         [MonDie]     地牢女神1          *         [MapQuest_Def\地牢女神]      [@main] Group
+D1512    [0]      0         [MonDie]     地牢女神1          *         [MapQuest_Def\地牢女神]      [@main] Group
+D1513    [0]      0         [MonDie]     地牢女神1          *         [MapQuest_Def\地牢女神]      [@main] Group
+
+D1500    [0]      0         [MonDie]     地牢女神2          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15011    [0]      0         [MonDie]     地牢女神2          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15012    [0]      0         [MonDie]     地牢女神2          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15013    [0]      0         [MonDie]     地牢女神2          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15014    [0]      0         [MonDie]     地牢女神2          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15021    [0]      0         [MonDie]     地牢女神2          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15022    [0]      0         [MonDie]     地牢女神2          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15023    [0]      0         [MonDie]     地牢女神2          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15024    [0]      0         [MonDie]     地牢女神2          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15032    [0]      0         [MonDie]     地牢女神2          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15033    [0]      0         [MonDie]     地牢女神2          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15034    [0]      0         [MonDie]     地牢女神2          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15043    [0]      0         [MonDie]     地牢女神2          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15044    [0]      0         [MonDie]     地牢女神2          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15054    [0]      0         [MonDie]     地牢女神2          *         [MapQuest_Def\地牢女神]      [@main] Group
+D1510    [0]      0         [MonDie]     地牢女神2          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15111    [0]      0         [MonDie]     地牢女神2          *         [MapQuest_Def\地牢女神]      [@main] Group
+D15112    [0]      0         [MonDie]     地牢女神2          *         [MapQuest_Def\地牢女神]      [@main] Group
+D1512    [0]      0         [MonDie]     地牢女神2          *         [MapQuest_Def\地牢女神]      [@main] Group
+D1513    [0]      0         [MonDie]     地牢女神2          *         [MapQuest_Def\地牢女神]      [@main] Group
+
+D1500    [0]      0         [MonDie]     震天首将          *         [MapQuest_Def\震天首将]      [@main] Group
+D15011    [0]      0         [MonDie]     震天首将          *         [MapQuest_Def\震天首将]      [@main] Group
+D15012    [0]      0         [MonDie]     震天首将          *         [MapQuest_Def\震天首将]      [@main] Group
+D15013    [0]      0         [MonDie]     震天首将          *         [MapQuest_Def\震天首将]      [@main] Group
+D15014    [0]      0         [MonDie]     震天首将          *         [MapQuest_Def\震天首将]      [@main] Group
+D15021    [0]      0         [MonDie]     震天首将          *         [MapQuest_Def\震天首将]      [@main] Group
+D15022    [0]      0         [MonDie]     震天首将          *         [MapQuest_Def\震天首将]      [@main] Group
+D15023    [0]      0         [MonDie]     震天首将          *         [MapQuest_Def\震天首将]      [@main] Group
+D15024    [0]      0         [MonDie]     震天首将          *         [MapQuest_Def\震天首将]      [@main] Group
+D15032    [0]      0         [MonDie]     震天首将          *         [MapQuest_Def\震天首将]      [@main] Group
+D15033    [0]      0         [MonDie]     震天首将          *         [MapQuest_Def\震天首将]      [@main] Group
+D15034    [0]      0         [MonDie]     震天首将          *         [MapQuest_Def\震天首将]      [@main] Group
+D15043    [0]      0         [MonDie]     震天首将          *         [MapQuest_Def\震天首将]      [@main] Group
+D15044    [0]      0         [MonDie]     震天首将          *         [MapQuest_Def\震天首将]      [@main] Group
+D15054    [0]      0         [MonDie]     震天首将          *         [MapQuest_Def\震天首将]      [@main] Group
+D1510    [0]      0         [MonDie]     震天首将          *         [MapQuest_Def\震天首将]      [@main] Group
+D15111    [0]      0         [MonDie]     震天首将          *         [MapQuest_Def\震天首将]      [@main] Group
+D15112    [0]      0         [MonDie]     震天首将          *         [MapQuest_Def\震天首将]      [@main] Group
+D1512    [0]      0         [MonDie]     震天首将          *         [MapQuest_Def\震天首将]      [@main] Group
+D1513    [0]      0         [MonDie]     震天首将          *         [MapQuest_Def\震天首将]      [@main] Group
+
+D1506    [0]      0         [MonDie]     震天魔神          *         [MapQuest_Def\震天魔神]      [@main] Group
+D1506    [0]      0         [MonDie]     石像狮子96          *         [MapQuest_Def\石像狮子]      [@main] Group
+D1506    [0]      0         [MonDie]     火焰狮子97          *         [MapQuest_Def\火焰狮子]      [@main] Group
+D1506    [0]      0         [MonDie]     石像狮子98          *         [MapQuest_Def\石像狮子]      [@main] Group
+D1506    [0]      0         [MonDie]     火焰狮子99          *         [MapQuest_Def\火焰狮子]      [@main] Group
+D1506    [0]      0         [MonDie]     武力神将81          *         [MapQuest_Def\武力神将]      [@main] Group
+
+D901    [0]      0         [MonDie]     犬猴魔          *         [MapQuest_Def\犬猴魔]      [@main] Group
+D9021    [0]      0         [MonDie]     犬猴魔          *         [MapQuest_Def\犬猴魔]      [@main] Group
+D9022    [0]      0         [MonDie]     犬猴魔          *         [MapQuest_Def\犬猴魔]      [@main] Group
+D903    [0]      0         [MonDie]     犬猴魔          *         [MapQuest_Def\犬猴魔]      [@main] Group
+D904    [0]      0         [MonDie]     犬猴魔          *         [MapQuest_Def\犬猴魔]      [@main] Group
+
+D901    [0]      0         [MonDie]     轻甲守卫          *         [MapQuest_Def\轻甲守卫]      [@main] Group
+D9021    [0]      0         [MonDie]     轻甲守卫          *         [MapQuest_Def\轻甲守卫]      [@main] Group
+D9022    [0]      0         [MonDie]     轻甲守卫          *         [MapQuest_Def\轻甲守卫]      [@main] Group
+D903    [0]      0         [MonDie]     轻甲守卫          *         [MapQuest_Def\轻甲守卫]      [@main] Group
+D904    [0]      0         [MonDie]     轻甲守卫          *         [MapQuest_Def\轻甲守卫]      [@main] Group
+
+D901    [0]      0         [MonDie]     恶形鬼          *         [MapQuest_Def\恶形鬼]      [@main] Group
+D9021    [0]      0         [MonDie]     恶形鬼          *         [MapQuest_Def\恶形鬼]      [@main] Group
+D9022    [0]      0         [MonDie]     恶形鬼          *         [MapQuest_Def\恶形鬼]      [@main] Group
+D903    [0]      0         [MonDie]     恶形鬼          *         [MapQuest_Def\恶形鬼]      [@main] Group
+D904    [0]      0         [MonDie]     恶形鬼          *         [MapQuest_Def\恶形鬼]      [@main] Group
+
+D901    [0]      0         [MonDie]     触角神魔          *         [MapQuest_Def\触角神魔]      [@main] Group
+D9021    [0]      0         [MonDie]     触角神魔          *         [MapQuest_Def\触角神魔]      [@main] Group
+D9022    [0]      0         [MonDie]     触角神魔          *         [MapQuest_Def\触角神魔]      [@main] Group
+D903    [0]      0         [MonDie]     触角神魔          *         [MapQuest_Def\触角神魔]      [@main] Group
+D904    [0]      0         [MonDie]     触角神魔          *         [MapQuest_Def\触角神魔]      [@main] Group
+
+D901    [0]      0         [MonDie]     海神将领          *         [MapQuest_Def\海神将领]      [@main] Group
+D9021    [0]      0         [MonDie]     海神将领          *         [MapQuest_Def\海神将领]      [@main] Group
+D9022    [0]      0         [MonDie]     海神将领          *         [MapQuest_Def\海神将领]      [@main] Group
+D903    [0]      0         [MonDie]     海神将领          *         [MapQuest_Def\海神将领]      [@main] Group
+D904    [0]      0         [MonDie]     海神将领          *         [MapQuest_Def\海神将领]      [@main] Group
+
+D901    [0]      0         [MonDie]     爆毒神魔          *         [MapQuest_Def\爆毒神魔]      [@main] Group
+D9021    [0]      0         [MonDie]     爆毒神魔          *         [MapQuest_Def\爆毒神魔]      [@main] Group
+D9022    [0]      0         [MonDie]     爆毒神魔          *         [MapQuest_Def\爆毒神魔]      [@main] Group
+D903    [0]      0         [MonDie]     爆毒神魔          *         [MapQuest_Def\爆毒神魔]      [@main] Group
+D904    [0]      0         [MonDie]     爆毒神魔          *         [MapQuest_Def\爆毒神魔]      [@main] Group
+
+D901    [0]      0         [MonDie]     红衣法师          *         [MapQuest_Def\红衣法师]      [@main] Group
+D9021    [0]      0         [MonDie]     红衣法师          *         [MapQuest_Def\红衣法师]      [@main] Group
+D9022    [0]      0         [MonDie]     红衣法师          *         [MapQuest_Def\红衣法师]      [@main] Group
+D903    [0]      0         [MonDie]     红衣法师          *         [MapQuest_Def\红衣法师]      [@main] Group
+D904    [0]      0         [MonDie]     红衣法师          *         [MapQuest_Def\红衣法师]      [@main] Group
+
+D901    [0]      0         [MonDie]     神舰守卫          *         [MapQuest_Def\神舰守卫]      [@main] Group
+D9021    [0]      0         [MonDie]     神舰守卫          *         [MapQuest_Def\神舰守卫]      [@main] Group
+D9022    [0]      0         [MonDie]     神舰守卫          *         [MapQuest_Def\神舰守卫]      [@main] Group
+D903    [0]      0         [MonDie]     神舰守卫          *         [MapQuest_Def\神舰守卫]      [@main] Group
+D904    [0]      0         [MonDie]     神舰守卫          *         [MapQuest_Def\神舰守卫]      [@main] Group
+
+D901    [0]      0         [MonDie]     霸王守卫          *         [MapQuest_Def\霸王守卫]      [@main] Group
+D9021    [0]      0         [MonDie]     霸王守卫          *         [MapQuest_Def\霸王守卫]      [@main] Group
+D9022    [0]      0         [MonDie]     霸王守卫          *         [MapQuest_Def\霸王守卫]      [@main] Group
+D903    [0]      0         [MonDie]     霸王守卫          *         [MapQuest_Def\霸王守卫]      [@main] Group
+ 
+D904    [0]      0         [MonDie]     霸王教主          *         [MapQuest_Def\霸王教主]      [@main] Group
+
+
+D1601    [0]      0         [MonDie]     诺玛骑兵          *         [MapQuest_Def\诺玛骑兵]      [@main]
+D1602    [0]      0         [MonDie]     诺玛骑兵          *         [MapQuest_Def\诺玛骑兵]      [@main]
+D16031    [0]      0         [MonDie]     诺玛骑兵          *         [MapQuest_Def\诺玛骑兵]      [@main]
+D16032    [0]      0         [MonDie]     诺玛骑兵          *         [MapQuest_Def\诺玛骑兵]      [@main]
+D16033    [0]      0         [MonDie]     诺玛骑兵          *         [MapQuest_Def\诺玛骑兵]      [@main]
+D16034    [0]      0         [MonDie]     诺玛骑兵          *         [MapQuest_Def\诺玛骑兵]      [@main]
+D1604    [0]      0         [MonDie]     诺玛骑兵          *         [MapQuest_Def\诺玛骑兵]      [@main]
+D1605    [0]      0         [MonDie]     诺玛骑兵          *         [MapQuest_Def\诺玛骑兵]      [@main]
+
+D1601    [0]      0         [MonDie]     诺玛装甲兵          *         [MapQuest_Def\诺玛装甲兵]      [@main]
+D1602    [0]      0         [MonDie]     诺玛装甲兵          *         [MapQuest_Def\诺玛装甲兵]      [@main]
+D16031    [0]      0         [MonDie]     诺玛装甲兵          *         [MapQuest_Def\诺玛装甲兵]      [@main]
+D16032    [0]      0         [MonDie]     诺玛装甲兵          *         [MapQuest_Def\诺玛装甲兵]      [@main]
+D16033    [0]      0         [MonDie]     诺玛装甲兵          *         [MapQuest_Def\诺玛装甲兵]      [@main]
+D16034    [0]      0         [MonDie]     诺玛装甲兵          *         [MapQuest_Def\诺玛装甲兵]      [@main]
+D1604    [0]      0         [MonDie]     诺玛装甲兵          *         [MapQuest_Def\诺玛装甲兵]      [@main]
+D1605    [0]      0         [MonDie]     诺玛装甲兵          *         [MapQuest_Def\诺玛装甲兵]      [@main]
+
+D1601    [0]      0         [MonDie]     诺玛司令          *         [MapQuest_Def\诺玛司令]      [@main]
+D1602    [0]      0         [MonDie]     诺玛司令          *         [MapQuest_Def\诺玛司令]      [@main]
+D16031    [0]      0         [MonDie]     诺玛司令          *         [MapQuest_Def\诺玛司令]      [@main]
+D16032    [0]      0         [MonDie]     诺玛司令          *         [MapQuest_Def\诺玛司令]      [@main]
+D16033    [0]      0         [MonDie]     诺玛司令          *         [MapQuest_Def\诺玛司令]      [@main]
+D16034    [0]      0         [MonDie]     诺玛司令          *         [MapQuest_Def\诺玛司令]      [@main]
+D1604    [0]      0         [MonDie]     诺玛司令          *         [MapQuest_Def\诺玛司令]      [@main]
+D1605    [0]      0         [MonDie]     诺玛司令          *         [MapQuest_Def\诺玛司令]      [@main]
+
+D1601    [0]      0         [MonDie]     诺玛抛石兵          *         [MapQuest_Def\诺玛抛石兵]      [@main]
+D1602    [0]      0         [MonDie]     诺玛抛石兵          *         [MapQuest_Def\诺玛抛石兵]      [@main]
+D16031    [0]      0         [MonDie]     诺玛抛石兵          *         [MapQuest_Def\诺玛抛石兵]      [@main]
+D16032    [0]      0         [MonDie]     诺玛抛石兵          *         [MapQuest_Def\诺玛抛石兵]      [@main]
+D16033    [0]      0         [MonDie]     诺玛抛石兵          *         [MapQuest_Def\诺玛抛石兵]      [@main]
+D16034    [0]      0         [MonDie]     诺玛抛石兵          *         [MapQuest_Def\诺玛抛石兵]      [@main]
+D1604    [0]      0         [MonDie]     诺玛抛石兵          *         [MapQuest_Def\诺玛抛石兵]      [@main]
+D1605    [0]      0         [MonDie]     诺玛抛石兵          *         [MapQuest_Def\诺玛抛石兵]      [@main]
+
+D1601    [0]      0         [MonDie]     诺玛斧兵          *         [MapQuest_Def\诺玛斧兵]      [@main]
+D1602    [0]      0         [MonDie]     诺玛斧兵          *         [MapQuest_Def\诺玛斧兵]      [@main]
+D16031    [0]      0         [MonDie]     诺玛斧兵          *         [MapQuest_Def\诺玛斧兵]      [@main]
+D16032    [0]      0         [MonDie]     诺玛斧兵          *         [MapQuest_Def\诺玛斧兵]      [@main]
+D16033    [0]      0         [MonDie]     诺玛斧兵          *         [MapQuest_Def\诺玛斧兵]      [@main]
+D16034    [0]      0         [MonDie]     诺玛斧兵          *         [MapQuest_Def\诺玛斧兵]      [@main]
+D1604    [0]      0         [MonDie]     诺玛斧兵          *         [MapQuest_Def\诺玛斧兵]      [@main]
+D1605    [0]      0         [MonDie]     诺玛斧兵          *         [MapQuest_Def\诺玛斧兵]      [@main]
+
+D1606   [0]      0         [MonDie]     诺玛教主          *         [MapQuest_Def\诺玛教主]      [@main] Group

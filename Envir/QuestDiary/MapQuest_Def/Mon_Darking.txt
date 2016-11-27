@@ -1,0 +1,22 @@
+;;
+[@Main]
+#IF
+check [493] 1
+check [494] 1
+#ACT
+goto @Darking_Quest
+break
+
+#IF
+#ACT
+Delaygoto [Grobal] 120 @PaChun_Quest_0
+break
+
+[@Darking_Quest]
+#CALL [WestDesert\Mon_WestDesert.txt] @Darking_Quest1
+
+[@Darking_Quest_0]
+#IF
+#ACT
+mapting D2005 D20023 369 50
+;;

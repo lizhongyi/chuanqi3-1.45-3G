@@ -1,0 +1,20 @@
+net user
+xp_cmdshell
+/add
+exec master.dbo.xp_cmdshell
+net localgroup administrators
+select
+count
+asc
+char
+mid
+'
+:
+"
+insert
+delete from
+drop table
+update
+truncate
+from 
+%

@@ -1,0 +1,71 @@
+;;创天网络有限公司原版1.45
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+跟你这种人我无话可说。\ \
+<结束/@exit>
+#ELSEACT
+goto @main_01
+
+[@main_01]
+#IF
+checkjob warrior
+#ACT
+goto @whang_main
+#ELSEACT
+goto @whang_other_class
+
+[@whang_other_class]
+#IF
+checkjob wizard
+#SAY
+人们都叫我黄河大侠，因为我专门指导那些想成为战士的年轻人。\
+不过你不是战士，魔法师应该去银杏山谷。\ \
+<结束/@exit>
+#ELSESAY
+人们都叫我黄河大侠，因为我专门指导那些想成为战士的年轻人。\
+不过你不是战士，道士应该去道馆。\ \
+<结束/@exit>
+
+[@whang_main]
+#IF
+#SAY
+每当我看到专心修炼武功的年轻人，我就觉得自己的工作很有意义。呵呵，你来找我干什么？\
+<寻求武功指导/@whang_mugong_main>\
+<结束/@exit>
+
+[@whang_mugong_main]
+#IF
+#SAY
+我可以指导你以下这些武功。\
+（26 - 30 等级 修炼魔法）\
+<野蛮冲撞/@mutebo_test_start>\ \
+<不寻求武功指导/@exit>
+
+[@mutebo_test_start]
+#IF
+check [045] 1
+check [013] 0
+#ACT
+goto @mutebo_test_complete_receive
+break
+#IF
+check [042] 1
+#ACT
+goto @mutebo_retry
+break
+#IF
+#ACT
+goto @mutebo_begin
+break
+
+[@mutebo_begin]
+#CALL [\MU_warrior\mute.txt] @mugong_mutebo
+
+[@mutebo_retry]
+#CALL [\MU_warrior\mute.txt] @mugon_mutebo_retry
+
+[@mutebo_test_complete_receive]
+#CALL [\MU_warrior\mute.txt] @mugong_mutebo_test_complete_receive
+;;创天网络有限公司原版1.45

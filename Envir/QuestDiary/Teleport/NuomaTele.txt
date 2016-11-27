@@ -1,0 +1,15 @@
+;;创天网络有限公司原版1.45
+[@Nuoma_Teleport]
+{
+#IF
+!CheckPkPoint 2
+#SAY
+六面神石 \ \
+<移动至绿洲村所需金钱 : 2500 钱/@TelePortRootin(Oasis,2500,Center)> \ \
+
+#ELSEACT
+mapmove 81 125 274
+
+[@TelePortRootin()]
+#CALL [Teleport\MoveRootin.txt] @TelePortMove
+}

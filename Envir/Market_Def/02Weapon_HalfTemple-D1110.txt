@@ -1,0 +1,14 @@
+;;创天网络有限公司原版1.45
+%200
++5
++6
+
+[@main]
+#SAY
+欢迎光临。。 我们全家人都在这里做事。\
+用心做事肯定能赚到很多钱的。。 有需要做特殊修理的东西就交给我吧。\
+<特殊修理/@Special_Repair(1)>武器\
+<结束/@exit>
+
+[@Special_Repair()]
+#CALL [\Repair\TotalRepair.txt] @SRepairItem

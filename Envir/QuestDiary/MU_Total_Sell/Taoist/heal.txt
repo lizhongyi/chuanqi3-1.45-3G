@@ -1,0 +1,48 @@
+;;创天网络有限公司原版1.45
+[@Mu_Taoist_holy_heal]
+{
+#IF
+checkitem 治愈术 1
+#ACT
+goto @Mu_Taoist_holy_heal_next_1
+#ELSESAY
+喂，您不是有找到治愈术秘籍吗。\ \
+<结束/@exit>
+
+[@Mu_Taoist_holy_heal_next_1]
+#IF
+#SAY
+如果想学治愈术，请支付700钱。想得到指教吗？\ \
+<请写武功秘籍！/@Mu_Taoist_holy_heal_next_2>\
+<结束/@Mu_Taoist_holy_heal_next_5>
+
+[@Mu_Taoist_holy_heal_next_2]
+#IF
+checkitem 治愈术 1
+#ACT
+goto @Mu_Taoist_holy_heal_next_3
+#ELSESAY
+请首先拿来治愈术秘籍。\ \ 
+<结束/@exit>
+
+[@Mu_Taoist_holy_heal_next_3]
+#IF
+checkgold 700
+checkitem 治愈术 1
+#ACT
+take 治愈术 1
+take 金币 700
+give 治愈术（秘籍） 1
+#SAY
+这里有秘诀，请拿着吧！江湖是很冷酷的地方。你千万要专心于一个领域。如果不如此，不要说天下绝世武功，就是成为一名真正的人都很困难。江湖呀。。\ \
+<结束/@exit>
+#ELSESAY
+世界上的事情没有免费的。修炼武功也是同样的。下次不要忘了带修炼费来。\ \ 
+<结束/@exit>
+
+[@Mu_Taoist_holy_heal_next_5]
+#IF
+#SAY
+嗯。。你犹豫什么？千万记住要学的东西很多，年轻的岁月很短。\ \
+<结束/@exit>
+}

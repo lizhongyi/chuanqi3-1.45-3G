@@ -1,0 +1,408 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@bawang_jiedai]
+{
+#ACT
+getdate
+mov 月份 %P8
+mov 日期 %P9
+GETTIME
+mov 小时 %P8
+mov 分钟 %P9
+mov D0 1
+#IF
+CheckMonMap "D904" 1 霸王教主
+#ACT
+MOV A0  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV A0  "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum D904 1
+#ACT
+MOV A1  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV A1  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+#IF
+#SAY
+─────────  刷新时间  ─────────\
+_{FCOLOR/10}19{FCOLOR/12}点  {FCOLOR/10}22{FCOLOR/12}点  {FCOLOR/10}01{FCOLOR/12}点  {FCOLOR/10}04{FCOLOR/12}点  {FCOLOR/10}07{FCOLOR/12}点  {FCOLOR/10}10{FCOLOR/12}点  {FCOLOR/10}13{FCOLOR/12}点  {FCOLOR/10}16{FCOLOR/12}点\
+进入需凭证[{FCOLOR/1} 连环明珠 {FCOLOR/12}] 服务器当前时间[ {FCOLOR/1}<$OUTPUT(小时)> : <$OUTPUT(分钟)>{FCOLOR/12} ]\
+────────────────────────\
+_ [{FCOLOR/10} 霸王教主 {FCOLOR/12}]房间[ <$OUTPUT(A1)> ]状态[ <$OUTPUT(A0)> ]\\
+
+_    [ <进入教主房间/@jiejinru_bawang> ]      [ <返回沙漠土城/@chuqu_tucheng> ]\
+
+[@jiejinru_bawang]
+#IF
+Equal D0 0
+#act
+break
+
+#IF
+Checkitem 连环明珠 1
+#ACT
+mov D0 0
+take 连环明珠 1
+mapmove D904 55 26
+#ELSEACT
+Close
+SysMsg "温馨提示: 您没有[ 连环明珠 ]不能进入"
+
+[@nuoma_jiedai]
+#ACT
+getdate
+mov 月份 %P8
+mov 日期 %P9
+GETTIME
+mov 小时 %P8
+mov 分钟 %P9
+mov D0 1
+#IF
+CheckMonMap "d1606" 1 诺玛教主
+#ACT
+MOV A0  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV A0  "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum d1606 1
+#ACT
+MOV A1  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV A1  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+#IF
+#SAY
+─────────  刷新时间  ─────────\
+_{FCOLOR/10}19{FCOLOR/12}点  {FCOLOR/10}22{FCOLOR/12}点  {FCOLOR/10}01{FCOLOR/12}点  {FCOLOR/10}04{FCOLOR/12}点  {FCOLOR/10}07{FCOLOR/12}点  {FCOLOR/10}10{FCOLOR/12}点  {FCOLOR/10}13{FCOLOR/12}点  {FCOLOR/10}16{FCOLOR/12}点\
+进入需凭证[{FCOLOR/1} 诺玛魔石 {FCOLOR/12}] 服务器当前时间[ {FCOLOR/1}<$OUTPUT(小时)> : <$OUTPUT(分钟)>{FCOLOR/12} ]\
+────────────────────────\
+_ [{FCOLOR/10} 诺玛教主 {FCOLOR/12}]房间[ <$OUTPUT(A1)> ]状态[ <$OUTPUT(A0)> ]\\
+
+_    [ <进入教主房间/@jiejinru_nuoma> ]      [ <放弃进入房间/@exit> ]\
+
+[@jiejinru_nuoma]
+#IF
+Equal D0 0
+#act
+break
+
+#IF
+Checkitem 诺玛魔石 1
+#ACT
+mov D0 0
+take 诺玛魔石 1
+mapmove d1606 38 50
+#ELSEACT
+Close
+SysMsg "温馨提示: 您没有[ 诺玛魔石 ]不能进入"
+
+[@xisha_jiedai]
+#ACT
+getdate
+mov 月份 %P8
+mov 日期 %P9
+GETTIME
+mov 小时 %P8
+mov 分钟 %P9
+mov D0 1
+#IF
+CheckMonMap "D2004" 1 地天灭王
+#ACT
+MOV A0  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV A0  "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum D2004 1
+#ACT
+MOV A1  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV A1  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+#IF
+#SAY
+─────────  刷新时间  ─────────\
+_{FCOLOR/10}19{FCOLOR/12}点  {FCOLOR/10}22{FCOLOR/12}点  {FCOLOR/10}01{FCOLOR/12}点  {FCOLOR/10}04{FCOLOR/12}点  {FCOLOR/10}07{FCOLOR/12}点  {FCOLOR/10}10{FCOLOR/12}点  {FCOLOR/10}13{FCOLOR/12}点  {FCOLOR/10}16{FCOLOR/12}点\
+进入需凭证[{FCOLOR/1} 地洞之眼 {FCOLOR/12}] 服务器当前时间[ {FCOLOR/1}<$OUTPUT(小时)> : <$OUTPUT(分钟)>{FCOLOR/12} ]\
+────────────────────────\
+_ [{FCOLOR/10} 地天灭王 {FCOLOR/12}]房间[ <$OUTPUT(A1)> ]状态[ <$OUTPUT(A0)> ]\\
+
+_    [ <进入教主房间/@jiejinru_xisha> ]      [ <放弃进入房间/@exit> ]\
+
+[@jiejinru_xisha]
+#IF
+Equal D0 0
+#act
+break
+
+#IF
+Checkitem 地洞之眼 1
+#ACT
+mov D0 0
+take 地洞之眼 1
+mapmove D2004 14 38
+#ELSEACT
+Close
+SysMsg "温馨提示: 您没有[ 地洞之眼 ]不能进入"
+
+[@bingcheng_jiedai]
+#ACT
+getdate
+mov 月份 %P8
+mov 日期 %P9
+GETTIME
+mov 小时 %P8
+mov 分钟 %P9
+mov D0 1
+#IF
+CheckMonMap "d2107" 1 冰城帝王
+#ACT
+MOV A0  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV A0  "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum d2107 1
+#ACT
+MOV A1  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV A1  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+#IF
+#SAY
+─────────  刷新时间  ─────────\
+_{FCOLOR/10}19{FCOLOR/12}点  {FCOLOR/10}22{FCOLOR/12}点  {FCOLOR/10}01{FCOLOR/12}点  {FCOLOR/10}04{FCOLOR/12}点  {FCOLOR/10}07{FCOLOR/12}点  {FCOLOR/10}10{FCOLOR/12}点  {FCOLOR/10}13{FCOLOR/12}点  {FCOLOR/10}16{FCOLOR/12}点\
+进入需凭证[{FCOLOR/1} 冰城魔石 {FCOLOR/12}] 服务器当前时间[ {FCOLOR/1}<$OUTPUT(小时)> : <$OUTPUT(分钟)>{FCOLOR/12} ]\
+────────────────────────\
+_ [{FCOLOR/10} 冰城帝王 {FCOLOR/12}]房间[ <$OUTPUT(A1)> ]状态[ <$OUTPUT(A0)> ]\\
+
+_    [ <进入教主房间/@jiejinru_bingcheng> ]      [ <放弃进入房间/@exit> ]\
+
+[@jiejinru_bingcheng]
+#IF
+Equal D0 0
+#act
+break
+
+#IF
+Checkitem 冰城魔石 1
+#ACT
+mov D0 0
+take 冰城魔石 1
+mapmove d2107 37 16
+#ELSEACT
+Close
+SysMsg "温馨提示: 您没有[ 冰城魔石 ]不能进入"
+
+[@jueqing_jiedai]
+#ACT
+getdate
+mov 月份 %P8
+mov 日期 %P9
+GETTIME
+mov 小时 %P8
+mov 分钟 %P9
+mov D0 1
+#IF
+CheckMonMap "D2205" 1 绝情殿主
+#ACT
+MOV A0  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV A0  "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum D2205 1
+#ACT
+MOV A1  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV A1  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+#IF
+#SAY
+─────────  刷新时间  ─────────\
+_{FCOLOR/10}19{FCOLOR/12}点  {FCOLOR/10}22{FCOLOR/12}点  {FCOLOR/10}01{FCOLOR/12}点  {FCOLOR/10}04{FCOLOR/12}点  {FCOLOR/10}07{FCOLOR/12}点  {FCOLOR/10}10{FCOLOR/12}点  {FCOLOR/10}13{FCOLOR/12}点  {FCOLOR/10}16{FCOLOR/12}点\
+进入需凭证[{FCOLOR/1} 绝情之泪 {FCOLOR/12}] 服务器当前时间[ {FCOLOR/1}<$OUTPUT(小时)> : <$OUTPUT(分钟)>{FCOLOR/12} ]\
+────────────────────────\
+_ [{FCOLOR/10} 绝情殿主 {FCOLOR/12}]房间[ <$OUTPUT(A1)> ]状态[ <$OUTPUT(A0)> ]\\
+
+_    [ <进入教主房间/@jiejinru_jueqing> ]      [ <放弃进入房间/@exit> ]\
+
+[@jiejinru_jueqing]
+#IF
+Equal D0 0
+#act
+break
+
+#IF
+Checkitem 绝情之泪 1
+#ACT
+mov D0 0
+take 绝情之泪 1
+mapmove D2205 42 48
+#ELSEACT
+Close
+SysMsg "温馨提示: 您没有[ 绝情之泪 ]不能进入"
+
+[@qunmo_jiedai]
+#ACT
+getdate
+mov 月份 %P8
+mov 日期 %P9
+GETTIME
+mov 小时 %P8
+mov 分钟 %P9
+mov D0 1
+#IF
+CheckMonMap "Yanmums" 1 群魔统治者
+#ACT
+MOV A0  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV A0  "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum Yanmums 1
+#ACT
+MOV A1  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV A1  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+#IF
+#SAY
+─────────  刷新时间  ─────────\
+_{FCOLOR/10}19{FCOLOR/12}点  {FCOLOR/10}22{FCOLOR/12}点  {FCOLOR/10}01{FCOLOR/12}点  {FCOLOR/10}04{FCOLOR/12}点  {FCOLOR/10}07{FCOLOR/12}点  {FCOLOR/10}10{FCOLOR/12}点  {FCOLOR/10}13{FCOLOR/12}点  {FCOLOR/10}16{FCOLOR/12}点\
+进入需凭证[{FCOLOR/1} 群魔令牌 {FCOLOR/12}] 服务器当前时间[ {FCOLOR/1}<$OUTPUT(小时)> : <$OUTPUT(分钟)>{FCOLOR/12} ]\
+────────────────────────\
+_ [{FCOLOR/10} 群魔统治 {FCOLOR/12}]房间[ <$OUTPUT(A1)> ]状态[ <$OUTPUT(A0)> ]\\
+
+_    [ <进入教主房间/@jiejinru_qunmo> ]      [ <返回沙漠土城/@chuqu_tucheng> ]\
+
+[@jiejinru_qunmo]
+#IF
+Equal D0 0
+#act
+break
+
+#IF
+Checkitem 群魔令牌 1
+#ACT
+mov D0 0
+take 群魔令牌 1
+mapmove Yanmums 7 28
+#ELSEACT
+Close
+SysMsg "温馨提示: 您没有[ 群魔令牌 ]不能进入"
+
+[@yijie_jiedai]
+#ACT
+getdate
+mov 月份 %P8
+mov 日期 %P9
+GETTIME
+mov 小时 %P8
+mov 分钟 %P9
+mov D0 1
+#IF
+CheckMonMap "D9094" 1 异界神灵
+#ACT
+MOV A0  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV A0  "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum D9094 1
+#ACT
+MOV A1  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV A1  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+#IF
+#SAY
+─────────  刷新时间  ─────────\
+_{FCOLOR/10}19{FCOLOR/12}点  {FCOLOR/10}22{FCOLOR/12}点  {FCOLOR/10}01{FCOLOR/12}点  {FCOLOR/10}04{FCOLOR/12}点  {FCOLOR/10}07{FCOLOR/12}点  {FCOLOR/10}10{FCOLOR/12}点  {FCOLOR/10}13{FCOLOR/12}点  {FCOLOR/10}16{FCOLOR/12}点\
+进入需凭证[{FCOLOR/1} 免费进入 {FCOLOR/12}] 服务器当前时间[ {FCOLOR/1}<$OUTPUT(小时)> : <$OUTPUT(分钟)>{FCOLOR/12} ]\
+────────────────────────\
+_ [{FCOLOR/10} 异界神灵 {FCOLOR/12}]房间[ <$OUTPUT(A1)> ]状态[ <$OUTPUT(A0)> ]\\
+
+_    [ <进入教主房间/@jiejinru_yijie> ]      [ <返回沙漠土城/@chuqu_tucheng> ]\
+
+[@jiejinru_yijie]
+#ACT
+mapmove D9094 55 26
+
+[@xiee_jiedai]
+#ACT
+getdate
+mov 月份 %P8
+mov 日期 %P9
+GETTIME
+mov 小时 %P8
+mov 分钟 %P9
+mov D0 1
+#IF
+CheckMonMap "D2900" 1 邪恶至尊
+#ACT
+MOV A0  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV A0  "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum D2900 1
+#ACT
+MOV A1  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV A1  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+#IF
+#SAY
+─────────  刷新时间  ─────────\
+进入需凭证[{FCOLOR/1} 免费进入 {FCOLOR/12}] 服务器当前时间[ {FCOLOR/1}<$OUTPUT(小时)> : <$OUTPUT(分钟)>{FCOLOR/12} ]\
+────────────────────────\
+_ [{FCOLOR/10} 邪恶至尊 {FCOLOR/12}]房间[ <$OUTPUT(A1)> ]状态[ <$OUTPUT(A0)> ]\\
+
+_    [ <进入教主房间/@jiejinru_xiee> ]      [ <返回沙漠土城/@chuqu_tucheng> ]\
+_    需消费 30 个元宝
+
+[@jiejinru_xiee]
+#IF
+checkcmd CHECKUSERJF 30
+#ACT
+actcmd SETUSERJF - 30 进入邪恶
+mapmove D2900 24 112
+#ELSEACT
+Close
+SYSMSG "温馨提示: 您没有 30 个元宝"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[@longxue_jiedai]
+#ACT
+getdate
+mov 月份 %P8
+mov 日期 %P9
+GETTIME
+mov 小时 %P8
+mov 分钟 %P9
+mov D0 1
+#IF
+CheckMonMap "D3005" 1 死魔神主
+#ACT
+MOV A0  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV A0  "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum D3005 1
+#ACT
+MOV A1  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV A1  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+#IF
+#SAY
+─────────  刷新时间  ─────────\
+进入需凭证[{FCOLOR/1} 免费进入 {FCOLOR/12}] 服务器当前时间[ {FCOLOR/1}<$OUTPUT(小时)> : <$OUTPUT(分钟)>{FCOLOR/12} ]\
+────────────────────────\
+_ [{FCOLOR/10} 龙穴生死堂 {FCOLOR/12}]房间[ <$OUTPUT(A1)> ]状态[ <$OUTPUT(A0)> ]\\
+
+_    [ <进入教主房间/@jiejinru_longxue> ]      [ <返回沙漠土城/@chuqu_tucheng> ]\
+_    需消费 30 个元宝
+
+[@jiejinru_longxue]
+#IF
+checkcmd CHECKUSERJF 30
+#ACT
+actcmd SETUSERJF - 30 龙穴生死堂
+mapmove D3005 85 210
+#ELSEACT
+Close
+SYSMSG "温馨提示: 您没有 30 个元宝"
+
+[@chuqu_tucheng]
+#ACT
+mapmove 5 246 108
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

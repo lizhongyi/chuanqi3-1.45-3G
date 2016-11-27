@@ -1,0 +1,100 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@五级家园]
+{
+#ACT
+MOV    D2    %CURHOUR    ;;开区至今时间
+#if
+Small  D2  48
+#ACT
+MOV    D5  48
+DEC    D5  %D2
+#SAY
+─────────────────────────\
+公测 {FCOLOR/10}48{FCOLOR/12}小时后.开放{FCOLOR/10}家园系统{FCOLOR/12}系统.倒记时剩余: {FCOLOR/10}<$OUTPUT(D5)>{FCOLOR/12}小时\
+─────────────────────────\
+_              [ <返 回 上 层 菜 单/@main> ]\
+─────────────────────────
+#ACT
+break
+
+#IF
+#ACT
+LoadValue B0 "ParamControl\家园数控.ini" [一级家园] 1
+LoadValue B1 "ParamControl\家园数控.ini" [一级家园] 2
+LoadValue B2 "ParamControl\家园数控.ini" [一级家园] 3
+LoadValue B3 "ParamControl\家园数控.ini" [一级家园] 4
+LoadValue B4 "ParamControl\家园数控.ini" [二级家园] 1
+LoadValue B5 "ParamControl\家园数控.ini" [二级家园] 2
+LoadValue B6 "ParamControl\家园数控.ini" [二级家园] 3
+LoadValue B7 "ParamControl\家园数控.ini" [二级家园] 4
+LoadValue B8 "ParamControl\家园数控.ini" [三级家园] 1
+LoadValue B9 "ParamControl\家园数控.ini" [三级家园] 2
+LoadValue A0 "ParamControl\家园数控.ini" [三级家园] 3
+LoadValue A1 "ParamControl\家园数控.ini" [三级家园] 4
+LoadValue A2 "ParamControl\家园数控.ini" [四级家园] 1
+LoadValue A3 "ParamControl\家园数控.ini" [四级家园] 2
+LoadValue A4 "ParamControl\家园数控.ini" [四级家园] 3
+LoadValue A5 "ParamControl\家园数控.ini" [四级家园] 4
+LoadValue A6 "ParamControl\家园数控.ini" [五级家园] 1
+LoadValue A7 "ParamControl\家园数控.ini" [五级家园] 2
+LoadValue A8 "ParamControl\家园数控.ini" [五级家园] 3
+LoadValue A9 "ParamControl\家园数控.ini" [五级家园] 4
+actcmd READSQL "TBL_QUEST" "家园等级" 家园等级
+actcmd READSQL "TBL_QUEST" "家园次数" 家园次数
+mov 快速点击 1
+
+#IF
+Equal 家园等级 5
+#say
+──────── [ {FCOLOR/15}家园管理菜单{FCOLOR/12} ] ────────\
+{FCOLOR/12}[{FCOLOR/1} <$USERNAME> {FCOLOR/12}]您好!您拥有元宝 {FCOLOR/10}<$USERJF>{FCOLOR/12} 个,家园等级为 {FCOLOR/10}<$OUTPUT(家园等级)>{FCOLOR/12}\
+──────── [ {FCOLOR/15}别墅管理界面{FCOLOR/12} ] ────────\
+主人，欢迎您回来,你这次回来需要我做些什么呢?\
+每天领元宝 [ {FCOLOR/1}<$OUTPUT(A8)>{FCOLOR/12} ] 个,经验 [ {FCOLOR/1}<$OUTPUT(A9)>{FCOLOR/12} ].\
+─────────────────────────\
+#IF
+Equal 家园次数 1
+#say
+{FCOLOR/4}[ 已经领取 ]{FCOLOR/12}    <[ 出门远征 ]/@godaoguan>\
+#IF
+Equal 家园次数 0
+#say
+<[ 领取物品 ]/@领取物品5>    <[ 出门远征 ]/@godaoguan>\
+
+[@godaoguan]
+#if
+#act
+mapmove 1 400 122
+break
+
+[@领取物品5]
+#if
+Equal 家园次数 1
+#ACT
+break
+#SAY
+对不起，你今天已经领过物品了，所以不能再领。\
+<[ 退 出 ]/@exit>
+
+#IF
+equal 快速点击 0
+#act
+close
+sysmsg "温馨提示: 防快速点击系统启动"
+break
+
+#if
+equal 快速点击 1
+Equal 家园次数 0
+#ACT
+close
+mov 快速点击 0
+actcmd SETUSERJF + %A8
+actcmd GIVEEXPEX %A9
+lineMsg [Grobal] "'<$USERNAME>'在自己的家园领取了相应的物品，请已经有家园并且没有领取物品的玩家尽快领取。"
+actcmd WRITESQL "TBL_QUEST" "家园次数" 1
+sysmsg "温馨提示: 你领取了今天的元宝 [ <$OUTPUT(A8)> ] 个,经验 [ <$OUTPUT(A9)> ]. "
+break
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

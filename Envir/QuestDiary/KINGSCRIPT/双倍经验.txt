@@ -1,0 +1,45 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@双倍经验_1]
+{
+#ACT
+LOADVALUE D0 "ParamControl\双倍时间.ini" 时间 %USERNAME
+MOV D1 %CURDAY
+
+#IF
+Equal D0 0
+#SAY
+今天是开区第{FCOLOR/1}<$CURDAY>{FCOLOR/12}天,服务器从开区开始每天可以累积{FCOLOR/1}1{FCOLOR/12}个小时的双倍经验时间.\\
+<【领取1小时双倍经验】/@领取双倍时间> 总计剩余双倍{FCOLOR/10}<$OUTPUT(D1)>{FCOLOR/12}小时.
+#ELSEACT
+DEC D1 %D0
+#ELSESAY
+今天是开区第{FCOLOR/1}<$CURDAY>{FCOLOR/12}天,服务器从开区开始每天可以累积{FCOLOR/1}1{FCOLOR/12}个小时的双倍经验时间.\\
+<【领取1小时双倍经验】/@领取双倍时间> 总计剩余双倍{FCOLOR/10}<$OUTPUT(D1)>{FCOLOR/12}小时.
+
+
+[@领取双倍时间]
+#ACT
+LOADVALUE D0 "ParamControl\双倍时间.ini" 时间 %USERNAME
+
+#IF
+Elarge D0 %CURDAY
+#ACT
+BREAK
+#SAY
+对不起,目前可以领取的双倍时间已经用完了.\\
+<关闭/@Exit>
+
+#IF
+!checkcmd ISDUOEXP
+#ACT
+inc D0 1
+SAVEVALUE "ParamControl\双倍时间.ini" 时间 %USERNAME %D0
+actcmd SETDOUBLEEXP = 3600000
+actcmd STARTDOUBLEEXP 60
+CLOSE
+break
+#ELSESAY
+目前处于双倍经验状态,请在双倍经验结束后再领取.\\
+<关闭/@Exit>
+
+}

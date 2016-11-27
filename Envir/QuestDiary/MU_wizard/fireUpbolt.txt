@@ -1,0 +1,303 @@
+;;创天网络有限公司原版1.45
+[@mugong_upfireball]
+{
+#IF
+check [028] 1
+#SAY
+你不是已经收到大火球秘籍了吗？ 那么你为什么还要索要？\ \
+<结束/@exit>
+#ACT
+break
+;
+#IF
+check [049] 1
+#ACT
+goto @mugong_upfireball_next5
+break
+;
+#IF
+checklevel 15
+#ACT
+goto @mugong_upfireball_next1
+#ELSESAY
+大火球是 {FCOLOR/10}强化了的火球术{FCOLOR/12} 。正如它的名字一样是可以放出将金刚石熔化 {FCOLOR/10}强大火团的技法{FCOLOR/12} 。如果掌握了第2阶段的火球，进一步修炼大火球还是比较好。\
+但是你现在好像还没有到可以学习的时候。做好学习准备时，请再来！\ \ 
+<结束/@exit>
+
+[@mugong_upfireball_next1]
+#IF
+checkmagic 大火球
+#SAY
+想修炼大火球魔法吗？\ 
+你还没有掌握大火球魔法吗？\ \
+<结束/@exit>
+#ELSEACT
+goto @mugong_upfireball_next2
+
+[@mugong_upfireball_next2]
+#IF
+#SAY
+想修炼大火球魔法吗？\ 
+嘿嘿，知道了。这样的话，我就告诉你 {FCOLOR/10}修炼大火球的方法{FCOLOR/12} 。大火球是将 {FCOLOR/10}强大的火团射向敌人的魔法{FCOLOR/12} ，除去威力比较大之外，同火球没有很大的差异。\ 
+但是威力大正是问题的所在。因为发动者要忍耐是火球几倍的巨大的热量。\ \ 
+<没有什么可行的办法吗? /@mugong_upfireball_next3> 
+
+[@mugong_upfireball_next3]
+#IF
+#SAY
+如果你意如此，我向你推荐比较合适的 {FCOLOR/10}训练场所{FCOLOR/12} 。那里有只有使用特殊武器才可以杀死的 {FCOLOR/10}火焰系列怪物{FCOLOR/12} ，对修炼火属性武功有帮助。\ 
+你将训练场内所有怪物都扫荡的话，我认为你将对火的魔法有所熟悉，因此可以忍耐大火球魔法。其余的 {FCOLOR/10}要诀{FCOLOR/12} 到时再告诉你。\ 
+现在就去训练场吗？\ \ 
+<好的，请将我送去吧！/@mugong_upfireball_next4_1> \  
+<现在好像还有些勉强。/@mugong_upfireball_next4_2>
+
+[@mugong_upfireball_next4_1]
+#IF
+#SAY
+如果再讲一次，那地方的所有火焰系列怪物只能用 {FCOLOR/10}焱火剑{FCOLOR/12} 杀死。这里有焱火剑， {FCOLOR/10}请带上再来。{FCOLOR/12}  \
+同时在训练场可以停留的时间是有限制的，因此不要吝惜创伤药，请速战速决！\ 
+<结束/@exit>
+#ACT
+give 焱火剑 1
+SET [049] 1
+break
+
+[@mugong_upfireball_next4_2]
+#IF
+#SAY
+使用火球可以忍耐的时间是有限度的，还是要快些接受该测试吧。\ 
+如果准备好的话，请再来！\ \ 
+<结束/@exit>
+
+[@mugong_upfireball_next5]
+#IF
+checkitemw 焱火剑 1
+#SAY
+如果使用特殊加工成、锋利的剑进行实战，精神都将集中在剑头部。希望我们可以再见面。咯咯 \ 
+哦，规定的时间是5分钟。。希望你在规定的时间内可以成功。。。\ \ 
+<移动/@mugong_upfireball_next7>
+#ELSESAY
+焱火剑如何？只有携带焱火剑来，才可以进训练场。\ \ 
+<由于失误，丢失了焱火剑。/@upfireball_next6_1> \ 
+<结束/@exit>
+
+[@upfireball_next6_1]
+#IF
+#SAY
+焱火剑丢失了？ 因此不能修炼大火球。。\ 
+如果是这样，请使用我的焱火剑吧。。但是不能白给你。。
+这把剑10000两。。那么你买吗？\ \ 
+<即使贵，也要买。/@upfireball_next6_2> \
+<由于钱不够，还不能买。/@exit>
+
+[@upfireball_next6_2]
+#IF
+checkgold 10000
+#SAY
+在这里，焱火剑。。。注意不要丢失了哦。。\ \ 
+<结束/@exit>
+#ACT
+give 焱火剑
+take 金币 10000
+#ELSESAY
+你没钱，还要焱火剑？如果你再讲一次，我就不再卖焱火剑了。\ \ 
+<结束/@exit>
+
+[@mugong_upfireball_next7]
+#IF
+checkhum 02_004 1
+#SAY
+有人正在接受测试，请等一下。。。\ \
+<结束/@exit>
+#ELSEACT
+Monclear 02_004
+Param1 02_004
+Param2 25
+Param3 22
+MonGen 火焰沃玛61  3  5
+TimeRecall 5
+mapmove 02_004  25  8
+goto @dahuoqiurenwu1
+break
+
+
+
+
+[@dahuoqiurenwu1]
+#ACT
+mov A3 %USERMAP
+
+#IF
+EQUAL A3 "02_004"
+#ACT
+delaygoto [local] 10 @dahuoqiurenwu1
+#ELSEACT
+BREAKTIMERECALL
+break
+
+}
+
+[@upfireball_test]
+{
+#IF
+checkmonmap 02_004 1
+#SAY
+请将这里所有的怪物都处理了吧！\ \
+<结束/@exit>
+#ELSESAY
+这里所有的怪物都被处理了嘛。。\
+能力还不错。。。\
+请在外面观看。.. \ \ 
+<我要出去/@upfireball_test_next1>
+
+[@upfireball_test_next1]
+#IF
+#ACT
+SET [050] 1
+BreakTimeRecall
+mapmove 02 266 146
+break
+}
+
+[@mugong_upfireball_complete]
+{
+#IF
+checkmagic 大火球
+#SAY
+你不是已经掌握了大火球，请回去吧！我很忙。\\
+<结束/@exit>
+#ACT
+break
+
+#IF
+check [028] 1
+#ACT
+break
+;
+#IF
+check [050] 0
+#ACT
+break
+;
+#IF
+check [049] 0
+#ACT
+break
+;
+#IF
+check [049] 1
+check [050] 1
+check [028] 0
+#SAY
+哦，成功了吗？现在已经熟练了火焰攻击，使用大火球一样的强大魔法也不会出现走火入魔的事情了。\ \ 
+<下一步/@mugong_upfireball_give1>
+#ELSESAY
+我理解一定要掌握火焰攻击的原因是如果不这样，在学习大火球时很容易走火入魔。请静下心来，再次接受测试，一定要争取通过。\ \ 
+<知道了，请再次一次吧/@mugong_upfireball_retry1> \
+<现在我的能力好像还不够。/@mugong_upfireball_giveup>
+
+[@mugong_upfireball_give1]
+#IF
+check [028] 0
+#ACT
+give 大火球（秘籍） 1
+give 金币 13000
+give 焰火项链  1
+takew 焱火剑 1
+reset [049] 1
+set [028] 1
+#SAY
+现在按照约定将剩余的部分传授给你。你修炼的过程中，我将在你 {FCOLOR/10}大火球秘籍{FCOLOR/12} 内贴上详细地说明，请拿走该书用心地练习吧！\ \ 
+<结束/@exit>
+#ELSESAY
+你不是已经收到书了吗？那么你为什么还要索要？\ \
+<结束/@exit>
+
+[@mugong_upfireball_retry1]
+#IF
+#ELSESAY
+年轻人充满欲望的脸上，让人看起来很高兴。不管帮助你多少次，一定要使你通过测试。\ \
+<下一步/@mugong_upfireball_retry2>
+
+[@mugong_upfireball_retry2]
+#IF
+checkitemw 焱火剑 1
+#SAY
+使用特殊加工成锋利的剑进行实战，精神就会集中在剑头部。希望我们可以再见面。咯咯 \
+哦，规定时间是3分钟。。希望你在规定的时间内一定可以成功。。。\ \ 
+<下一步/@mugong_upfireball_retry4>
+#ELSESAY
+焱火剑如何？只有携带焱火剑来，才可以进训练场。\ \ 
+<由于失误，丢失了焱火剑。/@upfireball_retry3_1> \  
+<结束/@exit>
+
+[@upfireball_retry3_1]
+#IF
+#SAY
+焱火剑丢失了？ 因此不能修炼大火球。。\
+如果是这样，请使用我的焱火剑吧。。但是不能白给你。。\
+这把剑10000两。。那么你还买吗？\ \ 
+<即使贵，也要买。/@upfireball_retry3_2> \
+<由于钱不够，不能买。/@exit> 
+
+[@upfireball_retry3_2]
+#IF
+checkgold 10000
+#SAY
+在这里，焱火剑。。。注意不要丢失了。。\ \ 
+<结束/@exit>
+#ACT
+give 焱火剑
+take 金币 10000
+#ELSESAY
+你没钱，还要焱火剑？如果你再讲一次，我就不再卖焱火剑了。\ \
+<结束/@exit>
+
+[@mugong_upfireball_retry4]
+#IF
+checkhum 02_004 1
+#SAY
+有人在接受测试，请等一下。。\ \ 
+<结束/@exit>
+#ELSEACT
+Monclear 02_004
+Param1 02_004
+Param2 9
+Param3 12
+MonGen 火焰沃玛61 3 5
+TimeRecall 5
+map 02_004
+goto @dahuoqiurenwu2
+break
+
+
+
+
+[@dahuoqiurenwu2]
+#ACT
+mov A3 %USERMAP
+
+#IF
+EQUAL A3 "02_004"
+#ACT
+delaygoto [local] 10 @dahuoqiurenwu2
+#ELSEACT
+BREAKTIMERECALL
+break
+
+[@mugong_upfireball_giveup]
+#IF
+#ELSESAY
+哦，年轻人如此没有自信心。。毫无疑问大火球是功力强大的魔法，但我看你过不去那个位置。请好好想想，再来接受测试！\ \ 
+<结束/@exit>
+}
+
+[@mugong_upfireball_explain]
+{
+#IF
+#SAY
+为了学习大火球魔法，带上我给你的 {FCOLOR/10}焱火剑{FCOLOR/12} ，然后在规定的时间内将训练场内的怪物都打倒。
+焱火剑的特性是佩戴上一次后，自己就不会脱落。但是在昏迷或者失去耐久性的 时 候，才可以摘下来。
+为了通过测试一定要佩戴焱火剑，如果丢失了，请花钱买！\ \ 
+<结束/@exit>
+}

@@ -1,0 +1,581 @@
+EurekaLog 4.6.5
+
+Application:
+------------------------------------------------------
+  1.1 Start Date      : Sun, 3 Jul 2016 00:08:11 +0800
+  1.2 Name/Description: Ei_20061128.exe
+  1.3 Version Number  : 
+  1.4 Parameters      : 
+
+Exception:
+----------------------------------------------------------------------------------------------------------
+  2.1 Date   : Mon, 4 Jul 2016 13:55:59 +0800
+  2.2 Address: 00403234
+  2.3 Module : Ei_20061128.exe
+  2.4 Type   : EAccessViolation
+  2.5 Message: Access violation at address 00403234 in module 'Ei_20061128.exe'. Read of address 43C61C01.
+
+Active Controls:
+-----------------------------------------------
+  3.1 Form Class   : SQLManagerApplicationClass
+  3.2 Form Text    : SQL Server 服务管理器
+  3.3 Control Class: 
+  3.4 Control Text : 
+
+Computer:
+---------------------------------
+  4.1 Name        : MIR3POWER
+  4.2 User        : Administrator
+  4.3 Total Memory: 2047 Mb
+  4.4 Free Memory : 326 Mb
+  4.5 Total Disk  : 10 Gb
+  4.6 Free Disk   : 8.61 Gb
+
+Operating System:
+--------------------------------------
+  5.1 Type    : Microsoft Windows 2003
+  5.2 Build # : 3790
+  5.3 Update  : Service Pack 2
+  5.4 Language: 中文(中国)
+
+Call Stack Information:
+------------------------------------------------------------------------------------------------------------
+|Address |Module         |Unit                                        |Class|Procedure/Method         |Line|
+------------------------------------------------------------------------------------------------------------
+|7C958510|ntdll.dll      |                                            |     |RtlRaiseException        |    |
+|7C9584EC|ntdll.dll      |                                            |     |RtlRaiseException        |    |
+|7C9584DE|ntdll.dll      |                                            |     |RtlRaiseException        |    |
+|7C9584B0|ntdll.dll      |                                            |     |RtlRaiseException        |    |
+|7C958319|ntdll.dll      |                                            |     |KiUserExceptionDispatcher|    |
+|77600FB4|oleaut32.dll   |                                            |     |SafeArrayUnaccessData    |    |
+|00585400|Ei_20061128.exe|!!0920-encode-Han(坷锹抛挤-脚挤-鞠龋拳华.pas|     |_Server_JOB_ItemGen      |75  |
+------------------------------------------------------------------------------------------------------------
+
+Modules Information:
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|Handle  |Name              |Description                                                   |Version          |Size   |Path                                                                                                 |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|00400000|Ei_20061128.exe   |                                                              |                 |1820160|D:\MUD3                                                                                              |
+|00CF0000|for3g061128Org.dll|                                                              |1.0.0.740        |3555328|D:\MUD3                                                                                              |
+|018E0000|Normaliz.dll      |Unicode Normalization DLL                                     |6.0.5441.0       |23552  |C:\WINDOWS\system32                                                                                  |
+|02B90000|xpsp2res.dll      |Service Pack 2 Messages                                       |5.2.3790.3959    |5535744|C:\WINDOWS\system32                                                                                  |
+|03D70000|msadcer.dll       |Microsoft Data Access - OLE DB Cursor Engine Resources        |2.82.3959.0      |12288  |C:\Program Files\Common Files\System\msadc                                                           |
+|10000000|For3g061128.dll   |for3g061128                                                   |1.0.0.740        |65536  |D:\MUD3                                                                                              |
+|15370000|SQLOLEDB.RLL      |Microsoft OLE DB Provider for SQL Server                      |2000.86.3959.0   |53248  |C:\Program Files\Common Files\System\Ole DB                                                          |
+|1B5D0000|MSWSTR10.DLL      |Microsoft Jet Sort Library                                    |4.0.9502.0       |621344 |C:\WINDOWS\system32                                                                                  |
+|3EC60000|MSCTF.dll         |MSCTF Server DLL                                              |5.2.3790.5528    |316928 |C:\WINDOWS\system32                                                                                  |
+|40270000|WININET.dll       |Internet Extensions for Win32                                 |8.0.6001.23707   |920064 |C:\WINDOWS\system32                                                                                  |
+|40910000|iertutil.dll      |Run time utility for Internet Explorer                        |8.0.6001.23707   |2006528|C:\WINDOWS\system32                                                                                  |
+|439B0000|urlmon.dll        |OLE32 Extensions for Win32                                    |8.0.6001.23707   |1217536|C:\WINDOWS\system32                                                                                  |
+|4A170000|comsvcs.dll       |COM+ Services                                                 |2001.12.4720.3959|1295872|C:\WINDOWS\system32                                                                                  |
+|4B430000|msado15.dll       |Microsoft Data Access - ActiveX Data Objects                  |2.82.5011.0      |598016 |C:\Program Files\Common Files\System\ado                                                             |
+|4BB20000|oledb32.dll       |Microsoft Data Access - OLE DB Core Services                  |2.82.3959.0      |491520 |C:\Program Files\Common Files\System\Ole DB                                                          |
+|4BFF0000|msadce.dll        |Microsoft Data Access - OLE DB Cursor Engine                  |2.82.3959.0      |356352 |C:\Program Files\Common Files\System\msadc                                                           |
+|4C470000|OLEDB32R.DLL      |Microsoft Data Access - OLE DB Core Services Resources        |2.82.3959.0      |40960  |C:\Program Files\Common Files\System\Ole DB                                                          |
+|4C510000|msctfime.ime      |Microsoft Text Frame Work Service IME                         |5.2.3790.3959    |177152 |C:\WINDOWS\system32                                                                                  |
+|4C9D0000|sqloledb.dll      |Microsoft OLE DB Provider for SQL Server                      |2000.86.3959.0   |528384 |C:\Program Files\Common Files\System\Ole DB                                                          |
+|5ED70000|olepro32.dll      |                                                              |5.2.3790.3959    |84480  |C:\WINDOWS\system32                                                                                  |
+|61540000|MSDATL3.dll       |Microsoft Data Access - OLE DB Implementation Support Routines|2.82.3959.0      |86016  |C:\Program Files\Common Files\System\Ole DB                                                          |
+|64780000|inetmib1.dll      |Microsoft MIB-II subagent                                     |5.2.3790.3959    |47616  |C:\WINDOWS\system32                                                                                  |
+|69660000|hnetcfg.dll       |Home Networking Configuration Manager                         |5.2.3790.3959    |345088 |C:\WINDOWS\system32                                                                                  |
+|6D810000|DBNETLIB.DLL      |Winsock Oriented Net DLL for SQL Clients                      |2000.86.3959.0   |114688 |C:\WINDOWS\system32                                                                                  |
+|71A40000|wshtcpip.dll      |Windows Sockets Helper DLL                                    |5.2.3790.3959    |18944  |C:\WINDOWS\System32                                                                                  |
+|71A80000|mswsock.dll       |Microsoft Windows Sockets 2.0 Service Provider                |5.2.3790.4318    |251392 |C:\WINDOWS\System32                                                                                  |
+|71B10000|wsock32.dll       |Windows Socket 32-Bit DLL                                     |5.2.3790.0       |28672  |C:\WINDOWS\system32                                                                                  |
+|71B50000|WS2HELP.dll       |Windows Socket 2.0 Helper for Windows NT                      |5.2.3790.3959    |19456  |C:\WINDOWS\system32                                                                                  |
+|71B60000|WS2_32.dll        |Windows Socket 2.0 32-Bit DLL                                 |5.2.3790.3959    |83456  |C:\WINDOWS\system32                                                                                  |
+|71BA0000|NETAPI32.dll      |Net Win32 API DLL                                             |5.2.3790.5030    |345600 |C:\WINDOWS\system32                                                                                  |
+|71E80000|snmpapi.dll       |SNMP Utility Library                                          |5.2.3790.3959    |19968  |C:\WINDOWS\system32                                                                                  |
+|71E90000|security.dll      |Security Support Provider Interface                           |5.2.3790.0       |5632   |C:\WINDOWS\system32                                                                                  |
+|74990000|MSDART.DLL        |Microsoft Data Access - OLE DB Runtime Routines               |2.82.3959.0      |106496 |C:\WINDOWS\system32                                                                                  |
+|74AE0000|USP10.dll         |Uniscribe Unicode script processor                            |1.422.3790.5340  |380416 |C:\WINDOWS\system32                                                                                  |
+|75D60000|apphelp.dll       |Application Compatibility Client Library                      |5.2.3790.3959    |148992 |C:\WINDOWS\system32                                                                                  |
+|76080000|MSASN1.dll        |ASN.1 Runtime APIs                                            |5.2.3790.4584    |58880  |C:\WINDOWS\system32                                                                                  |
+|760A0000|crypt32.dll       |Crypto API32                                                  |5.131.3790.5668  |591872 |C:\WINDOWS\system32                                                                                  |
+|76180000|IMM32.DLL         |Windows IMM32 API Client DLL                                  |5.2.3790.3959    |110592 |C:\WINDOWS\system32                                                                                  |
+|761A0000|COMDLG32.dll      |Common Dialogs DLL                                            |6.0.3790.3959    |266240 |C:\WINDOWS\system32                                                                                  |
+|76620000|cryptdll.dll      |Cryptography Manager                                          |5.2.3790.3959    |33280  |C:\WINDOWS\system32                                                                                  |
+|76630000|ntdsapi.dll       |NT5DS                                                         |5.2.3790.3959    |71680  |C:\WINDOWS\system32                                                                                  |
+|769C0000|ATL.DLL           |ATL Module for Windows XP (Unicode)                           |3.5.2284.2       |62976  |C:\WINDOWS\system32                                                                                  |
+|76AB0000|PSAPI.DLL         |Process Status Helper                                         |5.2.3790.3959    |20480  |C:\WINDOWS\system32                                                                                  |
+|76AC0000|credui.dll        |Credential Manager User Interface                             |5.2.3790.3959    |258560 |C:\WINDOWS\system32                                                                                  |
+|76BF0000|msv1_0.dll        |Microsoft Authentication Package v1.0                         |5.2.3790.5669    |146432 |C:\WINDOWS\system32                                                                                  |
+|76C30000|MPRAPI.dll        |Windows NT MP Router Administration DLL                       |5.2.3790.3959    |90624  |C:\WINDOWS\system32                                                                                  |
+|76C50000|iphlpapi.dll      |IP Helper API                                                 |5.2.3790.3959    |94720  |C:\WINDOWS\system32                                                                                  |
+|76D20000|adsldpc.dll       |ADs LDAP Provider C DLL                                       |5.2.3790.3959    |153088 |C:\WINDOWS\system32                                                                                  |
+|76D50000|ACTIVEDS.dll      |ADs Router Layer DLL                                          |5.2.3790.3959    |198656 |C:\WINDOWS\system32                                                                                  |
+|76D90000|rtutils.dll       |Routing Utilities                                             |5.2.3790.3959    |34816  |C:\WINDOWS\system32                                                                                  |
+|76E30000|DNSAPI.dll        |DNS Client API DLL                                            |5.2.3790.4840    |163328 |C:\WINDOWS\system32                                                                                  |
+|76E70000|WLDAP32.dll       |Win32 LDAP API DLL                                            |5.2.3790.3959    |178176 |C:\WINDOWS\system32                                                                                  |
+|76EB0000|Secur32.dll       |Security Support Provider Interface                           |5.2.3790.4530    |65536  |C:\WINDOWS\system32                                                                                  |
+|76ED0000|winrnr.dll        |LDAP RnR Provider DLL                                         |5.2.3790.3959    |17408  |C:\WINDOWS\System32                                                                                  |
+|76EE0000|rasadhlp.dll      |Remote Access AutoDial Helper                                 |5.2.3790.3959    |7680   |C:\WINDOWS\system32                                                                                  |
+|76F70000|COMRes.dll        |COM+ Resources                                                |2001.12.4720.3959|1401856|C:\WINDOWS\system32                                                                                  |
+|770D0000|SETUPAPI.dll      |Windows Setup API                                             |5.2.3790.3959    |1512448|C:\WINDOWS\system32                                                                                  |
+|77370000|comctl32.dll      |Common Controls Library                                       |5.82.3790.5190   |599552 |C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_5.82.3790.5190_x-ww_D21E1F39|
+|774B0000|ole32.dll         |Microsoft OLE for Windows                                     |5.2.3790.5663    |1270272|C:\WINDOWS\system32                                                                                  |
+|775F0000|oleaut32.dll      |                                                              |5.2.3790.5464    |555008 |C:\WINDOWS\system32                                                                                  |
+|77680000|CLBCatQ.DLL       |COM+ Configuration Catalog                                    |2001.12.4720.3959|510976 |C:\WINDOWS\system32                                                                                  |
+|77B60000|version.dll       |Version Checking and File Installation Libraries              |5.2.3790.3959    |18432  |C:\WINDOWS\system32                                                                                  |
+|77B70000|msvcrt.dll        |Windows NT CRT DLL                                            |7.0.3790.3959    |348672 |C:\WINDOWS\system32                                                                                  |
+|77BD0000|GDI32.dll         |GDI Client DLL                                                |5.2.3790.5661    |286208 |C:\WINDOWS\system32                                                                                  |
+|77C20000|RPCRT4.dll        |Remote Procedure Call Runtime                                 |5.2.3790.5669    |648704 |C:\WINDOWS\system32                                                                                  |
+|77CD0000|comctl32.dll      |User Experience Controls Library                              |6.0.3790.5190    |1052160|C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.3790.5190_x-ww_319264BE |
+|77E10000|USER32.dll        |Windows USER API Client DLL                                   |5.2.3790.4033    |579072 |C:\WINDOWS\system32                                                                                  |
+|77EB0000|SHLWAPI.dll       |Shell Light-weight Utility Library                            |6.0.3790.5318    |320000 |C:\WINDOWS\system32                                                                                  |
+|77F10000|WINSTA.dll        |Winstation Library                                            |5.2.3790.3959    |56320  |C:\WINDOWS\system32                                                                                  |
+|77F30000|advapi32.dll      |Advanced Windows 32 Base API                                  |5.2.3790.5669    |686592 |C:\WINDOWS\system32                                                                                  |
+|7C800000|kernel32.dll      |Windows NT BASE API Client DLL                                |5.2.3790.5295    |1211392|C:\WINDOWS\system32                                                                                  |
+|7C930000|ntdll.dll         |NT Layer DLL                                                  |5.2.3790.5583    |843264 |C:\WINDOWS\system32                                                                                  |
+|7CA10000|SHELL32.dll       |Windows Shell Common Dll                                      |6.0.3790.5018    |8220672|C:\WINDOWS\system32                                                                                  |
+|7E020000|SAMLIB.dll        |SAM Library DLL                                               |5.2.3790.3959    |47104  |C:\WINDOWS\system32                                                                                  |
+|7F000000|LPK.DLL           |Language Pack                                                 |5.2.3790.3959    |22016  |C:\WINDOWS\system32                                                                                  |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Registers:
+-----------------------------
+EAX: 20736E61   EDI: 0000D67B
+EBX: FFFFFFF4   ESI: 400A0D16
+ECX: E5CCCECB   ESP: 00000000
+EDX: 04010000   EIP: 00000066
+
+Stack:               Memory Dump:
+------------------   ---------------------------------------------------------------------------
+0012FB48: 0012FC38   00403234: 8B 00 39 D0 74 08 8B 40 DC 85 C0 75 F3 C3 B0 01  ..9.t..@...u....
+0012FB4C: 01E5109C   00403244: C3 8D 40 00 85 C0 74 16 89 C1 8B 09 39 D1 74 0E  ..@...t.....9.t.
+0012FB50: 0012FB78   00403254: 8B 49 DC 85 C9 75 F3 B0 0A E9 2A F6 FF FF C3 90  .I...u....*.....
+0012FB54: 00403A9D   00403264: 57 93 EB 02 8B 1B 8B 7B D0 85 FF 74 0D 0F B7 0F  W......{...t....
+0012FB58: 7C958512   00403274: 51 83 C7 02 66 F2 AF 74 0A 59 8B 5B DC 85 DB 75  Q...f..t.Y.[...u
+0012FB5C: 0012FC38   00403284: E3 5F C3 58 01 C0 29 C8 8B 5C 47 FC 5F C3 8B C0  ._.X..)..\G._...
+0012FB60: 0012FFB4   00403294: 50 51 8B 00 E8 C7 FF FF FF 59 58 74 02 FF E3 59  PQ.......YXt...Y
+0012FB64: 0012FC54   004032A4: E9 03 F9 FF FF C3 8B C0 53 89 D3 8B 00 E8 AE FF  ........S.......
+0012FB68: 0012FC14   004032B4: FF FF 89 D8 5B 75 06 59 E9 EB F8 FF FF C3 8B C0  ....[u.Y........
+0012FB6C: 0012FF68   004032C4: EB 02 8B 00 39 D0 74 08 8B 40 DC 85 C0 75 F3 C3  ....9.t..@...u..
+0012FB70: 7C958526   004032D4: B0 01 C3 90 8B 40 C4 C3 B8 FF FF 00 80 C3 8B C0  .....@..........
+0012FB74: 0012FFB4   004032E4: C3 8D 40 00 C3 8D 40 00 C3 8D 40 00 53 66 8B 1A  ..@...@...@.Sf..
+0012FB78: 0012FC20   004032F4: 66 09 DB 74 17 66 81 FB 00 C0 73 10 50 8B 00 E8  f..t.f....s.P...
+0012FB7C: 7C9584E3   00403304: 5C FF FF FF 58 74 05 89 D9 5B FF E1 5B 8B 08 FF  \...Xt...[..[...
+0012FB80: 0012FC38   00403314: 61 F0 C3 90 53 56 57 31 C9 31 FF 8A 1A EB 02 8B  a...SVW1.1......
+0012FB84: 0012FFB4   00403324: 00 8B 70 CC 85 F6 74 15 66 8B 3E 83 C6 02 8A 4E  ..p...t.f.>....N
+
+
+
+EurekaLog 4.6.5
+
+Application:
+------------------------------------------------------
+  1.1 Start Date      : Sun, 3 Jul 2016 00:08:11 +0800
+  1.2 Name/Description: Ei_20061128.exe
+  1.3 Version Number  : 
+  1.4 Parameters      : 
+
+Exception:
+----------------------------------------------------------------------------------------------------------
+  2.1 Date   : Mon, 4 Jul 2016 13:56:01 +0800
+  2.2 Address: 0046F752
+  2.3 Module : Ei_20061128.exe
+  2.4 Type   : EAccessViolation
+  2.5 Message: Access violation at address 0046F752 in module 'Ei_20061128.exe'. Read of address 00000005.
+
+Active Controls:
+-----------------------------------------------
+  3.1 Form Class   : SQLManagerApplicationClass
+  3.2 Form Text    : SQL Server 服务管理器
+  3.3 Control Class: 
+  3.4 Control Text : 
+
+Computer:
+---------------------------------
+  4.1 Name        : MIR3POWER
+  4.2 User        : Administrator
+  4.3 Total Memory: 2047 Mb
+  4.4 Free Memory : 326 Mb
+  4.5 Total Disk  : 10 Gb
+  4.6 Free Disk   : 8.61 Gb
+
+Operating System:
+--------------------------------------
+  5.1 Type    : Microsoft Windows 2003
+  5.2 Build # : 3790
+  5.3 Update  : Service Pack 2
+  5.4 Language: 中文(中国)
+
+Call Stack Information:
+---------------------------------------------------------------------------------------------------------------
+|Address |Module         |Unit                                        |Class|Procedure/Method            |Line|
+---------------------------------------------------------------------------------------------------------------
+|7C958510|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584EC|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584DE|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584B0|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C95D316|ntdll.dll      |                                            |     |RtlImageDirectoryEntryToData|    |
+|7C958319|ntdll.dll      |                                            |     |KiUserExceptionDispatcher   |    |
+|00580F39|Ei_20061128.exe|svMain2.pas                                 |     |MainOutMessage              |1216|
+|7C958510|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584EC|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584DE|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584B8|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C959BD7|ntdll.dll      |                                            |     |RtlFreeHeap                 |    |
+|7C9574D7|ntdll.dll      |                                            |     |NtQueryVirtualMemory        |    |
+|7C826EDF|kernel32.dll   |                                            |     |VirtualQueryEx              |    |
+|7C826EC8|kernel32.dll   |                                            |     |VirtualQueryEx              |    |
+|7C826F09|kernel32.dll   |                                            |     |VirtualQuery                |    |
+|7C826EF9|kernel32.dll   |                                            |     |VirtualQuery                |    |
+|7C94A14B|ntdll.dll      |                                            |     |RtlLeaveCriticalSection     |    |
+|7C836A85|kernel32.dll   |                                            |     |UnhandledExceptionFilter    |    |
+|7C958510|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584EC|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584DE|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584B0|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C95D301|ntdll.dll      |                                            |     |RtlImageDirectoryEntryToData|    |
+|7C958319|ntdll.dll      |                                            |     |KiUserExceptionDispatcher   |    |
+|00580EE9|Ei_20061128.exe|svMain2.pas                                 |     |MainOutMessage              |1213|
+|7C94A14B|ntdll.dll      |                                            |     |RtlLeaveCriticalSection     |    |
+|7C95D0A3|ntdll.dll      |                                            |     |LdrUnlockLoaderLock         |    |
+|7C95D0AA|ntdll.dll      |                                            |     |LdrUnlockLoaderLock         |    |
+|7C94A14B|ntdll.dll      |                                            |     |RtlLeaveCriticalSection     |    |
+|7C957AC7|ntdll.dll      |                                            |     |NtWaitForSingleObject       |    |
+|7C821D30|kernel32.dll   |                                            |     |WaitForSingleObjectEx       |    |
+|7C821D56|kernel32.dll   |                                            |     |WaitForSingleObjectEx       |    |
+|7C958510|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584EC|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584DE|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584B0|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C958319|ntdll.dll      |                                            |     |KiUserExceptionDispatcher   |    |
+|77600FB4|oleaut32.dll   |                                            |     |SafeArrayUnaccessData       |    |
+|00585400|Ei_20061128.exe|!!0920-encode-Han(坷锹抛挤-脚挤-鞠龋拳华.pas|     |_Server_JOB_ItemGen         |75  |
+---------------------------------------------------------------------------------------------------------------
+
+Modules Information:
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|Handle  |Name              |Description                                                   |Version          |Size   |Path                                                                                                 |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|00400000|Ei_20061128.exe   |                                                              |                 |1820160|D:\MUD3                                                                                              |
+|00CF0000|for3g061128Org.dll|                                                              |1.0.0.740        |3555328|D:\MUD3                                                                                              |
+|018E0000|Normaliz.dll      |Unicode Normalization DLL                                     |6.0.5441.0       |23552  |C:\WINDOWS\system32                                                                                  |
+|02B90000|xpsp2res.dll      |Service Pack 2 Messages                                       |5.2.3790.3959    |5535744|C:\WINDOWS\system32                                                                                  |
+|03D70000|msadcer.dll       |Microsoft Data Access - OLE DB Cursor Engine Resources        |2.82.3959.0      |12288  |C:\Program Files\Common Files\System\msadc                                                           |
+|10000000|For3g061128.dll   |for3g061128                                                   |1.0.0.740        |65536  |D:\MUD3                                                                                              |
+|15370000|SQLOLEDB.RLL      |Microsoft OLE DB Provider for SQL Server                      |2000.86.3959.0   |53248  |C:\Program Files\Common Files\System\Ole DB                                                          |
+|1B5D0000|MSWSTR10.DLL      |Microsoft Jet Sort Library                                    |4.0.9502.0       |621344 |C:\WINDOWS\system32                                                                                  |
+|3EC60000|MSCTF.dll         |MSCTF Server DLL                                              |5.2.3790.5528    |316928 |C:\WINDOWS\system32                                                                                  |
+|40270000|WININET.dll       |Internet Extensions for Win32                                 |8.0.6001.23707   |920064 |C:\WINDOWS\system32                                                                                  |
+|40910000|iertutil.dll      |Run time utility for Internet Explorer                        |8.0.6001.23707   |2006528|C:\WINDOWS\system32                                                                                  |
+|439B0000|urlmon.dll        |OLE32 Extensions for Win32                                    |8.0.6001.23707   |1217536|C:\WINDOWS\system32                                                                                  |
+|4A170000|comsvcs.dll       |COM+ Services                                                 |2001.12.4720.3959|1295872|C:\WINDOWS\system32                                                                                  |
+|4B430000|msado15.dll       |Microsoft Data Access - ActiveX Data Objects                  |2.82.5011.0      |598016 |C:\Program Files\Common Files\System\ado                                                             |
+|4BB20000|oledb32.dll       |Microsoft Data Access - OLE DB Core Services                  |2.82.3959.0      |491520 |C:\Program Files\Common Files\System\Ole DB                                                          |
+|4BFF0000|msadce.dll        |Microsoft Data Access - OLE DB Cursor Engine                  |2.82.3959.0      |356352 |C:\Program Files\Common Files\System\msadc                                                           |
+|4C470000|OLEDB32R.DLL      |Microsoft Data Access - OLE DB Core Services Resources        |2.82.3959.0      |40960  |C:\Program Files\Common Files\System\Ole DB                                                          |
+|4C510000|msctfime.ime      |Microsoft Text Frame Work Service IME                         |5.2.3790.3959    |177152 |C:\WINDOWS\system32                                                                                  |
+|4C9D0000|sqloledb.dll      |Microsoft OLE DB Provider for SQL Server                      |2000.86.3959.0   |528384 |C:\Program Files\Common Files\System\Ole DB                                                          |
+|5ED70000|olepro32.dll      |                                                              |5.2.3790.3959    |84480  |C:\WINDOWS\system32                                                                                  |
+|61540000|MSDATL3.dll       |Microsoft Data Access - OLE DB Implementation Support Routines|2.82.3959.0      |86016  |C:\Program Files\Common Files\System\Ole DB                                                          |
+|64780000|inetmib1.dll      |Microsoft MIB-II subagent                                     |5.2.3790.3959    |47616  |C:\WINDOWS\system32                                                                                  |
+|69660000|hnetcfg.dll       |Home Networking Configuration Manager                         |5.2.3790.3959    |345088 |C:\WINDOWS\system32                                                                                  |
+|6D810000|DBNETLIB.DLL      |Winsock Oriented Net DLL for SQL Clients                      |2000.86.3959.0   |114688 |C:\WINDOWS\system32                                                                                  |
+|71A40000|wshtcpip.dll      |Windows Sockets Helper DLL                                    |5.2.3790.3959    |18944  |C:\WINDOWS\System32                                                                                  |
+|71A80000|mswsock.dll       |Microsoft Windows Sockets 2.0 Service Provider                |5.2.3790.4318    |251392 |C:\WINDOWS\System32                                                                                  |
+|71B10000|wsock32.dll       |Windows Socket 32-Bit DLL                                     |5.2.3790.0       |28672  |C:\WINDOWS\system32                                                                                  |
+|71B50000|WS2HELP.dll       |Windows Socket 2.0 Helper for Windows NT                      |5.2.3790.3959    |19456  |C:\WINDOWS\system32                                                                                  |
+|71B60000|WS2_32.dll        |Windows Socket 2.0 32-Bit DLL                                 |5.2.3790.3959    |83456  |C:\WINDOWS\system32                                                                                  |
+|71BA0000|NETAPI32.dll      |Net Win32 API DLL                                             |5.2.3790.5030    |345600 |C:\WINDOWS\system32                                                                                  |
+|71E80000|snmpapi.dll       |SNMP Utility Library                                          |5.2.3790.3959    |19968  |C:\WINDOWS\system32                                                                                  |
+|71E90000|security.dll      |Security Support Provider Interface                           |5.2.3790.0       |5632   |C:\WINDOWS\system32                                                                                  |
+|74990000|MSDART.DLL        |Microsoft Data Access - OLE DB Runtime Routines               |2.82.3959.0      |106496 |C:\WINDOWS\system32                                                                                  |
+|74AE0000|USP10.dll         |Uniscribe Unicode script processor                            |1.422.3790.5340  |380416 |C:\WINDOWS\system32                                                                                  |
+|75D60000|apphelp.dll       |Application Compatibility Client Library                      |5.2.3790.3959    |148992 |C:\WINDOWS\system32                                                                                  |
+|76080000|MSASN1.dll        |ASN.1 Runtime APIs                                            |5.2.3790.4584    |58880  |C:\WINDOWS\system32                                                                                  |
+|760A0000|crypt32.dll       |Crypto API32                                                  |5.131.3790.5668  |591872 |C:\WINDOWS\system32                                                                                  |
+|76180000|IMM32.DLL         |Windows IMM32 API Client DLL                                  |5.2.3790.3959    |110592 |C:\WINDOWS\system32                                                                                  |
+|761A0000|COMDLG32.dll      |Common Dialogs DLL                                            |6.0.3790.3959    |266240 |C:\WINDOWS\system32                                                                                  |
+|76620000|cryptdll.dll      |Cryptography Manager                                          |5.2.3790.3959    |33280  |C:\WINDOWS\system32                                                                                  |
+|76630000|ntdsapi.dll       |NT5DS                                                         |5.2.3790.3959    |71680  |C:\WINDOWS\system32                                                                                  |
+|769C0000|ATL.DLL           |ATL Module for Windows XP (Unicode)                           |3.5.2284.2       |62976  |C:\WINDOWS\system32                                                                                  |
+|76AB0000|PSAPI.DLL         |Process Status Helper                                         |5.2.3790.3959    |20480  |C:\WINDOWS\system32                                                                                  |
+|76AC0000|credui.dll        |Credential Manager User Interface                             |5.2.3790.3959    |258560 |C:\WINDOWS\system32                                                                                  |
+|76BF0000|msv1_0.dll        |Microsoft Authentication Package v1.0                         |5.2.3790.5669    |146432 |C:\WINDOWS\system32                                                                                  |
+|76C30000|MPRAPI.dll        |Windows NT MP Router Administration DLL                       |5.2.3790.3959    |90624  |C:\WINDOWS\system32                                                                                  |
+|76C50000|iphlpapi.dll      |IP Helper API                                                 |5.2.3790.3959    |94720  |C:\WINDOWS\system32                                                                                  |
+|76D20000|adsldpc.dll       |ADs LDAP Provider C DLL                                       |5.2.3790.3959    |153088 |C:\WINDOWS\system32                                                                                  |
+|76D50000|ACTIVEDS.dll      |ADs Router Layer DLL                                          |5.2.3790.3959    |198656 |C:\WINDOWS\system32                                                                                  |
+|76D90000|rtutils.dll       |Routing Utilities                                             |5.2.3790.3959    |34816  |C:\WINDOWS\system32                                                                                  |
+|76E30000|DNSAPI.dll        |DNS Client API DLL                                            |5.2.3790.4840    |163328 |C:\WINDOWS\system32                                                                                  |
+|76E70000|WLDAP32.dll       |Win32 LDAP API DLL                                            |5.2.3790.3959    |178176 |C:\WINDOWS\system32                                                                                  |
+|76EB0000|Secur32.dll       |Security Support Provider Interface                           |5.2.3790.4530    |65536  |C:\WINDOWS\system32                                                                                  |
+|76ED0000|winrnr.dll        |LDAP RnR Provider DLL                                         |5.2.3790.3959    |17408  |C:\WINDOWS\System32                                                                                  |
+|76EE0000|rasadhlp.dll      |Remote Access AutoDial Helper                                 |5.2.3790.3959    |7680   |C:\WINDOWS\system32                                                                                  |
+|76F70000|COMRes.dll        |COM+ Resources                                                |2001.12.4720.3959|1401856|C:\WINDOWS\system32                                                                                  |
+|770D0000|SETUPAPI.dll      |Windows Setup API                                             |5.2.3790.3959    |1512448|C:\WINDOWS\system32                                                                                  |
+|77370000|comctl32.dll      |Common Controls Library                                       |5.82.3790.5190   |599552 |C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_5.82.3790.5190_x-ww_D21E1F39|
+|774B0000|ole32.dll         |Microsoft OLE for Windows                                     |5.2.3790.5663    |1270272|C:\WINDOWS\system32                                                                                  |
+|775F0000|oleaut32.dll      |                                                              |5.2.3790.5464    |555008 |C:\WINDOWS\system32                                                                                  |
+|77680000|CLBCatQ.DLL       |COM+ Configuration Catalog                                    |2001.12.4720.3959|510976 |C:\WINDOWS\system32                                                                                  |
+|77B60000|version.dll       |Version Checking and File Installation Libraries              |5.2.3790.3959    |18432  |C:\WINDOWS\system32                                                                                  |
+|77B70000|msvcrt.dll        |Windows NT CRT DLL                                            |7.0.3790.3959    |348672 |C:\WINDOWS\system32                                                                                  |
+|77BD0000|GDI32.dll         |GDI Client DLL                                                |5.2.3790.5661    |286208 |C:\WINDOWS\system32                                                                                  |
+|77C20000|RPCRT4.dll        |Remote Procedure Call Runtime                                 |5.2.3790.5669    |648704 |C:\WINDOWS\system32                                                                                  |
+|77CD0000|comctl32.dll      |User Experience Controls Library                              |6.0.3790.5190    |1052160|C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.3790.5190_x-ww_319264BE |
+|77E10000|USER32.dll        |Windows USER API Client DLL                                   |5.2.3790.4033    |579072 |C:\WINDOWS\system32                                                                                  |
+|77EB0000|SHLWAPI.dll       |Shell Light-weight Utility Library                            |6.0.3790.5318    |320000 |C:\WINDOWS\system32                                                                                  |
+|77F10000|WINSTA.dll        |Winstation Library                                            |5.2.3790.3959    |56320  |C:\WINDOWS\system32                                                                                  |
+|77F30000|advapi32.dll      |Advanced Windows 32 Base API                                  |5.2.3790.5669    |686592 |C:\WINDOWS\system32                                                                                  |
+|7C800000|kernel32.dll      |Windows NT BASE API Client DLL                                |5.2.3790.5295    |1211392|C:\WINDOWS\system32                                                                                  |
+|7C930000|ntdll.dll         |NT Layer DLL                                                  |5.2.3790.5583    |843264 |C:\WINDOWS\system32                                                                                  |
+|7CA10000|SHELL32.dll       |Windows Shell Common Dll                                      |6.0.3790.5018    |8220672|C:\WINDOWS\system32                                                                                  |
+|7E020000|SAMLIB.dll        |SAM Library DLL                                               |5.2.3790.3959    |47104  |C:\WINDOWS\system32                                                                                  |
+|7F000000|LPK.DLL           |Language Pack                                                 |5.2.3790.3959    |22016  |C:\WINDOWS\system32                                                                                  |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Registers:
+-----------------------------
+EAX: 20736E61   EDI: 0000D67B
+EBX: FFFFFFF4   ESI: 400A0D16
+ECX: E5CCCECB   ESP: 00000000
+EDX: 04010000   EIP: 00000066
+
+Stack:               Memory Dump:
+------------------   ---------------------------------------------------------------------------
+0012EB70: 0012EC60   0046F752: FF 52 04 C3 8B C0 55 8B EC 33 C0 55 68 7D F7 46  .R....U..3.Uh}.F
+0012EB74: 01E5109C   0046F762: 00 64 FF 30 64 89 20 FF 05 90 D0 58 00 33 C0 5A  .d.0d. ....X.3.Z
+0012EB78: 0012EBA0   0046F772: 59 59 64 89 10 68 84 F7 46 00 C3 E9 56 40 F9 FF  YYd..h..F...V@..
+0012EB7C: 00403A9D   0046F782: EB F8 5D C3 8B C0 83 2D 90 D0 58 00 01 C3 DC F7  ..]....-..X.....
+0012EB80: 7C958512   0046F792: 46 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  F...............
+0012EB84: 0012EC60   0046F7A2: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 DC F7  ................
+0012EB88: 0012FFB4   0046F7B2: 46 00 0C 00 00 00 04 8E 40 00 DC 32 40 00 E8 32  F.......@..2@..2
+0012EB8C: 0012EC7C   0046F7C2: 40 00 EC 32 40 00 F0 32 40 00 E4 32 40 00 4C 30  @..2@..2@..2@.L0
+0012EB90: 0012EC3C   0046F7D2: 40 00 60 30 40 00 A8 30 40 00 0C 45 53 6F 63 6B  @.`0@..0@..ESock
+0012EB94: 0012EF74   0046F7E2: 65 74 45 72 72 6F 72 8D 40 00 F0 F7 46 00 03 0B  etError.@...F...
+0012EB98: 7C958526   0046F7F2: 54 53 65 72 76 65 72 54 79 70 65 01 00 00 00 00  TServerType.....
+0012EB9C: 0012FFB4   0046F802: 01 00 00 00 EC F7 46 00 0D 73 74 4E 6F 6E 42 6C  ......F..stNonBl
+0012EBA0: 0012EC48   0046F812: 6F 63 6B 69 6E 67 10 73 74 54 68 72 65 61 64 42  ocking.stThreadB
+0012EBA4: 7C9584E3   0046F822: 6C 6F 63 6B 69 6E 67 8D 40 00 30 F8 46 00 03 0B  locking.@.0.F...
+0012EBA8: 0012EC60   0046F832: 54 43 6C 69 65 6E 74 54 79 70 65 01 00 00 00 00  TClientType.....
+0012EBAC: 0012FFB4   0046F842: 01 00 00 00 2C F8 46 00 0D 63 74 4E 6F 6E 42 6C  ....,.F..ctNonBl
+
+
+
+EurekaLog 4.6.5
+
+Application:
+------------------------------------------------------
+  1.1 Start Date      : Sun, 3 Jul 2016 00:08:11 +0800
+  1.2 Name/Description: Ei_20061128.exe
+  1.3 Version Number  : 
+  1.4 Parameters      : 
+
+Exception:
+----------------------------------------------------------------------------------------------------------
+  2.1 Date   : Mon, 4 Jul 2016 13:56:02 +0800
+  2.2 Address: 0046F752
+  2.3 Module : Ei_20061128.exe
+  2.4 Type   : EAccessViolation
+  2.5 Message: Access violation at address 0046F752 in module 'Ei_20061128.exe'. Read of address 00000005.
+
+Active Controls:
+-----------------------------------------------
+  3.1 Form Class   : SQLManagerApplicationClass
+  3.2 Form Text    : SQL Server 服务管理器
+  3.3 Control Class: 
+  3.4 Control Text : 
+
+Computer:
+---------------------------------
+  4.1 Name        : MIR3POWER
+  4.2 User        : Administrator
+  4.3 Total Memory: 2047 Mb
+  4.4 Free Memory : 326 Mb
+  4.5 Total Disk  : 10 Gb
+  4.6 Free Disk   : 8.61 Gb
+
+Operating System:
+--------------------------------------
+  5.1 Type    : Microsoft Windows 2003
+  5.2 Build # : 3790
+  5.3 Update  : Service Pack 2
+  5.4 Language: 中文(中国)
+
+Call Stack Information:
+---------------------------------------------------------------------------------------------------------------
+|Address |Module         |Unit                                        |Class|Procedure/Method            |Line|
+---------------------------------------------------------------------------------------------------------------
+|7C958510|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584EC|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584DE|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584B0|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C95D316|ntdll.dll      |                                            |     |RtlImageDirectoryEntryToData|    |
+|7C958319|ntdll.dll      |                                            |     |KiUserExceptionDispatcher   |    |
+|7C958510|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584EC|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584DE|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584B8|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9574D7|ntdll.dll      |                                            |     |NtQueryVirtualMemory        |    |
+|7C826EDF|kernel32.dll   |                                            |     |VirtualQueryEx              |    |
+|7C94A14B|ntdll.dll      |                                            |     |RtlLeaveCriticalSection     |    |
+|7C836A85|kernel32.dll   |                                            |     |UnhandledExceptionFilter    |    |
+|7C958510|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584EC|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584DE|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584B0|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C95D301|ntdll.dll      |                                            |     |RtlImageDirectoryEntryToData|    |
+|7C958319|ntdll.dll      |                                            |     |KiUserExceptionDispatcher   |    |
+|7C94A14B|ntdll.dll      |                                            |     |RtlLeaveCriticalSection     |    |
+|7C95D0A3|ntdll.dll      |                                            |     |LdrUnlockLoaderLock         |    |
+|7C95D0AA|ntdll.dll      |                                            |     |LdrUnlockLoaderLock         |    |
+|7C94A14B|ntdll.dll      |                                            |     |RtlLeaveCriticalSection     |    |
+|7C957AC7|ntdll.dll      |                                            |     |NtWaitForSingleObject       |    |
+|7C821D30|kernel32.dll   |                                            |     |WaitForSingleObjectEx       |    |
+|7C821D56|kernel32.dll   |                                            |     |WaitForSingleObjectEx       |    |
+|7C958510|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584EC|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584DE|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584B0|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C95D316|ntdll.dll      |                                            |     |RtlImageDirectoryEntryToData|    |
+|7C958319|ntdll.dll      |                                            |     |KiUserExceptionDispatcher   |    |
+|00580F39|Ei_20061128.exe|svMain2.pas                                 |     |MainOutMessage              |1216|
+|7C958510|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584EC|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584DE|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584B8|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C959BD7|ntdll.dll      |                                            |     |RtlFreeHeap                 |    |
+|7C9574D7|ntdll.dll      |                                            |     |NtQueryVirtualMemory        |    |
+|7C826EDF|kernel32.dll   |                                            |     |VirtualQueryEx              |    |
+|7C826EC8|kernel32.dll   |                                            |     |VirtualQueryEx              |    |
+|7C826F09|kernel32.dll   |                                            |     |VirtualQuery                |    |
+|7C826EF9|kernel32.dll   |                                            |     |VirtualQuery                |    |
+|7C94A14B|ntdll.dll      |                                            |     |RtlLeaveCriticalSection     |    |
+|7C836A85|kernel32.dll   |                                            |     |UnhandledExceptionFilter    |    |
+|7C958510|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584EC|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584DE|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584B0|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C95D301|ntdll.dll      |                                            |     |RtlImageDirectoryEntryToData|    |
+|7C958319|ntdll.dll      |                                            |     |KiUserExceptionDispatcher   |    |
+|00580EE9|Ei_20061128.exe|svMain2.pas                                 |     |MainOutMessage              |1213|
+|7C94A14B|ntdll.dll      |                                            |     |RtlLeaveCriticalSection     |    |
+|7C95D0A3|ntdll.dll      |                                            |     |LdrUnlockLoaderLock         |    |
+|7C95D0AA|ntdll.dll      |                                            |     |LdrUnlockLoaderLock         |    |
+|7C94A14B|ntdll.dll      |                                            |     |RtlLeaveCriticalSection     |    |
+|7C957AC7|ntdll.dll      |                                            |     |NtWaitForSingleObject       |    |
+|7C821D30|kernel32.dll   |                                            |     |WaitForSingleObjectEx       |    |
+|7C821D56|kernel32.dll   |                                            |     |WaitForSingleObjectEx       |    |
+|7C958510|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584EC|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584DE|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C9584B0|ntdll.dll      |                                            |     |RtlRaiseException           |    |
+|7C958319|ntdll.dll      |                                            |     |KiUserExceptionDispatcher   |    |
+|77600FB4|oleaut32.dll   |                                            |     |SafeArrayUnaccessData       |    |
+|00585400|Ei_20061128.exe|!!0920-encode-Han(坷锹抛挤-脚挤-鞠龋拳华.pas|     |_Server_JOB_ItemGen         |75  |
+---------------------------------------------------------------------------------------------------------------
+
+Modules Information:
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|Handle  |Name              |Description                                                   |Version          |Size   |Path                                                                                                 |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|00400000|Ei_20061128.exe   |                                                              |                 |1820160|D:\MUD3                                                                                              |
+|00CF0000|for3g061128Org.dll|                                                              |1.0.0.740        |3555328|D:\MUD3                                                                                              |
+|018E0000|Normaliz.dll      |Unicode Normalization DLL                                     |6.0.5441.0       |23552  |C:\WINDOWS\system32                                                                                  |
+|02B90000|xpsp2res.dll      |Service Pack 2 Messages                                       |5.2.3790.3959    |5535744|C:\WINDOWS\system32                                                                                  |
+|03D70000|msadcer.dll       |Microsoft Data Access - OLE DB Cursor Engine Resources        |2.82.3959.0      |12288  |C:\Program Files\Common Files\System\msadc                                                           |
+|10000000|For3g061128.dll   |for3g061128                                                   |1.0.0.740        |65536  |D:\MUD3                                                                                              |
+|15370000|SQLOLEDB.RLL      |Microsoft OLE DB Provider for SQL Server                      |2000.86.3959.0   |53248  |C:\Program Files\Common Files\System\Ole DB                                                          |
+|1B5D0000|MSWSTR10.DLL      |Microsoft Jet Sort Library                                    |4.0.9502.0       |621344 |C:\WINDOWS\system32                                                                                  |
+|3EC60000|MSCTF.dll         |MSCTF Server DLL                                              |5.2.3790.5528    |316928 |C:\WINDOWS\system32                                                                                  |
+|40270000|WININET.dll       |Internet Extensions for Win32                                 |8.0.6001.23707   |920064 |C:\WINDOWS\system32                                                                                  |
+|40910000|iertutil.dll      |Run time utility for Internet Explorer                        |8.0.6001.23707   |2006528|C:\WINDOWS\system32                                                                                  |
+|439B0000|urlmon.dll        |OLE32 Extensions for Win32                                    |8.0.6001.23707   |1217536|C:\WINDOWS\system32                                                                                  |
+|4A170000|comsvcs.dll       |COM+ Services                                                 |2001.12.4720.3959|1295872|C:\WINDOWS\system32                                                                                  |
+|4B430000|msado15.dll       |Microsoft Data Access - ActiveX Data Objects                  |2.82.5011.0      |598016 |C:\Program Files\Common Files\System\ado                                                             |
+|4BB20000|oledb32.dll       |Microsoft Data Access - OLE DB Core Services                  |2.82.3959.0      |491520 |C:\Program Files\Common Files\System\Ole DB                                                          |
+|4BFF0000|msadce.dll        |Microsoft Data Access - OLE DB Cursor Engine                  |2.82.3959.0      |356352 |C:\Program Files\Common Files\System\msadc                                                           |
+|4C470000|OLEDB32R.DLL      |Microsoft Data Access - OLE DB Core Services Resources        |2.82.3959.0      |40960  |C:\Program Files\Common Files\System\Ole DB                                                          |
+|4C510000|msctfime.ime      |Microsoft Text Frame Work Service IME                         |5.2.3790.3959    |177152 |C:\WINDOWS\system32                                                                                  |
+|4C9D0000|sqloledb.dll      |Microsoft OLE DB Provider for SQL Server                      |2000.86.3959.0   |528384 |C:\Program Files\Common Files\System\Ole DB                                                          |
+|5ED70000|olepro32.dll      |                                                              |5.2.3790.3959    |84480  |C:\WINDOWS\system32                                                                                  |
+|61540000|MSDATL3.dll       |Microsoft Data Access - OLE DB Implementation Support Routines|2.82.3959.0      |86016  |C:\Program Files\Common Files\System\Ole DB                                                          |
+|64780000|inetmib1.dll      |Microsoft MIB-II subagent                                     |5.2.3790.3959    |47616  |C:\WINDOWS\system32                                                                                  |
+|69660000|hnetcfg.dll       |Home Networking Configuration Manager                         |5.2.3790.3959    |345088 |C:\WINDOWS\system32                                                                                  |
+|6D810000|DBNETLIB.DLL      |Winsock Oriented Net DLL for SQL Clients                      |2000.86.3959.0   |114688 |C:\WINDOWS\system32                                                                                  |
+|71A40000|wshtcpip.dll      |Windows Sockets Helper DLL                                    |5.2.3790.3959    |18944  |C:\WINDOWS\System32                                                                                  |
+|71A80000|mswsock.dll       |Microsoft Windows Sockets 2.0 Service Provider                |5.2.3790.4318    |251392 |C:\WINDOWS\System32                                                                                  |
+|71B10000|wsock32.dll       |Windows Socket 32-Bit DLL                                     |5.2.3790.0       |28672  |C:\WINDOWS\system32                                                                                  |
+|71B50000|WS2HELP.dll       |Windows Socket 2.0 Helper for Windows NT                      |5.2.3790.3959    |19456  |C:\WINDOWS\system32                                                                                  |
+|71B60000|WS2_32.dll        |Windows Socket 2.0 32-Bit DLL                                 |5.2.3790.3959    |83456  |C:\WINDOWS\system32                                                                                  |
+|71BA0000|NETAPI32.dll      |Net Win32 API DLL                                             |5.2.3790.5030    |345600 |C:\WINDOWS\system32                                                                                  |
+|71E80000|snmpapi.dll       |SNMP Utility Library                                          |5.2.3790.3959    |19968  |C:\WINDOWS\system32                                                                                  |
+|71E90000|security.dll      |Security Support Provider Interface                           |5.2.3790.0       |5632   |C:\WINDOWS\system32                                                                                  |
+|74990000|MSDART.DLL        |Microsoft Data Access - OLE DB Runtime Routines               |2.82.3959.0      |106496 |C:\WINDOWS\system32                                                                                  |
+|74AE0000|USP10.dll         |Uniscribe Unicode script processor                            |1.422.3790.5340  |380416 |C:\WINDOWS\system32                                                                                  |
+|75D60000|apphelp.dll       |Application Compatibility Client Library                      |5.2.3790.3959    |148992 |C:\WINDOWS\system32                                                                                  |
+|76080000|MSASN1.dll        |ASN.1 Runtime APIs                                            |5.2.3790.4584    |58880  |C:\WINDOWS\system32                                                                                  |
+|760A0000|crypt32.dll       |Crypto API32                                                  |5.131.3790.5668  |591872 |C:\WINDOWS\system32                                                                                  |
+|76180000|IMM32.DLL         |Windows IMM32 API Client DLL                                  |5.2.3790.3959    |110592 |C:\WINDOWS\system32                                                                                  |
+|761A0000|COMDLG32.dll      |Common Dialogs DLL                                            |6.0.3790.3959    |266240 |C:\WINDOWS\system32                                                                                  |
+|76620000|cryptdll.dll      |Cryptography Manager                                          |5.2.3790.3959    |33280  |C:\WINDOWS\system32                                                                                  |
+|76630000|ntdsapi.dll       |NT5DS                                                         |5.2.3790.3959    |71680  |C:\WINDOWS\system32                                                                                  |
+|769C0000|ATL.DLL           |ATL Module for Windows XP (Unicode)                           |3.5.2284.2       |62976  |C:\WINDOWS\system32                                                                                  |
+|76AB0000|PSAPI.DLL         |Process Status Helper                                         |5.2.3790.3959    |20480  |C:\WINDOWS\system32                                                                                  |
+|76AC0000|credui.dll        |Credential Manager User Interface                             |5.2.3790.3959    |258560 |C:\WINDOWS\system32                                                                                  |
+|76BF0000|msv1_0.dll        |Microsoft Authentication Package v1.0                         |5.2.3790.5669    |146432 |C:\WINDOWS\system32                                                                                  |
+|76C30000|MPRAPI.dll        |Windows NT MP Router Administration DLL                       |5.2.3790.3959    |90624  |C:\WINDOWS\system32                                                                                  |
+|76C50000|iphlpapi.dll      |IP Helper API                                                 |5.2.3790.3959    |94720  |C:\WINDOWS\system32                                                                                  |
+|76D20000|adsldpc.dll       |ADs LDAP Provider C DLL                                       |5.2.3790.3959    |153088 |C:\WINDOWS\system32                                                                                  |
+|76D50000|ACTIVEDS.dll      |ADs Router Layer DLL                                          |5.2.3790.3959    |198656 |C:\WINDOWS\system32                                                                                  |
+|76D90000|rtutils.dll       |Routing Utilities                                             |5.2.3790.3959    |34816  |C:\WINDOWS\system32                                                                                  |
+|76E30000|DNSAPI.dll        |DNS Client API DLL                                            |5.2.3790.4840    |163328 |C:\WINDOWS\system32                                                                                  |
+|76E70000|WLDAP32.dll       |Win32 LDAP API DLL                                            |5.2.3790.3959    |178176 |C:\WINDOWS\system32                                                                                  |
+|76EB0000|Secur32.dll       |Security Support Provider Interface                           |5.2.3790.4530    |65536  |C:\WINDOWS\system32                                                                                  |
+|76ED0000|winrnr.dll        |LDAP RnR Provider DLL                                         |5.2.3790.3959    |17408  |C:\WINDOWS\System32                                                                                  |
+|76EE0000|rasadhlp.dll      |Remote Access AutoDial Helper                                 |5.2.3790.3959    |7680   |C:\WINDOWS\system32                                                                                  |
+|76F70000|COMRes.dll        |COM+ Resources                                                |2001.12.4720.3959|1401856|C:\WINDOWS\system32                                                                                  |
+|770D0000|SETUPAPI.dll      |Windows Setup API                                             |5.2.3790.3959    |1512448|C:\WINDOWS\system32                                                                                  |
+|77370000|comctl32.dll      |Common Controls Library                                       |5.82.3790.5190   |599552 |C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_5.82.3790.5190_x-ww_D21E1F39|
+|774B0000|ole32.dll         |Microsoft OLE for Windows                                     |5.2.3790.5663    |1270272|C:\WINDOWS\system32                                                                                  |
+|775F0000|oleaut32.dll      |                                                              |5.2.3790.5464    |555008 |C:\WINDOWS\system32                                                                                  |
+|77680000|CLBCatQ.DLL       |COM+ Configuration Catalog                                    |2001.12.4720.3959|510976 |C:\WINDOWS\system32                                                                                  |
+|77B60000|version.dll       |Version Checking and File Installation Libraries              |5.2.3790.3959    |18432  |C:\WINDOWS\system32                                                                                  |
+|77B70000|msvcrt.dll        |Windows NT CRT DLL                                            |7.0.3790.3959    |348672 |C:\WINDOWS\system32                                                                                  |
+|77BD0000|GDI32.dll         |GDI Client DLL                                                |5.2.3790.5661    |286208 |C:\WINDOWS\system32                                                                                  |
+|77C20000|RPCRT4.dll        |Remote Procedure Call Runtime                                 |5.2.3790.5669    |648704 |C:\WINDOWS\system32                                                                                  |
+|77CD0000|comctl32.dll      |User Experience Controls Library                              |6.0.3790.5190    |1052160|C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.3790.5190_x-ww_319264BE |
+|77E10000|USER32.dll        |Windows USER API Client DLL                                   |5.2.3790.4033    |579072 |C:\WINDOWS\system32                                                                                  |
+|77EB0000|SHLWAPI.dll       |Shell Light-weight Utility Library                            |6.0.3790.5318    |320000 |C:\WINDOWS\system32                                                                                  |
+|77F10000|WINSTA.dll        |Winstation Library                                            |5.2.3790.3959    |56320  |C:\WINDOWS\system32                                                                                  |
+|77F30000|advapi32.dll      |Advanced Windows 32 Base API                                  |5.2.3790.5669    |686592 |C:\WINDOWS\system32                                                                                  |
+|7C800000|kernel32.dll      |Windows NT BASE API Client DLL                                |5.2.3790.5295    |1211392|C:\WINDOWS\system32                                                                                  |
+|7C930000|ntdll.dll         |NT Layer DLL                                                  |5.2.3790.5583    |843264 |C:\WINDOWS\system32                                                                                  |
+|7CA10000|SHELL32.dll       |Windows Shell Common Dll                                      |6.0.3790.5018    |8220672|C:\WINDOWS\system32                                                                                  |
+|7E020000|SAMLIB.dll        |SAM Library DLL                                               |5.2.3790.3959    |47104  |C:\WINDOWS\system32                                                                                  |
+|7F000000|LPK.DLL           |Language Pack                                                 |5.2.3790.3959    |22016  |C:\WINDOWS\system32                                                                                  |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Registers:
+-----------------------------
+EAX: 20736E61   EDI: 0000D67B
+EBX: FFFFFFF4   ESI: 400A0D16
+ECX: E5CCCECB   ESP: 00000000
+EDX: 04010000   EIP: 00000066
+
+Stack:               Memory Dump:
+------------------   ---------------------------------------------------------------------------
+0012DB98: 0012DC88   0046F752: FF 52 04 C3 8B C0 55 8B EC 33 C0 55 68 7D F7 46  .R....U..3.Uh}.F
+0012DB9C: 01E5109C   0046F762: 00 64 FF 30 64 89 20 FF 05 90 D0 58 00 33 C0 5A  .d.0d. ....X.3.Z
+0012DBA0: 0012DBC8   0046F772: 59 59 64 89 10 68 84 F7 46 00 C3 E9 56 40 F9 FF  YYd..h..F...V@..
+0012DBA4: 00403A9D   0046F782: EB F8 5D C3 8B C0 83 2D 90 D0 58 00 01 C3 DC F7  ..]....-..X.....
+0012DBA8: 7C958512   0046F792: 46 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  F...............
+0012DBAC: 0012DC88   0046F7A2: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 DC F7  ................
+0012DBB0: 0012FFB4   0046F7B2: 46 00 0C 00 00 00 04 8E 40 00 DC 32 40 00 E8 32  F.......@..2@..2
+0012DBB4: 0012DCA4   0046F7C2: 40 00 EC 32 40 00 F0 32 40 00 E4 32 40 00 4C 30  @..2@..2@..2@.L0
+0012DBB8: 0012DC64   0046F7D2: 40 00 60 30 40 00 A8 30 40 00 0C 45 53 6F 63 6B  @.`0@..0@..ESock
+0012DBBC: 0012DF9C   0046F7E2: 65 74 45 72 72 6F 72 8D 40 00 F0 F7 46 00 03 0B  etError.@...F...
+0012DBC0: 7C958526   0046F7F2: 54 53 65 72 76 65 72 54 79 70 65 01 00 00 00 00  TServerType.....
+0012DBC4: 0012FFB4   0046F802: 01 00 00 00 EC F7 46 00 0D 73 74 4E 6F 6E 42 6C  ......F..stNonBl
+0012DBC8: 0012DC70   0046F812: 6F 63 6B 69 6E 67 10 73 74 54 68 72 65 61 64 42  ocking.stThreadB
+0012DBCC: 7C9584E3   0046F822: 6C 6F 63 6B 69 6E 67 8D 40 00 30 F8 46 00 03 0B  locking.@.0.F...
+0012DBD0: 0012DC88   0046F832: 54 43 6C 69 65 6E 74 54 79 70 65 01 00 00 00 00  TClientType.....
+0012DBD4: 0012FFB4   0046F842: 01 00 00 00 2C F8 46 00 0D 63 74 4E 6F 6E 42 6C  ....,.F..ctNonBl
+
+
+
+
+

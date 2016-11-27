@@ -1,0 +1,272 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@Main]
+#ACT
+LOADVALUE D0 "ParamControl\西沙循环.ini" %USERNAME 日期
+LOADVALUE D1 "ParamControl\西沙循环.ini" %USERNAME 完成
+LOADVALUE A0 "ParamControl\西沙循环.ini" %USERNAME 进度
+LOADVALUE D2 "ParamControl\西沙循环.ini" %USERNAME 杀怪
+
+#IF
+CHECKLEVEL 33
+#ELSEACT
+BREAK
+#ELSESAY
+循环任务需要等级达到33级.\\
+<关闭/@Exit>
+
+#IF
+!Equal D0 %CURDAY
+#ACT
+SAVEVALUE "ParamControl\西沙循环.ini" %USERNAME 进度 "Start"
+SAVEVALUE "ParamControl\西沙循环.ini" %USERNAME 完成 0
+SAVEVALUE "ParamControl\西沙循环.ini" %USERNAME 日期 %CURDAY
+SAVEVALUE "ParamControl\西沙循环.ini" %USERNAME 杀怪 0
+break
+#SAY
+请在{FCOLOR/10}今天24点{FCOLOR/12}前杀死{FCOLOR/1}200个西沙漠的任意怪物{FCOLOR/12},完成后回来找我.\\
+<关闭/@Exit>
+
+#IF
+Elarge D1 3
+#ACT
+BREAK
+#SAY
+每天最多可以做{FCOLOR/1}3次{FCOLOR/12}西沙循环任务,请明天再来.\\
+<关闭/@Exit>
+
+#IF
+Equal A0 "Start"
+#ACT
+BREAK
+#SAY
+任务进行中,目前进度为{FCOLOR/1}<$OUTPUT(D2)>{FCOLOR/12}/{FCOLOR/10}200{FCOLOR/12}.\\
+<快速完成任务/@西沙任务完成石> {FCOLOR/10}需要2个任务完成石+金币30W.\\
+<关闭/@Exit>
+
+#IF
+Equal A0 "PreEnd"
+#ACT
+BREAK
+#SAY
+你已经完成了本次我托付的任务,赶快领取奖励吧.\\
+<领取奖励/@西沙经验>\
+
+#IF
+Equal A0 "End"
+#ACT
+SAVEVALUE "ParamControl\西沙循环.ini" %USERNAME 进度 "Start"
+SAVEVALUE "ParamControl\西沙循环.ini" %USERNAME 杀怪 0
+break
+#SAY
+请在{FCOLOR/10}今天24点{FCOLOR/12}前杀死{FCOLOR/1}200个西沙漠的任意怪物{FCOLOR/12},完成后回来找我.\\
+<关闭/@Exit>
+
+[@西沙金币]
+#ACT
+LOADVALUE D0 "ParamControl\西沙循环.ini" %USERNAME 日期
+LOADVALUE D1 "ParamControl\西沙循环.ini" %USERNAME 完成
+LOADVALUE A0 "ParamControl\西沙循环.ini" %USERNAME 进度
+LOADVALUE D2 "ParamControl\西沙循环.ini" %USERNAME 杀怪
+
+#IF
+Equal D0 %CURDAY
+#ELSEACT
+BREAK
+
+#IF
+Equal A0 "PreEnd"
+#ELSEACT
+BREAK
+
+#IF
+#ACT
+CLOSE
+SAVEVALUE "ParamControl\西沙循环.ini" %USERNAME 进度 "End"
+INC D1 1
+SAVEVALUE "ParamControl\西沙循环.ini" %USERNAME 完成 %D1
+
+#IF
+#ACT
+MOVR D3 100
+
+#IF
+Elarge D3 95
+#ACT
+GIVEGOLDEX 550000
+SYSMSG "完成西沙循环任务,获得了55W金币的奖励." 1
+BREAK
+
+#IF
+Elarge D3 85
+#ACT
+GIVEGOLDEX 350000
+SYSMSG "完成西沙循环任务,获得了35W金币的奖励." 1
+BREAK
+
+#IF
+Elarge D3 70
+#ACT
+GIVEGOLDEX 250000
+SYSMSG "完成西沙循环任务,获得了25W金币的奖励." 1
+BREAK
+
+#IF
+#ACT
+GIVEGOLDEX 150000
+SYSMSG "完成西沙循环任务,获得了15W金币的奖励." 1
+BREAK
+
+
+[@西沙经验]
+#ACT
+LOADVALUE D0 "ParamControl\西沙循环.ini" %USERNAME 日期
+LOADVALUE D1 "ParamControl\西沙循环.ini" %USERNAME 完成
+LOADVALUE A0 "ParamControl\西沙循环.ini" %USERNAME 进度
+LOADVALUE D2 "ParamControl\西沙循环.ini" %USERNAME 杀怪
+
+#IF
+Equal D0 %CURDAY
+#ELSEACT
+BREAK
+
+#IF
+Equal A0 "PreEnd"
+#ELSEACT
+BREAK
+
+#IF
+#ACT
+CLOSE
+SAVEVALUE "ParamControl\西沙循环.ini" %USERNAME 进度 "End"
+INC D1 1
+SAVEVALUE "ParamControl\西沙循环.ini" %USERNAME 完成 %D1
+
+#IF
+#ACT
+MOVR D3 6
+
+#IF
+Equal D3 0
+#ACT
+SetUserExp + 6000000
+SYSMSG "完成西沙循环任务,获得了600W经验的奖励." 1
+BREAK
+
+#IF
+Equal D3 1
+#ACT
+SetUserExp + 5800000
+SYSMSG "完成西沙循环任务,获得了580W经验的奖励." 1
+BREAK
+
+#IF
+Equal D3 2
+#ACT
+SetUserExp + 5600000
+SYSMSG "完成西沙循环任务,获得了560W经验的奖励." 1
+BREAK
+
+#IF
+Equal D3 3
+#ACT
+SetUserExp + 5400000
+SYSMSG "完成西沙循环任务,获得了540W经验的奖励." 1
+BREAK
+
+#IF
+Equal D3 4
+#ACT
+SetUserExp + 5200000
+SYSMSG "完成西沙循环任务,获得了520W经验的奖励." 1
+BREAK
+
+#IF
+Equal D3 5
+#ACT
+SetUserExp + 5000000
+SYSMSG "完成西沙循环任务,获得了500W经验的奖励." 1
+BREAK
+
+[@西沙任务完成石]
+#ACT
+LOADVALUE D0 "ParamControl\西沙循环.ini" %USERNAME 日期
+LOADVALUE D1 "ParamControl\西沙循环.ini" %USERNAME 完成
+LOADVALUE A0 "ParamControl\西沙循环.ini" %USERNAME 进度
+LOADVALUE D2 "ParamControl\西沙循环.ini" %USERNAME 杀怪
+
+#IF
+Elarge D1 3
+#ACT
+BREAK
+#SAY
+每天最多可以做{FCOLOR/1}3次{FCOLOR/12}西沙循环任务,请明天再来.\\
+<关闭/@Exit>
+
+#IF
+Equal D0 %CURDAY
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 任务完成石 2
+CHECKGOLD 300000
+#ELSEACT
+BREAK
+#ELSESAY
+你没有2个任务完成石和30W金币.\\
+<关闭/@Exit>
+
+#IF
+#ACT
+CLOSE
+SAVEVALUE "ParamControl\西沙循环.ini" %USERNAME 进度 "End"
+INC D1 1
+SAVEVALUE "ParamControl\西沙循环.ini" %USERNAME 完成 %D1
+TAKE 任务完成石 2
+TAKE 金币 300000
+
+#IF
+#ACT
+MOVR D3 6
+
+#IF
+Equal D3 0
+#ACT
+SetUserExp + 6000000
+SYSMSG "完成西沙循环任务,获得了600W经验的奖励." 1
+BREAK
+
+#IF
+Equal D3 1
+#ACT
+SetUserExp + 5800000
+SYSMSG "完成西沙循环任务,获得了580W经验的奖励." 1
+BREAK
+
+#IF
+Equal D3 2
+#ACT
+SetUserExp + 5600000
+SYSMSG "完成西沙循环任务,获得了560W经验的奖励." 1
+BREAK
+
+#IF
+Equal D3 3
+#ACT
+SetUserExp + 5400000
+SYSMSG "完成西沙循环任务,获得了540W经验的奖励." 1
+BREAK
+
+#IF
+Equal D3 4
+#ACT
+SetUserExp + 5200000
+SYSMSG "完成西沙循环任务,获得了520W经验的奖励." 1
+BREAK
+
+#IF
+Equal D3 5
+#ACT
+SetUserExp + 5000000
+SYSMSG "完成西沙循环任务,获得了500W经验的奖励." 1
+BREAK

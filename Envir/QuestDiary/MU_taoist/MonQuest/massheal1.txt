@@ -1,0 +1,50 @@
+;;创天网络有限公司原版1.45
+[@MapQuest_massheal_cave_complete]
+#IF
+checkjob warrior
+#ACT
+break
+;
+#IF
+checkjob wizard
+#ACT
+break
+;
+#IF
+check [023] 1
+#ACT
+break
+#IF
+check [059] 1
+#ACT
+break
+#IF
+check [057] 0
+#ACT
+break
+#IF
+check [056] 0
+#ACT
+break
+#IF
+check [056] 1
+check [057] 1
+check [023] 0
+#ACT
+goto @MapQuest_massheal_cave_complete_1
+
+[@MapQuest_massheal_cave_complete_1]
+#IF
+check [059] 0
+#ACT
+give 群体治愈术（秘籍）   1
+set [059] 1
+goto @MapQuest_massheal_cave_complete_3
+#SAY
+(几乎都处理哟...) \
+
+[@MapQuest_massheal_cave_complete_3]
+#IF
+#ACT
+mapmove D6004  42  264
+break

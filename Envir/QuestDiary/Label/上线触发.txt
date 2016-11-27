@@ -1,0 +1,37 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@上线触发_Main]
+{
+#Act
+Delaygoto [local] 1 @初始数据
+Delaygoto [local] 1 @套装检测
+
+#IF
+IsTestServer
+#ACT
+GOTO @NewHuman_N
+#ELSEACT
+GOTO @NewHuman_G
+
+[@NewHuman_N]
+#CALL [Label\上线触发内测.txt] @NewHumanExN
+
+[@NewHuman_G]
+#CALL [Label\上线触发公测.txt] @NewHumanExG
+
+[@套装检测]
+#CALL [StdFunction\套装检测.txt] @套装检测_Main
+
+[@初始数据]
+#IF
+CHECK [101] 0
+#ACT
+SET [101] 1
+ACTCMD WRITESQL "TBL_QUEST" "吃经验次数" %CurDay
+ACTCMD WRITESQL "TBL_QUEST" "进八大次数" %CurDay
+ACTCMD WRITESQL "TBL_QUEST" "进暗影次数" %CurDay
+Break
+
+
+}
+
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

@@ -1,0 +1,141 @@
+;;创天网络有限公司原版1.45
+[@color]
+{
+#ACT
+mov  P0  %ARG(1)
+
+#IF
+equal P0 1
+checkgold 5000
+#SAY
+头发染成白色了。\ \
+<前一步/@ChangeHairColor>
+
+#ACT
+take 金币 5000
+haircolor 255 255 255
+break
+
+#IF
+equal P0 2
+checkgold 5000
+#SAY
+头发染成黑色了。\ \
+<前一步/@ChangeHairColor>
+#ACT
+take 金币 5000
+haircolor 60 60 60
+break
+
+#IF
+equal P0 3
+checkgold 5000
+#SAY
+头发染成灰色了。\ \
+<前一步/@ChangeHairColor>
+#ACT
+take 金币 5000
+haircolor 170 170 170
+break
+
+#IF
+equal P0 4
+#SAY
+你只要选择这种方法就可以把所有的染料混合在一起染出五颜六色的头发，但有些颜色可能染不上。染发费用是一般染发的两倍，不过如果你想显示自己的个性，这种付出也是当然的。\
+<好吧，试试看/@randcolor>\
+<不想乱染/@ChangeHairColor>
+#ELSESAY
+客官，请先付款。不过你好像没钱。\ \
+<前一步/@ChangeHairColor>
+
+[@randcolor]
+#IF
+checkgold 10000
+#SAY
+染好了，你满意吗，客官？\ \
+<前一步/@ChangeHairColor>
+#ACT
+take 金币 10000
+hairrndcol
+#ELSESAY
+客官，请先付款。不过你好像没钱。\ \
+<前一步/@ChangeHairColor>
+
+}
+
+[@Shape]
+{
+#ACT
+mov  P0  %ARG(1)
+
+#IF
+equal P0 0
+checkgold 10000
+#SAY
+根据你的要求把你发型改为秃头了。你的喜好真奇怪。\ \
+<前一步/@ChangeHairShape>
+
+#ACT
+take 金币 10000
+hairstyle 0
+break
+
+#IF
+equal P0 1
+checkgold 10000
+#SAY
+发型改为剪发了。\ \
+<前一步/@ChangeHairShape>
+
+#ACT
+take 金币 10000
+hairstyle 1
+break
+
+#IF
+equal P0 2
+checkgold 10000
+#SAY
+发型变为长辫子了。\ \
+<前一步/@ChangeHairShape>
+#ACT
+take 金币 10000
+hairstyle 2
+break
+
+#IF
+equal P0 3
+checkgold 10000
+#SAY
+发型改为短发了。\ \
+<前一步/@ChangeHairShape>
+#ACT
+take 金币 10000
+hairstyle 3
+break
+
+#IF
+equal P0 4
+checkgold 10000
+#SAY
+发型改为发髻了。\ \
+<前一步/@ChangeHairShape>
+#ACT
+take 金币 10000
+hairstyle 4
+break
+
+#IF
+equal P0 5
+checkgold 10000
+#SAY
+发型改为乱发了，不过一点也不像裴勇俊，嗬嗬嗬。\ \
+<前一步/@ChangeHairShape>
+#ACT
+take 金币 10000
+hairstyle 5
+#ELSESAY
+客官，请先付款。不过你好像没钱。\ \
+<前一步/@changeHairShape>
+
+}

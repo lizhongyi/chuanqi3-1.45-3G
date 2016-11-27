@@ -1,0 +1,61 @@
+;;创天网络有限公司原版1.45
+[@mugong_wesu]
+{
+#IF
+checkmagic 基本剑术
+#SAY
+我看你已经掌握了基本剑术。\ \
+<结束/@exit>
+#ELSEACT
+goto @mugong_wesu_next
+
+[@mugong_wesu_next]
+#IF
+checklevel 7
+#ACT
+goto @mugong_wesu_next1
+#ELSESAY
+如果想学基本剑术，武功级别最少要达到7以上。\ \
+<结束/@exit>
+
+[@mugong_wesu_next1]
+#IF
+checkitem 基本剑术 1
+#ACT
+goto @mugong_wesu_next2
+#ELSESAY
+有了基本剑术魔法书，我就可以教你魔法。\ \
+<结束/@exit>
+
+[@mugong_wesu_next2]
+#IF
+#SAY
+{NPCIMG/150}
+想学习基本剑术的样子。但是像你一样的初学者修炼武功还是有各种各样的困难，我将给你进行详细的说明。你现在也正式进入了成为战士之路。祝贺你！\ 
+那么在对秘籍进行解说之前，要听对武功的说明吗？\ \
+<拜托了！/@mugong_wesu_next3>\
+<不需要了！/@exit>
+
+[@mugong_wesu_next3]
+#IF
+#SAY
+基本剑术是凭借通过反复的训练获得灵敏的感觉，找到敌人弱点进行攻击的方法，是战士的基本武功。\ \
+<很基础的魔法嘛。/@mugong_wesu_next4>
+
+[@mugong_wesu_next4]
+#IF
+check [010] 0
+checkitem 基本剑术 1
+#ACT
+take 基本剑术 1
+give 基本剑术（秘籍） 1
+set [010] 1
+#SAY
+你现在已经有基本剑术秘籍了，以前不理解的部分也可以理解了。\ \
+<结束/@exit>
+#ELSESAY
+有了基本剑术魔法书，我就可以教你魔法。\ \
+<结束/@exit>
+}
+
+;;创天网络有限公司原版1.45

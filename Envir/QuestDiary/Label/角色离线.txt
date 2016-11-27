@@ -1,0 +1,17 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@角色离线_Main]
+{
+#ACT
+KILLSLAVE
+break
+
+#IF
+checkcmd ISPKMODE
+#ACT
+goto @死亡触发
+
+[@死亡触发]
+#CALL [Label\死亡触发.txt] @死亡触发_Main
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

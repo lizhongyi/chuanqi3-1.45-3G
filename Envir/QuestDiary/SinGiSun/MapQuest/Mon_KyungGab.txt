@@ -1,0 +1,13 @@
+;;----------;;购买请联系鱼的眼泪,QQ:16487549
+[@main]
+#IF
+checkmonmap D90323 1
+#ACT
+break
+
+#ELSEACT
+goto @main_1
+
+[@main_1]
+#CALL [SinGiSun\Mon_SinGi.txt] @KyungGab_Quest1
+;;----------;;购买请联系鱼的眼泪,QQ:16487549

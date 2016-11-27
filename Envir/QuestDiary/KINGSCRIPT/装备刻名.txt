@@ -1,0 +1,57 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@装备刻名_1]
+{
+#SAY
+装备刻名每次收费{FCOLOR/10}10{FCOLOR/12}赞助币,刻名请不要超过{FCOLOR/1}12个字符{FCOLOR/12}.\\       
+{FCOLOR/14}   
+_[ < 武器 /@@WriteName(1,武器)> ]    [ < 项链 /@@WriteName(3,项链)> ]\\
+_[ < 头盔 /@@WriteName(4,头盔)> ]    [ < 衣服 /@@WriteName(0,衣服)> ]\\
+_[ <左手镯/@@WriteName(5,左手镯)> ]    [ <右手镯/@@WriteName(6,右手镯)> ]\\
+_[ <左戒指/@@WriteName(7,左戒指)> ]    [ <右戒指/@@WriteName(8,右戒指)> ]\\
+_[ < 鞋子 /@@WriteName(10,鞋子)> ]    [ < 返回 /@随身功能_1> ]\
+
+
+[@@WriteName()]
+#ACT
+Mov D0  %ARG(1)
+Mov A1  %ARG(2)
+MOV A0 %INPUTSTR
+LOADVALUE D1 "ParamControl\充值余额.ini" %USERID RMB
+LOADVALUE D5 "ParamControl\累积消费.ini" %USERID RMB
+
+#IF
+Equal A0 ""
+#ACT
+SysMsg "输入为空,请重新输入!"
+BREAK
+
+#IF
+CheckStrLen %A0 13
+#act
+SysMsg "刻名最长只允许使用12个字符,请重新输入!"
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO %D0 0
+
+#IF
+EQUAL FLD_NAME ""
+#ACT
+SYSMSG "<$OUTPUT(A1)>位置没有佩戴装备."
+BREAK
+
+#IF
+Elarge D1 10
+#ACT
+Close
+DEC D1 10
+SAVEVALUE "ParamControl\充值余额.ini" %USERID RMB %D1
+actcmd ItemNamePrefix %D0 %A0
+SysMsg "已经刻好了,取下再戴上就可以看到了!"
+inc D5 10
+SAVEVALUE "ParamControl\累积消费.ini" %USERID RMB %D5
+#ELSESAY
+{FCOLOR/1}刻名失败,你的帐户余额不足10赞助币\\
+<关闭/@Exit>
+
+}

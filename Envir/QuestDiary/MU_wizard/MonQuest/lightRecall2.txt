@@ -1,0 +1,57 @@
+;;创天网络有限公司原版1.45
+[@MapQuest_lightstick_mon2]
+#IF
+checkjob taoist
+#ACT
+break
+;
+#IF
+checkjob warrior
+#ACT
+break
+;
+#IF
+check [029] 1
+#ACT
+break
+;
+#IF
+check [052] 1
+#ACT
+break
+;
+#IF
+check [051] 0
+#ACT
+break
+;
+#IF
+#ACT
+goto @MapQuest_lightstick_mon2_1
+
+[@MapQuest_lightstick_mon2_1]
+#IF
+checkmonmap 02_006 2
+#ACT
+goto @MapQuest_lightstick_mon2_2
+#SAY
+哦。。。（这家伙，在瞎说。好像出现了什么失误。。）\
+#ELSEACT
+break
+
+[@MapQuest_lightstick_mon2_2]
+#IF
+random 2
+#ACT
+Param1 02_006
+Param2 25
+Param3 22
+MonGen 僵尸461  3  1
+MonGen 掷斧骷髅61  1  1
+break
+#ELSEACT
+Param1 02_006
+Param2 25
+Param3 22
+MonGen 掷斧骷髅61  2  1
+break

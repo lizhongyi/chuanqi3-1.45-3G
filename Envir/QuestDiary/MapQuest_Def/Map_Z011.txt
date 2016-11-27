@@ -1,0 +1,12 @@
+;;
+[@main]
+#IF
+checkitem 地洞之眼 1
+#ACT
+take 地洞之眼 1
+enter_ok
+#ELSESAY
+（被困魔石挡住了，进不去……）\\
+<关 闭/@exit>
+#ELSEACT
+enter_fail

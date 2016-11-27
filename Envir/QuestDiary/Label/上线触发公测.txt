@@ -1,0 +1,39 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@NewHumanExG]
+{
+#IF
+check [379] 1
+#ACT
+SysMsg "系统提示:[ <$UserName> ]欢迎您再次光临本游戏"
+#ELSEACT
+GOTO @GiveItemG
+
+[@GiveItemG]
+#ACT
+SET [379] 1
+GiveW 1  新人刀
+GiveW 3  新人项链
+GiveW 4  新人头盔
+GiveW 5  新人手镯
+GiveW 6  新人手镯
+GiveW 7  新人戒指
+GiveW 8  新人戒指
+GiveW 10 新人草鞋
+Give 金创药 10
+Give 魔法药 10
+Give 金币 50000
+actcmd SENDUSERSAY "@允许悄悄话"
+lineMsg [Grobal] "新的英雄[ <$USERNAME> ]降临到这个未知的世界"
+GOTO @GiveClothesG
+
+[@GiveClothesG]
+#IF
+gender man
+#ACT
+GiveW 0  新人布衣（男）
+#ELSEACT
+GiveW 0  新人布衣（女）
+
+}
+
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

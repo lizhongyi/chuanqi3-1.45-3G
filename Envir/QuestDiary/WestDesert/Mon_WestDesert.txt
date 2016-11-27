@@ -1,0 +1,111 @@
+;;
+
+[@paoxiao_Quest1]
+{
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+ReadValueSql "TBL_WestDesertQuest" %A9 "FLD_SINMAINSTEP,FLD_SINSTEP_READY" [@paoxiao_Quest2_0]
+
+[@paoxiao_Quest2_0()]
+#ACT
+mov D1 %ARG(1)
+mov D2 %ARG(2)
+
+#IF
+Equal D1 1
+Equal D2 3
+#ACT
+goto @paoxiao_Quest2_1
+break
+
+#IF
+#ACT
+break
+
+
+[@paoxiao_Quest2_1]
+#IF
+
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_WestDesertQuest" %A9 "FLD_SINMAINSTEP=1"
+UpdateValueSql "TBL_WestDesertQuest" %A9 "FLD_SINSTEP_READY=4"
+set [494] 0
+break
+#SAY
+该回去见圣灵守护者了……\\
+#ELSEACT
+break
+
+}
+
+[@shouhu_Quest1]
+{
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+
+ReadValueSql "TBL_WestDesertQuest" %A9 "FLD_SINMAINSTEP,FLD_SINSTEP_READY" [@shouhu_Quest2_0]
+
+[@shouhu_Quest2_0()]
+#ACT
+mov D1 %ARG(1)
+mov D2 %ARG(2)
+
+#IF
+Equal D1 2
+Equal D2 2
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_WestDesertQuest" %A9 "FLD_SINMAINSTEP=2"
+UpdateValueSql "TBL_WestDesertQuest" %A9 "FLD_SINSTEP_READY=3"
+give 圣灵枯骨 1
+set [494] 0
+break
+#SAY
+（这是何物？难道是圣灵枯骨……？怎么会……）\\
+<关 闭/@exit>
+#ELSEACT
+break
+
+}
+
+[@Darking_Quest1]
+{
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+
+ReadValueSql "TBL_WestDesertQuest" %A9 "FLD_SINMAINSTEP,FLD_SINSTEP_READY" [@Darking_Quest1_0]
+
+[@Darking_Quest1_0()]
+#ACT
+mov D1 %ARG(1)
+mov D2 %ARG(2)
+
+#IF
+Equal D1 3
+Equal D2 1
+#ACT
+goto @Darking_Quest2
+Delaygoto [Grobal] 120 @Darking_Quest2_next
+break
+
+#ELSEACT
+Delaygoto [Grobal] 120 @Darking_Quest2_next
+break
+
+[@Darking_Quest2]
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_WestDesertQuest" %A9 "FLD_SINMAINSTEP=3"
+UpdateValueSql "TBL_WestDesertQuest" %A9 "FLD_SINSTEP_READY=2"
+set [494] 0
+Give 地天灭王印记 1
+#SAY
+（终于打败了地天灭王，该带着地天灭王印记去见圣灵守护者了。）\
+
+[@Darking_Quest2_next]
+#IF
+#ACT
+mapting D2004 D20023 369 50
+}
+;;

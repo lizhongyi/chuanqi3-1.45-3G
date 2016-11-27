@@ -1,0 +1,35 @@
+;;创天网络有限公司原版1.45
+[@Monchon_Teleport_East]
+{
+#IF
+!CheckPkPoint 2
+#SAY
+六面神石 \ \
+<移动至边境村庄所需金钱 : 500 钱/@TelePortRootin(KugKyung,500,West)> \ \
+<移动至潘夜岛村所需金钱 : 1000 钱/@TelePortRootin(HalfMoon,1000,Center)> \
+<移动至比奇城所需金钱 : 1000 钱/@TelePortRootin(Bichon,1000,West)> \ \
+<移动至道馆村所需金钱 : 1500 钱/@TelePortRootin(DoGwan,1500,Center)> \
+<移动至银杏山村所需金钱 : 1500 钱/@TelePortRootin(EunHang,1500,Center)> \
+<移动至毒蛇山村所需金钱 : 1500 钱/@TelePortRootin(SnakeVally,1500,South)> \ \
+#ELSEACT
+mapmove 81 125 274
+
+[@TelePortRootin()]
+#CALL [Teleport\MoveRootin.txt] @TelePortMove
+}
+
+[@Monchon_Teleport_West]
+{
+#IF
+!CheckPkPoint 2
+#SAY
+六面神石 \ \
+<移动至沙漠土城所需金钱 : 500 钱/@TelePortRootin(Samak,500,East)> \
+__<移动至石阁庙地下城入口所需金钱 : 500 钱/@TelePortRootin(SukGak,500,Center)> \ \
+<移动至绿洲村所需金钱 : 1000 钱/@TelePortRootin(Oasis,1000,Center)> \ \
+#ELSEACT
+mapmove 81 125 274
+
+[@TelePortRootin()]
+#CALL [Teleport\MoveRootin.txt] @TelePortMove
+}

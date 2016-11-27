@@ -1,0 +1,18 @@
+;;
+[@main]
+#IF
+checkitem 地洞之眼 1
+#ACT
+goto @WestDesertMap_D2005
+break
+
+#IF
+#ACT
+break
+#SAY
+（感觉到诅咒石门之力……进不去了……）\\
+<关 闭/@exit>
+
+[@WestDesertMap_D2005]
+#CALL [WestDesert\Map_WestDesertMain.txt] @WestDesertking_1
+;;

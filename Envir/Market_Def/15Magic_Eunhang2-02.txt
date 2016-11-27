@@ -1,0 +1,70 @@
+;;创天网络有限公司原版1.45
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+跟你这种人我无话可说。\ \
+<结束/@exit>
+#ELSEACT
+goto @main_0
+
+;-------------------
+
+[@main_0]
+#IF
+checkjob wizard
+#ACT
+BreakTimeRecall 
+goto @wha_main
+#ELSEACT
+BreakTimeRecall 
+goto @wha_other_class
+
+[@wha_other_class]
+#IF
+checkjob warrior
+#SAY
+本座人称化天先生，你听说过吗？\
+呵呵呵，本座专门指导江湖上的晚辈。不过你不是魔法师。\ 
+你是战士，你去找龙血先生吧。\ \
+<结束/@exit>
+#ELSESAY
+本座人称化天先生，你听说过吗？\
+呵呵呵，本座专门指导江湖上的晚辈。不过你不是魔法师。\ 
+你是战士，你去找龙血先生吧。\ \
+<结束/@exit>
+
+[@wha_main]
+#IF
+#SAY
+本座人称化天先生。哼，哼。\
+那你来找我有什么事？\
+<寻求武功指导/@wha_mugong_main>\
+<结束/@exit>
+
+[@wha_mugong_main]
+#IF
+#SAY
+我可以指导你以下的武功。\
+（31 - 40 等级 修炼魔法）\
+<爆裂火焰/@fireware_test_start>\ \
+<不寻求武功指导/@exit>
+
+[@fireware_test_start]
+#IF
+check [060] 1
+check [032] 0
+#ACT
+goto @fireware_complete
+break
+
+#IF
+#ACT
+goto @fireware_begin
+break
+
+[@fireware_begin]
+#CALL [\MU_wizard\pokyel.txt] @mugong_fireware
+
+[@fireware_complete]
+#CALL [\MU_wizard\pokyel.txt] @mugong_fireware_complete

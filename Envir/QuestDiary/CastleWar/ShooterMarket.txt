@@ -1,0 +1,120 @@
+;;创天网络有限公司原版1.45
+[@MarketShooter]
+{
+#SAY
+这里是取攻城兵器的地方。。\ \
+<购买投石车/@buy_stoneshooter>\
+<购买弩车/@buy_chainshooter>\ \
+<托付攻城兵器/@leave_shooter>\
+<找回攻城兵器/@getback_shooter>\ \
+<出售攻城兵器/@kill_shooter>\
+<购买箭，石头/@buy>\ \
+
+[@buy_stoneshooter]
+#IF
+!checkgold 100000
+#SAY
+投石车的价格是10万金币。请确认一下你带的钱。 \ \
+<结束/@exit>
+#ACT
+break
+
+#IF
+checkgold 100000
+!checkshooter
+!checksavedshooter
+#ACT
+take 金币 100000
+makeshooter 投石车 100
+#SAY
+成功地完成了购买投石车。\ \
+<前一步/@main>
+#ELSESAY
+你已经有攻城兵器了。\ \
+<前一步/@main>
+
+[@buy_chainshooter]
+#IF
+!checkgold 100000
+#SAY
+弩车的价格是10万金币。请确认一下你带的钱。\ \
+<结束/@exit>
+#ACT
+break
+
+#IF
+checkgold 100000
+!checkshooter
+!checksavedshooter
+#ACT
+take 金币 100000
+makeshooter 弩车 100
+#SAY
+成功地完成了购买弩车。\ \
+<前一步/@main>
+#ELSESAY
+你已经有攻城兵器了。\ \
+<前一步/@main>
+
+[@leave_shooter]
+#IF
+checkshooter
+#ACT
+leaveshooter
+#SAY
+请放心，我会保管好攻城兵器的。\ \
+<前一步/@main>
+#ELSESAY
+你没有攻城兵器啊。。\ \
+<前一步/@main>
+
+[@getback_shooter]
+#IF
+!checkgold 1000
+#SAY
+找回攻城兵器所需的费用是1000金币。请确认一下你带的钱。\ \
+<结束/@exit>
+#ACT
+break
+
+#IF
+checkgold 1000
+!checkshooter
+checksavedshooter  1
+#SAY
+你成功地找到了投石车。\ \
+<前一步/@main>
+#ACT
+take 金币 1000
+makeshooter 投石车
+break
+
+#IF
+!checkshooter
+checksavedshooter  2
+#SAY
+你成功地找到了弩车。\ \
+<前一步/@main>
+#ACT
+makeshooter 弩车
+break
+
+#IF
+#SAY
+没有以你的名字托管的攻城兵器。\ \
+<前一步/@main>
+
+[@kill_shooter]
+#IF
+checkshooter
+#SAY
+你成功地出售了攻城兵器。\ \
+<前一步/@main>
+#ACT
+give 金币 50000
+killshooter
+#ELSESAY
+你没有攻城兵器啊。。\ \
+<前一步/@main>
+
+}

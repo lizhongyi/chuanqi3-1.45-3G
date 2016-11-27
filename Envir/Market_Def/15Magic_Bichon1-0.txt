@@ -1,0 +1,88 @@
+;;创天网络有限公司原版1.45
+[@main]
+#ACT
+LOADVALUE D0 "ParamControl\主线任务.txt" %USERNAME 进度
+LOADVALUE D1 "ParamControl\主线任务.txt" %USERNAME 鉴定
+
+#IF
+Equal D0 1
+Equal D1 0
+CheckJob warrior
+#ACT
+SAVEVALUE "ParamControl\主线任务.txt" %USERNAME 鉴定 1
+BREAK
+#SAY
+{FCOLOR/1}我专门提供给战士鉴定技能,祝你好运哦.{FCOLOR/12}\\
+<回新人指导员/@回指导员>
+
+#IF
+checkpkpoint 2
+#SAY
+跟你这种人我无话可说。\ \
+<结束/@exit>
+#ELSESAY
+我一看就知道你是战士。怎么样，一个人修炼武功有什么困难吗？好不容易弄来的秘籍，却由于无法理解而导致修炼中出现差错，如果那样的话，我可以帮助你。不过，不管怎么说我也是军队里的武功教练，所以你得交点钱我才能指导你。\ 
+<查看可解释的武功目录/@main_0_1>\
+<结束/@exit>
+
+[@回指导员]
+#ACT
+MAPMOVE 0 410 385
+close
+
+[@main_0_1]
+#IF
+#SAY
+（战士魔法）\ \
+（1 - 10 等级 修炼魔法）\
+<基本剑术/@Go_Mu_Warrior_Noatom_wesu>\ \
+（11 - 20 等级 修炼魔法）\
+<攻杀剑术/@Go_Mu_Warrior_Noatom_wedo> , <刺杀剑术/@Go_Mu_Warrior_Noatom_asword>\ \
+（21 - 30 等级 修炼魔法）\
+<半月弯刀/@Go_Mu_Warrior_Noatom_banwel> , <野蛮冲撞/@Go_Mu_Warrior_Noatom_mute>\ \
+（31 - 40 等级 修炼魔法）\
+<烈火剑法/@Go_Mu_Warrior_Noatom_fire> , <翔空剑法/@Go_Mu_Warrior_Noatom_maeng> , <莲月剑法/@Go_Mu_Warrior_Noatom_double>\ \
+（ 修炼高级魔法 ）\
+<十方斩/@Go_Mu_Warrior_Noatom_qmoon> , <乾坤大挪移/@Go_Mu_Warrior_Noatom_qiakd> , <铁布杉/@Go_Mu_Warrior_Noatom_tiebss>\ \
+<斗转星移/@Go_Mu_Warrior_Noatom_douzxy> , <破血狂杀/@Go_Mu_Warrior_Noatom_poxues> \ \
+<结束/@exit>
+
+[@Go_Mu_Warrior_Noatom_wesu]
+#CALL [\MU_Total_Sell\Warrior\wesu.txt] @Mu_Warrior_Noatom_wesu
+
+[@Go_Mu_Warrior_Noatom_wedo]
+#CALL [\MU_Total_Sell\Warrior\wedo.txt] @Mu_Warrior_Noatom_wedo
+
+[@Go_Mu_Warrior_Noatom_asword]
+#CALL [\MU_Total_Sell\Warrior\asword.txt] @Mu_Warrior_Noatom_asword
+
+[@Go_Mu_Warrior_Noatom_banwel]
+#CALL [\MU_Total_Sell\Warrior\banwel.txt] @Mu_Warrior_Noatom_banwel
+
+[@Go_Mu_Warrior_Noatom_mute]
+#CALL [\MU_Total_Sell\Warrior\mute.txt] @Mu_Warrior_Noatom_mute
+
+[@Go_Mu_Warrior_Noatom_maeng]
+#CALL [\MU_Total_Sell\Warrior\maeng.txt] @Mu_Warrior_Noatom_maeng
+
+[@Go_Mu_Warrior_Noatom_fire]
+#CALL [\MU_Total_Sell\Warrior\fire.txt] @Mu_Warrior_Noatom_fire
+
+[@Go_Mu_Warrior_Noatom_double]
+#CALL [\MU_Total_Sell\Warrior\double.txt] @Mu_Warrior_Noatom_double
+
+[@Go_Mu_Warrior_Noatom_qmoon]
+#CALL [\MU_Total_Sell\Warrior\qmoon.txt] @Mu_Warrior_Noatom_qmoon
+
+[@Go_Mu_Warrior_Noatom_qiakd]
+#CALL [\MU_Total_Sell\Warrior\qiakd.txt] @Mu_Warrior_Noatom_qiakd
+
+[@Go_Mu_Warrior_Noatom_tiebss]
+#CALL [\MU_Total_Sell\Warrior\tiebss.txt] @Mu_Warrior_Noatom_tiebss
+
+[@Go_Mu_Warrior_Noatom_douzxy]
+#CALL [\MU_Total_Sell\Warrior\douzxy.txt] @Mu_Warrior_Noatom_douzxy
+
+[@Go_Mu_Warrior_Noatom_poxues]
+#CALL [\MU_Total_Sell\Warrior\poxues.txt] @Mu_Warrior_Noatom_poxues
+;;------------------------------------------------------------------------------

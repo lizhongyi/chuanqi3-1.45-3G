@@ -1,0 +1,15 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@摘下装备_Main]
+{
+#ACT
+Goto @摘下_镶嵌效果
+Goto @摘下_套装效果
+
+[@摘下_镶嵌效果]
+#CALL [Jewel\摘下.txt] @摘下_Main
+
+[@摘下_套装效果]
+#CALL [StdFunction\套装摘下.txt] @套装摘下_Main
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

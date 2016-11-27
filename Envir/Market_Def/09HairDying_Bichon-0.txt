@@ -1,0 +1,44 @@
+;;创天网络有限公司原版1.45
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+跟你这种人我无话可说。\ \
+<结束/@exit>
+#ELSEACT
+goto @main_0_0
+
+
+[@main_0_0]
+#SAY
+你好，欢迎光临飞天美发厅。\
+请选择你需要的头发颜色和样式。\
+<换头发颜色/@ChangeHairColor>\
+<换发型/@ChangeHairShape>\
+<结束/@exit>
+
+[@ChangeHairColor]
+#SAY
+你想换头发颜色，客官，染发需要5000金币。请选择你想要的颜色。\
+<白色/@HairColor(1)> , <黑色/@HairColor(2)> , <灰色/@HairColor(3)>\
+<让美发师随便染/@HairColor(4)>\
+<前一步/@main>
+
+[@HairColor()]
+#CALL [\Hair\Dying.txt] @Color
+
+[@ChangeHairShape]
+#IF
+gender  man
+#SAY
+换发型需要10000金币，请选择你想要的发行。\
+<秃头/@HairShape(0)> , <剪发/@HairShape(1)> , <长辫子/@HairShape(2)> , <短发/@HairShape(3)> , <发髻/@HairShape(4)>, <乱发/@HairShape(5)>\
+<前一步/@main>
+#ELSESAY
+换发型需要10000金币，请选择你想要的发行。\
+<直长发/@HairShape(1)> , <发髻/@HairShape(2)> , <短发/@HairShape(3)> , <编辫儿/@HairShape(4)> <短卷发/@HairShape(5)>\
+<前一步/@main>
+
+[@HairShape()]
+#CALL [\Hair\Dying.txt] @Shape
+

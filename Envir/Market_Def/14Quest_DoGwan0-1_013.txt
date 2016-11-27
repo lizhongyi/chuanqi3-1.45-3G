@@ -1,0 +1,17 @@
+;;创天网络有限公司原版1.45
+[@main]
+#IF
+check [017] 1
+#ACT
+break
+#IF
+check [037] 0
+#ACT
+break
+#IF
+#ACT
+goto @next1
+break
+
+[@next1]
+#CALL [\MU_taoist\soulSkel.txt] @mugong_recallskel_test_mainskel

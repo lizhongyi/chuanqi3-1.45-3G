@@ -1,0 +1,41 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@升级触发_Main]
+{
+#ACT
+GOTO @冲级赛登记8
+GOTO @技能奖励8
+GOTO @冲级奖励8
+
+[@冲级赛登记8]
+#IF
+checklevel 0
+#ACT
+mov D0 %P9
+
+#IF
+EQUAL D0 50
+#act
+#CALL [Capability\冲级赛登记.txt] @冲级赛登记_1
+break
+
+#IF
+EQUAL D0 60
+#act
+#CALL [Capability\冲级赛登记.txt] @冲级赛登记_1
+break
+
+#IF
+EQUAL D0 70
+#act
+#CALL [Capability\冲级赛登记.txt] @冲级赛登记_1
+break
+
+[@技能奖励8]
+#CALL [Label\技能书.txt] @技能书_Main
+
+[@冲级奖励8]
+#CALL [Capability\冲级奖励.txt] @冲级奖励_Main
+
+}
+
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

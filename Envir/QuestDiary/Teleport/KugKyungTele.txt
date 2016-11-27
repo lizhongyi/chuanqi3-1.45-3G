@@ -1,0 +1,60 @@
+;;创天网络有限公司原版1.45
+[@Kygkyung_Teleport_North]
+{
+#IF
+!CheckPkPoint 2
+#SAY
+六面神石 \ \
+<移动至比奇城所需金钱   : 免费/@TeleBichon> \
+<移动至道馆村所需金钱   : 免费/@TeleDoGwan> \
+<移动至银杏山村所需金钱 : 免费/@TeleEunHang> \ \
+<移动至毒蛇山村所需金钱 : 1000 钱/@TelePortRootin(SnakeVally,1000,South)> \ \
+#ELSEACT
+mapmove 81 125 274
+
+[@TeleBichon]
+#ACT
+mapmove 0 379 445
+
+[@TeleDoGwan]
+#ACT
+mapmove 1 416 180
+
+[@TeleEunHang]
+#ACT
+mapmove 02 249 145
+
+[@TelePortRootin()]
+#CALL [Teleport\MoveRootin.txt] @TelePortMove
+}
+
+[@Kygkyung_Teleport_West]
+{
+#IF
+!CheckPkPoint 2
+#SAY
+六面神石 \ \
+<移动至盟重土城所需金钱 : 500 钱/@TelePortRootin(MongChon,500,East)> \ \
+<移动至沙漠土城所需金钱 : 1000 钱/@TelePortRootin(Samak,1000,East)> \ \
+<移动至绿洲村所需金钱 : 1500 钱/@TelePortRootin(Oasis,1500,Center)> \ \
+#ELSEACT
+mapmove 81 125 274
+
+[@TelePortRootin()]
+#CALL [Teleport\MoveRootin.txt] @TelePortMove
+}
+
+[@Kygkyung_Teleport_East]
+{
+#IF
+!CheckPkPoint 2
+#SAY
+六面神石 \ \
+<移动至潘夜岛村所需金钱 : 500 钱/@TelePortRootin(HalfMoon,500,Center)> \
+
+#ELSEACT
+mapmove 81 125 274
+
+[@TelePortRootin()]
+#CALL [Teleport\MoveRootin.txt] @TelePortMove
+}

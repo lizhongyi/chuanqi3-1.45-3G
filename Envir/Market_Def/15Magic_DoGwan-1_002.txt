@@ -1,0 +1,230 @@
+;;创天网络有限公司原版1.45
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+跟你这种人我无话可说。\ \
+ <结束/@exit>
+#ELSEACT
+goto @main_root_1
+
+[@main_root_1]
+#IF
+checkjob taoist
+#ACT
+BreakTimeRecall 
+goto @chung_main
+#ELSEACT
+BreakTimeRecall 
+goto @chung_other_class
+
+[@chung_other_class]
+#IF
+checkjob warrior
+#SAY
+贫道就是清明子，专门在这里指导那些想修炼成为道士的人。\
+不过你是战士，你还是去边境城市吧。\ \
+<结束/@exit>
+#ELSESAY
+贫道就是清明子，专门在这里指导那些想修炼成为道士的人。\
+不过你是魔法师，你还是去银杏山谷吧。\ \
+<结束/@exit>
+
+[@chung_main]
+#IF
+check [020] 1
+#ACT
+goto @chung_main_0_0
+break
+#IF
+check [047] 1
+#ACT
+goto @chung_main_0_2
+break
+#IF
+check [045] 1
+#ACT
+goto @chung_main_0_1
+#ELSEACT
+goto @chung_main_0_0
+
+[@chung_main_0_0]
+#IF
+#SAY
+贫道就是清明子。\
+那，你来找我有什么事？\
+<寻求武功指导/@chung_mugong_main>\
+<结束/@exit>
+
+[@chung_main_0_1]
+#IF
+#SAY
+贫道是清明子。\
+你找我有什么事情吗?\ \
+<了解/@masshiding_test_start>{FCOLOR/10}小贩{FCOLOR/12}\
+<寻求武功指导/@chung_mugong_main>\
+<对今日的任务进行了解/@TQuest>\
+<结束/@exit>
+
+[@chung_main_0_2]
+#IF
+#SAY
+贫道是清明子。\
+你找我有什么事情吗?\ \
+<公开/@masshiding_test_start>{FCOLOR/10}成致日志{FCOLOR/12}\
+<寻求武功指导/@chung_mugong_main>\
+<对今日的任务进行了解/@TQuest>\
+<结束/@exit>
+
+
+
+[@chung_mugong_main]
+#IF
+#SAY
+我可以指导你以下的武功。\
+（1 - 10 等级 修炼魔法）\
+<治愈术/@heal_test_start> , <精神力战法/@ilgang_test_start>\
+（11 - 25 等级 修炼魔法）\
+<施毒术/@poison_test_start> , <召唤骷髅/@recallskel_test_start> , <隐身术/@hiding_test_start>\
+<幽灵盾/@hangma_test_start> , <集体隐身术/@masshiding_test_start> , <神圣战甲术/@Upac_test_start>\ \
+<需要更高级的魔法/@taoist_hight>\\
+<不寻求武功指导/@exit>
+
+[@heal_test_start]
+#IF
+#ACT
+goto @heal_begin
+
+[@heal_begin]
+#CALL [\MU_taoist\heal.txt] @mugong_heal
+
+[@ilgang_test_start]
+#IF
+check [034] 1
+check [015] 0
+#ACT
+goto @ilgang_complete
+break
+#IF
+#ACT
+goto @ilgang_begin
+
+[@ilgang_begin]
+#CALL [\MU_taoist\ilgang.txt] @mugong_ilgang
+
+[@ilgang_complete]
+#CALL [\MU_taoist\ilgang.txt] @mugong_ilgang_complete
+
+;-----------------------------
+
+[@poison_test_start]
+#IF
+check [036] 1
+check [016] 0
+#ACT
+goto @poison_complete
+break
+#IF
+#ACT
+goto @poison_begin
+
+[@poison_begin]
+#CALL [\MU_taoist\amyen.txt] @mugong_poison
+
+[@poison_complete]
+#CALL [\MU_taoist\amyen.txt] @mugong_poison_complete
+
+;-----------------------------
+
+[@recallskel_test_start]
+#IF
+check [039] 1
+check [017] 0
+#ACT
+goto @recallskel_complete
+break
+#IF
+#ACT
+goto @recallskel_begin
+
+[@recallskel_begin]
+#CALL [\MU_taoist\soulSkel.txt] @mugong_recallskel
+
+[@recallskel_complete]
+#CALL [\MU_taoist\soulSkel.txt] @mugong_recallskel_complete
+
+[@taoist_hight]
+#SAY
+需要练习更高级的魔法请到道馆野外的（349：401）找大悲善僧，他可以帮助你学习技能.\\
+<结束/@exit>
+
+
+[@hiding_test_start]
+#IF
+check [041] 1
+check [018] 0
+#ACT
+goto @hiding_complete
+break
+#IF
+#ACT
+goto @hiding_begin
+[@hiding_begin]
+#CALL [\MU_taoist\hiden.txt] @mugong_hiding
+
+[@hiding_complete]
+#CALL [\Mu_taoist\hiden.txt] @mugong_hiding_complete
+
+;-----------------------------
+
+[@masshiding_test_start]
+#IF
+check [047] 1
+check [020] 0
+#ACT
+goto @masshiding_complete
+break
+#IF
+#ACT
+goto @masshiding_begin
+
+[@masshiding_begin]
+#CALL [\MU_taoist\masshiden.txt] @mugong_masshiding
+
+[@masshiding_complete]
+#CALL [\MU_taoist\masshiden.txt] @mugong_masshiding_complete
+
+[@hangma_test_start]
+#IF
+check [043] 1
+check [019] 0
+#ACT
+goto @hangma_ring
+break
+#IF
+#ACT
+goto @hangma_begin
+
+[@hangma_begin]
+#CALL [\MU_taoist\hangma.txt] @mugong_hangma
+
+[@hangma_ring]
+#CALL [\MU_taoist\hangma.txt] @mugong_hangma_getring
+
+
+[@Upac_test_start]
+#IF
+check [049] 1
+check [021] 0
+#ACT
+goto @Upac_test
+break
+#IF
+#ACT
+goto @Upac_begin
+
+[@Upac_begin]
+#CALL [\MU_taoist\deaji.txt] @mugong_Upac
+
+[@Upac_test]
+#CALL [\Mu_taoist\deaji.txt] @mugong_Upac_test

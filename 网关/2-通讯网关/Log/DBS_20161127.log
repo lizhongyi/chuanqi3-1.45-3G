@@ -1,0 +1,85 @@
+11:27:59 Startup DB Server
+11:27:59 Connected to LoginServer.
+11:27:59 KillTimer : TIMER_CONNLOGINSERVER, StartTimer : TIMER_KEEPALIVE
+11:28:03 [127.0.0.1:1923] RunGate connected.
+11:28:08 [127.0.0.1:1927] GameServer connected.
+11:35:37 Startup DB Server
+11:35:37 Connected to LoginServer.
+11:35:37 KillTimer : TIMER_CONNLOGINSERVER, StartTimer : TIMER_KEEPALIVE
+11:35:43 [127.0.0.1:1961] RunGate connected.
+11:35:49 [127.0.0.1:1965] GameServer connected.
+11:37:06 [127.0.0.1:1965] GameServer disconnected.
+11:37:43 [127.0.0.1:1983] GameServer connected.
+11:49:16 [127.0.0.1:1983] GameServer disconnected.
+11:51:39 Startup DB Server
+11:51:39 Connected to LoginServer.
+11:51:39 KillTimer : TIMER_CONNLOGINSERVER, StartTimer : TIMER_KEEPALIVE
+11:51:43 [127.0.0.1:2019] RunGate connected.
+11:51:49 [127.0.0.1:2023] GameServer connected.
+11:53:23 [127.0.0.1:2023] GameServer disconnected.
+11:54:06 [127.0.0.1:2044] GameServer connected.
+11:54:33 [127.0.0.1:2044] GameServer disconnected.
+11:54:59 [127.0.0.1:2060] GameServer connected.
+11:58:16 [127.0.0.1:2060] GameServer disconnected.
+11:59:12 [127.0.0.1:2083] GameServer connected.
+12:00:09 [127.0.0.1:2083] GameServer disconnected.
+12:04:34 Startup DB Server
+12:04:34 Connected to LoginServer.
+12:04:34 KillTimer : TIMER_CONNLOGINSERVER, StartTimer : TIMER_KEEPALIVE
+12:04:37 [127.0.0.1:2150] RunGate connected.
+12:04:48 [127.0.0.1:2155] GameServer connected.
+12:06:09 [127.0.0.1:2155] GameServer disconnected.
+12:06:31 [127.0.0.1:2170] GameServer connected.
+12:08:03 [127.0.0.1:2170] GameServer disconnected.
+12:11:36 [127.0.0.1:2223] GameServer connected.
+13:30:04 [127.0.0.1:2223] GameServer disconnected.
+13:30:16 [127.0.0.1:2239] GameServer connected.
+13:31:59 [127.0.0.1:2239] GameServer disconnected.
+13:32:11 [127.0.0.1:2252] GameServer connected.
+13:32:44 [127.0.0.1:2252] GameServer disconnected.
+13:33:24 [127.0.0.1:2270] GameServer connected.
+13:35:52 [127.0.0.1:2270] GameServer disconnected.
+13:39:06 [127.0.0.1:2318] GameServer connected.
+13:42:10 [127.0.0.1:2318] GameServer disconnected.
+14:11:21 Startup DB Server
+14:11:22 Connected to LoginServer.
+14:11:22 KillTimer : TIMER_CONNLOGINSERVER, StartTimer : TIMER_KEEPALIVE
+14:11:26 [127.0.0.1:2408] RunGate connected.
+14:11:29 [127.0.0.1:2411] GameServer connected.
+14:14:45 [127.0.0.1:2411] GameServer disconnected.
+14:16:22 [127.0.0.1:2449] GameServer connected.
+15:04:59 [127.0.0.1:2449] GameServer disconnected.
+15:05:25 [127.0.0.1:2472] GameServer connected.
+15:15:01 [127.0.0.1:2472] GameServer disconnected.
+15:18:38 [127.0.0.1:2532] GameServer connected.
+16:20:43 [127.0.0.1:2532] GameServer disconnected.
+16:20:58 [127.0.0.1:2864] GameServer connected.
+16:28:23 [127.0.0.1:2864] GameServer disconnected.
+16:28:33 [127.0.0.1:2880] GameServer connected.
+16:33:10 [127.0.0.1:2408] RunGate disconnected.
+16:33:12 [127.0.0.1:3066] RunGate connected.
+16:36:42 [127.0.0.1:3066] RunGate disconnected.
+16:36:45 [127.0.0.1:3085] RunGate connected.
+16:37:31 [127.0.0.1:3085] RunGate disconnected.
+16:37:37 [127.0.0.1:3090] RunGate connected.
+16:44:32 [127.0.0.1:2880] GameServer disconnected.
+16:44:54 Startup DB Server
+16:44:54 Connected to LoginServer.
+16:44:54 KillTimer : TIMER_CONNLOGINSERVER, StartTimer : TIMER_KEEPALIVE
+16:45:00 [127.0.0.1:3179] RunGate connected.
+16:45:22 Startup DB Server
+16:45:22 Connected to LoginServer.
+16:45:22 KillTimer : TIMER_CONNLOGINSERVER, StartTimer : TIMER_KEEPALIVE
+16:45:28 [127.0.0.1:3202] RunGate connected.
+16:45:35 [127.0.0.1:3207] GameServer connected.
+17:10:06 Startup DB Server
+17:10:06 Connected to LoginServer.
+17:10:06 KillTimer : TIMER_CONNLOGINSERVER, StartTimer : TIMER_KEEPALIVE
+17:10:12 [127.0.0.1:3270] RunGate connected.
+17:10:15 [127.0.0.1:3274] GameServer connected.
+17:42:22 [127.0.0.1:3270] RunGate disconnected.
+17:42:24 [127.0.0.1:3527] RunGate connected.
+17:47:57 [127.0.0.1:3527] RunGate disconnected.
+17:47:59 [127.0.0.1:3534] RunGate connected.
+17:48:17 [127.0.0.1:3534] RunGate disconnected.
+17:48:19 [127.0.0.1:3547] RunGate connected.

@@ -1,0 +1,112 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@管理员菜单_1]
+{
+#ACT
+mov N3 %ONLINECOUNT
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}后{FCOLOR/4}━{FCOLOR/14}台{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+当前在线真实人数为[{FCOLOR/10} <$OUTPUT(N3)> {FCOLOR/12}]人\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}后{FCOLOR/4}━{FCOLOR/14}台{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <发放物品/@发放物品8> ]       [ <开区刷怪/@开区刷怪8> ]       [ <怪物攻城/@怪物攻城8> ]\\
+_    {FCOLOR/12}[ <开启双倍经验/@开启双经1> ]       [ <关闭双倍经验/@关闭双经1> ] \\
+_    {FCOLOR/12}[ <开启双倍暴率/@开启双暴1> ]       [ <关闭双倍暴率/@关闭双暴1> ] \
+
+[@发放物品8]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}后{FCOLOR/4}━{FCOLOR/14}台{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+当前在线真实人数为[{FCOLOR/10} <$OUTPUT(N3)> {FCOLOR/12}]人\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}后{FCOLOR/4}━{FCOLOR/14}台{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <发放物品/@发放物品8> ]       [ <开区刷怪/@开区刷怪8> ]       [ <怪物攻城/@怪物攻城8> ]\\
+_    {FCOLOR/12}[ <开启双倍经验/@开启双经1> ]       [ <关闭双倍经验/@关闭双经1> ] \\
+_    {FCOLOR/12}[ <开启双倍暴率/@开启双暴1> ]       [ <关闭双倍暴率/@关闭双暴1> ] \
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}后{FCOLOR/4}━{FCOLOR/14}台{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+道馆城市:  <掉元宝/@diao_zuanshi>   <掉金币/@diao_jinbi>   <掉盒子/@diao_hezi>   <掉糖果/@diao_tangguo>\
+
+[@开区刷怪]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}后{FCOLOR/4}━{FCOLOR/14}台{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+当前在线真实人数为[{FCOLOR/10} <$OUTPUT(N3)> {FCOLOR/12}]人\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}后{FCOLOR/4}━{FCOLOR/14}台{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <发放物品/@发放物品8> ]       [ <开区刷怪/@开区刷怪8> ]       [ <怪物攻城/@怪物攻城8> ]\\
+_    {FCOLOR/12}[ <开启双倍经验/@开启双经1> ]       [ <关闭双倍经验/@关闭双经1> ] \\
+_    {FCOLOR/12}[ <开启双倍暴率/@开启双暴1> ]       [ <关闭双倍暴率/@关闭双暴1> ] \
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}后{FCOLOR/4}━{FCOLOR/14}台{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_    [ <输入刷怪次数/@@shurushuaguai> ]      [ <立即停止刷怪/@kaiqutingguai> ]\
+
+[@怪物清除]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}后{FCOLOR/4}━{FCOLOR/14}台{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+当前在线真实人数为[{FCOLOR/10} <$OUTPUT(N3)> {FCOLOR/12}]人\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}后{FCOLOR/4}━{FCOLOR/14}台{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <发放物品/@发放物品8> ]       [ <开区刷怪/@开区刷怪8> ]       [ <怪物攻城/@怪物攻城8> ]\\
+_    {FCOLOR/12}[ <开启双倍经验/@开启双经1> ]       [ <关闭双倍经验/@关闭双经1> ] \\
+_    {FCOLOR/12}[ <开启双倍暴率/@开启双暴1> ]       [ <关闭双倍暴率/@关闭双暴1> ] \
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}后{FCOLOR/4}━{FCOLOR/14}台{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <重新刷大BOSS/@cxshuada> ][ <重新刷小BOSS/@cxshuaxiao> ][ <清理当前怪物/@qinglidqguai> ]
+
+[@怪物攻城8]
+#CALL [Activities\怪物攻城.txt] @怪物攻城_1
+
+[@开启双暴1]
+#if
+#act
+close
+actcmd SETDROPRATE 2
+LineMsg "Grobal" "(*) 请大家注意，从现在开始，所有的怪物暴率提高一倍！"
+
+
+[@关闭双暴1]
+#act
+close
+actcmd SETDROPRATE 1
+LineMsg "Grobal" "(*) 请大家注意，从现在开始，所有的怪物暴率恢复了！"
+
+[@开启双经1]
+#if
+#act
+close
+actcmd SETSERVEREXPMULTIPLE 2
+LineMsg "Grobal" "(*) 请大家注意，从现在开始，所有的怪物经验提高一倍！"
+
+
+[@关闭双经1]
+#act
+close
+actcmd SETSERVEREXPMULTIPLE 1
+LineMsg "Grobal" "(*) 请大家注意，从现在开始，所有的怪物经验恢复了！"
+
+[@开区刷怪8]
+#CALL [Activities\开区刷怪.txt] @开区刷怪_1
+
+[@kaiqutingguai]
+#ACT
+Close
+SaveValue "ParamControl\开区刷怪.ini" [开区后] 开区刷怪 0
+SYSMSG "亲爱的[ <$USERNAME> ]开区刷怪.现在停止了"
+
+[@diao_zuanshi]
+#ACT
+DropItemMap "1, 405, 124, 30" 元宝  1  50 
+lineMsg [Grobal] "打雷了,下雨了,道观天上掉元宝了!"
+
+[@diao_jinbi]
+#ACT
+DropItemMap "1, 405, 124, 30" 金币  5000  200 
+lineMsg [Grobal] "打雷了,下雨了,道观天上掉金币了!"
+
+[@diao_hezi]
+#ACT
+DropItemMap "1, 405, 124, 30" 稀世宝盒 1  25
+DropItemMap "1, 405, 124, 30" 经验宝盒 1  25  
+lineMsg [Grobal] "打雷了,下雨了,道观天上掉宝箱了!"
+
+[@diao_tangguo]
+#ACT
+DropItemMap "1, 405, 124, 30" 自然糖果 1 20
+DropItemMap "1, 405, 124, 30" 灵魂糖果 1 20
+DropItemMap "1, 405, 124, 30" 攻击糖果 1 20
+lineMsg [Grobal] "打雷了,下雨了,道观天上掉糖果了!"
+
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

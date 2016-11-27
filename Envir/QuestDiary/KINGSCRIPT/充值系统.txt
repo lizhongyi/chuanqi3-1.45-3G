@@ -1,0 +1,517 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@充值系统_1]
+{
+#ACT
+LOADVALUE D0 "ParamControl\充值余额.ini" %USERID RMB
+LOADVALUE D1 "ParamControl\累积消费.ini" %USERID RMB
+
+#IF
+#SAY
+{FCOLOR/1}欢迎进入真爱文化传媒传奇三游戏商城{FCOLOR/12}\\
+<【赞助币商城】/@赞助币商城1>
+
+#IF
+Elarge D1 500
+#SAY
+_    <【累积消费满500抽奖】/@累积抽奖1>\\
+#ELSESAY
+\\
+
+#IF
+#SAY
+{FCOLOR/13}目前充值多送100%活动正在火热进行中!{FCOLOR/12}\\
+<【决战西沙礼包】/@决战西沙礼包1>    <【决战冰宫礼包】/@决战冰宫礼包1>{FCOLOR/1}hot~~~{FCOLOR/12}\\
+<【金币  商城】/@金币商城1>\\
+您目前剩余 {FCOLOR/1}<$OUTPUT(D0)>{FCOLOR/12} 赞助币  累计消费 {FCOLOR/1}<$OUTPUT(D1)>{FCOLOR/12} 赞助币\\
+
+{FCOLOR/13}累计消费500赞助币可进行金币抽奖{FCOLOR/12}  <【赞助币兑换铜钱】/@赞助币实物1>\\
+{FCOLOR/14}赞助币充值请在登录器or官方网站的在线充值进行充值!{FCOLOR/12}\\
+或者联系企业客服QQ:{FCOLOR/10}800038140{FCOLOR/12}
+
+
+
+[@决战西沙礼包1]
+#SAY
+{FCOLOR/13}决战西沙礼包:{FCOLOR/12}\\
+300个赞助币购买决战西沙礼包,可一次领取金币1500W+200个祝福油+9999个万年雪霜（绑定）+天山雪莲花200个+魔晶石2个\\
+{FCOLOR/1}每个ID限购一次!!!{FCOLOR/12}\\
+<【购买礼包】/@决战西沙礼包2>
+
+
+[@决战西沙礼包2]
+#ACT
+LOADVALUE D0 "ParamControl\充值余额.ini" %USERID RMB
+LOADVALUE D1 "ParamControl\决战西沙礼包.ini" [礼包] %USERNAME
+
+#IF
+Equal D1 1
+#ACT
+BREAK
+#SAY
+你已经购买过了,每个角色仅能购买一次.\\
+<关闭/@Exit>
+
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+ELarge 占用格子 43
+#ACT
+SYSMSG "你的包袱格子不够,请整理包袱后再来吧!"
+break
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+Small 剩余负重 402
+#ACT
+SYSMSG "你的包袱剩余负重不够,请整理包袱剩余402以上负重后再来吧!"
+BREAK
+
+#IF
+Elarge D0 300
+#ACT
+DEC D0 300
+SAVEVALUE "ParamControl\充值余额.ini" %USERID RMB %D0
+SAVEVALUE "ParamControl\决战西沙礼包.ini" [礼包] %USERNAME 1
+GIVEGOLDEX 15000000
+GIVE 祝福油 200
+GIVE 万年雪霜（绑定） 9999
+GIVE 魔晶石 2
+GIVE 天山雪莲花 200
+lineMsg [Grobal] "<$USERNAME>购买了新年大礼包,获得了1500W金币,2000个祝福油,9999个万年雪霜（绑定）,魔晶石2个,天山雪莲花200个."
+CLOSE
+BREAK
+#ELSESAY
+对不起,你的帐户里的余额不足300赞助币.\\
+<关闭/@Exit>
+
+
+[@双旦活动礼包1]
+#SAY
+{FCOLOR/13}圣诞元旦大礼包:{FCOLOR/12}\\
+{FCOLOR/14}活动时间：12月24日-1月3日{FCOLOR/12}\\
+200个赞助币购买礼包,可领取金币200W+100个六位地黄丸+80个祝福油+6666个万年雪霜（绑定）\\
+{FCOLOR/1}每个ID限购一次,本活动只限活动时间内!!!{FCOLOR/12}\\
+<【购买礼包】/@双旦活动>
+
+[@双旦活动]
+#ACT
+LOADVALUE D0 "ParamControl\充值余额.ini" %USERID RMB
+LOADVALUE D1 "ParamControl\圣诞元旦大礼包.ini" [礼包] %USERNAME
+
+#IF
+Equal D1 1
+#ACT
+BREAK
+#SAY
+你已经购买过了,每个角色仅能购买一次.\\
+<关闭/@Exit>
+
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+ELarge 占用格子 44
+#ACT
+SYSMSG "你的包袱格子不够,请整理包袱后再来吧!"
+break
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+Small 剩余负重 180
+#ACT
+SYSMSG "你的包袱剩余负重不够,请整理包袱后再来吧!"
+BREAK
+
+#IF
+Elarge D0 200
+#ACT
+DEC D0 200
+SAVEVALUE "ParamControl\充值余额.ini" %USERID RMB %D0
+SAVEVALUE "ParamControl\圣诞元旦大礼包.ini" [礼包] %USERNAME 1
+GIVEGOLDEX 2000000
+GIVE 六味地黄丸 100
+GIVE 祝福油 80
+GIVE 万年雪霜（绑定） 6666
+lineMsg [Grobal] "<$USERNAME>购买了圣诞元旦大礼包,获得了200W金币,100个六味地黄丸,80个祝福油和6666个万年雪霜（绑定）."
+CLOSE
+BREAK
+#ELSESAY
+对不起,你的帐户里的余额不足200赞助币.\\
+<关闭/@Exit>
+
+[@赞助币商城1]
+#ACT
+LOADVALUE D0 "ParamControl\充值余额.ini" %USERID RMB
+LOADVALUE D1 "ParamControl\累积消费.ini" %USERID RMB
+
+#IF
+#SAY
+您目前剩余 {FCOLOR/1}<$OUTPUT(D0)>{FCOLOR/12} 赞助币  累计消费 {FCOLOR/1}<$OUTPUT(D1)>{FCOLOR/12} 赞助币\
+<10赞助币进行服装染色/@服装染色1>\
+<10赞助币进行首饰美化/@首饰美化1>\
+<10赞助币进行装备刻名/@装备刻名1>\
+<50赞助币进行转换性别/@转换性别1>\
+<1赞助币购买鲜花1朵/@商城兑换物品x(1)>    <5赞助币购买鲜花5朵/@商城兑换物品x(5)>\
+<10赞助币购买鲜花10朵/@商城兑换物品x(10)>  <100赞助币购买鲜花100朵/@商城兑换物品x(100)>\
+<1赞助币购买赞助勋章（火）1个/@商城兑换物品(1,赞助勋章（火）)>\
+<1赞助币购买赞助勋章（冰）1个/@商城兑换物品(1,赞助勋章（冰）)>\
+<1赞助币购买赞助勋章（雷）1个/@商城兑换物品(1,赞助勋章（雷）)>\
+<1赞助币购买赞助勋章（风）1个/@商城兑换物品(1,赞助勋章（风）)>\
+<1赞助币购买赞助勋章（神圣）1个/@商城兑换物品(1,赞助勋章（神圣）)>\
+<1赞助币购买赞助勋章（暗黑）1个/@商城兑换物品(1,赞助勋章（暗黑）)>\
+<1赞助币购买赞助勋章（幻影）1个/@商城兑换物品(1,赞助勋章（幻影）)>\
+<10赞助币购买烟花（小）1个/@商城兑换物品(10,烟花（小）)>\
+<50赞助币购买烟花（大）1个/@商城兑换物品(50,烟花（大）)>\
+<10赞助币购买发卡1个/@商城兑换物品(10,发卡)>\
+<10赞助币购买传音喇叭1个/@商城兑换物品(10,传音喇叭)>\
+<10赞助币可以换取金币70W/@商城兑换金币(10,700000)>\
+<100赞助币可以换取金币700W/@商城兑换金币(100,7000000)>\
+<1000赞助币可以换取金币7000W/@商城兑换金币(1000,70000000)>\
+
+[@商城兑换物品x()]
+#ACT
+MOV 兑换数量 %ARG(1)
+LOADVALUE D0 "ParamControl\充值余额.ini" %USERID RMB
+LOADVALUE D5 "ParamControl\累积消费.ini" %USERID RMB
+LOADVALUE D6 "ParamControl\鲜花消费.ini" %USERNAME 数量
+
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+Equal 占用格子 46
+#ACT
+SYSMSG "你的包袱格子已经满了,不能装下东西了!"
+break
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+Small 剩余负重 %兑换数量
+#ACT
+SYSMSG "你的包袱剩余负重不够,不能装下物品了."
+BREAK
+
+#IF
+ELarge D0 %兑换数量
+#ACT
+GIVE 鲜花 %兑换数量
+DEC D0 %兑换数量
+SAVEVALUE "ParamControl\充值余额.ini" %USERID RMB %D0
+SYSMSG "消耗了<$OUTPUT(兑换数量)>赞助币,兑换了<$OUTPUT(兑换数量)>个鲜花."
+inc D6 %兑换数量
+SAVEVALUE "ParamControl\鲜花消费.ini" %USERNAME 数量 %D6
+;inc D5 %兑换数量
+;SAVEVALUE "ParamControl\累积消费.ini" %USERID RMB %D5
+goto @赞助币商城1
+BREAK
+#ELSESAY
+你的账号里没有足够的余额.\\
+<关闭/@Exit>
+
+[@决战冰宫礼包1]
+#ACT
+LOADVALUE D0 "ParamControl\决战冰宫礼包.ini" %USERNAME 天数
+MOV D1 %CURDAY
+
+#IF
+Large D0 %D1
+#ACT
+DEC D0 %D1
+DEC D0 1
+#ELSEACT
+MOV D0 0
+
+#IF
+#SAY
+{FCOLOR/10}150个赞助币{FCOLOR/12}购买{FCOLOR/14}决战冰宫礼包{FCOLOR/12},购买后30天时间内,{FCOLOR/14}每天可以领取100W金币,7个六味地黄丸+200个万年雪霜（绑定）{FCOLOR/12}\\
+冰宫礼包剩余有效天数为{FCOLOR/10}<$OUTPUT(D0)>{FCOLOR/12}天.\\
+<购买冰宫礼包/@备战礼包1>\\
+<领取每日礼包/@领取每日礼包1>\\
+
+
+[@领取每日礼包1]
+#ACT
+LOADVALUE D0 "ParamControl\决战冰宫礼包.ini" %USERNAME 天数
+LOADVALUE D1 "ParamControl\决战冰宫礼包.ini" %USERNAME 领取
+
+#IF
+Equal D1 %CURDAY
+#ACT
+BREAK
+#SAY
+{FCOLOR/1}你今天已经领取过冰宫礼包奖励了.\\
+<关闭/@Exit>
+
+#IF
+large D0 %CURDAY
+#ELSEACT
+BREAK
+#ELSESAY
+{FCOLOR/1}对不起,你没有获得领取冰宫礼包的资格.\\
+<关闭/@exit>
+
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+Elarge 占用格子 45
+#ACT
+BREAK
+#SAY
+请将包袱整理出{FCOLOR/1}2{FCOLOR/12}个空位再来领取.\\
+<关闭/@exit>
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+Elarge 剩余负重 8
+#ACT
+GIVEGOLDEX 1000000
+GIVE 六味地黄丸 6
+GIVE 万年雪霜（绑定） 200
+SAVEVALUE "ParamControl\决战冰宫礼包.ini" %USERNAME 领取 %CURDAY
+lineMsg [Grobal] "<$USERNAME>领取了今天的冰宫礼包,获得了100W金币,6个六味地黄丸和200个万年雪霜（绑定）."
+break
+#SAY
+{FCOLOR/1}你领取了今天的冰宫礼包.\\
+<关闭/@exit>
+#ELSESAY
+请将包袱整理出{FCOLOR/1}8{FCOLOR/12}点以上的负重再来领取.\\
+<关闭/@exit>
+
+
+[@备战礼包1]
+#ACT
+LOADVALUE D0 "ParamControl\充值余额.ini" %USERID RMB
+LOADVALUE D1 "ParamControl\决战冰宫礼包.ini" %USERNAME [天数]
+
+#IF
+Elarge D0 150
+#ELSEACT
+BREAK
+#ELSESAY
+对不起,你没有150个赞助币.\\
+<关闭/@Exit>
+
+#IF
+large D1 %CURDAY
+#ACT
+DEC D0 150
+SAVEVALUE "ParamControl\充值余额.ini" %USERID RMB %D0
+INC D1 30
+SAVEVALUE "ParamControl\决战冰宫礼包.ini" %USERNAME 天数 %D1
+BREAK
+#SAY
+兑换成功,你的冰宫礼包领取资格增加了{FCOLOR/10}30{FCOLOR/12}天.\\
+<关闭/@exit>
+
+#IF
+#ACT
+DEC D0 150
+SAVEVALUE "ParamControl\充值余额.ini" %USERID RMB %D0
+MOV D1 %CURDAY
+INC D1 30
+SAVEVALUE "ParamControl\决战冰宫礼包.ini" %USERNAME 天数 %D1
+BREAK
+#SAY
+兑换成功,你获得了{FCOLOR/10}30{FCOLOR/12}天的冰宫礼包领取资格.\\
+<关闭/@exit>
+
+
+[@赞助币实物1]
+#ACT
+LOADVALUE D0 "ParamControl\充值余额.ini" %USERID RMB
+#SAY
+目前剩余的金额为 {FCOLOR/1}<$OUTPUT(D0)>{FCOLOR/12} 赞助币,1赞助币=1铜钱.\
+1个  <赞助币-→铜钱/@兑换可交易(1,1)>\
+10个 <赞助币-→铜钱/@兑换可交易(10,1)>\
+100个<赞助币-→铜钱/@兑换可交易(100,10)>\\
+1个  <铜钱-→赞助币/@兑换可交易2(1)>\
+10个 <铜钱-→赞助币/@兑换可交易2(10)>\
+100个<铜钱-→赞助币/@兑换可交易2(100)>\
+
+[@兑换可交易2()]
+#ACT
+MOV D1 %ARG(1)
+LOADVALUE D0 "ParamControl\充值余额.ini" %USERID RMB
+
+#IF
+CHECKITEM 铜钱 %D1
+#ACT
+INC D0 %D1
+SAVEVALUE "ParamControl\充值余额.ini" %USERID RMB %D0
+TAKE 铜钱 %D1
+goto @赞助币实物1
+break
+#ELSESAY
+对不起,你包袱里没有足够的铜钱.\\
+<关闭/@Exit>
+
+[@兑换可交易()]
+#ACT
+MOV D1 %ARG(1)
+mov D2 %ARG(2)
+LOADVALUE D0 "ParamControl\充值余额.ini" %USERID RMB
+
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+Equal 占用格子 46
+#ACT
+SYSMSG "你的包袱格子已经满了,不能装下东西了!"
+break
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+Small 剩余负重 %d2
+#ACT
+SYSMSG "你的包袱剩余负重为<$OUTPUT(剩余负重)>,不能装下任务物品了."
+BREAK
+
+#if
+Elarge D0 %D1
+#ACT
+DEC D0 %D1
+SAVEVALUE "ParamControl\充值余额.ini" %USERID RMB %D0
+GIVE 铜钱 %D1
+goto @赞助币实物1
+break
+#ELSESAY
+对不起,你没有足够的赞助币可以兑换铜钱了.\\
+<关闭/@Exit>
+
+
+[@金币商城1]
+#CALL [KINGSCRIPT\金币商城.txt] @金币商城_1
+
+[@累积抽奖1]
+#ACT
+LOADVALUE D1 "ParamControl\累积消费.ini" %USERID RMB
+
+#IF
+Elarge D1 500
+#ACT
+MOVR D0 3000001
+INC D0 5000000
+GIVEGOLDEX %D0
+DEC D1 500
+SAVEVALUE "ParamControl\累积消费.ini" %USERID RMB %D1
+SYSMSG "消耗了500消费累积,抽奖获得了<$OUTPUT(D0)>金币." 1
+CLOSE
+BREAK
+#ELSEACT
+CLOSE
+BREAK
+
+
+[@装备刻名1]
+#CALL [KINGSCRIPT\装备刻名.txt] @装备刻名_1
+
+[@转换性别1]
+#CALL [KINGSCRIPT\改变性别.txt] @改变性别_1
+
+[@首饰美化1]
+#CALL [KINGSCRIPT\首饰美化.txt] @首饰美化_1
+
+[@服装染色1]
+#CALL [KINGSCRIPT\衣服染色.txt] @衣服染色_1
+
+
+[@商城兑换金币()]
+#ACT
+MOV 兑换金额 %ARG(1)
+MOV 等值金币 %ARG(2)
+LOADVALUE D0 "ParamControl\充值余额.ini" %USERID RMB
+LOADVALUE D5 "ParamControl\累积消费.ini" %USERID RMB
+
+#IF
+ELarge D0 %兑换金额
+#ACT
+GIVEGOLDEX %等值金币
+DEC D0 %兑换金额
+SAVEVALUE "ParamControl\充值余额.ini" %USERID RMB %D0
+SYSMSG "消耗了<$OUTPUT(兑换金额)>赞助币,兑换了<$OUTPUT(等值金币)>金币."
+inc D5 %兑换金额
+SAVEVALUE "ParamControl\累积消费.ini" %USERID RMB %D5
+goto @充值系统_1
+BREAK
+#ELSESAY
+你的账号里没有足够的余额.\\
+<关闭/@Exit>
+
+[@商城兑换物品()]
+#ACT
+MOV 兑换金额 %ARG(1)
+MOV 兑换物品 %ARG(2)
+LOADVALUE D0 "ParamControl\充值余额.ini" %USERID RMB
+LOADVALUE D5 "ParamControl\累积消费.ini" %USERID RMB
+
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+Equal 占用格子 46
+#ACT
+SYSMSG "你的包袱格子已经满了,不能装下东西了!"
+break
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+Small 剩余负重 1
+#ACT
+SYSMSG "你的包袱剩余负重为<$OUTPUT(剩余负重)>,不能装下任务物品了."
+BREAK
+
+#IF
+ELarge D0 %兑换金额
+#ACT
+GIVE %兑换物品 1
+DEC D0 %兑换金额
+SAVEVALUE "ParamControl\充值余额.ini" %USERID RMB %D0
+SYSMSG "消耗了<$OUTPUT(兑换金额)>赞助币,兑换了1个<$OUTPUT(兑换物品)>."
+inc D5 %兑换金额
+SAVEVALUE "ParamControl\累积消费.ini" %USERID RMB %D5
+goto @赞助币商城1
+BREAK
+#ELSESAY
+你的账号里没有足够的余额.\\
+<关闭/@Exit>
+
+}

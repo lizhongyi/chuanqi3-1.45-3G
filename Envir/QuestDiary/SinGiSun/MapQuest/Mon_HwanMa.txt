@@ -1,0 +1,46 @@
+;;----------;;购买请联系鱼的眼泪,QQ:16487549
+[@Main]
+#act
+LoadValue D0 "ParamControl\任务记录.ini" %USERNAME 任务编号
+LoadValue A0 "ParamControl\任务记录.ini" %USERNAME 任务进度
+LOADVALUE A1 "ParamControl\支线任务.ini" %USERNAME 霸王守卫
+
+#IF
+EQUAL A0 "Progress"
+EQUAL D0 223
+#ACT
+MOV A5 "霸王守卫"
+GOTO @BossQuest_TQCase2
+break
+
+#IF
+check [066] 1
+check [067] 1
+#ACT
+goto @HwanMa_Quest
+
+#IF
+Equal A1 "领取任务"
+#ELSEACT
+BREAK
+
+#IF
+#ACT
+LOADVALUE D1 "ParamControl\支线霸王.ini" 霸王守卫 %USERNAME
+inc D1 1
+SYSMSG "支线任务:猎杀[霸王守卫]进度<$OUTPUT(D1)>/3." 2
+SAVEVALUE "ParamControl\支线霸王.ini" 霸王守卫 %USERNAME %D1
+
+#IF
+Equal D1 3
+#ACT
+SAVEVALUE "ParamControl\支线任务.ini" %USERNAME 霸王守卫 "猎杀完成"
+SYSMSG "支线任务:猎杀[霸王守卫]已经完成." 2
+BREAK
+
+[@BossQuest_TQCase2]
+#CALL [每日任务\QT_TotalMonster.txt] @BossQuest_Monster_Total
+
+[@HwanMa_Quest]
+#CALL [SinGiSun\Mon_SinGi.txt] @HwanMa_Quest1
+;;----------;;购买请联系鱼的眼泪,QQ:16487549

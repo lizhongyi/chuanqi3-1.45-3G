@@ -1,0 +1,41 @@
+;;创天网络有限公司原版1.45
+[@RefineGangOk]
+{
+#IF
+#SAY
+制作钢玉石需要{FCOLOR/10}纯度10以上的10个钢玉石矿{FCOLOR/12}和 {FCOLOR/10}10万金币{FCOLOR/12}.想不想制作?\ \
+_<收集完所需材料./@RefineGangOk_Check>\
+_<还没有收集好所需材料,等一会再来./@exit>
+
+[@RefineGangOk_Check] 
+#IF
+checkitem 钢玉矿石 11
+#ACT
+BREAK
+#SAY
+你带的钢玉矿石太多，制炼钢玉石{FCOLOR/10}只需10块钢玉矿石{FCOLOR/12}，请把剩余的钢玉矿石存放到仓库中再来。 \ \
+<关闭/@exit>
+
+#IF
+checkgold 100000
+#ELSEACT
+BREAK
+#ELSESAY
+制炼钢玉石需要 {FCOLOR/10}10万金币{FCOLOR/12}的费用，没有钱我无法替你制炼 \ \
+
+#IF
+checkitem 钢玉矿石 10
+checkduraeva 钢玉矿石 10
+#ACT
+take 钢玉矿石 10
+take 金币 100000
+give 钢玉石 1
+#SAY
+_把钢玉石拿走吧.\ \
+_<关闭/@exit>
+#ELSESAY
+想制作钢玉石既然连材料都没有准备好?如果没有材料根本无法制作,你走吧.\ \
+_<关闭/@exit>
+
+}
+

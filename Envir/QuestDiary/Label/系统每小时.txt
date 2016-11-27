@@ -1,0 +1,160 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@系统每小时_Main]
+{
+#If
+Hour 0 0
+#Act
+Break
+
+#If
+Hour 1 1
+#Act
+SaveValue "ParamControl\开心辞典游戏参数.ini" [开心词典] [开启变量] 0
+SaveValue "ParamControl\开心辞典游戏参数.ini" [开心词典] [出题数量] 0
+#ELSEACT
+linemsg [grobal] "<*系统信息*>开心词典活动10分钟后开启"
+DELAYGOTO [LOCAL] 600 @kaixin_chufa
+Break
+
+#If
+Hour 2 2
+#Act
+Break
+
+#If
+Hour 3 3
+#Act
+Break
+
+#If
+Hour 4 4
+#Act
+SaveValue "ParamControl\开心辞典游戏参数.ini" [开心词典] [开启变量] 0
+SaveValue "ParamControl\开心辞典游戏参数.ini" [开心词典] [出题数量] 0
+#ELSEACT
+linemsg [grobal] "<*系统信息*>开心词典活动10分钟后开启"
+DELAYGOTO [LOCAL] 600 @kaixin_chufa
+Break
+
+#If
+Hour 5 5
+#Act
+Break
+
+#If
+Hour 6 6
+#Act
+Break
+
+#If
+Hour 7 7
+#Act
+SaveValue "ParamControl\开心辞典游戏参数.ini" [开心词典] [开启变量] 0
+SaveValue "ParamControl\开心辞典游戏参数.ini" [开心词典] [出题数量] 0
+#ELSEACT
+linemsg [grobal] "<*系统信息*>开心词典活动10分钟后开启"
+DELAYGOTO [LOCAL] 600 @kaixin_chufa
+Break
+
+#If
+Hour 8 8
+#Act
+Break
+
+#If
+Hour 9 9
+#Act
+Break
+
+#If
+Hour 10 10
+#Act
+SaveValue "ParamControl\开心辞典游戏参数.ini" [开心词典] [开启变量] 0
+SaveValue "ParamControl\开心辞典游戏参数.ini" [开心词典] [出题数量] 0
+#ELSEACT
+linemsg [grobal] "<*系统信息*>开心词典活动10分钟后开启"
+DELAYGOTO [LOCAL] 600 @kaixin_chufa
+Break
+
+#If
+Hour 11 11
+#Act
+Break
+
+#If
+Hour 12 12
+#Act
+Break
+
+#If
+Hour 13 13
+#Act
+SaveValue "ParamControl\开心辞典游戏参数.ini" [开心词典] [开启变量] 0
+SaveValue "ParamControl\开心辞典游戏参数.ini" [开心词典] [出题数量] 0
+#ELSEACT
+linemsg [grobal] "<*系统信息*>开心词典活动10分钟后开启"
+DELAYGOTO [LOCAL] 600 @kaixin_chufa
+Break
+
+#If
+Hour 14 14
+#Act
+Break
+
+#If
+Hour 15 15
+#Act
+Break
+
+#If
+Hour 16 16
+#Act
+SaveValue "ParamControl\开心辞典游戏参数.ini" [开心词典] [开启变量] 0
+SaveValue "ParamControl\开心辞典游戏参数.ini" [开心词典] [出题数量] 0
+#ELSEACT
+linemsg [grobal] "<*系统信息*>开心词典活动10分钟后开启"
+DELAYGOTO [LOCAL] 600 @kaixin_chufa
+Break
+
+#If
+Hour 17 17
+#Act
+Break
+
+#If
+Hour 18 18
+#Act
+Break
+
+#If
+Hour 19 19
+#Act
+SaveValue "ParamControl\开心辞典游戏参数.ini" [开心词典] [开启变量] 0
+SaveValue "ParamControl\开心辞典游戏参数.ini" [开心词典] [出题数量] 0
+Break
+
+#If
+Hour 20 20
+#Act
+Break
+
+#If
+Hour 21 21
+#Act
+Break
+
+#If
+Hour 22 22
+#Act
+Break
+
+#If
+Hour 23 23 
+#Act
+Break
+
+[@kaixin_chufa]
+#CALL [Activities\开心词典开始.txt] @KXCD_Main
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

@@ -1,0 +1,53 @@
+;;王者传奇3 www.mir3w.com
+[@main]
+#act
+LoadValue D0 "ParamControl\任务记录.ini" %USERNAME 任务编号
+LoadValue A0 "ParamControl\任务记录.ini" %USERNAME 任务进度
+LOADVALUE A1 "ParamControl\支线任务.ini" %USERNAME 潘夜牛魔王
+lineMsg [Grobal] "玩家<$USERNAME>杀死了潘夜牛魔王."
+
+#IF
+Equal A1 "领取任务"
+#ACT
+SAVEVALUE "ParamControl\支线任务.ini" %USERNAME 潘夜牛魔王 "猎杀完成"
+SYSMSG "支线任务:猎杀[潘夜牛魔王]已经完成." 2
+
+#IF
+EQUAL A0 "Progress"
+EQUAL D0 199
+#ACT
+MOV A5 "潘夜牛魔王"
+GOTO @BossQuest_TQCase2
+break
+#ELSEACT
+break
+#ELSEACT
+GOTO @潘夜循环
+BREAK
+
+[@潘夜循环]
+#ACT
+LOADVALUE D0 "ParamControl\潘夜循环.ini" %USERNAME 日期
+LOADVALUE A0 "ParamControl\潘夜循环.ini" %USERNAME 进度
+LOADVALUE D2 "ParamControl\潘夜循环.ini" %USERNAME 杀怪
+
+#IF
+Equal D0 %CURDAY
+Equal A0 "Start"
+#ACT
+INC D2 1
+SAVEVALUE "ParamControl\潘夜循环.ini" %USERNAME 杀怪 %D2
+SYSMSG "潘夜循环杀怪任务进度<$OUTPUT(D2)>/100." 1
+#ELSEACT
+BREAK
+
+#IF
+ELarge D2 100
+#ACT
+SAVEVALUE "ParamControl\潘夜循环.ini" %USERNAME 杀怪 100
+SAVEVALUE "ParamControl\潘夜循环.ini" %USERNAME 进度 "PreEnd"
+SYSMSG "潘夜循环杀怪任务已经完成,赶快回去领奖吧." 2
+break
+
+[@BossQuest_TQCase2]
+#CALL [每日任务\QT_TotalMonster.txt] @BossQuest_Monster_Total

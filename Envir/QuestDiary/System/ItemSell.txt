@@ -1,0 +1,18 @@
+;;创天网络有限公司原版1.45
+[@ItemSell_Control]
+{
+#IF
+   checkgold 109800
+#ACT
+   Take  金币 109800
+   give  灵魂护身符（中）  1
+   break
+#SAY
+购买了灵魂护身符（中）花费109800金币。\\
+<继续购买/@ItemSell_Control>\
+<返回/@main>\
+#ELSESAY
+购买灵魂护身符（中）需要109800金币，你好象没那么多吧？\\
+<返回/@main>\
+
+}

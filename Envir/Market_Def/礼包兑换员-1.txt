@@ -1,0 +1,159 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@Main]
+#SAY
+<输入16位礼包CDKEY/@@礼包秘钥>\\
+<领取推广礼包奖励/@礼品领取1>
+
+
+[@礼品领取1]
+#ACT
+LOADVALUE A0 "ParamControl\推广记录.ini" [记录] %USERNAME
+LOADVALUE D0 "ParamControl\推广领取.ini" %USERNAME %CURDAY
+
+#IF
+Equal A0 ""
+#ACT
+BREAK
+#SAY
+你没有激活推广礼包,无法领取礼包奖励.\\
+<关闭/@Exit>
+
+#IF
+Equal D0 1
+#ACT
+BREAK
+#SAY
+今天的奖励你已经领取过了,请明天再来.\\
+<关闭/@Exit>
+
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+Equal 占用格子 46
+#ACT
+SYSMSG "你的包袱格子已经满了,不能装下东西了!"
+break
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+Small 剩余负重 4
+#ACT
+SYSMSG "你的包袱没有足够的剩余负重."
+BREAK
+
+#IF
+#ACT
+GIVE 苹果（绑定） 4
+CLOSE
+SAVEVALUE "ParamControl\推广领取.ini" %USERNAME %CURDAY 1
+break
+
+
+[@@礼包秘钥]
+#ACT
+MOV 礼包秘钥 %INPUTSTR
+LOADVALUE 推广礼包 "ParamControl\推广礼包.ini" [CDKey] %礼包秘钥
+LOADVALUE 金币礼包 "ParamControl\金币礼包.ini" [CDKey] %礼包秘钥
+
+#IF
+Equal 礼包秘钥 ""
+#ACT
+SYSMSG "输入错误,请重新输入."
+BREAK
+
+#IF
+Equal 推广礼包 ""
+Equal 金币礼包 ""
+#ACT
+SYSMSG "输入的激活码错误,激活失败."
+BREAK
+
+#IF
+Equal 推广礼包 "激活"
+Or Equal 金币礼包 "激活"
+#ACT
+SYSMSG "输入的激活码已被激活,激活失败."
+BREAK
+
+#IF
+Equal 推广礼包 "未激活"
+#ACT
+GOTO @推广礼包激活成功
+BREAK
+
+#IF
+Equal 金币礼包 "未激活"
+#ACT
+GOTO @金币礼包激活成功
+BREAK
+
+
+[@金币礼包激活成功]
+#ACT
+LOADVALUE 金币礼包 "ParamControl\金币礼包.ini" [CDKey] %礼包秘钥
+
+#IF
+Equal 金币礼包 "未激活"
+#ACT
+GIVEGOLDEX 100000
+SAVEVALUE "ParamControl\金币礼包.ini" [CDKey] %礼包秘钥 "激活"
+break
+#SAY
+礼包激活成功.\\
+<输入16位礼包CDKEY/@@礼包秘钥>\\
+
+
+[@推广礼包激活成功]
+#ACT
+MOV 礼包秘钥 %INPUTSTR
+LOADVALUE 推广礼包 "ParamControl\推广礼包.ini" [CDKey] %礼包秘钥
+LOADVALUE 推广记录 "ParamControl\推广记录.ini" [记录] %USERNAME
+
+#IF
+Equal 推广记录 ""
+#ELSEACT
+BREAK
+#ELSESAY
+你已经激活了推广礼包,无须反复激活.\\
+<关闭/@Exit>
+
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+ELarge 占用格子 45
+#ACT
+SYSMSG "清理下包袱,腾出2个空位再来吧!" 1
+break
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+Small 剩余负重 2
+#ACT
+SYSMSG "领取礼包需要2点包袱负重,先清理下包袱吧!" 1
+BREAK
+
+#IF
+Equal 推广礼包 "未激活"
+#ACT
+GIVE 推广勋章 1
+GIVE 褐色马凭证 1
+SAVEVALUE "ParamControl\推广礼包.ini" [CDKey] %礼包秘钥 "激活"
+SAVEVALUE "ParamControl\推广记录.ini" [记录] %USERNAME %礼包秘钥
+break
+#SAY
+礼包激活成功.\\
+<输入16位礼包CDKEY/@@礼包秘钥>\\

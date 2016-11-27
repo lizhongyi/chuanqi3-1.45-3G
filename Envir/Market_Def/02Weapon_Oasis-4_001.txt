@@ -1,0 +1,137 @@
+;;创天网络有限公司原版1.45
+%100
++5
++6
++43
+
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+你要打我？？哎呦，太可怕了，呜呜;;\ \
+<结束/@exit>
+#ELSEACT
+goto @main_root_1
+
+[@main_root_1]
+#IF
+check [013] 1
+#ACT
+goto @main_0_0
+break
+
+#IF
+check [045] 1
+#ACT
+goto @main_0_3
+break
+
+#IF
+check [044] 1
+#ACT
+goto @main_0_2
+break
+
+#IF
+check [043] 1
+#ACT
+goto @main_0_2
+break
+
+#IF
+check [042] 1
+#ACT
+goto @main_0_1
+#ELSEACT
+goto @main_0_0
+
+[@main_0_0]
+#IF
+#SAY
+欢迎光临，你需要什么？\
+<购买/@buy>武器\
+<出售/@sell>武器\
+<修理/@repair>武器\
+<特殊修理/@Special_Repair(1)>武器\
+<结束/@exit>
+
+[@main_0_1]
+#IF
+#SAY
+欢迎光临，你需要什么？\
+<购买/@buy>武器\
+<出售/@sell>武器\
+<修理/@repair>武器\
+<特殊修理/@Special_Repair(1)>武器\
+<展示/@mutedo_test> {FCOLOR/10}书信{FCOLOR/12}\
+<结束/@exit>
+
+[@main_0_2]
+#IF
+#SAY
+欢迎光临，你需要什么？\
+<购买/@buy>武器\
+<出售/@sell>武器\
+<修理/@repair>武器\
+<特殊修理/@Special_Repair(1)>武器\
+<展示/@mutedo_test_complete> {FCOLOR/10}诺玛石{FCOLOR/12}\
+<结束/@exit>
+
+[@main_0_3]
+#IF
+#SAY
+欢迎光临，你需要什么？\
+<购买/@buy>武器\
+<出售/@sell>武器\
+<修理/@repair>武器\
+<特殊修理/@Special_Repair(1)>武器\
+<展示/@mutedo_test_complete> {FCOLOR/10}诺玛石{FCOLOR/12}\
+<结束/@exit>
+
+[@Special_Repair()]
+#CALL [\Repair\TotalRepair.txt] @SRepairItem
+
+[@buy]
+#SAY
+明明有能力使用攻击力强的武器，却非要使用攻击力弱的武器，证明你没有竭尽全力，我们村子不欢迎那种人。那么，你想买什么？\ \
+ <前一步/@main>
+
+[@sell]
+#SAY
+我把你卖的武器修理好，弄干净，然后给其他人用。你带来了什么东西，拿出来给我看看。\ \
+ <前一步/@main>
+
+[@repair]
+#SAY
+在我们这里，武器常修不常换是一种美德。我们村子里的武器都是我修的，你也让我修吧。\ \
+ <前一步/@main>
+
+[~@repair]
+#SAY
+这已经算修得不错的了，拿走吧。\ \
+ <前一步/@main>
+
+[Goods]
+;ItemName      Volume     Hour
+木剑            100        1
+匕首            100        1
+青铜剑          100        1
+铁剑            100        1
+乌木剑          100        1
+短剑            100        1
+青铜斧          100        1
+八荒            100        1
+凌风            100        1
+斩马刀          100        1
+半月            100        1
+海魂            100        1
+
+[@mutedo_test]
+#CALL [\MU_warrior\mute.txt] @mugong_mutebo_test
+
+[@mutedo_test_complete]
+#CALL [\MU_warrior\mute.txt] @mugong_mutebo_test_complete
+
+[@mutedo_test_complete_retry]
+#CALL [\MU_warrior\mute.txt] @mugong_mutebo_test_complete_retry
+

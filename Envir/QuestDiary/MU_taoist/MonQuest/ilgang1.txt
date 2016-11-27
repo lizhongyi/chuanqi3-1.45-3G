@@ -1,0 +1,46 @@
+;;创天网络有限公司原版1.45
+[@MapQuest_ilgang_mon1]
+#IF
+checkjob warrior
+#ACT
+break
+;
+#IF
+checkjob wizard
+#ACT
+break
+;
+#IF
+check [015] 1
+#ACT
+break
+
+#IF
+check [034] 1
+#ACT
+break
+
+#IF
+check [033] 0
+#ACT
+break
+
+#IF
+#ACT
+goto @MapQuest_ilgang_mon1_1
+
+[@MapQuest_ilgang_mon1_1]
+#IF
+#ACT
+Monclear 1_012
+set [034] 1
+Delaygoto [local] 2 @MapQuest_ilgang_mon1_2
+#SAY
+(噢，终于通过了学习精神力战法的测试...)
+
+[@MapQuest_ilgang_mon1_2]
+#IF
+#ACT
+BreakTimeRecall
+mapmove 1_002 12 11
+break

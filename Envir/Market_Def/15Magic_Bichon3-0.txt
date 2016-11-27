@@ -1,0 +1,119 @@
+;;创天网络有限公司原版1.45
+[@main]
+#ACT
+LOADVALUE D0 "ParamControl\主线任务.txt" %USERNAME 进度
+LOADVALUE D1 "ParamControl\主线任务.txt" %USERNAME 鉴定
+
+#IF
+Equal D0 1
+Equal D1 0
+CheckJob Taoist
+#ACT
+SAVEVALUE "ParamControl\主线任务.txt" %USERNAME 鉴定 1
+BREAK
+#SAY
+{FCOLOR/1}我专门提供给道士鉴定技能,祝你好运哦.{FCOLOR/12}\\
+<回新人指导员/@回指导员>
+
+#IF
+checkpkpoint 2
+#SAY
+跟你这种人我无话可说。\ \
+<结束/@exit>
+#ELSESAY
+欢迎光临，我一看就知道你在学习道家方面的东西。我也是道馆弟子，不过和那些男修炼者一起修炼，我觉得很不方便，所以经常来到外地，帮助那些在修炼中遇到困难的人。如果你在修炼中有什么解决不了的问题，不要犹豫，来找我就行了。你只需要支付适当的费用，我就给你写秘籍。\
+<查看可解释的武功目录/@main_0_1>\
+<结束/@exit>
+
+[@回指导员]
+#ACT
+MAPMOVE 0 410 385
+close
+
+[@main_0_1]
+#IF
+#SAY
+（道士魔法）\ \
+（1 - 10 等级 修炼魔法）\
+<治愈术/@Go_Mu_Taoist_holy_heal> , <精神力战法/@Go_Mu_Taoist_dark_ilgang>\ \
+（11 - 20 等级 修炼魔法）\
+<施毒术/@Go_Mu_Taoist_dark_amyen> , <灵魂火符/@Go_Mu_Taoist_dark_poksal> , <月魂断玉/@Go_Mu_Taoist_holy_moon>\
+<召唤骷髅/@Go_Mu_Taoist_soul_skel> , <隐身术/@Go_Mu_Taoist_dark_hiden>\ \
+（21 - 30 等级 修炼魔法）\
+<幽灵盾/@Go_Mu_Taoist_dark_hangma> , <集体隐身术/@Go_Mu_Taoist_dark_masshiden> , <月魂灵波/@Go_Mu_Taoist_holy_Upmoon> , <神圣战甲术/@Go_Mu_Taoist_dark_deaji> , <困魔咒/@Go_Mu_Taoist_dark_holy> , <空拳刀法/@Go_Mu_Taoist_dark_musang>\
+<强魔震法/@Go_Mu_Taoist_dark_kangma> , <召唤神兽/@Go_Mu_Taoist_soul_sinsu>\ \
+（31 - 40 等级 修炼魔法）\
+<群体治愈术/@Go_Mu_Taoist_holy_massheal> , <超强召唤骷髅/@Go_Mu_Taoist_jinsoul_skel> , <猛虎强势/@Go_Mu_Taoist_mengho> , <回生术/@Go_Mu_Taoist_soseng>\ \
+（ 修炼高级魔法 ）\
+<云寂术/@Go_Mu_Taoist_holy_yunjjs> , <移花接玉/@Go_Mu_Taoist_jinsoul_yihjiy> , <阴阳法环/@Go_Mu_Taoist_yinyfah> , <妙影无踪/@Go_Mu_Taoist_miaywz>\ \
+<结束/@exit>
+
+[@Go_Mu_Taoist_holy_heal]
+#CALL [\MU_Total_sell\Taoist\heal.txt] @Mu_Taoist_holy_heal
+
+[@Go_Mu_Taoist_dark_ilgang]
+#CALL [\MU_Total_sell\Taoist\ilgang.txt] @Mu_Taoist_dark_ilgang
+
+[@Go_Mu_Taoist_dark_amyen]
+#CALL [\MU_Total_sell\Taoist\amyen.txt] @Mu_Taoist_dark_amyen
+
+[@Go_Mu_Taoist_dark_poksal]
+#CALL [\MU_Total_sell\Taoist\poksal.txt] @Mu_Taoist_dark_poksal
+
+[@Go_Mu_Taoist_soul_skel]
+#CALL [\MU_Total_sell\Taoist\soulSkel.txt] @Mu_Taoist_soul_skel
+
+[@Go_Mu_Taoist_dark_hiden]
+#CALL [\MU_Total_sell\Taoist\hiden.txt] @Mu_Taoist_dark_hiden
+
+[@Go_Mu_Taoist_dark_masshiden]
+#CALL [\MU_Total_sell\Taoist\masshiden.txt] @Mu_Taoist_dark_masshiden
+
+[@Go_Mu_Taoist_holy_moon]
+#CALL [\MU_Total_sell\Taoist\moon.txt] @Mu_Taoist_holy_moon
+
+[@Go_Mu_Taoist_dark_hangma]
+#CALL [\MU_Total_sell\Taoist\hangma.txt] @Mu_Taoist_dark_hangma
+
+[@Go_Mu_Taoist_dark_deaji]
+#CALL [\MU_Total_sell\Taoist\deaji.txt] @Mu_Taoist_dark_deaji
+
+[@Go_Mu_Taoist_dark_holy]
+#CALL [\MU_Total_sell\Taoist\holy.txt] @Mu_Taoist_dark_holy
+
+[@Go_Mu_Taoist_holy_Upmoon]
+#CALL [\MU_Total_sell\Taoist\Upmoon.txt] @Mu_Taoist_holy_Upmoon
+
+[@Go_Mu_Taoist_dark_musang]
+#CALL [\MU_Total_sell\Taoist\musang.txt] @Mu_Taoist_dark_musang
+
+[@Go_Mu_Taoist_holy_massheal]
+#CALL [\MU_Total_sell\Taoist\massheal.txt] @Mu_Taoist_holy_massheal
+
+[@Go_Mu_Taoist_dark_kangma]
+#CALL [\MU_Total_sell\Taoist\kangma.txt] @Mu_Taoist_dark_kangma
+
+[@Go_Mu_Taoist_soul_sinsu]
+#CALL [\MU_Total_sell\Taoist\sinsu.txt] @Mu_Taoist_soul_sinsu
+
+[@Go_Mu_Taoist_jinsoul_skel]
+#CALL [\MU_Total_sell\Taoist\jinsoulSkel.txt] @Mu_Taoist_jinsoul_skel
+
+[@Go_Mu_Taoist_mengho]
+#CALL [\MU_Total_sell\Taoist\mengho.txt] @Mu_Taoist_mengho
+
+[@Go_Mu_Taoist_soseng]
+#CALL [\MU_Total_sell\Taoist\soseng.txt] @Mu_Taoist_soseng
+
+[@Go_Mu_Taoist_holy_yunjjs]
+#CALL [\MU_Total_sell\Taoist\yunjjs.txt] @Mu_Taoist_yunjjs
+
+[@Go_Mu_Taoist_jinsoul_yihjiy]
+#CALL [\MU_Total_sell\Taoist\yihjiy.txt] @Mu_Taoist_yihjiy
+
+[@Go_Mu_Taoist_yinyfah]
+#CALL [\MU_Total_sell\Taoist\yinyfah.txt] @Mu_Taoist_yinyfah
+
+[@Go_Mu_Taoist_miaywz]
+#CALL [\MU_Total_sell\Taoist\miaywz.txt] @Mu_Taoist_miaywz
+

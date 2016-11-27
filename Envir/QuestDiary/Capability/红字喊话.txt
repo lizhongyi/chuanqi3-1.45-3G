@@ -1,0 +1,92 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@红字喊话_1]
+{
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}字{FCOLOR/4}━{FCOLOR/14}喊{FCOLOR/4}━{FCOLOR/14}话{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\\
+__            [ <输入要喊话的内容/@@红字喊话内容> ]\\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}字{FCOLOR/4}━{FCOLOR/14}喊{FCOLOR/4}━{FCOLOR/14}话{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+__           红字喊话每次需消费{FCOLOR/1}10{FCOLOR/12}个元宝\
+
+[@红字喊话_2]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}字{FCOLOR/4}━{FCOLOR/14}喊{FCOLOR/4}━{FCOLOR/14}话{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\\
+__            [ <修改第一句的内容/@@红字喊话内容> ]\
+__      {FCOLOR/10}<$OUTPUT(A0)>{FCOLOR/12}\\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}字{FCOLOR/4}━{FCOLOR/14}喊{FCOLOR/4}━{FCOLOR/14}话{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_ [ <继续输入第二句内容/@@红字喊话内容2> ] [ <开始发送千里传音/@红字喊话_3> ]\\
+
+[@红字喊话_8]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}字{FCOLOR/4}━{FCOLOR/14}喊{FCOLOR/4}━{FCOLOR/14}话{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\\
+__            [ <修改第一句的内容/@@红字喊话内容> ]\
+__      {FCOLOR/10}<$OUTPUT(A0)>{FCOLOR/12}\\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}字{FCOLOR/4}━{FCOLOR/14}喊{FCOLOR/4}━{FCOLOR/14}话{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\\
+__            [ <修改第二句的内容/@@红字喊话内容2> ]\
+__      {FCOLOR/10}<$OUTPUT(A1)>{FCOLOR/12}\\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}字{FCOLOR/4}━{FCOLOR/14}喊{FCOLOR/4}━{FCOLOR/14}话{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_ [ <继续输入第三句内容/@@红字喊话内容3> ] [ <开始发送千里传音/@红字喊话_4> ]\\
+
+[@红字喊话_9]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}字{FCOLOR/4}━{FCOLOR/14}喊{FCOLOR/4}━{FCOLOR/14}话{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\\
+__            [ <修改第一句的内容/@@红字喊话内容> ]\
+__      {FCOLOR/10}<$OUTPUT(A0)>{FCOLOR/12}\\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}字{FCOLOR/4}━{FCOLOR/14}喊{FCOLOR/4}━{FCOLOR/14}话{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\\
+__            [ <修改第二句的内容/@@红字喊话内容2> ]\
+__      {FCOLOR/10}<$OUTPUT(A1)>{FCOLOR/12}\\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}字{FCOLOR/4}━{FCOLOR/14}喊{FCOLOR/4}━{FCOLOR/14}话{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\\
+__            [ <修改第三句的内容/@@红字喊话内容3> ]\
+__      {FCOLOR/10}<$OUTPUT(A2)>{FCOLOR/12}\\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}红{FCOLOR/4}━{FCOLOR/14}字{FCOLOR/4}━{FCOLOR/14}喊{FCOLOR/4}━{FCOLOR/14}话{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_            [ <开始发送千里传音/@红字喊话_5> ]
+
+
+[@@红字喊话内容]
+#ACT
+mov  A0  %INPUTSTR
+GOTO @红字喊话_2
+
+[@@红字喊话内容2]
+#ACT
+mov  A1  %INPUTSTR
+GOTO @红字喊话_8
+
+[@@红字喊话内容3]
+#ACT
+mov  A2  %INPUTSTR
+GOTO @红字喊话_9
+
+[@红字喊话_3]
+#IF
+CHECKCMD CHECKUSERJF 10
+#ACT
+Close
+actcmd SETUSERJF - 10 红字喊话
+lineMsg [Grobal] "「 <$USERNAME> 」: <$OUTPUT(A0)>"
+#ELSEACT
+CLOSE
+SysMsg "温馨提示: 您元宝不足.无法使用此功能"
+
+[@红字喊话_4]
+#IF
+CHECKCMD CHECKUSERJF 10
+#ACT
+Close
+actcmd SETUSERJF - 10 红字喊话
+lineMsg [Grobal] "「 <$USERNAME> 」: <$OUTPUT(A0)><$OUTPUT(A1)>"
+#ELSEACT
+CLOSE
+SysMsg "温馨提示: 您元宝不足.无法使用此功能"
+
+[@红字喊话_5]
+#IF
+CHECKCMD CHECKUSERJF 10
+#ACT
+Close
+actcmd SETUSERJF - 10 红字喊话
+lineMsg [Grobal] "「 <$USERNAME> 」: <$OUTPUT(A0)><$OUTPUT(A1)><$OUTPUT(A2)>"
+#ELSEACT
+CLOSE
+SysMsg "温馨提示: 您元宝不足.无法使用此功能"
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

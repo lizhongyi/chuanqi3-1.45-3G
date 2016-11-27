@@ -1,0 +1,31 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@打造钥匙_1]
+{
+#SAY
+{FCOLOR/8}
+─────────{FCOLOR/15}打造金钥匙流程{FCOLOR/12}─────────{FCOLOR/12}\
+___________________{FCOLOR/8}[ 铁 钥 匙 ]{FCOLOR/12}\
+────────── 三 ↓ 把 ──────────\
+___________________{FCOLOR/8}[ <银 钥 匙/@yuheyaoshi(铁钥匙,银钥匙)> ]{FCOLOR/12}\
+────────── 三 ↓ 把 ──────────\
+___________________{FCOLOR/8}[ <金 钥 匙/@yuheyaoshi(银钥匙,金钥匙)> ]{FCOLOR/12}\
+
+[@yuheyaoshi()]
+#ACT
+Mov 钥匙种类1 %ARG(1)
+Mov 钥匙种类2 %ARG(2)
+
+#IF
+checkitem %钥匙种类1 3
+#ACT
+Close
+take %钥匙种类1 3
+Give %钥匙种类2 1
+lineMsg [Grobal] "玩家[ <$USERNAME> ]打造[ <$OUTPUT(钥匙种类2)> ]成功~恭喜~"
+#ELSEACT
+Close
+sysmsg "【温馨提示】合成[ <$OUTPUT(钥匙种类2)> ]的材料不足."
+
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

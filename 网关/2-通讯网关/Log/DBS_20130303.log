@@ -1,0 +1,19 @@
+22:48:37 Startup DB Server
+22:48:38 [127.0.0.1:1120] RunGate connected.
+22:48:39 [127.0.0.1:1120] RunGate disconnected.
+22:48:41 [127.0.0.1:1126] RunGate connected.
+22:48:49 Connected to LoginServer.
+22:48:49 KillTimer : TIMER_CONNLOGINSERVER, StartTimer : TIMER_KEEPALIVE
+22:49:03 [127.0.0.1:1126] RunGate disconnected.
+22:49:04 [127.0.0.1:1142] RunGate connected.
+22:50:12 [127.0.0.1:5600] LoginServer disconnected.
+22:50:12 StartTimer : TIMER_CONNLOGINSERVER
+22:50:12 [127.0.0.1:1142] RunGate disconnected.
+22:50:14 [127.0.0.1:1173] RunGate connected.
+22:50:15 [127.0.0.1:1173] RunGate disconnected.
+22:50:17 [127.0.0.1:1177] RunGate connected.
+22:50:18 [127.0.0.1:1177] RunGate disconnected.
+22:50:20 [127.0.0.1:1180] RunGate connected.
+22:50:22 Connected to LoginServer.
+22:50:22 KillTimer : TIMER_CONNLOGINSERVER, StartTimer : TIMER_KEEPALIVE
+22:50:32 Cleanup DB Server

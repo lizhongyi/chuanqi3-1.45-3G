@@ -1,0 +1,92 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@附加经验_1]
+{
+#ACT
+MOV 世界繁荣 %ALLLVLTOPLVL10
+
+#IF
+CHECKLEVEL
+#ACT
+MOV 人物等级 %P9
+
+#IF
+#ACT
+DEC 世界繁荣 %人物等级
+
+#IF
+ESmall 世界繁荣 3
+#ACT
+StartExpRate = 0
+STARTBUFF 17 0
+break
+
+#IF
+Equal 世界繁荣 4
+#ACT
+StartExpRate = 0.5
+STARTBUFF 17 -1 "[飞速升级]\级别低于全区第10名超过3级\打怪获得经验提高50%."
+break
+
+#IF
+Equal 世界繁荣 5
+#ACT
+StartExpRate = 1.0
+STARTBUFF 17 -1 "[飞速升级]\级别低于全区第10名超过3级\打怪获得经验提高100%."
+break
+
+#IF
+Equal 世界繁荣 6
+#ACT
+StartExpRate = 1.5
+STARTBUFF 17 -1 "[飞速升级]\级别低于全区第10名超过3级\打怪获得经验提高150%."
+break
+
+#IF
+Equal 世界繁荣 7
+#ACT
+StartExpRate = 2.0
+STARTBUFF 17 -1 "[飞速升级]\级别低于全区第10名超过3级\打怪获得经验提高200%."
+break
+
+#IF
+Equal 世界繁荣 8
+#ACT
+StartExpRate = 2.5
+STARTBUFF 17 -1 "[飞速升级]\级别低于全区第10名超过3级\打怪获得经验提高250%."
+break
+
+#IF
+Equal 世界繁荣 9
+#ACT
+StartExpRate = 3.0
+STARTBUFF 17 -1 "[飞速升级]\级别低于全区第10名超过3级\打怪获得经验提高300%."
+break
+
+#IF
+Equal 世界繁荣 10
+#ACT
+StartExpRate = 4.0
+STARTBUFF 17 -1 "[飞速升级]\级别低于全区第10名超过3级\打怪获得经验提高400%."
+break
+
+#IF
+Large 世界繁荣 30
+#ACT
+StartExpRate = 10.0
+STARTBUFF 17 -1 "[飞速升级]\级别低于全区第10名超过3级\打怪获得经验提高1000%."
+break
+
+#IF
+Large 世界繁荣 20
+#ACT
+StartExpRate = 8.0
+STARTBUFF 17 -1 "[飞速升级]\级别低于全区第10名超过3级\打怪获得经验提高700%."
+break
+
+#IF
+Large 世界繁荣 10
+#ACT
+StartExpRate = 5.0
+STARTBUFF 17 -1 "[飞速升级]\级别低于全区第10名超过3级\打怪获得经验提高500%."
+break
+}

@@ -1,0 +1,14 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@Buff_Main]
+{
+#Act
+Mov BuffEnd %ARG(1)
+
+#If
+Equal BuffEnd 1001
+#Act
+SysMsg "ID为1001的Buff倒计时已关闭"
+Break
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

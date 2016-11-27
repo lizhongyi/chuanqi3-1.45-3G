@@ -1,0 +1,330 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@BOSS查询_1]
+{
+#IF
+CheckMonMap "D6015" 1 触龙神
+#ACT
+MOV 触龙情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV 触龙情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum D6015 1
+#ACT
+MOV 触龙场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV 触龙场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+
+#IF
+CheckMonMap "D024" 1 沃玛教主
+#ACT
+MOV 沃玛情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV 沃玛情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum D024 1
+#ACT
+MOV 沃玛场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV 沃玛场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+
+#IF
+CheckMonMap "D10162" 1 赤月恶魔
+#ACT
+MOV 赤月情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV 赤月情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum D10162 1
+#ACT
+MOV 赤月场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV 赤月场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+
+#IF
+CheckMonMap "D1215" 1 骷髅教主
+#ACT
+MOV 骷髅情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV 骷髅情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum D1215 1
+#ACT
+MOV 骷髅场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV 骷髅场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+
+#IF
+CheckMonMap "D515" 1 祖玛教主
+#ACT
+MOV 祖玛情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV 祖玛情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum D515 1
+#ACT
+MOV 祖玛场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV 祖玛场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+
+#IF
+CheckMonMap "D1116" 1 潘夜牛魔王
+#ACT
+MOV 牛魔情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV 牛魔情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum D1116 1
+#ACT
+MOV 牛魔场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV 牛魔场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+
+#IF
+CheckMonMap "D1506" 1 震天魔神
+#ACT
+MOV 魔神情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV 魔神情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum D1506 1
+#ACT
+MOV 魔神场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV 魔神场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+
+#IF
+CheckMonMap "D904" 1 霸王教主
+#ACT
+MOV 霸王情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV 霸王情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum D904 1
+#ACT
+MOV 霸王场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV 霸王场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+
+#IF
+CheckMonMap "D9094" 1 海盗神灵
+#ACT
+MOV 海盗情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV 海盗情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum D9094 1
+#ACT
+MOV 海盗场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV 海盗场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+
+#IF
+CheckMonMap "d1606" 1 诺玛教主
+#ACT
+MOV 诺玛情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV 诺玛情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum d1606 1
+#ACT
+MOV 诺玛场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV 诺玛场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+
+#IF
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}怪{FCOLOR/4}━{FCOLOR/14}物{FCOLOR/4}━{FCOLOR/14}查{FCOLOR/4}━{FCOLOR/14}询{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_[ {FCOLOR/1}第 一 页{FCOLOR/12} ]     [ <第 二 页/@BOSS查询_2> ]     [ <第 三 页/@BOSS查询_3> ]\
+{FCOLOR/12}[{FCOLOR/10} 触 龙 神 {FCOLOR/12}] 房间 [ <$OUTPUT(触龙场地)> ] 状态 [ <$OUTPUT(触龙情况)> ]{FCOLOR/12}\\
+{FCOLOR/12}[{FCOLOR/10} 沃玛教主 {FCOLOR/12}] 房间 [ <$OUTPUT(沃玛场地)> ] 状态 [ <$OUTPUT(沃玛情况)> ]{FCOLOR/12}\\
+{FCOLOR/12}[{FCOLOR/10} 赤月恶魔 {FCOLOR/12}] 房间 [ <$OUTPUT(赤月场地)> ] 状态 [ <$OUTPUT(赤月情况)> ]{FCOLOR/12}\\
+{FCOLOR/12}[{FCOLOR/10} 骷髅教主 {FCOLOR/12}] 房间 [ <$OUTPUT(骷髅场地)> ] 状态 [ <$OUTPUT(骷髅情况)> ]{FCOLOR/12}\\
+{FCOLOR/12}[{FCOLOR/10} 祖玛教主 {FCOLOR/12}] 房间 [ <$OUTPUT(祖玛场地)> ] 状态 [ <$OUTPUT(祖玛情况)> ]{FCOLOR/12}\\
+{FCOLOR/12}[{FCOLOR/10}潘夜牛魔王{FCOLOR/12}] 房间 [ <$OUTPUT(牛魔场地)> ] 状态 [ <$OUTPUT(牛魔情况)> ]{FCOLOR/12}\\
+{FCOLOR/12}[{FCOLOR/10} 震天魔神 {FCOLOR/12}] 房间 [ <$OUTPUT(魔神场地)> ] 状态 [ <$OUTPUT(魔神情况)> ]{FCOLOR/12}\\
+{FCOLOR/12}[{FCOLOR/10} 霸王教主 {FCOLOR/12}] 房间 [ <$OUTPUT(霸王场地)> ] 状态 [ <$OUTPUT(霸王情况)> ]{FCOLOR/12}\\
+{FCOLOR/12}[{FCOLOR/10} 海盗神灵 {FCOLOR/12}] 房间 [ <$OUTPUT(海盗场地)> ] 状态 [ <$OUTPUT(海盗情况)> ]{FCOLOR/12}\\
+{FCOLOR/12}[{FCOLOR/10} 诺玛教主 {FCOLOR/12}] 房间 [ <$OUTPUT(诺玛场地)> ] 状态 [ <$OUTPUT(诺玛情况)> ]{FCOLOR/12}\
+
+[@BOSS查询_2]
+#IF
+CheckMonMap "d2005" 1 地天灭王
+#ACT
+MOV 地天情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV 地天情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum d2005 1
+#ACT
+MOV 地天场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV 地天场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+
+#IF
+CheckMonMap "d2107" 1 冰城帝王
+#ACT
+MOV 冰城情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV 冰城情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum d2107 1
+#ACT
+MOV 冰城场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV 冰城场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+
+#IF
+CheckMonMap "D2205" 1 绝情殿主
+#ACT
+MOV 绝情情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV 绝情情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum D2205 1
+#ACT
+MOV 绝情场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV 绝情场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+
+#IF
+CheckMonMap "Yanmums" 1 群魔统治者
+#ACT
+MOV 群魔情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV 群魔情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum Yanmums 1
+#ACT
+MOV 群魔场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV 群魔场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+
+#IF
+CheckMonMap "$99d903" 1 异界神灵
+#ACT
+MOV 异界情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV 异界情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum $99d903 1
+#ACT
+MOV 异界场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV 异界场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+
+#IF
+CheckMonMap "D2907" 1 邪恶至尊
+#ACT
+MOV 邪恶情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV 邪恶情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum D2907 1
+#ACT
+MOV 邪恶场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV 邪恶场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+
+#IF
+CheckMonMap "D3005" 1 死魔神主
+#ACT
+MOV 死魔情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV 死魔情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum D3005 1
+#ACT
+MOV 死魔场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV 死魔场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+
+#IF
+CheckMonMap "D3102_01" 1 月河教主
+#ACT
+MOV 深渊情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV 深渊情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum D3102_01 1
+#ACT
+MOV 深渊场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV 深渊场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+
+#IF
+CheckMonMap "D3400" 1 地狱冥神
+#ACT
+MOV 虎滩情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV 虎滩情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum D3400 1
+#ACT
+MOV 虎滩场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV 虎滩场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+
+#IF
+CheckMonMap "D010" 1 死亡之翼
+#ACT
+MOV 鬼蜮情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV 鬼蜮情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum D010 1
+#ACT
+MOV 鬼蜮场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV 鬼蜮场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+
+#IF
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}怪{FCOLOR/4}━{FCOLOR/14}物{FCOLOR/4}━{FCOLOR/14}查{FCOLOR/4}━{FCOLOR/14}询{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_[ <第 一 页/@BOSS查询_1> ]     [ {FCOLOR/1}第 二 页{FCOLOR/12} ]     [ <第 三 页/@BOSS查询_3> ]\
+{FCOLOR/12}[{FCOLOR/10} 地天灭王 {FCOLOR/12}] 房间 [ <$OUTPUT(地天场地)> ] 状态 [ <$OUTPUT(地天情况)> ]{FCOLOR/12}\\
+{FCOLOR/12}[{FCOLOR/10} 冰城帝王 {FCOLOR/12}] 房间 [ <$OUTPUT(冰城场地)> ] 状态 [ <$OUTPUT(冰城情况)> ]{FCOLOR/12}\\
+{FCOLOR/12}[{FCOLOR/10} 绝情殿主 {FCOLOR/12}] 房间 [ <$OUTPUT(绝情场地)> ] 状态 [ <$OUTPUT(绝情情况)> ]{FCOLOR/12}\\
+{FCOLOR/12}[{FCOLOR/10}群魔统治者{FCOLOR/12}] 房间 [ <$OUTPUT(群魔场地)> ] 状态 [ <$OUTPUT(群魔情况)> ]{FCOLOR/12}\\
+{FCOLOR/12}[{FCOLOR/10} 异界神灵 {FCOLOR/12}] 房间 [ <$OUTPUT(异界场地)> ] 状态 [ <$OUTPUT(异界情况)> ]{FCOLOR/12}\\
+{FCOLOR/12}[{FCOLOR/10} 邪恶至尊 {FCOLOR/12}] 房间 [ <$OUTPUT(邪恶场地)> ] 状态 [ <$OUTPUT(邪恶情况)> ]{FCOLOR/12}\\
+{FCOLOR/12}[{FCOLOR/10} 死魔神主 {FCOLOR/12}] 房间 [ <$OUTPUT(死魔场地)> ] 状态 [ <$OUTPUT(死魔情况)> ]{FCOLOR/12}\\
+{FCOLOR/12}[{FCOLOR/10} 月河教主 {FCOLOR/12}] 房间 [ <$OUTPUT(深渊场地)> ] 状态 [ <$OUTPUT(深渊情况)> ]{FCOLOR/12}\\
+{FCOLOR/12}[{FCOLOR/10} 地狱冥神 {FCOLOR/12}] 房间 [ <$OUTPUT(虎滩场地)> ] 状态 [ <$OUTPUT(虎滩情况)> ]{FCOLOR/12}\\
+{FCOLOR/12}[{FCOLOR/10} 死亡之翼 {FCOLOR/12}] 房间 [ <$OUTPUT(鬼蜮场地)> ] 状态 [ <$OUTPUT(鬼蜮情况)> ]{FCOLOR/12}\
+
+[@BOSS查询_3]
+#IF
+CheckMonMap "ID1_003" 1 天界佛尊
+#ACT
+MOV 佛尊情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV 佛尊情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum ID1_003 1
+#ACT
+MOV 佛尊场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV 佛尊场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+
+#IF
+CheckMonMap "ID2_003" 1 冥界魔罗
+#ACT
+MOV 魔罗情况  "{FCOLOR/10}已经复活{FCOLOR/12}"
+#elseact
+MOV 魔罗情况 "{FCOLOR/1}已被猎杀{FCOLOR/12}"
+#IF
+checkhum ID2_003 1
+#ACT
+MOV 魔罗场地  "{FCOLOR/1}场地有人{FCOLOR/12}"
+#elseact
+MOV 魔罗场地  "{FCOLOR/10}场地空闲{FCOLOR/12}"
+
+#IF
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}怪{FCOLOR/4}━{FCOLOR/14}物{FCOLOR/4}━{FCOLOR/14}查{FCOLOR/4}━{FCOLOR/14}询{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_[ <第 一 页/@BOSS查询_1> ]     [ <第 二 页/@BOSS查询_2> ]     [ {FCOLOR/1}第 三 页{FCOLOR/12} ]\
+{FCOLOR/12}[{FCOLOR/10} 天界佛尊 {FCOLOR/12}] 房间 [ <$OUTPUT(佛尊场地)> ] 状态 [ <$OUTPUT(佛尊情况)> ]{FCOLOR/12}\\
+{FCOLOR/12}[{FCOLOR/10} 冥界魔罗 {FCOLOR/12}] 房间 [ <$OUTPUT(魔罗场地)> ] 状态 [ <$OUTPUT(魔罗情况)> ]{FCOLOR/12}\\
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

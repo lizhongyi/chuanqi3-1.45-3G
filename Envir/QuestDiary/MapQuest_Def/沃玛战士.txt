@@ -1,0 +1,69 @@
+;;王者传奇3 www.mir3w.com
+[@main]
+#act
+LoadValue D0 "ParamControl\任务记录.ini" %USERNAME 任务编号
+LoadValue A0 "ParamControl\任务记录.ini" %USERNAME 任务进度
+
+#IF
+EQUAL A0 "Progress"
+EQUAL D0 127
+#ACT
+MOV A5 "沃玛战士"
+GOTO @BossQuest_TQCase2
+break
+
+[@BossQuest_TQCase2]
+#CALL [每日任务\QT_TotalMonster.txt] @BossQuest_Monster_Total
+
+[@WoMaZhanShi1]
+#IF
+checkjob taoist
+#ACT
+break
+;
+#IF
+checkjob wizard
+#ACT
+break
+;
+#IF
+check [037] 1
+#ACT
+break
+
+#IF
+check [036] 1
+#ACT
+goto @asword1
+break
+
+[@asword1]
+#IF
+large S3 10
+#ACT
+goto @asword1_6
+#ELSEACT
+goto @asword1_3
+
+[@asword1_3]
+#IF
+large S3 2
+#ACT
+goto @asword1_4
+#ELSEACT
+mov S3 2
+goto @asword1_4
+
+[@asword1_4]
+#IF
+#ACT
+inc S3 1
+
+[@asword1_6]
+#IF
+#SAY
+(现在把沃玛角送给'龙血先生'就可以修炼'刺杀剑术'...)
+#ACT
+give 沃玛角 1
+SET [037] 1
+mov S3 0

@@ -1,0 +1,38 @@
+;;创天网络有限公司原版1.45
+[@MapQuest_hangma_getitem]
+#IF
+checkjob warrior
+#ACT
+break
+;
+#IF
+checkjob wizard
+#ACT
+break
+;
+#IF
+check [019] 1
+#ACT
+break
+
+#IF
+check [043] 1
+#ACT
+break
+
+#IF
+check [042] 1
+#ACT
+goto @MapQuest_hangma_getitem_1
+break
+
+[@MapQuest_hangma_getitem_1]
+#IF
+random 10
+#ACT
+give 灵珠 1
+SET [043] 1
+#SAY
+(你现在去找清明子，把灵珠带给他，就可以修炼'幽灵盾'...)\
+#ELSEACT
+break

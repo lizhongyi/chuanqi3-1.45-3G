@@ -1,0 +1,71 @@
+;;创天网络有限公司原版1.45
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+跟你这种人我无话可说。\ \
+<结束/@exit>
+#ELSESAY
+欢迎光临，对，我就是买栗子的。 如果你能给我找来那些味道又好，营养又好的栗子，我就送你一份大礼。\
+你有栗子吗？\ \
+<带来了金色栗子，你要卖吗？/@gold1_cmd>\
+<带来了银色栗子，你要卖吗？/@silver1_cmd>\
+<带来了铜色栗子，你要卖吗？/@copper1_cmd>\
+<带来了褐色栗子，你要卖吗？/@brown1_cmd>\
+<马上去给你找/@exit>
+
+[@gold1_cmd]
+#IF
+checkitem 金色栗子 1
+#ACT
+take 金色栗子 1
+give 金币 5000
+#SAY
+这是{FCOLOR/10}5000金币{FCOLOR/12}\ \
+<还卖其它的金色栗子/@gold1_cmd>\ \
+<结束/@exit>
+#ELSESAY
+哼，你没带金色栗子来，快去找来。\ \
+<结束/@exit>
+
+[@silver1_cmd]
+#IF
+checkitem 银色栗子 1
+#ACT
+take 银色栗子 1
+give 金币 2000
+#SAY
+这是{FCOLOR/10}2000金币{FCOLOR/12}\ \
+<还卖其它的银色栗子/@silver1_cmd>\ \
+<结束/@exit>
+#ELSESAY
+哼，你没带银色栗子来，快去找来。\ \
+<结束/@exit>
+
+[@copper1_cmd]
+#IF
+checkitem 铜色栗子 1
+#ACT
+take 铜色栗子 1
+give 金币 1000
+#SAY
+这是{FCOLOR/10}1000金币{FCOLOR/12}\ \
+<还卖其它的铜色栗子/@copper1_cmd>\ \
+<结束/@exit>
+#ELSESAY
+哼，你没带铜色栗子来，快去找来。\ \
+<结束/@exit>
+
+[@brown1_cmd]
+#IF
+checkitem 褐色栗子 1
+#ACT
+take 褐色栗子 1
+give 金币 500
+#SAY
+这是{FCOLOR/10}500金币{FCOLOR/12}\ \
+<还卖其它的褐色栗子/@brown1_cmd>\ \
+<结束/@exit>
+#ELSESAY
+哼，你没带棕栗子来，快去找来。\ \
+<结束/@exit>

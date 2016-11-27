@@ -1,0 +1,31 @@
+;;创天网络有限公司原版1.45
+[@teleport_D11031]
+{
+#IF
+#ACT
+mapmove D1110 17 20
+}
+
+
+[@teleport_D1105]
+{
+#IF
+#ACT
+mapmove D1110 30 33
+}
+
+
+[@teleport_D1110_0]
+{
+#IF
+#ACT
+mapmove D11031 197 255
+}
+
+
+[@teleport_D1110_1]
+{
+#IF
+#ACT
+mapmove D1105 221 102
+}

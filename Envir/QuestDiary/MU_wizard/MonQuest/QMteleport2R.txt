@@ -1,0 +1,22 @@
+;;创天网络有限公司原版1.45
+[@main]
+#IF
+check [027] 1
+#ACT
+break
+#IF
+check [048] 1
+#ACT
+break
+#IF
+check [037] 0
+#ACT
+break
+#IF
+check [037] 1
+#ACT
+goto @move_next_2to3R
+break
+
+[@move_next_2to3R]
+#CALL [\MU_wizard\teleport.txt] @MapQuest_move_2to3R

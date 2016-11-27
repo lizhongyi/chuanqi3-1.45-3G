@@ -1,0 +1,46 @@
+;;创天网络有限公司原版1.45
+[@mugong_recallskel_test_mainskel_win]
+#IF
+checkjob warrior
+#ACT
+break
+;
+#IF
+checkjob wizard
+#ACT
+break
+;
+#IF
+check [039] 1
+#ACT
+break
+
+#IF
+check [038] 0
+#ACT
+break
+
+#IF
+check [037] 0
+#ACT
+break
+
+#IF
+check [037] 1
+check [038] 1
+check [039] 0
+#ACT
+goto @mugong_recallskel_test_mainskel_win1
+
+[@mugong_recallskel_test_mainskel_win1]
+#IF
+#ACT
+Monclear 1_014
+set [039] 1
+goto @mugong_recallskel_test_mainskel_win2
+
+[@mugong_recallskel_test_mainskel_win2]
+#IF
+#ACT
+map  1_013
+break

@@ -1,0 +1,346 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@时空之门_1]
+{
+#ACT
+MOV 时空禁止图 %USERMAP
+
+#IF
+Equal 时空禁止图 "1_001"
+#ACT
+BREAK
+#SAY
+对不起,此地图禁止使用此功能.
+
+#IF
+Checkcmd CHECKMAPFLAG SPARAM1
+
+#IF
+#ACT
+mov 检测时空 %A9
+
+#IF
+Equal 检测时空 "SK"
+#ACT
+break
+#SAY
+{FCOLOR/1}对不起,本地图不允许使用时空之门.{FCOLOR/12}\\
+<关闭/@EXIT>
+
+#IF
+#ACT
+LOADVALUE A1 "ParamControl\时空之门.ini" %USERNAME 地图1
+LOADVALUE 地图名1 "ParamControl\时空之门.ini" %USERNAME 地图1名字
+LOADVALUE D0 "ParamControl\时空之门.ini" %USERNAME 地图1X
+LOADVALUE D1 "ParamControl\时空之门.ini" %USERNAME 地图1Y
+
+LOADVALUE A2 "ParamControl\时空之门.ini" %USERNAME 地图2
+LOADVALUE 地图名2 "ParamControl\时空之门.ini" %USERNAME 地图2名字
+LOADVALUE D2 "ParamControl\时空之门.ini" %USERNAME 地图2X
+LOADVALUE D3 "ParamControl\时空之门.ini" %USERNAME 地图2Y
+
+LOADVALUE A3 "ParamControl\时空之门.ini" %USERNAME 地图3
+LOADVALUE 地图名3 "ParamControl\时空之门.ini" %USERNAME 地图3名字
+LOADVALUE D4 "ParamControl\时空之门.ini" %USERNAME 地图3X
+LOADVALUE D5 "ParamControl\时空之门.ini" %USERNAME 地图3Y
+
+LOADVALUE D6 "ParamControl\时空之门.ini" %USERNAME 能量
+
+#IF
+#SAY
+你目前拥有的时空能量值为:{FCOLOR/1}<$OUTPUT(D6)>{FCOLOR/12}点.\
+<【兑换时空能量值】/@兑换时空能量>.\\
+
+#IF
+!Equal A1 ""
+#SAY
+时空记录点1:{FCOLOR/10}<$OUTPUT(地图名1)>|<$OUTPUT(D0)>,<$OUTPUT(D1)>{FCOLOR/12}\
+<传送至记录点/@传送记录点1> 消耗能量值{FCOLOR/1}10{FCOLOR/12}点.\
+<记录当前坐标/@记录坐标点1> 消耗能量值{FCOLOR/1}20{FCOLOR/12}点.\\
+#ELSESAY
+时空记录点1: {FCOLOR/1}无记录点.{FCOLOR/12}\
+<记录当前坐标/@记录坐标点1> 消耗能量值{FCOLOR/1}20{FCOLOR/12}点.\\
+
+#IF
+!Equal A2 ""
+#SAY
+时空记录点2:{FCOLOR/10}<$OUTPUT(地图名2)>|<$OUTPUT(D2)>,<$OUTPUT(D3)>{FCOLOR/12}\
+<传送至记录点/@传送记录点2> 消耗能量值{FCOLOR/1}20{FCOLOR/12}点.\
+<记录当前坐标/@记录坐标点2> 消耗能量值{FCOLOR/1}40{FCOLOR/12}点.\\
+#ELSESAY
+时空记录点2: {FCOLOR/1}无记录点.{FCOLOR/12}\
+<记录当前坐标/@记录坐标点2> 消耗能量值{FCOLOR/1}40{FCOLOR/12}点.\\
+
+#IF
+!Equal A3 ""
+#SAY
+时空记录点3:{FCOLOR/10}<$OUTPUT(地图名3)>|<$OUTPUT(D4)>,<$OUTPUT(D5)>{FCOLOR/12}\
+<传送至记录点/@传送记录点3> 消耗能量值{FCOLOR/1}40{FCOLOR/12}点.\
+<记录当前坐标/@记录坐标点3> 消耗能量值{FCOLOR/1}80{FCOLOR/12}点.\\
+#ELSESAY
+时空记录点3: {FCOLOR/1}无记录点.{FCOLOR/12}\
+<记录当前坐标/@记录坐标点3> 消耗能量值{FCOLOR/1}80{FCOLOR/12}点.\\
+
+[@传送记录点1]
+#ACT
+LOADVALUE A1 "ParamControl\时空之门.ini" %USERNAME 地图1
+LOADVALUE 地图名1 "ParamControl\时空之门.ini" %USERNAME 地图1名字
+LOADVALUE D0 "ParamControl\时空之门.ini" %USERNAME 地图1X
+LOADVALUE D1 "ParamControl\时空之门.ini" %USERNAME 地图1Y
+LOADVALUE D6 "ParamControl\时空之门.ini" %USERNAME 能量
+
+#IF
+Equal A1 "3"
+#ACT
+BREAK
+#SAY
+对不起,当前记录点已经失效。
+
+#IF
+Checkcmd CHECKMAPFLAG SPARAM1
+
+#IF
+#ACT
+mov 检测时空 %A9
+
+#IF
+Equal 检测时空 "SK"
+#ACT
+break
+#SAY
+{FCOLOR/1}对不起,本地图不允许使用时空之门.{FCOLOR/12}\\
+<关闭/@EXIT>
+
+#IF
+Elarge D6 10
+#ACT
+MAPMOVE %A1 %D0 %D1
+DEC D6 10
+SAVEVALUE "ParamControl\时空之门.ini" %USERNAME 能量 %D6
+SYSMSG "你穿越了时空之门来到了[<$OUTPUT(地图名1)>|<$OUTPUT(D0)>,<$OUTPUT(D1)>]."
+break
+#ELSESAY
+{FCOLOR/1}对不起,你的时空能量值不足.{FCOLOR/12}\\
+<【兑换时空能量值】/@兑换时空能量>.\\
+<【关闭】/@EXIT>
+
+[@记录坐标点1]
+#ACT
+LOADVALUE D6 "ParamControl\时空之门.ini" %USERNAME 能量
+
+#IF
+Checkcmd CHECKMAPFLAG SPARAM1
+
+#IF
+#ACT
+mov 检测时空 %A9
+
+#IF
+Equal 检测时空 "SK"
+#ACT
+break
+#SAY
+{FCOLOR/1}对不起,本地图不允许使用时空之门.{FCOLOR/12}\\
+<关闭/@EXIT>
+
+#IF
+Elarge D6 20
+#ACT
+DEC D6 20
+SAVEVALUE "ParamControl\时空之门.ini" %USERNAME 能量 %D6
+SAVEVALUE "ParamControl\时空之门.ini" %USERNAME 地图1 %USERMAP
+SAVEVALUE "ParamControl\时空之门.ini" %USERNAME 地图1名字 %USERMAPNAME
+SAVEVALUE "ParamControl\时空之门.ini" %USERNAME 地图1X %USERX
+SAVEVALUE "ParamControl\时空之门.ini" %USERNAME 地图1Y %USERY
+break
+#SAY
+{FCOLOR/1}时空记录已经成功.{FCOLOR/12}\\
+<关闭/@EXIT>
+#ELSESAY
+<【兑换时空能量值】/@兑换时空能量>.\\
+<【关闭】/@EXIT>
+
+
+
+[@传送记录点2]
+#ACT
+LOADVALUE A1 "ParamControl\时空之门.ini" %USERNAME 地图2
+LOADVALUE 地图名1 "ParamControl\时空之门.ini" %USERNAME 地图2名字
+LOADVALUE D0 "ParamControl\时空之门.ini" %USERNAME 地图2X
+LOADVALUE D1 "ParamControl\时空之门.ini" %USERNAME 地图2Y
+LOADVALUE D6 "ParamControl\时空之门.ini" %USERNAME 能量
+
+#IF
+Equal A1 "3"
+#ACT
+BREAK
+#SAY
+对不起,当前记录点已经失效。
+
+#IF
+Checkcmd CHECKMAPFLAG SPARAM1
+
+#IF
+#ACT
+mov 检测时空 %A9
+
+#IF
+Equal 检测时空 "SK"
+#ACT
+break
+#SAY
+{FCOLOR/1}对不起,本地图不允许使用时空之门.{FCOLOR/12}\\
+<关闭/@EXIT>
+
+#IF
+Elarge D6 20
+#ACT
+MAPMOVE %A1 %D0 %D1
+DEC D6 20
+SAVEVALUE "ParamControl\时空之门.ini" %USERNAME 能量 %D6
+SYSMSG "你穿越了时空之门来到了[<$OUTPUT(地图名1)>|<$OUTPUT(D0)>,<$OUTPUT(D1)>]."
+break
+#ELSESAY
+{FCOLOR/1}对不起,你的时空能量值不足.{FCOLOR/12}\\
+<【兑换时空能量值】/@兑换时空能量>.\\
+<【关闭】/@EXIT>
+
+[@记录坐标点2]
+#ACT
+LOADVALUE D6 "ParamControl\时空之门.ini" %USERNAME 能量
+
+#IF
+Checkcmd CHECKMAPFLAG SPARAM1
+
+#IF
+#ACT
+mov 检测时空 %A9
+
+#IF
+Equal 检测时空 "SK"
+#ACT
+break
+#SAY
+{FCOLOR/1}对不起,本地图不允许使用时空之门.{FCOLOR/12}\\
+<关闭/@EXIT>
+
+#IF
+Elarge D6 40
+#ACT
+DEC D6 40
+SAVEVALUE "ParamControl\时空之门.ini" %USERNAME 能量 %D6
+SAVEVALUE "ParamControl\时空之门.ini" %USERNAME 地图2 %USERMAP
+SAVEVALUE "ParamControl\时空之门.ini" %USERNAME 地图2名字 %USERMAPNAME
+SAVEVALUE "ParamControl\时空之门.ini" %USERNAME 地图2X %USERX
+SAVEVALUE "ParamControl\时空之门.ini" %USERNAME 地图2Y %USERY
+break
+#SAY
+{FCOLOR/1}时空记录已经成功.{FCOLOR/12}\\
+<关闭/@EXIT>
+#ELSESAY
+{FCOLOR/1}对不起,你的时空能量值不足.{FCOLOR/12}\\
+<【兑换时空能量值】/@兑换时空能量>.\\
+<【关闭】/@EXIT>
+
+
+[@传送记录点3]
+#ACT
+LOADVALUE A1 "ParamControl\时空之门.ini" %USERNAME 地图3
+LOADVALUE 地图名1 "ParamControl\时空之门.ini" %USERNAME 地图3名字
+LOADVALUE D0 "ParamControl\时空之门.ini" %USERNAME 地图3X
+LOADVALUE D1 "ParamControl\时空之门.ini" %USERNAME 地图3Y
+LOADVALUE D6 "ParamControl\时空之门.ini" %USERNAME 能量
+
+#IF
+Equal A1 "3"
+#ACT
+BREAK
+#SAY
+对不起,当前记录点已经失效。
+
+#IF
+Checkcmd CHECKMAPFLAG SPARAM1
+
+#IF
+#ACT
+mov 检测时空 %A9
+
+#IF
+Equal 检测时空 "SK"
+#ACT
+break
+#SAY
+{FCOLOR/1}对不起,本地图不允许使用时空之门.{FCOLOR/12}\\
+<关闭/@EXIT>
+
+#IF
+Elarge D6 40
+#ACT
+MAPMOVE %A1 %D0 %D1
+DEC D6 40
+SAVEVALUE "ParamControl\时空之门.ini" %USERNAME 能量 %D6
+SYSMSG "你穿越了时空之门来到了[<$OUTPUT(地图名1)>|<$OUTPUT(D0)>,<$OUTPUT(D1)>]."
+break
+#ELSESAY
+{FCOLOR/1}对不起,你的时空能量值不足.{FCOLOR/12}\\
+<【兑换时空能量值】/@兑换时空能量>.\\
+<【关闭】/@EXIT>
+
+[@记录坐标点3]
+#ACT
+LOADVALUE D6 "ParamControl\时空之门.ini" %USERNAME 能量
+
+#IF
+Checkcmd CHECKMAPFLAG SPARAM1
+
+#IF
+#ACT
+mov 检测时空 %A9
+
+#IF
+Equal 检测时空 "SK"
+#ACT
+break
+#SAY
+{FCOLOR/1}对不起,本地图不允许使用时空之门.{FCOLOR/12}\\
+<关闭/@EXIT>
+
+#IF
+Elarge D6 80
+#ACT
+DEC D6 80
+SAVEVALUE "ParamControl\时空之门.ini" %USERNAME 能量 %D6
+SAVEVALUE "ParamControl\时空之门.ini" %USERNAME 地图3 %USERMAP
+SAVEVALUE "ParamControl\时空之门.ini" %USERNAME 地图3名字 %USERMAPNAME
+SAVEVALUE "ParamControl\时空之门.ini" %USERNAME 地图3X %USERX
+SAVEVALUE "ParamControl\时空之门.ini" %USERNAME 地图3Y %USERY
+break
+#SAY
+{FCOLOR/1}时空记录已经成功.{FCOLOR/12}\\
+<关闭/@EXIT>
+#ELSESAY
+{FCOLOR/1}对不起,你的时空能量值不足.{FCOLOR/12}\\
+<【兑换时空能量值】/@兑换时空能量>.\\
+<【关闭】/@EXIT>
+
+[@兑换时空能量]
+#SAY
+{FCOLOR/10}100W金币兑换100点的时空能量值,你确定要兑换吗?{FCOLOR/12}\\
+<【兑换时空能量】/@兑换能量_OK>\\
+<【返回】/@时空之门D>
+
+[@兑换能量_OK]
+#ACT
+LOADVALUE D6 "ParamControl\时空之门.ini" %USERNAME 能量
+
+#IF
+CHECKGOLD 1000000
+#ACT
+TAKE 金币 1000000
+INC D6 100
+SAVEVALUE "ParamControl\时空之门.ini" %USERNAME 能量 %D6
+SYSMSG "使用100W金币兑换了100点时空能量值."
+BREAK
+#ELSESAY
+{FCOLOR/1}对不起,你没有100W金币不能兑换.{FCOLOR/12}\\
+<关闭/@EXIT>
+}

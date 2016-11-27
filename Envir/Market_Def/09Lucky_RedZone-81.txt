@@ -1,0 +1,10 @@
+;;创天网络有限公司原版1.45
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+您是红名,您目前的PK值为 {FCOLOR/1}<$USERPK>{FCOLOR/12} 点.\\
+<离开/@exit>
+#elsesay
+您不是红名,您目前的PK值为 {FCOLOR/1}<$USERPK>{FCOLOR/12} 点.\\
+<离开/@exit>

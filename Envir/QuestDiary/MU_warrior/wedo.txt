@@ -1,0 +1,263 @@
+;;创天网络有限公司原版1.45
+[@mugong_yedo]
+{
+#IF
+check [011] 1
+#SAY
+你不是已经收到攻杀剑术秘籍吗？\ \
+<结束/@exit>
+#ACT
+break
+
+#IF
+check [033] 1
+#ACT
+goto @mugong_yedo_next3
+break
+
+#IF
+checklevel 14
+#ACT
+goto @mugong_yedo_next
+#ELSESAY
+攻杀剑法可以称为放出剑气的入门武功。可以称为为了掌握上乘的武功必须经过的阶段？但是毫无疑问的是很有威力的武功。尤其是可以按照敌人的级别提高命中率和破坏力。\ \
+<结束/@exit>
+
+[@mugong_yedo_next]
+#IF
+#SAY
+几乎是从现在开始修炼武功的年轻人，我在你这个年纪的时候也经历了同样的问题。。\ 
+按照那种理由我要帮助你的训练。虽然有些困难。。。打算怎么办？\ \
+<无论如何请传授方法。/@mugong_yedo_next2_1> \
+<好象有些勉强。/@mugong_yedo_next2_2>
+
+[@mugong_yedo_next1]
+#IF
+#SAY
+攻杀剑法可以称为放出剑气的入门武功。可以称为为了掌握上乘的武功必须经过的阶段？但是毫无疑问的是很有威力的武功。尤其是可以按照敌人的级别提高命中率和破坏力。\ \
+<结束/@exit>
+
+[@mugong_yedo_next2_1]
+#IF
+checkmagic 攻杀剑术
+#SAY
+你不是已经掌握攻杀剑术吗？\ \
+<结束/@exit>
+#ELSEACT
+goto @mugong_yedo_next_exceptcheck
+
+[@mugong_yedo_next_exceptcheck]
+#IF
+#SAY
+攻杀剑法可以说是习剑的入门武功，他的要领可以说是剑术的修炼。当然不是现在就要求通过消耗功力，而攻击到武器不能到达地方的上乘剑术。现在为了研习攻杀剑术只要精神集中修炼就行。即要经历剑和魂合一的阶段才行。只有通过这样的修炼，才能练成对敌的急所发出强力一击的厚实剑术。进入修炼之前，首先要装备此剑。但一旦此剑被抓在手中，直到攻杀剑术修练厚实前，不能脱手，要铭记此点。\ \
+<结束/@exit>
+#ACT
+give 攻杀铁剑 1
+SET [033] 1
+break
+
+[@mugong_yedo_next2_2]
+#IF
+#SAY
+你个人认为自己的功力还很不足，但是我认为你已经充分具备了学习攻杀剑法的能力，没有必要如此谦虚。不要犹豫，请在尽早的时间里拿出勇气，挑战看看！\ \
+<结束/@exit>
+
+[@mugong_yedo_next3]
+#IF
+checkitemw 攻杀铁剑 1
+#SAY
+用那种像铁块一样的剑进行实战搏杀，内力都将集中在剑尖儿。希望你可以活着回来，再见面！哈哈哈 \ 
+规定时间是3分钟。。希望你在规定的时间之内可以成功。\ \
+<下一步/@mugong_yedo_next4>
+#ELSESAY
+攻杀铁剑如何？只有带着攻杀铁剑来才可以进入训练场。\ \
+<鸣鸣，攻杀铁剑丢了。/@yedo_reformance> \
+<结束/@exit>
+
+[@yedo_reformance]
+#IF
+#SAY
+什么攻杀铁剑丢了？因此不能学习剑术了，是吧。\
+如果这样，请使用我的攻杀铁剑吧。。但是不能就这样给你了。\
+一把剑100000两。。还买吗？\ \
+<即使贵也要买。/@yedo_reformance_buy> \
+<钱不够，不能买。/@exit>
+
+[@yedo_reformance_buy]
+#IF
+checkgold 100000
+#SAY
+攻杀铁剑在这儿，小心不要丢失了！\ \
+<结束/@exit>
+#ACT
+give 攻杀铁剑 1
+take 金币 100000
+#ELSESAY
+你没有钱还说要买攻杀铁剑？如果在说一遍，我就不卖攻杀铁剑了。\ \
+<结束/@exit>
+
+[@mugong_yedo_next4]
+#IF
+checkhum 01_003 1
+#SAY
+有人在接受测试，请等一下！\ \
+<结束/@exit>
+#ELSEACT
+Monclear 01_003
+Param1 01_003
+Param2 9
+Param3 12
+MonGen 骷髅61 10 5
+MonGen 骷髅战士61 1 5
+TimeRecall 3
+map 01_003
+goto @timetogongsha
+break
+
+
+[@timetogongsha]
+#ACT
+mov A3 %USERMAP
+
+#IF
+EQUAL A3 "01_003"
+#ACT
+delaygoto [local] 10 @timetogongsha
+break
+#ELSEACT
+BREAKTIMERECALL
+break
+}
+
+[@yedo_test]
+{
+#IF
+checkmonmap 01_003 1
+#SAY
+请将里面所有的骷髅都处理掉。\ \
+<结束/@exit>
+#ELSESAY
+里面所有的骷髅都被处置哟。。好的，有能力。。请在外面看。。\ \
+<我要出去/@yedo_test_next>
+
+[@yedo_test_next]
+#IF
+#ACT
+BreakTimeRecall
+mapmove 01 456 303
+SET [034] 1
+break
+}
+
+[@mugong_yedo_complete]
+{
+#IF
+check [033] 1
+check [034] 1
+check [011] 0
+#SAY
+从你眼睛中放射出的光彩可以看出你已经成功掌握了剑术。祝贺你！你又离高手近了一步。请以后坚持不懈地进行修炼，成为一名真正的侠客。\ \
+<下一步/@mugong_yedo_give1>
+#ELSEACT
+SET [035] 1
+#ELSESAY
+你现在还年轻不要向失败低头，请再试试。树砍了十遍，没有不倒的。如果不放弃，成功的日子终究要来临的。\ \
+<结束/@exit>
+
+[@mugong_yedo_give1]
+#IF
+check [011] 0
+#ACT
+give 攻杀剑术（秘籍） 1
+give 金币 20000
+give 黑珍珠戒指 1
+takew 攻杀铁剑 1
+reset [033] 2
+set [011] 1
+#SAY
+在这里拿武功秘籍。而且给你一些金币和东西，用在需要的地方。\ \
+<结束/@exit>
+#ELSESAY
+你不是已经收到攻杀剑术秘籍吗？\ \
+<结束/@exit>
+
+}
+
+[@mugong_yedo_retry]
+{
+#IF
+checkitemw 攻杀铁剑 1
+#SAY
+用那种像铁块一样的剑进行实战搏杀，内力都将集中在剑尖儿。希望你可以活着回来，再见面！哈哈哈 \ 
+规定时间是3分钟。。希望你在规定的时间之内可以成功。\ \
+<拜托你进行指教。/@yedo_retry_next1>\
+<现在好象有些勉强。/@yedo_retry_next_2>
+#ELSESAY
+攻杀铁剑如何？只有带着攻杀铁剑来才可以进入训练场。\ \
+<鸣鸣，攻杀铁剑丢了。/@yedo_reformance> \
+<结束/@exit>
+
+[@yedo_retry_reformance]
+#IF
+#SAY
+什么攻杀铁剑丢了？因此不能学习剑术，是吧。\
+如果这样，请使用我的攻杀铁剑吧。。但是不能就这样给你了。\
+一把剑100000两。。还买吗？\ \
+<即使贵也要买。/@yedo_retry_reformance_buy> \
+<钱不够，不能买。/@exit>
+
+[@yedo_retry_reformance_buy]
+#IF
+checkgold 100000
+#SAY
+攻杀铁剑在这儿。。小心不要丢失了。。\ \
+<结束/@exit>
+#ACT
+give 攻杀铁剑
+take 金币 100000
+#ELSESAY
+你没有钱还说要买攻杀铁剑？如果在说一遍，我就不卖攻杀铁剑了。\ \
+<结束/@exit>
+
+[@yedo_retry_next_2]
+#IF
+#SAY
+警惕轻率虽然是你这个年龄段的人具备困难的美德，但缺乏果断性也不好。不管怎样，如果准备充分了，请随时来接受训练。\ \
+<结束/@exit>
+
+[@yedo_retry_next1]
+#IF
+checkhum 01_003 1
+#SAY
+有人正在接受测试，请等一下。。。\ \
+<结束/@exit>
+#ELSEACT
+Monclear 01_003
+Param1 01_003
+Param2 9
+Param3 12
+MonGen 骷髅61 10 5
+MonGen 骷髅战士61 1 5
+TimeRecall 3
+map 01_003
+goto @timetogongsha2
+break
+
+
+
+
+[@timetogongsha2]
+#ACT
+mov A3 %USERMAP
+
+#IF
+EQUAL A3 "01_003"
+#ACT
+delaygoto [local] 10 @timetogongsha2
+break
+#ELSEACT
+BREAKTIMERECALL
+break
+}
+
+;;创天网络有限公司原版1.45

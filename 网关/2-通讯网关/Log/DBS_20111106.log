@@ -1,0 +1,8 @@
+00:17:06 Startup DB Server
+00:17:07 [127.0.0.1:1991] RunGate connected.
+00:17:08 [127.0.0.1:1991] RunGate disconnected.
+00:17:10 [127.0.0.1:1993] RunGate connected.
+00:17:11 [127.0.0.1:1993] RunGate disconnected.
+00:17:13 [127.0.0.1:1995] RunGate connected.
+00:17:18 Connected to LoginServer.
+00:17:18 KillTimer : TIMER_CONNLOGINSERVER, StartTimer : TIMER_KEEPALIVE

@@ -1,0 +1,39 @@
+[Config]
+Count     =3
+
+ID1       =50
+Name1     ="DTS 导入/导出向导"
+FileIco1  =$TPdtswiz.exe
+IcoIndex1 =0
+FileEXE1  =$TPdtswiz.exe
+FilePara1 =""
+RegEXE1   =""
+RegPara1  =""
+FilePath1 =$TP
+Hint11    ="数据库导入导出工具，实乃必需品！"
+Hint21    ="(需要先注册企业管理器)"
+
+ID2       =30
+Name2     ="企业管理器"
+FileIco2  ="$Windows\system32\mmc.exe"
+IcoIndex2 =0
+FileEXE2  ="$Windows\system32\mmc.exe"
+FilePara2 =""$TP\SQL Server Enterprise Manager.MSC""
+RegEXE2   ="$TPReg.Bat"
+RegPara2  ="$ConName"
+RegHint2  ="本机已经有企业管理器的切勿注册绿色版企业管理器/n这将造成本机企业管理器不可修复性损坏/n/n是否继续注册企业管理器?"
+FilePath2 =$TP
+Hint12    ="非常非常强大的SQLServer管理工具"
+Hint22    ="(需点击注册方可使用) (★本机已有企业管理器的切勿使用★)"
+
+ID3       =40
+Name3     ="注册服务器到企业管理器"
+FileIco3  ="$Windows\regedit.exe"
+IcoIndex3 =0
+FileEXE3  ="$TPRegServer.Bat"
+FilePara3 ="$ConName"
+RegEXE3   =""
+RegPara3  =""
+FilePath3 =$TP
+Hint13    ="需企业管理器可用情况下才可生效"
+Hint23    ="兼容性不好, 如卡死请手工结束 ServerAdmin.exe 进程."

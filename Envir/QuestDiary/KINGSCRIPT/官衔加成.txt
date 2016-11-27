@@ -1,0 +1,102 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@官衔加成_1]
+{
+#ACT
+LOADVALUE A0 "ParamControl\官阶值.ini" 官衔 %USERNAME
+
+#IF
+Equal A0 ""
+#ACT
+BREAK
+
+#IF
+Equal A0 "七品"
+#ACT
+MOV D0 0
+MOV D1 1
+MOV D2 1
+
+#IF
+Equal A0 "六品"
+#ACT
+MOV D0 1
+MOV D1 2
+MOV D2 2
+
+#IF
+Equal A0 "五品"
+#ACT
+MOV D0 1
+MOV D1 3
+MOV D2 3
+
+#IF
+Equal A0 "四品"
+#ACT
+MOV D0 2
+MOV D1 3
+MOV D2 4
+
+#IF
+Equal A0 "三品"
+#ACT
+MOV D0 2
+MOV D1 4
+MOV D2 5
+
+#IF
+Equal A0 "二品"
+#ACT
+MOV D0 3
+MOV D1 5
+MOV D2 6
+
+#IF
+Equal A0 "一品"
+#ACT
+MOV D0 5
+MOV D1 5
+MOV D2 7
+
+#IF
+Equal A0 "皇帝"
+#ACT
+MOV D0 6
+MOV D1 6
+MOV D2 8
+
+#IF
+Equal A0 "宗师"
+#ACT
+MOV D0 7
+MOV D1 7
+MOV D2 9
+lineMsg [Grobal] "一代宗师:<$USERNAME>上线了!"
+
+#IF
+#ACT
+SetUserTitle %D2
+
+#IF
+CheckJob warrior
+#Act
+AttRibuteAdd DC %D1 %D0
+SYSMSG "你的官衔是:<$OUTPUT(A0)>,你获得了<$OUTPUT(D0)>-<$OUTPUT(D1)>的破坏加成." 1
+BREAK
+
+#IF
+CheckJob Wizard
+#Act
+AttRibuteAdd MC %D1 %D0
+SYSMSG "你的官衔是:<$OUTPUT(A0)>,你获得了<$OUTPUT(D0)>-<$OUTPUT(D1)>的自然加成." 1
+BREAK
+
+#IF
+CheckJob Taoist
+#Act
+AttRibuteAdd SC %D1 %D0
+SYSMSG "你的官衔是:<$OUTPUT(A0)>,你获得了<$OUTPUT(D0)>-<$OUTPUT(D1)>的灵魂加成." 1
+BREAK
+
+
+}

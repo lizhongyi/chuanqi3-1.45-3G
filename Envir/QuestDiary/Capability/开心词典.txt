@@ -1,0 +1,138 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@开心词典_1]
+{
+#ACT
+LoadValue D0 "ParamControl\开心词典游戏参数.ini" [开心词典] 开启变量
+#IF
+Equal D0 1
+#ACT
+GOTO @开心词典_2
+#ELSESAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}开{FCOLOR/4}━{FCOLOR/14}心{FCOLOR/4}━{FCOLOR/14}词{FCOLOR/4}━{FCOLOR/14}典{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[{FCOLOR/10} 开心词典 {FCOLOR/12}]状态[{FCOLOR/1} 关闭 {FCOLOR/12}] 系统{FCOLOR/10}每小时{FCOLOR/12}自动开启......
+
+[@开心词典_2]
+#ACT
+LoadValue D1 "ParamControl\开心词典游戏参数.ini" [开心词典] [答题状态]
+LoadValue D2 "ParamControl\开心词典游戏参数.ini" [开心词典] [序号]
+LoadValue A1 "ParamControl\开心词典游戏参数.ini" [开心词典] [题目]
+LoadValue D3 "ParamControl\开心词典游戏参数.ini" [开心词典] [题序]
+LoadValue D4 "ParamControl\开心词典游戏参数.ini" [开心词典] [正确答案1]
+LoadValue A2 "ParamControl\开心词典游戏参数.ini" [开心词典] [答案1]
+LoadValue A3 "ParamControl\开心词典游戏参数.ini" [开心词典] [答案2]
+LoadValue A4 "ParamControl\开心词典游戏参数.ini" [开心词典] [答案3]
+LoadValue A5 "ParamControl\开心词典游戏参数.ini" [开心词典] [答案4]
+LoadValue D5 "ParamControl\开心词典游戏参数.ini" [开心词典] [题库数量]
+LoadValue B1 "ParamControl\开心词典游戏参数.ini" [开心词典] [答题变量]
+LoadValue B2 "ParamControl\开心词典游戏参数.ini" [开心词典] [临时冠军]
+#IF
+Equal D1 0
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}开{FCOLOR/4}━{FCOLOR/14}心{FCOLOR/4}━{FCOLOR/14}词{FCOLOR/4}━{FCOLOR/14}典{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+上轮问题: {FCOLOR/10}<$OUTPUT(A1)>{FCOLOR/12}\
+上轮冠军: {FCOLOR/1}<$OUTPUT(B2)>{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}开{FCOLOR/4}━{FCOLOR/14}心{FCOLOR/4}━{FCOLOR/14}词{FCOLOR/4}━{FCOLOR/14}典{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+温馨提示: {FCOLOR/1}很遗憾, 此题答题时间已过. 请等待下一轮{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}开{FCOLOR/4}━{FCOLOR/14}心{FCOLOR/4}━{FCOLOR/14}词{FCOLOR/4}━{FCOLOR/14}典{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+#ACT
+Break
+
+#IF
+Equal B1 1
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}开{FCOLOR/4}━{FCOLOR/14}心{FCOLOR/4}━{FCOLOR/14}词{FCOLOR/4}━{FCOLOR/14}典{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+本轮问题: {FCOLOR/10}<$OUTPUT(A1)>{FCOLOR/12}\
+本轮冠军: {FCOLOR/1}<$OUTPUT(B2)>{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}开{FCOLOR/4}━{FCOLOR/14}心{FCOLOR/4}━{FCOLOR/14}词{FCOLOR/4}━{FCOLOR/14}典{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+温馨提示: [{FCOLOR/1} <$OUTPUT(B2)> {FCOLOR/12}]抢先一步.请等待下一轮\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}开{FCOLOR/4}━{FCOLOR/14}心{FCOLOR/4}━{FCOLOR/14}词{FCOLOR/4}━{FCOLOR/14}典{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+#ACT
+Break
+
+#IF
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}温{FCOLOR/4}━{FCOLOR/14}馨{FCOLOR/4}━{FCOLOR/14}提{FCOLOR/4}━{FCOLOR/14}示{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+请在正确答案公布前做出回答. 您只有一次选择机会\
+题库中目前有{FCOLOR/1} <$OUTPUT(D5)> {FCOLOR/12}道题目,您回答的是第{FCOLOR/1} <$OUTPUT(D2)> {FCOLOR/12}道题\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}词{FCOLOR/4}━{FCOLOR/14}典{FCOLOR/4}━{FCOLOR/14}问{FCOLOR/4}━{FCOLOR/14}题{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+<$OUTPUT(A1)>{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}选{FCOLOR/4}━{FCOLOR/14}择{FCOLOR/4}━{FCOLOR/14}答{FCOLOR/4}━{FCOLOR/14}案{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+#IF
+Equal D3 2
+#SAY
+<[ 选择→ A ]/@Choose_Result(1)>: <$OUTPUT(A2)>\\
+<[ 选择→ B ]/@Choose_Result(2)>: <$OUTPUT(A3)>
+#IF
+Equal D3 3
+#SAY
+<[ 选择→ A ]/@Choose_Result(1)>: <$OUTPUT(A2)>\\
+<[ 选择→ B ]/@Choose_Result(2)>: <$OUTPUT(A3)>\\
+<[ 选择→ C ]/@Choose_Result(3)>: <$OUTPUT(A4)>
+#IF
+Equal D3 4
+#SAY
+<[ 选择→ A ]/@Choose_Result(1)>: <$OUTPUT(A2)>\\
+<[ 选择→ B ]/@Choose_Result(2)>: <$OUTPUT(A3)>\\
+<[ 选择→ C ]/@Choose_Result(3)>: <$OUTPUT(A4)>\\
+<[ 选择→ D ]/@Choose_Result(4)>: <$OUTPUT(A5)>
+
+[@Choose_Result()]
+#ACT
+Mov D5 %ARG(1)
+LoadValue D1 "ParamControl\开心词典个人变量.ini" %USERNAME [序号]
+LoadValue D2 "ParamControl\开心词典游戏参数.ini" [开心词典] [序号]
+LoadValue D3 "ParamControl\开心词典游戏参数.ini" [开心词典] [答题状态]
+SaveValue "ParamControl\开心词典个人变量.ini" %USERNAME [序号] %D2
+#IF
+Equal B1 1
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}开{FCOLOR/4}━{FCOLOR/14}心{FCOLOR/4}━{FCOLOR/14}词{FCOLOR/4}━{FCOLOR/14}典{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+本轮问题: {FCOLOR/10}<$OUTPUT(A1)>{FCOLOR/12}\
+本轮冠军: {FCOLOR/1}<$OUTPUT(B2)>{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}开{FCOLOR/4}━{FCOLOR/14}心{FCOLOR/4}━{FCOLOR/14}词{FCOLOR/4}━{FCOLOR/14}典{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+温馨提示: [{FCOLOR/1} <$OUTPUT(B2)> {FCOLOR/12}]抢先一步.请等待下一轮\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}开{FCOLOR/4}━{FCOLOR/14}心{FCOLOR/4}━{FCOLOR/14}词{FCOLOR/4}━{FCOLOR/14}典{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+#ACT
+Break
+
+#IF
+Equal D3 0
+#ACT
+Close
+SysMsg "温馨提示: 答题时间已过....谢谢参与....."
+Break
+
+#IF
+Equal D1 %D2
+#ACT
+Close
+SysMsg "温馨提示: 此题你已经回答过了....."
+Break
+#ELSEACT
+GOTO @开心词典_3
+
+[@开心词典_3]
+#ACT
+LoadValue D4 "ParamControl\开心词典游戏参数.ini" [开心词典] [正确答案1]
+#IF
+Equal D5 %D4
+#ACT
+Close
+SaveValue "ParamControl\开心词典游戏参数.ini" [开心词典] 答题状态 0
+SaveValue "ParamControl\开心词典游戏参数.ini" [开心词典] 答题变量 1
+SaveValue "ParamControl\开心词典游戏参数.ini" [开心词典] 临时冠军 %USERNAME
+GOTO @开心词典_jiangli
+#ELSEACT
+Close
+SysMsg "温馨提示: 很遗憾.回答错误.不要灰心.再接再厉"
+
+[@开心词典_jiangli]
+#ACT
+movr D8 5
+INC  D8 5
+#ACT
+Give 元宝 %D8
+lineMsg [Grobal] "玩家[ <$USERNAME> ]答题成功.获得奖励: 元宝 <$OUTPUT(D8)> 个.恭喜~"
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

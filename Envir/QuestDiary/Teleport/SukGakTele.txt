@@ -1,0 +1,14 @@
+;;创天网络有限公司原版1.45
+[@SukGak_Teleport]
+{
+#IF
+!CheckPkPoint 2
+#SAY
+六面神石 \ \
+<移动至盟重土城所需金钱 : 500 钱/@TelePortRootin(MongChon,500,West)> \
+#ELSEACT
+mapmove 81 125 274
+
+[@TelePortRootin()]
+#CALL [Teleport\MoveRootin.txt] @TelePortMove
+}

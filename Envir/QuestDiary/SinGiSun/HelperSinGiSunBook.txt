@@ -1,0 +1,145 @@
+;;---------------------;;购买请联系鱼的眼泪,QQ:16487549
+[@HelperSinGiSunQuest]
+{
+#IF
+Check [066] 1
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+ReadValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINUSERNAME,FLD_SINMAINSTEP,FLD_SINSTEP_READY" [@HelperSinGiSunQuest_PreCheck]
+
+[@HelperSinGiSunQuest_PreCheck()]
+#IF
+#ACT
+Mov A8 %ARG(1)
+mov D0 %ARG(2)
+Mov D1 %ARG(3)
+
+#IF
+Equal A8 ""
+#SAY
+还没开始神舰任务.\\
+<关 闭/@exit>
+#ACT
+break
+
+#IF
+Equal D0 1
+Equal D1 0
+#SAY
+阶    段:{FCOLOR/10}1-1{FCOLOR/12}神舰的秘密\\
+内　　容:神舰上发生了不可思议的事情,去找知情人打听情况.\\
+需要物品:无\\
+#ACT
+break
+
+#IF
+Equal D0 1
+Equal D1 2
+#SAY
+阶    段:{FCOLOR/10}1-2{FCOLOR/12}发现了线索\\
+内　　容:从法师梅山侠手里拿到了魔灵牌,按照梅山侠的指示,在神舰上寻找霸王幽灵.\\
+需要物品:无\\
+#ACT
+break
+
+#IF
+Equal D0 1
+Equal D1 3
+#SAY
+阶    段:{FCOLOR/10}1-3{FCOLOR/12}霸王幽灵的考验\\
+内　　容:霸王幽灵为了考验替它实现愿望的人才,派人去挑战轻甲守卫.\\
+需要物品:魔灵牌\\
+#ACT
+break
+
+#IF
+Equal D0 1
+Equal D1 4
+#SAY
+阶    段:{FCOLOR/10}1-4{FCOLOR/12}通过考验\ \
+内　　容:打败轻甲守卫,通过了考验.要找到霸王幽灵,进行对话.\ \
+需要物品:魔灵牌\\
+#ACT
+break
+
+#IF
+Equal D0 2
+Equal D1 0
+#SAY
+阶    段:{FCOLOR/10}1-5{FCOLOR/12}航海日志\\
+内　　容:霸王幽灵对考验结果很满意,于是送给航海日志.\\
+需要物品:魔灵牌\\
+#ACT
+break
+
+#IF
+Equal D0 2
+Equal D1 1
+#SAY
+阶    段:{FCOLOR/10}1-6{FCOLOR/12}发现了新的事实\\
+内　　容:看到航海日志的梅山侠会告诉你,去找霸王幽灵接受任务.\\
+需要物品:无\\
+#ACT
+break
+
+#IF
+Equal D0 2
+Equal D1 2
+#SAY
+阶    段:{FCOLOR/10}1-7{FCOLOR/12}再会霸王幽灵\\
+内　　容:霸王幽灵委托,去打败神舰的霸王守卫,找回它朋友的遗骸.\\
+需要物品:无\\
+#ACT
+break
+
+#IF
+Equal D0 2
+Equal D1 3
+#SAY
+阶    段:{FCOLOR/10}1-8{FCOLOR/12}打败霸王守卫\\
+内　　容:打败霸王守卫,找到了遗骸.把遗骸带给霸王幽灵.\\
+需要物品:遗骸\\
+#ACT
+break
+
+#IF
+Equal D0 3
+Equal D1 0
+#SAY
+阶    段:{FCOLOR/10}1-9{FCOLOR/12}霸王幽灵的秘密\\
+内　　容:霸王幽灵对找回遗骸表示感谢,并希望帮他一起克服世界危机.\\
+需要物品:无\\
+#ACT
+break
+
+#IF
+Equal D0 3
+Equal D1 1
+#SAY
+阶    段:{FCOLOR/10}1-10{FCOLOR/12}得到连环明珠,霸王教主登场\ \
+内　　容:从法师梅山侠手里拿到了连环明珠.连环明珠是进入霸王教主处的凭证.\ \
+需要物品:遗骸\\
+#ACT
+break
+
+#IF
+Equal D0 3
+Equal D1 2
+#SAY
+阶    段:{FCOLOR/10}1-11{FCOLOR/12}霸王教主雕像\\
+内　　容:经过殊死搏斗弄到了霸王教主雕像,把雕像给霸王幽灵送去. \\
+需要物品:霸王教主雕像\\
+#ACT
+break
+
+#IF
+Equal D0 4
+Equal D1 0
+#SAY
+阶    段:{FCOLOR/13}1-12{FCOLOR/12}昏暗的持续\\
+内　　容:用霸王教主雕像暂时制止了混乱,但那不是长久之策.\\
+需要物品:无\\
+#ACT
+break
+}
+;;-------------------------;;购买请联系鱼的眼泪,QQ:16487549

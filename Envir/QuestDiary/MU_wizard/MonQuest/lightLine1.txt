@@ -1,0 +1,47 @@
+;;创天网络有限公司原版1.45
+[@main]
+#IF
+checkjob taoist
+#ACT
+break
+;
+#IF
+checkjob warrior
+#ACT
+break
+;
+#IF
+check [031] 1
+#ACT
+break
+;
+#IF
+check [057] 1
+#ACT
+break
+;
+#IF
+check [056] 1
+#SAY
+（要到银杏树村的棉布商那儿，请她给衣服上涂树脂，我在这里做什么呢？）
+#ACT
+break
+;
+#IF
+check [055] 1
+check [056] 0
+#ACT
+goto @giveitem
+break
+
+[@giveitem]
+#IF
+random 3
+#SAY
+（这是霹雳尊者所讲的树脂吗？那么现在就要去银杏村，请布店晓芙给衣服涂树脂了。）\
+#ACT
+SET [056] 1
+give 树脂 1
+break
+#ELSEACT
+break

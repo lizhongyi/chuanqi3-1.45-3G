@@ -1,0 +1,110 @@
+;;创天网络有限公司原版1.45
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+跟你这种人我无话可说。\ \
+<结束/@exit>
+#ELSEACT
+goto @main_0_0
+;;------------------------------------------------------------------------------
+
+[@main_0_0]
+#IF
+#SAY
+时光飞逝啊，我也有像你一样年轻的时候。
+当我血气方刚的时候，觉得世界上没什么曲折，那时候我觉得只要学到世上所有的武功，就可以练出天下绝功。可是每一项武功都很深奥，不管下多大的工夫也修炼不到头啊。最终，我每一项武功都没能理解其精髓就踏进了江湖。现在在这异地他乡靠教那些年轻人武功来养活自己。如果你在练功的时候遇到什么问题，尽管我也有很多不足的地方，但我还是会给你帮助的。\
+<查看可解释的武功目录/@main_0_1>\
+<结束/@exit>
+
+[@main_0_1]
+#IF
+#SAY
+（战士魔法）\ \
+（1 - 10 等级 修炼魔法）\
+<基本剑术/@Go_Mu_Warrior_Noatom_wesu>\ \
+（11 - 20 等级 修炼魔法）\
+<攻杀剑术/@Go_Mu_Warrior_Noatom_wedo> , <刺杀剑术/@Go_Mu_Warrior_Noatom_asword>\ \
+（法师魔法）\ \
+（1 - 10 等级 修炼魔法）\
+<火球术/@Go_Mu_Wizard_fire_bolt> , <霹雳掌/@Go_Mu_Wizard_light_bolt> , <冰月神掌/@Go_Mu_Wizard_ice_bolt> , <风掌/@Go_Mu_Wizard_wind_jangpung>\ \
+（11 - 20 等级 修炼魔法）\
+<抗拒火环/@Go_Mu_Wizard_fire_strom> , <诱惑之光/@Go_Mu_Wizard_light_shock> , <瞬息移动/@Go_Mu_Wizard_ETC_teleport>\
+<大火球/@Go_Mu_Wizard_fire_Upbolt> , <雷电术/@Go_Mu_Wizard_light_recall> , <冰月震天/@Go_Mu_Wizard_ice_Upbolt>\
+<击风/@Go_Mu_Wizard_wind_kyoukpung> , <地狱火/@Go_Mu_Wizard_fire_line>\ \
+（道士魔法）\ \
+（1 - 10 等级 修炼魔法）\
+<治愈术/@Go_Mu_Taoist_holy_heal> , <精神力战法/@Go_Mu_Taoist_dark_ilgang>\ \
+（11 - 20 等级 修炼魔法）\
+<施毒术/@Go_Mu_Taoist_dark_amyen> , <灵魂火符/@Go_Mu_Taoist_dark_poksal> , <月魂断玉/@Go_Mu_Taoist_holy_moon>\
+<召唤骷髅/@Go_Mu_Taoist_soul_skel> , <隐身术/@Go_Mu_Taoist_dark_hiden>\ \
+<结束/@exit>
+
+[@Go_Mu_Warrior_Noatom_wesu]
+#CALL [\MU_Total_Sell\Warrior\wesu.txt] @Mu_Warrior_Noatom_wesu
+
+[@Go_Mu_Warrior_Noatom_wedo]
+#CALL [\MU_Total_Sell\Warrior\wedo.txt] @Mu_Warrior_Noatom_wedo
+ 
+[@Go_Mu_Warrior_Noatom_asword]
+#CALL [\MU_Total_Sell\Warrior\asword.txt] @Mu_Warrior_Noatom_asword
+
+[@Go_Mu_Wizard_fire_bolt]
+#CALL [\MU_Total_sell\Wizard\fireBolt.txt] @Mu_Wizard_fire_bolt
+
+[@Go_Mu_Wizard_light_bolt]
+#CALL [\MU_Total_sell\Wizard\lightBolt.txt] @Mu_Wizard_light_bolt
+
+[@Go_Mu_Wizard_wind_jangpung]
+#CALL [\MU_Total_sell\Wizard\windBolt.txt] @Mu_Wizard_wind_jangpung
+
+[@Go_Mu_Wizard_ice_bolt]
+#CALL [\MU_Total_sell\Wizard\iceBolt.txt] @Mu_Wizard_ice_bolt
+
+[@Go_Mu_Wizard_fire_strom]
+#CALL [\MU_Total_sell\Wizard\fireStorm.txt] @Mu_Wizard_fire_storm
+
+[@Go_Mu_Wizard_light_shock]
+#CALL [\MU_Total_sell\Wizard\lightShock.txt] @Mu_Wizard_light_shock
+
+[@Go_Mu_Wizard_fire_line]
+#CALL [\MU_Total_sell\Wizard\fireLine.txt] @Mu_Wizard_fire_line
+
+[@Go_Mu_Wizard_light_recall]
+#CALL [\MU_Total_sell\Wizard\lightRecall.txt] @Mu_Wizard_light_recall
+
+[@Go_Mu_Wizard_wind_kyoukpung]
+#CALL [\MU_Total_sell\Wizard\kyoukpung.txt] @Mu_Wizard_wind_kyoukpung
+
+[@Go_Mu_Wizard_fire_Upbolt]
+#CALL [\MU_Total_sell\Wizard\fireUpbolt.txt] @Mu_Wizard_fire_Upbolt
+
+[@Go_Mu_Wizard_ETC_teleport]
+#CALL [\MU_Total_sell\Wizard\teleport.txt] @Mu_Wizard_ETC_teleport
+
+[@Go_Mu_Wizard_ice_Upbolt]
+#CALL [\MU_Total_sell\Wizard\iceUpbolt.txt] @Mu_Wizard_ice_Upbolt
+
+[@Go_Mu_Taoist_holy_heal]
+#CALL [\MU_Total_sell\Taoist\heal.txt] @Mu_Taoist_holy_heal
+
+[@Go_Mu_Taoist_dark_ilgang]
+#CALL [\MU_Total_sell\Taoist\ilgang.txt] @Mu_Taoist_dark_ilgang
+
+[@Go_Mu_Taoist_dark_amyen]
+#CALL [\MU_Total_sell\Taoist\amyen.txt] @Mu_Taoist_dark_amyen
+
+[@Go_Mu_Taoist_dark_poksal]
+#CALL [\MU_Total_sell\Taoist\poksal.txt] @Mu_Taoist_dark_poksal
+
+[@Go_Mu_Taoist_soul_skel]
+#CALL [\MU_Total_sell\Taoist\soulSkel.txt] @Mu_Taoist_soul_skel
+
+[@Go_Mu_Taoist_dark_hiden]
+#CALL [\MU_Total_sell\Taoist\hiden.txt] @Mu_Taoist_dark_hiden
+
+[@Go_Mu_Taoist_dark_masshiden]
+#CALL [\MU_Total_sell\Taoist\masshiden.txt] @Mu_Taoist_dark_masshiden
+
+[@Go_Mu_Taoist_holy_moon]
+#CALL [\MU_Total_sell\Taoist\moon.txt] @Mu_Taoist_holy_moon

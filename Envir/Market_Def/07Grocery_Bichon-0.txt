@@ -1,0 +1,814 @@
+;;影子网络有限公司原版1.45
+%100
++3
++30
++25
+
+[@main]
+#ACT
+LOADVALUE D0 "ParamControl\主线任务.txt" %USERNAME 进度
+LOADVALUE D1 "ParamControl\主线任务.txt" %USERNAME 杂货
+
+#IF
+Equal D0 1
+Equal D1 0
+#ACT
+SAVEVALUE "ParamControl\主线任务.txt" %USERNAME 杂货 1
+BREAK
+#SAY
+{FCOLOR/1}我这里出售一些必要的杂货物品,欢迎随时光临.{FCOLOR/12}\\
+<回新人指导员/@回指导员>
+
+#IF
+checkpkpoint 2
+#SAY
+我不愿意和你这样的人进行交易。\ \
+<结束/@exit>
+#ELSEACT
+goto @main_root_0_0
+
+[@回指导员]
+#ACT
+MAPMOVE 0 410 385
+close
+
+[@main_root_0_0]
+#IF
+check [020] 1
+#ACT
+goto @main_root_0_3
+break
+
+#IF
+check [046] 1
+#ACT
+goto @main_root_0_3
+#ELSEACT
+goto @main_root_0_1
+
+[@main_root_0_1]
+#IF
+checkmagic 集体隐身术
+#ACT
+goto @main_root_0_3
+#ELSEACT
+goto @main_root_0_2
+
+[@main_root_0_2]
+#IF
+checkjob taoist
+checklevel 23
+#ACT
+goto @main_root_1_3
+#ELSEACT
+goto @main_root_0_3
+
+[@main_root_0_3]
+#IF
+check [271] 1
+#ACT
+goto @main_root_0_5
+break
+;              go wang secret quest
+#IF
+check [266] 1
+#ACT
+goto @main_root_0_4
+;
+#ELSEACT
+goto @main_root_0_5
+;              go wang secret quest
+
+
+[@main_root_0_4]
+#IF
+check [169] 1
+#ACT
+goto @main_root_0_6
+break
+;              go pariche quest
+#IF
+check [155] 1
+#ACT
+goto @main_root_0_8
+break
+;              go wang secret2 - pariche
+#IF
+check [152] 1
+#ACT
+goto @main_root_0_7
+break
+;              go wang secret1 - pariche
+#ELSEACT
+goto @main_root_0_6
+;              go pariche quest
+
+
+
+[@main_root_0_5]
+;		wang secret quest
+#IF
+check [169] 1
+#ACT
+goto @main_0_0
+break
+;
+#IF
+check [155] 1
+#ACT
+goto @main_0_2
+break
+;
+#IF
+check [152] 1
+#ACT
+goto @main_0_1
+break
+;
+#ELSEACT
+goto @main_0_0
+;---------------------
+
+
+
+[@main_root_0_6]
+;		pariche quest
+#IF
+check [271] 1
+#ACT
+goto @main_0_0
+break
+;
+#IF
+check [270] 1
+#ACT
+goto @main_0_6
+break
+;
+#IF
+check [269] 1
+#ACT
+goto @main_0_5
+break
+;
+#IF
+check [268] 1
+#ACT
+goto @main_0_5
+break
+;
+#IF
+check [267] 1
+#ACT
+goto @main_0_4
+break
+;
+#IF
+check [266] 1
+#ACT
+goto @main_0_3
+break
+;
+#ELSEACT
+goto @main_0_0
+
+
+
+[@main_root_0_7]
+;		wang secret1 - pariche
+#IF
+check [271] 1
+#ACT
+goto @main_0_0
+break
+;
+#IF
+check [270] 1
+#ACT
+goto @main_0_10
+break
+;
+#IF
+check [269] 1
+#ACT
+goto @main_0_9
+break
+;
+#IF
+check [268] 1
+#ACT
+goto @main_0_9
+break
+;
+#IF
+check [267] 1
+#ACT
+goto @main_0_8
+break
+;
+#IF
+check [266] 1
+#ACT
+goto @main_0_7
+break
+;
+#ELSEACT
+goto @main_0_0
+;---------------------
+
+
+
+[@main_root_0_8]
+;		wang secret2 - pariche
+#IF
+check [271] 1
+#ACT
+goto @main_0_0
+break
+;
+#IF
+check [270] 1
+#ACT
+goto @main_0_14
+break
+;
+#IF
+check [269] 1
+#ACT
+goto @main_0_13
+break
+;
+#IF
+check [268] 1
+#ACT
+goto @main_0_13
+break
+;
+#IF
+check [267] 1
+#ACT
+goto @main_0_12
+break
+;
+#IF
+check [266] 1
+#ACT
+goto @main_0_11
+break
+;
+#ELSEACT
+goto @main_0_0
+;---------------------
+
+[@main_root_1_3]
+#IF
+check [271] 1
+#ACT
+goto @main_root_1_5
+break
+;              go wang secret quest
+#IF
+check [266] 1
+#ACT
+goto @main_root_1_4
+;
+#ELSEACT
+goto @main_root_1_5
+;              go wang secret quest
+
+
+[@main_root_1_4]
+#IF
+check [169] 1
+#ACT
+goto @main_root_1_6
+break
+;              go pariche quest
+#IF
+check [155] 1
+#ACT
+goto @main_root_1_8
+break
+;              go wang secret2 - pariche
+#IF
+check [152] 1
+#ACT
+goto @main_root_1_7
+break
+;              go wang secret1 - pariche
+#ELSEACT
+goto @main_root_1_6
+;              go pariche quest
+
+
+
+[@main_root_1_5]
+;		wang secret quest
+#IF
+check [169] 1
+#ACT
+goto @main_1_0
+break
+;
+#IF
+check [155] 1
+#ACT
+goto @main_1_2
+break
+;
+#IF
+check [152] 1
+#ACT
+goto @main_1_1
+break
+;
+#ELSEACT
+goto @main_1_0
+;---------------------
+
+
+
+[@main_root_1_6]
+;		pariche quest
+#IF
+check [271] 1
+#ACT
+goto @main_1_0
+break
+;
+#IF
+check [270] 1
+#ACT
+goto @main_1_6
+break
+;
+#IF
+check [269] 1
+#ACT
+goto @main_1_5
+break
+;
+#IF
+check [268] 1
+#ACT
+goto @main_1_5
+break
+;
+#IF
+check [267] 1
+#ACT
+goto @main_1_4
+break
+
+;
+#IF
+check [266] 1
+#ACT
+goto @main_1_3
+break
+;
+#ELSEACT
+goto @main_1_0
+
+
+
+[@main_root_1_7]
+;		wang secret1 - pariche
+#IF
+check [271] 1
+#ACT
+goto @main_1_0
+break
+;
+#IF
+check [270] 1
+#ACT
+goto @main_1_10
+break
+;
+#IF
+check [269] 1
+#ACT
+goto @main_1_9
+break
+;
+#IF
+check [268] 1
+#ACT
+goto @main_1_9
+break
+;
+#IF
+check [267] 1
+#ACT
+goto @main_1_8
+break
+;
+#IF
+check [266] 1
+#ACT
+goto @main_1_7
+break
+;
+#ELSEACT
+goto @main_1_0
+;---------------------
+
+
+
+[@main_root_1_8]
+;		wang secret2 - pariche
+#IF
+check [271] 1
+#ACT
+goto @main_1_0
+break
+;
+#IF
+check [270] 1
+#ACT
+goto @main_1_14
+break
+;
+#IF
+check [269] 1
+#ACT
+goto @main_1_13
+break
+;
+#IF
+check [268] 1
+#ACT
+goto @main_1_13
+break
+;
+#IF
+check [267] 1
+#ACT
+goto @main_1_12
+break
+;
+#IF
+check [266] 1
+#ACT
+goto @main_1_11
+break
+;
+#ELSEACT
+goto @main_1_0
+
+[@main_0_0]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<结束/@exit>
+
+[@main_0_1]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<劝说/@NQuest01_1>{FCOLOR/10}加入比奇商会{FCOLOR/12}\
+<结束/@exit>
+
+[@main_0_2]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<谈论/@NQuest01_2>比奇商会\ 
+<结束/@exit>
+
+[@main_0_3]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<谈论/@NQuest02_1>{FCOLOR/10}苍蝇拍{FCOLOR/12}\
+<结束/@exit>
+
+[@main_0_4]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<谈论/@NQuest02_2>{FCOLOR/10}苍蝇拍的材料{FCOLOR/12}\
+<结束/@exit>
+
+[@main_0_5]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<拿出/@NQuest02_3>{FCOLOR/10}苍蝇拍的材料{FCOLOR/12}\
+<结束/@exit>
+
+[@main_0_6]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<谈论/@NQuest02_4>{FCOLOR/10}苍蝇拍{FCOLOR/12}\
+<结束/@exit>
+
+[@main_0_7]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<劝说/@NQuest01_1>{FCOLOR/10}加入比奇商会{FCOLOR/12}\ 
+<谈论/@NQuest02_1>{FCOLOR/10}苍蝇拍{FCOLOR/12}\
+<结束/@exit>
+
+[@main_0_8]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<劝说/@NQuest01_1>{FCOLOR/10}加入比奇商会{FCOLOR/12}\ 
+<谈论/@NQuest02_2>{FCOLOR/10}苍蝇拍的材料{FCOLOR/12}\
+<结束/@exit>
+
+[@main_0_9]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<劝说/@NQuest01_1>{FCOLOR/10}加入比奇商会{FCOLOR/12}\ 
+<拿出/@NQuest02_3>{FCOLOR/10}苍蝇拍的材料{FCOLOR/12}\
+<结束/@exit>
+
+[@main_0_10]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<劝说/@NQuest01_1>{FCOLOR/10}加入比奇商会{FCOLOR/12}\ 
+<谈论/@NQuest02_4>{FCOLOR/10}苍蝇拍{FCOLOR/12}\
+<结束/@exit>
+
+[@main_0_11]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<谈论/@NQuest01_2>比奇商会\ 
+<谈论/@NQuest02_1>{FCOLOR/10}苍蝇拍{FCOLOR/12}\
+<结束/@exit>
+
+[@main_0_12]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<谈论/@NQuest01_2>比奇商会\ 
+<谈论/@NQuest02_2>{FCOLOR/10}苍蝇拍的材料{FCOLOR/12}\
+<结束/@exit>
+
+[@main_0_13]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<谈论/@NQuest01_2>比奇商会\ 
+<拿出/@NQuest02_3>{FCOLOR/10}苍蝇拍的材料{FCOLOR/12}\
+<结束/@exit>
+
+[@main_0_14]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<谈论/@NQuest01_2>比奇商会\ 
+<谈论/@NQuest02_4>{FCOLOR/10}苍蝇拍{FCOLOR/12}\
+<结束/@exit>
+
+[@main_1_0]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<从杂货商那里/@NQuest03>{FCOLOR/10}听关于小贩{FCOLOR/12}的传闻\
+<结束/@exit>
+
+[@main_1_1]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<劝说/@NQuest01_1>{FCOLOR/10}加入比奇商会{FCOLOR/12}\ 
+<从杂货商那里/@NQuest03>{FCOLOR/10}听关于小贩{FCOLOR/12}的传闻\
+<结束/@exit>
+
+[@main_1_2]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<谈论/@NQuest01_2>比奇商会\ 
+<从杂货商那里/@NQuest03>{FCOLOR/10}听关于小贩{FCOLOR/12}的传闻\
+<结束/@exit>
+
+[@main_1_3]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<谈论/@NQuest02_1>{FCOLOR/10}苍蝇拍{FCOLOR/12}\
+<从杂货商那里/@NQuest03>{FCOLOR/10}听关于小贩{FCOLOR/12}的传闻\
+<结束/@exit>
+
+[@main_1_4]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<谈论/@NQuest02_2>{FCOLOR/10}苍蝇拍的材料{FCOLOR/12}\
+<从杂货商那里/@NQuest03>{FCOLOR/10}听关于小贩{FCOLOR/12}的传闻\
+<结束/@exit>
+
+[@main_1_5]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<拿出/@NQuest02_3>{FCOLOR/10}苍蝇拍的材料{FCOLOR/12}\
+<从杂货商那里/@NQuest03>{FCOLOR/10}听关于小贩{FCOLOR/12}的传闻\
+<结束/@exit>
+
+[@main_1_6]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<谈论/@NQuest02_4>{FCOLOR/10}苍蝇拍{FCOLOR/12}\
+<从杂货商那里/@NQuest03>{FCOLOR/10}听关于小贩{FCOLOR/12}的传闻\
+<结束/@exit>
+
+[@main_1_7]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<劝说/@NQuest01_1>{FCOLOR/10}加入比奇商会{FCOLOR/12}\ 
+<谈论/@NQuest02_1>{FCOLOR/10}苍蝇拍{FCOLOR/12}\
+<从杂货商那里/@NQuest03>{FCOLOR/10}听关于小贩{FCOLOR/12}的传闻\
+<结束/@exit>
+
+[@main_1_8]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<劝说/@NQuest01_1>{FCOLOR/10}加入比奇商会{FCOLOR/12}\ 
+<谈论/@NQuest02_2>{FCOLOR/10}苍蝇拍的材料{FCOLOR/12}\
+<从杂货商那里/@NQuest03>{FCOLOR/10}听关于小贩{FCOLOR/12}的传闻\
+<结束/@exit>
+
+[@main_1_9]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<劝说/@NQuest01_1>{FCOLOR/10}加入比奇商会{FCOLOR/12}\ 
+<拿出/@NQuest02_3>{FCOLOR/10}苍蝇拍的材料{FCOLOR/12}\
+<从杂货商那里/@NQuest03>{FCOLOR/10}听关于小贩{FCOLOR/12}的传闻\
+<结束/@exit>
+
+[@main_1_10]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<劝说/@NQuest01_1>{FCOLOR/10}加入比奇商会{FCOLOR/12}\ 
+<谈论/@NQuest02_4>{FCOLOR/10}苍蝇拍{FCOLOR/12}\
+<从杂货商那里/@NQuest03>{FCOLOR/10}听关于小贩{FCOLOR/12}的传闻\
+<结束/@exit>
+
+[@main_1_11]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<谈论/@NQuest01_2>比奇商会\ 
+<谈论/@NQuest02_1>{FCOLOR/10}苍蝇拍{FCOLOR/12}\
+<从杂货商那里/@NQuest03>{FCOLOR/10}听关于小贩{FCOLOR/12}的传闻\
+<结束/@exit>
+
+[@main_1_12]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<谈论/@NQuest01_2>比奇商会\ 
+<谈论/@NQuest02_2>{FCOLOR/10}苍蝇拍的材料{FCOLOR/12}\
+<从杂货商那里/@NQuest03>{FCOLOR/10}听关于小贩{FCOLOR/12}的传闻\
+<结束/@exit>
+
+[@main_1_13]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<谈论/@NQuest01_2>比奇商会\ 
+<拿出/@NQuest02_3>{FCOLOR/10}苍蝇拍的材料{FCOLOR/12}\
+<从杂货商那里/@NQuest03>{FCOLOR/10}听关于小贩{FCOLOR/12}的传闻\
+<结束/@exit>
+
+[@main_1_14]
+#SAY
+欢迎光临，有什么事吗？\ \
+<买卖/@buy>物品\
+<购买灵魂护身符（中）/@Buy_PortalScroll>\
+<询问/@questionprize>有关商品的事\
+<谈论/@NQuest01_2>比奇商会\ 
+<谈论/@NQuest02_4>{FCOLOR/10}苍蝇拍{FCOLOR/12}\
+<从杂货商那里/@NQuest03>{FCOLOR/10}听关于小贩{FCOLOR/12}的传闻\
+<结束/@exit>
+
+[@buy]
+#SAY
+你要买卖什么？\ \
+<前一步/@main>
+
+[@sell]
+#SAY
+这里有蜡烛, 随机传送卷和地牢逃脱卷等物品。\ \
+<前一步/@main>
+
+[@questionprize]
+#SAY
+我们店里有<地牢逃脱卷/@teleport>,\
+<随机传送卷/@teleport2>和<修复油/@repairoil>等，还有只能从怪物那里得到的<回城卷/@steleport>\ \
+<前一步/@main>
+
+[@teleport]
+#SAY
+地牢逃脱卷可以使你瞬间移动到你最后去过的村子里。它的威力比回城卷弱，但它足以保住你的性命。\ \ 
+<前一步/@questionprize>
+
+[@teleport2]
+#SAY
+随机传送卷可以使你在现在所在的地方自由移动。即，如果你在寺庙的1层，那么就在1层里，如果你在商店里，就可以在商店里自由移动。这虽然很危险，但你还有很多药，他可以为你打猎提供帮助。\ \
+<前一步/@questionprize>
+
+[@steleport]
+#SAY
+回城卷是古代流传下来的技术，但很可惜，现在这种技术已经失传了。但怪物那里偶尔还有，听说用了那个东西，可以使你马上回到村子里。\ \
+<前一步/@questionprize>
+
+[@repairoil]
+#SAY
+修复油可增加武器的持久性，但不适用于特殊修理，长期使用修复油会使武器的持久性降低。使用修复油修理廉价武器，会在打猎时有所帮助。\ \
+<前一步/@questionprize>
+
+[@Buy_PortalScroll]
+#Call [System\ItemSell.txt] @ItemSell_Control
+
+[Goods]
+;ItemName      Volume     Hour
+地牢逃脱卷       1000        1
+随机传送卷       1000        1
+回城卷		 500	     1	
+护身符（小）     100         1
+护身符（中）     100         1
+护身符（火）     100         1
+护身符（冰）     100         1
+护身符（雷）     100         1
+护身符（风）     100         1
+灵魂护身符（小） 100         1
+神圣护身符（小） 1000         1
+修复油           50          1
+
+[@NQuest03]
+#CALL [\MU_taoist\masshiden.txt] @mugong_masshiding_pre

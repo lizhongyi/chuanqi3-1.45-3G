@@ -1,0 +1,124 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@死亡触发_Main]
+{
+#ACT
+GOTO @PK赛
+GOTO @蓝色返回卷轴
+GOTO @冰冠死亡_Main
+
+[@PK赛]
+#IF
+checkcmd ISPKMODE
+#ACT
+loadvalue D5 "ParamControl\PK赛记录.ini" [用户] [已领奖]
+
+
+#IF
+checkcmd ISPKMODE
+!EQUAL D5 1
+#ACT
+loadvalue A0 "ParamControl\PK赛记录.ini" [用户] [申请人]
+loadvalue A1 "ParamControl\PK赛记录.ini" [用户] [应战人]
+savevalue "ParamControl\PK赛记录.ini" [状态] [状态] 5
+savevalue "ParamControl\PK赛记录.ini" [用户] [已领奖] 1
+actcmd setfame - 2
+#ELSEACT
+break
+
+#IF
+EQUAL A0 %USERNAME
+#ACT
+linemsg [grobal] "<$OUTPUT(A1)>在与<$USERNAME>PK中获胜."
+savevalue "ParamControl\PK赛记录.ini" [用户] [失败者] %A0
+savevalue "ParamControl\PK赛记录.ini" [用户] [胜利者] %A1
+actcmd RUNSCRIPTLABEL %A1 "@_PK胜利"   
+#ELSEACT
+linemsg [grobal] "<$OUTPUT(A0)>在与<$USERNAME>PK中获胜."
+savevalue "ParamControl\PK赛记录.ini" [用户] [失败者] %A1
+savevalue "ParamControl\PK赛记录.ini" [用户] [胜利者] %A0
+actcmd RUNSCRIPTLABEL %A0 "@_PK胜利"  
+
+[@_PK胜利]
+#ACT
+loadvalue D4 "ParamControl\PK赛记录.ini" [金额] [元宝]
+mov P1 2
+mov P2 %D4
+mov P3 9
+mov P4 10
+mul P1 P2
+mul P9 P3
+div P9 P4
+#IF
+Large P9 0
+#ACT
+mov D0 %P9
+give 元宝 %D0
+actcmd setfame + 2
+linemsg [Grobal] "<$USERNAME>获得PK奖励<$OUTPUT(D0)>元宝,10点声望"
+linemsg "E007" "请注意,PK场将在30秒后关闭"
+cleardelaygoto 10033
+delaygoto [grobal] 30 @PK胜利_2
+#ELSEACT
+linemsg "E007" "请注意,PK场将在30秒后关闭"
+cleardelaygoto 10033
+delaygoto [grobal] 30 @PK胜利_2
+
+
+[@PK胜利_2]
+#IF
+#ACT
+mapting E007 1 405 117
+actcmd delfile "envir\ParamControl\PK赛记录.ini"
+SetAreaAttr "E007,40,40,200" "SAFE"
+
+[@蓝色返回卷轴]
+#ACT
+MOV A2 %USERMAP
+MOV A1 %USERMAPNAME
+MOV A3 %USERX
+MOV A4 %USERY
+
+#IF
+CHECKCMD CHECKMAPFLAG MAPGROUP 1
+#SAY
+━━━━━━━━━死━亡━提━示━━━━━━━━━\
+您已经死亡了,系统自动记录了您死亡的地图和坐标\
+您可以回城后使用 {FCOLOR/1}蓝色返回卷轴{FCOLOR/12} 返回您死亡的地图\
+#ACT
+SaveValue "ParamControl\死亡记录.ini" [%USERNAME] [状态] 1
+SaveValue "ParamControl\死亡记录.ini" [%USERNAME] [地图] %A1
+SaveValue "ParamControl\死亡记录.ini" [%USERNAME] [M] %A2
+SaveValue "ParamControl\死亡记录.ini" [%USERNAME] [X] %A3
+SaveValue "ParamControl\死亡记录.ini" [%USERNAME] [Y] %A4
+SysMsg "系统自动记录您当前死亡的地图[ <$OUTPUT(A1)> <$OUTPUT(A3)>:<$OUTPUT(A4)> ]"
+Break
+
+[@冰冠死亡_Main]
+#ACT
+MOV 冰冠地图 %USERMAP
+LoadValue 冰冠死亡 "ParamControl\冰冠堡垒记录.ini" [%UserName] [冰冠堡垒死亡次数]
+
+#IF
+EQUAL 冰冠地图 "ICC1"
+OR EQUAL 冰冠地图 "ICC2"
+#ACT
+GOTO @冰冠死亡_X
+
+[@冰冠死亡_X]
+#IF
+SMALL 冰冠死亡 5
+#ACT
+INC 冰冠死亡 1
+SaveValue "ParamControl\冰冠堡垒记录.ini" [%UserName] [冰冠堡垒死亡次数] %冰冠死亡
+SYSMSG "【温馨提示】冰冠堡垒本场战斗您死亡<$OUTPUT(冰冠死亡)>次,可使用复活卷轴进行原地复活。如若回城视为战斗结束！"
+Break
+
+#IF
+ELARGE 冰冠死亡 5
+#ACT
+MAPMOVE 1 400 123
+SYSMSG "【温馨提示】冰冠堡垒本场战斗您死亡超过5次,被强行传送出去,战斗结束！"
+Break
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

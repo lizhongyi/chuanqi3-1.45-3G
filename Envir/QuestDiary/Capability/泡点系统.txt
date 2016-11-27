@@ -1,0 +1,91 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@TimeAddExp]
+{
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}泡{FCOLOR/4}━{FCOLOR/14}点{FCOLOR/4}━{FCOLOR/14}系{FCOLOR/4}━{FCOLOR/14}统{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[{FCOLOR/10} 免费泡经验 {FCOLOR/12}]系统自动开启, 请认真阅读以下详细说明\
+系统采取{FCOLOR/10}整点触发{FCOLOR/12},每{FCOLOR/10}10分钟循环一次{FCOLOR/12},触发{FCOLOR/10}只对在线{FCOLOR/12}玩家\
+如果您是{FCOLOR/10}整点过后上线{FCOLOR/12}, 那么此触发{FCOLOR/10}将在下一个整点生效{FCOLOR/12}\
+得到经验范围: [{FCOLOR/10} 道观,银杏,比奇 {FCOLOR/12}]其他地图无经验可得\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}泡{FCOLOR/4}━{FCOLOR/14}点{FCOLOR/4}━{FCOLOR/14}系{FCOLOR/4}━{FCOLOR/14}统{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[{FCOLOR/1} 38级以下无经验可得 {FCOLOR/12}]     {FCOLOR/10}38-50级{FCOLOR/12}每10分钟{FCOLOR/10}120万{FCOLOR/12}经验\
+{FCOLOR/10}50-55级{FCOLOR/12}每10分钟{FCOLOR/10} 200万{FCOLOR/12}经验  {FCOLOR/10}55-60级{FCOLOR/12}每10分钟{FCOLOR/10}300万{FCOLOR/12}经验\
+{FCOLOR/10}60-65级{FCOLOR/12}每10分钟{FCOLOR/10} 400万{FCOLOR/12}经验  拥有{FCOLOR/10}泡点神石{FCOLOR/12}可得{FCOLOR/10}双倍经验{FCOLOR/12}\
+{FCOLOR/10}65-75级{FCOLOR/12}每10分钟{FCOLOR/10} 600万{FCOLOR/12}经验  拥有{FCOLOR/10}泡点神石{FCOLOR/12}可得{FCOLOR/10}双倍经验{FCOLOR/12}\
+{FCOLOR/10}75-85级{FCOLOR/12}每10分钟{FCOLOR/10} 800万{FCOLOR/12}经验  拥有{FCOLOR/10}泡点神石{FCOLOR/12}可得{FCOLOR/10}双倍经验{FCOLOR/12}\
+{FCOLOR/10}85-99级{FCOLOR/12}每10分钟{FCOLOR/10}1000万{FCOLOR/12}经验  拥有{FCOLOR/10}泡点神石{FCOLOR/12}可得{FCOLOR/10}双倍经验{FCOLOR/12}\
+{FCOLOR/10}100级后{FCOLOR/12}每10分钟{FCOLOR/10}1400万{FCOLOR/12}经验  拥有{FCOLOR/10}泡点神石{FCOLOR/12}可得{FCOLOR/10}双倍经验{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}泡{FCOLOR/4}━{FCOLOR/14}点{FCOLOR/4}━{FCOLOR/14}系{FCOLOR/4}━{FCOLOR/14}统{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/1}休息的玩家.请把号挂在银杏比奇!这样可以让游戏更流畅\
+友情提示:请关闭回生,不要带好的装备泡经验!小心被爆!{FCOLOR/12}\
+_[ <元宝1个=6个泡点神石/@@NFREEpaos> ]  [ <金币50万=1个泡点神石/@@NFREEpaosjb> ]\
+_    请输入元宝数量            请输入神石数量\
+_                [ <返回上层菜单/@main> ]\
+
+[@@NFREEpaos]
+#ACT
+mov  D4  %INPUTSTR
+#IF 
+Small D4 1
+#ACT 
+sysmsg "温馨提示: 请输入 1 - 100 的数值"
+break 
+
+#IF 
+Large D4 100
+#ACT 
+sysmsg "温馨提示: 请输入 1 - 100 的数值"
+break
+
+#IF
+#ACT
+MOV P1 %D4
+MOV P2 6
+MUL P1 P2
+MOV D2 %P9
+
+#IF
+checkcmd CHECKUSERJF %D4
+#ACT
+Close
+actcmd SETUSERJF - %D4 兑换泡点神石
+give  泡点神石  %D2
+SYSMSG "您购买了 <$OUTPUT(D2)>个 泡点神石.花费 <$OUTPUT(D4)> 个元宝"
+#ELSEACT
+Close
+sysmsg "温馨提示: 您没有 <$OUTPUT(D4)> 个元宝"
+
+[@@NFREEpaosjb]
+#ACT
+mov  D4  %INPUTSTR
+#IF 
+Small D4 1
+#ACT 
+sysmsg "温馨提示: 请输入 1 - 500 的数值"
+break 
+
+#IF 
+Large D4 500
+#ACT 
+sysmsg "温馨提示: 请输入 1 - 500 的数值"
+break
+
+#IF
+#ACT
+MOV P1 %D4
+MOV P2 500000
+MUL P1 P2
+MOV D2 %P9
+
+#IF
+CHECKGOLD %D2
+#ACT
+Close
+TAKE 金币 %D2
+give  泡点神石  %D4
+SYSMSG "您购买了 <$OUTPUT(D4)>个 泡点神石.花费 <$OUTPUT(D2)> 金币"
+#ELSEACT
+Close
+sysmsg "温馨提示: 您没有 <$OUTPUT(D2)> 金币"
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

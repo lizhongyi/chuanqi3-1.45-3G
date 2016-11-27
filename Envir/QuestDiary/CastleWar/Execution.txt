@@ -1,0 +1,184 @@
+;;创天网络有限公司原版1.45
+[@Castle_Execution]
+{
+#SAY
+这里是比奇城城堡，我是行政官员。\
+<申请创建行会/@MakeGuild>\
+<询问行会创建方法/@buildguildexp> \ \
+<申请行会战争/@guildwar>\
+<询问行会战争/@guildwarexp>\ \
+<变更自己的行会旗帜/@UserChangeFlag>\
+
+
+[@UserChangeFlag]
+#IF
+IsGuildMaster
+#SAY
+变更行会旗帜所需的费用是10万金币。 \ \
+<支付10万金币变更行会旗帜。/@UserChangeFlag_next>
+
+#ELSESAY
+只有楼主才可以换行会的样子和颜色。\ \
+<结束/@exit>
+
+
+[@UserChangeFlag_next]
+#ACT
+SendCmd "0,478,367,1" 行会旗 @TestUserFlag
+
+[@MakeGuild]
+#IF
+HasGuild
+#SAY
+你已经加入了行会所以不可以成立行会。\ \
+<前一步/@main>
+
+#ACT
+break
+
+#IF
+!checkgold 1000000
+#SAY
+你的钱不够成立行会。 \ \
+<前一步/@main>
+
+#ACT
+break
+
+#IF
+checkitem 沃玛号角 1
+checkgold 1000000
+#ACT
+EnableCmd @@buildguild
+break
+#SAY
+<真的要成立行会吗？/@@BuildGuild> \ \
+
+
+#IF
+#SAY
+你没有沃玛号角所以不能成立行会。 \ \
+<结束/@exit>
+
+
+[@@buildguild]
+#IF
+checkitem 沃玛号角 1
+checkgold 1000000
+#ACT
+take 金币 1000000
+take 沃玛号角 1
+BuildGuild @MakeGuildOK
+#ELSESAY
+你没有沃玛号角所以不能成立行会。 \ \
+<结束/@exit>
+
+
+[@MakeGuildOK]
+#ACT
+LOADVALUE 行会数量 "ParamControl\行会列表.ini" 行会 数量
+Inc 行会数量 1
+SAVEVALUE "ParamControl\行会列表.ini" 行会 数量 %行会数量
+SAVEVALUE "ParamControl\行会列表.ini" 行会列表 %行会数量 %INPUTSTR
+#SAY
+<$USENAME> 您成立了 <$INPUTSTR> 的行会. \ \
+<结束/@exit>
+
+[@MakeGuildOK~]
+#SAY
+行会成立失败了。\ \
+<结束/@exit>
+
+#ACT
+give 沃玛号角 1
+give 金币 1000000
+
+[@buildguildexp]
+#SAY
+要想创建行会，首先要证明你是否具备那种资格。\
+资格证明需要生活在沃玛丛林里禹魔神殿深处的{FCOLOR/10}沃玛教主号角{FCOLOR/12}和{FCOLOR/10}100万金币{FCOLOR/12}的行会设立基金。\ \
+<前一步/@main>
+
+[@guildwar]
+#SAY
+行会战争的合法认证需要500万金币.\ \
+<进行行会战争/@comfirmGuildWar> \ 
+<前一步/@main>
+
+
+[@ComfirmGuildWar]
+#IF
+IsOnCastleWar SaBuk       
+or IsOnReadyCastleWar Sabuk
+#ACT
+BREAK
+#SAY
+对不起,在攻城期间不可以申请行会战.
+
+#IF
+checkgold 5000000
+#ACT
+EnableCmd @@guildwar
+#SAY
+<输入参战的行会名字。/@@guildwar>\
+
+#ELSESAY
+请确认一下自己所带的金币。\ \
+<结束/@exit>
+
+[@@GuildWar]
+#ACT
+mov A1 %INPUTNUM
+mov A2 %Guildname
+
+#IF
+!equal A1 %A2
+#ACT
+take 金币 5000000
+GuildWar @GuildMakeWarOK
+#ELSESAY
+系统出错,无法和自己的行会开行会战.\
+#ELSEACT
+break
+
+[@GuildMakeWarOK]
+#SAY
+你的 <$GUILD> 行会和 敌对 <$INPUTSTR>行会申请了行会大战。\ \
+<结束/@exit>
+
+
+[@GuildMakeWarOK~]
+#SAY
+敌对行会输入错误。\
+
+#ACT
+give 金币 5000000
+
+[@guildwarexp]
+#SAY
+<行会战争/@guildwar2>是指进行合法的申请后展开的战争。\
+现在存在的行会很多，因此行会之间的战争也不断，国家承认 <合法的/@warrule> 战争。\
+每<申请/@propose> 一次，可以进行1个小时的战争，申请时需要 500万金币的申请资金。\ \
+<前一步/@main>
+
+[@guildwar2]
+#SAY
+申请了行会战争以后，与自己同一行会的成员的ID变为蓝色，对方行会成员的ID变为朱红色。在行会战争进行中登陆时，交谈窗口会出现“正在和某行会进行战争”的字样。即使杀死对方行会的人也不会变红。\ \
+<前一步/@guildwarexp>
+
+[@warrule]
+#SAY
+行会战争不允许在村子里展开，只能在可以对练的场地上(商店或其它的建筑物里)或开离村子一定距离以上的地方进行。 战争时间结束后，所有人复归原样。即使在战争中，原本被划上红道的ID仍然显示为红色。\ \
+<前一步/@guildwarexp>
+
+[@propose]
+#SAY
+只有行会的创建者才能申请行会战争。\ \
+<前一步/@guildwarexp>
+
+[@donate]
+#SAY
+还没有收到捐款。\ \
+<前一步/@guildwarexp>
+
+}

@@ -1,0 +1,317 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@坐骑管理_Main]
+{
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}坐{FCOLOR/4}━{FCOLOR/14}骑{FCOLOR/4}━{FCOLOR/14}商{FCOLOR/4}━{FCOLOR/14}城{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[{FCOLOR/1}普通坐骑{FCOLOR/12}]   [<战古神兽/@战古神兽1>]   [<制作马铠/@制作马铠1>]   [<出售坐骑/@出售坐骑1>]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}坐{FCOLOR/4}━{FCOLOR/14}骑{FCOLOR/4}━{FCOLOR/14}商{FCOLOR/4}━{FCOLOR/14}城{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <褐色马/@HorseA(1000000,15,褐色马)> ] 价格： 100W 金币 需条件：0 转 15 级以上\
+{FCOLOR/4}增加属性：负重 加 50{FCOLOR/12}\\
+{FCOLOR/12}[ <白  马/@HorseA(5000000,30,白马)> ] 价格： 500W 金币 需条件：0 转 30 级以上\
+{FCOLOR/4}增加属性：负重 加 100{FCOLOR/12}\\
+{FCOLOR/12}[ <赤兔马/@HorseA(10000000,45,赤兔马)> ] 价格：1000W 金币 需条件：0 转 45 级以上\
+{FCOLOR/4}增加属性：负重 加 150  破坏、灵魂、自然 各加 1-5{FCOLOR/12}\\
+{FCOLOR/12}[ <黑风马/@HorseA(30000000,55,黑马)> ] 价格：3000W 金币 需条件：0 转 55 级以上\
+{FCOLOR/4}增加属性：负重 加 200  破坏、灵魂、自然 各加 5-10{FCOLOR/12}\\
+{FCOLOR/12}[ <绝影马/@HorseA(60000000,60,绝影马)> ] 价格：6000W 金币 需条件：0 转 60 级以上\
+{FCOLOR/4}增加属性：负重 加 250  破坏、灵魂、自然 各加10-15{FCOLOR/12}{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}坐{FCOLOR/4}━{FCOLOR/14}骑{FCOLOR/4}━{FCOLOR/14}商{FCOLOR/4}━{FCOLOR/14}城{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/13}温馨提示：{FCOLOR/10}如果您已经有坐骑，请先出售原坐骑，再购买{FCOLOR/12}\
+
+[@战古神兽1]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}坐{FCOLOR/4}━{FCOLOR/14}骑{FCOLOR/4}━{FCOLOR/14}商{FCOLOR/4}━{FCOLOR/14}城{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[<普通坐骑/@坐骑管理_Main>]   [{FCOLOR/1}战古神兽{FCOLOR/12}]   [<制作马铠/@制作马铠1>]   [<出售坐骑/@出售坐骑1>]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}坐{FCOLOR/4}━{FCOLOR/14}骑{FCOLOR/4}━{FCOLOR/14}商{FCOLOR/4}━{FCOLOR/14}城{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <蓝麒虎/@HorseB(300,1,蓝麒虎)> ]   价格：300 元宝 需条件：1 转以上\
+{FCOLOR/4}增加属性：负重 加 300  破坏、灵魂、自然 各加15-20{FCOLOR/12}\
+{FCOLOR/12}[ <白光虎/@HorseB(500,1,白光虎)> ]   价格：500 元宝 需条件：2 转以上\
+{FCOLOR/4}增加属性：负重 加 400  破坏、灵魂、自然 各加20-25{FCOLOR/12}\
+{FCOLOR/12}[ <南极豹/@HorseB(700,1,南极豹)> ]   价格：700 元宝 需条件：3 转以上\
+{FCOLOR/4}增加属性：负重 加 500  破坏、灵魂、自然 各加25-30{FCOLOR/12}\
+{FCOLOR/12}[ <北极狼/@HorseB(900,3,北极狼)> ]   价格：900 元宝 需条件：4 转以上\
+{FCOLOR/4}增加属性：负重 加 600  破坏、灵魂、自然 各加35-40{FCOLOR/12}\
+{FCOLOR/12}[ <金睛狮/@HorseB(1100,5,金睛狮)> ]   价格：1100元宝 需条件：5 转以上\
+{FCOLOR/4}增加属性：负重 加 700  破坏、灵魂、自然 各加40-45{FCOLOR/12}\
+{FCOLOR/12}[ <麒麟兽/@HorseB(1300,6,麒麟兽)> ]   价格：1300元宝 需条件：6 转以上\
+{FCOLOR/4}增加属性：负重 加 800  破坏、灵魂、自然 各加45-50{FCOLOR/12}\
+{FCOLOR/12}[ <霜  牙/@HorseB(1500,7,霜牙)> ]   价格：1500元宝 需条件：7 转以上\
+{FCOLOR/4}增加属性：负重 加 900  破坏、灵魂、自然 各加50-55{FCOLOR/12}{FCOLOR/12}\
+{FCOLOR/12}[ <黑灵马/@HorseB(1700,1,黑灵马)> ]   价格：1700元宝 需条件：8 转以上\
+{FCOLOR/4}增加属性：负重 加 999  破坏、灵魂、自然 各加55-60{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}坐{FCOLOR/4}━{FCOLOR/14}骑{FCOLOR/4}━{FCOLOR/14}商{FCOLOR/4}━{FCOLOR/14}城{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/13}温馨提示：{FCOLOR/10}如果您已经有坐骑，请先出售原坐骑，再购买{FCOLOR/12}\
+
+[@制作马铠1]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}坐{FCOLOR/4}━{FCOLOR/14}骑{FCOLOR/4}━{FCOLOR/14}商{FCOLOR/4}━{FCOLOR/14}城{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[<普通坐骑/@坐骑管理_Main>]   [<战古神兽/@战古神兽1>]   [{FCOLOR/1}制作马铠{FCOLOR/12}]   [<出售坐骑/@出售坐骑1>]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}坐{FCOLOR/4}━{FCOLOR/14}骑{FCOLOR/4}━{FCOLOR/14}商{FCOLOR/4}━{FCOLOR/14}城{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <制作铁马铠/@HorseItem(5,铁马铠)> ]需要永恒余烬,毁灭精华,源质矿石各{FCOLOR/1}5{FCOLOR/12}个\
+{FCOLOR/4}舒适度+10 负重+300 破坏、自然、灵魂 +20({FCOLOR/1}需1转佩戴{FCOLOR/4}){FCOLOR/12}\\
+{FCOLOR/12}[ <制作银马铠/@HorseItem(7,银马铠)> ]需要永恒余烬,毁灭精华,源质矿石各{FCOLOR/1}7{FCOLOR/12}个\
+{FCOLOR/4}舒适度+20 负重+500 破坏、自然、灵魂 +30({FCOLOR/1}需3转佩戴{FCOLOR/4}){FCOLOR/12}\\
+{FCOLOR/12}[ <制作金马铠/@HorseItem(9,金马铠)> ]需要永恒余烬,毁灭精华,源质矿石各{FCOLOR/1}9{FCOLOR/12}个\
+{FCOLOR/4}舒适度+30 负重+700 破坏、自然、灵魂 +40({FCOLOR/1}需5转佩戴{FCOLOR/4}){FCOLOR/12}\\
+{FCOLOR/12}[ <制作黑灵铠/@HorseItem(9,黑灵铠)> ]需要永恒余烬,毁灭精华,源质矿石各{FCOLOR/1}12{FCOLOR/12}个\
+{FCOLOR/4}舒适度+40 负重+900 破坏、自然、灵魂 +60({FCOLOR/1}需8转佩戴{FCOLOR/4}){FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}坐{FCOLOR/4}━{FCOLOR/14}骑{FCOLOR/4}━{FCOLOR/14}商{FCOLOR/4}━{FCOLOR/14}城{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/13}温馨提示：{FCOLOR/10}制作马铠的矿石，可在矿洞挖出或NPC处购买！{FCOLOR/12}\
+
+[@HorseItem()]
+#ACT
+MOV D1 %ARG(1)
+MOV A1 %ARG(2)
+
+#IF
+checkitem 永恒余烬 %D1
+checkitem 毁灭精华 %D1
+checkitem 源质矿石 %D1
+#ACT
+Take 永恒余烬 %D1
+Take 毁灭精华 %D1
+Take 源质矿石 %D1
+Give %A1 1
+SYSMSG "━━━恭喜您打造一件[ <$OUTPUT(A1)> ]━━━"
+Close
+Break
+#ELSEACT
+SYSMSG "━━━您的材料不够无法打造━━━"
+Break
+
+[@出售坐骑1]
+#IF
+CheckHorse
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}坐{FCOLOR/4}━{FCOLOR/14}骑{FCOLOR/4}━{FCOLOR/14}商{FCOLOR/4}━{FCOLOR/14}城{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[<普通坐骑/@坐骑管理_Main>]   [<战古神兽/@战古神兽1>]   [<制作马铠/@制作马铠1>]   [{FCOLOR/1}出售坐骑{FCOLOR/12}]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}坐{FCOLOR/4}━{FCOLOR/14}骑{FCOLOR/4}━{FCOLOR/14}商{FCOLOR/4}━{FCOLOR/14}城{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+<$@读取马匹>
+#ELSEACT
+SysMsg "温馨提示：您没有坐骑,无法出售！"
+
+[@读取马匹]
+#IF
+CheckHorse 1
+#ACT
+MOV 坐骑名 褐色马
+MOV 出售价格 {FCOLOR/1}50万{FCOLOR/10}金币{FCOLOR/12}
+#SAY
+_您当前的坐骑是[ {FCOLOR/10}<$OUTPUT(坐骑名)>{FCOLOR/12} ]，出售价格[ <$OUTPUT(出售价格)> ]。\\
+_你是否确定要出售？\\
+_         <[ 确 定 ]/@sellHorsestart(1,褐色马,500000,1)>            <[ 取消 ]/@exit>
+
+#IF
+CheckHorse 2
+#ACT
+MOV 坐骑名 白马
+MOV 出售价格 {FCOLOR/1}250万{FCOLOR/10}金币{FCOLOR/12}
+#SAY
+_您当前的坐骑是[ {FCOLOR/10}<$OUTPUT(坐骑名)>{FCOLOR/12} ]，出售价格[ <$OUTPUT(出售价格)> ]。\\
+_你是否确定要出售？\\
+_         <[ 确 定 ]/@sellHorsestart(2,白马,2500000,1)>            <[ 取消 ]/@exit>
+
+#IF
+CheckHorse 3
+#ACT
+MOV 坐骑名 赤兔马
+MOV 出售价格 {FCOLOR/1}500万{FCOLOR/10}金币{FCOLOR/12}
+#SAY
+_您当前的坐骑是[ {FCOLOR/10}<$OUTPUT(坐骑名)>{FCOLOR/12} ]，出售价格[ <$OUTPUT(出售价格)> ]。\\
+_你是否确定要出售？\\
+_         <[ 确 定 ]/@sellHorsestart(3,赤兔马,5000000,1)>            <[ 取消 ]/@exit>
+
+#IF
+CheckHorse 4
+#ACT
+MOV 坐骑名 黑风马
+MOV 出售价格 {FCOLOR/1}1500万{FCOLOR/10}金币{FCOLOR/12}
+#SAY
+_您当前的坐骑是[ {FCOLOR/10}<$OUTPUT(坐骑名)>{FCOLOR/12} ]，出售价格[ <$OUTPUT(出售价格)> ]。\\
+_你是否确定要出售？\\
+_         <[ 确 定 ]/@sellHorsestart(4,黑马,15000000,1)>            <[ 取消 ]/@exit>
+
+#IF
+CheckHorse 5
+#ACT
+MOV 坐骑名 绝影马
+MOV 出售价格 {FCOLOR/1}3000万{FCOLOR/10}金币{FCOLOR/12}
+#SAY
+_您当前的坐骑是[ {FCOLOR/10}<$OUTPUT(坐骑名)>{FCOLOR/12} ]，出售价格[ <$OUTPUT(出售价格)> ]。\\
+_你是否确定要出售？\\
+_         <[ 确 定 ]/@sellHorsestart(5,绝影马,30000000,1)>            <[ 取消 ]/@exit>
+
+#IF
+CheckHorse 11
+#ACT
+MOV 坐骑名 蓝麒虎
+MOV 出售价格 {FCOLOR/1}150{FCOLOR/10}元宝{FCOLOR/12}
+#SAY
+_您当前的坐骑是[ {FCOLOR/10}<$OUTPUT(坐骑名)>{FCOLOR/12} ]，出售价格[ <$OUTPUT(出售价格)> ]。\\
+_你是否确定要出售？\\
+_         <[ 确 定 ]/@sellHorsestart(11,蓝麒虎,150,2)>            <[ 取消 ]/@exit>
+
+#IF
+CheckHorse 12
+#ACT
+MOV 坐骑名 白光虎
+MOV 出售价格 {FCOLOR/1}150{FCOLOR/10}元宝{FCOLOR/12}
+#SAY
+_您当前的坐骑是[ {FCOLOR/10}<$OUTPUT(坐骑名)>{FCOLOR/12} ]，出售价格[ <$OUTPUT(出售价格)> ]。\\
+_你是否确定要出售？\\
+_         <[ 确 定 ]/@sellHorsestart(12,白光虎,250,2)>            <[ 取消 ]/@exit>
+
+#IF
+CheckHorse 6
+#ACT
+MOV 坐骑名 南极豹
+MOV 出售价格 {FCOLOR/1}350{FCOLOR/10}元宝{FCOLOR/12}
+#SAY
+_您当前的坐骑是[ {FCOLOR/10}<$OUTPUT(坐骑名)>{FCOLOR/12} ]，出售价格[ <$OUTPUT(出售价格)> ]。\\
+_你是否确定要出售？\\
+_         <[ 确 定 ]/@sellHorsestart(6,南极豹,350,2)>            <[ 取消 ]/@exit>
+
+#IF
+CheckHorse 7
+#ACT
+MOV 坐骑名 北极狼
+MOV 出售价格 {FCOLOR/1}450{FCOLOR/10}元宝{FCOLOR/12}
+#SAY
+_您当前的坐骑是[ {FCOLOR/10}<$OUTPUT(坐骑名)>{FCOLOR/12} ]，出售价格[ <$OUTPUT(出售价格)> ]。\\
+_你是否确定要出售？\\
+_         <[ 确 定 ]/@sellHorsestart(7,北极狼,450,2)>            <[ 取消 ]/@exit>
+
+#IF
+CheckHorse 8
+#ACT
+MOV 坐骑名 金睛狮
+MOV 出售价格 {FCOLOR/1}550{FCOLOR/10}元宝{FCOLOR/12}
+#SAY
+_您当前的坐骑是[ {FCOLOR/10}<$OUTPUT(坐骑名)>{FCOLOR/12} ]，出售价格[ <$OUTPUT(出售价格)> ]。\\
+_你是否确定要出售？\\
+_         <[ 确 定 ]/@sellHorsestart(8,金睛狮,550,2)>            <[ 取消 ]/@exit>
+
+#IF
+CheckHorse 9
+#ACT
+MOV 坐骑名 麒麟兽
+MOV 出售价格 {FCOLOR/1}650{FCOLOR/10}元宝{FCOLOR/12}
+#SAY
+_您当前的坐骑是[ {FCOLOR/10}<$OUTPUT(坐骑名)>{FCOLOR/12} ]，出售价格[ <$OUTPUT(出售价格)> ]。\\
+_你是否确定要出售？\\
+_         <[ 确 定 ]/@sellHorsestart(9,麒麟兽,650,2)>            <[ 取消 ]/@exit>
+
+#IF
+CheckHorse 10
+#ACT
+MOV 坐骑名 霜牙
+MOV 出售价格 {FCOLOR/1}750{FCOLOR/10}元宝{FCOLOR/12}
+#SAY
+_您当前的坐骑是[ {FCOLOR/10}<$OUTPUT(坐骑名)>{FCOLOR/12} ]，出售价格[ <$OUTPUT(出售价格)> ]。\\
+_你是否确定要出售？\\
+_         <[ 确 定 ]/@sellHorsestart(10,霜牙,750,2)>            <[ 取消 ]/@exit>
+
+#IF
+CheckHorse 13
+#ACT
+MOV 坐骑名 黑灵马
+MOV 出售价格 {FCOLOR/1}850{FCOLOR/10}元宝{FCOLOR/12}
+#SAY
+_您当前的坐骑是[ {FCOLOR/10}<$OUTPUT(坐骑名)>{FCOLOR/12} ]，出售价格[ <$OUTPUT(出售价格)> ]。\\
+_你是否确定要出售？\\
+_         <[ 确 定 ]/@sellHorsestart(13,黑灵马,850,2)>            <[ 取消 ]/@exit>
+
+[@sellHorsestart()]
+#IF
+CheckHorse
+#ELSEACT
+SysMsg "温馨提示：您没有坐骑,无法出售！"
+break
+
+#ACT
+MOV 出售坐骑序号 %ARG(1)
+MOV 出售坐骑名称 %ARG(2)
+MOV 出售坐骑价格 %ARG(3)
+MOV 出售价格类型 %ARG(4)
+
+#IF
+CheckHorse %出售坐骑序号
+#ELSEACT
+SysMsg "温馨提示：请不要使用外挂程序！"
+break
+
+#IF
+CheckRiding
+#ACT
+SENDUSERSAY "@包马"
+
+#IF
+Equal 出售价格类型 1
+#ACT
+GIVE 金币 %出售坐骑价格
+KillHorse
+SysMsg "温馨提示：出售坐骑[ <$OUTPUT(出售坐骑名称)>] 得到[ <$OUTPUT(出售坐骑价格)> ]金币！"
+GOTO @坐骑管理_Main
+
+#IF
+Equal 出售价格类型 2
+#ACT
+SETUSERJF + %出售坐骑价格 卖出坐骑名称
+KillHorse
+SysMsg "温馨提示：出售坐骑[ <$OUTPUT(出售坐骑名称)>] 得到[ <$OUTPUT(出售坐骑价格)> ]元宝！"
+GOTO @坐骑管理_Main
+
+[@HorseA()]
+#ACT
+MOV D1 %ARG(1)
+MOV D2 %ARG(2)
+MOV A1 %ARG(3)
+
+#IF
+checkhorse
+#ACT
+SYSMSG "温馨提示：因为您现在已经拥有[ 坐骑 ]请先出售"
+Break
+
+#IF
+checkgold %D1
+checklevel %D2
+#ACT
+Take 金币 %D1
+horsecall %A1
+actcmd SENDUSERSAY "@骑马"
+SYSMSG "温馨提示：您花费了[ <$OUTPUT(D1)> ]金币购买了[ <$OUTPUT(A1)> ]"
+Close
+Break
+#ELSEACT
+SYSMSG "温馨提示：您的金币不足[ <$OUTPUT(D1)> ]或等级不够[ <$OUTPUT(D2)> ]"
+Break
+
+[@HorseB()]
+#ACT
+MOV D1 %ARG(1)
+MOV D2 %ARG(2)
+MOV A1 %ARG(3)
+
+#IF
+checkhorse
+#ACT
+SYSMSG "温馨提示：因为您现在已经拥有[ 坐骑 ]请先出售"
+Break
+
+#IF
+checkcmd CHECKUSERJF %D1
+ELARGE USERREBORNCOUNT %D2
+#ACT
+actcmd SETUSERJF - %D1
+horsecall %A1
+actcmd SENDUSERSAY "@骑马"
+SYSMSG "温馨提示：您花费了[ <$OUTPUT(D1)> ]元宝购买了[ <$OUTPUT(A1)> ]"
+Close
+Break
+#ELSEACT
+SYSMSG "温馨提示：您的元宝不足[ <$OUTPUT(D1)> ]或等级不够[ <$OUTPUT(D3)> ]"
+Break
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

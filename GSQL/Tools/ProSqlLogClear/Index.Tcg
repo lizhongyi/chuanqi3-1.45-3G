@@ -1,0 +1,12 @@
+[Config]
+Count     =1
+
+ID1       =70
+Name1     ="SQL Server 日志清理工具(V2.0)"
+FileIco1  =$TPProSqlLogClear.exe
+IcoIndex1 =0
+FileEXE1  =$TPProSqlLogClear.exe
+FilePara1 =""
+FilePath1 =$TP
+Hint11    ="网上找的数据库日志清理工具"
+Hint21    =""

@@ -1,0 +1,60 @@
+;;创天网络有限公司原版1.45
+[@Mu_Wizard_wind_pungjin]
+{
+#IF
+checkitem 风震天 1
+#ACT
+goto @Mu_Wizard_wind_pungjin_next_1
+#ELSESAY
+施主已获得风震天秘籍。\ \
+<结束/@exit>
+
+[@Mu_Wizard_wind_pungjin_next_1]
+#IF
+#SAY
+想让我教你风震天，需要支付2300金币，你愿意我教你吗?\ \
+<教我秘籍吧/@Mu_Wizard_wind_pungjin_next_2>\
+<结束/@Mu_Wizard_wind_pungjin_next_5>
+
+[@Mu_Wizard_wind_pungjin_next_2]
+#IF
+checkitem 风震天 1
+#ACT
+goto @Mu_Wizard_wind_pungjin_next_3
+#ELSESAY
+先带来魔法书，在未能确认施主有足够能力获得风震天秘籍之前，我是不能教的。\
+<结束/@exit>
+
+[@Mu_Wizard_wind_pungjin_next_3]
+#IF
+checkgold 2300
+checkitem 风震天 1
+#ELSEACT
+BREAK
+#ELSESAY
+修炼武功需要支付费用，这部分费用将用于法术会运营基金。\ \
+<结束/@exit>
+
+#IF
+random 3
+#ACT
+take 风震天 1
+take 金币 2300
+#SAY
+真太遗憾了，施主带来的魔法书已经陈旧不堪，实在无法看懂，请再去找其他魔法书吧。\
+<结束/@exit>
+#ELSESAY
+魔法书秘籍已经写好了，上面有修炼风震天时需要留意的地方和重要内容，可以作参考。道士的魔法大都是帮助他人的善意魔法，好好修炼武功，一定保护好无辜百姓。\
+<结束/@exit>
+#ELSEACT
+take 风震天 1
+take 金币 2300
+give 风震天（秘籍） 1
+break
+
+[@Mu_Wizard_wind_pungjin_next_5]
+#IF
+#SAY
+这么犹豫不决还怎么修炼武功? 下次来的时候一定下定决心才行。\ \
+<结束/@exit>
+}

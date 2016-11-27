@@ -1,0 +1,200 @@
+;;创天网络有限公司原版1.45
+[@mugong_lightline]
+{
+#IF
+check [031] 1
+#SAY
+你还没有收到疾光电影秘籍吗? 那么你为什么还要索要？\ \ 
+<结束/@exit>
+#ACT
+break
+;
+#IF
+check [055] 1
+#SAY
+一定要用树脂给衣服穿上薄膜后才可以得到电雷草，不要忘了这点。\ \ 
+<结束/@exit>
+#ACT
+break
+;
+#IF
+checkmagic 疾光电影
+#SAY
+魔法师在修炼新武功的时候是不可以偷懒的。如果偷懒，瞬间之内将受到不可治愈的伤害。\ \
+<结束/@exit>
+#ELSEACT
+goto @mugong_lightline_next
+
+[@mugong_lightline_next]
+#IF
+checklevel 21
+#ACT
+goto @mugong_lightline_next1
+#ELSESAY
+使用闪电石力量的武功除了你已经掌握的雷电术之外，还有 {FCOLOR/10}疾光电影{FCOLOR/12} 。是一种 {FCOLOR/10}以进攻者为准，闪电石之力以一条直线的形式发射出去的武功{FCOLOR/12} 。尤其是对 {FCOLOR/10}狮子类{FCOLOR/12} 很有效果，好好掌握和利用。\ \
+<结束/@exit>
+
+[@mugong_lightline_next1]
+#IF
+#ACT
+goto @mugong_lightline_next2
+
+[@mugong_lightline_next2]
+#IF
+#ACT
+goto @mugong_lightline_next3
+
+[@mugong_lightline_next3]
+#IF
+#SAY
+想学习称为疾光电影的武功？\ 
+要修炼疾光电影的武功需要高水平的 {FCOLOR/10}闪电石{FCOLOR/12} 。\  
+但是我看你好像还没有这么大的力量。\ \ 
+<那么如何才可以拥有你称为“闪电石”的能力？/@mugong_lightline_next4>
+
+[@mugong_lightline_next4]
+#IF
+#SAY
+把沃玛神殿的 {FCOLOR/10}闪电石{FCOLOR/12} 带来就可以了。但是听说，闪电石不能那么简单地拿到。。叫什么。。抓到洞蛆，就可以得到 {FCOLOR/10}树脂{FCOLOR/12} ，然后到 {FCOLOR/10}银杏村布店晓芙{FCOLOR/12} ，请他将树脂涂到你的衣服上。这样才可以战胜电雷草的闪电石，从而得到闪电石。\ 
+是说获得树脂的地方吗？曾经听说 {FCOLOR/10}天然洞穴1层 洞蛆{FCOLOR/12} 中有树脂。还有传说讲 {FCOLOR/10}沃玛神殿入口 山洞蝙蝠{FCOLOR/12} 拥有闪电石。\ \
+<学习武功，为什么这么困难？/@mugong_lightline_next5>
+
+[@mugong_lightline_next5]
+#IF
+#SAY
+如果世上的事情都很简单，还有掌握武功的必要吗？要记住容易获得的东西，也容易失去。\ \
+<知道了。那就试一次吧。/@mugong_lightline_next6_1> \
+<我还是喜欢简单的东西。/@mugong_lightline_next6_2>
+
+[@mugong_lightline_next6_1]
+#IF
+#SAY
+想得不错，获得闪电石虽然辛苦，完成了此事成就感也就比较大。那么就快去快回吧！\ \
+<结束/@exit>
+#ACT
+SET [055] 1
+
+[@mugong_lightline_next6_2]
+#IF
+#SAY
+如果你意如此，我也不再劝阻。如果你的想法变了，请再来！\ \ 
+<结束/@exit>
+}
+
+
+[@mugong_lightline_suzi]
+{
+#IF
+#SAY
+现在我就给你穿的衣服上涂 {FCOLOR/10}树脂{FCOLOR/12} ，但能否成功我也不知道。。。如果成功了，您衣服的耐久好象可以修理了。\ 
+还有如果衣服上涂了树脂，你衣服的 {FCOLOR/10}基本功能就消失并成为了一般的耐久{FCOLOR/12} 。请注意这点。。。但是由于具有了树脂的功能，也就拥有了 {FCOLOR/10}特殊的功能{FCOLOR/12} 。\ \ 
+我现在就试着涂一下，请等一下！\ \ 
+<下一步/@mugong_lightline_suzi0>
+
+[@mugong_lightline_suzi0]
+#IF
+gender man
+#ACT
+goto @mugong_lightline_suzi_man1
+#ELSEACT
+goto @mugong_lightline_suzi_wman1
+
+[@mugong_lightline_suzi_man1]
+#IF
+checkitem 树脂 1
+checkitemw 魔法长袍（男） 1
+#ACT
+take 树脂 1
+takew 魔法长袍（男） 1
+SET [057] 1
+give 树脂魔法长袍（男） 1
+#SAY
+恭喜你 {FCOLOR/10}成功了{FCOLOR/12}。虽然不知道这是用在那里的东西。。。请好好使用。。。\ \ 
+<结束/@exit>
+#ELSESAY
+现在穿的衣服，只有 {FCOLOR/10}魔法长袍{FCOLOR/12} 才可以涂上树脂。。我看 <$USERNAME> 先生没有穿魔法长袍或者没有树脂了。。。\
+树脂可以在{FCOLOR/10}天然洞穴1层 洞蛆{FCOLOR/12}找到。\ \ 
+<结束/@exit>
+
+
+[@mugong_lightline_suzi_wman1]
+#IF
+checkitem 树脂 1
+checkitemw 魔法长袍（女） 1
+#ACT
+take 树脂 1
+takew 魔法长袍（女） 1
+SET [057] 1
+give 树脂魔法长袍（女） 1
+#SAY
+恭喜你 {FCOLOR/10}成功了。。。{FCOLOR/12} 虽然不知道这是用在那里的东西。。。请好好使用。。。\ \ 
+<结束/@exit>
+
+#ELSESAY
+现在穿的衣服，只有 {FCOLOR/10}魔法长袍{FCOLOR/12} 才可以涂上树脂。。我看您没有穿魔法长袍或者没有树脂了。。。\
+树脂可以在天然洞穴1层找到。\ \ 
+<结束/@exit>
+
+}
+
+[@mugong_lightline_test]
+{
+#IF
+check [031] 1
+#ACT
+break
+#IF
+check [055] 1
+check [056] 1
+check [057] 1
+check [058] 1
+check [031] 0
+checkitem 闪电石 1
+#SAY
+现在感到体内有内力了，已经修炼成 {FCOLOR/10}闪电石{FCOLOR/12} 的样子。\ \
+<下一步/@mugong_lightline_test_next1> 
+#ELSESAY
+很困难才求得的 {FCOLOR/10}闪电石{FCOLOR/12} ，放哪去了？\ \
+<结束/@exit>
+
+[@mugong_lightline_test_next1]
+#IF
+checkitem 闪电石 1
+#ACT
+take 闪电石 1
+goto @mugong_lightline_test_next2
+#ELSESAY
+很困难才求得的 {FCOLOR/10}闪电石{FCOLOR/12} ，放哪去了？\ \
+<结束/@exit>
+
+[@mugong_lightline_test_next2]
+#IF
+checkmagic 疾光电影
+#SAY
+魔法师在修炼新武功的时候是不可以偷懒的。如果偷懒，瞬间之内将受到不可治愈的伤害。\ \
+<结束/@exit>
+#ACT
+break
+#IF
+check [031] 0
+#ACT
+give 疾光电影（秘籍） 1
+give 金币 26000
+give 月光石手镯
+SET [031] 1
+#SAY
+辛苦了！这里有疾光电影秘籍，请看着练习就可以了。以后要修炼的武功还很多，别骄傲，请继续练习！\ \
+<结束/@exit>
+#ELSESAY
+你不是已经收到书了吗？那么你为什么还要索要？\ \
+<结束/@exit>
+}
+
+[@mugong_lightline_explain]
+{
+#IF
+#SAY
+如果想修炼疾光电影，首先到天然洞穴中找到 {FCOLOR/10}树脂{FCOLOR/12后，再到银杏树村请棉布商给你的 {FCOLOR/10}魔法长袍{FCOLOR/12} 涂上树脂。
+如果得到了树脂火焰魔衣，就可以在天然洞穴里找到 {FCOLOR/10}闪电石{FCOLOR/12} ，然后把闪电石拿给我就可以了。\ \
+<结束/@exit>
+}

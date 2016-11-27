@@ -1,0 +1,53 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@装备刻名_1]
+{
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}装{FCOLOR/4}━{FCOLOR/14}备{FCOLOR/4}━{FCOLOR/14}刻{FCOLOR/4}━{FCOLOR/14}名{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+此项刻名服务费用需要{FCOLOR/10}10{FCOLOR/12}个元宝作为手续费。但是要注意\
+刻名输入不得超过{FCOLOR/1}6个汉字{FCOLOR/12}或者{FCOLOR/1}12个字节{FCOLOR/12}.不然装备会消失\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}装{FCOLOR/4}━{FCOLOR/14}备{FCOLOR/4}━{FCOLOR/14}刻{FCOLOR/4}━{FCOLOR/14}名{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ < 武器 /@@WriteName(1,武器)> ][ < 项链 /@@WriteName(3,项链)> ][ < 衣服 /@@WriteName(0,衣服)> ][ < 头盔 /@@WriteName(4,头盔)> ][ < 鞋子 /@@WriteName(10,鞋子)> ]\\
+{FCOLOR/12}     [ <左手镯/@@WriteName(5,左手镯)> ][ <右手镯/@@WriteName(6,右手镯)> ][ <左戒指/@@WriteName(7,左戒指)> ][ <右戒指/@@WriteName(8,右戒指)> ]\
+
+[@@WriteName()]
+#ACT
+Mov        D0       %ARG(1)
+Mov        A1       %ARG(2)
+MOV        A0       %INPUTSTR
+
+#IF
+CheckStrLen %A0 13
+#act
+SysMsg  "温馨提示: 最长只允许使用6个中文汉字或者12个英文字"
+BREAK
+
+#IF
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}装{FCOLOR/4}━{FCOLOR/14}备{FCOLOR/4}━{FCOLOR/14}刻{FCOLOR/4}━{FCOLOR/14}名{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+此项刻名服务费用需要{FCOLOR/10}10个{FCOLOR/12}元宝作为手续费.{FCOLOR/1}但是要注意{FCOLOR/12}\
+刻名输入不得超过{FCOLOR/10}6个汉字{FCOLOR/12} 或 {FCOLOR/10}12个字节{FCOLOR/12}.不然装备会消失\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}装{FCOLOR/4}━{FCOLOR/14}备{FCOLOR/4}━{FCOLOR/14}刻{FCOLOR/4}━{FCOLOR/14}名{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ < 武器 /@@WriteName(1,武器)> ][ < 项链 /@@WriteName(3,项链)> ][ < 衣服 /@@WriteName(0,衣服)> ][ < 头盔 /@@WriteName(4,头盔)> ][ < 鞋子 /@@WriteName(10,鞋子)> ]\\
+{FCOLOR/12}     [ <左手镯/@@WriteName(5,左手镯)> ][ <右手镯/@@WriteName(6,右手镯)> ][ <左戒指/@@WriteName(7,左戒指)> ][ <右戒指/@@WriteName(8,右戒指)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}装{FCOLOR/4}━{FCOLOR/14}备{FCOLOR/4}━{FCOLOR/14}刻{FCOLOR/4}━{FCOLOR/14}名{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_  您的 [{FCOLOR/10} <$OUTPUT(A1)> {FCOLOR/12}] 需要刻上 [{FCOLOR/10} <$OUTPUT(A0)> {FCOLOR/12}]\
+_  友情提示: 刻完请检查最后一个字符,如果是[{FCOLOR/1} ? {FCOLOR/12}]
+_            此情况装备可能会消失.请马上重新刻名\
+_                [ <确认开始刻名/@rinimabugei> ]\
+
+[@rinimabugei]
+#IF
+checkcmd CHECKITEMINFO %D0 0
+!EQUAL FLD_NAME ""
+CHECKCMD CHECKUSERJF 10
+#ACT
+Close
+ACTCMD SETUSERJF - 10
+actcmd  ItemNamePrefix %D0 %A0
+SysMsg  "温馨提示: 已经刻好了,取下再戴上就可以看到了"
+#ELSEact
+Close
+SysMsg  "温馨提示: 元宝不足10个.或相应位置没有佩带装备"
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

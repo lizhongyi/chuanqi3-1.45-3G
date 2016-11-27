@@ -1,0 +1,202 @@
+;;创天网络有限公司原版1.45
+[@mugong_asword]
+{
+#IF
+check [012] 1
+#SAY
+你不是已经收到书吗？那么你为什么还要索要？\ \
+<结束/@exit>
+#ACT
+break
+
+#IF
+check [036] 1
+#ACT
+goto @mugong_asword_next11
+break
+
+#IF
+#ACT
+goto @mugong_asword_next
+break
+
+[@mugong_asword_next]
+#IF
+checkmagic 刺杀剑术
+#SAY
+你不是已经掌握该武功吗？请到其它的地方搞恶做剧。我可没有那么好的性格。\ \
+<结束/@exit>
+#ELSEACT
+goto @mugong_asword_next1
+
+[@mugong_asword_next1]
+#IF
+#SAY
+谁？嗯，还是稚气未退的战士嘛，有什么事情找我吗？噢！想学刺杀剑术是吗？\ \
+<下一步/@mugong_asword_next2>
+
+[@mugong_asword_next2]
+#IF
+checklevel 19
+#SAY
+我最不喜欢话多。如果有什么事情，请简单扼要地说明！\ \
+<想了解刺杀剑术。/@mugong_asword_next3>
+#ELSESAY
+如果想学刺杀剑术，请将武功级别提高到19级。\ \
+<结束/@exit>
+
+[@mugong_asword_next3]
+#IF
+#SAY
+和先天就有特别出色能力的的魔法师和多才多能并受到尊敬的道士相比，被任何任选择的一介小兵的我们，当然看起来既不特别、也不华丽。因此人们把战士叫做只有块头和力量的傻瓜。\
+为了消除这种偏见，很多前辈们创造了杰出的武功并不断地发展。这中间有超越了人们想象力可以称为艺术的武功。刺杀剑术就是这些武功中的一个。\ \
+<真的吗？如果那样，为什么该武功没有被人知晓？/@mugong_asword_next4>
+
+[@mugong_asword_next4]
+#IF
+#SAY
+这是当然了，这个武功是战士们历经长久岁月的各种曲折、自尊心、生命，在任何考验中都不屈服的灵魂。你认为这个武功可以随便传授给任何人？只秘密地传授给具有真正战士灵魂的人们。\ \
+<请传授我这个武功吧！/@mugong_asword_next5>
+
+[@mugong_asword_next5]
+#IF
+#SAY
+战士们的高级武功是利用内力的深奥武功。你认为一次都没有使用过内力的你可以突然学习这种武功吗？很明显要发生大事故的。运气不好是死亡，如果运气好半身不遂。我不想看到比我年轻的人先死的样子。\
+这样还要学习该武功吗？\ \
+<这种觉悟都没有如何修炼武功？/@mugong_asword_next8_1> \
+<看起来，我还有些勉强。/@mugong_asword_next8_2>
+
+[@mugong_asword_next8_1]
+#IF
+#SAY
+哈哈。一无所有的家伙胆量很大。好的！我将把刺杀剑术的武功传授给你。\ \
+<下一步/@mugong_asword_next9>
+
+[@mugong_asword_next8_2]
+#IF
+#SAY
+这种傻瓜家伙！由于害怕，就想放弃，你这样的家伙还叫做战士？胆量连手指甲下的指甲泥那么大都没有的家伙！！当场从这里消失。\ \ 
+<结束/@exit>
+
+[@mugong_asword_next9]
+#IF
+#SAY
+简单地说刺杀剑术就是利用内力， {FCOLOR/10}在很远的地方刺杀敌人的技术{FCOLOR/12} 。
+实际上说用风压控制敌人比说用内力更正确。同下面要学习的武功相比还是入门的武功。\ \
+<下一步/@mugong_asword_next10>
+
+[@mugong_asword_next10]
+#IF
+#SAY
+但是在学习刺杀剑术之前，你要做一件事情。不是很困难的事情。进入沃玛神殿取得 {FCOLOR/10} 沃玛角{FCOLOR/12} 即可。不要问理由，快去快回！我将等你回来。\ \
+<结束/@exit>
+#ACT
+set [036] 1
+mov S3 0
+break
+
+[@mugong_asword_next11]
+#IF
+#SAY
+做什么呢？不快点找 {FCOLOR/10}沃玛角{FCOLOR/12} 。\ \
+<结束/@exit>
+}
+
+
+[@mugong_asword_complete]
+{
+#IF
+check [038] 1
+check [012] 0
+#ACT
+goto @mugong_asword_complete_next2
+break
+
+#IF
+check [037] 1
+check [012] 0
+checkitem 沃玛角 1
+#SAY
+很好啊！你有足够的资格修炼刺杀剑术。祝贺你啊！\ \
+<下一步/@mugong_asword_complete_next1>
+#ACT
+#ELSESAY
+做什么呢？不快点找 {FCOLOR/10}沃玛角{FCOLOR/12} 。\ \
+<结束/@exit>
+
+[@mugong_asword_complete_next1]
+#IF
+checkitem 沃玛角 1
+#ACT
+give 战酒 1
+take 沃玛角 1
+set [038] 1
+#SAY
+好了，现在喝用沃玛角做成的 {FCOLOR/10}'战酒'{FCOLOR/12} 。这个酒以后将保护你的灵魂。这是为了获得学习刺杀剑术资格的仪式。你很想知道为什么一定要割沃玛角来吧？这其中的理由是前辈故人在学习刺杀剑术的时候，第一次切割的东西是沃玛角。没有什么特殊的理由。\ \
+<喝了战酒。/@mugong_asword_complete_next2>
+#ELSESAY
+做什么呢？刚才还看见你包里有 {FCOLOR/10}沃玛角{FCOLOR/12} 的。\ \
+<结束/@exit>
+
+[@mugong_asword_complete_next2]
+#IF
+checkitem 战酒 1
+#SAY
+喝了战酒才可以学习武功哟。\ \
+<结束/@exit>
+#ELSEACT
+goto @mugong_asword_complete_next3
+
+[@mugong_asword_complete_next3]
+#IF
+check [012] 0
+#ACT
+give 刺杀剑术（秘籍） 1
+give 金币 25000
+give 龙骨戒指 1
+reset [036] 2
+mov S3 0
+set [012] 1
+#SAY
+在这里拿武功秘籍。而且给你一些金币和东西，用在需要的地方。\ \
+<结束/@exit>
+}
+
+[@mugong_mute_explan_armor_m]
+{
+#IF
+checkmagic 野蛮冲撞
+#SAY
+你不是已经掌握该武功吗？请到其它的地方搞恶做剧。\ \
+<结束/@exit>
+#ACT
+break
+
+#IF
+check [013] 1
+#SAY
+听说你已经收到野蛮秘籍了。\ \
+<结束/@exit>
+#ACT
+break
+
+#IF
+check [041] 1
+#SAY
+野蛮冲撞的武功请找黄河大侠。\
+他的位置可能在边境的（104：203）\\
+<结束/@exit>
+#ELSESAY
+我可以帮忙噢。据说生活在边境村（104：203）附近的 {FCOLOR/10}黄河大侠{FCOLOR/12} 懂得该武功。请到那儿去接受指教。\ \
+<得去找黄河大侠。/@mugong_mute_2next2>
+
+[@mugong_mute_2next2]
+#IF
+#SAY
+坚持活下去是非常重要的。如果活着，总会实现自己的理想。\ \
+<结束/@exit>
+#ACT
+set [041] 1
+break
+
+}

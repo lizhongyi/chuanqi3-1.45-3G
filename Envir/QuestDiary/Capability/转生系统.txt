@@ -1,0 +1,421 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@转生系统_1] 
+{
+#ACT
+GOTO @转生检测
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}转{FCOLOR/4}━{FCOLOR/14}生{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_ {FCOLOR/1}战士：{FCOLOR/12}增加攻击{FCOLOR/10} 45-45{FCOLOR/12} 增加血量 {FCOLOR/10}400{FCOLOR/12} 增加魔力 {FCOLOR/10}100 {FCOLOR/12}\
+_ {FCOLOR/1}法师：{FCOLOR/12}增加自然{FCOLOR/10} 35-35{FCOLOR/12} 增加血量 {FCOLOR/10}200{FCOLOR/12} 增加魔力 {FCOLOR/10}200 {FCOLOR/12}\
+_ {FCOLOR/1}道士：{FCOLOR/12}增加灵魂{FCOLOR/10} 40-40{FCOLOR/12} 增加血量 {FCOLOR/10}300{FCOLOR/12} 增加魔力 {FCOLOR/10}150 {FCOLOR/12}\
+{FCOLOR/4}━━{FCOLOR/1}★{FCOLOR/4}━━━初->高->侠->武->义->英->尊━━━{FCOLOR/1}★{FCOLOR/4}━━{FCOLOR/12}\
+_  {FCOLOR/1}一转 {FCOLOR/12}需要等级{FCOLOR/1}  85级{FCOLOR/12} 降至{FCOLOR/1} 80级{FCOLOR/12} 消费{FCOLOR/10} 100 {FCOLOR/12}元宝\
+_  {FCOLOR/1}二转 {FCOLOR/12}需要等级{FCOLOR/1}  90级{FCOLOR/12} 降至{FCOLOR/1} 83级{FCOLOR/12} 消费{FCOLOR/10} 100 {FCOLOR/12}元宝\
+_  {FCOLOR/1}三转 {FCOLOR/12}需要等级{FCOLOR/1} 100级{FCOLOR/12} 降至{FCOLOR/1} 86级{FCOLOR/12} 消费{FCOLOR/10} 200 {FCOLOR/12}元宝\
+_  {FCOLOR/1}四转 {FCOLOR/12}需要等级{FCOLOR/1} 110级{FCOLOR/12} 降至{FCOLOR/1} 89级{FCOLOR/12} 消费{FCOLOR/10} 200 {FCOLOR/12}元宝\
+_  {FCOLOR/1}五转 {FCOLOR/12}需要等级{FCOLOR/1} 120级{FCOLOR/12} 降至{FCOLOR/1} 92级{FCOLOR/12} 消费{FCOLOR/10} 300 {FCOLOR/12}元宝\
+_  {FCOLOR/1}六转 {FCOLOR/12}需要等级{FCOLOR/1} 130级{FCOLOR/12} 降至{FCOLOR/1} 95级{FCOLOR/12} 消费{FCOLOR/10} 300 {FCOLOR/12}元宝\
+_  {FCOLOR/1}七转 {FCOLOR/12}需要等级{FCOLOR/1} 140级{FCOLOR/12} 降至{FCOLOR/1} 98级{FCOLOR/12} 消费{FCOLOR/10} 400 {FCOLOR/12}元宝\
+_  {FCOLOR/1}八转 {FCOLOR/12}需要等级{FCOLOR/1} 150级{FCOLOR/12} 降至{FCOLOR/1}101级{FCOLOR/12} 消费{FCOLOR/10} 400 {FCOLOR/12}元宝\
+_  {FCOLOR/1}九转 {FCOLOR/12}需要等级{FCOLOR/1} 175级{FCOLOR/12} 降至{FCOLOR/1}105级{FCOLOR/12} 消费{FCOLOR/10} 500 {FCOLOR/12}元宝\
+_  {FCOLOR/1}十转 {FCOLOR/12}需要等级{FCOLOR/1} 200级{FCOLOR/12} 降至{FCOLOR/1}109级{FCOLOR/12} 消费{FCOLOR/10} 500 {FCOLOR/12}元宝\
+_ {FCOLOR/1}十一转{FCOLOR/12}需要等级{FCOLOR/1} 225级{FCOLOR/12} 降至{FCOLOR/1}113级{FCOLOR/12} 消费{FCOLOR/10} 600 {FCOLOR/12}元宝\
+_ {FCOLOR/1}十二转{FCOLOR/12}需要等级{FCOLOR/1} 250级{FCOLOR/12} 降至{FCOLOR/1}117级{FCOLOR/12} 消费{FCOLOR/10} 600 {FCOLOR/12}元宝\
+{FCOLOR/4}━━━{FCOLOR/1}★{FCOLOR/4}━━━您当前转生等级为{FCOLOR/1} <$USERREBORNCOUNT> {FCOLOR/4}级━━━{FCOLOR/1}★{FCOLOR/4}━━━{FCOLOR/12}\
+{FCOLOR/12}[ <$OUTPUT(开始转生A)> ] [ <$OUTPUT(开始转生B)> ] [ <$OUTPUT(开始转生C)> ]\
+{FCOLOR/12}[ <$OUTPUT(开始转生D)> ] [ <$OUTPUT(开始转生E)> ] [ <$OUTPUT(开始转生F)> ]\
+{FCOLOR/12}[ <$OUTPUT(开始转生G)> ] [ <$OUTPUT(开始转生H)> ] [ <$OUTPUT(开始转生I)> ]\
+{FCOLOR/12}[ <$OUTPUT(开始转生J)> ] [ <$OUTPUT(开始转生K)> ] [ <$OUTPUT(开始转生L)> ]\
+<@转生执行(0,85,80,100)> <@转生执行(1,90,83,100)> <@转生执行(2,100,86,200)> <@转生执行(3,110,89,200)>
+<@转生执行(4,120,92,300)> <@转生执行(5,130,95,300)> <@转生执行(6,140,98,400)> <@转生执行(7,150,101,400)>
+<@转生执行(8,175,105,500)> <@转生执行(9,200,109,500)> <@转生执行(10,225,113,600)> <@转生执行(11,250,117,600)>
+
+[@转生执行()]
+#ACT
+MOV 要求转生数 %ARG(1)
+MOV 要求等级数 %ARG(2)
+MOV 转生降级数 %ARG(3)
+MOV 要求元宝数 %ARG(4)
+
+#IF
+EQUAL USERREBORNCOUNT %要求转生数
+checklevel %要求等级数
+checkcmd CHECKUSERJF %要求元宝数
+#ACT
+actcmd SETUSERJF - %要求元宝数
+ACTCMD CHANGELVL = %转生降级数
+actcmd SETSUPERCHANGE + 1
+SYSMSG "温馨提示: 恭喜您花费[ <$OUTPUT(要求元宝数)> ]元宝完成了第[ <$USERREBORNCOUNT> ]级转生"
+GOTO @转生系统_1
+Break
+#ELSEACT
+SYSMSG "要求当前转生[ <$要求转生数> ]级,等级[ <$OUTPUT(要求等级数)> ]元宝[ <$OUTPUT(要求元宝数)> ]才可进行本次转生~"
+Break
+
+[@转生检测]
+#IF
+EQUAL USERREBORNCOUNT 0
+#ACT
+MOV 开始转生A ""
+ADDSTR 开始转生A "<学习 1级转生/@转生执行(0,85,80,100)>"
+MOV 开始转生B ""
+ADDSTR 开始转生B "<学习 2级转生/@转生执行(1,90,83,100)>"
+MOV 开始转生C ""
+ADDSTR 开始转生C "<学习 3级转生/@转生执行(2,100,86,200)>"
+MOV 开始转生D ""
+ADDSTR 开始转生D "<学习 4级转生/@转生执行(3,110,89,200)>"
+MOV 开始转生E ""
+ADDSTR 开始转生E "<学习 5级转生/@转生执行(4,120,92,300)>"
+MOV 开始转生F ""
+ADDSTR 开始转生F "<学习 6级转生/@转生执行(5,130,95,300)>"
+MOV 开始转生G ""
+ADDSTR 开始转生G "<学习 7级转生/@转生执行(6,140,98,400)>"
+MOV 开始转生H ""
+ADDSTR 开始转生H "<学习 8级转生/@转生执行(7,150,101,400)>"
+MOV 开始转生I ""
+ADDSTR 开始转生I "<学习 9级转生/@转生执行(8,175,105,500)>"
+MOV 开始转生J ""
+ADDSTR 开始转生J "<学习10级转生/@转生执行(9,200,109,500)>"
+MOV 开始转生K ""
+ADDSTR 开始转生K "<学习11级转生/@转生执行(10,225,113,600)>"
+MOV 开始转生L ""
+ADDSTR 开始转生L "<学习12级转生/@转生执行(11,250,117,600)>"
+
+#IF
+EQUAL USERREBORNCOUNT 1
+#ACT
+MOV 开始转生A ""
+ADDSTR 开始转生A "{FCOLOR/1}已学 1级转生{FCOLOR/12}"
+MOV 开始转生B ""
+ADDSTR 开始转生B "<学习 2级转生/@转生执行(1,90,83,100)>"
+MOV 开始转生C ""
+ADDSTR 开始转生C "<学习 3级转生/@转生执行(2,100,86,200)>"
+MOV 开始转生D ""
+ADDSTR 开始转生D "<学习 4级转生/@转生执行(3,110,89,200)>"
+MOV 开始转生E ""
+ADDSTR 开始转生E "<学习 5级转生/@转生执行(4,120,92,300)>"
+MOV 开始转生F ""
+ADDSTR 开始转生F "<学习 6级转生/@转生执行(5,130,95,300)>"
+MOV 开始转生G ""
+ADDSTR 开始转生G "<学习 7级转生/@转生执行(6,140,98,400)>"
+MOV 开始转生H ""
+ADDSTR 开始转生H "<学习 8级转生/@转生执行(7,150,101,400)>"
+MOV 开始转生I ""
+ADDSTR 开始转生I "<学习 9级转生/@转生执行(8,175,105,500)>"
+MOV 开始转生J ""
+ADDSTR 开始转生J "<学习10级转生/@转生执行(9,200,109,500)>"
+MOV 开始转生K ""
+ADDSTR 开始转生K "<学习11级转生/@转生执行(10,225,113,600)>"
+MOV 开始转生L ""
+ADDSTR 开始转生L "<学习12级转生/@转生执行(11,250,117,600)>"
+
+#IF
+EQUAL USERREBORNCOUNT 2
+#ACT
+MOV 开始转生A ""
+ADDSTR 开始转生A "{FCOLOR/1}已学 1级转生{FCOLOR/12}"
+MOV 开始转生B ""
+ADDSTR 开始转生B "{FCOLOR/1}已学 2级转生{FCOLOR/12}"
+MOV 开始转生C ""
+ADDSTR 开始转生C "<学习 3级转生/@转生执行(2,100,86,200)>"
+MOV 开始转生D ""
+ADDSTR 开始转生D "<学习 4级转生/@转生执行(3,110,89,200)>"
+MOV 开始转生E ""
+ADDSTR 开始转生E "<学习 5级转生/@转生执行(4,120,92,300)>"
+MOV 开始转生F ""
+ADDSTR 开始转生F "<学习 6级转生/@转生执行(5,130,95,300)>"
+MOV 开始转生G ""
+ADDSTR 开始转生G "<学习 7级转生/@转生执行(6,140,98,400)>"
+MOV 开始转生H ""
+ADDSTR 开始转生H "<学习 8级转生/@转生执行(7,150,101,400)>"
+MOV 开始转生I ""
+ADDSTR 开始转生I "<学习 9级转生/@转生执行(8,175,105,500)>"
+MOV 开始转生J ""
+ADDSTR 开始转生J "<学习10级转生/@转生执行(9,200,109,500)>"
+MOV 开始转生K ""
+ADDSTR 开始转生K "<学习11级转生/@转生执行(10,225,113,600)>"
+MOV 开始转生L ""
+ADDSTR 开始转生L "<学习12级转生/@转生执行(11,250,117,600)>"
+
+#IF
+EQUAL USERREBORNCOUNT 3
+#ACT
+MOV 开始转生A ""
+ADDSTR 开始转生A "{FCOLOR/1}已学 1级转生{FCOLOR/12}"
+MOV 开始转生B ""
+ADDSTR 开始转生B "{FCOLOR/1}已学 2级转生{FCOLOR/12}"
+MOV 开始转生C ""
+ADDSTR 开始转生C "{FCOLOR/1}已学 3级转生{FCOLOR/12}"
+MOV 开始转生D ""
+ADDSTR 开始转生D "<学习 4级转生/@转生执行(3,110,89,200)>"
+MOV 开始转生E ""
+ADDSTR 开始转生E "<学习 5级转生/@转生执行(4,120,92,300)>"
+MOV 开始转生F ""
+ADDSTR 开始转生F "<学习 6级转生/@转生执行(5,130,95,300)>"
+MOV 开始转生G ""
+ADDSTR 开始转生G "<学习 7级转生/@转生执行(6,140,98,400)>"
+MOV 开始转生H ""
+ADDSTR 开始转生H "<学习 8级转生/@转生执行(7,150,101,400)>"
+MOV 开始转生I ""
+ADDSTR 开始转生I "<学习 9级转生/@转生执行(8,175,105,500)>"
+MOV 开始转生J ""
+ADDSTR 开始转生J "<学习10级转生/@转生执行(9,200,109,500)>"
+MOV 开始转生K ""
+ADDSTR 开始转生K "<学习11级转生/@转生执行(10,225,113,600)>"
+MOV 开始转生L ""
+ADDSTR 开始转生L "<学习12级转生/@转生执行(11,250,117,600)>"
+
+#IF
+EQUAL USERREBORNCOUNT 4
+#ACT
+MOV 开始转生A ""
+ADDSTR 开始转生A "{FCOLOR/1}已学 1级转生{FCOLOR/12}"
+MOV 开始转生B ""
+ADDSTR 开始转生B "{FCOLOR/1}已学 2级转生{FCOLOR/12}"
+MOV 开始转生C ""
+ADDSTR 开始转生C "{FCOLOR/1}已学 3级转生{FCOLOR/12}"
+MOV 开始转生D ""
+ADDSTR 开始转生D "{FCOLOR/1}已学 4级转生{FCOLOR/12}"
+MOV 开始转生E ""
+ADDSTR 开始转生E "<学习 5级转生/@转生执行(4,120,92,300)>"
+MOV 开始转生F ""
+ADDSTR 开始转生F "<学习 6级转生/@转生执行(5,130,95,300)>"
+MOV 开始转生G ""
+ADDSTR 开始转生G "<学习 7级转生/@转生执行(6,140,98,400)>"
+MOV 开始转生H ""
+ADDSTR 开始转生H "<学习 8级转生/@转生执行(7,150,101,400)>"
+MOV 开始转生I ""
+ADDSTR 开始转生I "<学习 9级转生/@转生执行(8,175,105,500)>"
+MOV 开始转生J ""
+ADDSTR 开始转生J "<学习10级转生/@转生执行(9,200,109,500)>"
+MOV 开始转生K ""
+ADDSTR 开始转生K "<学习11级转生/@转生执行(10,225,113,600)>"
+MOV 开始转生L ""
+ADDSTR 开始转生L "<学习12级转生/@转生执行(11,250,117,600)>"
+
+#IF
+EQUAL USERREBORNCOUNT 5
+#ACT
+MOV 开始转生A ""
+ADDSTR 开始转生A "{FCOLOR/1}已学 1级转生{FCOLOR/12}"
+MOV 开始转生B ""
+ADDSTR 开始转生B "{FCOLOR/1}已学 2级转生{FCOLOR/12}"
+MOV 开始转生C ""
+ADDSTR 开始转生C "{FCOLOR/1}已学 3级转生{FCOLOR/12}"
+MOV 开始转生D ""
+ADDSTR 开始转生D "{FCOLOR/1}已学 4级转生{FCOLOR/12}"
+MOV 开始转生E ""
+ADDSTR 开始转生E "{FCOLOR/1}已学 5级转生{FCOLOR/12}"
+MOV 开始转生F ""
+ADDSTR 开始转生F "<学习 6级转生/@转生执行(5,130,95,300)>"
+MOV 开始转生G ""
+ADDSTR 开始转生G "<学习 7级转生/@转生执行(6,140,98,400)>"
+MOV 开始转生H ""
+ADDSTR 开始转生H "<学习 8级转生/@转生执行(7,150,101,400)>"
+MOV 开始转生I ""
+ADDSTR 开始转生I "<学习 9级转生/@转生执行(8,175,105,500)>"
+MOV 开始转生J ""
+ADDSTR 开始转生J "<学习10级转生/@转生执行(9,200,109,500)>"
+MOV 开始转生K ""
+ADDSTR 开始转生K "<学习11级转生/@转生执行(10,225,113,600)>"
+MOV 开始转生L ""
+ADDSTR 开始转生L "<学习12级转生/@转生执行(11,250,117,600)>"
+
+#IF
+EQUAL USERREBORNCOUNT 6
+#ACT
+MOV 开始转生A ""
+ADDSTR 开始转生A "{FCOLOR/1}已学 1级转生{FCOLOR/12}"
+MOV 开始转生B ""
+ADDSTR 开始转生B "{FCOLOR/1}已学 2级转生{FCOLOR/12}"
+MOV 开始转生C ""
+ADDSTR 开始转生C "{FCOLOR/1}已学 3级转生{FCOLOR/12}"
+MOV 开始转生D ""
+ADDSTR 开始转生D "{FCOLOR/1}已学 4级转生{FCOLOR/12}"
+MOV 开始转生E ""
+ADDSTR 开始转生E "{FCOLOR/1}已学 5级转生{FCOLOR/12}"
+MOV 开始转生F ""
+ADDSTR 开始转生F "{FCOLOR/1}已学 6级转生{FCOLOR/12}"
+MOV 开始转生G ""
+ADDSTR 开始转生G "<学习 7级转生/@转生执行(6,140,98,400)>"
+MOV 开始转生H ""
+ADDSTR 开始转生H "<学习 8级转生/@转生执行(7,150,101,400)>"
+MOV 开始转生I ""
+ADDSTR 开始转生I "<学习 9级转生/@转生执行(8,175,105,500)>"
+MOV 开始转生J ""
+ADDSTR 开始转生J "<学习10级转生/@转生执行(9,200,109,500)>"
+MOV 开始转生K ""
+ADDSTR 开始转生K "<学习11级转生/@转生执行(10,225,113,600)>"
+MOV 开始转生L ""
+ADDSTR 开始转生L "<学习12级转生/@转生执行(11,250,117,600)>"
+
+#IF
+ELARGE USERREBORNCOUNT 7
+#ACT
+MOV 开始转生A ""
+ADDSTR 开始转生A "{FCOLOR/1}已学 1级转生{FCOLOR/12}"
+MOV 开始转生B ""
+ADDSTR 开始转生B "{FCOLOR/1}已学 2级转生{FCOLOR/12}"
+MOV 开始转生C ""
+ADDSTR 开始转生C "{FCOLOR/1}已学 3级转生{FCOLOR/12}"
+MOV 开始转生D ""
+ADDSTR 开始转生D "{FCOLOR/1}已学 4级转生{FCOLOR/12}"
+MOV 开始转生E ""
+ADDSTR 开始转生E "{FCOLOR/1}已学 5级转生{FCOLOR/12}"
+MOV 开始转生F ""
+ADDSTR 开始转生F "{FCOLOR/1}已学 6级转生{FCOLOR/12}"
+MOV 开始转生G ""
+ADDSTR 开始转生G "{FCOLOR/1}已学 7级转生{FCOLOR/12}"
+MOV 开始转生H ""
+ADDSTR 开始转生H "<学习 8级转生/@转生执行(7,150,101,400)>"
+MOV 开始转生I ""
+ADDSTR 开始转生I "<学习 9级转生/@转生执行(8,175,105,500)>"
+MOV 开始转生J ""
+ADDSTR 开始转生J "<学习10级转生/@转生执行(9,200,109,500)>"
+MOV 开始转生K ""
+ADDSTR 开始转生K "<学习11级转生/@转生执行(10,225,113,600)>"
+MOV 开始转生L ""
+ADDSTR 开始转生L "<学习12级转生/@转生执行(11,250,117,600)>"
+
+#IF
+ELARGE USERREBORNCOUNT 8
+#ACT
+MOV 开始转生A ""
+ADDSTR 开始转生A "{FCOLOR/1}已学 1级转生{FCOLOR/12}"
+MOV 开始转生B ""
+ADDSTR 开始转生B "{FCOLOR/1}已学 2级转生{FCOLOR/12}"
+MOV 开始转生C ""
+ADDSTR 开始转生C "{FCOLOR/1}已学 3级转生{FCOLOR/12}"
+MOV 开始转生D ""
+ADDSTR 开始转生D "{FCOLOR/1}已学 4级转生{FCOLOR/12}"
+MOV 开始转生E ""
+ADDSTR 开始转生E "{FCOLOR/1}已学 5级转生{FCOLOR/12}"
+MOV 开始转生F ""
+ADDSTR 开始转生F "{FCOLOR/1}已学 6级转生{FCOLOR/12}"
+MOV 开始转生G ""
+ADDSTR 开始转生G "{FCOLOR/1}已学 7级转生{FCOLOR/12}"
+MOV 开始转生H ""
+ADDSTR 开始转生H "{FCOLOR/1}已学 8级转生{FCOLOR/12}"
+MOV 开始转生I ""
+ADDSTR 开始转生I "<学习 9级转生/@转生执行(8,175,105,500)>"
+MOV 开始转生J ""
+ADDSTR 开始转生J "<学习10级转生/@转生执行(9,200,109,500)>"
+MOV 开始转生K ""
+ADDSTR 开始转生K "<学习11级转生/@转生执行(10,225,113,600)>"
+MOV 开始转生L ""
+ADDSTR 开始转生L "<学习12级转生/@转生执行(11,250,117,600)>"
+
+#IF
+ELARGE USERREBORNCOUNT 9
+#ACT
+MOV 开始转生A ""
+ADDSTR 开始转生A "{FCOLOR/1}已学 1级转生{FCOLOR/12}"
+MOV 开始转生B ""
+ADDSTR 开始转生B "{FCOLOR/1}已学 2级转生{FCOLOR/12}"
+MOV 开始转生C ""
+ADDSTR 开始转生C "{FCOLOR/1}已学 3级转生{FCOLOR/12}"
+MOV 开始转生D ""
+ADDSTR 开始转生D "{FCOLOR/1}已学 4级转生{FCOLOR/12}"
+MOV 开始转生E ""
+ADDSTR 开始转生E "{FCOLOR/1}已学 5级转生{FCOLOR/12}"
+MOV 开始转生F ""
+ADDSTR 开始转生F "{FCOLOR/1}已学 6级转生{FCOLOR/12}"
+MOV 开始转生G ""
+ADDSTR 开始转生G "{FCOLOR/1}已学 7级转生{FCOLOR/12}"
+MOV 开始转生H ""
+ADDSTR 开始转生H "{FCOLOR/1}已学 8级转生{FCOLOR/12}"
+MOV 开始转生I ""
+ADDSTR 开始转生I "{FCOLOR/1}已学 9级转生{FCOLOR/12}"
+MOV 开始转生J ""
+ADDSTR 开始转生J "<学习10级转生/@转生执行(9,200,109,500)>"
+MOV 开始转生K ""
+ADDSTR 开始转生K "<学习11级转生/@转生执行(10,225,113,600)>"
+MOV 开始转生L ""
+ADDSTR 开始转生L "<学习12级转生/@转生执行(11,250,117,600)>"
+
+#IF
+ELARGE USERREBORNCOUNT 10
+#ACT
+MOV 开始转生A ""
+ADDSTR 开始转生A "{FCOLOR/1}已学 1级转生{FCOLOR/12}"
+MOV 开始转生B ""
+ADDSTR 开始转生B "{FCOLOR/1}已学 2级转生{FCOLOR/12}"
+MOV 开始转生C ""
+ADDSTR 开始转生C "{FCOLOR/1}已学 3级转生{FCOLOR/12}"
+MOV 开始转生D ""
+ADDSTR 开始转生D "{FCOLOR/1}已学 4级转生{FCOLOR/12}"
+MOV 开始转生E ""
+ADDSTR 开始转生E "{FCOLOR/1}已学 5级转生{FCOLOR/12}"
+MOV 开始转生F ""
+ADDSTR 开始转生F "{FCOLOR/1}已学 6级转生{FCOLOR/12}"
+MOV 开始转生G ""
+ADDSTR 开始转生G "{FCOLOR/1}已学 7级转生{FCOLOR/12}"
+MOV 开始转生H ""
+ADDSTR 开始转生H "{FCOLOR/1}已学 8级转生{FCOLOR/12}"
+MOV 开始转生I ""
+ADDSTR 开始转生I "{FCOLOR/1}已学 9级转生{FCOLOR/12}"
+MOV 开始转生J ""
+ADDSTR 开始转生J "{FCOLOR/1}已学10级转生{FCOLOR/12}"
+MOV 开始转生K ""
+ADDSTR 开始转生K "<学习11级转生/@转生执行(10,225,113,600)>"
+MOV 开始转生L ""
+ADDSTR 开始转生L "<学习12级转生/@转生执行(11,250,117,600)>"
+
+#IF
+ELARGE USERREBORNCOUNT 11
+#ACT
+MOV 开始转生A ""
+ADDSTR 开始转生A "{FCOLOR/1}已学 1级转生{FCOLOR/12}"
+MOV 开始转生B ""
+ADDSTR 开始转生B "{FCOLOR/1}已学 2级转生{FCOLOR/12}"
+MOV 开始转生C ""
+ADDSTR 开始转生C "{FCOLOR/1}已学 3级转生{FCOLOR/12}"
+MOV 开始转生D ""
+ADDSTR 开始转生D "{FCOLOR/1}已学 4级转生{FCOLOR/12}"
+MOV 开始转生E ""
+ADDSTR 开始转生E "{FCOLOR/1}已学 5级转生{FCOLOR/12}"
+MOV 开始转生F ""
+ADDSTR 开始转生F "{FCOLOR/1}已学 6级转生{FCOLOR/12}"
+MOV 开始转生G ""
+ADDSTR 开始转生G "{FCOLOR/1}已学 7级转生{FCOLOR/12}"
+MOV 开始转生H ""
+ADDSTR 开始转生H "{FCOLOR/1}已学 8级转生{FCOLOR/12}"
+MOV 开始转生I ""
+ADDSTR 开始转生I "{FCOLOR/1}已学 9级转生{FCOLOR/12}"
+MOV 开始转生J ""
+ADDSTR 开始转生J "{FCOLOR/1}已学10级转生{FCOLOR/12}"
+MOV 开始转生K ""
+ADDSTR 开始转生K "{FCOLOR/1}已学11级转生{FCOLOR/12}"
+MOV 开始转生L ""
+ADDSTR 开始转生L "<学习12级转生/@转生执行(11,250,117,600)>"
+
+#IF
+ELARGE USERREBORNCOUNT 12
+#ACT
+MOV 开始转生A ""
+ADDSTR 开始转生A "{FCOLOR/1}已学 1级转生{FCOLOR/12}"
+MOV 开始转生B ""
+ADDSTR 开始转生B "{FCOLOR/1}已学 2级转生{FCOLOR/12}"
+MOV 开始转生C ""
+ADDSTR 开始转生C "{FCOLOR/1}已学 3级转生{FCOLOR/12}"
+MOV 开始转生D ""
+ADDSTR 开始转生D "{FCOLOR/1}已学 4级转生{FCOLOR/12}"
+MOV 开始转生E ""
+ADDSTR 开始转生E "{FCOLOR/1}已学 5级转生{FCOLOR/12}"
+MOV 开始转生F ""
+ADDSTR 开始转生F "{FCOLOR/1}已学 6级转生{FCOLOR/12}"
+MOV 开始转生G ""
+ADDSTR 开始转生G "{FCOLOR/1}已学 7级转生{FCOLOR/12}"
+MOV 开始转生H ""
+ADDSTR 开始转生H "{FCOLOR/1}已学 8级转生{FCOLOR/12}"
+MOV 开始转生I ""
+ADDSTR 开始转生I "{FCOLOR/1}已学 9级转生{FCOLOR/12}"
+MOV 开始转生J ""
+ADDSTR 开始转生J "{FCOLOR/1}已学10级转生{FCOLOR/12}"
+MOV 开始转生K ""
+ADDSTR 开始转生K "{FCOLOR/1}已学11级转生{FCOLOR/12}"
+MOV 开始转生L ""
+ADDSTR 开始转生L "{FCOLOR/1}已学12级转生{FCOLOR/12}"
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

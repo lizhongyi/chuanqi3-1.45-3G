@@ -1,0 +1,218 @@
+;;创天网络有限公司原版1.45
+[@mugong_poison]
+{
+#IF
+check [016] 1
+#SAY
+你不是已经收到施毒术秘籍吗？\ \ 
+<结束/@exit>
+#ACT
+break
+
+#IF
+check [035] 1
+#ACT
+goto @mugong_poison_next4
+break
+
+#IF
+checklevel 12
+#ACT
+goto @mugong_poison_next
+#ELSESAY
+成为施毒术12级之前，不能学习。\ \
+<结束/@exit>
+
+[@mugong_poison_next]
+#IF
+#SAY
+知道施毒术。。。毒药实际上是药的一部分并不过分的事实吗？就像为了患者调制药材，毒药也是按照天时和地利使用不同调制方法的复杂东西。如果想学习使用毒药的施毒术，必然需要首先对 {FCOLOR/10}毒药进行学习{FCOLOR/12} 。\ \ 
+<拜托指教！/@mugong_poison_next2_1> \
+<你好象还有些勉强。/@mugong_poison_next2_2>
+
+[@mugong_poison_next2_1]
+#IF
+checkmagic 施毒术
+#SAY
+你已经掌握了施毒术，也没有再学习的必要了。。\ \
+<结束/@exit>
+#ELSESAY
+首先对毒粉进行说明。毒粉包括 {FCOLOR/10}黄色毒粉{FCOLOR/12} 和  {FCOLOR/10}灰色毒粉{FCOLOR/12} 。对这些材料 {FCOLOR/10}药剂师{FCOLOR/12} 比我更清楚，请问他们！\
+你在学习施毒术之前，首先要掌握材料的毒性。现在我送你去某个地方， {FCOLOR/10}直接采取材料{FCOLOR/12} 进行学习。采取的方法当作像切肉一样的熟练工种即可。
+时间是5分钟。。\ \
+<为了掌握毒性而出发。/@mugong_poison_next3>
+
+[@mugong_poison_next2_2]
+#IF
+#SAY
+知道施毒术。。。毒药实际上是药的一部分并不过分的事实吗？就像为了患者调制药材，毒药也是按照天时和地利使用不同调制方法的复杂东西。如果想学习使用毒药的施毒术，必然需要首先对 {FCOLOR/10}毒药进行学习{FCOLOR/12} 。\ \ 
+<结束/@exit>
+
+[@mugong_poison_next3]
+#IF
+checkhum 1_008 1
+#SAY
+有人在接受测试，请等一下！\ \
+<结束/@exit>
+#ACT
+SET [035] 1
+set [036] 0
+#ELSEACT
+SET [035] 1
+take 蛆卵 20
+take 蝎子的尾巴 20
+take 食人树叶 20
+take 食人树的果实 20
+take 毒蜘蛛牙齿 20
+Monclear 1_008
+Param1 1_008
+Param2 5
+Param3 14
+MonGen 毒蜘蛛61      3 2
+MonGen 食人花61      3 2
+MonGen 蝎子61        3 2
+MonGen 洞蛆61  3 2
+TimeRecall 5
+map 1_008
+goto @shidushurenwu1
+break
+
+[@shidushurenwu1]
+#ACT
+mov A3 %USERMAP
+
+#IF
+EQUAL A3 "1_008"
+#ACT
+delaygoto [local] 10 @shidushurenwu1
+#ELSEACT
+BREAKTIMERECALL
+break
+
+
+[@mugong_poison_next4]
+#IF
+#SAY
+现在你还不够水平吗？嗯。。不要失望，请重新挑战。。。\ \
+<拜托指教。/@mugong_poison_next5_1> \
+<现在好象有些勉强。/@mugong_poison_next5_2>
+
+[@mugong_poison_next5_1]
+#IF
+#SAY
+知道了。重新送到考场。请从所有的怪兽那儿采取毒粉。\ \
+<移动到考场。/@mugong_poison_next3>
+
+[@mugong_poison_next5_2]
+#IF
+#SAY
+虽然学习、应用施毒术有些复杂，施毒术是道士的 {FCOLOR/10}唯一进攻辅助魔法{FCOLOR/12} ，它的效果非常高。\
+现在虽然困难，在最短的时间内掌握施毒术还是要好些。\ \
+<结束/@exit>
+}
+
+[@mugong_poison_test]
+{
+#IF
+check [036] 0
+#ACT
+goto @mugong_poison_test_chk
+#ELSEACT
+goto @mugong_poison_test_next
+
+[@mugong_poison_test_chk]
+#IF
+checkitem 蛆卵 1
+checkitem 蝎子的尾巴 1
+checkitem 食人树叶 1
+checkitem 食人树的果实 1
+checkitem 毒蜘蛛牙齿 1
+#ACT
+take 蛆卵 1
+take 蝎子的尾巴 1
+take 食人树叶 1
+take 食人树的果实 1
+take 毒蜘蛛牙齿 1
+goto @mugong_poison_test_chk_1
+#ELSESAY
+现在材料还没有找齐嘛。我需要的材料是 {FCOLOR/10}蛆卵 1,蝎子的尾巴 1,食人树叶 1,食人树的果实 1, 毒蜘蛛牙齿  1个{FCOLOR/12} 。请听好，找到再来。\ 
+如果在规定的时间里没有找到这些材料，无法修炼施毒术。。请确认材料并告诉我。。没有剩下多少时间了。。\ \
+<结束/@exit>
+
+[@mugong_poison_test_chk_1]
+#IF
+#ACT
+set [036] 1
+take 蛆卵 1
+take 蝎子的尾巴 1
+take 食人树叶 1
+take 食人树的果实 1
+take 毒蜘蛛牙齿 1
+#SAY
+材料都收集好了哟。。那么出去看吧。。。\ \
+<下一步/@mugong_poison_test_next>
+
+[@mugong_poison_test_next]
+#IF
+#ACT
+BreakTimeRecall
+mapmove 1_002 11 11
+break
+}
+
+[@mugong_poison_complete]
+{
+#IF
+checkmagic 施毒术
+#SAY
+你已经掌握了施毒术，也没有再学习的必要了。。\ \
+<结束/@exit>
+#ACT
+break
+#IF
+check [016] 1
+#ACT
+break
+#IF
+check [036] 0
+#ACT
+break
+#IF
+check [035] 0
+#ACT
+break
+#IF
+check [035] 1
+check [036] 1
+check [016] 0
+#ACT
+goto @mugong_poison_give
+#ELSEACT
+break
+
+[@mugong_poison_give]
+#IF
+check [016] 0
+#ACT
+give 施毒术（秘籍） 1
+give 金币 14000
+give 天仙之珠 1
+reset [035] 1
+SET [016] 1
+#SAY
+辛苦了！给你武功秘籍，剩余的部分自己掌握吧。\
+同时 {FCOLOR/10}将毒粉放在戴手镯的位置{FCOLOR/12} 使用即可。虽然开始有些不方便，随着武功级别的增高，也可以和手镯一起戴，不必担心。\ \  
+<结束/@exit>
+#ELSESAY
+你不是已经收到施毒术秘籍吗？\ \ 
+<结束/@exit>
+}
+
+[@mugong_poison_explain]
+{
+#IF
+#SAY
+如果想学习势毒术，处理了训练场的怪兽后，要从他们的尸体上采取 {FCOLOR/10}蛆卵,蝎子的尾巴,食人树叶,食人树的果实, 毒蜘蛛牙齿 {FCOLOR/12} 。
+我将站在考场里面，把采取的毒粉交给我。然后再把你重新送到这里。\ \
+<结束/@exit>
+}

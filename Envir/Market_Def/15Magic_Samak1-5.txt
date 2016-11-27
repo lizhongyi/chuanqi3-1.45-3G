@@ -1,0 +1,68 @@
+;;创天网络有限公司原版1.45
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+跟你这种人我无话可说。\ \
+<结束/@exit>
+#ELSESAY
+很高兴见到这样英姿飒爽的勇士，本教头是奉比奇朝廷的命令来这里帮助那些穿越沙漠的勇士修炼武功的。原本武林有一条不成文的规定，就是朝廷不干涉像你这样的江湖武士的活动，但在这种危急的时候谁还管那么多呢？啊，废话说多了。你新拿到的武功书里有什么看不懂的地方都可以问我，不过要支付一些费用才行。\
+<查看可解释的武功目录/@main_0_1>\
+<结束/@exit>
+
+[@main_0_1]
+#IF
+#SAY
+（战士魔法）\ \
+（1 - 10 等级 修炼魔法）\
+<基本剑术/@Go_Mu_Warrior_Noatom_wesu>\ \
+（11 - 20 等级 修炼魔法）\
+<攻杀剑术/@Go_Mu_Warrior_Noatom_wedo> , <刺杀剑术/@Go_Mu_Warrior_Noatom_asword>\ \
+（21 - 30 等级 修炼魔法）\
+<半月弯刀/@Go_Mu_Warrior_Noatom_banwel> , <野蛮冲撞/@Go_Mu_Warrior_Noatom_mute>\ \
+（31 - 40 等级 修炼魔法）\
+<烈火剑法/@Go_Mu_Warrior_Noatom_fire> , <翔空剑法/@Go_Mu_Warrior_Noatom_maeng> , <莲月剑法/@Go_Mu_Warrior_Noatom_double>\ \
+（ 修炼高级魔法 ）\
+<十方斩/@Go_Mu_Warrior_Noatom_qmoon> , <乾坤大挪移/@Go_Mu_Warrior_Noatom_qiakd> , <铁布杉/@Go_Mu_Warrior_Noatom_tiebss>\ \
+<斗转星移/@Go_Mu_Warrior_Noatom_douzxy> , <破血狂杀/@Go_Mu_Warrior_Noatom_poxues> \ \
+<结束/@exit>
+
+[@Go_Mu_Warrior_Noatom_wesu]
+#CALL [\MU_Total_Sell\Warrior\wesu.txt] @Mu_Warrior_Noatom_wesu
+
+[@Go_Mu_Warrior_Noatom_wedo]
+#CALL [\MU_Total_Sell\Warrior\wedo.txt] @Mu_Warrior_Noatom_wedo
+
+[@Go_Mu_Warrior_Noatom_asword]
+#CALL [\MU_Total_Sell\Warrior\asword.txt] @Mu_Warrior_Noatom_asword
+
+[@Go_Mu_Warrior_Noatom_banwel]
+#CALL [\MU_Total_Sell\Warrior\banwel.txt] @Mu_Warrior_Noatom_banwel
+
+[@Go_Mu_Warrior_Noatom_mute]
+#CALL [\MU_Total_Sell\Warrior\mute.txt] @Mu_Warrior_Noatom_mute
+
+[@Go_Mu_Warrior_Noatom_maeng]
+#CALL [\MU_Total_Sell\Warrior\maeng.txt] @Mu_Warrior_Noatom_maeng
+
+[@Go_Mu_Warrior_Noatom_fire]
+#CALL [\MU_Total_Sell\Warrior\fire.txt] @Mu_Warrior_Noatom_fire
+
+[@Go_Mu_Warrior_Noatom_double]
+#CALL [\MU_Total_Sell\Warrior\double.txt] @Mu_Warrior_Noatom_double
+
+[@Go_Mu_Warrior_Noatom_qmoon]
+#CALL [\MU_Total_Sell\Warrior\qmoon.txt] @Mu_Warrior_Noatom_qmoon
+
+[@Go_Mu_Warrior_Noatom_qiakd]
+#CALL [\MU_Total_Sell\Warrior\qiakd.txt] @Mu_Warrior_Noatom_qiakd
+
+[@Go_Mu_Warrior_Noatom_tiebss]
+#CALL [\MU_Total_Sell\Warrior\tiebss.txt] @Mu_Warrior_Noatom_tiebss
+
+[@Go_Mu_Warrior_Noatom_douzxy]
+#CALL [\MU_Total_Sell\Warrior\douzxy.txt] @Mu_Warrior_Noatom_douzxy
+
+[@Go_Mu_Warrior_Noatom_poxues]
+#CALL [\MU_Total_Sell\Warrior\poxues.txt] @Mu_Warrior_Noatom_poxues
+;;------------------------------------------------------------------------------

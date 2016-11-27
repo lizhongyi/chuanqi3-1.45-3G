@@ -1,0 +1,14 @@
+;;
+[@main]
+#SAY
+人类来到这里做什么……这里是……地宫……找不到出去的门只有死路一条。\\
+给你一点提示吧....从这个房间的某个角落可以离开.\
+
+#IF
+check [493] 1
+check [495] 0
+#SAY
+<关于地宫进行对话。/@WestHwanmaQuest_Start1> \
+
+[@WestHwanmaQuest_Start1]
+#CALL [WestDesert\WestHwanmaNpc.txt] @WestDesert_open

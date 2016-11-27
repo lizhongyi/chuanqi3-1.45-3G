@@ -1,0 +1,42 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@领取元宝_1]
+{
+#ACT
+MOV A1 %USERID
+MOV  D7  1
+LOADVALUE D0 "ParamControl\内测元宝变量.ini" %A1 个数
+#if
+Equal D0 ""
+or Equal D0 0
+#SAY
+{FCOLOR/4}━━━{FCOLOR/1}★{FCOLOR/4}━━━{FCOLOR/14}领{FCOLOR/4}━{FCOLOR/14}取{FCOLOR/4}━{FCOLOR/14}内{FCOLOR/4}━{FCOLOR/14}测{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━━━{FCOLOR/1}★{FCOLOR/4}━━━{FCOLOR/12}\
+_          您当前的ID没有存放元宝的数据.\
+{FCOLOR/4}━━━{FCOLOR/1}★{FCOLOR/4}━━━{FCOLOR/14}领{FCOLOR/4}━{FCOLOR/14}取{FCOLOR/4}━{FCOLOR/14}内{FCOLOR/4}━{FCOLOR/14}测{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━━━{FCOLOR/1}★{FCOLOR/4}━━━{FCOLOR/12}\
+_                [ <返回上层菜单/@main> ]
+#ELSEACT
+GOTO @领取元宝_3
+
+[@领取元宝_3]
+#if
+ELarge D0 1
+#SAY
+{FCOLOR/4}━━━{FCOLOR/1}★{FCOLOR/4}━━━{FCOLOR/14}领{FCOLOR/4}━{FCOLOR/14}取{FCOLOR/4}━{FCOLOR/14}内{FCOLOR/4}━{FCOLOR/14}测{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━━━{FCOLOR/1}★{FCOLOR/4}━━━{FCOLOR/12}\
+_           您存放的元宝数量=[{FCOLOR/10} <$OUTPUT(D0)> {FCOLOR/12}]个.\
+{FCOLOR/4}━━━{FCOLOR/1}★{FCOLOR/4}━━━{FCOLOR/14}领{FCOLOR/4}━{FCOLOR/14}取{FCOLOR/4}━{FCOLOR/14}内{FCOLOR/4}━{FCOLOR/14}测{FCOLOR/4}━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━━━{FCOLOR/1}★{FCOLOR/4}━━━{FCOLOR/12}\
+_               [ <领取存放的元宝/@取内测元宝> ]\\
+_                [ <返回上层菜单/@main> ]
+
+[@取内测元宝]
+#IF
+equal  D7  1     ;;防止快速点击
+#ACT
+Close
+MOV  D7  0
+actcmd SETUSERJF + %D0  内测元宝
+SAVEVALUE "ParamControl\内测元宝变量.ini" %A1 个数 0
+SYSMSG "领取了存放的元宝 <$OUTPUT(D0)> 个."
+#ELSEACT
+Close
+SysMsg "【温馨提示】防快速点击生效."
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

@@ -1,0 +1,10 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@main]
+#ACT
+Delaygoto [Grobal] 120 @IceGoto6
+lineMsg [Grobal] "<$USERNAME>…±À¿¡À±˘≥«µ€Õı!"
+
+[@IceGoto6]
+#ACT
+mapting D2107 1 400 132
+break

@@ -1,0 +1,24 @@
+-- =============================================
+-- Create procedure basic template
+-- =============================================
+-- creating the store procedure
+IF EXISTS (SELECT name 
+	   FROM   sysobjects 
+	   WHERE  name = N'<procedure_name, sysname, proc_test>' 
+	   AND 	  type = 'P')
+    DROP PROCEDURE <procedure_name, sysname, proc_test>
+GO
+
+CREATE PROCEDURE <procedure_name, sysname, proc_test> 
+	<@param1, sysname, @p1> <datatype_for_param1, , int> = <default_value_for_param1, , 0>, 
+	<@param2, sysname, @p2> <datatype_for_param2, , int> = <default_value_for_param2, , 0>
+AS
+	SELECT @p1, @p2
+GO
+
+-- =============================================
+-- example to execute the store procedure
+-- =============================================
+EXECUTE <procedure_name, sysname, proc_test> <value_for_param1, , 1>, <value_for_param2, , 2>
+GO
+

@@ -1,0 +1,728 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@排行榜_Main]
+{
+#SAY
+━━━━━━━━━━排━行━榜━━━━━━━━━━\
+{FCOLOR/12}[ <全服等级排行/@全服等级排行8> ] [ <战士等级排行/@战士等级排行8> ] [ <法师等级排行/@法师等级排行8> ]\\
+{FCOLOR/12}[ <道士等级排行/@道士等级排行8> ] [ <全服名望排行/@全服名望排行8> ] [ < 刷新排行榜 /@刷新排行榜8> ]\
+━━━━━━━━━━━━━━━━━━━━━━━━━\
+
+[@刷新排行榜8]
+#SAY
+━━━━━━━━━━排━行━榜━━━━━━━━━━\
+{FCOLOR/12}[ <全服等级排行/@全服等级排行8> ] [ <战士等级排行/@战士等级排行8> ] [ <法师等级排行/@法师等级排行8> ]\\
+{FCOLOR/12}[ <道士等级排行/@道士等级排行8> ] [ <全服名望排行/@全服名望排行8> ] [ < 刷新排行榜 /@刷新排行榜8> ]\
+━━━━━━━━━━━━━━━━━━━━━━━━━\\
+_            [ <花费5个元宝刷新排行榜/@开始刷新排行榜> ]
+
+[@开始刷新排行榜]
+#IF
+CHECKCMD CHECKUSERJF 5
+#ACT
+ACTCMD SETUSERJF - 5
+RESETSERVERTOP 15
+SYSMSG "━━您花费了[ 5 ]个元宝刷新了排行榜━━"
+Close
+Break
+#ELSEACT
+SYSMSG "━━您的元宝不足[ 5 ]个无法刷新━━"
+Break
+
+[@全服等级排行8]
+#SAY
+━━━━━━━━━━排━行━榜━━━━━━━━━━\
+{FCOLOR/12}[ {FCOLOR/1}全服等级排行{FCOLOR/12} ] [ <战士等级排行/@战士等级排行8> ] [ <法师等级排行/@法师等级排行8> ]\\
+{FCOLOR/12}[ <道士等级排行/@道士等级排行8> ] [ <全服名望排行/@全服名望排行8> ] [ < 刷新排行榜 /@刷新排行榜8> ]\
+━━━━━━━━━━━━━━━━━━━━━━━━━\
+_ 名次       名字         职业     等级     转生\
+
+#IF
+!EQUAL ZSTOPNAME1 ""
+#ACT
+FormatStr "第 {FCOLOR/1}01{FCOLOR/12} 名    {FCOLOR/10}%-12s{FCOLOR/12}  {FCOLOR/13}%-7s{FCOLOR/12}  {FCOLOR/14}%-10s{FCOLOR/12}"  %ZSTOPNAME1,%ZSTOPJOB1,%ZSTOPLVL1
+Mov 排名1 %A9
+FormatStr "{FCOLOR/11}%s{FCOLOR/12}" %ALLLVLTOPZS1
+AddStr 排名1 %A9
+#IF
+EQUAL ZSTOPNAME1 ""
+#ACT
+formatstr "第 {FCOLOR/1}01{FCOLOR/12} 名    {FCOLOR/4}%-12s  %-7s  %-10s{FCOLOR/12}"  暂无,暂无,0
+Mov 排名1 %A9
+FormatStr "{FCOLOR/4}%s{FCOLOR/12}" 0
+AddStr 排名1 %A9
+
+#IF
+!EQUAL ZSTOPNAME2 ""
+#ACT
+FormatStr "第 {FCOLOR/1}02{FCOLOR/12} 名    {FCOLOR/10}%-12s{FCOLOR/12}  {FCOLOR/13}%-7s{FCOLOR/12}  {FCOLOR/14}%-10s{FCOLOR/12}"  %ZSTOPNAME2,%ZSTOPJOB2,%ZSTOPLVL2
+Mov 排名2 %A9
+FormatStr "{FCOLOR/11}%s{FCOLOR/12}" %ALLLVLTOPZS2
+AddStr 排名2 %A9
+#IF
+EQUAL ZSTOPNAME2 ""
+#ACT
+formatstr "第 {FCOLOR/1}02{FCOLOR/12} 名    {FCOLOR/4}%-12s  %-7s  %-10s{FCOLOR/12}"  暂无,暂无,0
+Mov 排名2 %A9
+FormatStr "{FCOLOR/4}%s{FCOLOR/12}" 0
+AddStr 排名2 %A9
+
+#IF
+!EQUAL ZSTOPNAME3 ""
+#ACT
+FormatStr "第 {FCOLOR/1}03{FCOLOR/12} 名    {FCOLOR/10}%-12s{FCOLOR/12}  {FCOLOR/13}%-7s{FCOLOR/12}  {FCOLOR/14}%-10s{FCOLOR/12}"  %ZSTOPNAME3,%ZSTOPJOB3,%ZSTOPLVL3
+Mov 排名3 %A9
+FormatStr "{FCOLOR/11}%s{FCOLOR/12}" %ALLLVLTOPZS3
+AddStr 排名3 %A9
+#IF
+EQUAL ZSTOPNAME3 ""
+#ACT
+formatstr "第 {FCOLOR/1}03{FCOLOR/12} 名    {FCOLOR/4}%-12s  %-7s  %-10s{FCOLOR/12}"  暂无,暂无,0
+Mov 排名3 %A9
+FormatStr "{FCOLOR/4}%s{FCOLOR/12}" 0
+AddStr 排名3 %A9
+
+#IF
+!EQUAL ZSTOPNAME4 ""
+#ACT
+FormatStr "第 {FCOLOR/1}04{FCOLOR/12} 名    {FCOLOR/10}%-12s{FCOLOR/12}  {FCOLOR/13}%-7s{FCOLOR/12}  {FCOLOR/14}%-10s{FCOLOR/12}"  %ZSTOPNAME4,%ZSTOPJOB4,%ZSTOPLVL4
+Mov 排名4 %A9
+FormatStr "{FCOLOR/11}%s{FCOLOR/12}" %ALLLVLTOPZS4
+AddStr 排名4 %A9
+#IF
+EQUAL ZSTOPNAME4 ""
+#ACT
+formatstr "第 {FCOLOR/1}04{FCOLOR/12} 名    {FCOLOR/4}%-12s  %-7s  %-10s{FCOLOR/12}"  暂无,暂无,0
+Mov 排名4 %A9
+FormatStr "{FCOLOR/4}%s{FCOLOR/12}" 0
+AddStr 排名4 %A9
+
+#IF
+!EQUAL ZSTOPNAME5 ""
+#ACT
+FormatStr "第 {FCOLOR/1}05{FCOLOR/12} 名    {FCOLOR/10}%-12s{FCOLOR/12}  {FCOLOR/13}%-7s{FCOLOR/12}  {FCOLOR/14}%-10s{FCOLOR/12}"  %ZSTOPNAME5,%ZSTOPJOB5,%ZSTOPLVL5
+Mov 排名5 %A9
+FormatStr "{FCOLOR/11}%s{FCOLOR/12}" %ALLLVLTOPZS5
+AddStr 排名5 %A9
+#IF
+EQUAL ZSTOPNAME5 ""
+#ACT
+formatstr "第 {FCOLOR/1}05{FCOLOR/12} 名    {FCOLOR/4}%-12s  %-7s  %-10s{FCOLOR/12}"  暂无,暂无,0
+Mov 排名5 %A9
+FormatStr "{FCOLOR/4}%s{FCOLOR/12}" 0
+AddStr 排名5 %A9
+
+#IF
+!EQUAL ZSTOPNAME6 ""
+#ACT
+FormatStr "第 {FCOLOR/1}06{FCOLOR/12} 名    {FCOLOR/10}%-12s{FCOLOR/12}  {FCOLOR/13}%-7s{FCOLOR/12}  {FCOLOR/14}%-10s{FCOLOR/12}"  %ZSTOPNAME6,%ZSTOPJOB6,%ZSTOPLVL6
+Mov 排名6 %A9
+FormatStr "{FCOLOR/11}%s{FCOLOR/12}" %ALLLVLTOPZS6
+AddStr 排名6 %A9
+#IF
+EQUAL ZSTOPNAME6 ""
+#ACT
+formatstr "第 {FCOLOR/1}06{FCOLOR/12} 名    {FCOLOR/4}%-12s  %-7s  %-10s{FCOLOR/12}"  暂无,暂无,0
+Mov 排名6 %A9
+FormatStr "{FCOLOR/4}%s{FCOLOR/12}" 0
+AddStr 排名6 %A9
+
+#IF
+!EQUAL ZSTOPNAME7 ""
+#ACT
+FormatStr "第 {FCOLOR/1}07{FCOLOR/12} 名    {FCOLOR/10}%-12s{FCOLOR/12}  {FCOLOR/13}%-7s{FCOLOR/12}  {FCOLOR/14}%-10s{FCOLOR/12}"  %ZSTOPNAME7,%ZSTOPJOB7,%ZSTOPLVL7
+Mov 排名7 %A9
+FormatStr "{FCOLOR/11}%s{FCOLOR/12}" %ALLLVLTOPZS7
+AddStr 排名7 %A9
+#IF
+EQUAL ZSTOPNAME7 ""
+#ACT
+formatstr "第 {FCOLOR/1}07{FCOLOR/12} 名    {FCOLOR/4}%-12s  %-7s  %-10s{FCOLOR/12}"  暂无,暂无,0
+Mov 排名7 %A9
+FormatStr "{FCOLOR/4}%s{FCOLOR/12}" 0
+AddStr 排名7 %A9
+
+#IF
+!EQUAL ZSTOPNAME8 ""
+#ACT
+FormatStr "第 {FCOLOR/1}08{FCOLOR/12} 名    {FCOLOR/10}%-12s{FCOLOR/12}  {FCOLOR/13}%-7s{FCOLOR/12}  {FCOLOR/14}%-10s{FCOLOR/12}"  %ZSTOPNAME8,%ZSTOPJOB8,%ZSTOPLVL8
+Mov 排名8 %A9
+FormatStr "{FCOLOR/11}%s{FCOLOR/12}" %ALLLVLTOPZS8
+AddStr 排名8 %A9
+#IF
+EQUAL ZSTOPNAME8 ""
+#ACT
+formatstr "第 {FCOLOR/1}08{FCOLOR/12} 名    {FCOLOR/4}%-12s  %-7s  %-10s{FCOLOR/12}"  暂无,暂无,0
+Mov 排名8 %A9
+FormatStr "{FCOLOR/4}%s{FCOLOR/12}" 0
+AddStr 排名8 %A9
+
+#IF
+!EQUAL ZSTOPNAME9 ""
+#ACT
+FormatStr "第 {FCOLOR/1}09{FCOLOR/12} 名    {FCOLOR/10}%-12s{FCOLOR/12}  {FCOLOR/13}%-7s{FCOLOR/12}  {FCOLOR/14}%-10s{FCOLOR/12}"  %ZSTOPNAME9,%ZSTOPJOB9,%ZSTOPLVL9
+Mov 排名9 %A9
+FormatStr "{FCOLOR/11}%s{FCOLOR/12}" %ALLLVLTOPZS9
+AddStr 排名9 %A9
+#IF
+EQUAL ZSTOPNAME9 ""
+#ACT
+formatstr "第 {FCOLOR/1}09{FCOLOR/12} 名    {FCOLOR/4}%-12s  %-7s  %-10s{FCOLOR/12}"  暂无,暂无,0
+Mov 排名9 %A9
+FormatStr "{FCOLOR/4}%s{FCOLOR/12}" 0
+AddStr 排名9 %A9
+
+#IF
+!EQUAL ZSTOPNAME10 ""
+#ACT
+FormatStr "第 {FCOLOR/1}10{FCOLOR/12} 名    {FCOLOR/10}%-12s{FCOLOR/12}  {FCOLOR/13}%-7s{FCOLOR/12}  {FCOLOR/14}%-10s{FCOLOR/12}"  %ZSTOPNAME10,%ZSTOPJOB10,%ZSTOPLVL10
+Mov 排名10 %A9
+FormatStr "{FCOLOR/11}%s{FCOLOR/12}" %ALLLVLTOPZS10
+AddStr 排名10 %A9
+#IF
+EQUAL ZSTOPNAME10 ""
+#ACT
+formatstr "第 {FCOLOR/1}10{FCOLOR/12} 名    {FCOLOR/4}%-12s  %-7s  %-10s{FCOLOR/12}"  暂无,暂无,0
+Mov 排名10 %A9
+FormatStr "{FCOLOR/4}%s{FCOLOR/12}" 0
+AddStr 排名10 %A9
+
+#IF
+#SAY
+<$OUTPUT(排名1)>\
+<$OUTPUT(排名2)>\
+<$OUTPUT(排名3)>\
+<$OUTPUT(排名4)>\
+<$OUTPUT(排名5)>\
+<$OUTPUT(排名6)>\
+<$OUTPUT(排名7)>\
+<$OUTPUT(排名8)>\
+<$OUTPUT(排名9)>\
+<$OUTPUT(排名10)>\
+
+[@战士等级排行8]
+#SAY
+━━━━━━━━━━排━行━榜━━━━━━━━━━\
+{FCOLOR/12}[ <全服等级排行/@全服等级排行8> ] [ {FCOLOR/1}战士等级排行{FCOLOR/12} ] [ <法师等级排行/@法师等级排行8> ]\\
+{FCOLOR/12}[ <道士等级排行/@道士等级排行8> ] [ <全服名望排行/@全服名望排行8> ] [ < 刷新排行榜 /@刷新排行榜8> ]\
+━━━━━━━━━━━━━━━━━━━━━━━━━\
+_ 名次         名字           等级          转生\
+
+#IF
+!EQUAL WARLVLTOPNAME1 ""
+#ACT
+FormatStr "第 {FCOLOR/1}01{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %WARLVLTOPNAME1,%WARLVLTOPLVL1,%WARLVLTOPZS1
+Mov 排名1 %A9
+#IF
+EQUAL WARLVLTOPNAME1 ""
+#ACT
+formatstr "第 {FCOLOR/1}01{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名1 %A9
+
+#IF
+!EQUAL WARLVLTOPNAME2 ""
+#ACT
+FormatStr "第 {FCOLOR/1}02{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %WARLVLTOPNAME2,%WARLVLTOPLVL2,%WARLVLTOPZS2
+Mov 排名2 %A9
+#IF
+EQUAL WARLVLTOPNAME2 ""
+#ACT
+formatstr "第 {FCOLOR/1}02{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名2 %A9
+
+#IF
+!EQUAL WARLVLTOPNAME3 ""
+#ACT
+FormatStr "第 {FCOLOR/1}03{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %WARLVLTOPNAME3,%WARLVLTOPLVL3,%WARLVLTOPZS3
+Mov 排名3 %A9
+#IF
+EQUAL WARLVLTOPNAME3 ""
+#ACT
+formatstr "第 {FCOLOR/1}03{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名3 %A9
+
+#IF
+!EQUAL WARLVLTOPNAME4 ""
+#ACT
+FormatStr "第 {FCOLOR/1}04{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %WARLVLTOPNAME4,%WARLVLTOPLVL4,%WARLVLTOPZS4
+Mov 排名4 %A9
+#IF
+EQUAL WARLVLTOPNAME4 ""
+#ACT
+formatstr "第 {FCOLOR/1}04{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名4 %A9
+
+#IF
+!EQUAL WARLVLTOPNAME5 ""
+#ACT
+FormatStr "第 {FCOLOR/1}05{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %WARLVLTOPNAME5,%WARLVLTOPLVL5,%WARLVLTOPZS5
+Mov 排名5 %A9
+#IF
+EQUAL WARLVLTOPNAME5 ""
+#ACT
+formatstr "第 {FCOLOR/1}05{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名5 %A9
+
+#IF
+!EQUAL WARLVLTOPNAME6 ""
+#ACT
+FormatStr "第 {FCOLOR/1}06{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %WARLVLTOPNAME6,%WARLVLTOPLVL6,%WARLVLTOPZS6
+Mov 排名6 %A9
+#IF
+EQUAL WARLVLTOPNAME6 ""
+#ACT
+formatstr "第 {FCOLOR/1}06{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名6 %A9
+
+#IF
+!EQUAL WARLVLTOPNAME7 ""
+#ACT
+FormatStr "第 {FCOLOR/1}07{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %WARLVLTOPNAME7,%WARLVLTOPLVL7,%WARLVLTOPZS7
+Mov 排名7 %A9
+#IF
+EQUAL WARLVLTOPNAME7 ""
+#ACT
+formatstr "第 {FCOLOR/1}07{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名7 %A9
+
+#IF
+!EQUAL WARLVLTOPNAME8 ""
+#ACT
+FormatStr "第 {FCOLOR/1}08{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %WARLVLTOPNAME8,%WARLVLTOPLVL8,%WARLVLTOPZS8
+Mov 排名8 %A9
+#IF
+EQUAL WARLVLTOPNAME8 ""
+#ACT
+formatstr "第 {FCOLOR/1}08{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名8 %A9
+
+#IF
+!EQUAL WARLVLTOPNAME9 ""
+#ACT
+FormatStr "第 {FCOLOR/1}09{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %WARLVLTOPNAME9,%WARLVLTOPLVL9,%WARLVLTOPZS9
+Mov 排名9 %A9
+#IF
+EQUAL WARLVLTOPNAME9 ""
+#ACT
+formatstr "第 {FCOLOR/1}09{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名9 %A9
+
+#IF
+!EQUAL WARLVLTOPNAME10 ""
+#ACT
+FormatStr "第 {FCOLOR/1}10{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %WARLVLTOPNAME10,%WARLVLTOPLVL10,%WARLVLTOPZS10
+Mov 排名10 %A9
+#IF
+EQUAL WARLVLTOPNAME10 ""
+#ACT
+formatstr "第 {FCOLOR/1}10{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名10 %A9
+
+#IF
+#SAY
+<$OUTPUT(排名1)>\
+<$OUTPUT(排名2)>\
+<$OUTPUT(排名3)>\
+<$OUTPUT(排名4)>\
+<$OUTPUT(排名5)>\
+<$OUTPUT(排名6)>\
+<$OUTPUT(排名7)>\
+<$OUTPUT(排名8)>\
+<$OUTPUT(排名9)>\
+<$OUTPUT(排名10)>\
+
+[@法师等级排行8]
+#SAY
+━━━━━━━━━━排━行━榜━━━━━━━━━━\
+{FCOLOR/12}[ <全服等级排行/@全服等级排行8> ] [ <战士等级排行/@战士等级排行8> ] [ {FCOLOR/1}法师等级排行{FCOLOR/12} ]\\
+{FCOLOR/12}[ <道士等级排行/@道士等级排行8> ] [ <全服名望排行/@全服名望排行8> ] [ < 刷新排行榜 /@刷新排行榜8> ]\
+━━━━━━━━━━━━━━━━━━━━━━━━━\
+_ 名次         名字           等级          转生\
+
+#IF
+!EQUAL WIZLVLTOPNAME1 ""
+#ACT
+FormatStr "第 {FCOLOR/1}01{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %WIZLVLTOPNAME1,%WIZLVLTOPLVL1,%WIZLVLTOPZS1
+Mov 排名1 %A9
+#IF
+EQUAL WIZLVLTOPNAME1 ""
+#ACT
+formatstr "第 {FCOLOR/1}01{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名1 %A9
+
+#IF
+!EQUAL WIZLVLTOPNAME2 ""
+#ACT
+FormatStr "第 {FCOLOR/1}02{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %WIZLVLTOPNAME2,%WIZLVLTOPLVL2,%WIZLVLTOPZS2
+Mov 排名2 %A9
+#IF
+EQUAL WIZLVLTOPNAME2 ""
+#ACT
+formatstr "第 {FCOLOR/1}02{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名2 %A9
+
+#IF
+!EQUAL WIZLVLTOPNAME3 ""
+#ACT
+FormatStr "第 {FCOLOR/1}03{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %WIZLVLTOPNAME3,%WIZLVLTOPLVL3,%WIZLVLTOPZS3
+Mov 排名3 %A9
+#IF
+EQUAL WIZLVLTOPNAME3 ""
+#ACT
+formatstr "第 {FCOLOR/1}03{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名3 %A9
+
+#IF
+!EQUAL WIZLVLTOPNAME4 ""
+#ACT
+FormatStr "第 {FCOLOR/1}04{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %WIZLVLTOPNAME4,%WIZLVLTOPLVL4,%WIZLVLTOPZS4
+Mov 排名4 %A9
+#IF
+EQUAL WIZLVLTOPNAME4 ""
+#ACT
+formatstr "第 {FCOLOR/1}04{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名4 %A9
+
+#IF
+!EQUAL WIZLVLTOPNAME5 ""
+#ACT
+FormatStr "第 {FCOLOR/1}05{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %WIZLVLTOPNAME5,%WIZLVLTOPLVL5,%WIZLVLTOPZS5
+Mov 排名5 %A9
+#IF
+EQUAL WIZLVLTOPNAME5 ""
+#ACT
+formatstr "第 {FCOLOR/1}05{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名5 %A9
+
+#IF
+!EQUAL WIZLVLTOPNAME6 ""
+#ACT
+FormatStr "第 {FCOLOR/1}06{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %WIZLVLTOPNAME6,%WIZLVLTOPLVL6,%WIZLVLTOPZS6
+Mov 排名6 %A9
+#IF
+EQUAL WIZLVLTOPNAME6 ""
+#ACT
+formatstr "第 {FCOLOR/1}06{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名6 %A9
+
+#IF
+!EQUAL WIZLVLTOPNAME7 ""
+#ACT
+FormatStr "第 {FCOLOR/1}07{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %WIZLVLTOPNAME7,%WIZLVLTOPLVL7,%WIZLVLTOPZS7
+Mov 排名7 %A9
+#IF
+EQUAL WIZLVLTOPNAME7 ""
+#ACT
+formatstr "第 {FCOLOR/1}07{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名7 %A9
+
+#IF
+!EQUAL WIZLVLTOPNAME8 ""
+#ACT
+FormatStr "第 {FCOLOR/1}08{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %WIZLVLTOPNAME8,%WIZLVLTOPLVL8,%WIZLVLTOPZS8
+Mov 排名8 %A9
+#IF
+EQUAL WIZLVLTOPNAME8 ""
+#ACT
+formatstr "第 {FCOLOR/1}08{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名8 %A9
+
+#IF
+!EQUAL WIZLVLTOPNAME9 ""
+#ACT
+FormatStr "第 {FCOLOR/1}09{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %WIZLVLTOPNAME9,%WIZLVLTOPLVL9,%WIZLVLTOPZS9
+Mov 排名9 %A9
+#IF
+EQUAL WIZLVLTOPNAME9 ""
+#ACT
+formatstr "第 {FCOLOR/1}09{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名9 %A9
+
+#IF
+!EQUAL WIZLVLTOPNAME10 ""
+#ACT
+FormatStr "第 {FCOLOR/1}10{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %WIZLVLTOPNAME10,%WIZLVLTOPLVL10,%WIZLVLTOPZS10
+Mov 排名10 %A9
+#IF
+EQUAL WIZLVLTOPNAME10 ""
+#ACT
+formatstr "第 {FCOLOR/1}10{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名10 %A9
+
+#IF
+#SAY
+<$OUTPUT(排名1)>\
+<$OUTPUT(排名2)>\
+<$OUTPUT(排名3)>\
+<$OUTPUT(排名4)>\
+<$OUTPUT(排名5)>\
+<$OUTPUT(排名6)>\
+<$OUTPUT(排名7)>\
+<$OUTPUT(排名8)>\
+<$OUTPUT(排名9)>\
+<$OUTPUT(排名10)>\
+
+[@道士等级排行8]
+#SAY
+━━━━━━━━━━排━行━榜━━━━━━━━━━\
+{FCOLOR/12}[ <全服等级排行/@全服等级排行8> ] [ <战士等级排行/@战士等级排行8> ] [ <法师等级排行/@法师等级排行8> ]\\
+{FCOLOR/12}[ {FCOLOR/1}道士等级排行{FCOLOR/12} ] [ <全服名望排行/@全服名望排行8> ] [ < 刷新排行榜 /@刷新排行榜8> ]\
+━━━━━━━━━━━━━━━━━━━━━━━━━\
+_ 名次         名字           等级          转生\
+
+#IF
+!EQUAL TAOLVLTOPNAME1 ""
+#ACT
+FormatStr "第 {FCOLOR/1}01{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %TAOLVLTOPNAME1,%TAOLVLTOPLVL1,%TAOLVLTOPZS1
+Mov 排名1 %A9
+#IF
+EQUAL TAOLVLTOPNAME1 ""
+#ACT
+formatstr "第 {FCOLOR/1}01{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名1 %A9
+
+#IF
+!EQUAL TAOLVLTOPNAME2 ""
+#ACT
+FormatStr "第 {FCOLOR/1}02{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %TAOLVLTOPNAME2,%TAOLVLTOPLVL2,%TAOLVLTOPZS2
+Mov 排名2 %A9
+#IF
+EQUAL TAOLVLTOPNAME2 ""
+#ACT
+formatstr "第 {FCOLOR/1}02{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名2 %A9
+
+#IF
+!EQUAL TAOLVLTOPNAME3 ""
+#ACT
+FormatStr "第 {FCOLOR/1}03{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %TAOLVLTOPNAME3,%TAOLVLTOPLVL3,%TAOLVLTOPZS3
+Mov 排名3 %A9
+#IF
+EQUAL TAOLVLTOPNAME3 ""
+#ACT
+formatstr "第 {FCOLOR/1}03{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名3 %A9
+
+#IF
+!EQUAL TAOLVLTOPNAME4 ""
+#ACT
+FormatStr "第 {FCOLOR/1}04{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %TAOLVLTOPNAME4,%TAOLVLTOPLVL4,%TAOLVLTOPZS4
+Mov 排名4 %A9
+#IF
+EQUAL TAOLVLTOPNAME4 ""
+#ACT
+formatstr "第 {FCOLOR/1}04{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名4 %A9
+
+#IF
+!EQUAL TAOLVLTOPNAME5 ""
+#ACT
+FormatStr "第 {FCOLOR/1}05{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %TAOLVLTOPNAME5,%TAOLVLTOPLVL5,%TAOLVLTOPZS5
+Mov 排名5 %A9
+#IF
+EQUAL TAOLVLTOPNAME5 ""
+#ACT
+formatstr "第 {FCOLOR/1}05{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名5 %A9
+
+#IF
+!EQUAL TAOLVLTOPNAME6 ""
+#ACT
+FormatStr "第 {FCOLOR/1}06{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %TAOLVLTOPNAME6,%TAOLVLTOPLVL6,%TAOLVLTOPZS6
+Mov 排名6 %A9
+#IF
+EQUAL TAOLVLTOPNAME6 ""
+#ACT
+formatstr "第 {FCOLOR/1}06{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名6 %A9
+
+#IF
+!EQUAL TAOLVLTOPNAME7 ""
+#ACT
+FormatStr "第 {FCOLOR/1}07{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %TAOLVLTOPNAME7,%TAOLVLTOPLVL7,%TAOLVLTOPZS7
+Mov 排名7 %A9
+#IF
+EQUAL TAOLVLTOPNAME7 ""
+#ACT
+formatstr "第 {FCOLOR/1}07{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名7 %A9
+
+#IF
+!EQUAL TAOLVLTOPNAME8 ""
+#ACT
+FormatStr "第 {FCOLOR/1}08{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %TAOLVLTOPNAME8,%TAOLVLTOPLVL8,%TAOLVLTOPZS8
+Mov 排名8 %A9
+#IF
+EQUAL TAOLVLTOPNAME8 ""
+#ACT
+formatstr "第 {FCOLOR/1}08{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名8 %A9
+
+#IF
+!EQUAL TAOLVLTOPNAME9 ""
+#ACT
+FormatStr "第 {FCOLOR/1}09{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %TAOLVLTOPNAME9,%TAOLVLTOPLVL9,%TAOLVLTOPZS9
+Mov 排名9 %A9
+#IF
+EQUAL TAOLVLTOPNAME9 ""
+#ACT
+formatstr "第 {FCOLOR/1}09{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名9 %A9
+
+#IF
+!EQUAL TAOLVLTOPNAME10 ""
+#ACT
+FormatStr "第 {FCOLOR/1}10{FCOLOR/12} 名      {FCOLOR/10}%-14s{FCOLOR/12}  {FCOLOR/13}%-13s{FCOLOR/12}  {FCOLOR/11}%s{FCOLOR/12}"  %TAOLVLTOPNAME10,%TAOLVLTOPLVL10,%TAOLVLTOPZS10
+Mov 排名10 %A9
+#IF
+EQUAL TAOLVLTOPNAME10 ""
+#ACT
+formatstr "第 {FCOLOR/1}10{FCOLOR/12} 名      {FCOLOR/4}%-14s  %-13s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名10 %A9
+
+#IF
+#SAY
+<$OUTPUT(排名1)>\
+<$OUTPUT(排名2)>\
+<$OUTPUT(排名3)>\
+<$OUTPUT(排名4)>\
+<$OUTPUT(排名5)>\
+<$OUTPUT(排名6)>\
+<$OUTPUT(排名7)>\
+<$OUTPUT(排名8)>\
+<$OUTPUT(排名9)>\
+<$OUTPUT(排名10)>\
+
+[@全服名望排行8]
+#SAY
+━━━━━━━━━━排━行━榜━━━━━━━━━━\
+{FCOLOR/12}[ <全服等级排行/@全服等级排行8> ] [ <战士等级排行/@战士等级排行8> ] [ <法师等级排行/@法师等级排行8> ]\\
+{FCOLOR/12}[ <道士等级排行/@道士等级排行8> ] [ {FCOLOR/1}全服名望排行{FCOLOR/12} ] [ < 刷新排行榜 /@刷新排行榜8> ]\
+━━━━━━━━━━━━━━━━━━━━━━━━━\
+_ 名次                名字                名望值\
+
+#IF
+!EQUAL FAMETOPNAME1 ""
+#ACT
+FormatStr "第 {FCOLOR/1}01{FCOLOR/12} 名             {FCOLOR/10}%-19s{FCOLOR/12}  {FCOLOR/13}%s{FCOLOR/12}"  %FAMETOPNAME1,%FAMETOPVALUE1
+Mov 排名1 %A9
+#IF
+EQUAL FAMETOPNAME1 ""
+#ACT
+formatstr "第 {FCOLOR/1}01{FCOLOR/12} 名             {FCOLOR/4}%-19s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名1 %A9
+
+#IF
+!EQUAL FAMETOPNAME2 ""
+#ACT
+FormatStr "第 {FCOLOR/1}02{FCOLOR/12} 名             {FCOLOR/10}%-19s{FCOLOR/12}  {FCOLOR/13}%s{FCOLOR/12}"  %FAMETOPNAME2,%FAMETOPVALUE2
+Mov 排名2 %A9
+#IF
+EQUAL FAMETOPNAME2 ""
+#ACT
+formatstr "第 {FCOLOR/1}02{FCOLOR/12} 名             {FCOLOR/4}%-19s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名2 %A9
+
+#IF
+!EQUAL FAMETOPNAME3 ""
+#ACT
+FormatStr "第 {FCOLOR/1}03{FCOLOR/12} 名             {FCOLOR/10}%-19s{FCOLOR/12}  {FCOLOR/13}%s{FCOLOR/12}"  %FAMETOPNAME3,%FAMETOPVALUE3
+Mov 排名3 %A9
+#IF
+EQUAL FAMETOPNAME3 ""
+#ACT
+formatstr "第 {FCOLOR/1}03{FCOLOR/12} 名             {FCOLOR/4}%-19s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名3 %A9
+
+#IF
+!EQUAL FAMETOPNAME4 ""
+#ACT
+FormatStr "第 {FCOLOR/1}04{FCOLOR/12} 名             {FCOLOR/10}%-19s{FCOLOR/12}  {FCOLOR/13}%s{FCOLOR/12}"  %FAMETOPNAME4,%FAMETOPVALUE4
+Mov 排名4 %A9
+#IF
+EQUAL FAMETOPNAME4 ""
+#ACT
+formatstr "第 {FCOLOR/1}04{FCOLOR/12} 名             {FCOLOR/4}%-19s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名4 %A9
+
+#IF
+!EQUAL FAMETOPNAME5 ""
+#ACT
+FormatStr "第 {FCOLOR/1}05{FCOLOR/12} 名             {FCOLOR/10}%-19s{FCOLOR/12}  {FCOLOR/13}%s{FCOLOR/12}"  %FAMETOPNAME5,%FAMETOPVALUE5
+Mov 排名5 %A9
+#IF
+EQUAL FAMETOPNAME5 ""
+#ACT
+formatstr "第 {FCOLOR/1}05{FCOLOR/12} 名             {FCOLOR/4}%-19s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名5 %A9
+
+#IF
+!EQUAL FAMETOPNAME6 ""
+#ACT
+FormatStr "第 {FCOLOR/1}06{FCOLOR/12} 名             {FCOLOR/10}%-19s{FCOLOR/12}  {FCOLOR/13}%s{FCOLOR/12}"  %FAMETOPNAME6,%FAMETOPVALUE6
+Mov 排名6 %A9
+#IF
+EQUAL FAMETOPNAME6 ""
+#ACT
+formatstr "第 {FCOLOR/1}06{FCOLOR/12} 名             {FCOLOR/4}%-19s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名6 %A9
+
+#IF
+!EQUAL FAMETOPNAME7 ""
+#ACT
+FormatStr "第 {FCOLOR/1}07{FCOLOR/12} 名             {FCOLOR/10}%-19s{FCOLOR/12}  {FCOLOR/13}%s{FCOLOR/12}"  %FAMETOPNAME7,%FAMETOPVALUE7
+Mov 排名7 %A9
+#IF
+EQUAL FAMETOPNAME7 ""
+#ACT
+formatstr "第 {FCOLOR/1}07{FCOLOR/12} 名             {FCOLOR/4}%-19s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名7 %A9
+
+#IF
+!EQUAL FAMETOPNAME8 ""
+#ACT
+FormatStr "第 {FCOLOR/1}08{FCOLOR/12} 名             {FCOLOR/10}%-19s{FCOLOR/12}  {FCOLOR/13}%s{FCOLOR/12}"  %FAMETOPNAME8,%FAMETOPVALUE8
+Mov 排名8 %A9
+#IF
+EQUAL FAMETOPNAME8 ""
+#ACT
+formatstr "第 {FCOLOR/1}08{FCOLOR/12} 名             {FCOLOR/4}%-19s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名8 %A9
+
+#IF
+!EQUAL FAMETOPNAME9 ""
+#ACT
+FormatStr "第 {FCOLOR/1}09{FCOLOR/12} 名             {FCOLOR/10}%-19s{FCOLOR/12}  {FCOLOR/13}%s{FCOLOR/12}"  %FAMETOPNAME9,%FAMETOPVALUE9
+Mov 排名9 %A9
+#IF
+EQUAL FAMETOPNAME9 ""
+#ACT
+formatstr "第 {FCOLOR/1}09{FCOLOR/12} 名             {FCOLOR/4}%-19s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名9 %A9
+
+#IF
+!EQUAL FAMETOPNAME10 ""
+#ACT
+FormatStr "第 {FCOLOR/1}10{FCOLOR/12} 名             {FCOLOR/10}%-19s{FCOLOR/12}  {FCOLOR/13}%s{FCOLOR/12}"  %FAMETOPNAME10,%FAMETOPVALUE10
+Mov 排名10 %A9
+#IF
+EQUAL FAMETOPNAME10 ""
+#ACT
+formatstr "第 {FCOLOR/1}10{FCOLOR/12} 名             {FCOLOR/4}%-19s  %s{FCOLOR/12}"  暂无,0,0
+Mov 排名10 %A9
+
+#IF
+#SAY
+<$OUTPUT(排名1)>\
+<$OUTPUT(排名2)>\
+<$OUTPUT(排名3)>\
+<$OUTPUT(排名4)>\
+<$OUTPUT(排名5)>\
+<$OUTPUT(排名6)>\
+<$OUTPUT(排名7)>\
+<$OUTPUT(排名8)>\
+<$OUTPUT(排名9)>\
+<$OUTPUT(排名10)>\
+
+}
+
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

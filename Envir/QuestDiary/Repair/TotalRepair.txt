@@ -1,0 +1,105 @@
+;;创天网络有限公司原版1.45
+[@SRepairItem]
+{
+#ACT
+mov  P0  %ARG(1)
+GetRepairCost  %P0
+
+#IF
+small P9  0
+#SAY
+这个物品不需要修理。\ \
+<前一步/@main>
+#ACT
+break
+
+#IF
+equal P0 1
+#ACT
+goto @SRepair_Weapon
+break
+
+#IF
+CheckGold  %P9
+#ACT
+mov  D0   %P0
+mov  D1   %P9
+#SAY
+修理费用是<$OUTPUT(P9)>。\ \
+这个特修是只有带着所有物品的情况下才可以修理。请确认一下是否带着。\
+<现在修理/@SRepairNow>\
+<前一步/@main>
+
+#ELSESAY
+钱不够啊。。\ \
+<前一步/@main>
+
+[@SRepair_Weapon]
+#IF
+checkitemw 鹤嘴锄 1
+#ACT
+break
+
+#SAY
+您不能对鹤嘴锄之类的物品进行修复。\\
+<结束/@exit>
+
+#ELSEACT
+goto @SRepair_Weapon_Check
+
+[@SRepair_Weapon_Check]
+#IF
+checkitemw 风之鹤嘴锄 1
+#ACT
+break
+
+#SAY
+您不能对鹤嘴锄之类的物品进行修复。\\
+<结束/@exit>
+
+#ELSEACT
+mov  P0  %ARG(1)
+GetRepairCost  %P0
+
+#IF
+small P9  0
+#SAY
+这个物品不需要修理。\ \
+<前一步/@main>
+#ACT
+break
+
+#ELSESAY
+修理费用是<$OUTPUT(P9)>。\ \
+这个特修是只有带着所有物品的情况下才可以修理。请确认一下是否带着。\
+<现在修理/@SRepairNow>\
+<前一步/@main>
+
+#IF
+#ACT
+mov D0 %P0
+mov D1 %P9
+
+[@SRepairNow]
+#IF
+checkitemw 鹤嘴锄 1
+or checkitemw 风之鹤嘴锄 1
+#SAY
+您不能对鹤嘴锄之类的物品进行修复。\\
+<结束/@exit>
+#ACT
+break
+#ELSEACT
+GetRepairCost  %D0
+
+#IF
+Equal  D1  %P9
+#ACT
+RepairItem  %D0
+take 金币  %P9
+#SAY
+修理的很好。\
+修理费用是<$OUTPUT(P9)>。\ \
+<前一步/@main>
+
+}

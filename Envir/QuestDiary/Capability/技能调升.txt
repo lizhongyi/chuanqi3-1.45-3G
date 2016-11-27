@@ -1,0 +1,908 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@技能调升_1]
+{
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <补学普通技能/@补学普通技能1> ] [ <学习转生技能/@学习转生技能1> ] [ <提升转生技能/@提升转生技能1> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+
+[@补学普通技能1]
+#IF
+ELarge USERREBORNCOUNT 1
+#ACT
+SYSMSG "补学失败: 转生后不能再补学技能"
+break
+
+#IF
+!CHECKLEVEL 65
+#ACT
+Close
+SYSMSG "补学失败: 必须达到65级才可补学技能"
+break
+
+#IF
+checkjob warrior
+#ACT
+goto @补学战士技能   ;战士
+BREAK
+
+#IF
+checkjob wizard
+#ACT
+goto @补学法师技能    ;法师
+#elseact
+goto @补学道士技能    ;道士
+
+[@补学道士技能]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ {FCOLOR/1}补学普通技能{FCOLOR/12} ] [ <学习转生技能/@学习转生技能1> ] [ <提升转生技能/@提升转生技能1> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+#IF
+chkmagiclevel 治愈术 0
+#SAY
+_[ 治 愈 术 ]技能所需等级[ 7 级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 治 愈 术 ]技能所需等级[ 7 级 ]→[ <补学该技能/@补学技能开始(治愈术,7,)> ]\
+
+#IF
+chkmagiclevel 精神力战法 0
+#SAY
+_[精神力战法]技能所需等级[ 8 级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[精神力战法]技能所需等级[ 8 级 ]→[ <补学该技能/@补学技能开始(精神力战法,8)> ]\
+
+#IF
+chkmagiclevel 施毒术 0
+#SAY
+_[ 施 毒 术 ]技能所需等级[ 12级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 施 毒 术 ]技能所需等级[ 12级 ]→[ <补学该技能/@补学技能开始(施毒术,12)> ]\
+
+#IF
+chkmagiclevel 灵魂火符 0
+#SAY
+_[ 灵魂火符 ]技能所需等级[ 13级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 灵魂火符 ]技能所需等级[ 13级 ]→[ <补学该技能/@补学技能开始(灵魂火符,13)> ]\
+
+#IF
+chkmagiclevel 月魂断玉 0
+#SAY
+_[ 月魂断玉 ]技能所需等级[ 14级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 月魂断玉 ]技能所需等级[ 14级 ]→[ <补学该技能/@补学技能开始(月魂断玉,14)> ]\
+
+#IF
+chkmagiclevel 召唤骷髅 0
+#SAY
+_[ 召唤骷髅 ]技能所需等级[ 17级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 召唤骷髅 ]技能所需等级[ 17级 ]→[ <补学该技能/@补学技能开始(召唤骷髅,17)> ]\
+
+#IF
+chkmagiclevel 隐身术 0
+#SAY
+_[ 隐 身 术 ]技能所需等级[ 20级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 隐 身 术 ]技能所需等级[ 20级 ]→[ <补学该技能/@补学技能开始(隐身术,20)> ]\
+
+#IF
+chkmagiclevel 幽灵盾 0
+#SAY
+_[ 幽 灵 盾 ]技能所需等级[ 21级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 幽 灵 盾 ]技能所需等级[ 21级 ]→[ <补学该技能/@补学技能开始(幽灵盾,21)> ]\
+
+#IF
+chkmagiclevel 集体隐身术 0
+#SAY
+_[集体隐身术]技能所需等级[ 23级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[集体隐身术]技能所需等级[ 23级 ]→[ <补学该技能/@补学技能开始(集体隐身术,23)> ]\
+
+#IF
+chkmagiclevel 月魂灵波 0
+#SAY
+_[ 月魂灵波 ]技能所需等级[ 24级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 月魂灵波 ]技能所需等级[ 24级 ]→[ <补学该技能/@补学技能开始(月魂灵波,24)> ]\
+
+#IF
+chkmagiclevel 神圣战甲术 0
+#SAY
+_[神圣战甲术]技能所需等级[ 25级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[神圣战甲术]技能所需等级[ 25级 ]→[ <补学该技能/@补学技能开始(神圣战甲术,25)> ]\
+
+#IF
+chkmagiclevel 困魔咒 0
+#SAY
+_[ 困 魔 咒 ]技能所需等级[ 27级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 困 魔 咒 ]技能所需等级[ 27级 ]→[ <补学该技能/@补学技能开始(困魔咒,27)> ]\
+
+#IF
+chkmagiclevel 空拳刀法 0
+#SAY
+_[ 空拳刀法 ]技能所需等级[ 28级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 空拳刀法 ]技能所需等级[ 28级 ]→[ <补学该技能/@补学技能开始(空拳刀法,28)> ]\
+
+#IF
+chkmagiclevel 强魔震法 0
+#SAY
+_[ 强魔震法 ]技能所需等级[ 29级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 强魔震法 ]技能所需等级[ 29级 ]→[ <补学该技能/@补学技能开始(强魔震法,29)> ]\
+
+#IF
+chkmagiclevel 召唤神兽 0
+#SAY
+_[ 召唤神兽 ]技能所需等级[ 30级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 召唤神兽 ]技能所需等级[ 30级 ]→[ <补学该技能/@补学技能开始(召唤神兽,30)> ]\
+
+#IF
+chkmagiclevel 群体治愈术 0
+#SAY
+_[群体治愈术]技能所需等级[ 31级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[群体治愈术]技能所需等级[ 31级 ]→[ <补学该技能/@补学技能开始(群体治愈术,31)> ]\
+
+#IF
+chkmagiclevel 超强召唤骷髅 0
+#SAY
+_[超强召唤骷髅]技能所需等级[33级]→[ 技能已修炼 ]\
+#ELSESAY
+_[超强召唤骷髅]技能所需等级[33级]→[ <补学该技能/@补学技能开始(超强召唤骷髅,33)> ]\
+
+#IF
+chkmagiclevel 猛虎强势 0
+#SAY
+_[ 猛虎强势 ]技能所需等级[ 34级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 猛虎强势 ]技能所需等级[ 34级 ]→[ <补学该技能/@补学技能开始(猛虎强势,34)> ]\
+
+#IF
+chkmagiclevel 回生术 0
+#SAY
+_[ 回 生 术 ]技能所需等级[ 35级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 回 生 术 ]技能所需等级[ 35级 ]→[ <补学该技能/@补学技能开始(回生术,35)> ]\
+
+#IF
+chkmagiclevel 云寂术 0
+#SAY
+_[ 云 寂 术 ]技能所需等级[ 38级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 云 寂 术 ]技能所需等级[ 38级 ]→[ <补学该技能/@补学技能开始(云寂术,38)> ]\
+
+#IF
+chkmagiclevel 移花接玉 0
+#SAY
+_[ 移花接玉 ]技能所需等级[ 40级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 移花接玉 ]技能所需等级[ 40级 ]→[ <补学该技能/@补学技能开始(移花接玉,40)> ]\
+
+#IF
+chkmagiclevel 妙影无踪 0
+#SAY
+_[ 妙影无踪 ]技能所需等级[ 43级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 妙影无踪 ]技能所需等级[ 43级 ]→[ <补学该技能/@补学技能开始(妙影无踪,43)> ]\
+
+#IF
+chkmagiclevel 阴阳法环 0
+#SAY
+_[ 阴阳法环 ]技能所需等级[ 46级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 阴阳法环 ]技能所需等级[ 46级 ]→[ <补学该技能/@补学技能开始(阴阳法环,46)> ]\
+
+#IF
+chkmagiclevel 灭魂火符 0
+#SAY
+_[ 灭魂火符 ]技能所需等级[ 49级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 灭魂火符 ]技能所需等级[ 49级 ]→[ <补学该技能/@补学技能开始(灭魂火符,49)> ]
+
+[@补学法师技能]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ {FCOLOR/1}补学普通技能{FCOLOR/12} ] [ <学习转生技能/@学习转生技能1> ] [ <提升转生技能/@提升转生技能1> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+#IF
+chkmagiclevel 火球术 0
+#SAY
+_[ 火 球 术 ]技能所需等级[ 7 级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 火 球 术 ]技能所需等级[ 7 级 ]→[ <补学该技能/@补学技能开始(火球术,7)> ]\
+
+#IF
+chkmagiclevel 霹雳掌 0
+#SAY
+_[ 霹 雳 掌 ]技能所需等级[ 8 级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 霹 雳 掌 ]技能所需等级[ 8 级 ]→[ <补学该技能/@补学技能开始(霹雳掌,8)> ]\
+
+#IF
+chkmagiclevel 冰月神掌 0
+#SAY
+_[ 冰月神掌 ]技能所需等级[ 9 级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 冰月神掌 ]技能所需等级[ 9 级 ]→[ <补学该技能/@补学技能开始(冰月神掌,9)> ]\
+
+#IF
+chkmagiclevel 风掌 0
+#SAY
+_[ 风    掌 ]技能所需等级[ 10级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 风    掌 ]技能所需等级[ 10级 ]→[ <补学该技能/@补学技能开始(风掌,10)> ]\
+
+#IF
+chkmagiclevel 抗拒火环 0
+#SAY
+_[ 抗拒火环 ]技能所需等级[ 12级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 抗拒火环 ]技能所需等级[ 12级 ]→[ <补学该技能/@补学技能开始(抗拒火环,12)> ]\
+
+#IF
+chkmagiclevel 诱惑之光 0
+#SAY
+_[ 诱惑之光 ]技能所需等级[ 13级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 诱惑之光 ]技能所需等级[ 13级 ]→[ <补学该技能/@补学技能开始(诱惑之光,13)> ]\
+
+#IF
+chkmagiclevel 瞬息移动 0
+#SAY
+_[ 瞬息移动 ]技能所需等级[ 14级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 瞬息移动 ]技能所需等级[ 14级 ]→[ <补学该技能/@补学技能开始(瞬息移动,14)> ]\
+
+#IF
+chkmagiclevel 大火球 0
+#SAY
+_[ 大 火 球 ]技能所需等级[ 15级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 大 火 球 ]技能所需等级[ 15级 ]→[ <补学该技能/@补学技能开始(大火球,15)> ]\
+
+#IF
+chkmagiclevel 雷电术 0
+#SAY
+_[ 雷 电 术 ]技能所需等级[ 16级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 雷 电 术 ]技能所需等级[ 16级 ]→[ <补学该技能/@补学技能开始(雷电术,16)> ]\
+
+#IF
+chkmagiclevel 冰月震天 0
+#SAY
+_[ 冰月震天 ]技能所需等级[ 17级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 冰月震天 ]技能所需等级[ 17级 ]→[ <补学该技能/@补学技能开始(冰月震天,17)> ]\
+
+#IF
+chkmagiclevel 击风 0
+#SAY
+_[ 击    风 ]技能所需等级[ 18级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 击    风 ]技能所需等级[ 18级 ]→[ <补学该技能/@补学技能开始(击风,18)> ]\
+
+#IF
+chkmagiclevel 地狱火 0
+#SAY
+_[ 地 狱 火 ]技能所需等级[ 20级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 地 狱 火 ]技能所需等级[ 20级 ]→[ <补学该技能/@补学技能开始(地狱火,20)> ]\
+
+#IF
+chkmagiclevel 疾光电影 0
+#SAY
+_[ 疾光电影 ]技能所需等级[ 21级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 疾光电影 ]技能所需等级[ 21级 ]→[ <补学该技能/@补学技能开始(疾光电影,21)> ]\
+
+#IF
+chkmagiclevel 冰沙掌 0
+#SAY
+_[ 冰 沙 掌 ]技能所需等级[ 22级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 冰 沙 掌 ]技能所需等级[ 22级 ]→[ <补学该技能/@补学技能开始(冰沙掌,22)> ]\
+
+#IF
+chkmagiclevel 风震天 0
+#SAY
+_[ 风 震 天 ]技能所需等级[ 23级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 风 震 天 ]技能所需等级[ 23级 ]→[ <补学该技能/@补学技能开始(风震天,23)> ]\
+
+#IF
+chkmagiclevel 火墙 0
+#SAY
+_[ 火    墙 ]技能所需等级[ 24级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 火    墙 ]技能所需等级[ 24级 ]→[ <补学该技能/@补学技能开始(火墙,24)> ]\
+
+#IF
+chkmagiclevel 圣言术 0
+#SAY
+_[ 圣 言 术 ]技能所需等级[ 26级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 圣 言 术 ]技能所需等级[ 26级 ]→[ <补学该技能/@补学技能开始(圣言术,26)> ]\
+
+#IF
+chkmagiclevel 异形换位 0
+#SAY
+_[ 异形换位 ]技能所需等级[ 27级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 异形换位 ]技能所需等级[ 27级 ]→[ <补学该技能/@补学技能开始(异形换位,27)> ]\
+
+#IF
+chkmagiclevel 魔法盾 0
+#SAY
+_[ 魔 法 盾 ]技能所需等级[ 29级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 魔 法 盾 ]技能所需等级[ 29级 ]→[ <补学该技能/@补学技能开始(魔法盾,29)> ]\
+
+#IF
+chkmagiclevel 爆裂火焰 0
+#SAY
+_[ 爆裂火焰 ]技能所需等级[ 32级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 爆裂火焰 ]技能所需等级[ 32级 ]→[ <补学该技能/@补学技能开始(爆裂火焰,32)> ]\
+
+#IF
+chkmagiclevel 地狱雷光 0
+#SAY
+_[ 地狱雷光 ]技能所需等级[ 33级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 地狱雷光 ]技能所需等级[ 33级 ]→[ <补学该技能/@补学技能开始(地狱雷光,33)> ]\
+
+#IF
+chkmagiclevel 冰咆哮 0
+#SAY
+_[ 冰 咆 哮 ]技能所需等级[ 34级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 冰 咆 哮 ]技能所需等级[ 34级 ]→[ <补学该技能/@补学技能开始(冰咆哮,34)> ]\
+
+#IF
+chkmagiclevel 龙卷风 0
+#SAY
+_[ 龙 卷 风 ]技能所需等级[ 35级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 龙 卷 风 ]技能所需等级[ 35级 ]→[ <补学该技能/@补学技能开始(龙卷风,35)> ]\
+
+#IF
+chkmagiclevel 魄冰刺 0
+#SAY
+_[ 魄 冰 刺 ]技能所需等级[ 38级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 魄 冰 刺 ]技能所需等级[ 38级 ]→[ <补学该技能/@补学技能开始(魄冰刺,38)> ]\
+
+#IF
+chkmagiclevel 怒神霹雳 0
+#SAY
+_[ 怒神霹雳 ]技能所需等级[ 40级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 怒神霹雳 ]技能所需等级[ 40级 ]→[ <补学该技能/@补学技能开始(怒神霹雳,40)> ]\
+
+#IF
+chkmagiclevel 焰天火雨 0
+#SAY
+_[ 焰天火雨 ]技能所需等级[ 43级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 焰天火雨 ]技能所需等级[ 43级 ]→[ <补学该技能/@补学技能开始(焰天火雨,43)> ]\
+
+#IF
+chkmagiclevel 凝血离魂 0
+#SAY
+_[ 凝血离魂 ]技能所需等级[ 46级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 凝血离魂 ]技能所需等级[ 46级 ]→[ <补学该技能/@补学技能开始(凝血离魂,46)> ]\
+
+#IF
+chkmagiclevel 旋风墙 0
+#SAY
+_[ 旋 风 墙 ]技能所需等级[ 49级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 旋 风 墙 ]技能所需等级[ 49级 ]→[ <补学该技能/@补学技能开始(旋风墙,49)> ]
+
+[@补学战士技能]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ {FCOLOR/1}补学普通技能{FCOLOR/12} ] [ <学习转生技能/@学习转生技能1> ] [ <提升转生技能/@提升转生技能1> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+#IF
+chkmagiclevel 基本剑术 0
+#SAY
+_[ 基本剑术 ]技能所需等级[ 7 级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 基本剑术 ]技能所需等级[ 7 级 ]→[ <补学该技能/@补学技能开始(基本剑术,7)> ]\
+
+#IF
+chkmagiclevel 攻杀剑术 0
+#SAY
+_[ 攻杀剑术 ]技能所需等级[ 14级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 攻杀剑术 ]技能所需等级[ 14级 ]→[ <补学该技能/@补学技能开始(攻杀剑术,14)> ]\
+
+#IF
+chkmagiclevel 刺杀剑术 0
+#SAY
+_[ 刺杀剑术 ]技能所需等级[ 19级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 刺杀剑术 ]技能所需等级[ 19级 ]→[ <补学该技能/@补学技能开始(刺杀剑术,19)> ]\
+
+#IF
+chkmagiclevel 半月弯刀 0
+#SAY
+_[ 半月弯刀 ]技能所需等级[ 24级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 半月弯刀 ]技能所需等级[ 24级 ]→[ <补学该技能/@补学技能开始(半月弯刀,24)> ]\
+
+#IF
+chkmagiclevel 野蛮冲撞 0
+#SAY
+_[ 野蛮冲撞 ]技能所需等级[ 27级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 野蛮冲撞 ]技能所需等级[ 27级 ]→[ <补学该技能/@补学技能开始(野蛮冲撞,27)> ]\
+
+#IF
+chkmagiclevel 烈火剑法 0
+#SAY
+_[ 烈火剑法 ]技能所需等级[ 32级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 烈火剑法 ]技能所需等级[ 32级 ]→[ <补学该技能/@补学技能开始(烈火剑法,32)> ]\
+
+#IF
+chkmagiclevel 翔空剑法 0
+#SAY
+_[ 翔空剑法 ]技能所需等级[ 35级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 翔空剑法 ]技能所需等级[ 35级 ]→[ <补学该技能/@补学技能开始(翔空剑法,35)> ]\
+
+#IF
+chkmagiclevel 莲月剑法 0
+#SAY
+_[ 莲月剑法 ]技能所需等级[ 38级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 莲月剑法 ]技能所需等级[ 38级 ]→[ <补学该技能/@补学技能开始(莲月剑法,38)> ]\
+
+#IF
+chkmagiclevel 十方斩 0
+#SAY
+_[ 十 方 斩 ]技能所需等级[ 40级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 十 方 斩 ]技能所需等级[ 40级 ]→[ <补学该技能/@补学技能开始(十方斩,40)> ]\
+
+#IF
+chkmagiclevel 乾坤大挪移 0
+#SAY
+_[乾坤大挪移]技能所需等级[ 42级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[乾坤大挪移]技能所需等级[ 42级 ]→[ <补学该技能/@补学技能开始(乾坤大挪移,42)> ]\
+
+#IF
+chkmagiclevel 铁布杉 0
+#SAY
+_[ 铁 布 杉 ]技能所需等级[ 44级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 铁 布 杉 ]技能所需等级[ 44级 ]→[ <补学该技能/@补学技能开始(铁布杉,44)> ]\
+
+#IF
+chkmagiclevel 斗转星移 0
+#SAY
+_[ 斗转星移 ]技能所需等级[ 46级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 斗转星移 ]技能所需等级[ 46级 ]→[ <补学该技能/@补学技能开始(斗转星移,46)> ]\
+
+#IF
+chkmagiclevel 破血狂杀 0
+#SAY
+_[ 破血狂杀 ]技能所需等级[ 48级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 破血狂杀 ]技能所需等级[ 48级 ]→[ <补学该技能/@补学技能开始(破血狂杀,48)> ]\
+
+#IF
+chkmagiclevel 狂暴冲撞 0
+#SAY
+_[ 狂暴冲撞 ]技能所需等级[ 49级 ]→[ 技能已修炼 ]\
+#ELSESAY
+_[ 狂暴冲撞 ]技能所需等级[ 49级 ]→[ <补学该技能/@补学技能开始(狂暴冲撞,49)> ]
+
+[@补学技能开始()]
+#ACT
+Mov    A1    %ARG(1)
+Mov    A2    %ARG(2)
+#IF
+checklevel %A2
+#ACT
+Actcmd ADDMAGIC %A1 5
+GOTO @补学普通技能1
+#ELSEACT
+Close
+SysMsg  "修炼失败: [ <$OUTPUT(A1)> ]技能需要等级[ <$OUTPUT(A2)> ]级"
+
+[@提升转生技能1]
+#IF
+checkjob warrior
+#ACT
+goto @warrior_jineng   ;战士
+BREAK
+
+#IF
+checkjob wizard
+#ACT
+goto @WIZARD_jineng    ;法师
+#elsesay
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <补学普通技能/@补学普通技能1> ] [ <学习转生技能/@学习转生技能1> ] [ {FCOLOR/1}提升转生技能{FCOLOR/12} ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_ 提升到{FCOLOR/1}4{FCOLOR/12}级需{FCOLOR/1}40{FCOLOR/12}个元宝         提升到{FCOLOR/1}5{FCOLOR/12}级需{FCOLOR/1}80{FCOLOR/12}个元宝\
+{FCOLOR/12}[ <提升隐 魂 术至 4级/@zxjlts-4(隐魂术)> ]      [ <提升隐 魂 术至 5级/@zxjlts-5(隐魂术)> ]\\
+{FCOLOR/12}[ <提升月 明 波至 4级/@zxjlts-4(月明波)> ]      [ <提升月 明 波至 5级/@zxjlts-5(月明波)> ]\\
+{FCOLOR/12}[ <提升神灵守护至 4级/@zxjlts-4(神灵守护)> ]      [ <提升神灵守护至 5级/@zxjlts-5(神灵守护)> ]\\
+{FCOLOR/12}[ <提升施毒大法至 4级/@zxjlts-4(施毒大法)> ]      [ <提升施毒大法至 5级/@zxjlts-5(施毒大法)> ]\\
+{FCOLOR/12}[ <提升吸星大法至 4级/@zxjlts-4(吸星大法)> ]      [ <提升吸星大法至 5级/@zxjlts-5(吸星大法)> ]\\
+{FCOLOR/12}[ <提升横扫千军至 4级/@zxjlts-4(横扫千军)> ]      [ <提升横扫千军至 5级/@zxjlts-5(横扫千军)> ]\\
+{FCOLOR/12}[ <提升养 生 术至 4级/@zxjlts-4(养生术)> ]      [ <提升养 生 术至 5级/@zxjlts-5(养生术)> ]\\
+{FCOLOR/12}[ <提升迷魂大法至 4级/@zxjlts-4(迷魂大法)> ]      [ <提升迷魂大法至 5级/@zxjlts-5(迷魂大法)> ]\\
+{FCOLOR/12}[ <提升召唤圣兽至 4级/@zxjlts-4(召唤圣兽)> ]      [ <提升召唤圣兽至 5级/@zxjlts-5(召唤圣兽)> ]
+
+[@warrior_jineng]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <补学普通技能/@补学普通技能1> ] [ <学习转生技能/@学习转生技能1> ] [ {FCOLOR/1}提升转生技能{FCOLOR/12} ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_ 提升到{FCOLOR/1}4{FCOLOR/12}级需{FCOLOR/1}40{FCOLOR/12}个元宝         提升到{FCOLOR/1}5{FCOLOR/12}级需{FCOLOR/1}80{FCOLOR/12}个元宝\
+{FCOLOR/12}[ <提升旋 风 斩至 4级/@zxjlts-4(旋风斩)> ]      [ <提升旋 风 斩至 5级/@zxjlts-5(旋风斩)> ]\\
+{FCOLOR/12}[ <提升移花接木至 4级/@zxjlts-4(移花接木)> ]      [ <提升移花接木至 5级/@zxjlts-5(移花接木)> ]\\
+{FCOLOR/12}[ <提升君 临 步至 4级/@zxjlts-4(君临步)> ]      [ <提升君 临 步至 5级/@zxjlts-5(君临步)> ]\\
+{FCOLOR/12}[ <提升屠 龙 斩至 4级/@zxjlts-4(屠龙斩)> ]      [ <提升屠 龙 斩至 5级/@zxjlts-5(屠龙斩)> ]\\
+{FCOLOR/12}[ <提升泰山压顶至 4级/@zxjlts-4(泰山压顶)> ]      [ <提升泰山压顶至 5级/@zxjlts-5(泰山压顶)> ]\\
+{FCOLOR/12}[ <提升金刚之躯至 4级/@zxjlts-4(金刚之躯)> ]      [ <提升金刚之躯至 5级/@zxjlts-5(金刚之躯)> ]\\
+{FCOLOR/12}[ <提升快刀斩麻至 4级/@zxjlts-4(快刀斩麻)> ]      [ <提升快刀斩麻至 5级/@zxjlts-5(快刀斩麻)> ]\\
+{FCOLOR/12}[ <提升运 气 术至 4级/@zxjlts-4(运气术)> ]      [ <提升运 气 术至 5级/@zxjlts-5(运气术)> ]
+
+[@wizard_jineng]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <补学普通技能/@补学普通技能1> ] [ <学习转生技能/@学习转生技能1> ] [ {FCOLOR/1}提升转生技能{FCOLOR/12} ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_ 提升到{FCOLOR/1}4{FCOLOR/12}级需{FCOLOR/1}40{FCOLOR/12}个元宝         提升到{FCOLOR/1}5{FCOLOR/12}级需{FCOLOR/1}80{FCOLOR/12}个元宝\
+{FCOLOR/12}[ <提升魔 爆 术至 4级/@zxjlts-4(魔爆术)> ]      [ <提升魔 爆 术至 5级/@zxjlts-5(魔爆术)> ]\\
+{FCOLOR/12}[ <提升混 元 掌至 4级/@zxjlts-4(混元掌)> ]      [ <提升混 元 掌至 5级/@zxjlts-5(混元掌)> ]\\
+{FCOLOR/12}[ <提升透 心 链至 4级/@zxjlts-4(透心链)> ]      [ <提升透 心 链至 5级/@zxjlts-5(透心链)> ]\\
+{FCOLOR/12}[ <提升魔 光 盾至 4级/@zxjlts-4(魔光盾)> ]      [ <提升魔 光 盾至 5级/@zxjlts-5(魔光盾)> ]\\
+{FCOLOR/12}[ <提升焚魂魔功至 4级/@zxjlts-4(焚魂魔功)> ]      [ <提升焚魂魔功至 5级/@zxjlts-5(焚魂魔功)> ]\\
+{FCOLOR/12}[ <提升地狱魔焰至 4级/@zxjlts-4(地狱魔焰)> ]      [ <提升地狱魔焰至 5级/@zxjlts-5(地狱魔焰)> ]\\
+{FCOLOR/12}[ <提升天打雷劈至 4级/@zxjlts-4(天打雷劈)> ]      [ <提升天打雷劈至 5级/@zxjlts-5(天打雷劈)> ]\\
+{FCOLOR/12}[ <提升闪电雷鸣至 4级/@zxjlts-4(闪电雷鸣)> ]      [ <提升闪电雷鸣至 5级/@zxjlts-5(闪电雷鸣)> ]\\
+{FCOLOR/12}[ <提升分 身 术至 4级/@zxjlts-4(分身术)> ]      [ <提升分 身 术至 5级/@zxjlts-5(分身术)> ]
+
+[@zxjlts-4()]
+#ACT
+Mov    A1    %ARG(1)
+#IF
+chkmagiclevel %A1 5
+#ACT
+Close
+SysMsg  "温馨提示: 您的[ <$OUTPUT(A1)> ]技能等级5级.想提升成4级?"
+break
+
+#IF
+chkmagiclevel %A1 4
+#ACT
+Close
+SysMsg  "温馨提示: 您的[ <$OUTPUT(A1)> ]技能等级4级.无需重复提升"
+break
+
+#IF
+chkmagiclevel %A1 0
+checkcmd CHECKUSERJF 400
+#ACT
+Close
+ACTCMD CHANGEMAGLVL %A1 4
+actcmd SETUSERJF - 400
+SysMsg  "您的[ <$OUTPUT(A1)> ]技能提升4级成功.消耗了 40 元宝"
+#ELSEACT
+Close
+SysMsg  "提升失败: 元宝不足 或者 您的[ <$OUTPUT(A1)> ]技能没有学习"
+
+[@zxjlts-5()]
+#ACT
+Mov    A1    %ARG(1)
+#IF
+chkmagiclevel %A1 5
+#ACT
+Close
+SysMsg  "温馨提示: 您的[ <$OUTPUT(A1)> ]技能等级5级.无需重复提升"
+break
+
+#IF
+chkmagiclevel %A1 4
+checkcmd CHECKUSERJF 80
+#ACT
+Close
+ACTCMD CHANGEMAGLVL %A1 5
+actcmd SETUSERJF - 80
+SysMsg  "您的[ <$OUTPUT(A1)> ]技能提升5级成功.消耗了 80 元宝"
+#ELSEACT
+Close
+SysMsg  "提升失败: 元宝不足 或者 您的[ <$OUTPUT(A1)> ]技能没有达到 4级"
+
+[@学习转生技能1]
+#IF
+checkjob warrior
+#ACT
+goto @学习转生技能战士A
+BREAK
+
+#IF
+checkjob wizard
+#ACT
+goto @学习转生技能法师A
+#elsesay
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <补学普通技能/@补学普通技能1> ] [ {FCOLOR/1}学习转生技能{FCOLOR/12} ] [ <提升转生技能/@提升转生技能1> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_   [ {FCOLOR/1}免费学习技能{FCOLOR/12} ]         [ <元宝学习技能/@元宝修炼技能8> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_{FCOLOR/12}[{FCOLOR/1} 所有新技能 {FCOLOR/12}]都是免费修炼. 但有[{FCOLOR/1} 转生等级 {FCOLOR/12}]限制\
+_      [ <修炼[  隐魂术  ]需[ 一次转生 ]/@开始免费学习转生技能(隐魂术,1)> ]\
+_      [ <修炼[ 神灵守护 ]需[ 二次转生 ]/@开始免费学习转生技能(神灵守护,2)> ]\
+_      [ <修炼[ 召唤圣兽 ]需[ 二次转生 ]/@开始免费学习转生技能(召唤圣兽,2)> ]\
+_      [ <修炼[  月明波  ]需[ 三次转生 ]/@开始免费学习转生技能(月明波,3)> ]\
+_      [ <修炼[ 施毒大法 ]需[ 四次转生 ]/@开始免费学习转生技能(施毒大法,4)> ]\
+_      [ <修炼[ 吸星大法 ]需[ 五次转生 ]/@开始免费学习转生技能(吸星大法,5)> ]\
+_      [ <修炼[ 横扫千军 ]需[ 六次转生 ]/@开始免费学习转生技能(横扫千军,6)> ]\
+_      [ <修炼[  养生术  ]需[ 七次转生 ]/@开始免费学习转生技能(养生术,7)> ]\
+_      [ <修炼[ 迷魂大法 ]需[ 八次转生 ]/@开始免费学习转生技能(迷魂大法,8)> ]\
+
+[@学习转生技能战士A]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <补学普通技能/@补学普通技能1> ] [ {FCOLOR/1}学习转生技能{FCOLOR/12} ] [ <提升转生技能/@提升转生技能1> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_   [ {FCOLOR/1}免费学习技能{FCOLOR/12} ]         [ <元宝学习技能/@元宝修炼技能8> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_{FCOLOR/12}[{FCOLOR/1} 所有新技能 {FCOLOR/12}]都是免费修炼. 但有[{FCOLOR/1} 转生等级 {FCOLOR/12}]限制\
+_      [ <修炼[  旋风斩  ]需[ 一次转生 ]/@开始免费学习转生技能(旋风斩,1)> ]\
+_      [ <修炼[ 移花接木 ]需[ 二次转生 ]/@开始免费学习转生技能(移花接木,2)> ]\
+_      [ <修炼[  君临步  ]需[ 三次转生 ]/@开始免费学习转生技能(君临步,3)> ]\
+_      [ <修炼[  屠龙斩  ]需[ 四次转生 ]/@开始免费学习转生技能(屠龙斩,4)> ]\
+_      [ <修炼[ 泰山压顶 ]需[ 五次转生 ]/@开始免费学习转生技能(泰山压顶,5)> ]\
+_      [ <修炼[ 金刚之躯 ]需[ 六次转生 ]/@开始免费学习转生技能(金刚之躯,6)> ]\
+_      [ <修炼[ 快刀斩麻 ]需[ 七次转生 ]/@开始免费学习转生技能(快刀斩麻,7)> ]\
+_      [ <修炼[  运气术  ]需[ 八次转生 ]/@开始免费学习转生技能(运气术,8)> ]\
+
+[@学习转生技能法师A]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <补学普通技能/@补学普通技能1> ] [ {FCOLOR/1}学习转生技能{FCOLOR/12} ] [ <提升转生技能/@提升转生技能1> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_   [ {FCOLOR/1}免费学习技能{FCOLOR/12} ]         [ <元宝学习技能/@元宝修炼技能8> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_{FCOLOR/12}[{FCOLOR/1} 所有新技能 {FCOLOR/12}]都是免费修炼. 但有[{FCOLOR/1} 转生等级 {FCOLOR/12}]限制\
+_      [ <修炼[  魔光盾  ]需[ 一次转生 ]/@开始免费学习转生技能(魔光盾,1)> ]\
+_      [ <修炼[  混元掌  ]需[ 一次转生 ]/@开始免费学习转生技能(混元掌,1)> ]\
+_      [ <修炼[  透心链  ]需[ 二次转生 ]/@开始免费学习转生技能(透心链,2)> ]\
+_      [ <修炼[  魔爆术  ]需[ 三次转生 ]/@开始免费学习转生技能(魔爆术,3)> ]\
+_      [ <修炼[ 焚魂魔功 ]需[ 四次转生 ]/@开始免费学习转生技能(焚魂魔功,4)> ]\
+_      [ <修炼[ 地狱魔焰 ]需[ 五次转生 ]/@开始免费学习转生技能(地狱魔焰,5)> ]\
+_      [ <修炼[ 天打雷劈 ]需[ 六次转生 ]/@开始免费学习转生技能(天打雷劈,6)> ]\
+_      [ <修炼[ 闪电雷鸣 ]需[ 七次转生 ]/@开始免费学习转生技能(闪电雷鸣,7)> ]\
+_      [ <修炼[  分身术  ]需[ 八次转生 ]/@开始免费学习转生技能(分身术,8)> ]\
+
+[@元宝修炼技能8]
+#IF
+checkjob warrior
+#ACT
+goto @学习转生技能战士B
+BREAK
+
+#IF
+checkjob wizard
+#ACT
+goto @学习转生技能法师B
+#elsesay
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <补学普通技能/@补学普通技能1> ] [ {FCOLOR/1}学习转生技能{FCOLOR/12} ] [ <提升转生技能/@提升转生技能1> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_   [ <免费学习技能/@学习转生技能1> ]         [ {FCOLOR/1}元宝学习技能{FCOLOR/12} ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_      {FCOLOR/12}[{FCOLOR/1} 所有新技能 {FCOLOR/12}]只要达到1转就可学习\
+_      [ <修炼[  隐魂术  ]需[  免 费  ]/@开始免费学习转生技能(隐魂术,1)> ]\
+_      [ <修炼[ 神灵守护 ]需[ 100元宝 ]/@开始元宝学习转生技能(神灵守护,100)> ]\
+_      [ <修炼[ 召唤圣兽 ]需[ 150元宝 ]/@开始元宝学习转生技能(召唤圣兽,150)> ]\
+_      [ <修炼[  月明波  ]需[ 200元宝 ]/@开始元宝学习转生技能(月明波,200)> ]\
+_      [ <修炼[ 施毒大法 ]需[ 250元宝 ]/@开始元宝学习转生技能(施毒大法,250)> ]\
+_      [ <修炼[ 吸星大法 ]需[ 300元宝 ]/@开始元宝学习转生技能(吸星大法,300)> ]\
+_      [ <修炼[ 横扫千军 ]需[ 350元宝 ]/@开始元宝学习转生技能(横扫千军,350)> ]\
+_      [ <修炼[  养生术  ]需[ 400元宝 ]/@开始元宝学习转生技能(养生术,400)> ]\
+_      [ <修炼[ 迷魂大法 ]需[ 500元宝 ]/@开始元宝学习转生技能(迷魂大法,500)> ]\
+
+[@学习转生技能战士B]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <补学普通技能/@补学普通技能1> ] [ {FCOLOR/1}学习转生技能{FCOLOR/12} ] [ <提升转生技能/@提升转生技能1> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_   [ <免费学习技能/@学习转生技能1> ]         [ {FCOLOR/1}元宝学习技能{FCOLOR/12} ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_{FCOLOR/12}[{FCOLOR/1} 所有新技能 {FCOLOR/12}]都是免费修炼. 但有[{FCOLOR/1} 转生等级 {FCOLOR/12}]限制\
+_      [ <修炼[  旋风斩  ]需[  免 费  ]/@开始免费学习转生技能(旋风斩,1)> ]\
+_      [ <修炼[ 移花接木 ]需[ 100元宝 ]/@开始元宝学习转生技能(移花接木,100)> ]\
+_      [ <修炼[  君临步  ]需[ 150元宝 ]/@开始元宝学习转生技能(君临步,150)> ]\
+_      [ <修炼[  屠龙斩  ]需[ 200元宝 ]/@开始元宝学习转生技能(屠龙斩,200)> ]\
+_      [ <修炼[ 泰山压顶 ]需[ 250元宝 ]/@开始元宝学习转生技能(泰山压顶,250)> ]\
+_      [ <修炼[ 金刚之躯 ]需[ 300元宝 ]/@开始元宝学习转生技能(金刚之躯,300)> ]\
+_      [ <修炼[ 快刀斩麻 ]需[ 400元宝 ]/@开始元宝学习转生技能(快刀斩麻,400)> ]\
+_      [ <修炼[  运气术  ]需[ 500元宝 ]/@开始元宝学习转生技能(运气术,500)> ]\
+
+[@学习转生技能法师B]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <补学普通技能/@补学普通技能1> ] [ <学习转生技能/@学习转生技能1> ] [ <提升转生技能/@提升转生技能1> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_   [ <免费学习技能/@学习转生技能1> ]         [ {FCOLOR/1}元宝学习技能{FCOLOR/12} ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}技{FCOLOR/4}━{FCOLOR/14}能{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_{FCOLOR/12}[{FCOLOR/1} 所有新技能 {FCOLOR/12}]都是免费修炼. 但有[{FCOLOR/1} 转生等级 {FCOLOR/12}]限制\
+_      [ <修炼[  魔光盾  ]需[  免 费  ]/@开始免费学习转生技能(魔光盾,1)> ]\
+_      [ <修炼[  混元掌  ]需[ 100元宝 ]/@开始元宝学习转生技能(混元掌,100)> ]\
+_      [ <修炼[  透心链  ]需[ 150元宝 ]/@开始元宝学习转生技能(透心链,150)> ]\
+_      [ <修炼[  魔爆术  ]需[ 200元宝 ]/@开始元宝学习转生技能(魔爆术,200)> ]\
+_      [ <修炼[ 焚魂魔功 ]需[ 250元宝 ]/@开始元宝学习转生技能(焚魂魔功,250)> ]\
+_      [ <修炼[ 地狱魔焰 ]需[ 300元宝 ]/@开始元宝学习转生技能(地狱魔焰,300)> ]\
+_      [ <修炼[ 天打雷劈 ]需[ 350元宝 ]/@开始元宝学习转生技能(天打雷劈,350)> ]\
+_      [ <修炼[ 闪电雷鸣 ]需[ 400元宝 ]/@开始元宝学习转生技能(闪电雷鸣,400)> ]\
+_      [ <修炼[  分身术  ]需[ 500元宝 ]/@开始元宝学习转生技能(分身术,500)> ]\
+
+[@开始免费学习转生技能()]
+#ACT
+Mov    A1    %ARG(1)
+Mov    A2    %ARG(2)
+#IF
+chkmagiclevel %A1 0
+#ACT
+Close
+SysMsg  "修炼失败: 您的[ <$OUTPUT(A1)> ]技能已存在"
+break
+
+#IF
+Elarge USERREBORNCOUNT %A2
+#ACT
+Close
+GOTO @xuexijineng_jiance
+#ELSEACT
+Close
+SysMsg  "修炼失败: 您的[ 转生等级 ]不够"
+
+[@开始元宝学习转生技能()]
+#ACT
+Mov    A1    %ARG(1)
+Mov    D1    %ARG(2)
+#IF
+chkmagiclevel %A1 0
+#ACT
+Close
+SysMsg  "修炼失败: 您的[ <$OUTPUT(A1)> ]技能已存在"
+break
+
+#IF
+Elarge USERREBORNCOUNT 1
+CHECKUSERJF %D1
+#ACT
+SETUSERJF - %D1
+SYSMSG "<温馨提示:>您花费了[ <$OUTPUT(D1)> ]个元宝学习转生技能"
+Close
+GOTO @xuexijineng_jiance
+#ELSEACT
+Close
+SysMsg  "修炼失败: 您的元宝不够[ <$OUTPUT(D1)> ]个"
+
+[@xuexijineng_jiance]
+#IF
+Equal A1 旋风斩
+#ACT
+actcmd delmag 半月弯刀
+actcmd delmag 十方斩
+GOTO @jiancetongguo_kaishixue
+break
+#IF
+Equal A1 屠龙斩
+#ACT
+actcmd delmag 烈火剑法 
+actcmd delmag 莲月剑法
+GOTO @jiancetongguo_kaishixue
+break
+#IF
+Equal A1 君临步
+#ACT
+actcmd delmag 野蛮冲撞 
+actcmd delmag 狂暴冲撞
+GOTO @jiancetongguo_kaishixue
+break
+#IF
+Equal A1 魔光盾
+#ACT
+actcmd delmag 魔法盾 
+GOTO @jiancetongguo_kaishixue
+break
+#IF
+Equal A1 混元掌
+#ACT
+actcmd delmag 火球术
+actcmd delmag 冰月神掌
+actcmd delmag 霹雳掌
+actcmd delmag 风掌
+GOTO @jiancetongguo_kaishixue
+break
+#IF
+Equal A1 焚魂魔功
+#ACT
+actcmd delmag 凝血离魂
+GOTO @jiancetongguo_kaishixue
+break
+#IF
+Equal A1 透心链
+#ACT
+actcmd delmag 冰沙掌 
+actcmd delmag 疾光电影 
+actcmd delmag 地狱火 
+actcmd delmag 风震天
+GOTO @jiancetongguo_kaishixue
+break
+#IF
+Equal A1 魔爆术
+#ACT
+actcmd delmag 爆裂火焰 
+actcmd delmag 冰咆哮 
+actcmd delmag 地狱雷光 
+actcmd delmag 龙卷风
+GOTO @jiancetongguo_kaishixue
+break 
+#IF
+Equal A1 地狱魔焰
+#ACT
+actcmd delmag 火墙 
+actcmd delmag 旋风墙
+GOTO @jiancetongguo_kaishixue
+break
+#IF
+Equal A1 隐魂术
+#ACT
+actcmd delmag 集体隐身术
+GOTO @jiancetongguo_kaishixue
+break 
+#IF
+Equal A1 神灵守护
+#ACT
+actcmd delmag 神圣战甲术 
+actcmd delmag 幽灵盾
+GOTO @jiancetongguo_kaishixue
+break
+#IF
+Equal A1 月明波
+#ACT
+actcmd delmag 月魂断玉
+actcmd delmag 灵魂火符
+GOTO @jiancetongguo_kaishixue
+break
+#IF
+Equal A1 召唤圣兽
+#ACT
+actcmd delmag 召唤神兽
+GOTO @jiancetongguo_kaishixue
+break
+#IF
+#ACT
+Actcmd ADDMAGIC %A1 0
+SysMsg  "修炼成功: [ <$OUTPUT(A1)> ]技能修炼成功~恭喜~"
+
+[@jiancetongguo_kaishixue]
+#ACT
+Actcmd ADDMAGIC %A1 0
+SysMsg  "修炼成功: [ <$OUTPUT(A1)> ]技能修炼成功~恭喜~"
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

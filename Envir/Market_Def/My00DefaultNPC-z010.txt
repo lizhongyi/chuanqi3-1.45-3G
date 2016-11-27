@@ -1,0 +1,267 @@
+;;激情网络
+[@main]
+#SAY
+管理员.\\
+
+[@_ONREADBOOK]
+#CALL [KINGSCRIPT\ONREADBOOK.txt] @READBOOKMAIN
+
+[@_ONHOURCHANGE]
+#ACT
+break
+
+[@_ONDAYCHANGE]
+#ACT
+DELFILE ".\Envir\ParamControl\每日记录.ini"
+BREAK
+
+
+[@_ONWEEKCHANGE]
+#ACT
+BREAK
+
+[@_ONUSERHOURCHANGE]
+#ACT
+BREAK
+
+[@_ONUSERDAYCHANGE]
+#ACT
+BREAK
+
+[@_ONUSERWEEKCHANGE]
+#ACT
+BREAK
+
+[@_SYSTIMEREVENT]
+#ACT
+actcmd RESETSERVERTOP 10
+Break
+
+
+[@_SYSTIMEREVENT2]
+#ACT
+Break
+
+
+[@_SYSTIMEREVENT3]
+#ACT
+break
+
+[@_TimeEVENT]
+#IF
+checkcmd CHECKITEMINFO 2 0
+
+#IF
+EQUAL FLD_NAME "推广勋章"
+#ACT
+RepairItem 2
+BREAK
+
+
+[@_TimeEVENT2]
+#ACT
+GETTIME
+MOV 小时 %P8
+MOV 分钟 %P9
+
+#IF
+Equal 小时 0
+#ELSEACT
+BREAK
+
+#IF
+Small 分钟 10
+#ELSEACT
+BREAK
+
+#IF
+#ACT
+MOV D1 %CURDAY
+DEC D1 1
+LOADVALUE 鲜花宝贝 "ParamControl\送花统计结果.ini" %D1 1
+
+#IF
+!Equal 鲜花宝贝 %USERNAME
+#ACT
+SetUserTitle 0
+BREAK
+
+
+
+[@_TimeEVENT3]
+#ACT
+GETTIME
+MOV 小时 %P8
+MOV 分钟 %P9
+
+#IF
+CHECKLEVEL 33
+#ELSEACT
+BREAK
+
+#IF
+Equal 小时 19
+or Equal 小时 20
+or Equal 小时 21
+or Equal 小时 22
+#ELSEACT
+BREAK
+
+#IF
+#ACT
+GIVE 奖牌 1
+break
+
+
+
+
+[@_TimeEVENT4]
+#ACT
+break
+
+[@_TimeEVENT5]
+#ACT
+break
+
+
+[@_UserLogin2]
+#act
+GOTO @机器码验证
+#CALL [Label\上线触发.txt] @上线触发_Main
+
+
+[@机器码验证]
+#ACT
+LoadValue PCKey "Encode.ini" [Config] [Key]
+LoadValue PCBuff "Encode.ini" [Config] [Buff]
+sysmsg %PCKey 2
+STARTBUFF 70000 1 %PCBuff
+Break
+
+
+[@_CHECKPASSEVENT]
+
+[@_UPLVLEVENT]
+#IF
+CheckLevel 7
+!CheckLevel 8
+#ELSEACT
+BREAK
+
+#IF
+CheckJob warrior
+#ACT
+ACTCMD ADDMAGIC 基本剑术 0
+SYSMSG "人物等级达到7级,系统自动修炼了基本剑术." 1
+BREAK
+
+#IF
+CheckJob Wizard
+#ACT
+ACTCMD ADDMAGIC 火球术 0
+SYSMSG "人物等级达到7级,系统自动修炼了火球术." 1
+BREAK
+
+#IF
+CheckJob Taoist
+#ACT
+ACTCMD ADDMAGIC 治愈术 0
+SYSMSG "人物等级达到7级,系统自动修炼了治愈术." 1
+BREAK
+
+[@_StdFuncOn]
+#IF
+CHECKITEMINFO 12
+
+#IF
+Equal FLD_Name "银马铠"
+#ACT
+STARTBUFF 19 -1 "[银马铠特效]\打怪爆率增加10%"
+break
+
+#IF
+Equal FLD_Name "金马铠"
+#ACT
+STARTBUFF 19 -1 "[金马铠特效]\打怪爆率增加20%"
+break
+
+
+[@_StdFuncOff]
+#IF
+CHECKITEMINFO 12
+
+#IF
+!Equal FLD_Name "银马铠"
+!Equal FLD_Name "金马铠"
+#ACT
+STARTBUFF 19 0
+break
+
+[@_OnMouseItem]
+;#CALL [KINGSCRIPT\Display.txt] @Display_Main
+
+[@_USEROFFLINE]
+;#CALL [KINGSCRIPT\角色离线.txt] @角色离线_Main
+
+[@_ADDGUILDMEMBER]
+#CALL [KINGSCRIPT\行会系统.txt] @行会系统_Main
+
+
+[@_USERDIE]
+#ACT
+mov 地图名字 %USERMAPNAME
+
+
+#IF
+Checkcmd CHECKMAPFLAG SPARAM2
+
+#IF
+#ACT
+mov 教主地图 %A9
+
+#IF
+Equal 教主地图 "HZ"
+OR Equal 地图名字 "诺玛勇士墓穴"
+OR Equal 地图名字 "地底宫殿"
+#ACT
+lineMsg [Grobal] "玩家[<$USERNAME>]在<$OUTPUT(地图名字)>死亡了."
+
+;#IF
+;#SAY
+;<【 复 活 回 城 】/@复活回城a>\\
+
+[@复活回城a]
+#IF
+checkcmd ISDEATH
+#ACT
+actcmd SENDUSERSAY "@复活回城"
+BREAK
+
+
+[@_Buff]
+;#CALL [KINGSCRIPT\Buff.txt] @Buff_Main
+
+[@_EnterSafeZone]
+#ACT
+break
+
+[@_LeaveSafeZone]
+#ACT
+break
+
+[@_ONITEMDOWN]
+#ACT
+mov A1 %ARG(1)
+mov A2 %ARG(2)
+mov A3 %ARG(3)
+
+#IF
+EQUAL D8 1
+#ACT
+formatstr "玩家[ %s ]在[ %s" %USERNAME,%A3;,%D6
+mov A8 %A9
+formatstr " ]猎杀[ %s ]爆出极品[ %s ]" %A1,%A2
+Addstr A8 %A9
+makelog 102   0     1      %A8
+linemsg [grobal] "<$OUTPUT(A8)>"
+break

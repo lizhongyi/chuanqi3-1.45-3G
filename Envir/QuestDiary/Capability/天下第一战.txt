@@ -1,0 +1,317 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@tianxiaNO1zhan]
+{
+#ACT
+LoadValue A1 "ParamControl\全民冲级名单.ini"  [战士]  战士50第1
+LoadValue A2 "ParamControl\全民冲级名单.ini"  [战士]  战士50第2
+LoadValue A3 "ParamControl\全民冲级名单.ini"  [战士]  战士50第3
+LoadValue A4 "ParamControl\全民冲级名单.ini"  [战士]  战士60第1
+LoadValue A5 "ParamControl\全民冲级名单.ini"  [战士]  战士60第2
+LoadValue A6 "ParamControl\全民冲级名单.ini"  [战士]  战士60第3
+LoadValue A7 "ParamControl\全民冲级名单.ini"  [战士]  战士70第1
+LoadValue A8 "ParamControl\全民冲级名单.ini"  [战士]  战士70第2
+LoadValue A9 "ParamControl\全民冲级名单.ini"  [战士]  战士70第3
+LoadValue B1 "ParamControl\全民冲级名单.ini"  [战士]  战士50第1领取情况
+LoadValue B2 "ParamControl\全民冲级名单.ini"  [战士]  战士50第2领取情况
+LoadValue B3 "ParamControl\全民冲级名单.ini"  [战士]  战士50第3领取情况
+LoadValue B4 "ParamControl\全民冲级名单.ini"  [战士]  战士60第1领取情况
+LoadValue B5 "ParamControl\全民冲级名单.ini"  [战士]  战士60第2领取情况
+LoadValue B6 "ParamControl\全民冲级名单.ini"  [战士]  战士60第3领取情况
+LoadValue B7 "ParamControl\全民冲级名单.ini"  [战士]  战士70第1领取情况
+LoadValue B8 "ParamControl\全民冲级名单.ini"  [战士]  战士70第2领取情况
+LoadValue B9 "ParamControl\全民冲级名单.ini"  [战士]  战士70第3领取情况
+loadvalue A0 "ParamControl\天下第一.ini" [天下第一] [第一战士]"
+MOV  D7  1
+#IF
+EQUAL B1 已领取
+EQUAL B2 已领取
+EQUAL B3 已领取
+EQUAL B4 已领取
+EQUAL B5 已领取
+EQUAL B6 已领取
+EQUAL B7 已领取
+EQUAL B8 已领取
+EQUAL B9 已领取
+#SAY
+━━━━━━━{FCOLOR/10} 战士50级前三名排名 {FCOLOR/12}━━━━━━━\
+_   战士{FCOLOR/10} 50级 {FCOLOR/12}冲级赛 前三名 已经全部圆满结束\
+━━━━━━━{FCOLOR/10} 战士60级前三名排名 {FCOLOR/12}━━━━━━━\
+_   战士{FCOLOR/10} 60级 {FCOLOR/12}冲级赛 前三名 已经全部圆满结束\
+━━━━━━━{FCOLOR/10} 战士70级前三名排名 {FCOLOR/12}━━━━━━━\
+_   战士{FCOLOR/10} 70级 {FCOLOR/12}冲级赛 前三名 已经全部圆满结束\
+━━━━━━━ {FCOLOR/15}[ 领取 ←→ 奖励 ]{FCOLOR/12} ━━━━━━━\
+_{FCOLOR/8} 天下第一    舍我其谁    出入江湖    谁与争锋\
+_          {FCOLOR/8}第一战→{FCOLOR/1} <$OUTPUT(A0)> {FCOLOR/8}←战一第{FCOLOR/12}\
+━━━━━━━ <[ 刷新天下第一战 ]/@刷新第一战567> ━━━━━━━\
+#ELSESAY
+━━━━━━━{FCOLOR/10} 战士50级前三名排名 {FCOLOR/12}━━━━━━━\
+_ 破 山 剑   [{FCOLOR/1} <$OUTPUT(B1)> {FCOLOR/12}]    第①名: {FCOLOR/1}<$OUTPUT(A1)>{FCOLOR/12}\
+_  屠  龙    [{FCOLOR/1} <$OUTPUT(B2)> {FCOLOR/12}]    第②名: {FCOLOR/1}<$OUTPUT(A2)>{FCOLOR/12}\
+_  霹  雷    [{FCOLOR/1} <$OUTPUT(B3)> {FCOLOR/12}]    第③名: {FCOLOR/1}<$OUTPUT(A3)>{FCOLOR/12}\
+━━━━━━━{FCOLOR/10} 战士60级前三名排名 {FCOLOR/12}━━━━━━━\
+_ 逍遥之刃   [{FCOLOR/1} <$OUTPUT(B4)> {FCOLOR/12}]    第①名: {FCOLOR/1}<$OUTPUT(A4)>{FCOLOR/12}\
+_ 开天之刃   [{FCOLOR/1} <$OUTPUT(B5)> {FCOLOR/12}]    第②名: {FCOLOR/1}<$OUTPUT(A5)>{FCOLOR/12}\
+_ 天 狼 刀   [{FCOLOR/1} <$OUTPUT(B6)> {FCOLOR/12}]    第③名: {FCOLOR/1}<$OUTPUT(A6)>{FCOLOR/12}\
+━━━━━━━{FCOLOR/10} 战士70级前三名排名 {FCOLOR/12}━━━━━━━\
+_夜歌碎灵刀  [{FCOLOR/1} <$OUTPUT(B7)> {FCOLOR/12}]    第①名: {FCOLOR/1}<$OUTPUT(A7)>{FCOLOR/12}\
+_ 无畏之刃   [{FCOLOR/1} <$OUTPUT(B8)> {FCOLOR/12}]    第②名: {FCOLOR/1}<$OUTPUT(A8)>{FCOLOR/12}\
+_ 王者之刃   [{FCOLOR/1} <$OUTPUT(B9)> {FCOLOR/12}]    第③名: {FCOLOR/1}<$OUTPUT(A9)>{FCOLOR/12}\
+━━━━━━━ <[ 领取 ←→ 奖励 ]/@全民战士奖567> ━━━━━━━\
+_{FCOLOR/8} 天下第一    舍我其谁    出入江湖    谁与争锋\
+_          {FCOLOR/8}第一战→{FCOLOR/1} <$OUTPUT(A0)> {FCOLOR/8}←战一第{FCOLOR/12}\
+━━━━━━━ <[ 刷新天下第一战 ]/@刷新第一战567> ━━━━━━━\
+
+[@刷新第一战567]
+#IF
+EQUAL A0 %USERNAME
+#ACT
+Close
+SYSMSG "温馨提示: 当前『第一战』是您自己,请不要反复刷新!"
+BREAK
+#IF
+checkjob warrior
+#ACT
+GOTO @jinrusxzhanNO1A
+BREAK
+#ELSEACT
+Close
+SYSMSG "温馨提示: 您不是战士,无法刷新战士第一!"
+
+[@jinrusxzhanNO1A]
+#IF
+EQUAL A0 等待刷新
+#ACT
+Close
+savevalue "ParamControl\天下第一.ini" [天下第一] [第一战士] %USERNAME
+#ELSEACT
+actcmd READSQL "TBL_ABILITY" "FLD_LEVEL" "自己等级"
+mov 自己等级 %自己等级
+mov      D1   %USERREBORNCOUNT
+GOTO @jinrusxzhanNO1
+
+[@jinrusxzhanNO1]
+#ACT
+FormatStr "FLD_CHARACTER='%s'" %A0
+ReadValueSql  "King_HumPlus"  %A9  "FLD_CHARACTER,SuperChangeCount"  [@jinrusxzhanNO1+]
+
+[@jinrusxzhanNO1+()]
+#ACT
+mov      A3   %ARG(1)   
+mov     转生  %ARG(2)   ;;转生等级
+#IF
+Large 转生 %D1
+#ACT
+Close
+SYSMSG "温馨提示:当前第一战的转生等级<$OUTPUT(转生)>转 > 您的<$OUTPUT(D1)>转,您无法刷新!"
+BREAK
+#IF
+Equal 转生 %D1
+#ACT
+Close
+GOTO @jinrusxzhanNO1++
+BREAK
+#IF
+Small 转生 %D1
+#ACT
+Close
+savevalue "ParamControl\天下第一.ini" [天下第一] [第一战士] %USERNAME
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════" 
+LineMsg "Grobal" "号外号外:玩家 <$USERNAME> 职业:战士 等级 <$USERREBORNCOUNT> 转 <$OUTPUT(自己等级)>级 " 
+LineMsg "Grobal" "刷新了『 第一战 』排行榜, 等级比他高的玩家请刷新天下第一" 
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+BREAK
+
+[@jinrusxzhanNO1++]
+#ACT
+FormatStr "FLD_CHARACTER='%s'" %A0
+ReadValueSql  "TBL_ABILITY"  %A9  "FLD_CHARACTER,FLD_LEVEL"  [@jinrusxzhanNO1+++]
+
+[@jinrusxzhanNO1+++()]
+#ACT
+mov      A3   %ARG(1)   
+mov     等级  %ARG(2)   ;;等级
+mov      D1   %USERREBORNCOUNT
+mov      D3   %自己等级
+#IF
+Large 等级 %D3
+#ACT
+Close
+SYSMSG "温馨提示: 当前第一战士的转生等级<$OUTPUT(转生)>转 = 您的<$USERREBORNCOUNT>转"
+SYSMSG "但是当前等级 <$OUTPUT(等级)>级 > 您的等级 <$OUTPUT(D3)>级, 加油! 努力!"
+BREAK
+#IF
+Equal 等级 %D3
+#ACT
+Close
+SYSMSG "温馨提示: 当前第一战士的转生等级<$OUTPUT(转生)>转 = 您的<$USERREBORNCOUNT>转"
+SYSMSG "但是当前等级 <$OUTPUT(等级)>级 = 您的等级 <$OUTPUT(D3)>级, 加油! 努力!"
+BREAK
+#IF
+Small 等级 %D3
+#ACT
+Close
+savevalue "ParamControl\天下第一.ini" [天下第一] [第一战士] %USERNAME
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════" 
+LineMsg "Grobal" "号外号外:玩家 <$USERNAME> 职业:战士 等级 <$USERREBORNCOUNT> 转 <$OUTPUT(D3)>级 " 
+LineMsg "Grobal" "刷新了『 第一战 』排行榜, 等级比他高的玩家请刷新天下第一" 
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+BREAK
+
+[@全民战士奖567]
+#SAY
+━━━━━━[{FCOLOR/13}  温馨提示: 领取要点  {FCOLOR/12}]━━━━━━\\
+领取前,请检查包裹必须有{FCOLOR/10}1个空格{FCOLOR/12},剩余{FCOLOR/10}100以上的负重{FCOLOR/12}\
+由于自己的失误导致奖品掉落,本服概不负责,务必检查\\
+━━━━━━<[ 确认以上条件开始领取 ]/@全民战士奖789>━━━━━━\
+
+[@全民战士奖789]
+#IF
+EQUAL A1 %USERNAME
+EQUAL B1 未领取
+EQUAL D7  1
+#ACT
+Close
+MOV  D7  0
+Give 破山剑 1
+give 金币 40000000
+SaveValue "ParamControl\全民冲级名单.ini"  [战士]  战士50第1领取情况 已领取
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════" 
+LineMsg "Grobal" "号外号外: 全民冲级赛 50级阶段 战士第1名: <$USERNAME>" 
+LineMsg "Grobal" "领取了奖品→ 破 山 剑 . 金币4000万 . 大家一起恭喜他吧!" 
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+break
+
+#IF
+EQUAL A2 %USERNAME
+EQUAL B2 未领取
+EQUAL D7  1
+#ACT
+Close
+MOV  D7  0
+Give 屠龙 1
+give 金币 20000000
+SaveValue "ParamControl\全民冲级名单.ini"  [战士]  战士50第2领取情况 已领取
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════" 
+LineMsg "Grobal" "号外号外: 全民冲级赛 50级阶段 战士第2名: <$USERNAME>" 
+LineMsg "Grobal" "领取了奖品→ 屠  龙 . 金币2000万 . 大家一起恭喜他吧!" 
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+break
+
+#IF
+EQUAL A3 %USERNAME
+EQUAL B3 未领取
+EQUAL D7  1
+#ACT
+Close
+MOV  D7  0
+Give 霹雷 1
+give 金币 10000000
+SaveValue "ParamControl\全民冲级名单.ini"  [战士]  战士50第3领取情况 已领取
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════" 
+LineMsg "Grobal" "号外号外: 全民冲级赛 50级阶段 战士第3名: <$USERNAME>" 
+LineMsg "Grobal" "领取了奖品→ 霹  雷 . 金币1000万 . 大家一起恭喜他吧!" 
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+break
+
+#IF
+EQUAL A4 %USERNAME
+EQUAL B4 未领取
+EQUAL D7  1
+#ACT
+Close
+MOV  D7  0
+Give 逍遥之刃 1
+give 金币 80000000
+SaveValue "ParamControl\全民冲级名单.ini"  [战士]  战士60第1领取情况 已领取
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════" 
+LineMsg "Grobal" "号外号外: 全民冲级赛 60级阶段 战士第1名: <$USERNAME>" 
+LineMsg "Grobal" "领取了奖品→ 逍遥之刃 . 金币8000万 . 大家一起恭喜他吧!" 
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+break
+
+#IF
+EQUAL A5 %USERNAME
+EQUAL B5 未领取
+EQUAL D7  1
+#ACT
+Close
+MOV  D7  0
+Give 开天之刃 1
+give 金币 40000000
+SaveValue "ParamControl\全民冲级名单.ini"  [战士]  战士60第2领取情况 已领取
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════" 
+LineMsg "Grobal" "号外号外: 全民冲级赛 60级阶段 战士第2名: <$USERNAME>" 
+LineMsg "Grobal" "领取了奖品→ 开天之刃 . 金币4000万 . 大家一起恭喜他吧!" 
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+break
+
+#IF
+EQUAL A6 %USERNAME
+EQUAL B6 未领取
+EQUAL D7  1
+#ACT
+Close
+MOV  D7  0
+Give 天狼刀 1
+give 金币 20000000
+SaveValue "ParamControl\全民冲级名单.ini"  [战士]  战士60第3领取情况 已领取
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════" 
+LineMsg "Grobal" "号外号外: 全民冲级赛 60级阶段 战士第3名: <$USERNAME>" 
+LineMsg "Grobal" "领取了奖品→ 天狼刀 . 金币2000万 . 大家一起恭喜他吧!" 
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+break
+
+#IF
+EQUAL A7 %USERNAME
+EQUAL B7 未领取
+EQUAL D7  1
+#ACT
+Close
+MOV  D7  0
+Give 夜歌碎灵刀 1
+give 金币 80000000
+SaveValue "ParamControl\全民冲级名单.ini"  [战士]  战士70第1领取情况 已领取
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════" 
+LineMsg "Grobal" "号外号外: 全民冲级赛 70级阶段 战士第1名: <$USERNAME>" 
+LineMsg "Grobal" "领取了奖品→夜歌碎灵刀.金币8000万.大家一起恭喜他吧!" 
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+break
+
+#IF
+EQUAL A8 %USERNAME
+EQUAL B8 未领取
+EQUAL D7  1
+#ACT
+Close
+MOV  D7  0
+Give 无畏之刃 1
+give 金币 40000000
+SaveValue "ParamControl\全民冲级名单.ini"  [战士]  战士70第2领取情况 已领取
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════" 
+LineMsg "Grobal" "号外号外: 全民冲级赛 70级阶段 战士第2名: <$USERNAME>" 
+LineMsg "Grobal" "领取了奖品→无畏之刃. 金币4000万 . 大家一起恭喜他吧!" 
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+break
+
+#IF
+EQUAL A9 %USERNAME
+EQUAL B9 未领取
+EQUAL D7  1
+#ACT
+Close
+MOV  D7  0
+Give 王者之刃 1
+give 金币 20000000
+SaveValue "ParamControl\全民冲级名单.ini"  [战士]  战士70第3领取情况 已领取
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════" 
+LineMsg "Grobal" "号外号外: 全民冲级赛 70级阶段 战士第3名: <$USERNAME>" 
+LineMsg "Grobal" "领取了奖品→王者之刃. 金币2000万 . 大家一起恭喜他吧!" 
+LineMsg "Grobal" "═══════════< 传奇日报 >═══════════"
+break
+#ELSEACT
+Close
+MOV  D7  0
+SYSMSG "温馨提示: 您不在名单中或者您已经领取过奖品!"
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

@@ -1,0 +1,144 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@功能消费目录]
+{
+#say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}元{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <领取内测元宝/@元宝领取8> ] [ <元宝兑换系统/@货币兑换8> ] [ <嫁祸仇敌系统/@嫁祸仇敌8> ]\\
+{FCOLOR/12}[ <免费泡取经验/@泡取经验8> ] [ <衣服绚丽染色/@衣服染色8> ] [ <元宝炼制经验/@元宝經验8> ]\\
+{FCOLOR/12}[ <装备属性附魔/@装备附魔8> ] [ <技能提升系统/@技能提升8> ] [ <心爱装备刻名/@装备刻名8> ]\\
+{FCOLOR/12}[ <恢复删除人物/@恢复删除8> ] [ <装备洗弱元素/@洗弱元素8> ] [ <装备加强元素/@加强元素8> ]\\
+{FCOLOR/12}[ <改变性别系统/@改变性别8> ] [ <提升武器幸运/@武器幸运8> ] [ <超级传送系统/@超级传送8> ]\\
+;{FCOLOR/12}[ <嫁祸仇敌系统/@嫁祸仇敌8> ] [ <进入转生系统/@进入转生8> ] [ <个人家园建设/@家园建设8> ]\\
+
+[@恢复删除8]
+#CALL [Capability\恢复人物.txt] @恢复人物
+
+[@武器幸运8]
+#CALL [Capability\武器幸运.txt] @武器幸运_1
+
+[@超级传送8]
+#CALL [Capability\传送系统.txt] @传送系统_Main
+
+[@家园建设8]
+#ACT
+MOV BeatHour %CURHOUR    ;;开区至今时间
+LoadValue 家园开启 "系统设置.ini" [开区后] [家园系统]
+
+#IF
+ELARGE BeatHour %家园开启
+#CALL [Capability\个人家园建设.txt] @MyHome
+#ELSEACT
+SYSMSG "【家园系统】功能公测[ <$OUTPUT(家园开启)> ]小时后开放~"
+Close
+Break
+
+[@元宝领取8]
+#ACT
+MOV BeatHour %CURHOUR
+LoadValue 开启时间 "系统设置.ini" [开区后] [内测元宝]
+
+#IF
+ELARGE BeatHour %开启时间
+#CALL [Capability\领取内测元宝.txt] @领取元宝_1
+#ELSEACT
+SYSMSG "【领取内测元宝】功能公测[ <$OUTPUT(开启时间)> ]小时后开放~"
+Close
+Break
+
+[@在线商城8]
+#CALL [Pay\元宝在线商城.txt] @元宝在线商城_Main
+
+[@泡取经验8]
+#ACT
+MOV BeatHour %CURHOUR
+LoadValue 开启时间 "系统设置.ini" [开区后] [泡取经验]
+
+#IF
+ELARGE BeatHour %开启时间
+#CALL [Capability\泡点系统.txt] @TimeAddExp
+#ELSEACT
+SYSMSG "【免费泡取经验】功能公测[ <$OUTPUT(开启时间)> ]小时后开放~"
+Close
+Break
+
+[@衣服染色8]
+#CALL [Capability\衣服染色.txt] @衣服染色_1
+
+[@元宝經验8]
+#ACT
+MOV BeatHour %CURHOUR
+LoadValue 开启时间 "系统设置.ini" [开区后] [炼制经验]
+
+#IF
+ELARGE BeatHour %开启时间
+#CALL [Capability\元宝炼制经验.txt] @元宝炼制经验_Main
+#ELSEACT
+SYSMSG "【元宝炼制经验】功能公测[ <$OUTPUT(开启时间)> ]小时后开放~"
+Close
+Break
+
+[@货币兑换8]
+#ACT
+MOV BeatHour %CURHOUR
+LoadValue 开启时间 "系统设置.ini" [开区后] [元宝兑换]
+
+#IF
+ELARGE BeatHour %开启时间
+#CALL [Capability\货币兑换.txt] @货币兑换_Main
+#ELSEACT
+SYSMSG "【元宝兑换系统】功能公测[ <$OUTPUT(开启时间)> ]小时后开放~"
+Close
+Break
+
+[@装备刻名8]
+#CALL [Capability\装备刻名.txt] @装备刻名_1
+
+[@装备附魔8]
+#CALL [Capability\装备附魔.txt] @装备附魔_Main
+
+[@洗弱元素8]
+#CALL [Capability\洗弱元素.txt] @洗弱元素_1
+
+[@改变性别8]
+#CALL [Capability\转换性别.txt] @转换性别_1
+
+[@技能提升8]
+#CALL [Capability\技能调升.txt] @技能调升_1
+
+[@嫁祸仇敌8]
+#CALL [Capability\嫁祸.txt] @嫁祸PK值
+
+[@进入转生8]
+#CALL [Capability\转生系统.txt] @转生系统_1
+
+[@加强元素8]
+#CALL [Capability\加强元素.txt] @加强元素_1
+
+[@货币介绍8]
+#SAY
+━━━━━━━━━货━币━说━明━━━━━━━━━\
+{FCOLOR/4}本游戏的货币主要分为: {FCOLOR/1}金币 元宝 金卡{FCOLOR/4}。\\
+{FCOLOR/1}金币{FCOLOR/4} 的来源与打怪,出售装备,金币寄售,元宝兑换来获得\
+基本是免费。\\
+{FCOLOR/1}元宝{FCOLOR/4} 主要通过金卡来兑换得到,还可以一些打怪物身上\
+古董商出售装备得到。\\
+{FCOLOR/1}金卡{FCOLOR/4} 是本游戏唯一的经济来源,只能通过在线充值购买\
+才可以得到。金卡可以兑换元宝,元宝可以兑换金币。\
+但是不可以逆向操作。{FCOLOR/12}\
+━━━━━━━━━充━值━说━明━━━━━━━━━\
+{FCOLOR/4}本游戏的唯一经济来源是 {FCOLOR/1}金卡{FCOLOR/4}。充值方法如下:\\
+1.点击登陆器上在线充值按钮或网站上在线充值连接地址\
+_进行在线充值\\
+2.充值完毕后,进入游戏,点击游戏里{FCOLOR/1}元宝系统{FCOLOR/4}NPC,进入\
+_{FCOLOR/1}购买金卡领取{FCOLOR/4},点{FCOLOR/1}确认当前充值金额{FCOLOR/4},点{FCOLOR/1}确认领取{FCOLOR/4}\\
+3.再点击{FCOLOR/1}"元宝系统"{FCOLOR/4}NPC,进入{FCOLOR/1}"购买金卡领取"{FCOLOR/4},点{FCOLOR/1}领取您\
+_所购买的金卡{FCOLOR/4},系统自动将您购买的金卡冲到您的这个\
+_ID的角色下。\\
+4.如果要把金卡兑换成元宝,请再次进入{FCOLOR/1}元宝系统{FCOLOR/4}NPC,点\
+_{FCOLOR/1}元宝兑换系统{FCOLOR/4}，使用{FCOLOR/1}金卡兑换元宝{FCOLOR/4}功能将您的金卡\
+_兑换成元宝,兑换比例是1金卡=1元宝\\
+_注意: 金卡可以兑换成元宝,但是元宝不能兑换金卡。\
+_请根据实际需要来慎重兑换。{FCOLOR/12}\
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

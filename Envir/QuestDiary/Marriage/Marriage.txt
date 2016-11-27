@@ -1,0 +1,510 @@
+;;创天网络有限公司原版1.45
+[@Marrage]
+{
+begin
+#Define N0{START}          N0
+#Define N1{WEDDING}        N1
+#Define N3{TIME}           N3
+#Define N4{TRY}            N4
+#Define N5{WAITINGTIMEOUT} N5
+#Define N6{MAN}            N6
+#Define N7{GIRL}           N7
+#Define B1{MANNAME}        B1
+#Define B2{GIRLNAME}       B2
+#Define B3{INPUTGIRLNAME}  B3
+
+#IF
+#SAY
+<申请结婚/@wantGetMarried>\
+<申请离婚/@wantDivorce>\
+<摘下结婚戒指/@TakeMarriedRing> \
+<自助结婚戒指/@ResetMarriedRing>\
+
+#IF
+Equal   B1{MANNAME}  %USERNAME
+#SAY
+<取消结婚申请/@PreCancelWedding>\ \
+
+#IF
+IsAdmin
+#SAY
+<参数初始化/@ResetWeddingVariables>\
+
+end
+
+[@ResetMarriedRing]
+#SAY
+当夫妻号不在身边时,可以使用自助设置结婚戒指,只要带上要佩戴的戒指在装备栏的左侧,每次设置消耗金币100W.\\
+<自助设置/@ResetMarriedRing_OK> 
+
+[@ResetMarriedRing_OK]
+#IF
+CheckMarriage
+#ELSEACT
+break
+#ELSESAY
+你还没有结婚啊.\\
+<关  闭/@exit>
+
+#IF
+checkcmd CHECKITEMINFO 7 0
+
+#IF
+EQUAL FLD_NAME ""
+#ACT
+SYSMSG "结婚戒指位置没有佩戴装备."
+BREAK
+
+#if
+CHECKGOLD 1000000
+#ACT
+TAKE 金币 1000000
+ACTCMD EDITITEM FLD_DESC8 = 1
+ACTCMD EDITITEM FLD_DESC9 = 1
+actcmd ItemNamePrefix 7 "结婚戒指"
+break
+#ELSESAY
+对不起,包袱里没有100W金币.\\
+<关闭/@Exit>
+
+[@TakeMarriedRing]
+#SAY
+摘下结婚戒指需要200,000金币。 \
+摘下要作为结婚戒指的戒指，与配偶交换，该戒指就会成为结婚戒指。 \\
+<即使需要支付20万金币，也要摘下结婚戒指。/@ExchangeMarriedRing> \
+
+[@ExchangeMarriedRing]
+#IF
+CheckMarriage
+#ELSESAY
+你没结婚来这里捣什么乱？ \ \
+<关  闭/@exit>
+#ELSEACT
+break
+
+#IF
+checkgold 200000
+#ACT
+take 金币 200000
+CancelMarriageRing
+SysMsg "已丧失了结婚戒指的功能"
+close
+#ELSESAY
+您的钱不够。 \ \
+<关  闭/@exit>
+
+[@ResetWeddingVariables]
+#ACT
+goto @cancelWedding
+close
+break
+
+[@PreCancelWedding]
+#ACT
+SysMsg "您已经取消了结婚申请。"
+goto @CancelWedding_2
+break
+
+[@wantGetMarried]
+#IF
+!CheckLevel 22
+#SAY
+22级以上才可以使用此项功能。\
+#ACT
+break
+
+#IF
+!CheckGold   500000
+#ACT
+SysMsg  "结婚费用不够哦。"
+close
+break
+
+#IF
+CheckMarriage
+#SAY
+已婚状态下不可再婚。\
+#ACT
+break
+
+#IF
+Gender [man]
+#ACT
+goto @wantGetMarried_man
+#ELSEACT
+goto @wantGetMarried_woman
+
+[@wantGetMarried_man]
+#IF
+Equal   B1{MANNAME}     ""
+#SAY
+请注意输入迎娶新娘的名字时不要有空格。\\
+<请输入您要迎娶的新娘的名字。/@@InputMarried_Woman>
+#ELSESAY
+现在不能进行结婚申请。\ \
+<关  闭/@exit>
+
+[@@InputMarried_Woman]
+#ACT
+Mov     B5  %INPUTSTR
+#IF
+!Equal  B5  ""
+#SAY
+您要迎娶的新娘名字是 <$INPUTSTR> 。 \
+新娘名字正确吗？ \ \
+<正确/@ProcessMarried> \
+<不正确/@wantGetMarried_man> \
+
+[@ProcessMarried]
+#IF
+Equal   N6{MAN}     1
+#SAY
+别人正在使用该功能。\
+#ACT
+break
+#IF
+!Equal   B1{MANNAME} ""
+#SAY
+别人正在使用该功能。\
+#ACT
+break
+#IF
+!Equal   B3{INPUTGIRLNAME} ""
+#SAY
+别人正在使用该功能。\
+#ACT
+break
+#IF
+!CheckGold   500000
+#ACT
+SysMsg  "结婚费用不够。"
+close
+break
+#IF
+#ACT
+mov     N1{WEDDING}         1
+mov     B1{MANNAME}         %USERNAME
+mov     B3{INPUTGIRLNAME}   %INPUTSTR
+mov     N6{MAN}             1
+mov     N5{WAITINGTIMEOUT}  0
+Delaygoto [local] 5 @startWeddingloop
+SysMsg  "已完成结婚申请，等新娘也来申请结婚。"
+close
+
+[@wantGetMarried_woman]
+#IF
+equal   N6{MAN}             1
+equal   B3{INPUTGIRLNAME}   %USERNAME
+#ELSEACT
+SysMsg  "新郎尚未申请结婚。"
+close
+break
+#IF
+CheckGold 500000
+#ACT
+mov     N7{GIRL}      1
+mov     B2{GIRLNAME}  %USERNAME
+SysMsg  "已完成结婚申请。"
+close
+#ELSEACT
+SysMsg  "结婚费用不够。"
+        goto @CancelWedding_2
+close
+
+[@startWeddingloop]
+#IF
+Equal   N0{START}   1
+#ACT
+break
+
+#IF
+#ACT
+Inc     N5{WAITINGTIMEOUT}      1
+
+#IF
+Large   N5{WAITINGTIMEOUT}      10
+#ACT
+SysMsg  "新娘没来结婚申请无效。"
+goto @CancelWedding_2
+break
+
+#IF
+Equal   N6{MAN}     1
+Equal   N7{GIRL}    1
+#ELSEACT
+SysMsg  "正在等候新娘申请结婚。"
+Delaygoto [local] 5 @startWeddingloop
+break
+
+#IF
+!CheckGold  500000
+#ACT
+SysMsg  "结婚费用不够。"
+Delaygoto [local] 5 @startWeddingloop
+break
+
+#IF
+#ACT
+Mov     N0{START}   1
+Mov     N3{TIME}    0
+EventMsg  "0" "马上就会举行新郎 <$OUTPUT(B1)>先生和新娘<$OUTPUT(B2)>女士的婚礼。"
+SysMsg    "婚礼相关准备已做好。"
+Delaygoto [local] 10  @weddingCeremony
+close
+break
+
+[@weddingCeremony]
+#IF
+Equal N1{WEDDING} 0
+#ACT
+break
+#IF
+Large  N3{TIME} 360
+#ACT
+EventMsg  "0"  "预约的婚礼时间已到。"
+goto @CancelWedding_2
+break
+
+#IF
+Equal  N1{WEDDING}   1
+#ACT
+EventMsg   "0"  "现在开始举行新郎 <$OUTPUT(B1)>先生和新娘<$OUTPUT(B2)>女士的婚礼。"
+Mov  N1{WEDDING}  2
+Delaygoto [local]   10  @weddingCeremony
+break
+
+#IF
+Equal  N1{WEDDING}  2
+#ACT
+EventMsg  "0"  "新郎 <$OUTPUT(B1)> 发誓会在人生风风雨雨的旅途中永远爱新娘<$OUTPUT(B2)>吗？ 请用“是/不是”来简短回答。 "
+Mov  N4{TRY}    5
+CaptureSaying   %B1  @ListenSayYes_man
+Mov   N1{WEDDING}  3
+Delaygoto [local]   10  @weddingCeremony
+break
+
+#IF
+Equal N1{WEDDING}  3
+#ACT
+EventMsg  "0"  "新郎请用“是/不是”来回答。"
+
+#IF
+Equal  N1{WEDDING}  4
+#ACT
+Eventmsg   "0"  "新娘 <$OUTPUT(B2)>发誓会在人生风风雨雨的旅途中永远爱新郎 <$OUTPUT(B1)> 吗？请用“是/不是”来简短回答。"
+Mov  N4{TRY}    5
+CaptureSaying  %B2  @ListenSayYes_woman
+Mov  N1{WEDDING}  5
+Delaygoto [local]   10  @weddingCeremony
+break
+
+#IF
+Equal N1{WEDDING}  5
+#ACT
+EventMsg  "0"  "新娘请用“是/不是”来回答。"
+
+#IF
+Equal  N1{WEDDING}  6
+#ACT
+Eventmsg "0" "现在新郎新娘交换作为结婚信物的戒指。请交换戒指。"
+mov   N1{WEDDING}  7
+GetMarried  %B1  %B2
+Delaygoto [local]  10  @weddingCeremony
+break
+
+#IF
+Equal N1{WEDDING} 7
+#ACT
+EventMsg  "0" "至此，新郎 <$OUTPUT(B1)>先生和新娘 <$OUTPUT(B2)> 女士的婚礼结束。祝二位白头偕老，永远幸福！"
+goto @CancelWedding_2
+break
+
+#IF
+#ACT
+Inc   N3{TIME} 10
+Delaygoto [local] 10 @weddingCeremony
+break
+
+[@ListenSayYes_man]
+#IF
+Equal N1{WEDDING}  0
+#ACT
+CaptureSaying ""
+break
+
+#IF
+!CheckGold  500000
+#ACT
+EventMsg  "0"  "新郎 <$OUTPUT(B1)> 先生没有50W金币,这场婚事视为无效"
+CaptureSaying  ""
+goto @CancelWedding_2
+break
+
+#IF
+#ACT
+mov  B9 %INPUTSTR
+EventMsg "0"  "<$OUTPUT(B9)>" %P1
+#IF
+Equal  N1{WEDDING}  3
+Equal  B9  "是"
+#ACT
+Mov  B9  ""
+EventMsg  "0"  "新郎 <$OUTPUT(B1)> 先生已回答“是”。"
+Take 金币 500000
+Mov  N1{WEDDING}  4
+CaptureSaying  ""
+break
+
+#IF
+Equal  N1{WEDDING}  3
+Equal  B9  "不是"
+#ACT
+Mov  B9  ""
+EventMsg  "0"  "新郎 <$OUTPUT(B1)> 先生回答“不是”"
+EventMsg  "0"  "这场婚事视为无效。"
+CaptureSaying  ""
+goto @CancelWedding_2
+Break
+
+#IF
+Equal  N1{WEDDING} 3
+!Equal  B9  ""
+#ACT
+EventMsg  "0" "新郎请用“是/不是”来回答。"
+
+#IF
+Large N4{TRY}   0
+#ACT
+SysMsg "只剩下<$OUTPUT(N4)>次的机会。请用“是/不是”来回答。"
+#ELSEACT
+EventMsg  "0"  "婚礼已取消。"
+CaptureSaying  ""
+goto @CancelWedding_2
+Break
+
+#IF
+#ACT
+Dec N4{TRY}   1
+break
+
+[@ListenSayYes_woman]
+#IF
+Equal N1{WEDDING}  0
+#ACT
+CaptureSaying ""
+break
+
+#IF
+!CheckGold  500000
+#ACT
+EventMsg  "0"  "新娘 <$OUTPUT(B2)>女士没有50W金币,这场婚事视为无效"
+CaptureSaying  ""
+goto @CancelWedding_2
+break
+
+#IF
+#ACT
+mov  B9 %INPUTSTR
+EventMsg "0"  "<$OUTPUT(B9)>" %P1
+
+#IF
+Equal  N1{WEDDING}  5
+Equal  B9  "是"
+#ACT
+Mov  B9  ""
+EventMsg  "0"  "新娘 <$OUTPUT(B2)> 女士已回答“是”。"
+Take 金币 500000
+Mov  N1{WEDDING}  6
+CaptureSaying  ""
+break
+
+#IF
+Equal  N1{WEDDING}  5
+Equal  B9  "不是"
+#ACT
+Mov  B9  ""
+EventMsg  "0"  "新娘 <$OUTPUT(B2)>女士回答“不是”。"
+EventMsg  "0"  "这场婚事视为无效。"
+CaptureSaying  ""
+goto @CancelWedding_2
+Break
+
+#IF
+Equal  N1{WEDDING} 5
+!Equal  B9  ""
+#ACT
+EventMsg  "0" "新娘请用“是/不是”来回答。"
+
+#IF
+Large N4{TRY}   0
+#ACT
+SysMsg "<只剩下$OUTPUT(N4)>次的机会。请用“是/不是”来回答。"
+#ELSEACT
+EventMsg  "0"  "婚礼已取消。"
+CaptureSaying  ""
+goto @CancelWedding_2
+Break
+
+#IF
+#ACT
+Dec  N4{TRY}   1
+break
+
+[@wantDivorce]
+#IF
+CheckMarriage
+#SAY
+确定要离婚吗？\
+离婚需要支付100万金币。\ \
+<付钱，离婚。 /@divorcenow>\
+#ELSESAY
+您没有结婚怎么离婚啊！\
+<关闭/@exit>
+
+[@divorcenow]
+#IF
+CheckMarriage
+checkgold 1000000
+#ACT
+take 金币 1000000
+Divorce
+close
+#ELSESAY
+您没有结婚或者您的钱不足100万金币！\
+<关闭/@exit>
+
+[@CancelWedding]
+#ACT
+Mov  N0{START}      0
+Mov  N1{WEDDING}    0
+Mov  N3{TIME}       0
+Mov  N4{TRY}        0
+Mov  N5{WAITINGTIMEOUT} 0
+Mov  N6{MAN}        0
+Mov  N7{GIRL}       0
+Mov  B1{MANNAME}    ""
+Mov  B2{GIRLNAME}   ""
+Mov  B3{INPUTGIRLNAME}  ""
+Mov  B4 ""
+ClearDelayGoto
+close
+break
+
+[@CancelWedding_2]
+#ACT
+Mov  N0{START}      0
+Mov  N1{WEDDING}    0
+Mov  N3{TIME}       0
+Mov  N4{TRY}        0
+Mov  N5{WAITINGTIMEOUT} 0
+Mov  N6{MAN}        0
+Mov  N7{GIRL}       0
+Mov  B1{MANNAME}    ""
+Mov  B2{GIRLNAME}   ""
+Mov  B3{INPUTGIRLNAME}  ""
+Mov  B4 ""
+close
+break
+
+}
+;;创天网络有限公司原版1.45

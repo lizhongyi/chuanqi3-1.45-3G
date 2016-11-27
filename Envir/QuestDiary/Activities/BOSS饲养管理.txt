@@ -1,0 +1,45 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@喂养BOSS管理_Main]
+{
+#SAY
+━━━━━━━━━怪━物━饲━养━━━━━━━━━\
+{FCOLOR/10}是不是觉得每天和一群高手抢BOSS很危险，搞不好没打到\
+BOSS还被别人杀人？现在好了，我这里有BOSS的幼虫，你\
+只要每天精心的喂养它，三天后就成长成BOSS了。{FCOLOR/12}\
+_      {FCOLOR/10}(连续喂养三天能长成大BOSS去宰杀){FCOLOR/12}\\
+_       [ <喂 养 BOSS 的 所 有 操 作/@lyboss> ]\\
+_       [ <合 成 喂 养 BOSS 的 材 料/@lybossd> ]\\
+_                 [ <返 回/@Main> ]\\
+
+[@lyboss]
+#SAY
+━━━━━━━━━怪━物━饲━养━━━━━━━━━\
+{FCOLOR/10}是不是觉得每天和一群高手抢BOSS很危险，搞不好没打到\
+BOSS还被别人杀人？现在好了，我这里有BOSS的幼虫，你\
+只要每天精心的喂养它，三天后就成长成BOSS了。{FCOLOR/12}\
+_      {FCOLOR/10}(连续喂养三天能长成大BOSS去宰杀){FCOLOR/12}\\
+_        [ <重 新 领 养 新 的 BOSS/@lybossa> ]\\
+_        [ <饲 喂 已 领 养 的 BOSS/@lybossb> ]\\
+_        [ <查 看 正 在 喂 养 BOSS/@lybosse> ]\\
+_        [ <宰 杀 喂 养 成 熟 BOSS/@lybossc> ]\\
+_        [ <制 作 高 级 BOSS 饲 料/@lybossd> ]\\
+_                [ <返 回/@喂养BOSS管理_Main> ]\\
+
+[@lybossa]
+#CALL [Activities\BOSS饲养领养.txt] @领养BOSS_领
+
+[@lybossb]
+#CALL [Activities\BOSS饲养领养.txt] @喂养BOSS
+
+[@lybossc]
+#CALL [Activities\BOSS饲养领养.txt] @宰杀BOSS
+
+[@lybossd]
+#CALL [Activities\BOSS饲养领养.txt] @制作饲料
+
+[@lybosse]
+#CALL [Activities\BOSS饲养领养.txt] @查看BOSS
+
+}
+
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

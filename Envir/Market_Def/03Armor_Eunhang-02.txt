@@ -1,0 +1,95 @@
+;;创天网络有限公司原版1.45
+%100
++10
++11
++15
++53
+
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+我不想和你这种坏人做生意。\ \
+<结束/@exit>
+#ELSEACT
+goto @main_root_1
+
+[@main_root_1]
+#IF
+check [057] 1
+#ACT
+goto @main_0_0
+break
+
+#IF
+check [056] 1
+#ACT
+goto @main_0_1
+#ELSEACT
+goto @main_0_0
+
+
+[@main_0_0]
+#SAY
+欢迎光临，你需要什么？\ \
+<购买/@buy>防御工具\
+<出售/@sell>防御工具\
+<修理/@pre_repair>防御工具\
+<结束/@exit>
+
+
+[@main_0_1]
+#IF
+#SAY
+欢迎光临，你需要什么？\ \
+<购买/@buy>防御工具\
+<出售/@sell>防御工具\
+<修理/@pre_repair>防御工具\
+<在魔法长袍上挂上树脂/@Mu_quest>\
+<结束/@exit>
+
+[@buy]
+#SAY
+你要买什么？\ \
+ <前一步/@main>
+
+[@sell]
+#SAY
+你要买什么？\ \
+ <前一步/@main>
+
+[@repair]
+#SAY
+防御工具，头盔和帽子都可以修理。\ \
+ <前一步/@main>
+
+[~@repair]
+#SAY
+修得不错。\ \
+ <前一步/@main>
+
+[Goods]
+;ItemName      Volume     Hour
+青铜头盔         50         1
+魔法头盔         50         1
+道士头盔         50         1
+布衣（男）       50         1
+布衣（女）       50         1
+轻型盔甲（男）   50         1
+轻型盔甲（女）   50         1
+重盔甲（男）     50         1
+重盔甲（女）     50         1
+灵魂战衣（男）   50         1
+灵魂战衣（女）   50         1
+魔法长袍（男）   50         1
+魔法长袍（女）   50         1
+
+
+[@Mu_quest]
+#CALL [\MU_wizard\lightLine.txt] @mugong_lightline_suzi
+
+[@pre_repair]
+#IF
+#SAY
+确实要修理吗？\ \
+<修理/@repair>

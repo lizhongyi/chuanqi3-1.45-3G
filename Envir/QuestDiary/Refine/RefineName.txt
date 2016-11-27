@@ -1,0 +1,85 @@
+;;创天网络有限公司原版1.45
+[@RefineName]
+{
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!!\ \
+<结束/@exit>
+
+#ELSEACT
+break
+
+#IF
+checkweaponlevel 10
+#ELSEACT
+BREAK
+#ELSESAY
+您的武器还不到10级,不能使用啊!
+
+#IF
+checkgold 1000000
+#SAY
+真想在武器上刻名字吗？ \ \
+<刻/@RefineCorrect> 名字\
+<结束/@exit>
+
+#ELSESAY
+钱不够啊。。\ \
+<结束/@exit>
+
+
+[@RefineCorrect]
+#IF
+checkweaponlevel 1
+#ELSESAY
+炼制武器需要手里拿着武器!!\ \
+<结束/@exit>
+
+#ELSEACT
+break
+
+#IF
+checkweaponlevel 10
+checkgold 1000000
+#SAY
+在武器上刻名字等于是提高剑的名誉。。\
+慎重的考虑一下吧。名字不可以超过汉字6字以上。。\ \
+<在武器上面刻名字。/@@WriteWeaponName>
+
+#ELSESAY
+钱不够啊。。\ \
+<结束/@exit>
+
+[@@WriteWeaponName]
+#ACT
+MOV A0 %INPUTSTR
+
+#IF
+EQUAL A0 ""
+#ACT
+BREAK
+#SAY
+对不起,本次刻名失败.
+
+#IF
+checkgold 1000000
+#ACT
+take 金币 1000000
+WriteWeaponName @CheckWeaponName
+#ELSESAY
+钱不够啊。。\ \
+<结束/@exit>
+
+
+[@CheckWeaponName]
+#SAY
+你把武器的名字刻为 <$OUTPUT(A0)> 。\ \
+<结束/@exit>
+
+
+[@CheckWeaponName~]
+#SAY
+投放武器的名字失败了。 \ \
+
+}

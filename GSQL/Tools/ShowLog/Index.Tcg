@@ -1,0 +1,62 @@
+[Config]
+Count     =5
+
+ID1       =80
+Name1     ="查看 SQLServer 启动日志"
+FileIco1  ="$Windows\NOTEPAD.EXE"
+IcoIndex1 =0
+FileEXE1  ="$Windows\NOTEPAD.EXE"
+FilePara1 =""$LogFileSQL日志.Log""
+RegEXE1   =""
+RegPara1  =""
+FilePath1 ="$LogFile\"
+Hint11    ="查看数据库启动日志，用于错误诊断！"
+Hint21    =""
+
+ID2       =90
+Name2     ="查看 管理器日志"
+FileIco2  ="$Windows\NOTEPAD.EXE"
+IcoIndex2 =0
+FileEXE2  ="$Windows\NOTEPAD.EXE"
+FilePara2 =""$RunPath管理器日志.txt""
+RegEXE2   =""
+RegPara2  =""
+FilePath2 ="$RunPath"
+Hint12    ="查看管理器日志！"
+Hint22    =""
+
+ID3       =10
+Name3     ="查看 帮助信息"
+FileIco3  ="$Windows\NOTEPAD.EXE"
+IcoIndex3 =0
+FileEXE3  ="wordpad.exe"
+FilePara3 =""$RunPath\教程帮助\帮助.rtf""
+RegEXE3   =""
+RegPara3  =""
+FilePath3 ="$RunPath"
+Hint13    ="版权、帮助、更新记录等！"
+Hint23    =""
+
+ID4       =11
+Name4     ="查看 如何将数据库打包发布"
+FileIco4  ="$Windows\NOTEPAD.EXE"
+IcoIndex4 =0
+FileEXE4  ="wordpad.exe"
+FilePara4 =""$RunPath\教程帮助\如何将数据库打包发布.rtf""
+RegEXE4   =""
+RegPara4  =""
+FilePath4 ="$RunPath"
+Hint14    ="数据库打包发布图文教程！"
+Hint24    =""
+
+ID5       =12
+Name5     ="查看 自动附加数据库如何使用"
+FileIco5  ="$Windows\NOTEPAD.EXE"
+IcoIndex5 =0
+FileEXE5  ="wordpad.exe"
+FilePara5 =""$RunPath\教程帮助\自动附加数据库如何使用.rtf""
+RegEXE5   =""
+RegPara5  =""
+FilePath5 ="$RunPath"
+Hint15    ="自动附加数据库功能及使用！"
+Hint25    =""

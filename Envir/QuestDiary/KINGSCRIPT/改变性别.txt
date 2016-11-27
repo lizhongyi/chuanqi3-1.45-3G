@@ -1,0 +1,43 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@改变性别_1]
+{
+#SAY
+请问您需要变性手术吗? 变性手术需要消费 {FCOLOR/1}50{FCOLOR/12} 赞助币!\\
+<【我需要做变性手术】/@变性性X>\
+
+[@变性性X]
+#ACT
+LOADVALUE D0 "ParamControl\充值余额.ini" %USERID RMB
+LOADVALUE D5 "ParamControl\累积消费.ini" %USERID RMB
+
+#IF
+Checkmarriage
+#ACT
+SYSMSG "对不起,你结过婚了,不能变性!"
+BREAK
+
+#IF
+checkcmd CHECKITEMINFO 0 0
+
+#IF
+!EQUAL FLD_NAME ""
+#ACT
+SYSMSG "变性时请把衣服脱下再来吧."
+BREAK
+
+#IF
+Elarge D0 50
+#ACT
+Close
+Changegender
+DEC D0 50
+SAVEVALUE "ParamControl\充值余额.ini" %USERID RMB %D0
+SYSMSG "变性成功了."
+inc D5 50
+SAVEVALUE "ParamControl\累积消费.ini" %USERID RMB %D5
+break
+#ELSESAY
+{FCOLOR/1}你的帐户余额不足10赞助币,手术失败了.\\
+<关闭/@Exit>
+
+}

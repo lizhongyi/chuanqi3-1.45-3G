@@ -1,0 +1,83 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@衣服染色_1]
+{
+#SAY
+衣服颜色每次消耗{FCOLOR/1}10{FCOLOR/12}赞助币,请选择你要染的颜色.\\
+{FCOLOR/14}
+_[ < 白色 /@衣服染色(255,255,255)> ] [ < 黑色 /@衣服染色(5,5,5)> ] [ < 蓝色 /@衣服染色(255,0,0)> ] [ < 草绿 /@衣服染色(0,128,128)> ]\\
+_[ < 青色 /@衣服染色(128,0,255)> ] [ < 灰色 /@衣服染色(174,174,174)> ] [ < 紫色 /@衣服染色(223,184,117)> ] [ < 绿色 /@衣服染色(128,0,128)> ]\\
+_[ <淡黄色/@衣服染色(181,255,255)> ] [ <天蓝色/@衣服染色(222,132,182)> ] [ <淡紫色/@衣服染色(252,220,208)> ] [ <大红色/@衣服染色(0,255,0)> ]\\
+_[ <水红色/@衣服染色(255,255,0)> ] [ <青绿色/@衣服染色(0,0,255)> ] [ <浅蓝色/@衣服染色(247,138,90)> ] [ <金黄色/@衣服染色(0,255,255)> ]\\
+_[ <随机染色/@随机染色> ] [ <返回/@随身功能_1> ]
+
+[@随机染色]
+#SAY
+{FCOLOR/10}随机染色不能确定染的什么颜色,想要与众不同就来吧!{FCOLOR/12}\\
+<确定染色/@随机染色_OK>
+
+[@随机染色_OK]
+#ACT
+LOADVALUE D4 "ParamControl\充值余额.ini" %USERID RMB
+LOADVALUE D5 "ParamControl\累积消费.ini" %USERID RMB
+
+#IF
+checkcmd CHECKITEMINFO 0 0
+
+#IF
+EQUAL FLD_NAME ""
+#ACT
+SYSMSG "你的身上没有穿衣服,怎么为你染色呀."
+BREAK
+
+#IF
+Elarge D4 10
+#ACT
+MOVR D0 256
+MOVR D1 256
+MOVR D2 256
+Close
+DEC D4 10
+SAVEVALUE "ParamControl\充值余额.ini" %USERID RMB %D4
+wearcolor %D0 %D1 %D2
+SYSMSG "您需要的颜色已经染好了,拉风吧!"
+inc D5 10
+SAVEVALUE "ParamControl\累积消费.ini" %USERID RMB %D5
+BREAK
+#ELSESAY
+你的帐户余额不足10赞助币\\
+<关闭/@Exit>
+
+
+[@衣服染色()]
+#ACT
+MOV D0 %ARG(1)
+MOV D1 %ARG(2)
+MOV D2 %ARG(3)
+LOADVALUE D4 "ParamControl\充值余额.ini" %USERID RMB
+LOADVALUE D5 "ParamControl\累积消费.ini" %USERID RMB
+
+#IF
+checkcmd CHECKITEMINFO 0 0
+
+#IF
+EQUAL FLD_NAME ""
+#ACT
+SYSMSG "你的身上没有穿衣服,怎么为你染色呀."
+BREAK
+
+#IF
+Elarge D4 10
+#ACT
+Close
+DEC D4 10
+SAVEVALUE "ParamControl\充值余额.ini" %USERID RMB %D4
+wearcolor %D0 %D1 %D2
+inc D5 10
+SAVEVALUE "ParamControl\累积消费.ini" %USERID RMB %D5
+SYSMSG "您需要的颜色已经染好了,拉风吧!"
+BREAK
+#ELSESAY
+你的帐户余额不足10赞助币\\
+<关闭/@Exit>
+
+}

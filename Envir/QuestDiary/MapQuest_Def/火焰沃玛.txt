@@ -1,0 +1,98 @@
+;;王者传奇3 www.mir3w.com
+[@main]
+#act
+LoadValue D0 "ParamControl\任务记录.ini" %USERNAME 任务编号
+LoadValue A0 "ParamControl\任务记录.ini" %USERNAME 任务进度
+
+#IF
+EQUAL A0 "Progress"
+EQUAL D0 130
+#ACT
+MOV A5 "火焰沃玛"
+GOTO @BossQuest_TQCase2
+break
+
+#ELSEACT
+goto @DAOSHIKUNMO
+break
+
+[@BossQuest_TQCase2]
+#CALL [每日任务\QT_TotalMonster.txt] @BossQuest_Monster_Total
+
+
+[@DAOSHIKUNMO]
+#IF
+checkjob warrior
+#ACT
+break
+;
+#IF
+checkjob wizard
+#ACT
+break
+;
+#IF
+checkmagic 困魔咒
+#ACT
+break
+;
+#IF
+check [022] 1
+#ACT
+break
+;
+#IF
+check [055] 0
+#ACT
+break
+;
+#IF
+check [055] 1
+#ACT
+goto @MapQuest_holycircle_drop1
+break
+#ELSEACT
+break
+
+[@MapQuest_holycircle_drop1]
+#IF
+random 100
+#SAY
+(这是第一困魔石吗？...要一个不缺地找到5种困魔石...)
+#ACT
+give 第一困魔石 1
+break
+
+#IF
+random 50
+#SAY
+(这是第二困魔石吗？...要一个不缺地找到5种困魔石...)
+#ACT
+give 第二困魔石 1
+break
+
+#IF
+random 100
+#SAY
+(这是第三困魔石吗？...要一个不缺地找到5种困魔石...)
+#ACT
+give 第三困魔石 1
+break
+
+#IF
+random 50
+#SAY
+(这是第四困魔石吗？...要一个不缺地找到5种困魔石...)
+#ACT
+give 第四困魔石 1
+break
+
+#IF
+random 100
+#SAY
+(这是最后困魔石吗？...要一个不缺地找到5种困魔石...)
+#ACT
+give 最后困魔石 1
+break
+#ELSEACT
+break

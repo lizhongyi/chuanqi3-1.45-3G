@@ -1,0 +1,20 @@
+;;创天网络有限公司原版1.45
+[@CastleWarSpeak]
+{
+#IF
+random 3
+#ACT
+speak  " 沙巴克城开战了。。。"
+break
+
+#IF
+random 3
+#ACT
+speak  " 沙巴克城危险所以避难来了。"
+break
+
+#IF
+#ACT
+speak  " 谁能让沙巴克城稳定一点啊。。"
+break
+}

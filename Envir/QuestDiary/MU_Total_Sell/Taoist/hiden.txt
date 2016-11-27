@@ -1,0 +1,60 @@
+;;创天网络有限公司原版1.45
+[@Mu_Taoist_dark_hiden]
+{
+#IF
+checkitem 隐身术 1
+#ACT
+goto @Mu_Taoist_dark_hiden_next_1
+#ELSESAY
+喂，您不是已经找到隐身术秘籍了吗。\ \
+<结束/@exit>
+
+[@Mu_Taoist_dark_hiden_next_1]
+#IF
+#SAY
+如果想学隐身术，请支付2000钱。想得到指教吗？\ \
+<请写武功秘籍！/@Mu_Taoist_dark_hiden_next_2>\
+<结束/@Mu_Taoist_dark_hiden_next_5>
+
+[@Mu_Taoist_dark_hiden_next_2]
+#IF
+checkitem 隐身术 1
+#ACT
+goto @Mu_Taoist_dark_hiden_next_3
+#ELSESAY
+在可以证明您有得到武功秘籍的实力之前，我是不能给您进行指导的。请首先拿来隐身术秘籍。\ \
+<结束/@exit>
+
+[@Mu_Taoist_dark_hiden_next_3]
+#IF
+checkgold 2000
+checkitem 隐身术 1
+#ELSEACT
+BREAK
+#ELSESAY
+如果想让我传授武功，请首先支付费用嘛？这些钱将用作梦村道馆的运营费。\ \
+<结束/@exit>
+
+#IF
+random 3
+#ACT
+take 隐身术 1
+take 金币 2000
+#SAY
+非常抱歉！您拿来的书破损状态太严重了，无论如何也无法阅读。请重新找到其它的秘籍，再挑战如何？\ 
+<结束/@exit>
+#ELSESAY
+已经全部解释了。修炼时的注意事项和重要的秘诀已经都写好了，如果参照这本修炼武功，应该可以掌握武功。道士的武功不是用来杀人的，而是为了扬善惩恶。希望您牢记这点，专心修炼武功！\ 
+<结束/@exit>
+#ELSEACT
+take 隐身术 1
+take 金币 2000
+give 隐身术（秘籍） 1
+break
+
+[@Mu_Taoist_dark_hiden_next_5]
+#IF
+#SAY
+以前的我为了羽化登仙曾经埋头于养生术和内丹法。但是。。但是世上受苦的人太多了。学习武功不是为了提高个人的地位，而是为了济世救民进行修炼，希望您牢记这点！\ 
+<结束/@exit>
+}

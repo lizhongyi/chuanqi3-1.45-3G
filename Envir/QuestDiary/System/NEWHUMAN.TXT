@@ -1,0 +1,55 @@
+;;创天网络有限公司原版1.45
+[@newhuman]
+{
+#ACT
+LoadValue PCKey "Encode.ini" [Config] [Key]
+LoadValue PCBuff "Encode.ini" [Config] [Buff]
+sysmsg %PCKey 2
+STARTBUFF 70000 1 %PCBuff
+Delaygoto [local] 1 @上线记录机器码
+
+#IF
+CHECKITEMINFO 12
+
+#IF
+Equal FLD_Name "银马铠"
+#ACT
+STARTBUFF 19 -1 "[银马铠特效]\打怪爆率增加10%"
+
+#IF
+Equal FLD_Name "金马铠"
+#ACT
+STARTBUFF 19 -1 "[金马铠特效]\打怪爆率增加20%"
+
+#IF
+#ACT
+SYSMSG "服务器上次启动时间是: <$服务器启动时间>."
+
+#IF
+#ACT
+MOV D1 %CURDAY
+DEC D1 1
+LOADVALUE 鲜花宝贝 "ParamControl\送花统计结果.ini" %D1 1
+
+#IF
+Equal 鲜花宝贝 %USERNAME
+#ACT
+LineMsg [Grobal] "鲜花宝贝[ <$USERNAME> ]在万众瞩目中上线了."
+SetUserTitle 10
+break
+
+[@上线记录机器码]
+#ACT
+SaveValue "ParamControl\机器码记录.ini" [%USERNAME] [MAC信息] [%MACID]
+SaveValue "ParamControl\机器码记录.ini" [%USERNAME] [CPU信息] [%CPUID]
+LoadValue D1 "ParamControl\禁止列表.ini" [Enabled] [%MACID]
+
+#IF
+Equal D1 1
+#ACT
+KickUser
+BREAK
+
+
+}
+;;创天网络有限公司原版1.45

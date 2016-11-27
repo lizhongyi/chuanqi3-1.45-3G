@@ -1,0 +1,299 @@
+;;创天网络有限公司原版1.45
+[@mugong_firewind]
+{
+#IF
+check [025] 1
+#SAY
+你不是已经收到书了吗？那么你为什么还要索要？\ \
+<结束/@exit>
+#ACT
+break
+;
+#IF
+check [033] 1
+check [034] 0
+#ACT
+goto @mugong_firewind_next4_1
+break
+;
+#IF
+#SAY
+想知道叫“抗拒火环“的武功吗？\ 
+抗拒火环是一种被敌人包围时，在自己周围产生 {FCOLOR/10}强烈的火墙{FCOLOR/12} ，从而逃脱包围的魔法。也是体力弱魔术师必须掌握的魔法。\ 
+但是仅凭语言是无法理解的，只用直接被敌人包围，并体验生命受到威胁才可以学会的。但是这种方法太粗糙。。。要试一下吗？\ \ 
+<拜托指教了/@mugong_firewind_next1_1> \ 
+<现在好像有些勉强/@mugong_firewind_next1_2>
+
+[@mugong_firewind_next1_2]
+#IF
+#SAY
+不要自满虽然很重要，但是该果敢的时候就要果敢。如果你的想法如此，我也不干涉。\ \
+<结束/@exit>
+
+[@mugong_firewind_next1_1]
+#IF
+checklevel 12
+#ACT
+goto @mugong_firewind_next2
+#ELSESAY
+嗯。。想学习的想法值得表扬，但修炼的程度好像还不够。修炼一下再来吧！\ \
+<结束/@exit>
+
+[@mugong_firewind_next2]
+#IF
+checkmagic 抗拒火环
+#SAY
+你不是已经掌握了抗拒火环，请回去吧！我很忙。\ \
+#ELSEACT
+goto @mugong_firewind_next3
+break
+
+[@mugong_firewind_next3]
+#IF
+#ACT
+set [033] 1
+#SAY
+知道了。那么告诉你方法。现在我把你送到怪物出没的地方。\ 
+我站在房间的另一侧，无论有任何事情 {FCOLOR/10}都不能干扰怪物或者杀死怪物，只能向我跑过来{FCOLOR/12} 。\ 
+时间只有5分钟。如果准备好了，请说一下！\ \ 
+<准备好了/@mugong_firewind_next4_1> \
+<等一下，现在。。。/@mugong_firewind_next4_2>
+
+[@mugong_firewind_next4_2]
+#IF
+#SAY
+比看起来软弱。。。如果确实准备好了，再来吧！\ \ 
+<结束/@exit>
+
+[@mugong_firewind_next4_1]
+#IF
+checkmagic 抗拒火环
+#SAY
+那么辛苦学会的抗拒火环，不知道能否很好地使用。\ \ 
+<结束/@exit>
+#ELSESAY
+那么，请送去吧！\
+我给你送到那儿的时间是5分钟。。时间结束后，你将重新回到这里。\ \
+<移动/@mugong_firewind_next5> 
+
+[@mugong_firewind_next5]
+#IF
+checkhum 02_002 1
+checkhum 02_003 1
+#SAY
+已经有人在接受测试。。。请等一下。。\ \
+<结束/@exit>
+#ELSEACT
+goto @mugong_firewind_next5_1
+break
+
+[@mugong_firewind_next5_1]
+#IF
+checkhum 02_002 1
+checkhum 02_003 1
+#SAY
+已经有人在接受测试。。。请等一下。。\ \
+<结束/@exit>
+#ELSEACT
+Monclear 02_002
+Monclear 02_003
+goto @mugong_firewind_next5_2
+break
+
+[@mugong_firewind_next5_2]
+#IF
+#ACT
+Monclear 02_002
+Monclear 02_003
+goto @mugong_firewind_next6_1
+
+[@mugong_firewind_next6_1]
+#IF
+#ACT
+Param1 02_002
+Param2 40
+Param3 64
+MonGen 半兽人61 10 20
+MonGen 毒蜘蛛61 10 20
+goto @mugong_firewind_next6_2
+break
+
+[@mugong_firewind_next6_2]
+#IF
+#ACT
+Param1 02_002
+Param2 52
+Param3 52
+MonGen 半兽战士61  5 10
+goto @mugong_firewind_next6_3
+break
+
+[@mugong_firewind_next6_3]
+#IF
+#ACT
+Param1 02_002
+Param2 65
+Param3 40
+MonGen 半兽勇士61  10 10
+MonGen 掷斧骷髅61  5 10
+goto @mugong_firewind_next7_1
+break
+
+[@mugong_firewind_next7_1]
+#IF
+#ACT
+Param1 02_003
+Param2 40
+Param3 64
+MonGen 半兽人61  5 20
+MonGen 毒蜘蛛61 15 20
+goto @mugong_firewind_next7_2
+break
+
+[@mugong_firewind_next7_2]
+#IF
+#ACT
+Param1 02_003
+Param2 52
+Param3 52
+MonGen 半兽战士61  5 20
+goto @mugong_firewind_next7_3
+break
+
+[@mugong_firewind_next7_3]
+#IF
+#ACT
+Param1 02_003
+Param2 65
+Param3 40
+MonGen 半兽勇士61  5 20
+MonGen 掷斧骷髅61  10 20
+goto @mugong_firewind_next8
+break
+
+[@mugong_firewind_next8]
+#IF
+#ACT
+TimeRecall 5
+mapmove 02_002 21 85
+goto @kangjuhuohuan
+break
+
+
+
+
+[@kangjuhuohuan]
+#ACT
+mov A3 %USERMAP
+
+#IF
+EQUAL A3 "02_002"
+#ACT
+delaygoto [local] 10 @kangjuhuohuan
+#ELSEACT
+BREAKTIMERECALL
+break
+
+}
+
+[@mugong_firewind_test]
+{
+#IF
+checkmonmap 02_002 40
+#ACT
+goto @mugong_firewind_test1
+#ELSEACT
+goto @mugong_firewind_test_fail
+break
+
+[@mugong_firewind_test1]
+#IF
+checkmonmap 02_003 40
+#ACT
+goto @mugong_firewind_test_pass1
+#ELSEACT
+goto @mugong_firewind_test_fail
+break
+
+[@mugong_firewind_test_pass1]
+#IF
+#ACT
+SET [034] 1
+goto @mugong_firewind_test_pass2
+#SAY
+恭喜你，干得很好。请首先离开这个地方。\ \
+
+[@mugong_firewind_test_pass2]
+#IF
+#ACT
+mapmove 02  266  146
+break
+
+[@mugong_firewind_test_fail]
+#IF
+#ACT
+mapmove 02  266  146
+#SAY
+出现失误了。即使仅仅一头怪兽被杀死，其它怪兽也都全不行了。 \	
+需要将来再次挑战了。。。\
+}
+
+[@mugong_firewind_complete]
+{
+#IF
+check [025] 1
+#ACT
+break
+;
+#IF
+check [034] 0
+#ACT
+break
+;
+#IF
+check [033] 0
+#ACT
+break
+;
+#IF
+check [033] 1
+check [034] 1
+check [025] 0
+#ACT
+goto @mugong_firewind_give
+#ELSEACT
+break
+
+[@mugong_firewind_give]
+#IF
+checkmagic 抗拒火环
+#SAY
+你不是已经掌握了抗拒火环，请回去吧！我很忙。\\
+<结束/@exit>
+#ACT
+break
+#IF
+check [025] 0
+#ACT
+give 抗拒火环（秘籍） 1
+give 金币 12000
+give 风之黑檀项链 1
+reset [033] 1
+SET [025] 1
+#SAY
+恭喜你！干得好！\
+这里有可以掌握抗拒火环的武功书（秘籍）。。好好使用吧。\ \ 
+<结束/@exit>
+#ELSESAY
+你不是已经收到书了吗？那么你为什么还要索要？\ \
+<结束/@exit>
+}
+
+[@mugong_firewind_explain]
+{
+#IF
+#SAY
+如果想学习抗拒火环，只有在一定的时间内 {FCOLOR/10}顺利通过{FCOLOR/12} 考场才可以。
+我将站在终点，你将重新回到这里。需要注意的是 {FCOLOR/10}不能伤害考场内的任何一头怪物{FCOLOR/12}  \ \
+<结束/@exit>
+}

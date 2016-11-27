@@ -1,0 +1,141 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@装备修改_1]
+{
+#say
+强弱元素不在计算范围内,增加体力魔力10点算一点!\
+您想提升什么呢？是要带在身上的!\
+<[ 武 器 ] /@zhuangbei(1)>\
+<[ 头 盔 ] /@zhuangbei(4)>                <[ 项 链 ]/@zhuangbei(3)>\
+<[ 衣 服 ]/@zhuangbei(0)>                 <[ 鞋 子 ]/@zhuangbei(10)>\
+<[ 手镯(左) ]/@zhuangbei(5)>             <[ 手镯(右) ]/@zhuangbei(6)>\
+<[ 戒指(左) ]/@zhuangbei(7)>             <[ 戒指(右) ]/@zhuangbei(8)>\\
+<[ 返 回 ]/@gmserv>
+
+[@zhuangbei()]
+#ACT
+   mov  D0  %ARG(1)
+
+#IF
+equal D0 1
+#SAY
+我能帮您提升您的武器如下能力,请您选择!\
+<[ 破 坏 ]/@@zhuangbeiPoint(0)>   <[ 魔 法 ]/@@zhuangbeiPoint(1)>\
+<[ 幸 运 ]/@@zhuangbeiPoint(3)>   <[ 元 素 ]/@zhuangbei11>\
+<[ 返 回 ]/@装备修改_1>
+
+
+#IF
+   equal D0 0
+#SAY
+我能帮您提升您的衣服如下能力,请您选择!\
+<[ 防 御 ]/@@zhuangbeiPoint(0)>   <[ 魔 御 ]/@@zhuangbeiPoint(1)>\
+<[ 破 坏 ]/@@zhuangbeiPoint(2)>   <[ 魔 法 ]/@@zhuangbeiPoint(3)>\
+<[ 体 力 ]/@@zhuangbeiPoint(8)>   <[ 洗 弱 ]/@ClearClothes>\
+<[ 返 回 ]/@装备修改_1>
+
+#IF
+   equal D0 3
+#SAY
+我能帮您提升您的项链如下能力,请您选择!\
+<[ 破 坏 ]/@@zhuangbeiPoint(2)>  <[ 魔 法 ]/@@zhuangbeiPoint(3)>\
+<[ 元 素 ]/@zhuangbei11>\
+<[ 返 回 ]/@装备修改_1>
+
+#IF
+   equal D0 4
+#SAY
+我能帮您提升您的头盔如下能力,请您选择!\
+<[ 防 御 ]/@@zhuangbeiPoint(0)>   <[ 魔 御 ]/@@zhuangbeiPoint(1)>\
+<[ 破 坏 ]/@@zhuangbeiPoint(2)>   <[ 魔 法 ]/@@zhuangbeiPoint(3)>\
+<[ 元 素 ]/@zhuangbei11>   <[ 洗 弱 ]/@ClearClothes>\
+<[ 返 回 ]/@装备修改_1>\
+
+#IF
+   equal D0 5
+#say
+我能帮您提升您的左手手镯如下能力,请您选择!\
+<[ 防 御 ]/@@zhuangbeiPoint(0)>   <[ 魔 御 ]/@@zhuangbeiPoint(1)>\
+<[ 破 坏 ]/@@zhuangbeiPoint(2)>   <[ 魔 法 ]/@@zhuangbeiPoint(3)>\
+<[ 元 素 ]/@zhuangbei11>     <[ 洗 弱 ]/@ClearClothes>\
+<[ 返 回 ]/@装备修改_1>\
+
+#IF
+   equal D0 6
+#say
+我能帮您提升您的右手手镯如下能力,请您选择!\
+<[ 防 御 ]/@@zhuangbeiPoint(0)>   <[ 魔 御 ]/@@zhuangbeiPoint(1)>\
+<[ 破 坏 ]/@@zhuangbeiPoint(2)>   <[ 魔 法 ]/@@zhuangbeiPoint(3)>\
+<[ 元 素 ]/@zhuangbei11>     <[ 洗 弱 ]/@ClearClothes>\
+<[ 返 回 ]/@装备修改_1>\
+
+#IF
+   equal D0 7
+#say
+我能帮您提升您的左手戒指如下能力,请您选择!\
+<[ 防 御 ]/@@zhuangbeiPoint(0)>  <[ 魔 御 ]/@@zhuangbeiPoint(1)>\
+<[ 破 坏 ]/@@zhuangbeiPoint(2)>  <[ 魔 法 ]/@@zhuangbeiPoint(3)>\
+<[ 元 素 ]/@zhuangbei11>\
+<[ 返 回 ]/@装备修改_1>
+
+#IF
+   equal D0 8
+#say
+我能帮您提升您的右手戒指如下能力,请您选择!\
+<[ 防 御 ]/@@zhuangbeiPoint(0)>  <[ 魔 御 ]/@@zhuangbeiPoint(1)>\
+<[ 破 坏 ]/@@zhuangbeiPoint(2)>  <[ 魔 法 ]/@@zhuangbeiPoint(3)>\
+<[ 元 素 ]/@zhuangbei11>\
+<[ 返 回 ]/@装备修改_1>
+
+#IF
+   equal D0 10
+#say
+我能帮您提升您的鞋子如下能力,请您选择!\
+<[ 舒 适 ]/@@zhuangbeiPoint(0)>   <[ 负 重 ]/@@zhuangbeiPoint(1)>\
+<[ 体 力 ]/@@zhuangbeiPoint(8)>   <[ 魔 力 ]/@@zhuangbeiPoint(9)>\
+<[ 洗 弱 ]/@ClearClothes>\
+<[ 返 回 ]/@装备修改_1>
+
+[@@zhuangbeiPoint()]
+#ACT
+mov D2 %INPUTNUM
+mov D1 %ARG(1)
+
+#IF
+#ACT
+;SETUseItemProp %D0 %D1 %D2
+#SAY
+装备属性点已经加上去了,取下就可以看到了!\
+<[ 返 回 ]/@装备修改_1>
+
+[@zhuangbei11]
+#SAY
+<[ 攻击元素(火) ]/@@zhuangbei12(1)>   <[ 攻击元素(冰) ]/@@zhuangbei12(2)>\
+<[ 攻击元素(雷) ]/@@zhuangbei12(3)>   <[ 攻击元素(风) ]/@@zhuangbei12(4)>\
+<[ 攻击元素(神圣) ]/@@zhuangbei12(5)> <[ 攻击元素(暗黑) ]/@@zhuangbei12(6)>\
+<[ 攻击元素(幻影) ]/@@zhuangbei12(7)>\
+<[ 返 回 ]/@装备修改_1>
+
+[@@zhuangbei12()]
+#ACT
+mov D2 %INPUTNUM
+mov D1 %ARG(1)
+
+#IF
+#ACT
+;SETUseItemProp %D0 11 %D1 
+;SETUseItemProp %D0 12 %D2
+#SAY
+装备属性点已经加上去了，取下就可以看到了!\
+<[ 返 回 ]/@装备修改_1>
+
+
+[@ClearClothes]
+#IF
+#ACT
+;SETUseItemProp %D0 6 0
+#SAY
+装备弱元素已经洗掉了，取下就可以看到了!\
+<[ 返 回 ]/@装备修改_1>
+
+}
+;影子制作1.45原版

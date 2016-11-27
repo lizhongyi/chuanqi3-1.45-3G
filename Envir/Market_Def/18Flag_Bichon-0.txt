@@ -1,0 +1,8 @@
+;;创天网络有限公司原版1.45
+[@main]
+#SAY
+<$GUILD> 行会旗帜 \ \
+<结束/@exit>
+
+[@TestUserFlag]
+#CALL [\CastleWar\Flag.txt] @ChangeFlagShape

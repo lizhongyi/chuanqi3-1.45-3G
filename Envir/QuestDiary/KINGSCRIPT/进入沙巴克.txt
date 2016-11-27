@@ -1,0 +1,25 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@main]
+#IF
+IsOnCastleWar Sabuk
+or IsOnReadyCastleWar Sabuk
+#ELSEACT
+enter_OK
+BREAK
+
+#IF
+checkmonRecall
+#act
+enter_OK
+break
+#ELSEACT
+enter_fail
+BREAK
+#ELSESAY
+对不起,你召唤了宠物,不能进入沙巴克.\\
+<杀死携带宠物/@KILLCHONGWU2>
+
+[@KILLCHONGWU2]
+#ACT
+Killslave
+close

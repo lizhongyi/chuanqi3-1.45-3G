@@ -1,0 +1,115 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@宠物管理_1]
+{
+#ACT
+LoadValue D0 "系统设置.ini" [开区后] [购买宝宝]
+MOV D1 %CURHOUR
+
+#IF
+ELARGE D1 %D0
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}宠{FCOLOR/4}━{FCOLOR/14}物{FCOLOR/4}━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <练级红衣   需5个元宝/@超级购买宝宝(练级红衣)> ]  [ <加强鬼将   需5个元宝/@超级购买宝宝(加强鬼将)> ]\\
+
+{FCOLOR/12}[ <练级抛石兵 需5个元宝/@超级购买宝宝(练级抛石兵)> ]  [ <加血铃花   需5个元宝/@超级购买宝宝(玲花)> ]\\
+
+_{FCOLOR/12}[ <转生宝宝   免 费 /@转生宝宝> ]       [ <杀死宝宝 免 费/@shasi宝宝_1> ]
+#ELSEACT
+SYSMSG "<温馨提示:>宠物管理功能公测[ <$OUTPUT(D0)> ]小时后开启"
+Break
+
+[@超级购买宝宝()]
+#ACT
+Mov        A1       %ARG(1)
+#IF
+CHECKCMD CHECKUSERJF 5    
+checkmonRecall
+#ACT
+Close
+actcmd SETUSERJF - 5 租宝宝
+MonRecall  %A1  5  7
+SysMsg  "温馨提示: 成功租用7级宝宝→<$OUTPUT(A1)>←5小时"
+#elseact
+close
+SysMsg  "温馨提示: 您没有5个元宝或您已经带有宝宝了"
+
+[@转生宝宝]
+#ACT
+MOV A0 %USERMAP
+#IF
+equal  A0  3
+#ACT
+GOTO @CallSuperBB_3
+#ELSEACT
+GOTO @CallSuperBB_1
+
+[@CallSuperBB_3]
+#IF
+IsOnCastleWar [SABUK]
+#ACT
+Close
+SysMsg "温馨提示: 攻城期间沙城范围无法召唤宝宝."
+#ELSEACT
+GOTO @CallSuperBB_1
+
+[@CallSuperBB_1]
+#IF
+ELarge USERREBORNCOUNT 8
+#ACT 
+Close
+MonRecall  带刀侍卫  24 3
+break
+#IF
+Equal USERREBORNCOUNT 7
+#ACT 
+Close
+MonRecall  尊者宝宝 24 3
+break
+#IF
+Equal USERREBORNCOUNT 6
+#ACT 
+Close
+MonRecall  英者宝宝 24 3
+break
+#IF
+Equal USERREBORNCOUNT 5
+#ACT 
+Close
+MonRecall  义者宝宝 24 3
+break
+#IF
+Equal USERREBORNCOUNT 4
+#ACT 
+Close
+MonRecall  武者宝宝 24 3
+break
+#IF
+Equal USERREBORNCOUNT 3
+#ACT 
+Close
+MonRecall  侠者宝宝 24 3
+break
+#IF
+Equal USERREBORNCOUNT 2
+#ACT 
+Close
+MonRecall  高者宝宝 24 3
+break
+#IF
+Equal USERREBORNCOUNT 1
+#ACT 
+Close
+MonRecall  初者宝宝 24 3
+break
+#ELSEACT
+Close
+SysMsg "温馨提示: 您还没有转生,不能给您转生宝宝"
+
+[@shasi宝宝_1]
+#ACT
+Close 
+killslave
+SysMsg "温馨提示: 您已经杀死了宝宝"
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

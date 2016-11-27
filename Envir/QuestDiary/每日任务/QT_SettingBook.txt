@@ -1,0 +1,98 @@
+;;王者传奇3 www.mir3w.com
+[@SetBossQuest]
+{
+#ACT
+MOVR 随机值 2
+
+#IF
+CHECKLEVEL 20
+!CheckLevel 31
+#ACT
+MOVR D6 52
+inc D6 101
+
+#IF
+CHECKLEVEL 31
+!CHECKLEVEL 36
+#ACT
+MOVR D6 60
+INC D6 101
+
+#IF
+CHECKLEVEL 36
+!CHECKLEVEL 41
+Equal 随机值 0
+#ACT
+MOVR D6 60
+INC D6 101
+
+#IF
+CHECKLEVEL 36
+!CHECKLEVEL 41
+Equal 随机值 0
+#ACT
+MOVR D6 60
+INC D6 101
+
+#IF
+CHECKLEVEL 36
+!CHECKLEVEL 41
+Equal 随机值 1
+#ACT
+MOVR D6 44
+INC D6 170
+
+#IF
+CHECKLEVEL 41
+Equal 随机值 0
+#ACT
+MOVR D6 60
+INC D6 101
+
+#IF
+CHECKLEVEL 41
+Equal 随机值 1
+#ACT
+MOVR D6 55
+INC D6 170
+
+#IF
+CHECKLEVEL
+#ACT
+MOV D4 %P9
+
+#IF
+#ACT
+LOADVALUE D7 "ParamControl\老万任务经验表.txt" [等级] %D4
+LoadValue D1 "ParamControl\任务内容.ini" %USERNAME 任务日期
+
+#IF
+EQUAL D1 %CURDAY
+#ACT
+BREAK
+
+#IF
+#ACT
+LoadValue A4 "ParamControl\任务查询.ini" %D6 任务怪物
+LoadValue D3 "ParamControl\任务查询.ini" %D6 怪物总数
+LoadValue A7 "ParamControl\任务查询.ini" %D6 任务地图
+LoadValue D5 "ParamControl\任务查询.ini" %D6 任务类型
+
+SAVEVALUE "ParamControl\任务记录.ini" %USERNAME 任务怪物 %A4
+SAVEVALUE "ParamControl\任务记录.ini" %USERNAME 怪物总数 %D3
+SAVEVALUE "ParamControl\任务记录.ini" %USERNAME 任务地图 %A7
+SAVEVALUE "ParamControl\任务记录.ini" %USERNAME 任务类型 %D5
+SAVEVALUE "ParamControl\任务记录.ini" %USERNAME 任务编号 %D6
+SAVEVALUE "ParamControl\任务记录.ini" %USERNAME 任务进度 Progress
+SAVEVALUE "ParamControl\任务记录.ini" %USERNAME 任务经验 %D7
+SAVEVALUE "ParamControl\任务记录.ini" %USERNAME 任务日期 %CURDAY
+SAVEVALUE "ParamControl\任务记录.ini" %USERNAME 怪物数量 0
+
+GOTO @RENWUJIESHAO
+BREAK
+
+[@RENWUJIESHAO]
+#CALL [每日任务\QT_NPCCHAXUN.txt] @BossQuest_ChaXun
+
+}
+;;王者传奇3 www.mir3w.com

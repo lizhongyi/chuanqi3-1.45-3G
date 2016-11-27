@@ -1,0 +1,1156 @@
+;;激情网络
+[@上线_Main]
+{
+#ACT
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME DC 0
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MC 0
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME SC 0
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME AC 0
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MAC 0
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME HP 0
+
+#IF
+#ACT
+Goto @上线检测衣服
+Goto @上线检测武器
+Goto @上线检测项链
+Goto @上线检测头盔
+Goto @上线检测左手镯
+Goto @上线检测右手镯
+Goto @上线检测左戒指
+Goto @上线检测右戒指
+Goto @上线检测鞋子
+Goto @上线检测勋章
+Goto @上线检测马鞍
+break
+
+[@上线检测衣服]
+#ACT
+MOV 铭刻索引 ""
+MOV 铭刻信息 ""
+MOV 铭刻装备 ""
+MOV 铭刻属性 ""
+MOV 装备信息 ""
+MOV 人物破坏 ""
+MOV 人物自然 ""
+MOV 人物灵魂 ""
+MOV 人物防御 ""
+MOV 人物魔防 ""
+MOV 人物体力 ""
+
+
+#If
+checkcmd CHECKITEMINFO 0 0
+
+#If
+Equal FLD_NAME ""
+#ACT
+BREAK
+#ELSEACT
+MOV 铭刻索引 %FLD_MAKEINDEX
+
+#IF
+#ACT
+FormatStr "where FLD_MAKEINDEX = %s" %铭刻索引
+ACTCMD READSQL "TBL_MingKe" "FLD_MK,FLD_MKNAME" "铭刻信息,铭刻装备" %A9
+
+#IF
+Equal 铭刻信息 ""
+#ACT
+BREAK
+
+#If
+#Act
+LoadValue 装备信息 "ParamControl\铭刻设置.ini" [%铭刻信息] [显示参数]
+LoadValue 铭刻属性 "ParamControl\铭刻参数.ini" [铭刻属性] [%铭刻装备]
+
+#IF
+Equal 铭刻信息 "体力"
+#ACT
+LOADVALUE 人物体力 "ParamControl\人物额外属性.ini" %USERNAME HP
+MOV P1 %铭刻属性
+MOV P2 10
+MUL P1 P2
+MOV 铭刻属性 %P9
+INC 人物体力 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME HP %人物体力
+ATTRIBUTEADD HP %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "防御"
+#ACT
+LOADVALUE 人物防御 "ParamControl\人物额外属性.ini" %USERNAME AC
+INC 人物防御 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME AC %人物防御
+ATTRIBUTEADD AC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "魔御"
+#ACT
+LOADVALUE 人物魔御 "ParamControl\人物额外属性.ini" %USERNAME MAC
+INC 人物魔御 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MAC %人物魔御
+ATTRIBUTEADD MAC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "破坏"
+#ACT
+LOADVALUE 人物破坏 "ParamControl\人物额外属性.ini" %USERNAME DC
+INC 人物破坏 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME DC %人物破坏
+ATTRIBUTEADD DC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "自然"
+#ACT
+LOADVALUE 人物自然 "ParamControl\人物额外属性.ini" %USERNAME MC
+INC 人物自然 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MC %人物自然
+ATTRIBUTEADD MC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "灵魂"
+#ACT
+LOADVALUE 人物灵魂 "ParamControl\人物额外属性.ini" %USERNAME SC
+INC 人物灵魂 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME SC %人物灵魂
+ATTRIBUTEADD SC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "全系列"
+#ACT
+LOADVALUE 人物灵魂 "ParamControl\人物额外属性.ini" %USERNAME SC
+LOADVALUE 人物自然 "ParamControl\人物额外属性.ini" %USERNAME MC
+INC 人物灵魂 %铭刻属性
+INC 人物自然 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME SC %人物灵魂
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MC %人物自然
+ATTRIBUTEADD SC %铭刻属性
+ATTRIBUTEADD MC %铭刻属性
+BREAK
+
+[@上线检测武器]
+#ACT
+MOV 铭刻索引 ""
+MOV 铭刻信息 ""
+MOV 铭刻装备 ""
+MOV 铭刻属性 ""
+MOV 装备信息 ""
+MOV 人物破坏 ""
+MOV 人物自然 ""
+MOV 人物灵魂 ""
+MOV 人物防御 ""
+MOV 人物魔防 ""
+MOV 人物体力 ""
+
+
+#If
+checkcmd CHECKITEMINFO 1 0
+
+#If
+Equal FLD_NAME ""
+#ACT
+BREAK
+#ELSEACT
+MOV 铭刻索引 %FLD_MAKEINDEX
+
+#IF
+#ACT
+FormatStr "where FLD_MAKEINDEX = %s" %铭刻索引
+ACTCMD READSQL "TBL_MingKe" "FLD_MK,FLD_MKNAME" "铭刻信息,铭刻装备" %A9
+
+#IF
+Equal 铭刻信息 ""
+#ACT
+BREAK
+
+#If
+#Act
+LoadValue 装备信息 "ParamControl\铭刻设置.ini" [%铭刻信息] [显示参数]
+LoadValue 铭刻属性 "ParamControl\铭刻参数.ini" [铭刻属性] [%铭刻装备]
+
+#IF
+Equal 铭刻信息 "体力"
+#ACT
+LOADVALUE 人物体力 "ParamControl\人物额外属性.ini" %USERNAME HP
+MOV P1 %铭刻属性
+MOV P2 10
+MUL P1 P2
+MOV 铭刻属性 %P9
+INC 人物体力 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME HP %人物体力
+ATTRIBUTEADD HP %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "防御"
+#ACT
+LOADVALUE 人物防御 "ParamControl\人物额外属性.ini" %USERNAME AC
+INC 人物防御 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME AC %人物防御
+ATTRIBUTEADD AC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "魔御"
+#ACT
+LOADVALUE 人物魔御 "ParamControl\人物额外属性.ini" %USERNAME MAC
+INC 人物魔御 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MAC %人物魔御
+ATTRIBUTEADD MAC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "破坏"
+#ACT
+LOADVALUE 人物破坏 "ParamControl\人物额外属性.ini" %USERNAME DC
+INC 人物破坏 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME DC %人物破坏
+ATTRIBUTEADD DC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "自然"
+#ACT
+LOADVALUE 人物自然 "ParamControl\人物额外属性.ini" %USERNAME MC
+INC 人物自然 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MC %人物自然
+ATTRIBUTEADD MC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "灵魂"
+#ACT
+LOADVALUE 人物灵魂 "ParamControl\人物额外属性.ini" %USERNAME SC
+INC 人物灵魂 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME SC %人物灵魂
+ATTRIBUTEADD SC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "全系列"
+#ACT
+LOADVALUE 人物灵魂 "ParamControl\人物额外属性.ini" %USERNAME SC
+LOADVALUE 人物自然 "ParamControl\人物额外属性.ini" %USERNAME MC
+INC 人物灵魂 %铭刻属性
+INC 人物自然 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME SC %人物灵魂
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MC %人物自然
+ATTRIBUTEADD SC %铭刻属性
+ATTRIBUTEADD MC %铭刻属性
+BREAK
+
+
+[@上线检测项链]
+#ACT
+MOV 铭刻索引 ""
+MOV 铭刻信息 ""
+MOV 铭刻装备 ""
+MOV 铭刻属性 ""
+MOV 装备信息 ""
+MOV 人物破坏 ""
+MOV 人物自然 ""
+MOV 人物灵魂 ""
+MOV 人物防御 ""
+MOV 人物魔防 ""
+MOV 人物体力 ""
+
+
+#If
+checkcmd CHECKITEMINFO 3 0
+
+#If
+Equal FLD_NAME ""
+#ACT
+BREAK
+#ELSEACT
+MOV 铭刻索引 %FLD_MAKEINDEX
+
+#IF
+#ACT
+FormatStr "where FLD_MAKEINDEX = %s" %铭刻索引
+ACTCMD READSQL "TBL_MingKe" "FLD_MK,FLD_MKNAME" "铭刻信息,铭刻装备" %A9
+
+#IF
+Equal 铭刻信息 ""
+#ACT
+BREAK
+
+#If
+#Act
+LoadValue 装备信息 "ParamControl\铭刻设置.ini" [%铭刻信息] [显示参数]
+LoadValue 铭刻属性 "ParamControl\铭刻参数.ini" [铭刻属性] [%铭刻装备]
+
+#IF
+Equal 铭刻信息 "体力"
+#ACT
+LOADVALUE 人物体力 "ParamControl\人物额外属性.ini" %USERNAME HP
+MOV P1 %铭刻属性
+MOV P2 10
+MUL P1 P2
+MOV 铭刻属性 %P9
+INC 人物体力 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME HP %人物体力
+ATTRIBUTEADD HP %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "防御"
+#ACT
+LOADVALUE 人物防御 "ParamControl\人物额外属性.ini" %USERNAME AC
+INC 人物防御 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME AC %人物防御
+ATTRIBUTEADD AC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "魔御"
+#ACT
+LOADVALUE 人物魔御 "ParamControl\人物额外属性.ini" %USERNAME MAC
+INC 人物魔御 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MAC %人物魔御
+ATTRIBUTEADD MAC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "破坏"
+#ACT
+LOADVALUE 人物破坏 "ParamControl\人物额外属性.ini" %USERNAME DC
+INC 人物破坏 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME DC %人物破坏
+ATTRIBUTEADD DC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "自然"
+#ACT
+LOADVALUE 人物自然 "ParamControl\人物额外属性.ini" %USERNAME MC
+INC 人物自然 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MC %人物自然
+ATTRIBUTEADD MC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "灵魂"
+#ACT
+LOADVALUE 人物灵魂 "ParamControl\人物额外属性.ini" %USERNAME SC
+INC 人物灵魂 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME SC %人物灵魂
+ATTRIBUTEADD SC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "全系列"
+#ACT
+LOADVALUE 人物灵魂 "ParamControl\人物额外属性.ini" %USERNAME SC
+LOADVALUE 人物自然 "ParamControl\人物额外属性.ini" %USERNAME MC
+INC 人物灵魂 %铭刻属性
+INC 人物自然 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME SC %人物灵魂
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MC %人物自然
+ATTRIBUTEADD SC %铭刻属性
+ATTRIBUTEADD MC %铭刻属性
+BREAK
+
+
+[@上线检测头盔]
+#ACT
+MOV 铭刻索引 ""
+MOV 铭刻信息 ""
+MOV 铭刻装备 ""
+MOV 铭刻属性 ""
+MOV 装备信息 ""
+MOV 人物破坏 ""
+MOV 人物自然 ""
+MOV 人物灵魂 ""
+MOV 人物防御 ""
+MOV 人物魔防 ""
+MOV 人物体力 ""
+
+
+#If
+checkcmd CHECKITEMINFO 4 0
+
+#If
+Equal FLD_NAME ""
+#ACT
+BREAK
+#ELSEACT
+MOV 铭刻索引 %FLD_MAKEINDEX
+
+#IF
+#ACT
+FormatStr "where FLD_MAKEINDEX = %s" %铭刻索引
+ACTCMD READSQL "TBL_MingKe" "FLD_MK,FLD_MKNAME" "铭刻信息,铭刻装备" %A9
+
+#IF
+Equal 铭刻信息 ""
+#ACT
+BREAK
+
+#If
+#Act
+LoadValue 装备信息 "ParamControl\铭刻设置.ini" [%铭刻信息] [显示参数]
+LoadValue 铭刻属性 "ParamControl\铭刻参数.ini" [铭刻属性] [%铭刻装备]
+
+#IF
+Equal 铭刻信息 "体力"
+#ACT
+LOADVALUE 人物体力 "ParamControl\人物额外属性.ini" %USERNAME HP
+MOV P1 %铭刻属性
+MOV P2 10
+MUL P1 P2
+MOV 铭刻属性 %P9
+INC 人物体力 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME HP %人物体力
+ATTRIBUTEADD HP %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "防御"
+#ACT
+LOADVALUE 人物防御 "ParamControl\人物额外属性.ini" %USERNAME AC
+INC 人物防御 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME AC %人物防御
+ATTRIBUTEADD AC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "魔御"
+#ACT
+LOADVALUE 人物魔御 "ParamControl\人物额外属性.ini" %USERNAME MAC
+INC 人物魔御 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MAC %人物魔御
+ATTRIBUTEADD MAC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "破坏"
+#ACT
+LOADVALUE 人物破坏 "ParamControl\人物额外属性.ini" %USERNAME DC
+INC 人物破坏 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME DC %人物破坏
+ATTRIBUTEADD DC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "自然"
+#ACT
+LOADVALUE 人物自然 "ParamControl\人物额外属性.ini" %USERNAME MC
+INC 人物自然 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MC %人物自然
+ATTRIBUTEADD MC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "灵魂"
+#ACT
+LOADVALUE 人物灵魂 "ParamControl\人物额外属性.ini" %USERNAME SC
+INC 人物灵魂 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME SC %人物灵魂
+ATTRIBUTEADD SC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "全系列"
+#ACT
+LOADVALUE 人物灵魂 "ParamControl\人物额外属性.ini" %USERNAME SC
+LOADVALUE 人物自然 "ParamControl\人物额外属性.ini" %USERNAME MC
+INC 人物灵魂 %铭刻属性
+INC 人物自然 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME SC %人物灵魂
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MC %人物自然
+ATTRIBUTEADD SC %铭刻属性
+ATTRIBUTEADD MC %铭刻属性
+BREAK
+
+
+[@上线检测左手镯]
+#ACT
+MOV 铭刻索引 ""
+MOV 铭刻信息 ""
+MOV 铭刻装备 ""
+MOV 铭刻属性 ""
+MOV 装备信息 ""
+MOV 人物破坏 ""
+MOV 人物自然 ""
+MOV 人物灵魂 ""
+MOV 人物防御 ""
+MOV 人物魔防 ""
+MOV 人物体力 ""
+
+
+#If
+checkcmd CHECKITEMINFO 5 0
+
+#If
+Equal FLD_NAME ""
+#ACT
+BREAK
+#ELSEACT
+MOV 铭刻索引 %FLD_MAKEINDEX
+
+#IF
+#ACT
+FormatStr "where FLD_MAKEINDEX = %s" %铭刻索引
+ACTCMD READSQL "TBL_MingKe" "FLD_MK,FLD_MKNAME" "铭刻信息,铭刻装备" %A9
+
+#IF
+Equal 铭刻信息 ""
+#ACT
+BREAK
+
+#If
+#Act
+LoadValue 装备信息 "ParamControl\铭刻设置.ini" [%铭刻信息] [显示参数]
+LoadValue 铭刻属性 "ParamControl\铭刻参数.ini" [铭刻属性] [%铭刻装备]
+
+#IF
+Equal 铭刻信息 "体力"
+#ACT
+LOADVALUE 人物体力 "ParamControl\人物额外属性.ini" %USERNAME HP
+MOV P1 %铭刻属性
+MOV P2 10
+MUL P1 P2
+MOV 铭刻属性 %P9
+INC 人物体力 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME HP %人物体力
+ATTRIBUTEADD HP %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "防御"
+#ACT
+LOADVALUE 人物防御 "ParamControl\人物额外属性.ini" %USERNAME AC
+INC 人物防御 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME AC %人物防御
+ATTRIBUTEADD AC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "魔御"
+#ACT
+LOADVALUE 人物魔御 "ParamControl\人物额外属性.ini" %USERNAME MAC
+INC 人物魔御 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MAC %人物魔御
+ATTRIBUTEADD MAC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "破坏"
+#ACT
+LOADVALUE 人物破坏 "ParamControl\人物额外属性.ini" %USERNAME DC
+INC 人物破坏 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME DC %人物破坏
+ATTRIBUTEADD DC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "自然"
+#ACT
+LOADVALUE 人物自然 "ParamControl\人物额外属性.ini" %USERNAME MC
+INC 人物自然 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MC %人物自然
+ATTRIBUTEADD MC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "灵魂"
+#ACT
+LOADVALUE 人物灵魂 "ParamControl\人物额外属性.ini" %USERNAME SC
+INC 人物灵魂 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME SC %人物灵魂
+ATTRIBUTEADD SC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "全系列"
+#ACT
+LOADVALUE 人物灵魂 "ParamControl\人物额外属性.ini" %USERNAME SC
+LOADVALUE 人物自然 "ParamControl\人物额外属性.ini" %USERNAME MC
+INC 人物灵魂 %铭刻属性
+INC 人物自然 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME SC %人物灵魂
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MC %人物自然
+ATTRIBUTEADD SC %铭刻属性
+ATTRIBUTEADD MC %铭刻属性
+BREAK
+
+
+[@上线检测右手镯]
+#ACT
+MOV 铭刻索引 ""
+MOV 铭刻信息 ""
+MOV 铭刻装备 ""
+MOV 铭刻属性 ""
+MOV 装备信息 ""
+MOV 人物破坏 ""
+MOV 人物自然 ""
+MOV 人物灵魂 ""
+MOV 人物防御 ""
+MOV 人物魔防 ""
+MOV 人物体力 ""
+
+
+#If
+checkcmd CHECKITEMINFO 6 0
+
+#If
+Equal FLD_NAME ""
+#ACT
+BREAK
+#ELSEACT
+MOV 铭刻索引 %FLD_MAKEINDEX
+
+#IF
+#ACT
+FormatStr "where FLD_MAKEINDEX = %s" %铭刻索引
+ACTCMD READSQL "TBL_MingKe" "FLD_MK,FLD_MKNAME" "铭刻信息,铭刻装备" %A9
+
+#IF
+Equal 铭刻信息 ""
+#ACT
+BREAK
+
+#If
+#Act
+LoadValue 装备信息 "ParamControl\铭刻设置.ini" [%铭刻信息] [显示参数]
+LoadValue 铭刻属性 "ParamControl\铭刻参数.ini" [铭刻属性] [%铭刻装备]
+
+#IF
+Equal 铭刻信息 "体力"
+#ACT
+LOADVALUE 人物体力 "ParamControl\人物额外属性.ini" %USERNAME HP
+MOV P1 %铭刻属性
+MOV P2 10
+MUL P1 P2
+MOV 铭刻属性 %P9
+INC 人物体力 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME HP %人物体力
+ATTRIBUTEADD HP %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "防御"
+#ACT
+LOADVALUE 人物防御 "ParamControl\人物额外属性.ini" %USERNAME AC
+INC 人物防御 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME AC %人物防御
+ATTRIBUTEADD AC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "魔御"
+#ACT
+LOADVALUE 人物魔御 "ParamControl\人物额外属性.ini" %USERNAME MAC
+INC 人物魔御 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MAC %人物魔御
+ATTRIBUTEADD MAC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "破坏"
+#ACT
+LOADVALUE 人物破坏 "ParamControl\人物额外属性.ini" %USERNAME DC
+INC 人物破坏 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME DC %人物破坏
+ATTRIBUTEADD DC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "自然"
+#ACT
+LOADVALUE 人物自然 "ParamControl\人物额外属性.ini" %USERNAME MC
+INC 人物自然 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MC %人物自然
+ATTRIBUTEADD MC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "灵魂"
+#ACT
+LOADVALUE 人物灵魂 "ParamControl\人物额外属性.ini" %USERNAME SC
+INC 人物灵魂 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME SC %人物灵魂
+ATTRIBUTEADD SC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "全系列"
+#ACT
+LOADVALUE 人物灵魂 "ParamControl\人物额外属性.ini" %USERNAME SC
+LOADVALUE 人物自然 "ParamControl\人物额外属性.ini" %USERNAME MC
+INC 人物灵魂 %铭刻属性
+INC 人物自然 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME SC %人物灵魂
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MC %人物自然
+ATTRIBUTEADD SC %铭刻属性
+ATTRIBUTEADD MC %铭刻属性
+BREAK
+
+[@上线检测左戒指]
+#ACT
+MOV 铭刻索引 ""
+MOV 铭刻信息 ""
+MOV 铭刻装备 ""
+MOV 铭刻属性 ""
+MOV 装备信息 ""
+MOV 人物破坏 ""
+MOV 人物自然 ""
+MOV 人物灵魂 ""
+MOV 人物防御 ""
+MOV 人物魔防 ""
+MOV 人物体力 ""
+
+
+#If
+checkcmd CHECKITEMINFO 7 0
+
+#If
+Equal FLD_NAME ""
+#ACT
+BREAK
+#ELSEACT
+MOV 铭刻索引 %FLD_MAKEINDEX
+
+#IF
+#ACT
+FormatStr "where FLD_MAKEINDEX = %s" %铭刻索引
+ACTCMD READSQL "TBL_MingKe" "FLD_MK,FLD_MKNAME" "铭刻信息,铭刻装备" %A9
+
+#IF
+Equal 铭刻信息 ""
+#ACT
+BREAK
+
+#If
+#Act
+LoadValue 装备信息 "ParamControl\铭刻设置.ini" [%铭刻信息] [显示参数]
+LoadValue 铭刻属性 "ParamControl\铭刻参数.ini" [铭刻属性] [%铭刻装备]
+
+#IF
+Equal 铭刻信息 "体力"
+#ACT
+LOADVALUE 人物体力 "ParamControl\人物额外属性.ini" %USERNAME HP
+MOV P1 %铭刻属性
+MOV P2 10
+MUL P1 P2
+MOV 铭刻属性 %P9
+INC 人物体力 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME HP %人物体力
+ATTRIBUTEADD HP %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "防御"
+#ACT
+LOADVALUE 人物防御 "ParamControl\人物额外属性.ini" %USERNAME AC
+INC 人物防御 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME AC %人物防御
+ATTRIBUTEADD AC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "魔御"
+#ACT
+LOADVALUE 人物魔御 "ParamControl\人物额外属性.ini" %USERNAME MAC
+INC 人物魔御 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MAC %人物魔御
+ATTRIBUTEADD MAC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "破坏"
+#ACT
+LOADVALUE 人物破坏 "ParamControl\人物额外属性.ini" %USERNAME DC
+INC 人物破坏 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME DC %人物破坏
+ATTRIBUTEADD DC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "自然"
+#ACT
+LOADVALUE 人物自然 "ParamControl\人物额外属性.ini" %USERNAME MC
+INC 人物自然 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MC %人物自然
+ATTRIBUTEADD MC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "灵魂"
+#ACT
+LOADVALUE 人物灵魂 "ParamControl\人物额外属性.ini" %USERNAME SC
+INC 人物灵魂 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME SC %人物灵魂
+ATTRIBUTEADD SC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "全系列"
+#ACT
+LOADVALUE 人物灵魂 "ParamControl\人物额外属性.ini" %USERNAME SC
+LOADVALUE 人物自然 "ParamControl\人物额外属性.ini" %USERNAME MC
+INC 人物灵魂 %铭刻属性
+INC 人物自然 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME SC %人物灵魂
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MC %人物自然
+ATTRIBUTEADD SC %铭刻属性
+ATTRIBUTEADD MC %铭刻属性
+BREAK
+
+
+[@上线检测右戒指]
+#ACT
+MOV 铭刻索引 ""
+MOV 铭刻信息 ""
+MOV 铭刻装备 ""
+MOV 铭刻属性 ""
+MOV 装备信息 ""
+MOV 人物破坏 ""
+MOV 人物自然 ""
+MOV 人物灵魂 ""
+MOV 人物防御 ""
+MOV 人物魔防 ""
+MOV 人物体力 ""
+
+
+#If
+checkcmd CHECKITEMINFO 8 0
+
+#If
+Equal FLD_NAME ""
+#ACT
+BREAK
+#ELSEACT
+MOV 铭刻索引 %FLD_MAKEINDEX
+
+#IF
+#ACT
+FormatStr "where FLD_MAKEINDEX = %s" %铭刻索引
+ACTCMD READSQL "TBL_MingKe" "FLD_MK,FLD_MKNAME" "铭刻信息,铭刻装备" %A9
+
+#IF
+Equal 铭刻信息 ""
+#ACT
+BREAK
+
+#If
+#Act
+LoadValue 装备信息 "ParamControl\铭刻设置.ini" [%铭刻信息] [显示参数]
+LoadValue 铭刻属性 "ParamControl\铭刻参数.ini" [铭刻属性] [%铭刻装备]
+
+#IF
+Equal 铭刻信息 "体力"
+#ACT
+LOADVALUE 人物体力 "ParamControl\人物额外属性.ini" %USERNAME HP
+MOV P1 %铭刻属性
+MOV P2 10
+MUL P1 P2
+MOV 铭刻属性 %P9
+INC 人物体力 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME HP %人物体力
+ATTRIBUTEADD HP %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "防御"
+#ACT
+LOADVALUE 人物防御 "ParamControl\人物额外属性.ini" %USERNAME AC
+INC 人物防御 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME AC %人物防御
+ATTRIBUTEADD AC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "魔御"
+#ACT
+LOADVALUE 人物魔御 "ParamControl\人物额外属性.ini" %USERNAME MAC
+INC 人物魔御 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MAC %人物魔御
+ATTRIBUTEADD MAC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "破坏"
+#ACT
+LOADVALUE 人物破坏 "ParamControl\人物额外属性.ini" %USERNAME DC
+INC 人物破坏 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME DC %人物破坏
+ATTRIBUTEADD DC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "自然"
+#ACT
+LOADVALUE 人物自然 "ParamControl\人物额外属性.ini" %USERNAME MC
+INC 人物自然 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MC %人物自然
+ATTRIBUTEADD MC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "灵魂"
+#ACT
+LOADVALUE 人物灵魂 "ParamControl\人物额外属性.ini" %USERNAME SC
+INC 人物灵魂 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME SC %人物灵魂
+ATTRIBUTEADD SC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "全系列"
+#ACT
+LOADVALUE 人物灵魂 "ParamControl\人物额外属性.ini" %USERNAME SC
+LOADVALUE 人物自然 "ParamControl\人物额外属性.ini" %USERNAME MC
+INC 人物灵魂 %铭刻属性
+INC 人物自然 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME SC %人物灵魂
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MC %人物自然
+ATTRIBUTEADD SC %铭刻属性
+ATTRIBUTEADD MC %铭刻属性
+BREAK
+
+[@上线检测鞋子]
+#ACT
+MOV 铭刻索引 ""
+MOV 铭刻信息 ""
+MOV 铭刻装备 ""
+MOV 铭刻属性 ""
+MOV 装备信息 ""
+MOV 人物破坏 ""
+MOV 人物自然 ""
+MOV 人物灵魂 ""
+MOV 人物防御 ""
+MOV 人物魔防 ""
+MOV 人物体力 ""
+
+
+#If
+checkcmd CHECKITEMINFO 10 0
+
+#If
+Equal FLD_NAME ""
+#ACT
+BREAK
+#ELSEACT
+MOV 铭刻索引 %FLD_MAKEINDEX
+
+#IF
+#ACT
+FormatStr "where FLD_MAKEINDEX = %s" %铭刻索引
+ACTCMD READSQL "TBL_MingKe" "FLD_MK,FLD_MKNAME" "铭刻信息,铭刻装备" %A9
+
+#IF
+Equal 铭刻信息 ""
+#ACT
+BREAK
+
+#If
+#Act
+LoadValue 装备信息 "ParamControl\铭刻设置.ini" [%铭刻信息] [显示参数]
+LoadValue 铭刻属性 "ParamControl\铭刻参数.ini" [铭刻属性] [%铭刻装备]
+
+#IF
+Equal 铭刻信息 "体力"
+#ACT
+LOADVALUE 人物体力 "ParamControl\人物额外属性.ini" %USERNAME HP
+MOV P1 %铭刻属性
+MOV P2 10
+MUL P1 P2
+MOV 铭刻属性 %P9
+INC 人物体力 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME HP %人物体力
+ATTRIBUTEADD HP %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "防御"
+#ACT
+LOADVALUE 人物防御 "ParamControl\人物额外属性.ini" %USERNAME AC
+INC 人物防御 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME AC %人物防御
+ATTRIBUTEADD AC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "魔御"
+#ACT
+LOADVALUE 人物魔御 "ParamControl\人物额外属性.ini" %USERNAME MAC
+INC 人物魔御 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MAC %人物魔御
+ATTRIBUTEADD MAC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "破坏"
+#ACT
+LOADVALUE 人物破坏 "ParamControl\人物额外属性.ini" %USERNAME DC
+INC 人物破坏 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME DC %人物破坏
+ATTRIBUTEADD DC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "自然"
+#ACT
+LOADVALUE 人物自然 "ParamControl\人物额外属性.ini" %USERNAME MC
+INC 人物自然 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MC %人物自然
+ATTRIBUTEADD MC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "灵魂"
+#ACT
+LOADVALUE 人物灵魂 "ParamControl\人物额外属性.ini" %USERNAME SC
+INC 人物灵魂 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME SC %人物灵魂
+ATTRIBUTEADD SC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "全系列"
+#ACT
+LOADVALUE 人物灵魂 "ParamControl\人物额外属性.ini" %USERNAME SC
+LOADVALUE 人物自然 "ParamControl\人物额外属性.ini" %USERNAME MC
+INC 人物灵魂 %铭刻属性
+INC 人物自然 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME SC %人物灵魂
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MC %人物自然
+ATTRIBUTEADD SC %铭刻属性
+ATTRIBUTEADD MC %铭刻属性
+BREAK
+
+
+[@上线检测勋章]
+#ACT
+MOV 铭刻索引 ""
+MOV 铭刻信息 ""
+MOV 铭刻装备 ""
+MOV 铭刻属性 ""
+MOV 装备信息 ""
+MOV 人物防御 ""
+MOV 人物魔防 ""
+
+#If
+checkcmd CHECKITEMINFO 2 0
+
+#If
+Equal FLD_NAME ""
+#ACT
+BREAK
+#ELSEACT
+MOV 铭刻索引 %FLD_MAKEINDEX
+
+#IF
+#ACT
+FormatStr "where FLD_MAKEINDEX = %s" %铭刻索引
+ACTCMD READSQL "TBL_MingKe" "FLD_MK,FLD_MKNAME" "铭刻信息,铭刻装备" %A9
+
+#IF
+Equal 铭刻信息 ""
+#ACT
+BREAK
+
+#If
+#Act
+LoadValue 装备信息 "ParamControl\铭刻设置.ini" [%铭刻信息] [显示参数]
+LoadValue 铭刻属性 "ParamControl\铭刻参数.ini" [铭刻属性] [%铭刻装备]
+
+#IF
+Equal 铭刻信息 "防御"
+#ACT
+LOADVALUE 人物防御 "ParamControl\人物额外属性.ini" %USERNAME AC
+INC 人物防御 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME AC %人物防御
+ATTRIBUTEADD AC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "魔御"
+#ACT
+LOADVALUE 人物魔御 "ParamControl\人物额外属性.ini" %USERNAME MAC
+INC 人物魔御 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MAC %人物魔御
+ATTRIBUTEADD MAC %铭刻属性
+BREAK
+
+[@上线检测马鞍]
+#ACT
+MOV 铭刻索引 ""
+MOV 铭刻信息 ""
+MOV 铭刻装备 ""
+MOV 铭刻属性 ""
+MOV 装备信息 ""
+MOV 人物破坏 ""
+MOV 人物自然 ""
+MOV 人物灵魂 ""
+MOV 人物防御 ""
+MOV 人物魔防 ""
+MOV 人物体力 ""
+
+
+#If
+checkcmd CHECKITEMINFO 12 0
+
+#If
+Equal FLD_NAME ""
+#ACT
+BREAK
+#ELSEACT
+MOV 铭刻索引 %FLD_MAKEINDEX
+
+#IF
+#ACT
+FormatStr "where FLD_MAKEINDEX = %s" %铭刻索引
+ACTCMD READSQL "TBL_MingKe" "FLD_MK,FLD_MKNAME" "铭刻信息,铭刻装备" %A9
+
+#IF
+Equal 铭刻信息 ""
+#ACT
+BREAK
+
+#If
+#Act
+LoadValue 装备信息 "ParamControl\铭刻设置.ini" [%铭刻信息] [显示参数]
+LoadValue 铭刻属性 "ParamControl\铭刻参数.ini" [铭刻属性] [%铭刻装备]
+
+#IF
+Equal 铭刻信息 "体力"
+#ACT
+LOADVALUE 人物体力 "ParamControl\人物额外属性.ini" %USERNAME HP
+MOV P1 %铭刻属性
+MOV P2 10
+MUL P1 P2
+MOV 铭刻属性 %P9
+INC 人物体力 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME HP %人物体力
+ATTRIBUTEADD HP %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "防御"
+#ACT
+LOADVALUE 人物防御 "ParamControl\人物额外属性.ini" %USERNAME AC
+INC 人物防御 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME AC %人物防御
+ATTRIBUTEADD AC %铭刻属性
+BREAK
+
+#IF
+Equal 铭刻信息 "魔御"
+#ACT
+LOADVALUE 人物魔御 "ParamControl\人物额外属性.ini" %USERNAME MAC
+INC 人物魔御 %铭刻属性
+SAVEVALUE "ParamControl\人物额外属性.ini" %USERNAME MAC %人物魔御
+ATTRIBUTEADD MAC %铭刻属性
+BREAK
+
+}

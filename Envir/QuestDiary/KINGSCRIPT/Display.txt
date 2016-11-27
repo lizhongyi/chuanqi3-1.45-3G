@@ -1,0 +1,44 @@
+;;2012 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@Display_Main]
+{
+#Act
+Mov 显示索引 %ARG(1)
+Mov 铭刻信息 ""
+Mov 铭刻装备 ""
+Mov 铭刻属性 0
+Mov 显示信息 ""
+Mov 装备信息 ""
+
+#IF
+#ACT
+FormatStr "where FLD_MAKEINDEX = %s" %显示索引
+ACTCMD READSQL "TBL_MingKe" "FLD_MK,FLD_MKNAME" "铭刻信息,铭刻装备" %A9
+
+#IF
+Equal 铭刻信息 ""
+#ACT
+BREAK
+
+#If
+#Act
+LoadValue 装备信息 "ParamControl\铭刻设置.ini" [%铭刻信息] [显示参数]
+LoadValue 铭刻属性 "ParamControl\铭刻参数.ini" [铭刻属性] [%铭刻装备]
+
+#IF
+Equal 铭刻信息 "体力"
+#ACT
+MOV P1 10
+MOV P2 %铭刻属性
+MUL P1 P2
+MOV 铭刻属性 %P9
+
+#IF
+#ACT
+AddStr 显示信息 %装备信息
+AddStr 显示信息 "(+"
+AddStr 显示信息 %铭刻属性
+AddStr 显示信息 ")"
+setiteminfo oqe1s7 %显示索引 %显示信息
+Break
+
+}

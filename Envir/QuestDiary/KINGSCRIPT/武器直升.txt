@@ -1,0 +1,97 @@
+;;;;;;;;;;;;;;;;;;;;
+[@武器直升_1]
+{
+#say
+{FCOLOR/14}武器直接升级到满级+15,需要1个武器MAX15凭证.{FCOLOR/12}\\
+<【 元素(火) 】/@zsMAX_2(1)>       <【 元素(冰) 】/@zsMAX_2(2)>\\
+<【 元素(雷) 】/@zsMAX_2(3)>       <【 元素(风) 】/@zsMAX_2(4)>\\
+<【 元素(神圣) 】/@zsMAX_2(5)>     <【 元素(暗黑) 】/@zsMAX_2(6)>\\
+<【 元素(幻影) 】/@zsMAX_2(7)>     <【 全系列魔法 】/@zsMAX2_2(1)>\\
+<【 破 坏 力 】/@zsMAX2_2(0)>
+   
+[@zsMAX2_2()]
+#act
+mov D0 %arg(1)
+
+#if 
+checkweaponlevel 17
+#ACT
+BREAK
+#SAY
+你的武器已经满级了。
+
+#IF
+checkcmd CHECKITEMINFO 1 0
+
+#IF
+EQUAL FLD_NAME ""
+#ACT
+BREAK
+#SAY
+你没有佩戴武器啊.
+
+#if 
+checkweaponlevel 2
+#ACT
+break
+#say
+我只给全新的武器提供升级服务!\
+<离开/@exit>
+
+#if
+CHECKITEM 武器MAX15凭证 1
+#ACT
+ACTCMD EDITITEM %D0 + 15
+ACTCMD EDITITEM FLD_DESC14 = 76
+TAKE 武器MAX15凭证 1
+break
+#Say
+武器已经升级好了，你取下就可以看到了.
+#elsesay
+对不起,包袱里没有1个武器MAX15凭证.
+
+
+[@zsMAX_2()]
+#act
+mov D0 %arg(1)
+
+#if 
+checkweaponlevel 17
+#ACT
+BREAK
+#SAY
+你的武器已经满级了。
+
+#IF
+checkcmd CHECKITEMINFO 1 0
+
+#IF
+EQUAL FLD_NAME ""
+#ACT
+BREAK
+#SAY
+你没有佩戴武器啊.
+
+#if 
+checkweaponlevel 2
+#ACT
+break
+#say
+我只给全新的武器提供升级服务!\
+<离开/@exit>
+
+#if
+CHECKITEM 武器MAX15凭证 1
+#ACT
+ACTCMD EDITITEM FLD_DESC11 = %D0
+ACTCMD EDITITEM FLD_DESC12 + 15
+ACTCMD EDITITEM FLD_DESC14 = 76
+TAKE 武器MAX15凭证 1
+break
+#Say
+武器已经升级好了，你取下就可以看到了.
+#elsesay
+对不起,包袱里没有1个武器MAX15凭证.
+
+
+}

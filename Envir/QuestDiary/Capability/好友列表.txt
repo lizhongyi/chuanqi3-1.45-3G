@@ -1,0 +1,337 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@好友列表_1]
+{
+#ACT
+LOADVALUE D0 "ParamControl\好友资料.ini" %username 总好友数
+MOV A5 ""
+GOTO @好友循环列表
+
+[@好友循环列表]
+#IF
+LARGE D0 0
+#ACT
+LOADVALUE A0 "ParamControl\好友资料.ini" %username %D0
+LOADVALUE D1 "ParamControl\好友接受.ini" %A0 %USERNAME 
+GOTO @运算好友
+#ELSEACT
+goto @好友列表显示
+
+[@运算好友]
+#IF
+EQUAL D1 1
+#ACT
+ADDSTR A5 "<[传送:"
+ADDSTR A5 %A0
+ADDSTR A5 "]/@好友列表("
+ADDSTR A5 %D0 
+ADDSTR A5 ")> <[修改]/@@修改好友("
+ADDSTR A5 %D0
+ADDSTR A5 ")> <[申请传送]/@申请传送( 
+ADDSTR A5 %D0
+ADDSTR A5 ")> {FCOLOR/10}状态:{FCOLOR/13}接受{FCOLOR/12}\"
+DEC D0 1
+GOTO @好友循环列表
+BREAK
+#IF
+EQUAL D1 2
+#ACT
+ADDSTR A5 "<[传送:"
+ADDSTR A5 %A0
+ADDSTR A5 "]/@好友列表("
+ADDSTR A5 %D0 
+ADDSTR A5 ")> <[修改]/@@修改好友("
+ADDSTR A5 %D0
+ADDSTR A5 ")> <[申请传送]/@申请传送( 
+ADDSTR A5 %D0
+ADDSTR A5 ")> {FCOLOR/10}状态:{FCOLOR/1}拒绝{FCOLOR/12}\"
+DEC D0 1
+GOTO @好友循环列表
+BREAK
+#ELSEACT
+ADDSTR A5 "<[传送:"
+ADDSTR A5 %A0
+ADDSTR A5 "]/@好友列表("
+ADDSTR A5 %D0 
+ADDSTR A5 ")> <[修改]/@@修改好友("
+ADDSTR A5 %D0
+ADDSTR A5 ")> <[申请传送]/@申请传送( 
+ADDSTR A5 %D0
+ADDSTR A5 ")> {FCOLOR/10}状态:{FCOLOR/12}无\"
+DEC D0 1
+GOTO @好友循环列表
+BREAK
+
+[@好友列表显示]
+#ACT
+LOADVALUE A2 "ParamControl\好友接受.ini" %USERNAME 申请者
+
+#IF
+EQUAL A2 ""
+#SAY
+{FCOLOR/8}
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_            [  <添 加 好友 列 表/@申请好友>  ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+由于{FCOLOR/10}没有原地复活{FCOLOR/12}. 所以好友传送{FCOLOR/10}非常重要{FCOLOR/12}. 每位玩家\
+最多拥有{FCOLOR/10}10个好友{FCOLOR/12}. 每次移动消耗{FCOLOR/10}30个元宝{FCOLOR/12}. 使用说明{FCOLOR/1}\
+申请移动到列表中玩家身边.前提-该玩家接受您的请求\
+请求通过后,请第一时间移动到该玩家身边.否则可能您\
+所到的坐标会有偏差.接受的玩家,最好能原地稍等片刻\{FCOLOR/8}
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_            [  <返 回 上层 菜 单/@D键菜单_Main>  ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+<$OUTPUT(A5)>
+</@好友列表(1)></@好友列表(2)></@好友列表(3)></@好友列表(4)></@好友列表(5)></@好友列表(6)></@好友列表(7)></@好友列表(8)></@好友列表(9)></@好友列表(10)></@好友列表(11)></@好友列表(12)></@好友列表(13)></@好友列表(14)></@好友列表(15)></@好友列表(16)></@好友列表(17)></@好友列表(18)></@好友列表(19)></@好友列表(20)>
+</@@修改好友(1)></@@修改好友(2)></@@修改好友(3)></@@修改好友(4)></@@修改好友(5)></@@修改好友(6)></@@修改好友(7)></@@修改好友(8)></@@修改好友(9)></@@修改好友(10)></@@修改好友(11)></@@修改好友(12)></@@修改好友(13)></@@修改好友(14)></@@修改好友(15)></@@修改好友(16)></@@修改好友(17)></@@修改好友(18)></@@修改好友(19)></@@修改好友(20)></@申请传送(1)></@申请传送(2)></@申请传送(3)></@申请传送(4)></@申请传送(5)></@申请传送(6)></@申请传送(7)></@申请传送(8)></@申请传送(9)></@申请传送(10)></@申请传送(11)></@申请传送(12)></@申请传送(13)></@申请传送(14)></@申请传送(15)></@申请传送(16)></@申请传送(17)></@申请传送(18)></@申请传送(19)></@申请传送(20)>
+#ELSEACT
+MOV A3 "{FCOLOR/10}申请者:{FCOLOR/11}"
+ADDSTR A3 %A2
+ADDSTR A3 "{FCOLOR/12} <[接 受]/@接受申请> <[拒 绝]/@拒绝申请>"
+GOTO @ANOTHER
+
+[@ANOTHER]
+#SAY
+{FCOLOR/8}
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_            [  <添 加 好友 列 表/@申请好友>  ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+由于{FCOLOR/10}没有原地复活{FCOLOR/12}. 所以好友传送{FCOLOR/10}非常重要{FCOLOR/12}. 每位玩家\
+最多拥有{FCOLOR/10}10个好友{FCOLOR/12}. 每次移动消耗{FCOLOR/10}30个元宝{FCOLOR/12}. 使用说明{FCOLOR/1}\
+申请移动到列表中玩家身边.前提-该玩家接受您的请求\
+请求通过后,请第一时间移动到该玩家身边.否则可能您\
+所到的坐标会有偏差.接受的玩家,最好能原地稍等片刻\{FCOLOR/8}
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_            [  <返 回 上层 菜 单/@D键菜单_Main>  ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+<$OUTPUT(A3)>\
+<$OUTPUT(A5)>\
+</@好友列表(1)></@好友列表(2)></@好友列表(3)></@好友列表(4)></@好友列表(5)></@好友列表(6)></@好友列表(7)></@好友列表(8)></@好友列表(9)></@好友列表(10)></@好友列表(11)></@好友列表(12)></@好友列表(13)></@好友列表(14)></@好友列表(15)></@好友列表(16)></@好友列表(17)></@好友列表(18)></@好友列表(19)></@好友列表(20)></@@修改好友(1)></@@修改好友(2)></@@修改好友(3)></@@修改好友(4)></@@修改好友(5)></@@修改好友(6)></@@修改好友(7)></@@修改好友(8)></@@修改好友(9)></@@修改好友(10)></@@修改好友(11)></@@修改好友(12)></@@修改好友(13)></@@修改好友(14)></@@修改好友(15)></@@修改好友(16)></@@修改好友(17)></@@修改好友(18)></@@修改好友(19)></@@修改好友(20)></@接受申请></@拒绝申请></@申请传送(1)></@申请传送(2)></@申请传送(3)></@申请传送(4)></@申请传送(5)></@申请传送(6)></@申请传送(7)></@申请传送(8)></@申请传送(9)></@申请传送(10)></@申请传送(11)></@申请传送(12)></@申请传送(13)></@申请传送(14)></@申请传送(15)></@申请传送(16)></@申请传送(17)></@申请传送(18)></@申请传送(19)></@申请传送(20)>
+
+[@申请好友]
+#ACT
+LOADVALUE D0 "ParamControl\好友资料.ini" %username 总好友数
+#IF
+ELARGE D0 10
+#ACT
+close
+SysMsg "【温馨提示】您的好友数已满!"
+#elseSAY
+{FCOLOR/8}
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_            [{FCOLOR/1}  添 加 好友 列 表  {FCOLOR/8}]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+由于{FCOLOR/10}没有原地复活{FCOLOR/12}. 所以好友传送{FCOLOR/10}非常重要{FCOLOR/12}. 每位玩家\
+最多拥有{FCOLOR/10}10个好友{FCOLOR/12}. 每次移动消耗{FCOLOR/10}30个元宝{FCOLOR/12}. 使用说明{FCOLOR/1}\
+申请移动到列表中玩家身边.前提-该玩家接受您的请求\
+请求通过后,请第一时间移动到该玩家身边.否则可能您\
+所到的坐标会有偏差.接受的玩家,最好能原地稍等片刻\{FCOLOR/8}
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_            [  <返 回 上层 菜 单/@D键菜单_Main>  ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_         [ <请输入你要加入的玩家名字/@@inputuname> ]{FCOLOR/12}
+
+[@@inputuname]
+#ACT
+MOV A6 %INPUTSTR
+FormatStr "FLD_CHARACTER='%s'" %A6
+ReadValueSql "TBL_CHARACTER" %A9 "FLD_CHARACTER" @existA2
+
+[@existA2()]
+#ACT
+MOV A1 %ARG(1)
+#IF
+equal A1 %USERNAME
+#SAY
+{FCOLOR/8}
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_            [{FCOLOR/1}  添 加 好友 列 表  {FCOLOR/8}]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+由于{FCOLOR/10}没有原地复活{FCOLOR/12}. 所以好友传送{FCOLOR/10}非常重要{FCOLOR/12}. 每位玩家\
+最多拥有{FCOLOR/10}10个好友{FCOLOR/12}. 每次移动消耗{FCOLOR/10}30个元宝{FCOLOR/12}. 使用说明{FCOLOR/1}\
+申请移动到列表中玩家身边.前提-该玩家接受您的请求\
+请求通过后,请第一时间移动到该玩家身边.否则可能您\
+所到的坐标会有偏差.接受的玩家,最好能原地稍等片刻\{FCOLOR/8}
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_            [  <返 回 上层 菜 单/@D键菜单_Main>  ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_         [ <请输入你要加入的玩家名字/@@inputuname> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_     {FCOLOR/13}对不起,不能加自己为好友{FCOLOR/8}[{FCOLOR/13} 请重新输入 {FCOLOR/8}]{FCOLOR/12}\
+#ACT
+BREAK
+
+#IF
+EQUAL A1 ""
+#SAY
+{FCOLOR/8}
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_            [{FCOLOR/1}  添 加 好友 列 表  {FCOLOR/8}]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+由于{FCOLOR/10}没有原地复活{FCOLOR/12}. 所以好友传送{FCOLOR/10}非常重要{FCOLOR/12}. 每位玩家\
+最多拥有{FCOLOR/10}10个好友{FCOLOR/12}. 每次移动消耗{FCOLOR/10}30个元宝{FCOLOR/12}. 使用说明{FCOLOR/1}\
+申请移动到列表中玩家身边.前提-该玩家接受您的请求\
+请求通过后,请第一时间移动到该玩家身边.否则可能您\
+所到的坐标会有偏差.接受的玩家,最好能原地稍等片刻\{FCOLOR/8}
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_            [  <返 回 上层 菜 单/@D键菜单_Main>  ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_         [ <请输入你要加入的玩家名字/@@inputuname> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_     {FCOLOR/13}对不起,游戏内没有该角色{FCOLOR/8}[{FCOLOR/13} 请重新输入 {FCOLOR/8}]{FCOLOR/12}\
+#ACT
+BREAK
+#ELSEACT
+GOTO @记录好友资料
+
+[@记录好友资料]
+#ACT
+INC D0 1 
+SAVEVALUE "ParamControl\好友资料.ini" %username %D0 %A6
+SAVEVALUE "ParamControl\好友资料.ini" %username 总好友数 %D0
+DELAYGOTO [LOCAL] 1 @好友列表_1
+#SAY
+╭⌒╮','╭ ⌒╮　╱　╱╱　╱╱　{FCOLOR/13}☆{FCOLOR/12} \
+',' ',' ',' ','{FCOLOR/13}☆{FCOLOR/12}　　╱{FCOLOR/1}★{FCOLOR/12}　╱╱　╱╱ \
+','{FCOLOR/14}风雨无阻,服务第一 {FCOLOR/13}☆{FCOLOR/12}╱　{FCOLOR/13}☆{FCOLOR/12}╱ ╱ \
+{FCOLOR/1}★{FCOLOR/12}╱','╱{FCOLOR/13}☆{FCOLOR/12},' ╱',',{FCOLOR/1}★{FCOLOR/12} ╱{FCOLOR/13}☆{FCOLOR/12} ╱{FCOLOR/1}★{FCOLOR/12}╱{FCOLOR/13}☆{FCOLOR/12}\
+正在为您{FCOLOR/10}添加好友{FCOLOR/12}......请梢侯........{FCOLOR/12}\
+
+[@申请传送()]
+#ACT
+MOV D8 %ARG(1)
+LOADVALUE A6 "ParamControl\好友资料.ini" %username %D8
+LOADVALUE A4 "ParamControl\好友接受.ini" %A6 申请者
+#IF
+EQUAL A4 "" 
+#ACT
+SAVEVALUE "ParamControl\好友接受.ini" %A6 申请者 %username
+SAVEVALUE "ParamControl\好友接受.ini" %A6 %username 0
+#SAY
+{FCOLOR/8}
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_            [  <添 加 好友 列 表/@申请好友>  ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+由于{FCOLOR/10}没有原地复活{FCOLOR/12}. 所以好友传送{FCOLOR/10}非常重要{FCOLOR/12}. 每位玩家\
+最多拥有{FCOLOR/10}10个好友{FCOLOR/12}. 每次移动消耗{FCOLOR/10}30个元宝{FCOLOR/12}. 使用说明{FCOLOR/1}\
+申请移动到列表中玩家身边.前提-该玩家接受您的请求\
+请求通过后,请第一时间移动到该玩家身边.否则可能您\
+所到的坐标会有偏差.接受的玩家,最好能原地稍等片刻\{FCOLOR/8}
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_            [  <返 回 上层 菜 单/@D键菜单_Main>  ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+【申请完毕】请等待该玩家接受后--立刻使用传送功能{FCOLOR/12}\
+_                 <【返回主菜单】/@好友列表_1>
+#ELSESAY
+{FCOLOR/8}
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_            [  <添 加 好友 列 表/@申请好友>  ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+由于{FCOLOR/10}没有原地复活{FCOLOR/12}. 所以好友传送{FCOLOR/10}非常重要{FCOLOR/12}. 每位玩家\
+最多拥有{FCOLOR/10}10个好友{FCOLOR/12}. 每次移动消耗{FCOLOR/10}30个元宝{FCOLOR/12}. 使用说明{FCOLOR/1}\
+申请移动到列表中玩家身边.前提-该玩家接受您的请求\
+请求通过后,请第一时间移动到该玩家身边.否则可能您\
+所到的坐标会有偏差.接受的玩家,最好能原地稍等片刻\{FCOLOR/8}
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_            [  <返 回 上层 菜 单/@D键菜单_Main>  ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}好{FCOLOR/4}━{FCOLOR/14}友{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+【申请失败】对不起,该玩家在使用该功能,请稍候申请{FCOLOR/12}\
+_                 <【返回主菜单】/@好友列表_1>
+ 
+[@接受申请]
+#ACT
+LOADVALUE A2 "ParamControl\好友接受.ini" %USERNAME 申请者
+MOV A7 %USERMAP
+#IF
+CHECKCMD CHECKMAPFLAG MAPGROUP 1
+#ACT
+Close
+SAVEVALUE "ParamControl\好友接受.ini" %USERNAME %A2 1
+SAVEVALUE "ParamControl\好友坐标.ini" %USERNAME 地图 %A7 
+SAVEVALUE "ParamControl\好友坐标.ini" %USERNAME X坐标 %USERX
+SAVEVALUE "ParamControl\好友坐标.ini" %USERNAME Y坐标 %USERY
+SYSMSG "【温馨提示】请在此等待你的好友.提醒他.马上过来."
+#ELSEACT
+SYSMSG "【温馨提示】该地区被禁止,不能让您的好友过来..."
+BREAK
+
+[@拒绝申请]
+#ACT
+LOADVALUE A2 "ParamControl\好友接受.ini" %USERNAME 申请者
+SAVEVALUE "ParamControl\好友接受.ini" %USERNAME %A2 2
+MOV A2 ""
+SAVEVALUE "ParamControl\好友接受.ini" %USERNAME 申请者 %A2
+SYSMSG "【温馨提示】拒绝成功.该玩家不能来到您的身边."
+
+[@@修改好友()]
+#ACT
+MOV A6 %INPUTSTR
+MOV D0 %ARG(1)
+GOTO @积分分1
+
+[@积分分1]
+#ACT
+FormatStr "FLD_CHARACTER='%s'" %A6
+ReadValueSql "TBL_CHARACTER" %A9 "FLD_CHARACTER" @existA3
+
+[@existA3()]
+#ACT
+MOV A1 %ARG(1)
+#IF
+EQUAL A1 ""
+#ACT
+SYSMSG "【温馨提示】你输入的信息有误..."
+BREAK
+#IF
+EQUAL A1 %USERNAME
+#ACT
+SYSMSG "【温馨提示】不能修改自己为好友"
+BREAK
+#ELSEACT
+GOTO @发觉隧道局发
+
+[@发觉隧道局发]
+#ACT
+SAVEVALUE "ParamControl\好友资料.ini" %username %D0 %A6
+DELAYGOTO [LOCAL] 1 @好友列表_1
+#SAY
+╭⌒╮','╭ ⌒╮　╱　╱╱　╱╱　{FCOLOR/13}☆{FCOLOR/12} \
+',' ',' ',' ','{FCOLOR/13}☆{FCOLOR/12}　　╱{FCOLOR/1}★{FCOLOR/12}　╱╱　╱╱ \
+','{FCOLOR/14}风雨无阻,服务第一 {FCOLOR/13}☆{FCOLOR/12}╱　{FCOLOR/13}☆{FCOLOR/12}╱ ╱ \
+{FCOLOR/1}★{FCOLOR/12}╱','╱{FCOLOR/13}☆{FCOLOR/12},' ╱',',{FCOLOR/1}★{FCOLOR/12} ╱{FCOLOR/13}☆{FCOLOR/12} ╱{FCOLOR/1}★{FCOLOR/12}╱{FCOLOR/13}☆{FCOLOR/12}\
+正在为您{FCOLOR/10}修改好友{FCOLOR/12}......请梢侯........{FCOLOR/12}\
+
+[@好友列表()]
+#ACT
+MOV D8 %ARG(1)
+LOADVALUE A6 "ParamControl\好友资料.ini" %username %D8
+LOADVALUE D1 "ParamControl\好友接受.ini" %A6 %USERNAME
+#IF
+EQUAL D1 1
+#ACT
+GOTO @JIFENKKF
+#ELSEACT
+SYSMSG "【温馨提示】没有经得对方接受同意,您无法传送"
+
+[@JIFENKKF]
+#IF
+CHECKCMD CHECKUSERJF 30
+#ACT
+SAVEVALUE "ParamControl\好友接受.ini" %A6 %USERNAME 0
+MOV A2 ""
+SAVEVALUE "ParamControl\好友接受.ini" %A6 申请者 %A2
+LOADVALUE A3 "ParamControl\好友坐标.ini" %A6 地图
+LOADVALUE A4 "ParamControl\好友坐标.ini" %A6 X坐标
+LOADVALUE A5 "ParamControl\好友坐标.ini" %A6 Y坐标
+GOTO @JIFENKKF_1
+#ELSEACT
+CLOSE
+SYSMSG "【温馨提示】您元宝不足.无法使用该功能."
+
+[@JIFENKKF_1]
+#ACT
+actcmd SETUSERJF - 30 好友传送
+MAPMOVE %A3 %A4 %A5
+SYSMSG "【温馨提示】来到了您好友的身边."
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

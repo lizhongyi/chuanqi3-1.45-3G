@@ -1,0 +1,263 @@
+;;创天网络有限公司原版1.45
+[@TelePortMove]
+{
+#DEFINE        A0{DESTINATION}       A0
+#DEFINE        D0{FARE}              D0
+#DEFINE        A1{POSITION}          A1
+
+#ACT
+Mov            A0{DESTINATION}       %ARG(1)
+Mov            D0{FARE}              %ARG(2)
+Mov            A1{POSITION}          %ARG(3)
+
+#IF
+CheckGold      %D0{FARE}
+#ACT
+Goto           @MoveRootin
+#ELSESAY
+(钱不够啊！…)\ \
+
+[@enter111]
+#ACT
+      Mapmove 0 450 388
+
+[@MoveRootin]
+#IF
+Equal          A0{DESTINATION}       "xishamo"      
+Equal          A1{POSITION}          "Center"       
+#ACT
+Take           金币                  %D0{FARE}     
+mapmove D2001 282 280
+break
+
+#IF
+Equal          A0{DESTINATION}       "Nuoma"      
+Equal          A1{POSITION}          "Center"       
+#ACT
+Take           金币                  %D0{FARE}     
+mapmove 41 184 136                  
+break
+
+#IF
+Equal          A0{DESTINATION}       "shileyuan"      
+Equal          A1{POSITION}          "Center"       
+#ACT
+Take           金币                  %D0{FARE}     
+mapmove 9 190 579                       
+break
+
+#IF
+Equal          A0{DESTINATION}       "Bichon"      
+Equal          A1{POSITION}          "South"       
+#ACT
+Take           金币                  %D0{FARE}     
+mapmove 0 498 464                                  
+break
+
+#IF
+Equal          A0{DESTINATION}       "Bichon"      
+Equal          A1{POSITION}          "North"       
+#ACT
+Take           金币                  %D0{FARE}     
+mapmove 0 370 335                                  
+break
+
+#IF
+Equal          A0{DESTINATION}       "Bichon"      
+Equal          A1{POSITION}          "West"        
+#ACT
+Take           金币                  %D0{FARE}     
+mapmove 0 379 445                                  
+break
+
+#IF
+Equal          A0{DESTINATION}       "Bichon"      
+Equal          A1{POSITION}          "East"       
+#ACT
+Take           金币                  %D0{FARE}     
+mapmove 0 507 312                                 
+break
+
+#IF
+Equal          A0{DESTINATION}       "KugKyung"    
+Equal          A1{POSITION}          "North"      
+#ACT
+Take           金币                  %D0{FARE}    
+mapmove 01 456 217                                 
+break
+
+#IF
+Equal          A0{DESTINATION}       "KugKyung"    
+Equal          A1{POSITION}          "West"        
+#ACT
+Take           金币                  %D0{FARE}    
+mapmove 01 411 288                                 
+break
+
+#IF
+Equal          A0{DESTINATION}       "KugKyung"   
+Equal          A1{POSITION}          "South"      
+#ACT
+Take           金币                  %D0{FARE}     
+mapmove 01 463 357                               
+break
+
+#IF
+Equal          A0{DESTINATION}       "EunHang"     
+Equal          A1{POSITION}          "Center"      
+#ACT
+Take           金币                  %D0{FARE}     
+mapmove 02 249 145                                
+break
+
+#IF
+Equal          A0{DESTINATION}       "DoGwan"     
+Equal          A1{POSITION}          "Center"     
+#ACT
+Take           金币                  %D0{FARE}    
+mapmove 1 416 180                                 
+break
+
+#IF
+Equal          A0{DESTINATION}       "SnakeVally"  
+Equal          A1{POSITION}          "North"       
+#ACT
+Take           金币                  %D0{FARE}     
+mapmove 2 313 193                                 
+break
+
+#IF
+Equal          A0{DESTINATION}       "SnakeVally"  
+Equal          A1{POSITION}          "South"       
+#ACT
+Take           金币                  %D0{FARE}     
+mapmove 2 306 245                                  
+break
+
+#IF
+Equal          A0{DESTINATION}       "SaBuk"       
+Equal          A1{POSITION}          "Center"     
+#ACT
+goto @CasTleWarMove_Sabuk                         
+break
+
+#IF
+Equal          A0{DESTINATION}       "Oasis"       
+Equal          A1{POSITION}          "Center"      
+#ACT
+Take           金币                  %D0{FARE}     
+mapmove 4 435 84                                   
+break
+
+#IF
+Equal          A0{DESTINATION}       "Numa"        
+Equal          A1{POSITION}          "Center"      
+#ACT
+Take           金币                  %D0{FARE}     
+mapmove 41 184 137                                 
+break
+
+#IF
+Equal          A0{DESTINATION}       "Samak"      
+Equal          A1{POSITION}          "East"       
+#ACT
+Take           金币                  %D0{FARE}    
+mapmove 5 204 290                                 
+break
+
+#IF
+Equal          A0{DESTINATION}       "Samak"      
+Equal          A1{POSITION}          "West"        
+#ACT
+Take           金币                  %D0{FARE}    
+mapmove 5 112 178                                 
+break
+
+#IF
+Equal          A0{DESTINATION}       "Ant"        
+Equal          A1{POSITION}          "Center"    
+#ACT
+Take           金币                  %D0{FARE}    
+mapmove 6 273 732                                 
+break
+
+#IF
+Equal          A0{DESTINATION}       "MongChon"    
+Equal          A1{POSITION}          "East"       
+#ACT
+Take           金币                  %D0{FARE}    
+mapmove 74 349 330                                 
+break
+
+#IF
+Equal          A0{DESTINATION}       "MongChon"   
+Equal          A1{POSITION}          "West"       
+#ACT
+Take           金币                  %D0{FARE}     
+mapmove 74 271 268                               
+break
+
+#IF
+Equal          A0{DESTINATION}       "SukGak"     
+Equal          A1{POSITION}          "Center"    
+#ACT
+Take           金币                  %D0{FARE}    
+mapmove 75 184 91                                  
+break
+
+#IF
+Equal          A0{DESTINATION}       "HalfMoon"    
+Equal          A1{POSITION}          "Center"    
+#ACT
+Take           金币                  %D0{FARE}     
+mapmove 8 288 242                              
+break
+
+#IF
+Equal          A0{DESTINATION}       "HalfCave"    
+Equal          A1{POSITION}          "Center"     
+#ACT
+Take           金币                  %D0{FARE}    
+mapmove 8 448 580                          
+break
+
+#IF
+Equal          A0{DESTINATION}       "HalfTemple" 
+Equal          A1{POSITION}          "Center"    
+#ACT
+Take           金币                  %D0{FARE}    
+mapmove 8 668 389                                
+break
+
+#IF
+Equal          A0{DESTINATION}       "RedZone"     
+Equal          A1{POSITION}          "Center"     
+#ACT
+Take           金币                  %D0{FARE}    
+mapmove 81 127 266                                
+break
+
+
+[@CasTleWarMove_Sabuk]
+#IF
+IsOnCastleWar Sabuk
+#SAY
+你不是参加沙巴克攻城战的行会成员。\ \
+<结束/@exit>
+#ACT
+break
+
+#IF
+IsOnReadyCastleWar Sabuk
+#SAY
+你不是参加沙巴克攻城战的行会成员。\ \
+<结束/@exit>
+#ACT
+break
+
+#IF
+#ACT
+Take  金币   %D0{FARE}
+mapmove 3 222 160
+
+}

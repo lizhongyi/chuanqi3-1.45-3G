@@ -1,0 +1,1329 @@
+;;;;;;
+[@提升技能_1]
+{
+#IF
+checkjob warrior
+#ACT
+break
+#SAY
+{FCOLOR/10}请选择你要提升的技能:{FCOLOR/12}\\
+<『基本剑术』/@基本剑术>\
+<『攻杀剑术』/@攻杀剑术>\
+<『十 方 斩』/@十方斩>\
+<『铁 布 杉』/@铁布杉>\
+<『莲月剑法』/@莲月剑法>\
+<『运 气 术』/@运气术>\\
+<返  回/@main>\\
+
+#IF
+checkjob wizard
+#ACT
+break
+#SAY
+{FCOLOR/10}请选择你要提升的技能:{FCOLOR/12}\\
+<『火    墙』/@火墙>\
+<『魔 法 盾』/@魔法盾>\
+<『魄 冰 刺』/@魄冰刺>\
+<『怒神霹雳』/@怒神霹雳>\
+<『焰天火雨』/@焰天火雨>\
+<『闪电雷鸣』/@闪电雷鸣>\\
+<返  回/@main>\\
+
+#IF
+checkjob taoist
+#ACT
+break
+#SAY
+{FCOLOR/10}请选择你要提升的技能:{FCOLOR/12}\\
+<『施 毒 术』/@施毒术>\
+<『灵魂火符』/@灵魂火符>\
+<『月魂灵波』/@月魂灵波>\
+<『妙影无踪』/@妙影无踪>\
+<『阴阳法环』/@阴阳法环>\
+<『吸星大法』/@吸星大法>\\ 
+<返  回/@main>\\
+
+[@基本剑术]
+#IF
+chkmagiclevel 基本剑术 5
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}基本剑术{FCOLOR/12}已经提升到5级,不用再反复提升.
+
+#IF
+chkmagiclevel 基本剑术 4
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}基本剑术{FCOLOR/12}技能为4级,如果需要提升到5级需要{FCOLOR/10}乾坤大挪移（秘籍）{FCOLOR/12}5本+200W金币.\\
+<我要提升/@基本剑术4_5>
+
+#IF
+chkmagiclevel 基本剑术 3
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}基本剑术{FCOLOR/12}技能为3级,如果需要提升到4级需要{FCOLOR/10}乾坤大挪移（秘籍）{FCOLOR/12}2本+100W金币.\\
+<我要提升/@基本剑术3_4>
+
+#IF
+#say
+你先把{FCOLOR/10}基本剑术{FCOLOR/12}练到3级再来找我吧.
+
+[@基本剑术4_5]
+#IF
+chkmagiclevel 基本剑术 4
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 乾坤大挪移（秘籍） 5
+CHECKGOLD 2000000
+#ACT
+TAKE 乾坤大挪移（秘籍） 5
+take 金币 2000000
+ACTCMD CHANGEMAGLVL 基本剑术 5
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}基本剑术{FCOLOR/12}已经提升到了5级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有5本{FCOLOR/10}乾坤大挪移（秘籍）{FCOLOR/12}和200W金币.\\
+<关闭/@Exit>
+
+[@基本剑术3_4]
+#IF
+chkmagiclevel 基本剑术 3
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 乾坤大挪移（秘籍） 2
+CHECKGOLD 1000000
+#ACT
+TAKE 乾坤大挪移（秘籍） 2
+take 金币 1000000
+ACTCMD CHANGEMAGLVL 基本剑术 4
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}基本剑术{FCOLOR/12}已经提升到了4级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有2本{FCOLOR/10}乾坤大挪移（秘籍）{FCOLOR/12}和100W金币.\\
+<关闭/@Exit>
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@攻杀剑术]
+#IF
+chkmagiclevel 攻杀剑术 5
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}攻杀剑术{FCOLOR/12}已经提升到5级,不用再反复提升.
+
+#IF
+chkmagiclevel 攻杀剑术 4
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}攻杀剑术{FCOLOR/12}技能为4级,如果需要提升到5级需要{FCOLOR/10}斗转星移（秘籍）{FCOLOR/12}5本+200W金币.\\
+<我要提升/@攻杀剑术4_5>
+
+#IF
+chkmagiclevel 攻杀剑术 3
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}攻杀剑术{FCOLOR/12}技能为3级,如果需要提升到4级需要{FCOLOR/10}斗转星移（秘籍）{FCOLOR/12}2本+100W金币.\\
+<我要提升/@攻杀剑术3_4>
+
+#IF
+#say
+你先把{FCOLOR/10}攻杀剑术{FCOLOR/12}练到3级再来找我吧.
+
+[@攻杀剑术4_5]
+#IF
+chkmagiclevel 攻杀剑术 4
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 斗转星移（秘籍） 5
+CHECKGOLD 2000000
+#ACT
+TAKE 斗转星移（秘籍） 5
+take 金币 2000000
+ACTCMD CHANGEMAGLVL 攻杀剑术 5
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}攻杀剑术{FCOLOR/12}已经提升到了5级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有5本{FCOLOR/10}斗转星移（秘籍）{FCOLOR/12}和200W金币.\\
+<关闭/@Exit>
+
+[@攻杀剑术3_4]
+#IF
+chkmagiclevel 攻杀剑术 3
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 斗转星移（秘籍） 2
+CHECKGOLD 1000000
+#ACT
+TAKE 斗转星移（秘籍） 2
+take 金币 1000000
+ACTCMD CHANGEMAGLVL 攻杀剑术 4
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}攻杀剑术{FCOLOR/12}已经提升到了4级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有2本{FCOLOR/10}斗转星移（秘籍）{FCOLOR/12}和100W金币.\\
+<关闭/@Exit>
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@十方斩]
+#IF
+chkmagiclevel 十方斩 5
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}十方斩{FCOLOR/12}已经提升到5级,不用再反复提升.
+
+#IF
+chkmagiclevel 十方斩 4
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}十方斩{FCOLOR/12}技能为4级,如果需要提升到5级需要{FCOLOR/10}十方斩（秘籍）{FCOLOR/12}5本+200W金币.\\
+<我要提升/@十方斩4_5>
+
+#IF
+chkmagiclevel 十方斩 3
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}十方斩{FCOLOR/12}技能为3级,如果需要提升到4级需要{FCOLOR/10}十方斩（秘籍）{FCOLOR/12}2本+100W金币.\\
+<我要提升/@十方斩3_4>
+
+#IF
+#say
+你先把{FCOLOR/10}十方斩{FCOLOR/12}练到3级再来找我吧.
+
+[@十方斩4_5]
+#IF
+chkmagiclevel 十方斩 4
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 十方斩（秘籍） 5
+CHECKGOLD 2000000
+#ACT
+TAKE 十方斩（秘籍） 5
+take 金币 2000000
+ACTCMD CHANGEMAGLVL 十方斩 5
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}十方斩{FCOLOR/12}已经提升到了5级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有5本{FCOLOR/10}十方斩（秘籍）{FCOLOR/12}和200W金币.\\
+<关闭/@Exit>
+
+[@十方斩3_4]
+#IF
+chkmagiclevel 十方斩 3
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 十方斩（秘籍） 2
+CHECKGOLD 1000000
+#ACT
+TAKE 十方斩（秘籍） 2
+take 金币 1000000
+ACTCMD CHANGEMAGLVL 十方斩 4
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}十方斩{FCOLOR/12}已经提升到了4级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有2本{FCOLOR/10}十方斩（秘籍）{FCOLOR/12}和100W金币.\\
+<关闭/@Exit>
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@铁布杉]
+#IF
+chkmagiclevel 铁布杉 5
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}铁布杉{FCOLOR/12}已经提升到5级,不用再反复提升.
+
+#IF
+chkmagiclevel 铁布杉 4
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}铁布杉{FCOLOR/12}技能为4级,如果需要提升到5级需要{FCOLOR/10}铁布杉（秘籍）{FCOLOR/12}3本+200W金币.\\
+<我要提升/@铁布杉4_5>
+
+#IF
+chkmagiclevel 铁布杉 3
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}铁布杉{FCOLOR/12}技能为3级,如果需要提升到4级需要{FCOLOR/10}铁布杉（秘籍）{FCOLOR/12}1本+100W金币.\\
+<我要提升/@铁布杉3_4>
+
+#IF
+#say
+你先把{FCOLOR/10}铁布杉{FCOLOR/12}练到3级再来找我吧.
+
+[@铁布杉4_5]
+#IF
+chkmagiclevel 铁布杉 4
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 铁布杉（秘籍） 3
+CHECKGOLD 2000000
+#ACT
+TAKE 铁布杉（秘籍） 3
+take 金币 2000000
+ACTCMD CHANGEMAGLVL 铁布杉 5
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}铁布杉{FCOLOR/12}已经提升到了5级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有3本{FCOLOR/10}铁布杉（秘籍）{FCOLOR/12}和200W金币.\\
+<关闭/@Exit>
+
+[@铁布杉3_4]
+#IF
+chkmagiclevel 铁布杉 3
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 铁布杉（秘籍） 1
+CHECKGOLD 1000000
+#ACT
+TAKE 铁布杉（秘籍） 1
+take 金币 1000000
+ACTCMD CHANGEMAGLVL 铁布杉 4
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}铁布杉{FCOLOR/12}已经提升到了4级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有1本{FCOLOR/10}铁布杉（秘籍）{FCOLOR/12}和100W金币.\\
+<关闭/@Exit>
+
+
+[@火墙]
+#IF
+chkmagiclevel 火墙 5
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}火墙{FCOLOR/12}已经提升到5级,不用再反复提升.
+
+#IF
+chkmagiclevel 火墙 4
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}火墙{FCOLOR/12}技能为4级,如果需要提升到5级需要{FCOLOR/10}魄冰刺（秘籍）{FCOLOR/12}5本+200W金币.\\
+<我要提升/@火墙4_5>
+
+#IF
+chkmagiclevel 火墙 3
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}火墙{FCOLOR/12}技能为3级,如果需要提升到4级需要{FCOLOR/10}魄冰刺（秘籍）{FCOLOR/12}2本+100W金币.\\
+<我要提升/@火墙3_4>
+
+#IF
+#say
+你先把{FCOLOR/10}火墙{FCOLOR/12}练到3级再来找我吧.
+
+[@火墙4_5]
+#IF
+chkmagiclevel 火墙 4
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 魄冰刺（秘籍） 5
+CHECKGOLD 2000000
+#ACT
+TAKE 魄冰刺（秘籍） 5
+take 金币 2000000
+ACTCMD CHANGEMAGLVL 火墙 5
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}火墙{FCOLOR/12}已经提升到了5级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有5本{FCOLOR/10}魄冰刺（秘籍）{FCOLOR/12}和200W金币.\\
+<关闭/@Exit>
+
+[@火墙3_4]
+#IF
+chkmagiclevel 火墙 3
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 魄冰刺（秘籍） 2
+CHECKGOLD 1000000
+#ACT
+TAKE 魄冰刺（秘籍） 2
+take 金币 1000000
+ACTCMD CHANGEMAGLVL 火墙 4
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}火墙{FCOLOR/12}已经提升到了4级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有2本{FCOLOR/10}魄冰刺（秘籍）{FCOLOR/12}和100W金币.\\
+<关闭/@Exit>
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@魄冰刺]
+#IF
+chkmagiclevel 魄冰刺 5
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}魄冰刺{FCOLOR/12}已经提升到5级,不用再反复提升.
+
+#IF
+chkmagiclevel 魄冰刺 4
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}魄冰刺{FCOLOR/12}技能为4级,如果需要提升到5级需要{FCOLOR/10}怒神霹雳（秘籍）{FCOLOR/12}5本+200W金币.\\
+<我要提升/@魄冰刺4_5>
+
+#IF
+chkmagiclevel 魄冰刺 3
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}魄冰刺{FCOLOR/12}技能为3级,如果需要提升到4级需要{FCOLOR/10}怒神霹雳（秘籍）{FCOLOR/12}2本+100W金币.\\
+<我要提升/@魄冰刺3_4>
+
+#IF
+#say
+你先把{FCOLOR/10}魄冰刺{FCOLOR/12}练到3级再来找我吧.
+
+[@魄冰刺4_5]
+#IF
+chkmagiclevel 魄冰刺 4
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 怒神霹雳（秘籍） 5
+CHECKGOLD 2000000
+#ACT
+TAKE 怒神霹雳（秘籍） 5
+take 金币 2000000
+ACTCMD CHANGEMAGLVL 魄冰刺 5
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}魄冰刺{FCOLOR/12}已经提升到了5级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有5本{FCOLOR/10}怒神霹雳（秘籍）{FCOLOR/12}和200W金币.\\
+<关闭/@Exit>
+
+[@魄冰刺3_4]
+#IF
+chkmagiclevel 魄冰刺 3
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 怒神霹雳（秘籍） 2
+CHECKGOLD 1000000
+#ACT
+TAKE 怒神霹雳（秘籍） 2
+take 金币 1000000
+ACTCMD CHANGEMAGLVL 魄冰刺 4
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}魄冰刺{FCOLOR/12}已经提升到了4级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有2本{FCOLOR/10}怒神霹雳（秘籍）{FCOLOR/12}和100W金币.\\
+<关闭/@Exit>
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@怒神霹雳]
+#IF
+chkmagiclevel 怒神霹雳 5
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}怒神霹雳{FCOLOR/12}已经提升到5级,不用再反复提升.
+
+#IF
+chkmagiclevel 怒神霹雳 4
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}怒神霹雳{FCOLOR/12}技能为4级,如果需要提升到5级需要{FCOLOR/10}怒神霹雳（秘籍）{FCOLOR/12}5本+200W金币.\\
+<我要提升/@怒神霹雳4_5>
+
+#IF
+chkmagiclevel 怒神霹雳 3
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}怒神霹雳{FCOLOR/12}技能为3级,如果需要提升到4级需要{FCOLOR/10} 魄冰刺（秘籍）{FCOLOR/12}2本+100W金币.\\
+<我要提升/@怒神霹雳3_4>
+
+#IF
+#say
+你先把{FCOLOR/10}怒神霹雳{FCOLOR/12}练到3级再来找我吧.
+
+[@怒神霹雳4_5]
+#IF
+chkmagiclevel 怒神霹雳 4
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 怒神霹雳（秘籍） 5
+CHECKGOLD 2000000
+#ACT
+TAKE 怒神霹雳（秘籍） 5
+take 金币 2000000
+ACTCMD CHANGEMAGLVL 怒神霹雳 5
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}怒神霹雳{FCOLOR/12}已经提升到了5级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有5本{FCOLOR/10}怒神霹雳（秘籍）{FCOLOR/12}和200W金币.\\
+<关闭/@Exit>
+
+[@怒神霹雳3_4]
+#IF
+chkmagiclevel 怒神霹雳 3
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 魄冰刺（秘籍） 2
+CHECKGOLD 1000000
+#ACT
+TAKE 魄冰刺（秘籍） 2
+take 金币 1000000
+ACTCMD CHANGEMAGLVL 怒神霹雳 4
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}怒神霹雳{FCOLOR/12}已经提升到了4级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有2本{FCOLOR/10}魄冰刺（秘籍）{FCOLOR/12}和100W金币.\\
+<关闭/@Exit>
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@焰天火雨]
+#IF
+chkmagiclevel 焰天火雨 5
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}焰天火雨{FCOLOR/12}已经提升到5级,不用再反复提升.
+
+#IF
+chkmagiclevel 焰天火雨 4
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}焰天火雨{FCOLOR/12}技能为4级,如果需要提升到5级需要{FCOLOR/10}焰天火雨（秘籍）{FCOLOR/12}3本+200W金币.\\
+<我要提升/@焰天火雨4_5>
+
+#IF
+chkmagiclevel 焰天火雨 3
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}焰天火雨{FCOLOR/12}技能为3级,如果需要提升到4级需要{FCOLOR/10}焰天火雨（秘籍）{FCOLOR/12}1本+100W金币.\\
+<我要提升/@焰天火雨3_4>
+
+#IF
+#say
+你先把{FCOLOR/10}焰天火雨{FCOLOR/12}练到3级再来找我吧.
+
+[@焰天火雨4_5]
+#IF
+chkmagiclevel 焰天火雨 4
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 焰天火雨（秘籍） 3
+CHECKGOLD 2000000
+#ACT
+TAKE 焰天火雨（秘籍） 3
+take 金币 2000000
+ACTCMD CHANGEMAGLVL 焰天火雨 5
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}焰天火雨{FCOLOR/12}已经提升到了5级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有3本{FCOLOR/10}焰天火雨（秘籍）{FCOLOR/12}和200W金币.\\
+<关闭/@Exit>
+
+[@焰天火雨3_4]
+#IF
+chkmagiclevel 焰天火雨 3
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 焰天火雨（秘籍） 1
+CHECKGOLD 1000000
+#ACT
+TAKE 焰天火雨（秘籍） 1
+take 金币 1000000
+ACTCMD CHANGEMAGLVL 焰天火雨 4
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}焰天火雨{FCOLOR/12}已经提升到了4级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有1本{FCOLOR/10}焰天火雨（秘籍）{FCOLOR/12}和100W金币.\\
+<关闭/@Exit>
+
+[@月魂灵波]
+#IF
+chkmagiclevel 月魂灵波 5
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}月魂灵波{FCOLOR/12}已经提升到5级,不用再反复提升.
+
+#IF
+chkmagiclevel 月魂灵波 4
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}月魂灵波{FCOLOR/12}技能为4级,如果需要提升到5级需要{FCOLOR/10}移花接玉（秘籍）{FCOLOR/12}5本+200W金币.\\
+<我要提升/@月魂灵波4_5>
+
+#IF
+chkmagiclevel 月魂灵波 3
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}月魂灵波{FCOLOR/12}技能为3级,如果需要提升到4级需要{FCOLOR/10}移花接玉（秘籍）{FCOLOR/12}2本+100W金币.\\
+<我要提升/@月魂灵波3_4>
+
+#IF
+#say
+你先把{FCOLOR/10}月魂灵波{FCOLOR/12}练到3级再来找我吧.
+
+[@月魂灵波4_5]
+#IF
+chkmagiclevel 月魂灵波 4
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 移花接玉（秘籍） 5
+CHECKGOLD 2000000
+#ACT
+TAKE 移花接玉（秘籍） 5
+take 金币 2000000
+ACTCMD CHANGEMAGLVL 月魂灵波 5
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}月魂灵波{FCOLOR/12}已经提升到了5级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有5本{FCOLOR/10}移花接玉（秘籍）{FCOLOR/12}和200W金币.\\
+<关闭/@Exit>
+
+[@月魂灵波3_4]
+#IF
+chkmagiclevel 月魂灵波 3
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 移花接玉（秘籍） 2
+CHECKGOLD 1000000
+#ACT
+TAKE 移花接玉（秘籍） 2
+take 金币 1000000
+ACTCMD CHANGEMAGLVL 月魂灵波 4
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}月魂灵波{FCOLOR/12}已经提升到了4级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有2本{FCOLOR/10}移花接玉（秘籍）{FCOLOR/12}和100W金币.\\
+<关闭/@Exit>
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@灵魂火符]
+#IF
+chkmagiclevel 灵魂火符 5
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}灵魂火符{FCOLOR/12}已经提升到5级,不用再反复提升.
+
+#IF
+chkmagiclevel 灵魂火符 4
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}灵魂火符{FCOLOR/12}技能为4级,如果需要提升到5级需要{FCOLOR/10}云寂术（秘籍）{FCOLOR/12}5本+200W金币.\\
+<我要提升/@灵魂火符4_5>
+
+#IF
+chkmagiclevel 灵魂火符 3
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}灵魂火符{FCOLOR/12}技能为3级,如果需要提升到4级需要{FCOLOR/10}云寂术（秘籍）{FCOLOR/12}2本+100W金币.\\
+<我要提升/@灵魂火符3_4>
+
+#IF
+#say
+你先把{FCOLOR/10}灵魂火符{FCOLOR/12}练到3级再来找我吧.
+
+[@灵魂火符4_5]
+#IF
+chkmagiclevel 灵魂火符 4
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 云寂术（秘籍） 5
+CHECKGOLD 2000000
+#ACT
+TAKE 云寂术（秘籍） 5
+take 金币 2000000
+ACTCMD CHANGEMAGLVL 灵魂火符 5
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}灵魂火符{FCOLOR/12}已经提升到了5级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有5本{FCOLOR/10}云寂术（秘籍）{FCOLOR/12}和200W金币.\\
+<关闭/@Exit>
+
+[@灵魂火符3_4]
+#IF
+chkmagiclevel 灵魂火符 3
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 云寂术（秘籍） 2
+CHECKGOLD 1000000
+#ACT
+TAKE 云寂术（秘籍） 2
+take 金币 1000000
+ACTCMD CHANGEMAGLVL 灵魂火符 4
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}灵魂火符{FCOLOR/12}已经提升到了4级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有2本{FCOLOR/10}云寂术（秘籍）{FCOLOR/12}和100W金币.\\
+<关闭/@Exit>
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@施毒术]
+#IF
+chkmagiclevel 施毒术 5
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}施毒术{FCOLOR/12}已经提升到5级,不用再反复提升.
+
+#IF
+chkmagiclevel 施毒术 4
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}施毒术{FCOLOR/12}技能为4级,如果需要提升到5级需要{FCOLOR/10}云寂术（秘籍）{FCOLOR/12}5本+200W金币.\\
+<我要提升/@施毒术4_5>
+
+#IF
+chkmagiclevel 施毒术 3
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}施毒术{FCOLOR/12}技能为3级,如果需要提升到4级需要{FCOLOR/10} 移花接玉（秘籍）{FCOLOR/12}2本+100W金币.\\
+<我要提升/@施毒术3_4>
+
+#IF
+#say
+你先把{FCOLOR/10}施毒术{FCOLOR/12}练到3级再来找我吧.
+
+[@施毒术4_5]
+#IF
+chkmagiclevel 施毒术 4
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 云寂术（秘籍） 5
+CHECKGOLD 2000000
+#ACT
+TAKE 云寂术（秘籍） 5
+take 金币 2000000
+ACTCMD CHANGEMAGLVL 施毒术 5
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}施毒术{FCOLOR/12}已经提升到了5级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有5本{FCOLOR/10}云寂术（秘籍）{FCOLOR/12}和200W金币.\\
+<关闭/@Exit>
+
+[@施毒术3_4]
+#IF
+chkmagiclevel 施毒术 3
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 移花接玉（秘籍） 2
+CHECKGOLD 1000000
+#ACT
+TAKE 移花接玉（秘籍） 2
+take 金币 1000000
+ACTCMD CHANGEMAGLVL 施毒术 4
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}施毒术{FCOLOR/12}已经提升到了4级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有2本{FCOLOR/10}移花接玉（秘籍）{FCOLOR/12}和100W金币.\\
+<关闭/@Exit>
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@阴阳法环]
+#IF
+chkmagiclevel 阴阳法环 5
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}阴阳法环{FCOLOR/12}已经提升到5级,不用再反复提升.
+
+#IF
+chkmagiclevel 阴阳法环 4
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}阴阳法环{FCOLOR/12}技能为4级,如果需要提升到5级需要{FCOLOR/10}阴阳法环（秘籍）{FCOLOR/12}3本+200W金币.\\
+<我要提升/@阴阳法环4_5>
+
+#IF
+chkmagiclevel 阴阳法环 3
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}阴阳法环{FCOLOR/12}技能为3级,如果需要提升到4级需要{FCOLOR/10}阴阳法环（秘籍）{FCOLOR/12}1本+100W金币.\\
+<我要提升/@阴阳法环3_4>
+
+#IF
+#say
+你先把{FCOLOR/10}阴阳法环{FCOLOR/12}练到3级再来找我吧.
+
+[@阴阳法环4_5]
+#IF
+chkmagiclevel 阴阳法环 4
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 阴阳法环（秘籍） 3
+CHECKGOLD 2000000
+#ACT
+TAKE 阴阳法环（秘籍） 3
+take 金币 2000000
+ACTCMD CHANGEMAGLVL 阴阳法环 5
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}阴阳法环{FCOLOR/12}已经提升到了5级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有3本{FCOLOR/10}阴阳法环（秘籍）{FCOLOR/12}和200W金币.\\
+<关闭/@Exit>
+
+[@阴阳法环3_4]
+#IF
+chkmagiclevel 阴阳法环 3
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 阴阳法环（秘籍） 1
+CHECKGOLD 1000000
+#ACT
+TAKE 阴阳法环（秘籍） 1
+take 金币 1000000
+ACTCMD CHANGEMAGLVL 阴阳法环 4
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}阴阳法环{FCOLOR/12}已经提升到了4级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有1本{FCOLOR/10}阴阳法环（秘籍）{FCOLOR/12}和100W金币.\\
+<关闭/@Exit>
+
+
+[@魔法盾]
+#IF
+chkmagiclevel 魔法盾 5
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}魔法盾{FCOLOR/12}已经提升到5级,不用再反复提升.
+
+#IF
+chkmagiclevel 魔法盾 4
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}魔法盾{FCOLOR/12}技能为4级,如果需要提升到5级需要{FCOLOR/10}修炼技能石{FCOLOR/12}8个+200W金币+{FCOLOR/10}凝血离魂（秘籍）{FCOLOR/12}1本.\\
+<我要提升/@魔法盾4_5>
+
+#IF
+chkmagiclevel 魔法盾 3
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}魔法盾{FCOLOR/12}技能为3级,如果需要提升到4级需要{FCOLOR/10}修炼技能石{FCOLOR/12}3个+100W金币.\\
+<我要提升/@魔法盾3_4>
+
+#IF
+#say
+你先把{FCOLOR/10}魔法盾{FCOLOR/12}练到3级再来找我吧.
+
+[@魔法盾4_5]
+#IF
+chkmagiclevel 魔法盾 4
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 凝血离魂（秘籍） 1
+CHECKITEM 修炼技能石 8
+CHECKGOLD 2000000
+#ACT
+TAKE 修炼技能石 8
+TAKE 凝血离魂（秘籍） 1
+take 金币 2000000
+ACTCMD CHANGEMAGLVL 魔法盾 5
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}魔法盾{FCOLOR/12}已经提升到了5级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有1本{FCOLOR/10}凝血离魂（秘籍）{FCOLOR/12},200W金币和8个修炼技能石.\\
+<关闭/@Exit>
+
+[@魔法盾3_4]
+#IF
+chkmagiclevel 魔法盾 3
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 修炼技能石 3
+CHECKGOLD 1000000
+#ACT
+TAKE 修炼技能石 3
+take 金币 1000000
+ACTCMD CHANGEMAGLVL 魔法盾 4
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}魔法盾{FCOLOR/12}已经提升到了4级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有2本{FCOLOR/10}修炼技能石{FCOLOR/12}3个和100W金币.\\
+<关闭/@Exit>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[@莲月剑法]
+#IF
+chkmagiclevel 莲月剑法 5
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}莲月剑法{FCOLOR/12}已经提升到5级,不用再反复提升.
+
+#IF
+chkmagiclevel 莲月剑法 4
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}莲月剑法{FCOLOR/12}技能为4级,如果需要提升到5级需要{FCOLOR/10}修炼技能石{FCOLOR/12}8个+200W金币+{FCOLOR/10}破血狂杀（秘籍）{FCOLOR/12}1本.\\
+<我要提升/@莲月剑法4_5>
+
+#IF
+chkmagiclevel 莲月剑法 3
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}莲月剑法{FCOLOR/12}技能为3级,如果需要提升到4级需要{FCOLOR/10}修炼技能石{FCOLOR/12}3个+100W金币.\\
+<我要提升/@莲月剑法3_4>
+
+#IF
+#say
+你先把{FCOLOR/10}莲月剑法{FCOLOR/12}练到3级再来找我吧.
+
+[@莲月剑法4_5]
+#IF
+chkmagiclevel 莲月剑法 4
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 破血狂杀（秘籍） 1
+CHECKITEM 修炼技能石 8
+CHECKGOLD 2000000
+#ACT
+TAKE 修炼技能石 8
+TAKE 破血狂杀（秘籍） 1
+take 金币 2000000
+ACTCMD CHANGEMAGLVL 莲月剑法 5
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}莲月剑法{FCOLOR/12}已经提升到了5级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有1本{FCOLOR/10}破血狂杀（秘籍）{FCOLOR/12},200W金币和8个修炼技能石.\\
+<关闭/@Exit>
+
+[@莲月剑法3_4]
+#IF
+chkmagiclevel 莲月剑法 3
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 修炼技能石 3
+CHECKGOLD 1000000
+#ACT
+TAKE 修炼技能石 3
+take 金币 1000000
+ACTCMD CHANGEMAGLVL 莲月剑法 4
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}莲月剑法{FCOLOR/12}已经提升到了4级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有2本{FCOLOR/10}修炼技能石{FCOLOR/12}3个和100W金币.\\
+<关闭/@Exit>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[@妙影无踪]
+#IF
+chkmagiclevel 妙影无踪 5
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}妙影无踪{FCOLOR/12}已经提升到5级,不用再反复提升.
+
+#IF
+chkmagiclevel 妙影无踪 4
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}妙影无踪{FCOLOR/12}技能为4级,如果需要提升到5级需要{FCOLOR/10}修炼技能石{FCOLOR/12}8个+200W金币+{FCOLOR/10}妙影无踪（秘籍）{FCOLOR/12}1本.\\
+<我要提升/@妙影无踪4_5>
+
+#IF
+chkmagiclevel 妙影无踪 3
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}妙影无踪{FCOLOR/12}技能为3级,如果需要提升到4级需要{FCOLOR/10}修炼技能石{FCOLOR/12}3个+100W金币.\\
+<我要提升/@妙影无踪3_4>
+
+#IF
+#say
+你先把{FCOLOR/10}妙影无踪{FCOLOR/12}练到3级再来找我吧.
+
+[@妙影无踪4_5]
+#IF
+chkmagiclevel 妙影无踪 4
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 妙影无踪（秘籍） 1
+CHECKITEM 修炼技能石 8
+CHECKGOLD 2000000
+#ACT
+TAKE 修炼技能石 8
+TAKE 妙影无踪（秘籍） 1
+take 金币 2000000
+ACTCMD CHANGEMAGLVL 妙影无踪 5
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}妙影无踪{FCOLOR/12}已经提升到了5级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有1本{FCOLOR/10}妙影无踪（秘籍）{FCOLOR/12},200W金币和8个修炼技能石.\\
+<关闭/@Exit>
+
+[@妙影无踪3_4]
+#IF
+chkmagiclevel 妙影无踪 3
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 修炼技能石 3
+CHECKGOLD 1000000
+#ACT
+TAKE 修炼技能石 3
+take 金币 1000000
+ACTCMD CHANGEMAGLVL 妙影无踪 4
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}妙影无踪{FCOLOR/12}已经提升到了4级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有2本{FCOLOR/10}修炼技能石{FCOLOR/12}3个和100W金币.\\
+<关闭/@Exit>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[@运气术]
+#IF
+chkmagiclevel 运气术 5
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}运气术{FCOLOR/12}已经提升到5级,不用再反复提升.
+
+#IF
+chkmagiclevel 运气术 4
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}运气术{FCOLOR/12}技能为4级,如果需要提升到5级需要{FCOLOR/10}修炼技能石{FCOLOR/12}18个+200W金币.\\
+<我要提升/@运气术4_5>
+
+#IF
+chkmagiclevel 运气术 3
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}运气术{FCOLOR/12}技能为3级,如果需要提升到4级需要{FCOLOR/10}修炼技能石{FCOLOR/12}8个+100W金币.\\
+<我要提升/@运气术3_4>
+
+#IF
+#say
+你先把{FCOLOR/10}运气术{FCOLOR/12}练到3级再来找我吧.
+
+[@运气术4_5]
+#IF
+chkmagiclevel 运气术 4
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 修炼技能石 18
+CHECKGOLD 2000000
+#ACT
+TAKE 修炼技能石 18
+take 金币 2000000
+ACTCMD CHANGEMAGLVL 运气术 5
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}运气术{FCOLOR/12}已经提升到了5级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有200W金币和18个修炼技能石.\\
+<关闭/@Exit>
+
+[@运气术3_4]
+#IF
+chkmagiclevel 运气术 3
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 修炼技能石 8
+CHECKGOLD 1000000
+#ACT
+TAKE 修炼技能石 8
+take 金币 1000000
+ACTCMD CHANGEMAGLVL 运气术 4
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}运气术{FCOLOR/12}已经提升到了4级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有2本{FCOLOR/10}修炼技能石{FCOLOR/12}8个和100W金币.\\
+<关闭/@Exit>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[@闪电雷鸣]
+#IF
+chkmagiclevel 闪电雷鸣 5
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}闪电雷鸣{FCOLOR/12}已经提升到5级,不用再反复提升.
+
+#IF
+chkmagiclevel 闪电雷鸣 4
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}闪电雷鸣{FCOLOR/12}技能为4级,如果需要提升到5级需要{FCOLOR/10}修炼技能石{FCOLOR/12}18个+200W金币.\\
+<我要提升/@闪电雷鸣4_5>
+
+#IF
+chkmagiclevel 闪电雷鸣 3
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}闪电雷鸣{FCOLOR/12}技能为3级,如果需要提升到4级需要{FCOLOR/10}修炼技能石{FCOLOR/12}8个+100W金币.\\
+<我要提升/@闪电雷鸣3_4>
+
+#IF
+#say
+你先把{FCOLOR/10}闪电雷鸣{FCOLOR/12}练到3级再来找我吧.
+
+[@闪电雷鸣4_5]
+#IF
+chkmagiclevel 闪电雷鸣 4
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 修炼技能石 18
+CHECKGOLD 2000000
+#ACT
+TAKE 修炼技能石 18
+take 金币 2000000
+ACTCMD CHANGEMAGLVL 闪电雷鸣 5
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}闪电雷鸣{FCOLOR/12}已经提升到了5级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有200W金币和18个修炼技能石.\\
+<关闭/@Exit>
+
+[@闪电雷鸣3_4]
+#IF
+chkmagiclevel 闪电雷鸣 3
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 修炼技能石 8
+CHECKGOLD 1000000
+#ACT
+TAKE 修炼技能石 8
+take 金币 1000000
+ACTCMD CHANGEMAGLVL 闪电雷鸣 4
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}闪电雷鸣{FCOLOR/12}已经提升到了4级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有2本{FCOLOR/10}修炼技能石{FCOLOR/12}8个和100W金币.\\
+<关闭/@Exit>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[@吸星大法]
+#IF
+chkmagiclevel 吸星大法 5
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}吸星大法{FCOLOR/12}已经提升到5级,不用再反复提升.
+
+#IF
+chkmagiclevel 吸星大法 4
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}吸星大法{FCOLOR/12}技能为4级,如果需要提升到5级需要{FCOLOR/10}修炼技能石{FCOLOR/12}18个+200W金币.\\
+<我要提升/@吸星大法4_5>
+
+#IF
+chkmagiclevel 吸星大法 3
+#ACT
+BREAK
+#SAY
+你目前的{FCOLOR/10}吸星大法{FCOLOR/12}技能为3级,如果需要提升到4级需要{FCOLOR/10}修炼技能石{FCOLOR/12}8个+100W金币.\\
+<我要提升/@吸星大法3_4>
+
+#IF
+#say
+你先把{FCOLOR/10}吸星大法{FCOLOR/12}练到3级再来找我吧.
+
+[@吸星大法4_5]
+#IF
+chkmagiclevel 吸星大法 4
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 修炼技能石 18
+CHECKGOLD 2000000
+#ACT
+TAKE 修炼技能石 18
+take 金币 2000000
+ACTCMD CHANGEMAGLVL 吸星大法 5
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}吸星大法{FCOLOR/12}已经提升到了5级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有200W金币和18个修炼技能石.\\
+<关闭/@Exit>
+
+[@吸星大法3_4]
+#IF
+chkmagiclevel 吸星大法 3
+#ELSEACT
+BREAK
+
+#IF
+CHECKITEM 修炼技能石 8
+CHECKGOLD 1000000
+#ACT
+TAKE 修炼技能石 8
+take 金币 1000000
+ACTCMD CHANGEMAGLVL 吸星大法 4
+BREAK
+#SAY
+恭喜你,{FCOLOR/10}吸星大法{FCOLOR/12}已经提升到了4级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,包袱里没有2本{FCOLOR/10}修炼技能石{FCOLOR/12}8个和100W金币.\\
+<关闭/@Exit>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+}

@@ -1,0 +1,3 @@
+;;创天网络有限公司原版1.45
+[@main]
+#CALL [\\teleport\KugkyungTele.txt] @Kygkyung_Teleport_West

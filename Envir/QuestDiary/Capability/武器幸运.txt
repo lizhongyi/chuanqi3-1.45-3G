@@ -1,0 +1,217 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@武器幸运_1]
+{
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}武{FCOLOR/4}━{FCOLOR/14}器{FCOLOR/4}━{FCOLOR/14}幸{FCOLOR/4}━{FCOLOR/14}运{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+此功能需要[{FCOLOR/10} 祝福罐 {FCOLOR/12}]  有几率失败. 但是不会加诅咒\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}武{FCOLOR/4}━{FCOLOR/14}器{FCOLOR/4}━{FCOLOR/14}幸{FCOLOR/4}━{FCOLOR/14}运{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_ [ <给武器提升→强度/@tishengqiangdu> ]    [ <给武器提升→幸运/@tishengxinyun> ]\
+_    最大值为{FCOLOR/1}  5 {FCOLOR/12}点          最大值为{FCOLOR/1} 10 {FCOLOR/12}点\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}武{FCOLOR/4}━{FCOLOR/14}器{FCOLOR/4}━{FCOLOR/14}幸{FCOLOR/4}━{FCOLOR/14}运{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_  [ <快速提升→强度/@tishengqiangdu_5> ]      [ <快速提升→幸运/@tishengxinyun_10> ]\
+_    自动运行{FCOLOR/1}  5 {FCOLOR/12}次          自动运行{FCOLOR/1} 10 {FCOLOR/12}次\
+
+[@tishengqiangdu_5]
+#ACT
+mov D0 5
+GOTO @tishengqiangdu_501
+
+[@tishengqiangdu_501]
+#IF
+EQUAL D0 0
+#ACT
+break
+
+#IF
+Elarge D0 1
+#act
+Dec D0 1
+GOTO @tishengqiangdu
+Delaygoto [local] 1 @tishengqiangdu_501
+break
+
+[@tishengxinyun_10]
+#ACT
+mov D0 10
+GOTO @tishengqiangdu_1001
+
+[@tishengqiangdu_1001]
+#IF
+EQUAL D0 0
+#ACT
+break
+
+#IF
+Elarge D0 1
+#act
+Dec D0 1
+GOTO @tishengxinyun
+Delaygoto [local] 1 @tishengqiangdu_1001
+break
+
+[@tishengqiangdu]
+#IF
+!checkcmd CHECKITEMINFO 1 0       ;;;检测是否带装备
+#ACT
+Close
+mov D0 0
+SysMsg  "温馨提示: 您的[ 武器 ]位置没有佩带任何装备"
+break
+
+#IF
+CHECKITEMINFO 1
+Elarge FLD_DESC7 5
+#ACT
+Close
+mov D0 0
+sysmsg "系统提示: 您的武器强度已达到极限"
+#ELSEACT
+GOTO @zhufuguanzi_qiangdu
+
+[@zhufuguanzi_qiangdu]
+#IF
+checkitem 祝福罐 1
+#act
+Close
+take 祝福罐 1
+goto @zhufuguanzi_qiangdu_2
+#elseact
+Close
+mov D0 0
+sysmsg "系统提示: 您的包裹内没有祝福罐"
+
+[@zhufuguanzi_qiangdu_2]
+#IF
+CHECKITEMINFO 1
+EQUAL FLD_DESC7 4
+#ACT
+movr D8 6
+GOTO @zhufuqiangdu_1
+BREAK
+
+#IF
+CHECKITEMINFO 1
+EQUAL FLD_DESC7 3
+#ACT
+movr D8 4
+GOTO @zhufuqiangdu_1
+BREAK
+
+#IF
+CHECKITEMINFO 1
+Esmall FLD_DESC7 2
+#ACT
+ACTCMD EDITITEM FLD_DESC7 + 1
+SysMsg "您的武器强度提升了"
+BREAK
+
+[@zhufuqiangdu_1]
+#IF
+CHECKITEMINFO 1
+EQUAL D8 1
+#ACT
+ACTCMD EDITITEM FLD_DESC7 + 1
+SysMsg "您的武器强度提升了"
+#elseact
+SysMsg "您的武器强度没有得到提升.但是不会减退"
+
+[@tishengxinyun]
+#IF
+!checkcmd CHECKITEMINFO 1 0       ;;;检测是否带装备
+#ACT
+Close
+mov D0 0
+SysMsg  "温馨提示: 您的[ 武器 ]位置没有佩带任何装备"
+break
+
+#IF
+CHECKITEMINFO 1
+Elarge FLD_DESC3 10
+#ACT
+Close
+mov D0 0
+sysmsg "系统提示: 您的武器幸运已达到极限"
+#ELSEACT
+GOTO @zhufuguanzi_88
+
+[@zhufuguanzi_88]
+#IF
+checkitem 祝福罐 1
+#act
+Close
+take 祝福罐 1
+goto @zhufuguanzi_2
+#elseact
+Close
+mov D0 0
+sysmsg "系统提示: 您的包裹内没有祝福罐"
+
+[@zhufuguanzi_2]
+#IF
+CHECKITEMINFO 1
+Elarge FLD_DESC3 8
+#ACT
+movr D8 9
+GOTO @zhufu_1
+BREAK
+
+#IF
+CHECKITEMINFO 1
+EQUAL FLD_DESC3 7
+#ACT
+movr D8 8
+GOTO @zhufu_1
+BREAK
+
+#IF
+CHECKITEMINFO 1
+EQUAL FLD_DESC3 6
+#ACT
+movr D8 7
+GOTO @zhufu_1
+BREAK
+
+#IF
+CHECKITEMINFO 1
+EQUAL FLD_DESC3 5
+#ACT
+movr D8 5
+GOTO @zhufu_1
+BREAK
+
+#IF
+CHECKITEMINFO 1
+EQUAL FLD_DESC3 4
+#ACT
+movr D8 4
+GOTO @zhufu_1
+BREAK
+
+#IF
+CHECKITEMINFO 1
+EQUAL FLD_DESC3 3
+#ACT
+movr D8 3
+GOTO @zhufu_1
+BREAK
+
+#IF
+CHECKITEMINFO 1
+Esmall FLD_DESC3 2
+#ACT
+ACTCMD EDITITEM FLD_DESC3 + 1
+SysMsg "您的武器得到了祝福"
+BREAK
+
+[@zhufu_1]
+#IF
+CHECKITEMINFO 1
+EQUAL D8 1
+#ACT
+ACTCMD EDITITEM FLD_DESC3 + 1
+SysMsg "您的武器得到了祝福"
+#elseact
+SysMsg "您的武器没有得祝福.但是您放心.武器不会诅咒"
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

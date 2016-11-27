@@ -1,0 +1,44 @@
+;;创天网络有限公司原版1.45
+[@MapQuest_Upac_Recall1]
+#IF
+checkjob warrior
+#ACT
+break
+;
+#IF
+checkjob wizard
+#ACT
+break
+;
+#IF
+check [049] 1
+#ACT
+break
+;
+#IF
+checkhum D400_001 1
+#ACT
+break
+;
+#IF
+check [048] 1
+#ACT
+goto @MapQuest_Upac_Recall1_1
+break
+#ELSEACT
+break
+
+[@MapQuest_Upac_Recall1_1]
+#IF
+random 20
+#ACT
+goto @jiancrs_sszj
+#ELSEACT
+break
+
+[@jiancrs_sszj]
+#ACT
+give 神圣战甲术 1
+TimeRecall 5
+map D400_001
+break

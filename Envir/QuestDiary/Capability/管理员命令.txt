@@ -1,0 +1,102 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@管理员命令_1]
+{
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}后{FCOLOR/4}━{FCOLOR/14}台{FCOLOR/4}━{FCOLOR/14}命{FCOLOR/4}━{FCOLOR/14}令{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <攻城准备阶段/@攻城准备阶段> ] [ <攻城开始阶段/@攻城开始阶段> ] [ <攻城结束阶段/@攻城结束阶段> ]\\
+{FCOLOR/12}[ <查看行会列表/@查看行会列表> ] [ <重读眼前 NPC/@重读眼前NPC> ] [ <重读Ｄ键菜单/@重读Ｄ键菜单> ]\\
+{FCOLOR/12}[ <重读 NPC列表/@重读NPC列表> ] [ <重新读管理员/@重新读管理员> ] [ <重读怪物爆率/@重读怪物爆率> ]\\
+{FCOLOR/12}[ <重读地图触发/@重读地图触发> ] [ <重读行会信息/@重读行会信息> ] [ <重新游戏公告/@重新游戏公告> ]\\
+{FCOLOR/12}[ <设置隐身模式/@设置隐身模式> ] [ <设置超级模式/@设置超级模式> ] [ <设置无敌模式/@设置无敌模式> ]\\
+
+[@攻城准备阶段]
+#ACT
+actcmd SENDUSERSAY "@READYCASTLEWAR"
+SYSMSG "系统信息：[ 攻城准备阶段 ]已读取"
+Close
+
+[@攻城开始阶段]
+#ACT
+actcmd SENDUSERSAY "@STARTCASTLEWAR"
+SYSMSG "系统信息：[ 攻城开始阶段 ]已读取"
+Close
+
+[@攻城结束阶段]
+#ACT
+actcmd SENDUSERSAY "@FINISHCASTLEWAR"
+SYSMSG "系统信息：[ 攻城结束阶段 ]已读取"
+Close
+
+[@查看行会列表]
+#ACT
+actcmd SENDUSERSAY "@AllGuilds"
+SYSMSG "系统信息：[ 查看行会列表 ]已读取"
+Close
+
+[@重读眼前NPC]
+#ACT
+actcmd SENDUSERSAY "@ReloadNpc"
+SYSMSG "系统信息：[ 重读眼前NPC ]已读取"
+Close
+
+[@重读Ｄ键菜单]
+#ACT
+actcmd SENDUSERSAY "@ReloadDefaultNpc"
+SYSMSG "系统信息：[ 重读Ｄ键菜单 ]已读取"
+Close
+
+[@重读NPC列表]
+#ACTactcmd SENDUSERSAY "@ReloadNpc map"
+SYSMSG "系统信息：[ 重读NPC列表 ]已读取"
+Close
+
+[@重新读管理员]
+#ACT
+actcmd SENDUSERSAY "@ReloadAdmin"
+SYSMSG "系统信息：[ 重新读管理员 ]已读取"
+Close
+
+[@重读怪物爆率]
+#ACT
+actcmd SENDUSERSAY "@ReloadMonItems"
+SYSMSG "系统信息：[ 重读怪物爆率 ]已读取"
+Close
+
+[@重读地图触发]
+#ACT
+actcmd SENDUSERSAY "@Reloadmapquest all"
+SYSMSG "系统信息：[ 重读地图触发 ]已读取"
+Close
+
+[@重读行会信息]
+#ACT
+actcmd SENDUSERSAY "@reloadguildall"
+SYSMSG "系统信息：[ 重读行会信息 ]已读取"
+Close
+
+[@重新游戏公告]
+#ACT
+actcmd SENDUSERSAY "@ReloadLineNotice"
+SYSMSG "系统信息：[ 重新游戏公告 ]已读取"
+Close
+
+[@设置隐身模式]
+#ACT
+actcmd SENDUSERSAY "@监督人"
+SYSMSG "系统信息：[ 设置隐身模式 ]已读取"
+Close
+
+[@设置超级模式]
+#ACT
+actcmd SENDUSERSAY "@SUPER"
+SYSMSG "系统信息：[ 设置超级模式 ]已读取"
+Close
+
+[@设置无敌模式]
+#ACT
+actcmd SENDUSERSAY "@无敌"
+SYSMSG "系统信息：[ 设置无敌模式 ]已读取"
+Close
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

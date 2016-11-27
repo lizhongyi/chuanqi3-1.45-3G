@@ -1,0 +1,369 @@
+;;www.k3soft.net===
+[@READBOOKMAIN]
+{
+#IF
+#ACT
+mov 魔法名 %ARG(1)
+mov 魔法ID %ARG(2)
+
+#IF
+Elarge 魔法ID 125
+#ACT
+goto @HighlvlMagic
+break
+
+#IF
+EQUAL 魔法ID 112
+chkmagiclevel 焚魂魔功 0
+#ACT
+sysmsg "无法学习,您已经修炼该魔法的进阶魔法" 1
+mov P9 0
+break
+
+#IF
+EQUAL 魔法ID 31
+chkmagiclevel 魔光盾 0
+#ACT
+sysmsg "无法学习,您已经修炼该魔法的进阶魔法" 1
+mov P9 0
+break
+
+#IF
+EQUAL 魔法ID 103
+chkmagiclevel 旋风斩 0
+#ACT
+sysmsg "无法学习,您已经修炼该魔法的进阶魔法" 1
+mov P9 0
+break
+
+#IF
+EQUAL 魔法ID 109
+chkmagiclevel 君临步 0
+#ACT
+sysmsg "无法学习,您已经修炼该魔法的进阶魔法" 1
+mov P9 0
+break
+
+#IF
+EQUAL 魔法ID 34
+chkmagiclevel 屠龙斩 0
+#ACT
+sysmsg "无法学习,您已经修炼该魔法的进阶魔法" 1
+mov P9 0
+break
+
+#IF
+EQUAL 魔法ID 14
+chkmagiclevel 神灵守护 0
+#ACT
+sysmsg "无法学习,您已经修炼该魔法的进阶魔法" 1
+mov P9 0
+break
+
+#IF
+EQUAL 魔法ID 19
+chkmagiclevel 隐魂术 0
+#ACT
+sysmsg "无法学习,您已经修炼该魔法的进阶魔法" 1
+mov P9 0
+break
+
+#IF
+EQUAL 魔法ID 37
+chkmagiclevel 月明波 0
+#ACT
+sysmsg "无法学习,您已经修炼该魔法的进阶魔法" 1
+mov P9 0
+break
+
+#IF
+#ACT
+mov P9 %魔法ID
+break
+
+;;;;;;;;;;;;;;;;;;;;防止学习已删的魔法;;;;;;;;;;;;;;;;;;;;;
+[@HighlvlMagic]
+#IF
+checkjob warrior
+#ACT
+goto @ReadBooKWar
+break
+
+
+#IF
+checkjob wizard
+#ACT
+goto @ReadBookWiz
+break
+#ELSEACT
+goto @ReadBookTao
+break
+
+
+[@ReadBooKWar]
+#IF
+EQUAL 魔法ID 152
+chkmagiclevel 莲月剑法 3
+#ACT
+actcmd delmag 莲月剑法
+mov P9 %魔法ID
+break
+
+#IF
+EQUAL 魔法ID 144
+chkmagiclevel  狂暴冲撞 3
+#ACT
+actcmd delmag 狂暴冲撞
+mov P9 %魔法ID
+break
+
+#IF
+EQUAL 魔法ID 143
+chkmagiclevel  十方斩 3
+#ACT
+actcmd delmag 十方斩
+mov P9 %魔法ID
+break
+
+#IF
+EQUAL 魔法ID 152
+#ACT
+sysmsg "[莲月剑法]没有达到3级,无法修炼进阶技能" 1
+mov P9 0
+break
+
+#IF
+EQUAL 魔法ID 144
+#ACT
+sysmsg "[狂暴冲撞]没有达到3级,无法修炼进阶技能" 1
+mov P9 0
+break
+
+#IF
+EQUAL 魔法ID 143
+#ACT
+sysmsg "[十方斩]没有达到3级,无法修炼进阶技能" 1
+mov P9 0
+break
+
+#IF
+#ACT
+mov P9 %魔法ID
+break
+
+
+[@ReadBookWiz]
+#IF
+EQUAL 魔法ID 151
+chkmagiclevel 火墙 3
+chkmagiclevel 旋风墙 3
+#ACT
+mov P9 %魔法ID
+break
+
+#IF
+EQUAL 魔法ID 151
+#ACT
+sysmsg "修炼本技能需要[火墙][旋风墙]魔法全部达到3级" 1
+mov P9 0
+break
+
+#IF
+EQUAL 魔法ID 150
+chkmagiclevel 爆裂火焰 3
+#ACT
+mov P9 %魔法ID
+break
+
+#IF
+EQUAL 魔法ID 150
+chkmagiclevel 地狱雷光 3
+#ACT
+mov P9 %魔法ID
+break
+
+#IF
+EQUAL 魔法ID 150
+chkmagiclevel 冰咆哮 3
+#ACT
+mov P9 %魔法ID
+break
+
+#IF
+EQUAL 魔法ID 150
+chkmagiclevel 龙卷风 3
+#ACT
+mov P9 %魔法ID
+break
+
+#IF
+EQUAL 魔法ID 150
+#ACT
+sysmsg "修炼本技能需要[爆裂火焰][地狱雷光][冰咆哮][龙卷风]任意一个魔法达到3级" 1
+mov P9 0
+break
+
+
+#IF
+EQUAL 魔法ID 139
+chkmagiclevel 地狱火 3
+#ACT
+mov P9 %魔法ID
+break
+
+#IF
+EQUAL 魔法ID 139
+chkmagiclevel 疾光电影 3
+#ACT
+mov P9 %魔法ID
+break
+
+#IF
+EQUAL 魔法ID 139
+chkmagiclevel 冰沙掌 3
+#ACT
+mov P9 %魔法ID
+break
+
+#IF
+EQUAL 魔法ID 139
+chkmagiclevel 风震天 3
+#ACT
+mov P9 %魔法ID
+break
+
+
+
+#IF
+EQUAL 魔法ID 139
+#ACT
+sysmsg "修炼本技能需要[地狱火][疾光电影][冰沙掌][风震天]任意一个魔法达到3级" 1
+mov P9 0
+break
+
+#IF
+EQUAL 魔法ID 138
+chkmagiclevel 大火球 3
+#ACT
+mov P9 %魔法ID
+break
+
+#IF
+EQUAL 魔法ID 138
+chkmagiclevel 雷电术 3
+#ACT
+mov P9 %魔法ID
+break
+
+#IF
+EQUAL 魔法ID 138
+chkmagiclevel 冰月震天 3
+#ACT
+mov P9 %魔法ID
+break
+
+#IF
+EQUAL 魔法ID 138
+chkmagiclevel 击风 3
+#ACT
+mov P9 %魔法ID
+break
+
+#IF
+EQUAL 魔法ID 138
+#ACT
+sysmsg "修炼本技能需要[大火球][雷电术][冰月震天][击风]任意一个魔法达到3级" 1
+mov P9 0
+break
+
+
+#IF
+EQUAL 魔法ID 146
+chkmagiclevel 凝血离魂 3
+#ACT
+actcmd delmag 凝血离魂
+mov P9 %魔法ID
+break
+
+#IF
+EQUAL 魔法ID 146
+#ACT
+sysmsg "[凝血离魂]没有达到3级,无法修炼进阶技能" 1
+mov P9 0
+break
+
+#IF
+EQUAL 魔法ID 145
+chkmagiclevel 魔法盾 3
+#ACT
+actcmd delmag 魔法盾
+mov P9 %魔法ID
+break
+
+#IF
+EQUAL 魔法ID 145
+#ACT
+sysmsg "[魔法盾]没有达到3级,无法修炼进阶技能" 1
+mov P9 0
+break
+
+#IF
+#ACT
+mov P9 %魔法ID
+break
+
+[@ReadBookTao]
+#IF
+EQUAL 魔法ID 147
+chkmagiclevel 幽灵盾 3
+chkmagiclevel 神圣战甲术 3
+#ACT
+actcmd delmag 幽灵盾
+mov P9 %魔法ID
+break
+
+#IF
+EQUAL 魔法ID 147
+#ACT
+sysmsg "修炼本技能需要[幽灵盾][神圣战甲术]魔法全部达到3级" 1
+mov P9 0
+break
+
+#IF
+EQUAL 魔法ID 148
+chkmagiclevel 集体隐身术 3
+chkmagiclevel 妙影无踪 3
+#ACT
+actcmd delmag 集体隐身术
+mov P9 %魔法ID
+break
+
+#IF
+EQUAL 魔法ID 148
+#ACT
+sysmsg "修炼本技能需要[集体隐身术][妙影无踪]魔法全部达到3级" 1
+mov P9 0
+break
+
+#IF
+EQUAL 魔法ID 149
+chkmagiclevel 月魂断玉 3
+chkmagiclevel 月魂灵波 3
+#ACT
+actcmd delmag 月魂断玉
+mov P9 %魔法ID
+break
+
+#IF
+EQUAL 魔法ID 149
+#ACT
+sysmsg "修炼本技能需要[月魂断玉][月魂灵波]魔法全部达到3级" 1
+mov P9 0
+break
+
+#IF
+#ACT
+mov P9 %魔法ID
+break
+}
+;;www.k3soft.net===

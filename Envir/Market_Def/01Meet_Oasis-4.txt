@@ -1,0 +1,31 @@
+;;创天网络有限公司原版1.45
+%100
++40
++1
+
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+我不愿意和你这种带有血腥味道的人进行交易。\ \
+ <结束/@exit>
+#ELSESAY
+欢迎光临，有什么事吗？\ \
+<卖/@sell> 肉\
+<结束/@exit>
+
+[@buy]
+#SAY
+请挑选你想要的商品。\ \
+  <前一步/@main>
+
+[@sell]
+#SAY
+我想买品质好的肉。\
+我愿意多付钱。\ \
+  <前一步/@main>
+
+[Goods]
+;ItemName      Volume     Hour
+
+

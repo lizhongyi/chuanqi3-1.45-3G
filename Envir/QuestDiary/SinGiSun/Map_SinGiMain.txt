@@ -1,0 +1,80 @@
+;;--------------------------;;购买请联系鱼的眼泪,QQ:16487549
+[@ExitSinGiSun_1]
+{
+#IF
+!Checklevel 33
+#ACT
+goto @ExitSinGiSun_Normal
+break
+
+#IF
+check [067] 1
+#ACT
+goto @ExitSinGiSun_Normal
+break
+
+#IF
+check [066] 1
+#ACT
+goto @ExitSinGiSun_Normal
+break
+
+#IF
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+ReadValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINUSERNAME" [@ExitSinGiSun_1_0]
+
+[@ExitSinGiSun_1_0()]
+#ACT
+mov A9 %ARG(1)
+
+#IF
+Equal A9 ""
+#ACT
+FormatStr "'%s',%s,%s" %USERNAME 1 0
+mov A8 %A9
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+WriteValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINUSERNAME,FLD_SINMAINSTEP,FLD_SINSTEP_READY" %A8
+set [066] 1
+set [067] 0
+set [065] 1
+goto @ExitSinGiSun_Normal
+break
+
+#IF
+#ACT
+goto @ExitSinGiSun_Normal
+break
+
+[@ExitSinGiSun_Normal]
+#SAY
+（这扇门什么时候出现的?）\\
+<进去看看./@singi_data>\
+<察看神舰的其他部分./@exit>
+
+
+[@singi_data]
+#ACT
+enter_fail
+RepairItem 3
+RepairItem 5
+RepairItem 6
+RepairItem 7
+RepairItem 8
+mapmove 4 437 76
+}
+
+[@SinGiking_1]
+{
+#IF
+checkitem 连环明珠 1
+#ACT
+take 连环明珠 1
+enter_ok
+#ELSESAY
+（被困魔石挡住了,进不去……）\ \
+<关 闭/@exit>
+#ELSEACT
+enter_fail
+}
+;;-;;购买请联系鱼的眼泪,QQ:16487549

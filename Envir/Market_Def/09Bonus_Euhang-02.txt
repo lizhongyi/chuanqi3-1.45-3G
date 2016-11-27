@@ -1,0 +1,371 @@
+;;王者传奇3 www.mir3w.com
+[@main]
+#IF
+CheckBonus
+#SAY
+练到40级后，每升一级，就给一次强化机会。你要强化哪种能力？\
+强化的能力，除非喝特殊药水，不会轻易消失。每升一级只给一次强化机会，要慎重啊。\
+{FCOLOR/10}您已经加点<$OUTPUT(USERADDBONUSCOUNT)>次{FOCLOR/12}\\
+<体力/@ChangeType(HP,12,20,8,体力)> , <法力/@ChangeType(MP,15,31,12,法力)> \
+<破坏/@ChangeType(DC,1,2,2,破坏力)> , <自然系魔法/@ChangeType(MC,1,2,2,自然系法力)> , <灵魂系魔法/@ChangeType(SC,1,2,2,灵魂系法力)> \
+<防御/@ChangeType(AC,1,2,2,防御力)> , <魔法防御力/@ChangeType(MAC,1,2,2,魔法防御力)>\
+<攻击元素/@ChangeType(ATOM)>\\
+
+_<使用金币快速添加能力值。/@LevelUpOneBonus> （每次 10万金币）\
+
+<取消。/@exit>\
+#ELSESAY
+你还没具备强化能力的条件。练到40级后，每升一级，就会给一次强化机会。\\
+<关 闭/@exit>
+
+;体力应该是  12+random(8)   20+random(8)
+;魔法力      15+random(12)  31+random(12)
+;攻击和防御  1+random(2)    2+random(2)
+;最多5种元素 1+random(2)    1+random(3)
+
+[@LevelUpOneBonus]
+#IF
+CheckBonus
+checkgold 100000
+#ACT
+take 金币 100000
+#SAY
+练到40级后，每升一级，就给一次强化机会。你要强化哪种能力？\
+强化的能力，除非喝特殊药水，不会轻易消失。每升一级只给一次强化机会，要慎重啊。\
+{FCOLOR/10}您已经加点<$OUTPUT(USERADDBONUSCOUNT)>次{FOCLOR/12}\\
+<体力/@ChangeType1(HP)> , <法力/@ChangeType1(MP)> \
+<破坏/@ChangeType1(DC)> , <自然系魔法/@ChangeType1(MC)> , <灵魂系魔法/@ChangeType1(SC)> \
+<防御/@ChangeType1(AC)> , <魔法防御力/@ChangeType1(MAC)>\
+<攻击元素/@ChangeType1(ATOM)>\ \
+#ELSESAY
+你还没具备强化能力的条件。练到40级后，每升一级，就会给一次强化机会。\ \
+<关 闭/@exit>
+
+
+[@ChangeType1()]
+#ACT
+mov A0 %ARG(1)
+
+#IF
+CheckBonus
+#SAY
+请输入你要加的附加点数的次数:\\
+<输入/@@intop>\
+
+
+[@@intop]
+#ACT
+mov D5 %INPUTNUM
+#SAY
+您要加<$OUTPUT(A0)>的次数为<$OUTPUT(D5)>.\\
+<确定/@addming>\
+<重新输入/@@intop>
+
+
+[@addming]
+#IF
+CheckBonus
+#ACT
+goto @FastADDBonus
+
+#IF
+Large D5 1
+#ACT
+DEC D5 1
+Delaygoto [Local] 1 @addming
+#ELSEACT
+break
+
+
+[@FastADDBonus]
+#IF
+EQUAL A0  "HP"
+#ACT
+goto "@ChangeType(HP,12,20,8,体力)"
+
+#IF
+EQUAL A0  "MP"
+#ACT
+goto "@ChangeType(MP,15,31,12,法力)"
+
+#IF
+EQUAL A0  "DC"
+#ACT
+goto "@ChangeType(DC,1,2,2,破坏力)"
+
+#IF
+EQUAL A0  "SC"
+#ACT
+goto "@ChangeType(SC,1,2,2,灵魂系法力)"
+
+#IF
+EQUAL A0  "MC"
+#ACT
+goto "@ChangeType(MC,1,2,2,自然系法力)"
+
+
+#IF
+EQUAL A0  "AC"
+#ACT
+goto "@ChangeType(AC,1,2,2,防御力)"
+
+#IF
+EQUAL A0  "MAC"
+#ACT
+goto "@ChangeType(MAC,1,2,2,魔法防御力)"
+
+#IF
+EQUAL A0  "ATOM"
+#ACT
+goto "@ChangeType(ATOM)"
+
+
+
+[@ChangeType()]
+#ACT
+mov A0 %ARG(1)
+mov 加点值 %ARG(2)  ;;40级 基数
+mov D1 %ARG(3)  ;;50级 基数
+mov D2 %ARG(4)  ;;随机数
+mov A1 %ARG(5)  ;;类型
+close
+
+#IF
+Checklevel 40
+#ACT
+mov D3 %P9
+mov D4 %USERADDBONUSCOUNT
+#ELSEACT
+break
+#ELSESAY
+你还没具备强化能力的条件。练到40级后，每升一级，就会给一次强化机会。\\
+<关 闭/@exit>
+
+
+#IF
+!EQUAL D4 0
+#ACT
+dec D3 %D4
+dec D3 39
+#ELSEACT
+dec D3 39
+
+
+
+#IF
+Large D3 0
+#ELSEACT
+break
+#ELSESAY
+你还没具备强化能力的条件。练到40级后，每升一级，就会给一次强化机会。\\
+<关 闭/@exit>
+
+#IF
+#ACT
+actcmd TAKEBONUSEX [INC]
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 50级以上普通点数
+
+#IF
+#ACT
+movr D4 %D2
+
+#IF
+!EQUAL D4 0
+!EQUAL A0 "ATOM"
+Elarge USERADDBONUSCOUNT 10
+#ACT
+inc D1 %D4
+actcmd TAKEBONUSEX %A0 %D1
+formatstr "%s上升%s。" %A1 %D1
+sysmsg "<$OUTPUT(A9)>"
+break
+
+#IF
+EQUAL D4 0
+!EQUAL A0 "ATOM"
+Elarge USERADDBONUSCOUNT 10
+#ACT
+actcmd TAKEBONUSEX %A0 %D1
+formatstr "%s上升%s。" %A1 %D1
+sysmsg "<$OUTPUT(A9)>"
+break
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; 50级以下普通点数 
+
+#IF
+!EQUAL D4 0
+!EQUAL A0 "ATOM"
+eSmall USERADDBONUSCOUNT 10
+#ACT
+inc 加点值 %D4
+actcmd TAKEBONUSEX %A0 %加点值
+formatstr "%s上升%s。" %A1 %加点值
+sysmsg "<$OUTPUT(A9)>"
+break
+
+#IF
+EQUAL D4 0
+!EQUAL A0 "ATOM"
+eSmall USERADDBONUSCOUNT 10
+#ACT
+actcmd TAKEBONUSEX %A0 %加点值
+formatstr "%s上升%s。" %A1 %加点值
+sysmsg "<$OUTPUT(A9)>"
+break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  元素
+
+#IF
+#ACT
+movr D6 5
+inc D6 1   ;;元素种类数量
+mov 元素1 0
+mov 元素2 0
+mov 元素3 0
+mov 元素4 0
+mov 元素5 0
+mov 元素6 0
+mov 元素7 0
+
+
+#IF
+LARGE D6 0
+#ACT
+dec D6 1
+movr D7 7
+inc D7 1
+goto @ATOMDECIDE
+
+#IF
+LARGE D6 0
+#ACT
+dec D6 1
+movr D7 7
+inc D7 1
+goto @ATOMDECIDE
+
+
+#IF
+LARGE D6 0
+#ACT
+dec D6 1
+movr D7 7
+inc D7 1
+goto @ATOMDECIDE
+
+#IF
+LARGE D6 0
+#ACT
+dec D6 1
+movr D7 7
+inc D7 1
+goto @ATOMDECIDE
+
+
+#IF
+Elarge USERADDBONUSCOUNT 10
+#ACT
+mov D3 3 ;; 0 1 2
+#ELSEACT  
+mov D3 2 ;; 0 1 
+
+#IF
+EQUAL 元素1 1
+#ACT
+movr D8 %D3
+inc D8 1
+actcmd TAKEBONUSEX AM1 %D8
+formatstr "火属性攻击元素上升%s。" %D8
+sysmsg "<$OUTPUT(A9)>"
+
+#IF
+EQUAL 元素2 1
+#ACT
+movr D8 %D3
+inc D8 1
+actcmd TAKEBONUSEX AM2 %D8
+formatstr "冰属性攻击元素上升%s。" %D8
+sysmsg "<$OUTPUT(A9)>"
+
+#IF
+EQUAL 元素3 1
+#ACT
+movr D8 %D3
+inc D8 1
+actcmd TAKEBONUSEX AM3 %D8
+formatstr "雷属性攻击元素上升%s。" %D8
+sysmsg "<$OUTPUT(A9)>"
+
+#IF
+EQUAL 元素4 1
+#ACT
+movr D8 %D3
+inc D8 1
+actcmd TAKEBONUSEX AM4 %D8
+formatstr "风属性攻击元素上升%s。" %D8
+sysmsg "<$OUTPUT(A9)>"
+
+#IF
+EQUAL 元素5 1
+#ACT
+movr D8 %D3
+inc D8 1
+actcmd TAKEBONUSEX AM5 %D8
+formatstr "神圣属性攻击元素上升%s。" %D8
+sysmsg "<$OUTPUT(A9)>"
+
+#IF
+EQUAL 元素6 1
+#ACT
+movr D8 %D3
+inc D8 1
+actcmd TAKEBONUSEX AM6 %D8
+formatstr "暗黑属性攻击元素上升%s。" %D8
+sysmsg "<$OUTPUT(A9)>"
+
+#IF
+EQUAL 元素7 1
+#ACT
+movr D8 %D3
+inc D8 1
+actcmd TAKEBONUSEX AM7 %D8
+formatstr "幻影属性攻击元素上升%s。" %D8
+sysmsg "<$OUTPUT(A9)>"
+
+
+[@ATOMDECIDE]
+#IF
+EQUAL D7 1
+#ACT
+mov 元素1 1
+
+#IF
+EQUAL D7 2
+#ACT
+mov 元素2 1
+
+#IF
+EQUAL D7 3
+#ACT
+mov 元素3 1
+
+#IF
+EQUAL D7 4
+#ACT
+mov 元素4 1
+
+#IF
+EQUAL D7 5
+#ACT
+mov 元素5 1
+
+#IF
+EQUAL D7 6
+#ACT
+mov 元素6 1
+
+#IF
+EQUAL D7 7
+#ACT
+mov 元素7 1

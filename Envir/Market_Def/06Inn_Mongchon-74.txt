@@ -1,0 +1,27 @@
+;;创天网络有限公司原版1.45
+%100
+
+[@main]
+#IF
+#SAY
+欢迎光临，这位客官，你把行李交给我，歇歇脚再走吧。\ \
+<寄存/@storage>物品\
+<取回/@PreGetback>寄存的物品\
+<仓库 密码 管理/@StgPassword>\
+<结束/@exit>
+
+[@StgPassword]
+#CALL [\PassWord\PassWord.txt] @Manage_PassWord
+
+[@PreGetback]
+#CALL [\PassWord\PassWord.txt] @Input_PassWord
+
+[@storage]
+#SAY
+你把东西存在这儿尽管放心。\ \
+<前一步/@main>
+
+[@getback]
+#SAY
+你来取寄存的东西？你存的是什么东西？ \ \
+<前一步/@main>

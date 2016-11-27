@@ -1,0 +1,73 @@
+;;
+[@ExitWestDesert_1]
+{
+#IF
+check [494] 1
+#ACT
+goto @ExitWestDesert_Normal
+break
+
+#IF
+check [493] 1
+#ACT
+goto @ExitWestDesert_Normal
+break
+
+#IF
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+ReadValueSql "TBL_WestDesertQuest" %A9 "FLD_SINUSERNAME" [@ExitWestDesert_1_0]
+
+[@ExitWestDesert_1_0()]
+#ACT
+mov A9 %ARG(1)
+
+#IF
+Equal A9 ""
+#ACT
+FormatStr "'%s',%s,%s" %USERNAME 1 0
+mov A8 %A9
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+WriteValueSql "TBL_WestDesertQuest" %A9 "FLD_SINUSERNAME,FLD_SINMAINSTEP,FLD_SINSTEP_READY" %A8
+set [493] 1
+set [494] 0
+goto @ExitWestDesert_Normal
+break
+
+#IF
+#ACT
+goto @ExitWestDesert_Normal
+break
+
+[@ExitWestDesert_Normal]
+#SAY
+（这扇门什么时候出现的？??）\\
+<进去看看。/@WestDesert_data>\
+<察看地宫的其他部分。/@exit>
+
+[@WestDesert_data]
+#ACT
+enter_fail
+RepairItem 3
+RepairItem 5
+RepairItem 6
+RepairItem 7
+RepairItem 8
+mapmove 4 437 76
+}
+
+[@WestDesertking_1]
+{
+
+#IF
+checkitem 地洞之眼 1
+#ACT
+take 地洞之眼 1
+enter_ok
+#ELSESAY
+（被困魔石挡住了，进不去……）\\
+<关 闭/@exit>
+#ELSEACT
+enter_fail
+}
+;;

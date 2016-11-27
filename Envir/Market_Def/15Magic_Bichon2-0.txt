@@ -1,0 +1,132 @@
+;;创天网络有限公司原版1.45
+[@main]
+#ACT
+LOADVALUE D0 "ParamControl\主线任务.txt" %USERNAME 进度
+LOADVALUE D1 "ParamControl\主线任务.txt" %USERNAME 鉴定
+
+#IF
+Equal D0 1
+Equal D1 0
+CheckJob Wizard
+#ACT
+SAVEVALUE "ParamControl\主线任务.txt" %USERNAME 鉴定 1
+BREAK
+#SAY
+{FCOLOR/1}我专门提供给法师鉴定技能,祝你好运哦.{FCOLOR/12}\\
+<回新人指导员/@回指导员>
+
+#IF
+checkpkpoint 2
+#SAY
+跟你这种人我无话可说。\
+<结束/@exit>
+#ELSESAY
+从你身上那种熟悉的气质来看，你一定是和我一样的魔法师。呵呵，你不用那么防备我，我是银杏山谷魔法研究会派来的华龙坛主。我离开银杏山谷来到这里，一方面为了帮助那些在修炼中遇到困难的魔法师，另一方面是为了募集魔法研究会的会费。你要是在修炼武功的过程中遇到什么困难，不要犹豫，直接来找我就行了。不过你要记住，这儿和银杏山谷一样，没有免费的午餐。\
+<查看可解释的武功目录/@main_0_1>\
+<结束/@exit>
+
+[@回指导员]
+#ACT
+MAPMOVE 0 410 385
+close
+
+[@main_0_1]
+#IF
+#SAY
+（法师魔法）\ \
+（1 - 10 等级 修炼魔法）\
+<火球术/@Go_Mu_Wizard_fire_bolt> , <霹雳掌/@Go_Mu_Wizard_light_bolt> , <冰月神掌/@Go_Mu_Wizard_ice_bolt> , <风掌/@Go_Mu_Wizard_wind_jangpung>\ \
+（11 - 20 等级 修炼魔法）\
+<抗拒火环/@Go_Mu_Wizard_fire_strom> , <诱惑之光/@Go_Mu_Wizard_light_shock> , <瞬息移动/@Go_Mu_Wizard_ETC_teleport>\
+<大火球/@Go_Mu_Wizard_fire_Upbolt> , <雷电术/@Go_Mu_Wizard_light_recall> , <冰月震天/@Go_Mu_Wizard_ice_Upbolt>\
+<击风/@Go_Mu_Wizard_wind_kyoukpung> , <地狱火/@Go_Mu_Wizard_fire_line>\ \
+（21 - 30 等级 修炼魔法）\
+<疾光电影/@Go_Mu_Wizard_light_line> , <冰沙掌/@Go_Mu_Wizard_bingsa> ,<风震天/@Go_Mu_Wizard_wind_pungjin> , <火墙/@Go_Mu_Wizard_fire_jiyem> , <圣言术/@Go_Mu_Wizard_ETC_saja> , <异形换位/@Go_Mu_Wizard_ehyung>\
+<魔法盾/@Go_Mu_Wizard_fire_shild>\ \
+（31 - 40 等级 修炼魔法）\
+<爆裂火焰/@Go_Mu_Wizard_fire_pokyel> , <地狱雷光/@Go_Mu_Wizard_light_storm> , <冰咆哮/@Go_Mu_Wizard_ice_strom> , <龙卷风/@Go_Mu_Wizard_yongsun>\ \
+（ 修炼高级魔法 ）\
+<魄冰刺/@Go_Mu_Wizard_fire_pobci> , <怒神霹雳/@Go_Mu_Wizard_light_nspile> , <焰天火雨/@Go_Mu_Wizard_ice_ythuoy> , <凝血离魂/@Go_Mu_Wizard_ninxlh>\ \
+ <结束/@exit>
+
+[@Go_Mu_Wizard_fire_bolt]
+#CALL [\MU_Total_sell\Wizard\fireBolt.txt] @Mu_Wizard_fire_bolt
+
+[@Go_Mu_Wizard_light_bolt]
+#CALL [\MU_Total_sell\Wizard\lightBolt.txt] @Mu_Wizard_light_bolt
+
+[@Go_Mu_Wizard_wind_jangpung]
+#CALL [\MU_Total_sell\Wizard\windBolt.txt] @Mu_Wizard_wind_jangpung
+
+[@Go_Mu_Wizard_ice_bolt]
+#CALL [\MU_Total_sell\Wizard\iceBolt.txt] @Mu_Wizard_ice_bolt
+
+[@Go_Mu_Wizard_fire_strom]
+#CALL [\MU_Total_sell\Wizard\fireStorm.txt] @Mu_Wizard_fire_storm
+
+[@Go_Mu_Wizard_light_shock]
+#CALL [\MU_Total_sell\Wizard\lightShock.txt] @Mu_Wizard_light_shock
+
+[@Go_Mu_Wizard_fire_line]
+#CALL [\MU_Total_sell\Wizard\fireLine.txt] @Mu_Wizard_fire_line
+
+[@Go_Mu_Wizard_light_recall]
+#CALL [\MU_Total_sell\Wizard\lightRecall.txt] @Mu_Wizard_light_recall
+
+[@Go_Mu_Wizard_wind_kyoukpung]
+#CALL [\MU_Total_sell\Wizard\kyoukpung.txt] @Mu_Wizard_wind_kyoukpung
+
+[@Go_Mu_Wizard_fire_Upbolt]
+#CALL [\MU_Total_sell\Wizard\fireUpbolt.txt] @Mu_Wizard_fire_Upbolt
+
+[@Go_Mu_Wizard_ETC_teleport]
+#CALL [\MU_Total_sell\Wizard\teleport.txt] @Mu_Wizard_ETC_teleport
+
+[@Go_Mu_Wizard_ice_Upbolt]
+#CALL [\MU_Total_sell\Wizard\iceUpbolt.txt] @Mu_Wizard_ice_Upbolt
+
+[@Go_Mu_Wizard_fire_pokyel]
+#CALL [\MU_Total_sell\Wizard\pokyel.txt] @Mu_Wizard_fire_pokyel
+
+[@Go_Mu_Wizard_wind_pungjin]
+#CALL [\MU_Total_sell\Wizard\windLine.txt] @Mu_Wizard_wind_pungjin
+
+[@Go_Mu_Wizard_fire_jiyem]
+#CALL [\MU_Total_sell\Wizard\jiyem.txt] @Mu_Wizard_fire_jiyem
+
+[@Go_Mu_Wizard_fire_shild]
+#CALL [\MU_Total_sell\Wizard\fireShild.txt] @Mu_Wizard_fire_shild
+
+[@Go_Mu_Wizard_light_line]
+#CALL [\MU_Total_sell\Wizard\lightLine.txt] @Mu_Wizard_light_line
+
+[@Go_Mu_Wizard_light_storm]
+#CALL [\MU_Total_sell\Wizard\lightStorm.txt] @Mu_Wizard_light_storm
+
+[@Go_Mu_Wizard_ETC_saja]
+#CALL [\MU_Total_sell\Wizard\saja.txt] @Mu_Wizard_ETC_saja
+
+[@Go_Mu_Wizard_ice_strom]
+#CALL [\MU_Total_sell\Wizard\iceStrom.txt] @Mu_Wizard_ice_strom
+
+[@Go_Mu_Wizard_ehyung]
+#CALL [\MU_Total_sell\Wizard\ehyung.txt] @Mu_Wizard_ehyung
+
+[@Go_Mu_Wizard_bingsa]
+#CALL [\MU_Total_sell\Wizard\iceLine.txt] @Mu_Wizard_bingsa
+
+[@Go_Mu_Wizard_yongsun]
+#CALL [\MU_Total_sell\Wizard\yongsun.txt] @Mu_Wizard_yongsun
+
+[@Go_Mu_Wizard_fire_pobci]
+#CALL [\MU_Total_sell\Wizard\pobci.txt] @Mu_Wizard_pobci
+
+[@Go_Mu_Wizard_light_nspile]
+#CALL [\MU_Total_sell\Wizard\nspile.txt] @Mu_Wizard_nspile
+
+[@Go_Mu_Wizard_ice_ythuoy]
+#CALL [\MU_Total_sell\Wizard\ythuoy.txt] @Mu_Wizard_ythuoy
+
+[@Go_Mu_Wizard_ninxlh]
+#CALL [\MU_Total_sell\Wizard\ninxlh.txt] @Mu_Wizard_ninxlh
+;;------------------------------------------------------------------------------

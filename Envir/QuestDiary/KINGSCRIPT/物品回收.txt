@@ -1,0 +1,53 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@物品回收_1]
+{
+#SAY
+{FCOLOR/14}焰天火雨,铁布杉,妙影无踪等秘籍回收金币500W.\
+凝血离魂,破血狂杀,阴阳法环等秘籍回收金币1000W.\
+四字碎片每个回收金币100W.\
+旭日,云龙,至善等首饰每个回收金币1000W.\
+天赐战甲每件回收金币1000W.\\
+<我确定了,要回收/@!装备回收1>
+
+
+[@!装备回收1]
+#SAY
+{FCOLOR/1}选中你要回收的物品,右键即可完成,分解后的物品使用任何办法都无法找回.{FCOLOR/12}
+
+[@~~InputName()]
+#ACT
+mov 分解装备名字 %ARG(1)  ;物品名称
+mov 分解装备索引 %ARG(2)  ;物品索引
+MOV 回收金币 0
+FormatStr "Where Name = '%s'" %分解装备名字
+ACTCMD READSQL "King_Stditems" "BackGold" "回收金币" %A9 
+
+#if
+Elarge D0 20
+#ACT
+BREAK
+#SAY
+每天最多回收20件.\\
+<关闭/@Exit>
+
+#IF
+EQUAL 回收金币 0
+or EQUAL 回收金币 ""
+#ACT
+sysmsg "温馨提示:你选择的装备不在可分解的列表里!" 1
+break
+
+#IF
+checkitem %分解装备名字 1
+checkcmd CHECKITEMINFO %分解装备索引 2
+#ACT
+GiveGoldEx %回收金币
+actcmd takeitembyidx %分解装备索引
+SAVEVALUE "ParamControl\回收记录.ini" %USERNAME %SERVERNOWTIME %分解装备名字
+sysmsg "你成功分解[ <$OUTPUT(分解装备名字)> ]换取了[ <$OUTPUT(回收金币)> ]金币." 1
+break
+#ELSEACT
+sysmsg "没有找到该物品,请刷新包裹" 1
+Break
+
+}

@@ -1,0 +1,158 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@main]
+#say
+<战士排行/@战士排行榜>\
+<道士排行/@道士排行榜>\
+<法师排行/@法师排行榜>\
+<金币排行/@金币排行榜>\
+<属性查询/@属性查询1>\
+<离开/@exit>\
+
+[@属性查询1]
+#CALL [KINGSCRIPT\属性查询.txt] @属性查询_1
+
+[@战士排行榜]
+#IF
+#act
+LoadValue A2 "ParamControl\排名.txt" [扩展排名] [战士排名]
+#say
+<$OUTPUT(A2)>\
+<返回/@main>
+
+[@法师排行榜]
+#IF
+#act
+LoadValue A2 "ParamControl\排名.txt" [扩展排名] [法师排名]
+#say
+<$OUTPUT(A2)>\
+<返回/@main>
+
+[@道士排行榜]
+#IF
+#act
+LoadValue A2 "ParamControl\排名.txt" [扩展排名] [道士排名]
+#say
+<$OUTPUT(A2)>\
+<返回/@main>
+
+[@金币排行榜]
+#IF
+!EQUAL GOLDTOPNAME1 ""
+#ACT
+formatstr " 1:%-20s  %-3s"  %GOLDTOPNAME1,%GOLDTOPNUM1
+#ELSEACT
+formatstr " 1:%-20s  %-3s"  "暂无",0
+
+#IF
+#ACT
+mov 金币排名1 %A9
+
+#IF
+!EQUAL GOLDTOPNAME2 ""
+#ACT
+formatstr " 2:%-20s  %-3s"  %GOLDTOPNAME2,%GOLDTOPNUM2
+#ELSEACT
+formatstr " 2:%-20s  %-3s"  "暂无",0
+
+#IF
+#ACT
+mov 金币排名2 %A9
+
+#IF
+!EQUAL GOLDTOPNAME3 ""
+#ACT
+formatstr " 3:%-20s  %-3s"  %GOLDTOPNAME3,%GOLDTOPNUM3
+#ELSEACT
+formatstr " 3:%-20s  %-3s"  "暂无",0
+#IF
+#ACT
+mov 金币排名3 %A9
+
+
+#IF
+!EQUAL GOLDTOPNAME4 ""
+#ACT
+formatstr " 4:%-20s  %-3s"  %GOLDTOPNAME4,%GOLDTOPNUM4
+#ELSEACT
+formatstr " 4:%-20s  %-3s"  "暂无",0
+#IF
+#ACT
+mov 金币排名4 %A9
+
+
+#IF
+!EQUAL GOLDTOPNAME5 ""
+#ACT
+formatstr " 5:%-20s  %-3s"  %GOLDTOPNAME5,%GOLDTOPNUM5
+#ELSEACT
+formatstr " 5:%-20s  %-3s"  "暂无",0
+#IF
+#ACT
+mov 金币排名5 %A9
+
+
+#IF
+!EQUAL GOLDTOPNAME6 ""
+#ACT
+formatstr " 6:%-20s  %-3s"  %GOLDTOPNAME6,%GOLDTOPNUM6
+#ELSEACT
+formatstr " 6:%-20s  %-3s"  "暂无",0
+#IF
+#ACT
+mov 金币排名6 %A9
+
+#IF
+!EQUAL GOLDTOPNAME7 ""
+#ACT
+formatstr " 7:%-20s  %-3s"  %GOLDTOPNAME7,%GOLDTOPNUM7
+#ELSEACT
+formatstr " 7:%-20s  %-3s"  "暂无",0
+#IF
+#ACT
+mov 金币排名7 %A9
+
+#IF
+!EQUAL GOLDTOPNAME8 ""
+#ACT
+formatstr " 8:%-20s  %-3s"  %GOLDTOPNAME8,%GOLDTOPNUM8
+#ELSEACT
+formatstr " 8:%-20s  %-3s"  "暂无",0
+#IF
+#ACT
+mov 金币排名8 %A9
+
+#IF
+!EQUAL GOLDTOPNAME9 ""
+#ACT
+formatstr " 9:%-20s  %-3s"  %GOLDTOPNAME9,%GOLDTOPNUM9
+#ELSEACT
+formatstr " 9:%-20s  %-3s"  "暂无",0
+#IF
+#ACT
+mov 金币排名9 %A9
+
+#IF
+!EQUAL GOLDTOPNAME10 ""
+#ACT
+formatstr "10:%-20s  %-3s"  %GOLDTOPNAME10,%GOLDTOPNUM10
+#ELSEACT
+formatstr "10:%-20s  %-3s"  "暂无",0
+
+#IF
+#ACT
+mov 金币排名10 %A9
+
+
+#SAY
+{FCOLOR/15}全服金币排名前10名:{FCOLOR/10}\
+<$OUTPUT(金币排名1)>\
+<$OUTPUT(金币排名2)>\
+<$OUTPUT(金币排名3)>\
+<$OUTPUT(金币排名4)>\
+<$OUTPUT(金币排名5)>\
+<$OUTPUT(金币排名6)>\
+<$OUTPUT(金币排名7)>\
+<$OUTPUT(金币排名8)>\
+<$OUTPUT(金币排名9)>\
+<$OUTPUT(金币排名10)>\\
+<返回/@main>

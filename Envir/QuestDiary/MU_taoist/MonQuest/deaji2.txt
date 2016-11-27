@@ -1,0 +1,37 @@
+;;创天网络有限公司原版1.45
+[@MapQuest_Upac_gipokstone]
+#IF
+checkjob warrior
+#ACT
+break
+;
+#IF
+checkjob wizard
+#ACT
+break
+;
+#IF
+check [049] 1
+#ACT
+map D401
+break
+;
+#IF
+check [048] 1
+#ACT
+goto @checkrootin
+break
+#ELSEACT
+break
+
+[@checkrootin]
+#IF
+random 3
+#SAY
+(原来这就是起爆石啊... 得赶快带给清明子..) \ \
+#ACT
+BreakTimeRecall
+give 起爆石 1
+SET [049] 1
+#ELSEACT
+break

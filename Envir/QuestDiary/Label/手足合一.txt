@@ -1,0 +1,60 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@手足合一_Main]
+{
+#IF
+Small USERREBORNCOUNT 6
+#ACT
+SYSMSG "对不起,您转生未达到6转,不能使用该功能!" 1
+close
+BREAK
+
+#IF
+!checkitem 传送圣链 1
+#ACT
+SYSMSG "对不起,您包裹没有传送圣链,无法使用该功能!" 1
+close
+BREAK
+
+#IF
+#SAY
+你可以使用{FCOLOR/1}传送圣链{FCOLOR/12},则可瞬间移动到对方身边.生效范围与好友传送相同
+\\
+<输入要传送的兄弟姓名/@@传送好友面前> \\
+<离开/@exit>
+
+
+[@@传送好友面前]
+#ACT
+MOV A7 %USERMAP
+mov 玩家姓名  %INPUTSTR
+
+#IF
+checkcmd ISONLINE %INPUTSTR
+#ELSEACT
+break
+#elseact
+close
+sysmsg "温馨提示:对不起,<$OUTPUT(玩家姓名)> 不在线,不能使用此功能!"
+
+#IF
+checkitem 传送圣链 1
+#ACT
+close
+take 传送圣链 1
+MOVETOPLAYER %INPUTSTR
+Delaygoto [local] 1 @传送完毕最后检测
+sysmsg "温馨提示:出现成功<$OUTPUT(玩家姓名)>!"
+#elseact
+close
+sysmsg "温馨提示:对不起,你没有传送圣链!"
+
+[@传送完毕最后检测]
+#IF
+!CHECKCMD CHECKMAPFLAG MAPGROUP 1
+#ACT
+MAPMOVE 1 400 123
+SYSMSG "温馨提示:对不起,当前地图不得使用传送圣链,系统强制把您遣送回道馆！"
+Break
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

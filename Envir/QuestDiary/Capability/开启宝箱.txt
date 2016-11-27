@@ -1,0 +1,125 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@开启宝箱_1]
+{
+#Act
+Mov D0 %CURHOUR
+LoadValue D1 "系统设置.ini" [开区后] [经验宝盒]
+LoadValue D2 "系统设置.ini" [开区后] [稀世宝盒]
+LoadValue D3 "系统设置.ini" [开区后] [神秘礼盒]
+#Say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}开{FCOLOR/4}━{FCOLOR/14}启{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}箱{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+
+#If
+ELarge D0 %D1
+#SAY
+_              {FCOLOR/12}[ <开 启 经 验 宝 盒/@开启经验宝盒8> ]{FCOLOR/12}\
+_             {FCOLOR/4}可随机获得不同的 {FCOLOR/1}经验值{FCOLOR/12}\\
+#If
+Small D0 %D1
+#Say
+_              {FCOLOR/12}[ {FCOLOR/1}开 启 经 验 宝 盒{FCOLOR/12} ]{FCOLOR/12}\
+_                {FCOLOR/4}公测{FCOLOR/1} <$OUTPUT(D1)> {FCOLOR/4}小时后开启{FCOLOR/12}\\
+#If
+ELarge D0 %D2
+#Say
+_              {FCOLOR/12}[ <开 启 稀 世 宝 盒/@开启稀世宝盒8> ]{FCOLOR/12}\
+_             {FCOLOR/4}可随机获得不同的 {FCOLOR/1}极品装备{FCOLOR/12}\\
+#If
+Small D0 %D2
+#Say
+_              {FCOLOR/12}[ {FCOLOR/1}开 启 稀 世 宝 盒{FCOLOR/12} ]{FCOLOR/12}\
+_                {FCOLOR/4}公测{FCOLOR/1} <$OUTPUT(D2)> {FCOLOR/4}小时后开启{FCOLOR/12}\\
+#If
+ELarge D0 %D3
+#Say
+_              {FCOLOR/12}[ <开 启 神 秘 礼 盒/@开启神秘礼盒8> ]{FCOLOR/12}\
+_             {FCOLOR/4}可随机获得不同的 {FCOLOR/1}道具或装备{FCOLOR/12}\\
+#If
+Small D0 %D3
+#Say
+_              {FCOLOR/12}[ {FCOLOR/1}开 启 神 秘 礼 盒{FCOLOR/12} ]\
+_                {FCOLOR/4}公测{FCOLOR/1} <$OUTPUT(D3)> {FCOLOR/4}小时后开启{FCOLOR/12}\\
+
+[@开启经验宝盒8]
+#Act
+Movr D5 5
+Inc D5 1
+Mov P1 %D5
+Mov P2 20000000
+Mul P1 P2
+Mov D6 %P9
+
+#If
+Checkitem 经验宝盒 1
+#Act
+Take 经验宝盒 1
+Actcmd SetUserExp + %D6
+LineMsg [grobal] "玩家[ <$USERNAME> ]打开经验宝盒.得到了经验: <$OUTPUT(D6)>"
+Break
+#ElseAct
+SysMsg "温馨提示: 您的包裹内没有→经验宝盒"
+Close
+Break
+
+[@开启稀世宝盒8]
+#Act
+Movr 稀世随机 52
+Inc 稀世随机 1
+LoadValue 稀世金币 "ParamControl\稀世宝盒.ini" [稀世宝盒] [金币]
+LoadValue 稀世元宝 "ParamControl\稀世宝盒.ini" [稀世宝盒] [元宝]
+LoadValue 稀世声望 "ParamControl\稀世宝盒.ini" [稀世宝盒] [声望]
+LoadValue 稀世经验 "ParamControl\稀世宝盒.ini" [稀世宝盒] [经验]
+LoadValue 稀世物品 "ParamControl\稀世宝盒.ini" [稀世宝盒] [%稀世随机]
+
+#If
+Checkitem 稀世宝盒 1
+#Act
+Give 金币 %稀世金币
+SETUSERJF + %稀世元宝
+SETFAME + %稀世声望
+SETUSEREXP + %稀世经验
+Take 稀世宝盒 1
+Give %稀世物品 1
+LineMsg [grobal] "玩家[ <$USERNAME> ]打开稀世宝盒.得到了[ <$OUTPUT(稀世物品)> ]1件"
+SYSMSG "开启稀世宝盒得到金币[ <$OUTPUT(稀世金币)> ]元宝[ <$OUTPUT(稀世元宝)> ]声望[ <$OUTPUT(稀世声望)> ]经验[ <$OUTPUT(稀世经验)> ]"
+Break
+Close
+#ElseAct
+sysmsg "温馨提示: 您的包裹内没有→稀世宝盒"
+Close
+Break
+
+[@开启神秘礼盒8]
+#Act
+Movr 神秘随机 50
+Inc 神秘随机 1
+Movr 神秘数量 5
+Inc 神秘数量 1
+LoadValue 神秘金币 "ParamControl\神秘礼盒.ini" [神秘礼盒] [金币]
+LoadValue 神秘元宝 "ParamControl\神秘礼盒.ini" [神秘礼盒] [元宝]
+LoadValue 神秘声望 "ParamControl\神秘礼盒.ini" [神秘礼盒] [声望]
+LoadValue 神秘经验 "ParamControl\神秘礼盒.ini" [神秘礼盒] [经验]
+LoadValue 神秘物品 "ParamControl\神秘礼盒.ini" [神秘礼盒] [%神秘随机]
+
+#If
+Checkitem 神秘礼盒 1
+#Act
+Give 金币 %神秘金币
+SETUSERJF + %神秘元宝
+SETFAME + %神秘声望
+SETUSEREXP + %神秘经验
+Take 神秘礼盒 1
+Give %神秘物品 %神秘数量
+Give 源质碎片 1
+LineMsg [grobal] "玩家[ <$USERNAME> ]打开神秘礼盒.得到了[ <$OUTPUT(神秘物品)> ]<$OUTPUT(神秘数量)>个.[ 源质碎片 ]1个."
+SYSMSG "开启稀世宝盒得到金币[ <$OUTPUT(神秘金币)> ]元宝[ <$OUTPUT(神秘元宝)> ]声望[ <$OUTPUT(神秘声望)> ]经验[ <$OUTPUT(神秘经验)> ]"
+Break
+Close
+#ElseAct
+sysmsg "温馨提示: 您的包裹内没有→神秘礼盒"
+Close
+Break
+
+}
+
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

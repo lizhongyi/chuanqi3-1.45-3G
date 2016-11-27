@@ -1,0 +1,680 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@main]
+#IF
+#ACT
+LOADVALUE 送花统计1 "ParamControl\送花统计结果.ini" %CURDAY 1
+
+#IF
+!Equal 送花统计1 ""
+#ACT
+FormatStr "{FCOLOR/10}%12s{FCOLOR/12}" %送花统计1
+Mov 排名1 %A9
+
+#IF
+#ACT
+LOADVALUE 送花统计2 "ParamControl\送花统计结果.ini" %CURDAY 2
+
+#IF
+!Equal 送花统计2 ""
+#ACT
+FormatStr "{FCOLOR/10}%12s{FCOLOR/12}" %送花统计2
+Mov 排名2 %A9
+
+#IF
+#ACT
+LOADVALUE 送花统计3 "ParamControl\送花统计结果.ini" %CURDAY 3
+
+#IF
+!Equal 送花统计3 ""
+#ACT
+FormatStr "{FCOLOR/10}%12s{FCOLOR/12}" %送花统计3
+Mov 排名3 %A9
+
+#IF
+#ACT
+LOADVALUE 送花统计4 "ParamControl\送花统计结果.ini" %CURDAY 4
+
+#IF
+!Equal 送花统计4 ""
+#ACT
+FormatStr "{FCOLOR/10}%12s{FCOLOR/12}" %送花统计4
+Mov 排名4 %A9
+
+#IF
+#ACT
+LOADVALUE 送花统计5 "ParamControl\送花统计结果.ini" %CURDAY 5
+
+#IF
+!Equal 送花统计5 ""
+#ACT
+FormatStr "{FCOLOR/10}%12s{FCOLOR/12}" %送花统计5
+Mov 排名5 %A9
+
+#IF
+#ACT
+LOADVALUE 送花统计6 "ParamControl\送花统计结果.ini" %CURDAY 6
+
+#IF
+!Equal 送花统计6 ""
+#ACT
+FormatStr "{FCOLOR/10}%12s{FCOLOR/12}" %送花统计6
+Mov 排名6 %A9
+
+#IF
+#ACT
+LOADVALUE 送花统计7 "ParamControl\送花统计结果.ini" %CURDAY 7
+
+#IF
+!Equal 送花统计7 ""
+#ACT
+FormatStr "{FCOLOR/10}%12s{FCOLOR/12}" %送花统计7
+Mov 排名7 %A9
+
+#IF
+#ACT
+LOADVALUE 送花统计8 "ParamControl\送花统计结果.ini" %CURDAY 8
+
+#IF
+!Equal 送花统计8 ""
+#ACT
+FormatStr "{FCOLOR/10}%12s{FCOLOR/12}" %送花统计8
+Mov 排名8 %A9
+
+#IF
+#ACT
+LOADVALUE 送花统计9 "ParamControl\送花统计结果.ini" %CURDAY 9
+
+#IF
+!Equal 送花统计9 ""
+#ACT
+FormatStr "{FCOLOR/10}%12s{FCOLOR/12}" %送花统计9
+Mov 排名9 %A9
+
+#IF
+#ACT
+LOADVALUE 送花统计10 "ParamControl\送花统计结果.ini" %CURDAY 10
+
+#IF
+!Equal 送花统计10 ""
+#ACT
+FormatStr "{FCOLOR/10}%12s{FCOLOR/12}" %送花统计10
+Mov 排名10 %A9
+
+#IF
+#ACT
+LOADVALUE 守护名字1 "ParamControl\每日记录.ini" %送花统计1 守护
+LOADVALUE 守护名字2 "ParamControl\每日记录.ini" %送花统计2 守护
+LOADVALUE 守护名字3 "ParamControl\每日记录.ini" %送花统计3 守护
+LOADVALUE 守护名字4 "ParamControl\每日记录.ini" %送花统计4 守护
+LOADVALUE 守护名字5 "ParamControl\每日记录.ini" %送花统计5 守护
+LOADVALUE 守护名字6 "ParamControl\每日记录.ini" %送花统计6 守护
+LOADVALUE 守护名字7 "ParamControl\每日记录.ini" %送花统计7 守护
+LOADVALUE 守护名字8 "ParamControl\每日记录.ini" %送花统计8 守护
+LOADVALUE 守护名字9 "ParamControl\每日记录.ini" %送花统计9 守护
+LOADVALUE 守护名字10 "ParamControl\每日记录.ini" %送花统计10 守护
+
+#IF
+#ACT
+LOADVALUE 排名数量1 "ParamControl\送花排行.ini" %送花统计1 %CURDAY
+
+#IF
+Large 排名数量1 0
+#ACT
+FormatStr "{FCOLOR/13}%8s{FCOLOR/12}" %排名数量1
+Mov 数量1 %A9
+FormatStr "{FCOLOR/1}%12s{FCOLOR/12}" %守护名字1
+Mov 守护1 %A9
+
+#IF
+#ACT
+LOADVALUE 排名数量2 "ParamControl\送花排行.ini" %送花统计2 %CURDAY
+
+#IF
+Large 排名数量2 0
+#ACT
+FormatStr "{FCOLOR/13}%8s{FCOLOR/12}" %排名数量2
+Mov 数量2 %A9
+FormatStr "{FCOLOR/1}%12s{FCOLOR/12}" %守护名字2
+Mov 守护2 %A9
+
+#IF
+#ACT
+LOADVALUE 排名数量3 "ParamControl\送花排行.ini" %送花统计3 %CURDAY
+
+#IF
+Large 排名数量3 0
+#ACT
+FormatStr "{FCOLOR/13}%8s{FCOLOR/12}" %排名数量3
+Mov 数量3 %A9
+FormatStr "{FCOLOR/1}%12s{FCOLOR/12}" %守护名字3
+Mov 守护3 %A9
+
+#IF
+#ACT
+LOADVALUE 排名数量4 "ParamControl\送花排行.ini" %送花统计4 %CURDAY
+
+#IF
+Large 排名数量4 0
+#ACT
+FormatStr "{FCOLOR/13}%8s{FCOLOR/12}" %排名数量4
+Mov 数量4 %A9
+FormatStr "{FCOLOR/1}%12s{FCOLOR/12}" %守护名字4
+Mov 守护4 %A9
+
+#IF
+#ACT
+LOADVALUE 排名数量5 "ParamControl\送花排行.ini" %送花统计5 %CURDAY
+
+#IF
+Large 排名数量5 0
+#ACT
+FormatStr "{FCOLOR/13}%8s{FCOLOR/12}" %排名数量5
+Mov 数量5 %A9
+FormatStr "{FCOLOR/1}%12s{FCOLOR/12}" %守护名字5
+Mov 守护5 %A9
+
+#IF
+#ACT
+LOADVALUE 排名数量6 "ParamControl\送花排行.ini" %送花统计6 %CURDAY
+
+#IF
+Large 排名数量6 0
+#ACT
+FormatStr "{FCOLOR/13}%8s{FCOLOR/12}" %排名数量6
+Mov 数量6 %A9
+FormatStr "{FCOLOR/1}%12s{FCOLOR/12}" %守护名字6
+Mov 守护6 %A9
+
+#IF
+#ACT
+LOADVALUE 排名数量7 "ParamControl\送花排行.ini" %送花统计7 %CURDAY
+
+#IF
+Large 排名数量7 0
+#ACT
+FormatStr "{FCOLOR/13}%8s{FCOLOR/12}" %排名数量7
+Mov 数量7 %A9
+FormatStr "{FCOLOR/1}%12s{FCOLOR/12}" %守护名字7
+Mov 守护7 %A9
+
+#IF
+#ACT
+LOADVALUE 排名数量8 "ParamControl\送花排行.ini" %送花统计8 %CURDAY
+
+#IF
+Large 排名数量8 0
+#ACT
+FormatStr "{FCOLOR/13}%8s{FCOLOR/12}" %排名数量8
+Mov 数量8 %A9
+FormatStr "{FCOLOR/1}%12s{FCOLOR/12}" %守护名字8
+Mov 守护8 %A9
+
+#IF
+#ACT
+LOADVALUE 排名数量9 "ParamControl\送花排行.ini" %送花统计9 %CURDAY
+
+#IF
+Large 排名数量9 0
+#ACT
+FormatStr "{FCOLOR/13}%8s{FCOLOR/12}" %排名数量9
+Mov 数量9 %A9
+FormatStr "{FCOLOR/1}%12s{FCOLOR/12}" %守护名字9
+Mov 守护9 %A9
+
+#IF
+#ACT
+LOADVALUE 排名数量10 "ParamControl\送花排行.ini" %送花统计10 %CURDAY
+
+#IF
+Large 排名数量10 0
+#ACT
+FormatStr "{FCOLOR/13}%8s{FCOLOR/12}" %排名数量10
+Mov 数量10 %A9
+FormatStr "{FCOLOR/1}%12s{FCOLOR/12}" %守护名字10
+Mov 守护10 %A9
+
+#IF
+#SAY
+________________{FCOLOR/14}当日鲜花排行榜:{FCOLOR/12}\
+{FCOLOR/8}排名     玩家名字    鲜花数       守护名字{FCOLOR/12}\
+#IF
+Large 排名数量1 0
+#SAY
+_ 1. <$OUTPUT(排名1)> <$OUTPUT(数量1)>    <$OUTPUT(守护1)>\
+
+#IF
+Large 排名数量2 0
+#SAY
+_ 2. <$OUTPUT(排名2)> <$OUTPUT(数量2)>    <$OUTPUT(守护2)>\
+
+#IF
+Large 排名数量3 0
+#SAY
+_ 3. <$OUTPUT(排名3)> <$OUTPUT(数量3)>    <$OUTPUT(守护3)>\
+#IF
+Large 排名数量4 0
+#SAY
+_ 4. <$OUTPUT(排名4)> <$OUTPUT(数量4)>    <$OUTPUT(守护4)>\
+
+#IF
+Large 排名数量5 0
+#SAY
+_ 5. <$OUTPUT(排名5)> <$OUTPUT(数量5)>    <$OUTPUT(守护5)>\
+
+#IF
+Large 排名数量6 0
+#SAY
+_ 6. <$OUTPUT(排名6)> <$OUTPUT(数量6)>    <$OUTPUT(守护6)>\
+
+#IF
+Large 排名数量7 0
+#SAY
+_ 7. <$OUTPUT(排名7)> <$OUTPUT(数量7)>    <$OUTPUT(守护7)>\
+
+#IF
+Large 排名数量8 0
+#SAY
+_ 8. <$OUTPUT(排名8)> <$OUTPUT(数量8)>    <$OUTPUT(守护8)>\
+
+#IF
+Large 排名数量9 0
+#SAY
+_ 9. <$OUTPUT(排名9)> <$OUTPUT(数量9)>    <$OUTPUT(守护9)>\
+
+#IF
+Large 排名数量10 0
+#SAY
+_10. <$OUTPUT(排名10)> <$OUTPUT(数量10)>    <$OUTPUT(守护10)>\
+
+#IF
+#SAY
+\
+<〖鲜花总排行〗/@鲜花总排行>\\
+<〖鲜花宝贝〗/@鲜花宝贝XXX>
+
+[@鲜花总排行]
+#IF
+#ACT
+LOADVALUE 送花统计1 "ParamControl\送花统计结果.ini" 总数 1
+
+#IF
+!Equal 送花统计1 ""
+#ACT
+FormatStr "{FCOLOR/10}%12s{FCOLOR/12}" %送花统计1
+Mov 排名1 %A9
+
+#IF
+#ACT
+LOADVALUE 送花统计2 "ParamControl\送花统计结果.ini" 总数 2
+
+#IF
+!Equal 送花统计2 ""
+#ACT
+FormatStr "{FCOLOR/10}%12s{FCOLOR/12}" %送花统计2
+Mov 排名2 %A9
+
+#IF
+#ACT
+LOADVALUE 送花统计3 "ParamControl\送花统计结果.ini" 总数 3
+
+#IF
+!Equal 送花统计3 ""
+#ACT
+FormatStr "{FCOLOR/10}%12s{FCOLOR/12}" %送花统计3
+Mov 排名3 %A9
+
+#IF
+#ACT
+LOADVALUE 送花统计4 "ParamControl\送花统计结果.ini" 总数 4
+
+#IF
+!Equal 送花统计4 ""
+#ACT
+FormatStr "{FCOLOR/10}%12s{FCOLOR/12}" %送花统计4
+Mov 排名4 %A9
+
+#IF
+#ACT
+LOADVALUE 送花统计5 "ParamControl\送花统计结果.ini" 总数 5
+
+#IF
+!Equal 送花统计5 ""
+#ACT
+FormatStr "{FCOLOR/10}%12s{FCOLOR/12}" %送花统计5
+Mov 排名5 %A9
+
+#IF
+#ACT
+LOADVALUE 送花统计6 "ParamControl\送花统计结果.ini" 总数 6
+
+#IF
+!Equal 送花统计6 ""
+#ACT
+FormatStr "{FCOLOR/10}%12s{FCOLOR/12}" %送花统计6
+Mov 排名6 %A9
+
+#IF
+#ACT
+LOADVALUE 送花统计7 "ParamControl\送花统计结果.ini" 总数 7
+
+#IF
+!Equal 送花统计7 ""
+#ACT
+FormatStr "{FCOLOR/10}%12s{FCOLOR/12}" %送花统计7
+Mov 排名7 %A9
+
+#IF
+#ACT
+LOADVALUE 送花统计8 "ParamControl\送花统计结果.ini" 总数 8
+
+#IF
+!Equal 送花统计8 ""
+#ACT
+FormatStr "{FCOLOR/10}%12s{FCOLOR/12}" %送花统计8
+Mov 排名8 %A9
+
+#IF
+#ACT
+LOADVALUE 送花统计9 "ParamControl\送花统计结果.ini" 总数 9
+
+#IF
+!Equal 送花统计9 ""
+#ACT
+FormatStr "{FCOLOR/10}%12s{FCOLOR/12}" %送花统计9
+Mov 排名9 %A9
+
+#IF
+#ACT
+LOADVALUE 送花统计10 "ParamControl\送花统计结果.ini" 总数 10
+
+#IF
+!Equal 送花统计10 ""
+#ACT
+FormatStr "{FCOLOR/10}%12s{FCOLOR/12}" %送花统计10
+Mov 排名10 %A9
+
+#IF
+#ACT
+LOADVALUE 守护名字1 "ParamControl\送花记录.ini" %送花统计1 守护
+LOADVALUE 守护名字2 "ParamControl\送花记录.ini" %送花统计2 守护
+LOADVALUE 守护名字3 "ParamControl\送花记录.ini" %送花统计3 守护
+LOADVALUE 守护名字4 "ParamControl\送花记录.ini" %送花统计4 守护
+LOADVALUE 守护名字5 "ParamControl\送花记录.ini" %送花统计5 守护
+LOADVALUE 守护名字6 "ParamControl\送花记录.ini" %送花统计6 守护
+LOADVALUE 守护名字7 "ParamControl\送花记录.ini" %送花统计7 守护
+LOADVALUE 守护名字8 "ParamControl\送花记录.ini" %送花统计8 守护
+LOADVALUE 守护名字9 "ParamControl\送花记录.ini" %送花统计9 守护
+LOADVALUE 守护名字10 "ParamControl\送花记录.ini" %送花统计10 守护
+
+#IF
+#ACT
+LOADVALUE 排名数量1 "ParamControl\送花排行.ini" %送花统计1 总数
+
+#IF
+Large 排名数量1 0
+#ACT
+FormatStr "{FCOLOR/13}%8s{FCOLOR/12}" %排名数量1
+Mov 数量1 %A9
+FormatStr "{FCOLOR/1}%12s{FCOLOR/12}" %守护名字1
+Mov 守护1 %A9
+
+#IF
+#ACT
+LOADVALUE 排名数量2 "ParamControl\送花排行.ini" %送花统计2 总数
+
+#IF
+Large 排名数量2 0
+#ACT
+FormatStr "{FCOLOR/13}%8s{FCOLOR/12}" %排名数量2
+Mov 数量2 %A9
+FormatStr "{FCOLOR/1}%12s{FCOLOR/12}" %守护名字2
+Mov 守护2 %A9
+
+#IF
+#ACT
+LOADVALUE 排名数量3 "ParamControl\送花排行.ini" %送花统计3 总数
+
+#IF
+Large 排名数量3 0
+#ACT
+FormatStr "{FCOLOR/13}%8s{FCOLOR/12}" %排名数量3
+Mov 数量3 %A9
+FormatStr "{FCOLOR/1}%12s{FCOLOR/12}" %守护名字3
+Mov 守护3 %A9
+
+#IF
+#ACT
+LOADVALUE 排名数量4 "ParamControl\送花排行.ini" %送花统计4 总数
+
+#IF
+Large 排名数量4 0
+#ACT
+FormatStr "{FCOLOR/13}%8s{FCOLOR/12}" %排名数量4
+Mov 数量4 %A9
+FormatStr "{FCOLOR/1}%12s{FCOLOR/12}" %守护名字4
+Mov 守护4 %A9
+
+#IF
+#ACT
+LOADVALUE 排名数量5 "ParamControl\送花排行.ini" %送花统计5 总数
+
+#IF
+Large 排名数量5 0
+#ACT
+FormatStr "{FCOLOR/13}%8s{FCOLOR/12}" %排名数量5
+Mov 数量5 %A9
+FormatStr "{FCOLOR/1}%12s{FCOLOR/12}" %守护名字5
+Mov 守护5 %A9
+
+#IF
+#ACT
+LOADVALUE 排名数量6 "ParamControl\送花排行.ini" %送花统计6 总数
+
+#IF
+Large 排名数量6 0
+#ACT
+FormatStr "{FCOLOR/13}%8s{FCOLOR/12}" %排名数量6
+Mov 数量6 %A9
+FormatStr "{FCOLOR/1}%12s{FCOLOR/12}" %守护名字6
+Mov 守护6 %A9
+
+#IF
+#ACT
+LOADVALUE 排名数量7 "ParamControl\送花排行.ini" %送花统计7 总数
+
+#IF
+Large 排名数量7 0
+#ACT
+FormatStr "{FCOLOR/13}%8s{FCOLOR/12}" %排名数量7
+Mov 数量7 %A9
+FormatStr "{FCOLOR/1}%12s{FCOLOR/12}" %守护名字7
+Mov 守护7 %A9
+
+#IF
+#ACT
+LOADVALUE 排名数量8 "ParamControl\送花排行.ini" %送花统计8 总数
+
+#IF
+Large 排名数量8 0
+#ACT
+FormatStr "{FCOLOR/13}%8s{FCOLOR/12}" %排名数量8
+Mov 数量8 %A9
+FormatStr "{FCOLOR/1}%12s{FCOLOR/12}" %守护名字8
+Mov 守护8 %A9
+
+#IF
+#ACT
+LOADVALUE 排名数量9 "ParamControl\送花排行.ini" %送花统计9 总数
+
+#IF
+Large 排名数量9 0
+#ACT
+FormatStr "{FCOLOR/13}%8s{FCOLOR/12}" %排名数量9
+Mov 数量9 %A9
+FormatStr "{FCOLOR/1}%12s{FCOLOR/12}" %守护名字9
+Mov 守护9 %A9
+
+#IF
+#ACT
+LOADVALUE 排名数量10 "ParamControl\送花排行.ini" %送花统计10 总数
+
+#IF
+Large 排名数量10 0
+#ACT
+FormatStr "{FCOLOR/13}%8s{FCOLOR/12}" %排名数量10
+Mov 数量10 %A9
+FormatStr "{FCOLOR/1}%12s{FCOLOR/12}" %守护名字10
+Mov 守护10 %A9
+
+#IF
+#SAY
+________________{FCOLOR/14}鲜花总排行榜:{FCOLOR/12}\
+{FCOLOR/8}排名     玩家名字    鲜花数       守护名字{FCOLOR/12}\
+#IF
+Large 排名数量1 0
+#SAY
+_ 1. <$OUTPUT(排名1)> <$OUTPUT(数量1)>    <$OUTPUT(守护1)>\
+
+#IF
+Large 排名数量2 0
+#SAY
+_ 2. <$OUTPUT(排名2)> <$OUTPUT(数量2)>    <$OUTPUT(守护2)>\
+
+#IF
+Large 排名数量3 0
+#SAY
+_ 3. <$OUTPUT(排名3)> <$OUTPUT(数量3)>    <$OUTPUT(守护3)>\
+#IF
+Large 排名数量4 0
+#SAY
+_ 4. <$OUTPUT(排名4)> <$OUTPUT(数量4)>    <$OUTPUT(守护4)>\
+
+#IF
+Large 排名数量5 0
+#SAY
+_ 5. <$OUTPUT(排名5)> <$OUTPUT(数量5)>    <$OUTPUT(守护5)>\
+
+#IF
+Large 排名数量6 0
+#SAY
+_ 6. <$OUTPUT(排名6)> <$OUTPUT(数量6)>    <$OUTPUT(守护6)>\
+
+#IF
+Large 排名数量7 0
+#SAY
+_ 7. <$OUTPUT(排名7)> <$OUTPUT(数量7)>    <$OUTPUT(守护7)>\
+
+#IF
+Large 排名数量8 0
+#SAY
+_ 8. <$OUTPUT(排名8)> <$OUTPUT(数量8)>    <$OUTPUT(守护8)>\
+
+#IF
+Large 排名数量9 0
+#SAY
+_ 9. <$OUTPUT(排名9)> <$OUTPUT(数量9)>    <$OUTPUT(守护9)>\
+
+#IF
+Large 排名数量10 0
+#SAY
+_10. <$OUTPUT(排名10)> <$OUTPUT(数量10)>    <$OUTPUT(守护10)>\
+
+#IF
+#SAY
+\
+<〖当日鲜花排行〗/@main>\\
+<〖鲜花宝贝〗/@鲜花宝贝XXX>
+
+
+[@鲜花宝贝XXX]
+#IF
+#ACT
+LOADVALUE 全局总数 "ParamControl\送花排行.ini" %USERNAME 总数
+LOADVALUE 领走数量 "ParamControl\领花记录.ini" %USERNAME 领花
+
+#IF
+Equal 领走数量 ""
+#ACT
+MOV 领走数量 0
+
+#IF
+Equal 全局总数 ""
+#ACT
+MOV 全局总数 0
+
+#IF
+#ACT
+mov 剩余总数 %全局总数
+DEC 剩余总数 %领走数量
+LOADVALUE 领走记录 "ParamControl\领花记录.ini" %USERNAME %CURDAY
+MOV D0 %CURDAY
+DEC D0 1
+LOADVALUE 鲜花宝贝 "ParamControl\送花统计结果.ini" %D0 1
+LOADVALUE 昨天数量 "ParamControl\送花排行.ini" %鲜花宝贝 %D0
+
+#IF
+Equal 鲜花宝贝 %USERNAME
+!Equal 领走记录 1
+#ACT
+BREAK
+#SAY
+你昨天获得最高鲜花数,今天将可以获得{FCOLOR/13}鲜花宝贝{FCOLOR/12}的称号.\\
+{FCOLOR/10}鲜花宝贝可以将历史剩余鲜花数的90%转换为赞助币返还,如果不领取,剩余鲜花总数永不清空.{FCOLOR/12}\\
+你获得的总鲜花数量为{FCOLOR/1}<$OUTPUT(全局总数)>{FCOLOR/12}个,曾经取走的鲜花数为{FCOLOR/1}<$OUTPUT(领走数量)>{FCOLOR/12}个,今天可以提取的数量为{FCOLOR/1}<$OUTPUT(剩余总数)>{FCOLOR/12}个.\\
+<〖 我要提取 〗/@鲜花宝贝权限>
+#ELSESAY
+昨天鲜花最高数为:{FCOLOR/1}<$OUTPUT(昨天数量)>{FCOLOR/12},鲜花宝贝的名字:{FCOLOR/13}<$OUTPUT(鲜花宝贝)>{FCOLOR/12}.\\
+{FCOLOR/10}鲜花宝贝可以将历史剩余鲜花数的90%转换为赞助币返还,如果不领取,剩余鲜花总数永不清空.{FCOLOR/12}\\
+你获得的总鲜花数量为{FCOLOR/1}<$OUTPUT(全局总数)>{FCOLOR/12}个,曾经取走的鲜花数为{FCOLOR/1}<$OUTPUT(领走数量)>{FCOLOR/12}个,当你获得鲜花宝贝时可以提取的数量为{FCOLOR/1}<$OUTPUT(剩余总数)>{FCOLOR/12}个.\\
+<关闭/@Exit>
+
+[@鲜花宝贝权限]
+#ACT
+LOADVALUE 全局总数 "ParamControl\送花排行.ini" %USERNAME 总数
+LOADVALUE 领走数量 "ParamControl\领花记录.ini" %USERNAME 领花
+mov 剩余总数 %全局总数
+DEC 剩余总数 %领走数量
+LOADVALUE 领走记录 "ParamControl\领花记录.ini" %USERNAME %CURDAY
+MOV D0 %CURDAY
+DEC D0 1
+LOADVALUE 鲜花宝贝 "ParamControl\送花统计结果.ini" %D0 1
+
+#IF
+!Equal 鲜花宝贝 %USERNAME
+#ACT
+BREAK
+
+#IF
+Equal 领走记录 1
+#ACT
+BREAK
+
+#IF
+Elarge 剩余总数 1
+#ELSEACT
+BREAK
+
+#IF
+#ACT
+MOV P1 %剩余总数
+MOV P2 90
+MUL P1 P2
+MOV 获得总值 %P9
+
+#IF
+#ACT
+MOV P1 %获得总值
+MOV P2 100
+DIV P1 P2
+MOV 最终获得 %P9
+
+#IF
+#ACT
+LOADVALUE D0 "ParamControl\充值余额.ini" %USERID RMB
+INC D0 %最终获得
+SAVEVALUE "ParamControl\充值余额.ini" %USERID RMB %D0
+SAVEVALUE "ParamControl\领花记录.ini" %USERNAME 领花 %全局总数
+SAVEVALUE "ParamControl\领花记录.ini" %USERNAME %CURDAY 1
+SYSMSG "你的赞助币增加了<$OUTPUT(最终获得)>个." 1
+close
+BREAK

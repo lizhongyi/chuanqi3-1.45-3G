@@ -1,0 +1,74 @@
+;;创天网络有限公司原版1.45
+[@mugong_fireball]
+{
+#IF
+check [024] 1
+#SAY
+你还没有收到火球术秘籍吗？\ \
+<结束/@exit>
+#ACT
+break
+;
+#IF
+checkmagic 火球术
+#SAY
+我看你已经掌握了火球术魔法。\ \
+<结束/@exit>
+#ELSEACT
+goto @mugong_fireball_next
+
+[@mugong_fireball_next]
+#IF
+checklevel 7
+#ACT
+goto @mugong_fireball_next1
+#ELSESAY
+如果想学习火球术魔法，武功等级最低要达到7级。\ \
+<结束/@exit>
+
+[@mugong_fireball_next1]
+#IF
+checkitem 火球术 1
+#ACT
+goto @mugong_fireball_next2
+#ELSESAY
+有了火球术魔法书我就可以教你魔法。\ \
+<结束/@exit>
+
+[@mugong_fireball_next2]
+#IF
+#SAY
+想要学习火球术的样子。但是像你一样的初学者，在学习武功的过程中将遇到各种困难，我将给你进行详细地说明。现在你已经正式进入了成为魔法师的大门，恭喜你！\ 
+那么在给你秘籍之前，想听对武功的简单说明吗？\ \ 
+<拜托您了！/@mugong_fireball_next3> \  
+<没有必要了！/@exit> 
+
+[@mugong_fireball_next3]
+#IF
+#SAY
+火球术是魔法师的最基本魔法， {FCOLOR/10}制作火团{FCOLOR/12} 攻击远处的敌人。\ \
+<很基础的魔法嘛/@mugong_fireball_next4>
+
+[@mugong_fireball_next4]
+#IF
+check [024] 0
+checkitem 火球术 1
+#ACT
+take 火球术 1
+give 火球术（秘籍） 1
+set [024] 1
+#SAY
+现在你已经有了火球术秘籍，以前不理解的地方现在都可以理解了。\ \
+<结束/@exit>
+#ELSESAY
+有了火球术魔法书我就可以教你魔法。\ \
+<结束/@exit>
+}
+
+[@mugong_fireball_explain]
+{
+#IF
+#SAY
+想学习火球术魔法，基本的训练结束后再来找我吧！\ \
+<结束/@exit>
+}

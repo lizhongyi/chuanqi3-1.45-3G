@@ -1,0 +1,179 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@菜单_Main]
+{
+#Say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}珠{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}镶{FCOLOR/4}━{FCOLOR/14}嵌{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\\
+_  [ <打造源质钨钢金钻/@打造源质钨钢金钻1> ]    [ <打造动燃消魔之尘/@打造动燃消魔之尘1> ]\\
+_  [ <打造绚丽翡翠宝石/@打造绚丽翡翠宝石1> ]    [ <打造史诗皇后榴石/@打造多彩皇后榴石1> ]\\
+_  [ <初级打凿宝石插槽/@初级打凿宝石插槽1> ]    [ <高级打凿宝石插槽/@高级打凿宝石插槽1> ]\\
+_  [ <初级镶嵌多彩宝石/@初级镶嵌多彩宝石1> ]    [ <高级镶嵌多彩宝石/@高级镶嵌多彩宝石1> ]\\
+_              [ <摘掉装备镶嵌宝石/@摘掉装备镶嵌宝石1> ]\\
+
+[@打造源质钨钢金钻1]
+#Say
+_{FCOLOR/4}━━━{FCOLOR/1}★{FCOLOR/4}━━━{FCOLOR/14}源{FCOLOR/4}━{FCOLOR/14}质{FCOLOR/4}━{FCOLOR/14}钨{FCOLOR/4}━{FCOLOR/14}钢{FCOLOR/4}━{FCOLOR/14}金{FCOLOR/4}━{FCOLOR/14}钻{FCOLOR/4}━━━{FCOLOR/1}★{FCOLOR/4}━━━\\
+_{FCOLOR/12}源质钨钢金钻是大地上最稀有的两种矿石经过提炼与熔炼\
+_而合成的一种非常坚硬的器械。它可以轻而易举的穿透所\
+_有的装备并且注入进神秘的灵气。\
+_炼制{FCOLOR/1}1个源质钨钢金钻{FCOLOR/12}需要{FCOLOR/1}1个源质矿石{FCOLOR/12}和{FCOLOR/1}1个钨钢矿石{FCOLOR/12}.\\
+_      [ <开 始 熔 炼 源 质 矿 钨 钢 金 钻/@开始熔炼源质钨钢金钻> ]\\
+_                   [ <返  回/@菜单_Main> ]\\
+
+[@开始熔炼源质钨钢金钻]
+#If
+checkitem 源质矿石 1
+checkitem 钨钢矿石 1
+#Act
+Take 源质矿石 1
+Take 钨钢矿石 1
+Give 源质钨钢金钻 1
+SysMsg "<温馨提示:>恭喜您熔炼出1个[ 源质钨钢金钻 ]"
+Break
+#ElseAct
+SysMsg "<温馨提示:>您的原材料不足无法进行冶炼."
+Break
+
+[@打造绚丽翡翠宝石1]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}打{FCOLOR/4}━{FCOLOR/14}造{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\\
+打造{FCOLOR/1}1{FCOLOR/12}个成品宝石需要{FCOLOR/1}10{FCOLOR/12}个对应翡翠精华石和{FCOLOR/1}1{FCOLOR/12}个翡翠宝石{FCOLOR/12}\
+_        另外每次打造宝石收取{FCOLOR/1}10{FCOLOR/12}个元宝费用\\
+_           [ <打 造 闪 耀 翡 翠 宝 石/@翡翠宝石合成(闪耀翡翠精华,闪耀翡翠宝石)> ] \\
+_           [ <打 造 秘 法 翡 翠 宝 石/@翡翠宝石合成(秘法翡翠精华,秘法翡翠宝石)> ] \\
+_           [ <打 造 圆 润 翡 翠 宝 石/@翡翠宝石合成(圆润翡翠精华,圆润翡翠宝石)> ] \\
+_           [ <打 造 迅 捷 翡 翠 宝 石/@翡翠宝石合成(迅捷翡翠精华,迅捷翡翠宝石)> ] \\
+_           [ <打 造 机 敏 翡 翠 宝 石/@翡翠宝石合成(机敏翡翠精华,机敏翡翠宝石)> ] \\
+_           [ <打 造 复 苏 翡 翠 宝 石/@翡翠宝石合成(复苏翡翠精华,复苏翡翠宝石)> ] \\
+_           [ <打 造 光 辉 翡 翠 宝 石/@翡翠宝石合成(光辉翡翠精华,光辉翡翠宝石)> ] \\
+_                   [ <返  回/@菜单_Main> ]\\
+
+[@翡翠宝石合成()]
+#ACT
+MOV A1 %ARG(1)
+MOV A2 %ARG(2)
+
+#If
+checkitem %A1 10
+checkitem 翡翠宝石 1
+CHECKUSERJF 10
+#Act
+Take %A1 10
+Take 翡翠宝石 1
+Give %A2 1
+SysMsg "<系统提示:>恭喜您打造出一颗[ <$OUTPUT(A2)> ]"
+Break
+Close
+#ElseAct
+SysMsg "<系统提示:>打造失败,您的元宝不足10个或材料不足无法进行打造宝石."
+Break
+
+[@打造多彩皇后榴石1]
+#Act
+Mov D8 0
+Mov Temp 0
+#Say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}打{FCOLOR/4}━{FCOLOR/14}造{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\\
+打造{FCOLOR/1}1{FCOLOR/12}个成品宝石需要{FCOLOR/1}10{FCOLOR/12}个对应大地精华石和{FCOLOR/1}1{FCOLOR/12}个皇后榴石{FCOLOR/12}\\
+_           (注:打造宝石有{FCOLOR/10}40%{FCOLOR/12}的成功率)\\
+_           [ <打 造 闪 耀 皇 后 榴 石/@皇后榴石合成(闪耀大地精华,闪耀皇后榴石)> ] \\
+_           [ <打 造 秘 法 皇 后 榴 石/@皇后榴石合成(秘法大地精华,秘法皇后榴石)> ] \\
+_           [ <打 造 圆 润 皇 后 榴 石/@皇后榴石合成(圆润大地精华,圆润皇后榴石)> ] \\
+_           [ <打 造 迅 捷 皇 后 榴 石/@皇后榴石合成(迅捷大地精华,迅捷皇后榴石)> ] \\
+_           [ <打 造 机 敏 皇 后 榴 石/@皇后榴石合成(机敏大地精华,机敏皇后榴石)> ] \\
+_           [ <打 造 复 苏 皇 后 榴 石/@皇后榴石合成(复苏大地精华,复苏皇后榴石)> ] \\
+_           [ <打 造 光 辉 皇 后 榴 石/@皇后榴石合成(光辉大地精华,光辉皇后榴石)> ] \\
+_                   [ <返  回/@菜单_Main> ]\\
+
+[@皇后榴石合成()]
+#Act
+Mov A1 %ARG(1)
+Mov A2 %ARG(2)
+Movr D8 100
+
+#IF
+ESMALL D8 40
+EQUAL Temp 0
+#ACT
+Mov Temp 1
+GOTO @宝石合成成功
+Break
+
+#IF
+LARGE D8 40
+EQUAL Temp 0
+#ACT
+Mov Temp 1
+GOTO @宝石合成失败
+Break
+
+[@宝石合成失败]
+#If
+checkitem %A1 10
+checkitem 皇后榴石 1
+#Act
+Take %A1 10
+Take 皇后榴石 1
+SysMsg "<系统提示:>运气不好,您打造宝石失败.再接再厉~"
+Break
+Close
+#ElseAct
+SysMsg "<系统提示:>打造失败,您的材料不足无法进行打造宝石."
+Break
+
+[@宝石合成成功]
+#If
+checkitem %A1 10
+checkitem 皇后榴石 1
+#Act
+Take %A1 10
+Take 皇后榴石 1
+Give %A2 1
+SysMsg "<系统提示:>恭喜您打造出一颗[ <$OUTPUT(A2)> ]"
+Break
+Close
+#ElseAct
+SysMsg "<系统提示:>打造失败,您的材料不足无法进行打造宝石."
+Break
+
+[@打造动燃消魔之尘1]
+#Say
+_{FCOLOR/4}━━━{FCOLOR/1}★{FCOLOR/4}━━━{FCOLOR/14}动{FCOLOR/4}━{FCOLOR/14}燃{FCOLOR/4}━{FCOLOR/14}消{FCOLOR/4}━{FCOLOR/14}魔{FCOLOR/4}━{FCOLOR/14}之{FCOLOR/4}━{FCOLOR/14}尘{FCOLOR/4}━━━{FCOLOR/1}★{FCOLOR/4}━━━\\
+_{FCOLOR/1}动燃消魔之尘{FCOLOR/12}可以消除装备上所有的插槽和宝石附魔效果\
+_提炼{FCOLOR/1}动燃消魔之尘{FCOLOR/12}需要{FCOLOR/1}5{FCOLOR/12}个毁灭精华和{FCOLOR/1}5{FCOLOR/12}个永恒余烬.\\
+_         [ <开 始 熔 炼 动 燃 消 魔 之 尘/@开始熔炼动燃消魔之尘> ]\\
+_                   [ <返  回/@菜单_Main> ]\\
+
+[@开始熔炼动燃消魔之尘]
+#If
+checkitem 毁灭精华 5
+checkitem 永恒余烬 5
+checkuserjf 100
+#Act
+Take 毁灭精华 5
+Take 永恒余烬 5
+setuserjf -100
+Give 动燃消魔之尘 1
+SysMsg "恭喜您花费[ 100个元宝 ]熔炼出1个[ 动燃消魔之尘 ]"
+Break
+#ElseAct
+SysMsg "对不起,您的元宝不足100个或者没相应的材料无法熔炼！！！"
+Break
+
+[@初级打凿宝石插槽1]
+#CALL [Jewel\初级打孔.txt] @初级打孔_Main
+
+[@高级打凿宝石插槽1]
+#CALL [Jewel\高级打孔.txt] @高级打孔_Main
+
+[@初级镶嵌多彩宝石1]
+#CALL [Jewel\初级镶嵌.txt] @初级镶嵌_Main
+
+[@高级镶嵌多彩宝石1]
+#CALL [Jewel\高级镶嵌.txt] @高级镶嵌_Main
+
+[@摘掉装备镶嵌宝石1]
+#CALL [Jewel\取下宝石.txt] @取下宝石_Main
+
+}
+
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

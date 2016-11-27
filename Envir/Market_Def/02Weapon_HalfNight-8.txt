@@ -1,0 +1,57 @@
+;;创天网络有限公司原版1.45
+%100
++5
++6
++43
+
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+有什么事？我跟你无话可说。\ \
+<结束/@exit>
+#ELSESAY
+欢迎光临，你需要什么？\
+<购买/@buy>武器\
+<出售/@sell>武器\
+<修理/@repair>武器\
+<特殊修理/@Special_Repair(1)>武器\
+<结束/@exit>
+
+[@Special_Repair()]
+#CALL [\Repair\TotalRepair.txt] @SRepairItem
+
+[@buy]
+#SAY
+要想在这种偏僻的地方生存下去，必须借助精良的武器，来看一下吧。\ \
+<前一步/@main>
+
+[@sell]
+#SAY
+请把你不用的武器卖给我。\ \
+<前一步/@main>
+
+[@repair]
+#SAY
+我可以给你修理武器，不过持久性可能会降低，这我也没办法。\ \
+<前一步/@main>
+
+[~@repair]
+#SAY
+这已经算修得不错的了，拿走吧。\ \
+<前一步/@main>
+
+[Goods]
+;ItemName      Volume     Hour
+木剑            100        1
+匕首            100        1
+青铜剑          100        1
+铁剑            100        1
+乌木剑          100        1
+短剑            100        1
+青铜斧          100        1
+八荒            100        1
+凌风            100        1
+斩马刀          100        1
+半月            100        1
+海魂            100        1

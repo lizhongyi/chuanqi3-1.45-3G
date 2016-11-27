@@ -1,0 +1,148 @@
+;;
+[@HelperWestDesertQuest]
+{
+#IF
+Check [493] 1
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+ReadValueSql "TBL_WestDesertQuest" %A9 "FLD_SINUSERNAME,FLD_SINMAINSTEP,FLD_SINSTEP_READY" [@HelperWestDesertQuest_PreCheck]
+
+
+[@HelperWestDesertQuest_PreCheck()]
+#IF
+#ACT
+Mov A8 %ARG(1)
+mov D0 %ARG(2)
+Mov D1 %ARG(3)
+
+#IF
+Equal A8 ""
+#SAY
+还没开始西沙漠任务。\\
+<关 闭/@exit>
+#ACT
+break
+
+#IF
+Equal D0 1
+Equal D1 0
+#SAY
+阶    段：{FCOLOR/10}1-1{FCOLOR/12}西沙漠地宫的秘密\\
+内　　容：西沙漠地宫上发生了不可思议的事情，去找知情人打听情况。\\
+需要物品：无\\
+#ACT
+break
+
+#IF
+Equal D0 1
+Equal D1 2
+#SAY
+阶    段：{FCOLOR/10}1-2{FCOLOR/12}发现了线索\\
+内　　容：从法师梅山侠手里拿到了圣灵牌，按照梅山侠的指示，在地宫里寻找圣灵守护者。\\
+需要物品：无\\
+#ACT
+break
+
+#IF
+Equal D0 1
+Equal D1 3
+#SAY
+阶    段：{FCOLOR/10}1-3{FCOLOR/12}圣灵守护者的考验\\
+内　　容：圣灵守护者为了考验替它实现愿望的人才，派人去挑战沙漠毒蜥。\\
+需要物品：圣灵牌\\
+#ACT
+break
+
+#IF
+Equal D0 1
+Equal D1 4
+#SAY
+阶    段：{FCOLOR/10}1-4{FCOLOR/12}通过考验\\
+内　　容：打败沙漠毒蜥，通过了考验。要找到圣灵守护者，进行对话。\\
+需要物品：圣灵牌\\
+#ACT
+break
+
+#IF
+Equal D0 2
+Equal D1 0
+#SAY
+阶    段：{FCOLOR/10}1-5{FCOLOR/12}圣史记\\
+内　　容：圣灵守护者对考验结果很满意，于是送给圣史记。\\
+需要物品：圣灵牌\\
+#ACT
+break
+
+#IF
+Equal D0 2
+Equal D1 1
+#SAY
+阶    段：{FCOLOR/10}1-6{FCOLOR/12}发现了新的事实\\
+内　　容：看到圣史记的梅山侠会告诉你，去找圣灵守护者接受任务。\\
+需要物品：无\\
+#ACT
+break
+
+#IF
+Equal D0 2
+Equal D1 2
+#SAY
+阶    段：{FCOLOR/10}1-7{FCOLOR/12}再会圣灵守护者\\
+内　　容：圣灵守护者委托，去打败西沙漠的魔石守护神，找回它朋友的圣灵枯骨。\\
+需要物品：无\\
+
+#ACT
+break
+
+#IF
+Equal D0 2
+Equal D1 3
+#SAY
+阶    段：{FCOLOR/10}1-8{FCOLOR/12}打败魔石守护神\\
+内　　容：打败魔石守护神，找到了圣灵枯骨。把圣灵枯骨带给圣灵守护者。\\
+需要物品：圣灵枯骨\\
+#ACT
+break
+
+#IF
+Equal D0 3
+Equal D1 0
+#SAY
+阶    段：{FCOLOR/10}1-9{FCOLOR/12}圣灵守护者的秘密\\
+内　　容：圣灵守护者对找回圣灵枯骨表示感谢，并希望帮他一起克服世界危机。\\
+需要物品：无\\
+#ACT
+break
+
+#IF
+Equal D0 3
+Equal D1 1
+#SAY
+阶    段：{FCOLOR/10}1-10{FCOLOR/12}得到地洞之眼，地天灭王登场\\
+内　　容：从法师梅山侠手里拿到了地洞之眼。地洞之眼是进入地天灭王处的凭证。\\
+需要物品：圣灵枯骨\\
+#ACT
+break
+
+#IF
+Equal D0 3
+Equal D1 2
+#SAY
+阶    段：{FCOLOR/10}1-11{FCOLOR/12}地天灭王印记\\
+内　　容：经过殊死搏斗弄到了地天灭王印记，把印记给圣灵守护者送去。 \\
+需要物品：地天灭王印记\\
+
+#ACT
+break
+
+#IF
+Equal D0 4
+Equal D1 0
+#SAY
+阶    段：{FCOLOR/13}1-12{FCOLOR/12}昏暗的持续\\
+内　　容：用地天灭王印记暂时制止了混乱，但那不是长久之策。\\
+需要物品：无\\
+#ACT
+break
+}
+;;

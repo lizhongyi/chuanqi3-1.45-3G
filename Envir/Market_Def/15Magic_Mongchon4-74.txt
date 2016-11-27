@@ -1,0 +1,12 @@
+;;创天网络有限公司原版1.45
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+(....................)\ \
+<关闭/@exit>
+#ELSEACT
+goto @main_0
+
+[@main_0]
+#CALL [\MU_taoist\massheal.txt] @mugong_massheal_illtown

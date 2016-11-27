@@ -1,0 +1,42 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@泡点系统_1]
+{
+#SAY
+等级达到{FCOLOR/10}22级{FCOLOR/12},人物在道馆和比奇范围内可以开启{FCOLOR/13}泡点服务{FCOLOR/12}.\
+{FCOLOR/14} 1-21级{FCOLOR/12}: {FCOLOR/10}  60{FCOLOR/12}经验/分钟 {FCOLOR/1}无消耗,无地图限制{FCOLOR/12}.\
+{FCOLOR/14}22-29级{FCOLOR/12}: {FCOLOR/10} 700{FCOLOR/12}经验/分钟 {FCOLOR/1}无消耗{FCOLOR/12}.\
+{FCOLOR/14}30-34级{FCOLOR/12}: {FCOLOR/10}1500{FCOLOR/12}经验/分钟 消耗金币{FCOLOR/1}150{FCOLOR/12}.\
+{FCOLOR/14}35-39级{FCOLOR/12}: {FCOLOR/10}3000{FCOLOR/12}经验/分钟 消耗金币{FCOLOR/1}300{FCOLOR/12}.\
+{FCOLOR/14}40-44级{FCOLOR/12}: {FCOLOR/10}5000{FCOLOR/12}经验/分钟 消耗金币{FCOLOR/1}500{FCOLOR/12}.\
+{FCOLOR/14}45-47级{FCOLOR/12}: {FCOLOR/10}6000{FCOLOR/12}经验/分钟 消耗金币{FCOLOR/1}600{FCOLOR/12}.\
+{FCOLOR/14}48之后 {FCOLOR/12}: {FCOLOR/10}8000{FCOLOR/12}经验/分钟 消耗金币{FCOLOR/1}800{FCOLOR/12}.\
+<开启泡点服务/@开启泡点1>
+
+[@开启泡点1]
+#if
+checklevel 22
+#ELSEACT
+BREAK
+#ELSESAY
+等级不足22级,无需开启泡点服务,全地图自动免费泡点.\\
+<关闭/@Exit>
+
+#IF
+#ACT
+LOADVALUE D0 "ParamControl\泡点服务.ini" 泡点 %USERNAME
+
+#IF
+Equal D0 1
+#ACT
+BREAK
+#SAY
+你已经开启了泡点服务,无需反复开启.\\
+<关闭/@Exit>
+#ELSEACT
+CLOSE
+MAPMOVE 0 447 398
+SYSMSG "你开启了泡点服务."
+SAVEVALUE "ParamControl\泡点服务.ini" 泡点 %USERNAME 1
+BREAK
+
+}

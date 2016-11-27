@@ -1,0 +1,778 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@行会奖励_1]
+{
+#ACT
+LoadValue A1 "ParamControl\行会奖励变量.ini"  [行会资料]  行会1
+LoadValue A2 "ParamControl\行会奖励变量.ini"  [行会资料]  行会2
+LoadValue A3 "ParamControl\行会奖励变量.ini"  [行会资料]  行会3
+LoadValue A4 "ParamControl\行会奖励变量.ini"  [行会资料]  行会4
+LoadValue A5 "ParamControl\行会奖励变量.ini"  [行会资料]  行会5
+LoadValue A6 "ParamControl\行会奖励变量.ini"  [行会资料]  行会1老大
+LoadValue A7 "ParamControl\行会奖励变量.ini"  [行会资料]  行会2老大
+LoadValue A8 "ParamControl\行会奖励变量.ini"  [行会资料]  行会3老大
+LoadValue A9 "ParamControl\行会奖励变量.ini"  [行会资料]  行会4老大
+LoadValue A0 "ParamControl\行会奖励变量.ini"  [行会资料]  行会5老大
+LoadValue B1 "ParamControl\行会奖励变量.ini"  [行会资料]  人数1
+LoadValue B2 "ParamControl\行会奖励变量.ini"  [行会资料]  人数2
+LoadValue B3 "ParamControl\行会奖励变量.ini"  [行会资料]  人数3
+LoadValue B4 "ParamControl\行会奖励变量.ini"  [行会资料]  人数4
+LoadValue B5 "ParamControl\行会奖励变量.ini"  [行会资料]  人数5
+MOV    N1      %CURHOUR    ;;开区至今小时
+MOV  B8  1
+#IF
+Elarge  N1   24    ;;检测公测时间大于24小时
+#ACT
+GOTO @行会奖励_领取
+#ELSEACT
+GOTO @行会奖励_申请
+break
+
+[@行会奖励_申请]
+#SAY
+{FCOLOR/10}行会奖自助系统→{FCOLOR/12}采取行会领袖和成员 {FCOLOR/10}共同申请登记{FCOLOR/12}\
+公测{FCOLOR/10}24小时{FCOLOR/12}后领取奖励. 到达{FCOLOR/10}50级{FCOLOR/12}成员奖励{FCOLOR/10}100{FCOLOR/12}个元宝\
+{FCOLOR/15}行会领袖奖励:{FCOLOR/10} 15{FCOLOR/12}人以上达到{FCOLOR/10}60级{FCOLOR/12} 奖励 {FCOLOR/10}400{FCOLOR/12}  个元宝\
+{FCOLOR/15}行会领袖奖励:{FCOLOR/10} 30{FCOLOR/12}人以上达到{FCOLOR/10}60级{FCOLOR/12} 奖励 {FCOLOR/10}1000{FCOLOR/12} 个元宝\
+{FCOLOR/15}行会领袖奖励:{FCOLOR/10} 50{FCOLOR/12}人以上达到{FCOLOR/10}60级{FCOLOR/12} 奖励 {FCOLOR/10}3000{FCOLOR/12} 个元宝\
+{FCOLOR/15}行会领袖奖励:{FCOLOR/10}100{FCOLOR/12}人以上达到{FCOLOR/10}60级{FCOLOR/12} 奖励 {FCOLOR/10}8000{FCOLOR/12} 个元宝\
+{FCOLOR/10}行会奖励{FCOLOR/12}和{FCOLOR/10}家族奖励{FCOLOR/12}的区别在于 {FCOLOR/10}对全服玩家{FCOLOR/12}的{FCOLOR/10}公平性\
+积极性{FCOLOR/12}得到了{FCOLOR/10}平衡{FCOLOR/12},成员越多行会老大得到的{FCOLOR/10}奖励越多\
+{FCOLOR/15}申请条件:{FCOLOR/12}行会人数{FCOLOR/10}15人{FCOLOR/12}以上....成员必须在{FCOLOR/10}60级{FCOLOR/12}以上\
+{FCOLOR/15}申请截止日期:{FCOLOR/10}公测{FCOLOR/12}申请{FCOLOR/10}24小时{FCOLOR/12}后领取.{FCOLOR/10}128小时{FCOLOR/12}后关闭\
+<[成员申请]/@hhjlsq(1)>行会{FCOLOR/15}<$OUTPUT(A1)>{FCOLOR/12}会长{FCOLOR/15}<$OUTPUT(A6)>{FCOLOR/12}.人数{FCOLOR/1}<$OUTPUT(B1)>{FCOLOR/12}\
+<[成员申请]/@hhjlsq(2)>行会{FCOLOR/15}<$OUTPUT(A2)>{FCOLOR/12}会长{FCOLOR/15}<$OUTPUT(A7)>{FCOLOR/12}.人数{FCOLOR/1}<$OUTPUT(B2)>{FCOLOR/12}\
+<[成员申请]/@hhjlsq(3)>行会{FCOLOR/15}<$OUTPUT(A3)>{FCOLOR/12}会长{FCOLOR/15}<$OUTPUT(A8)>{FCOLOR/12}.人数{FCOLOR/1}<$OUTPUT(B3)>{FCOLOR/12}\
+<[成员申请]/@hhjlsq(4)>行会{FCOLOR/15}<$OUTPUT(A4)>{FCOLOR/12}会长{FCOLOR/15}<$OUTPUT(A9)>{FCOLOR/12}.人数{FCOLOR/1}<$OUTPUT(B4)>{FCOLOR/12}\
+<[成员申请]/@hhjlsq(5)>行会{FCOLOR/15}<$OUTPUT(A5)>{FCOLOR/12}会长{FCOLOR/15}<$OUTPUT(A0)>{FCOLOR/12}.人数{FCOLOR/1}<$OUTPUT(B5)>{FCOLOR/12}\\
+_            <[会 长 申 请 奖 励]/@ldsqjl>\
+
+[@行会奖励_领取]
+#IF
+Elarge  N1   128    ;;检测公测时间大于128小时
+#SAY
+{FCOLOR/10}行会奖自助系统→{FCOLOR/12}采取行会领袖和成员 {FCOLOR/10}共同申请登记{FCOLOR/12}\
+公测{FCOLOR/10}24小时{FCOLOR/12}后领取奖励. 到达{FCOLOR/10}60级{FCOLOR/12}成员奖励{FCOLOR/10}100{FCOLOR/12}个元宝\
+{FCOLOR/15}行会领袖奖励:{FCOLOR/10} 15{FCOLOR/12}人以上达到{FCOLOR/10}60级{FCOLOR/12} 奖励 {FCOLOR/10}400{FCOLOR/12}  个元宝\
+{FCOLOR/15}行会领袖奖励:{FCOLOR/10} 30{FCOLOR/12}人以上达到{FCOLOR/10}60级{FCOLOR/12} 奖励 {FCOLOR/10}1000{FCOLOR/12} 个元宝\
+{FCOLOR/15}行会领袖奖励:{FCOLOR/10} 50{FCOLOR/12}人以上达到{FCOLOR/10}60级{FCOLOR/12} 奖励 {FCOLOR/10}3000{FCOLOR/12} 个元宝\
+{FCOLOR/15}行会领袖奖励:{FCOLOR/10}100{FCOLOR/12}人以上达到{FCOLOR/10}60级{FCOLOR/12} 奖励 {FCOLOR/10}8000{FCOLOR/12} 个元宝\
+{FCOLOR/10}行会奖励{FCOLOR/12}和{FCOLOR/10}家族奖励{FCOLOR/12}的区别在于 {FCOLOR/10}对全服玩家{FCOLOR/12}的{FCOLOR/10}公平性\
+积极性{FCOLOR/12}得到了{FCOLOR/10}平衡{FCOLOR/12},成员越多行会老大得到的{FCOLOR/10}奖励越多\
+{FCOLOR/15}申请条件:{FCOLOR/12}行会人数{FCOLOR/10}15人{FCOLOR/12}以上....成员必须在{FCOLOR/10}60级{FCOLOR/12}以上\
+{FCOLOR/15}申请截止日期:{FCOLOR/10}公测{FCOLOR/12}申请{FCOLOR/10}24小时{FCOLOR/12}后领取.{FCOLOR/10}128小时{FCOLOR/12}后关闭\
+_             行会奖励系统已经关闭\
+#ELSESAY
+{FCOLOR/10}行会奖自助系统→{FCOLOR/12}采取行会领袖和成员 {FCOLOR/10}共同申请登记{FCOLOR/12}\
+公测{FCOLOR/10}24小时{FCOLOR/12}后领取奖励. 到达{FCOLOR/10}60级{FCOLOR/12}成员奖励{FCOLOR/10}100{FCOLOR/12}个元宝\
+{FCOLOR/15}行会领袖奖励:{FCOLOR/10} 15{FCOLOR/12}人以上达到{FCOLOR/10}60级{FCOLOR/12} 奖励 {FCOLOR/10}400{FCOLOR/12}  个元宝\
+{FCOLOR/15}行会领袖奖励:{FCOLOR/10} 30{FCOLOR/12}人以上达到{FCOLOR/10}60级{FCOLOR/12} 奖励 {FCOLOR/10}1000{FCOLOR/12} 个元宝\
+{FCOLOR/15}行会领袖奖励:{FCOLOR/10} 50{FCOLOR/12}人以上达到{FCOLOR/10}60级{FCOLOR/12} 奖励 {FCOLOR/10}3000{FCOLOR/12} 个元宝\
+{FCOLOR/15}行会领袖奖励:{FCOLOR/10}100{FCOLOR/12}人以上达到{FCOLOR/10}60级{FCOLOR/12} 奖励 {FCOLOR/10}8000{FCOLOR/12} 个元宝\
+{FCOLOR/10}行会奖励{FCOLOR/12}和{FCOLOR/10}家族奖励{FCOLOR/12}的区别在于 {FCOLOR/10}对全服玩家{FCOLOR/12}的{FCOLOR/10}公平性\
+积极性{FCOLOR/12}得到了{FCOLOR/10}平衡{FCOLOR/12},成员越多行会老大得到的{FCOLOR/10}奖励越多\
+{FCOLOR/15}申请条件:{FCOLOR/12}行会人数{FCOLOR/10}15人{FCOLOR/12}以上....成员必须在{FCOLOR/10}60级{FCOLOR/12}以上\
+{FCOLOR/15}申请截止日期:{FCOLOR/10}公测{FCOLOR/12}申请{FCOLOR/10}24小时{FCOLOR/12}后领取.{FCOLOR/10}128小时{FCOLOR/12}后关闭\
+<[成员领取]/@hhjllq(1)>行会{FCOLOR/15}<$OUTPUT(A1)>{FCOLOR/12}会长{FCOLOR/15}<$OUTPUT(A6)>{FCOLOR/12}.人数{FCOLOR/1}<$OUTPUT(B1)>{FCOLOR/12}\
+<[成员领取]/@hhjllq(2)>行会{FCOLOR/15}<$OUTPUT(A2)>{FCOLOR/12}会长{FCOLOR/15}<$OUTPUT(A7)>{FCOLOR/12}.人数{FCOLOR/1}<$OUTPUT(B2)>{FCOLOR/12}\
+<[成员领取]/@hhjllq(3)>行会{FCOLOR/15}<$OUTPUT(A3)>{FCOLOR/12}会长{FCOLOR/15}<$OUTPUT(A8)>{FCOLOR/12}.人数{FCOLOR/1}<$OUTPUT(B3)>{FCOLOR/12}\
+<[成员领取]/@hhjllq(4)>行会{FCOLOR/15}<$OUTPUT(A4)>{FCOLOR/12}会长{FCOLOR/15}<$OUTPUT(A9)>{FCOLOR/12}.人数{FCOLOR/1}<$OUTPUT(B4)>{FCOLOR/12}\
+<[成员领取]/@hhjllq(5)>行会{FCOLOR/15}<$OUTPUT(A5)>{FCOLOR/12}会长{FCOLOR/15}<$OUTPUT(A0)>{FCOLOR/12}.人数{FCOLOR/1}<$OUTPUT(B5)>{FCOLOR/12}\
+_        <[行 会 老 大 领 取 奖 励]/@ldlqjl>\
+
+[@hhjlsq()] 
+#ACT
+Mov    D2    %ARG(1)
+#IF
+checknamelist "..\ParamControl\行会1奖励.ini"
+#ACT
+Close
+SYSMSG "申请失败！您已经登记过.."
+break
+#IF
+checknamelist "..\ParamControl\行会2奖励.ini"
+#ACT
+Close
+SYSMSG "申请失败！您已经登记过.."
+break
+#IF
+checknamelist "..\ParamControl\行会3奖励.ini"
+#ACT
+Close
+SYSMSG "申请失败！您已经登记过.."
+break
+#IF
+checknamelist "..\ParamControl\行会4奖励.ini"
+#ACT
+Close
+SYSMSG "申请失败！您已经登记过.."
+break
+#IF
+checknamelist "..\ParamControl\行会5奖励.ini"
+#ACT
+Close
+SYSMSG "申请失败！您已经登记过.."
+break
+#ELSEACT
+GOTO @hhjlsq_1
+
+[@hhjlsq_1]
+#if
+checklevel 60
+#act
+GOTO @等级够了
+#ELSEACT
+Close
+SYSMSG "您的等级不够.无法为您登记.."
+
+[@等级够了]
+#IF
+EQUAL D2 1
+EQUAL A1 %GUILDNAME
+#act
+Close
+LoadValue N7 "ParamControl\行会奖励变量.ini" [行会资料] 人数1
+inc N7 1
+addnamelist "..\ParamControl\行会1奖励.ini"
+addnamelist "..\ParamControl\备份行会1奖励.ini"
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 人数1 %N7
+SYSMSG "<$USERNAME>,行会 <$OUTPUT(A1)> 的奖励已帮您登记."
+SYSMSG "<$USERNAME>,行会 <$OUTPUT(A1)> 的奖励已帮您登记."
+GOTO @行会1人数检测
+break
+
+#IF
+EQUAL D2 2
+EQUAL A2 %GUILDNAME
+#act
+Close
+LoadValue N7 "ParamControl\行会奖励变量.ini" [行会资料] 人数2
+inc N7 1
+addnamelist "..\ParamControl\行会2奖励.ini"
+addnamelist "..\ParamControl\备份行会2奖励.ini"
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 人数2 %N7
+SYSMSG "<$USERNAME>,行会 <$OUTPUT(A2)> 的奖励已帮您登记."
+SYSMSG "<$USERNAME>,行会 <$OUTPUT(A2)> 的奖励已帮您登记."
+GOTO @行会2人数检测
+break
+
+#IF
+EQUAL D2 3
+EQUAL A3 %GUILDNAME
+#act
+Close
+LoadValue N7 "ParamControl\行会奖励变量.ini" [行会资料] 人数3
+inc N7 1
+addnamelist "..\ParamControl\行会3奖励.ini"
+addnamelist "..\ParamControl\备份行会3奖励.ini"
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 人数3 %N7
+SYSMSG "<$USERNAME>,行会 <$OUTPUT(A3)> 的奖励已帮您登记."
+SYSMSG "<$USERNAME>,行会 <$OUTPUT(A3)> 的奖励已帮您登记."
+GOTO @行会3人数检测
+break
+
+#IF
+EQUAL D2 4
+EQUAL A4 %GUILDNAME
+#act
+Close
+LoadValue N7 "ParamControl\行会奖励变量.ini" [行会资料] 人数4
+inc N7 1
+addnamelist "..\ParamControl\行会4奖励.ini"
+addnamelist "..\ParamControl\备份行会4奖励.ini"
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 人数4 %N7
+SYSMSG "<$USERNAME>,行会 <$OUTPUT(A4)> 的奖励已帮您登记."
+SYSMSG "<$USERNAME>,行会 <$OUTPUT(A4)> 的奖励已帮您登记."
+GOTO @行会4人数检测
+break
+
+#IF
+EQUAL D2 5
+EQUAL A5 %GUILDNAME
+#act
+Close
+LoadValue N7 "ParamControl\行会奖励变量.ini" [行会资料] 人数5
+inc N7 1
+addnamelist "..\ParamControl\行会5奖励.ini"
+addnamelist "..\ParamControl\备份行会5奖励.ini"
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 人数5 %N7
+SYSMSG "<$USERNAME>,行会 <$OUTPUT(A5)> 的奖励已帮您登记."
+SYSMSG "<$USERNAME>,行会 <$OUTPUT(A5)> 的奖励已帮您登记."
+GOTO @行会5人数检测
+break
+#ELSEACT
+Close
+SYSMSG "申请失败！您不是所选择的行会成员.."
+
+
+[@hhjllq()]
+#ACT
+Mov    D3    %ARG(1)
+#IF
+checknamelist "..\ParamControl\行会1奖励.ini"
+#ACT
+GOTO @hhjllq_9
+break
+#IF
+checknamelist "..\ParamControl\行会2奖励.ini"
+#ACT
+GOTO @hhjllq_9
+break
+#IF
+checknamelist "..\ParamControl\行会3奖励.ini"
+#ACT
+GOTO @hhjllq_9
+break
+#IF
+checknamelist "..\ParamControl\行会4奖励.ini"
+#ACT
+GOTO @hhjllq_9
+break
+#IF
+checknamelist "..\ParamControl\行会5奖励.ini"
+#ACT
+GOTO @hhjllq_9
+break
+#ELSEACT
+Close
+SYSMSG "领取失败！您不在记录中.或已经领取过."
+
+[@hhjllq_9]
+#IF
+EQUAL D3 1
+EQUAL A1 %GUILDNAME
+EQUAL B8  1
+#act
+Close
+MOV  B8  0
+LoadValue N7 "ParamControl\行会奖励变量.ini" [行会资料] 人数1
+dec N7 1
+delnamelist "..\ParamControl\行会1奖励.ini"
+delnamelist "..\ParamControl\行会2奖励.ini"
+delnamelist "..\ParamControl\行会3奖励.ini"
+delnamelist "..\ParamControl\行会4奖励.ini"
+delnamelist "..\ParamControl\行会5奖励.ini"
+actcmd SETUSERJF + 100 行会奖励
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 人数1 %N7
+SYSMSG "<$USERNAME>,给您行会 <$OUTPUT(A1)> 的奖励."
+SYSMSG "<$USERNAME>,给您行会 <$OUTPUT(A1)> 的奖励."
+break
+
+#IF
+EQUAL D3 2
+EQUAL A2 %GUILDNAME
+EQUAL B8  1
+#act
+Close
+MOV  B8  0
+LoadValue N7 "ParamControl\行会奖励变量.ini" [行会资料] 人数2
+dec N7 1
+delnamelist "..\ParamControl\行会1奖励.ini"
+delnamelist "..\ParamControl\行会2奖励.ini"
+delnamelist "..\ParamControl\行会3奖励.ini"
+delnamelist "..\ParamControl\行会4奖励.ini"
+delnamelist "..\ParamControl\行会5奖励.ini"
+actcmd SETUSERJF + 100 行会奖励
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 人数2 %N7
+SYSMSG "<$USERNAME>,给您行会 <$OUTPUT(A2)> 的奖励."
+SYSMSG "<$USERNAME>,给您行会 <$OUTPUT(A2)> 的奖励."
+break
+
+#IF
+EQUAL D3 3
+EQUAL A3 %GUILDNAME
+EQUAL B8  1
+#act
+Close
+MOV  B8  0
+LoadValue N7 "ParamControl\行会奖励变量.ini" [行会资料] 人数3
+dec N7 1
+delnamelist "..\ParamControl\行会1奖励.ini"
+delnamelist "..\ParamControl\行会2奖励.ini"
+delnamelist "..\ParamControl\行会3奖励.ini"
+delnamelist "..\ParamControl\行会4奖励.ini"
+delnamelist "..\ParamControl\行会5奖励.ini"
+actcmd SETUSERJF + 100 行会奖励
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 人数3 %N7
+SYSMSG "<$USERNAME>,给您行会 <$OUTPUT(A3)> 的奖励."
+SYSMSG "<$USERNAME>,给您行会 <$OUTPUT(A3)> 的奖励."
+break
+
+#IF
+EQUAL D3 4
+EQUAL A4 %GUILDNAME
+EQUAL B8  1
+#act
+Close
+MOV  B8  0
+LoadValue N7 "ParamControl\行会奖励变量.ini" [行会资料] 人数4
+dec N7 1
+delnamelist "..\ParamControl\行会1奖励.ini"
+delnamelist "..\ParamControl\行会2奖励.ini"
+delnamelist "..\ParamControl\行会3奖励.ini"
+delnamelist "..\ParamControl\行会4奖励.ini"
+delnamelist "..\ParamControl\行会5奖励.ini"
+actcmd SETUSERJF + 100 行会奖励
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 人数4 %N7
+SYSMSG "<$USERNAME>,给您行会 <$OUTPUT(A4)> 的奖励."
+SYSMSG "<$USERNAME>,给您行会 <$OUTPUT(A4)> 的奖励."
+break
+
+#IF
+EQUAL D3 5
+EQUAL A5 %GUILDNAME
+EQUAL B8  1
+#act
+Close
+MOV  B8  0
+LoadValue N7 "ParamControl\行会奖励变量.ini" [行会资料] 人数5
+dec N7 1
+delnamelist "..\ParamControl\行会1奖励.ini"
+delnamelist "..\ParamControl\行会2奖励.ini"
+delnamelist "..\ParamControl\行会3奖励.ini"
+delnamelist "..\ParamControl\行会4奖励.ini"
+delnamelist "..\ParamControl\行会5奖励.ini"
+actcmd SETUSERJF + 100 行会奖励
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 人数5 %N7
+SYSMSG "<$USERNAME>,给您行会 <$OUTPUT(A5)> 的奖励."
+SYSMSG "<$USERNAME>,给您行会 <$OUTPUT(A5)> 的奖励."
+break
+#ELSEACT
+Close
+SYSMSG "领取失败！您不是所选择的行会成员.."
+
+[@行会1人数检测]
+#IF
+EQUAL N7 15
+#act
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 行会1老大积分 400
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A1)> 的会长奖励为400个元宝请转告会长."
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A1)> 的会长奖励为400个元宝请转告会长."
+break
+
+#IF
+EQUAL N7 30
+#act
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 行会1老大积分 1000
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A1)> 的会长奖励为1000个元宝请转告会长."
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A1)> 的会长奖励为1000个元宝请转告会长."
+break
+
+#IF
+EQUAL N7 50
+#act
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 行会1老大积分 3000
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A1)> 的会长奖励为3000个元宝请转告会长."
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A1)> 的会长奖励为3000个元宝请转告会长."
+break
+
+#IF
+EQUAL N7 100
+#act
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 行会1老大积分 8000
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A1)> 的会长奖励为8000个元宝请转告会长."
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A1)> 的会长奖励为8000个元宝请转告会长."
+break
+
+[@行会2人数检测]
+#IF
+EQUAL N7 15
+#act
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 行会2老大积分 400
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A2)> 的会长奖励为400个元宝请转告会长."
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A2)> 的会长奖励为400个元宝请转告会长."
+break
+
+#IF
+EQUAL N7 30
+#act
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 行会2老大积分 1000
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A2)> 的会长奖励为1000个元宝请转告会长."
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A2)> 的会长奖励为1000个元宝请转告会长."
+break
+
+#IF
+EQUAL N7 50
+#act
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 行会2老大积分 3000
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A2)> 的会长奖励为3000个元宝请转告会长."
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A2)> 的会长奖励为3000个元宝请转告会长."
+break
+
+#IF
+EQUAL N7 100
+#act
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 行会2老大积分 8000
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A2)> 的会长奖励为8000个元宝请转告会长."
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A2)> 的会长奖励为8000个元宝请转告会长."
+break
+
+[@行会3人数检测]
+#IF
+EQUAL N7 15
+#act
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 行会3老大积分 400
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A3)> 的会长奖励为400个元宝请转告会长."
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A3)> 的会长奖励为400个元宝请转告会长."
+break
+
+#IF
+EQUAL N7 30
+#act
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 行会3老大积分 1000
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A3)> 的会长奖励为1000个元宝请转告会长."
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A3)> 的会长奖励为1000个元宝请转告会长."
+break
+
+#IF
+EQUAL N7 50
+#act
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 行会3老大积分 3000
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A3)> 的会长奖励为3000个元宝请转告会长."
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A3)> 的会长奖励为3000个元宝请转告会长."
+break
+
+#IF
+EQUAL N7 100
+#act
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 行会3老大积分 8000
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A3)> 的会长奖励为8000个元宝请转告会长."
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A3)> 的会长奖励为8000个元宝请转告会长."
+break
+
+[@行会4人数检测]
+#IF
+EQUAL N7 15
+#act
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 行会4老大积分 400
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A4)> 的会长奖励为400个元宝请转告会长."
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A4)> 的会长奖励为400个元宝请转告会长."
+break
+
+#IF
+EQUAL N7 30
+#act
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 行会4老大积分 1000
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A4)> 的会长奖励为1000个元宝请转告会长."
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A4)> 的会长奖励为1000个元宝请转告会长."
+break
+
+#IF
+EQUAL N7 50
+#act
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 行会4老大积分 3000
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A4)> 的会长奖励为3000个元宝请转告会长."
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A4)> 的会长奖励为3000个元宝请转告会长."
+break
+
+#IF
+EQUAL N7 100
+#act
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 行会4老大积分 8000
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A4)> 的会长奖励为8000个元宝请转告会长."
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A4)> 的会长奖励为8000个元宝请转告会长."
+break
+
+[@行会5人数检测]
+#IF
+EQUAL N7 15
+#act
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 行会5老大积分 400
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A5)> 的会长奖励为400个元宝请转告会长."
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A5)> 的会长奖励为400个元宝请转告会长."
+break
+
+#IF
+EQUAL N7 30
+#act
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 行会5老大积分 1000
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A5)> 的会长奖励为1000个元宝请转告会长."
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A5)> 的会长奖励为1000个元宝请转告会长."
+break
+
+#IF
+EQUAL N7 50
+#act
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 行会5老大积分 3000
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A5)> 的会长奖励为3000个元宝请转告会长."
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A5)> 的会长奖励为3000个元宝请转告会长."
+break
+
+#IF
+EQUAL N7 100
+#act
+SaveValue "ParamControl\行会奖励变量.ini" [行会资料] 行会5老大积分 8000
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A5)> 的会长奖励为8000个元宝请转告会长."
+SYSMSG "<$USERNAME>,目前行会 <$OUTPUT(A5)> 的会长奖励为8000个元宝请转告会长."
+break
+
+[@ldsqjl]
+#IF
+IsGuildMaster
+#ACT
+LoadValue A1 "ParamControl\行会奖励变量.ini"  [行会资料]  行会1
+LoadValue A2 "ParamControl\行会奖励变量.ini"  [行会资料]  行会2
+LoadValue A3 "ParamControl\行会奖励变量.ini"  [行会资料]  行会3
+LoadValue A4 "ParamControl\行会奖励变量.ini"  [行会资料]  行会4
+LoadValue A5 "ParamControl\行会奖励变量.ini"  [行会资料]  行会5
+LoadValue N7 "ParamControl\行会申请变量.ini"  [Log] INDEX
+GOTO @行会奖励申请_1
+#elseact
+close
+SysMsg "<$USERNAME>,您不是行会会长.没有权利申请."
+
+[@行会奖励申请_1]
+#IF
+equal A1 %GUILDNAME
+#ACT
+close
+SysMsg "<$USERNAME>,您的行会已经提交过申请."
+break
+#IF
+equal A2 %GUILDNAME
+#ACT
+close
+SysMsg "<$USERNAME>,您的行会已经提交过申请."
+break
+#IF
+equal A3 %GUILDNAME
+#ACT
+close
+SysMsg "<$USERNAME>,您的行会已经提交过申请."
+break
+#IF
+equal A4 %GUILDNAME
+#ACT
+close
+SysMsg "<$USERNAME>,您的行会已经提交过申请."
+break
+#IF
+equal A5 %GUILDNAME
+#ACT
+close
+SysMsg "<$USERNAME>,您的行会已经提交过申请."
+break
+#elseact
+GOTO @行会奖励申请_2
+
+[@行会奖励申请_2]
+#IF
+equal N7 0
+#ACT
+close
+LoadValue N6 "ParamControl\行会奖励变量.ini" [行会资料] 人数1
+inc N6 1
+inc N7 1
+addnamelist "..\ParamControl\行会1奖励.ini"
+addnamelist "..\ParamControl\备份行会1奖励.ini"
+addnamelist "..\ParamControl\行会老大变量.ini"
+addnamelist "..\ParamControl\备份行会老大变量.ini"
+SAVEVALUE "ParamControl\行会奖励变量.ini"  [行会资料] 人数1 %N6
+SAVEVALUE "ParamControl\行会申请变量.ini"  [Log] INDEX %N7
+SAVEVALUE "ParamControl\行会奖励变量.ini"  [行会资料]  行会1 %GUILDNAME
+SAVEVALUE "ParamControl\行会奖励变量.ini"  [行会资料]  行会1老大 %USERNAME
+SYSMSG "<$USERNAME>,奖励申请完毕.可以号召成员加入了"
+SYSMSG "<$USERNAME>,奖励申请完毕.可以号召成员加入了"
+break
+
+#IF
+equal N7 1
+#ACT
+close
+LoadValue N6 "ParamControl\行会奖励变量.ini" [行会资料] 人数2
+inc N6 1
+inc N7 1
+addnamelist "..\ParamControl\行会2奖励.ini"
+addnamelist "..\ParamControl\备份行会2奖励.ini"
+addnamelist "..\ParamControl\行会老大变量.ini"
+addnamelist "..\ParamControl\备份行会老大变量.ini"
+SAVEVALUE "ParamControl\行会奖励变量.ini"  [行会资料] 人数2 %N6
+SAVEVALUE "ParamControl\行会申请变量.ini"  [Log] INDEX %N7
+SAVEVALUE "ParamControl\行会奖励变量.ini"  [行会资料]  行会2 %GUILDNAME
+SAVEVALUE "ParamControl\行会奖励变量.ini"  [行会资料]  行会2老大 %USERNAME
+SYSMSG "<$USERNAME>,奖励申请完毕.可以号召成员加入了"
+SYSMSG "<$USERNAME>,奖励申请完毕.可以号召成员加入了"
+break
+
+#IF
+equal N7 2
+#ACT
+close
+LoadValue N6 "ParamControl\行会奖励变量.ini" [行会资料] 人数3
+inc N6 1
+inc N7 1
+addnamelist "..\ParamControl\行会3奖励.ini"
+addnamelist "..\ParamControl\备份行会3奖励.ini"
+addnamelist "..\ParamControl\行会老大变量.ini"
+addnamelist "..\ParamControl\备份行会老大变量.ini"
+SAVEVALUE "ParamControl\行会奖励变量.ini"  [行会资料] 人数3 %N6
+SAVEVALUE "ParamControl\行会申请变量.ini"  [Log] INDEX %N7
+SAVEVALUE "ParamControl\行会奖励变量.ini"  [行会资料]  行会3 %GUILDNAME
+SAVEVALUE "ParamControl\行会奖励变量.ini"  [行会资料]  行会3老大 %USERNAME
+SYSMSG "<$USERNAME>,奖励申请完毕.可以号召成员加入了"
+SYSMSG "<$USERNAME>,奖励申请完毕.可以号召成员加入了"
+break
+
+#IF
+equal N7 3
+#ACT
+close
+LoadValue N6 "ParamControl\行会奖励变量.ini" [行会资料] 人数4
+inc N6 1
+inc N7 1
+addnamelist "..\ParamControl\行会4奖励.ini"
+addnamelist "..\ParamControl\备份行会4奖励.ini"
+addnamelist "..\ParamControl\行会老大变量.ini"
+addnamelist "..\ParamControl\备份行会老大变量.ini"
+SAVEVALUE "ParamControl\行会奖励变量.ini"  [行会资料] 人数4 %N6
+SAVEVALUE "ParamControl\行会申请变量.ini"  [Log] INDEX %N7
+SAVEVALUE "ParamControl\行会奖励变量.ini"  [行会资料]  行会4 %GUILDNAME
+SAVEVALUE "ParamControl\行会奖励变量.ini"  [行会资料]  行会4老大 %USERNAME
+SYSMSG "<$USERNAME>,奖励申请完毕.可以号召成员加入了"
+SYSMSG "<$USERNAME>,奖励申请完毕.可以号召成员加入了"
+break
+
+#IF
+equal N7 4
+#ACT
+close
+LoadValue N6 "ParamControl\行会奖励变量.ini" [行会资料] 人数5
+inc N6 1
+inc N7 1
+addnamelist "..\ParamControl\行会5奖励.ini"
+addnamelist "..\ParamControl\备份行会5奖励.ini"
+addnamelist "..\ParamControl\行会老大变量.ini"
+addnamelist "..\ParamControl\备份行会老大变量.ini"
+SAVEVALUE "ParamControl\行会奖励变量.ini"  [行会资料] 人数5 %N6
+SAVEVALUE "ParamControl\行会申请变量.ini"  [Log] INDEX %N7
+SAVEVALUE "ParamControl\行会奖励变量.ini"  [行会资料]  行会5 %GUILDNAME
+SAVEVALUE "ParamControl\行会奖励变量.ini"  [行会资料]  行会5老大 %USERNAME
+SYSMSG "<$USERNAME>,奖励申请完毕.可以号召成员加入了"
+SYSMSG "<$USERNAME>,奖励申请完毕.可以号召成员加入了"
+break
+
+#IF
+equal N7 5
+#SAY
+<$USERNAME>,您好!5个行会已经全部申请满\
+如果需要继续申请,请联系客服GM..........\
+
+[@ldlqjl]
+#ACT
+LoadValue A1 "ParamControl\行会奖励变量.ini"  [行会资料]  行会1
+LoadValue A2 "ParamControl\行会奖励变量.ini"  [行会资料]  行会2
+LoadValue A3 "ParamControl\行会奖励变量.ini"  [行会资料]  行会3
+LoadValue A4 "ParamControl\行会奖励变量.ini"  [行会资料]  行会4
+LoadValue A5 "ParamControl\行会奖励变量.ini"  [行会资料]  行会5
+LoadValue B1 "ParamControl\行会奖励变量.ini"  [行会资料]  行会1老大
+LoadValue B2 "ParamControl\行会奖励变量.ini"  [行会资料]  行会2老大
+LoadValue B3 "ParamControl\行会奖励变量.ini"  [行会资料]  行会3老大
+LoadValue B4 "ParamControl\行会奖励变量.ini"  [行会资料]  行会4老大
+LoadValue B5 "ParamControl\行会奖励变量.ini"  [行会资料]  行会5老大
+LoadValue D1 "ParamControl\行会奖励变量.ini"  [行会资料]  行会1老大积分
+LoadValue D2 "ParamControl\行会奖励变量.ini"  [行会资料]  行会2老大积分
+LoadValue D3 "ParamControl\行会奖励变量.ini"  [行会资料]  行会3老大积分
+LoadValue D4 "ParamControl\行会奖励变量.ini"  [行会资料]  行会4老大积分
+LoadValue D5 "ParamControl\行会奖励变量.ini"  [行会资料]  行会5老大积分
+MOV  B8  1
+#SAY
+奖励是两位领袖的奖励,请平均分配:\
+领袖奖励根据成员人数多少 所奖励:\
+行会[{FCOLOR/15}<$OUTPUT(A1)>{FCOLOR/12}]的领袖[{FCOLOR/15}<$OUTPUT(B1)>{FCOLOR/12}]\
+获得的元宝奖励为: {FCOLOR/15}<$OUTPUT(D1)>{FCOLOR/12} <[领取奖励]/@lqulaoda(1)>\
+行会[{FCOLOR/15}<$OUTPUT(A2)>{FCOLOR/12}]的领袖[{FCOLOR/15}<$OUTPUT(B2)>{FCOLOR/12}]\
+获得的元宝奖励为: {FCOLOR/15}<$OUTPUT(D2)>{FCOLOR/12} <[领取奖励]/@lqulaoda(2)>\
+行会[{FCOLOR/15}<$OUTPUT(A3)>{FCOLOR/12}]的领袖[{FCOLOR/15}<$OUTPUT(B3)>{FCOLOR/12}]\
+获得的元宝奖励为: {FCOLOR/15}<$OUTPUT(D3)>{FCOLOR/12} <[领取奖励]/@lqulaoda(3)>\
+行会[{FCOLOR/15}<$OUTPUT(A4)>{FCOLOR/12}]的领袖[{FCOLOR/15}<$OUTPUT(B4)>{FCOLOR/12}]\
+获得的元宝奖励为: {FCOLOR/15}<$OUTPUT(D4)>{FCOLOR/12} <[领取奖励]/@lqulaoda(4)>\
+行会[{FCOLOR/15}<$OUTPUT(A5)>{FCOLOR/12}]的领袖[{FCOLOR/15}<$OUTPUT(B5)>{FCOLOR/12}]\
+获得的元宝奖励为: {FCOLOR/15}<$OUTPUT(D5)>{FCOLOR/12} <[领取奖励]/@lqulaoda(5)>\
+
+[@lqulaoda()]
+#ACT
+Mov    N1    %ARG(1)
+
+#IF
+checknamelist "..\ParamControl\行会老大变量.ini"
+#ACT
+GOTO @lqulaoda_1
+#ELSEACT
+Close
+SYSMSG "领取失败！您不在记录中.或您已经领取过."
+
+[@lqulaoda_1]
+#IF
+EQUAL N1 1
+EQUAL A1 %GUILDNAME
+EQUAL B1 %USERNAME
+EQUAL B8  1
+#ACT
+Close
+MOV  B8  0
+delnamelist "..\ParamControl\行会老大变量.ini"
+actcmd SETUSERJF + %D1 行会领袖奖励
+SYSMSG "<$USERNAME>,给您行会 <$OUTPUT(A1)> 的领袖奖励.<$OUTPUT(D1)>个元宝"
+SYSMSG "<$USERNAME>,给您行会 <$OUTPUT(A1)> 的领袖奖励.<$OUTPUT(D1)>个元宝"
+break
+
+#IF
+EQUAL N1 2
+EQUAL A2 %GUILDNAME
+EQUAL B2 %USERNAME
+EQUAL B8  1
+#ACT
+Close
+MOV  B8  0
+delnamelist "..\ParamControl\行会老大变量.ini"
+actcmd SETUSERJF + %D2 行会领袖奖励
+SYSMSG "<$USERNAME>,给您行会 <$OUTPUT(A2)> 的领袖奖励.<$OUTPUT(D2)>个元宝"
+SYSMSG "<$USERNAME>,给您行会 <$OUTPUT(A2)> 的领袖奖励.<$OUTPUT(D2)>个元宝"
+break
+
+#IF
+EQUAL N1 3
+EQUAL A3 %GUILDNAME
+EQUAL B3 %USERNAME
+EQUAL B8  1
+#ACT
+Close
+MOV  B8  0
+delnamelist "..\ParamControl\行会老大变量.ini"
+actcmd SETUSERJF + %D3 行会领袖奖励
+SYSMSG "<$USERNAME>,给您行会 <$OUTPUT(A3)> 的领袖奖励.<$OUTPUT(D3)>个元宝"
+SYSMSG "<$USERNAME>,给您行会 <$OUTPUT(A3)> 的领袖奖励.<$OUTPUT(D3)>个元宝"
+break
+
+#IF
+EQUAL D1 4
+EQUAL A4 %GUILDNAME
+EQUAL B4 %USERNAME
+EQUAL B8  1
+#ACT
+Close
+MOV  B8  0
+delnamelist "..\ParamControl\行会老大变量.ini"
+actcmd SETUSERJF + %D4 行会领袖奖励
+SYSMSG "<$USERNAME>,给您行会 <$OUTPUT(A4)> 的领袖奖励.<$OUTPUT(D4)>个元宝"
+SYSMSG "<$USERNAME>,给您行会 <$OUTPUT(A4)> 的领袖奖励.<$OUTPUT(D4)>个元宝"
+break
+
+#IF
+EQUAL N1 5
+EQUAL A5 %GUILDNAME
+EQUAL B5 %USERNAME
+EQUAL B8  1
+#ACT
+Close
+MOV  B8  0
+delnamelist "..\ParamControl\行会老大变量.ini"
+actcmd SETUSERJF + %D5 行会领袖奖励
+SYSMSG "<$USERNAME>,给您行会 <$OUTPUT(A5)> 的领袖奖励.<$OUTPUT(D5)>个元宝"
+SYSMSG "<$USERNAME>,给您行会 <$OUTPUT(A5)> 的领袖奖励.<$OUTPUT(D5)>个元宝"
+break
+#ELSEACT
+Close
+SYSMSG "领取失败！您不是所选择的行会领袖.."
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

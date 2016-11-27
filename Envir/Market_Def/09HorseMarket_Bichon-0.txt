@@ -1,0 +1,171 @@
+;;创天网络有限公司原版1.45
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+跟你这种人我无话可说。\ \
+<结束/@exit>
+#ELSESAY
+欢迎光临比奇马厩。马是高价产品，请慎重选择。\
+<购买 褐色马（50万金币，需要等级15）/@BuyHorseGraw> \
+<兑换 褐色马（褐色马凭证，需要等级15）/@BuyHorseGraw_1> \\
+<马匹进阶/@进阶马匹_1>\\
+<回收褐色马凭证/@褐色马凭证1>\\
+<结束/@exit>
+
+[@褐色马凭证1]
+#IF
+CHECKITEM 褐色马凭证 1
+#ACT
+TAKE 褐色马凭证 1
+GIVEGOLDEX 10000
+close
+BREAK
+#ELSESAY
+你的包袱里没有褐色马凭证.\\
+<关闭/@Exit>
+
+
+[@进阶马匹_1]
+#IF
+!CheckHorse
+#ACT
+break
+#SAY
+你目前还未拥有马匹,要不要先试试我这里的褐色马.\\
+<关闭/@Exit>
+
+#IF
+checkhorse 1
+#ACT
+BREAK
+#SAY
+你目前的马匹是{FCOLOR/1}褐色马{FCOLOR/12},进阶成{FCOLOR/1}白马{FCOLOR/12}需要人物等级达到{FCOLOR/10}35{FCOLOR/12}级,并消耗{FCOLOR/10}2000W{FCOLOR/12}金币.\\
+白马可以为你增加0-2的属性值和200点负重,现在购买1500W即可.\\
+<进阶为白马/@进阶白马>
+
+#IF
+checkhorse 2
+#ACT
+BREAK
+#SAY
+你目前的马匹是{FCOLOR/1}白马{FCOLOR/12},进阶成{FCOLOR/1}赤兔马{FCOLOR/12}需要人物等级达到{FCOLOR/10}45{FCOLOR/12}级,并消耗{FCOLOR/10}8000W{FCOLOR/12}金币.\\
+赤兔马可以为你增加0-8的属性值和500点负重,现在购买6800W即可.\\
+<进阶为赤兔马/@进阶赤兔马>
+
+#IF
+#SAY
+你目前拥有的是最高开放的:{FCOLOR/1}赤兔马{FCOLOR/12}\\
+<关闭/@Exit>
+
+[@进阶白马]
+#IF
+!CHECKLEVEL 35
+#ACT
+SYSMSG "你的等级还没有到35级,请在35级后再来!"
+BREAK
+
+#IF
+!CheckGold 15000000
+#ACT
+SYSMSG "进阶到白马需要花费1500W金币,请按W键查看包袱确认!"
+BREAK
+
+#IF
+checkhorse 1
+#ACT
+CLOSE
+take 金币 15000000
+KillHorse
+horsecall 白马
+BREAK
+
+
+[@进阶赤兔马]
+#IF
+!CHECKLEVEL 45
+#ACT
+SYSMSG "你的等级还没有到45级,请在45级后再来!"
+BREAK
+
+#IF
+!CheckGold 68000000
+#ACT
+SYSMSG "进阶到赤兔马需要花费6800W金币,请按W键查看包袱确认!"
+BREAK
+
+#IF
+checkhorse 2
+#ACT
+CLOSE
+take 金币 68000000
+KillHorse
+horsecall 赤兔马
+BREAK
+
+[@BuyHorseGraw]
+#IF
+checklevel 15
+#ELSESAY
+我不能把这么宝贵的马卖给你。你再修炼一段时间等练到15级再来吧。\ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkgold 500000
+#ELSESAY
+你的钱不够，准备好钱以后再来吧。\ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+CheckHorse
+#SAY
+你不是有马嘛，为什么还要买？\ \
+<结束/@exit>
+#ACT
+break
+
+#ELSESAY
+好好骑吧。\ \
+<结束/@exit>
+#ELSEACT
+take 金币 500000
+horsecall 褐色马
+
+
+[@BuyHorseGraw_1]
+#IF
+checklevel 15
+#ELSESAY
+我不能把这么宝贵的马卖给你。你再修炼一段时间等练到15级再来吧。\ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+checkitem 褐色马凭证 1
+#ELSESAY
+你包袱里没有褐色马凭证,通过签名礼包激活可获得。\ \
+<结束/@exit>
+#ELSEACT
+break
+
+#IF
+CheckHorse
+#SAY
+你不是有马嘛，为什么还要兑换？\ \
+<结束/@exit>
+#ACT
+break
+
+#ELSESAY
+好好骑吧。\ \
+<结束/@exit>
+#ELSEACT
+take 褐色马凭证 1
+horsecall 褐色马
+break
+

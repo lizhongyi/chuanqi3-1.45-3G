@@ -1,0 +1,128 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@嫁祸PK值]
+{
+#IF
+#ACT
+mov 快速点击 1
+
+#IF
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}嫁{FCOLOR/4}━{FCOLOR/14}祸{FCOLOR/4}━{FCOLOR/14}仇{FCOLOR/4}━{FCOLOR/14}敌{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+想嫁祸您的仇家 ? 让他成天红名 ? 你真的想这样做 ?\
+嫁祸收费: {FCOLOR/1}1{FCOLOR/12}元宝={FCOLOR/1}2{FCOLOR/12}PK值{FCOLOR/12} 同时可清除自己{FCOLOR/1}1{FCOLOR/12}点PK值{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}嫁{FCOLOR/4}━{FCOLOR/14}祸{FCOLOR/4}━{FCOLOR/14}仇{FCOLOR/4}━{FCOLOR/14}敌{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_  [ <输入想嫁祸的玩家角色--请确认该玩家不在线/@@shuru_PK> ]
+
+[@@shuru_PK]
+#ACT
+mov  A0  %INPUTSTR
+FormatStr "FLD_CHARACTER='%s'" %A0
+ReadValueSql  "TBL_CHARACTER"  %A9  "FLD_CHARACTER,FLD_PKPOINT"  [@Point_PKPOINTPK+]
+
+[@Point_PKPOINTPK+()]
+#ACT
+mov       A3   %ARG(1)   
+mov       D3   %ARG(2)   ;;PK值
+mov  D4  0
+mov  D5  0
+mov  D6  0
+
+#IF
+EQUAL A0 %USERNAME 
+#ACT
+SYSMSG "温馨提示: 不能给您当前角色嫁祸"
+break
+
+#IF
+EQUAL A3 ""
+#ACT
+SYSMSG "温馨提示: 游戏内没有您输入的角色名"
+break
+
+#IF
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}嫁{FCOLOR/4}━{FCOLOR/14}祸{FCOLOR/4}━{FCOLOR/14}仇{FCOLOR/4}━{FCOLOR/14}敌{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+想嫁祸您的仇家 ? 让他成天红名 ? 你真的想这样做 ?\
+嫁祸收费: {FCOLOR/10}1元宝 = 2PK值{FCOLOR/12} 同时可 {FCOLOR/10}清除自己1点PK值{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}嫁{FCOLOR/4}━{FCOLOR/14}祸{FCOLOR/4}━{FCOLOR/14}仇{FCOLOR/4}━{FCOLOR/14}敌{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_   <输入想嫁祸的玩家角色--请确认该玩家不在线/@@shuru_PK>\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}嫁{FCOLOR/4}━{FCOLOR/14}祸{FCOLOR/4}━{FCOLOR/14}仇{FCOLOR/4}━{FCOLOR/14}敌{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_嫁祸给玩家:[ {FCOLOR/10}<$OUTPUT(A0)>{FCOLOR/12} ]\\
+_{FCOLOR/12}[ <请输入→元宝数量←/@@shuru_zssl> ]\\
+_输入的嫁祸元宝数量:[{FCOLOR/1} <$OUTPUT(D4)> {FCOLOR/12} ]个\\
+_系统运算可嫁祸PK值:[{FCOLOR/1} <$OUTPUT(D5)> {FCOLOR/12}]点\\
+_系统运算可清除PK值:[{FCOLOR/1} <$OUTPUT(D6)> {FCOLOR/12}]点\
+
+[@@shuru_zssl]
+#ACT
+mov  D4  %INPUTSTR
+
+#IF 
+Small D4 1
+#ACT 
+SYSMSG "温馨提示: 请输入 1 - 1000 的数值"
+break
+
+#IF 
+Large D4 1000
+#ACT 
+SYSMSG "温馨提示: 请输入 1 - 1000 的数值"
+break
+
+#IF
+#ACT
+MOV P1 %D4
+MOV P2 2
+mul P1 P2
+MOV D5 %P9
+
+MOV P1 %D5
+MOV P2 2
+div P1 P2
+MOV D6 %P9
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}嫁{FCOLOR/4}━{FCOLOR/14}祸{FCOLOR/4}━{FCOLOR/14}仇{FCOLOR/4}━{FCOLOR/14}敌{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+想嫁祸您的仇家 ? 让他成天红名 ? 你真的想这样做 ?\
+嫁祸收费: {FCOLOR/10}1元宝 = 2PK值{FCOLOR/12} 同时可 {FCOLOR/10}清除自己1点PK值{FCOLOR/12}\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}嫁{FCOLOR/4}━{FCOLOR/14}祸{FCOLOR/4}━{FCOLOR/14}仇{FCOLOR/4}━{FCOLOR/14}敌{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_   <输入想嫁祸的玩家角色--请确认该玩家不在线/@@shuru_PK>\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}嫁{FCOLOR/4}━{FCOLOR/14}祸{FCOLOR/4}━{FCOLOR/14}仇{FCOLOR/4}━{FCOLOR/14}敌{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_嫁祸给玩家:[ {FCOLOR/10}<$OUTPUT(A0)>{FCOLOR/12} ]\\
+_{FCOLOR/12}[ <可修改→元宝数量←/@@shuru_zssl> ]      [ <确认→开始嫁祸←/@kaishi_jiahuo> ]\\
+_输入的嫁祸元宝数量:[{FCOLOR/1} <$OUTPUT(D4)> {FCOLOR/12} ]个\\
+_系统运算可嫁祸PK值:[{FCOLOR/1} <$OUTPUT(D5)> {FCOLOR/12}]点\\
+_系统运算可清除PK值:[{FCOLOR/1} <$OUTPUT(D6)> {FCOLOR/12}]点\
+
+[@kaishi_jiahuo]
+#IF
+EQUAL D4 0
+#ACT
+SYSMSG "温馨提示:您输入的元宝数为0,无法嫁祸."
+Break
+
+#IF
+equal 快速点击 1
+checkcmd CHECKUSERJF %D4
+#ACT
+Close
+    Mov A7 "嫁祸给< "
+    AddStr A7 %A0
+    AddStr A7 " >"
+actcmd SETUSERJF - %D4 %A7
+mov 快速点击 0
+lineMsg [Grobal] "天灵灵.地灵灵.玩家 <$OUTPUT(A0)> 被 <$USERNAME> 暗算了"
+
+FormatStr "FLD_CHARACTER='%s'" %A0
+mov   A8      %A9
+inc   D3  %D5
+FormatStr "FLD_PKPOINT='%s'" %D3
+UPDATEVALUESQL "TBL_CHARACTER" %A8 %A9
+
+ACTCMD CHANGEPK - %D6
+
+SYSMSG "嫁祸成功: 嫁祸给<$OUTPUT(A0)>PK值:<$OUTPUT(D5)>点,当前PK值:<$OUTPUT(D3)>"
+#ELSEACT
+SYSMSG "温馨提示: 您没有 <$OUTPUT(D4)> 个元宝"
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

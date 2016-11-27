@@ -1,0 +1,462 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@检查转生属性_1]
+{
+#SAY
+<给大号调整转生属性/@gdahao_tiaozheng>\\
+<检查自己的转生属性/@jiancha_zsshuxing>
+
+[@jiancha_zsshuxing]
+#IF
+checkjob warrior
+#ACT
+GOTO @jczshuxing_zhan
+break
+
+#IF
+checkjob wizard
+#ACT
+GOTO @jczshuxing_fa
+break
+#ELSEACT
+GOTO @jczshuxing_dao
+
+[@jczshuxing_dao]
+#ACT
+MOV P1 %USERREBORNCOUNT
+MOV P2 45
+MUL P1 P2
+MOV 应该灵魂 %P9
+
+actcmd READSQL "King_HumPlus" "AddSc" "实际灵魂"
+mov    实际灵魂    %实际灵魂
+
+MOV P1 %USERREBORNCOUNT
+MOV P2 200
+MUL P1 P2
+MOV 应该血 %P9
+
+actcmd READSQL "King_HumPlus" "AddHP" "实际血"
+mov    实际血    %实际血
+
+MOV P1 %USERREBORNCOUNT
+MOV P2 150
+MUL P1 P2
+MOV 应该魔 %P9
+
+actcmd READSQL "King_HumPlus" "AddMP" "实际魔"
+mov    实际魔    %实际魔
+
+#IF
+Equal 实际灵魂 %应该灵魂
+Equal 实际血 %应该血
+Equal 实际魔 %应该魔
+#SAY
+您当前转生等级[{FCOLOR/1} <$USERREBORNCOUNT> {FCOLOR/12}]次转生\
+转生{FCOLOR/10}灵魂{FCOLOR/12}属性应该是:[{FCOLOR/1} 45 * <$USERREBORNCOUNT> = <$OUTPUT(应该灵魂)> {FCOLOR/12}]\
+当前{FCOLOR/10}灵魂{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际灵魂)> {FCOLOR/12}]\\
+
+转生{FCOLOR/10}HP血{FCOLOR/12}属性应该是:[{FCOLOR/1} 200 * <$USERREBORNCOUNT> = <$OUTPUT(应该血)> {FCOLOR/12}]\
+当前{FCOLOR/10}HP血{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际血)> {FCOLOR/12}]\\
+
+转生{FCOLOR/10}MP魔{FCOLOR/12}属性应该是:[{FCOLOR/1} 150 * <$USERREBORNCOUNT> = <$OUTPUT(应该魔)> {FCOLOR/12}]\
+当前{FCOLOR/10}MP魔{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际魔)> {FCOLOR/12}]\\
+
+=====转生属性一切正常=====
+#ELSESAY
+您当前转生等级[{FCOLOR/1} <$USERREBORNCOUNT> {FCOLOR/12}]次转生\
+转生{FCOLOR/10}灵魂{FCOLOR/12}属性应该是:[{FCOLOR/1} 45 * <$USERREBORNCOUNT> = <$OUTPUT(应该灵魂)> {FCOLOR/12}]\
+当前{FCOLOR/10}灵魂{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际灵魂)> {FCOLOR/12}]\\
+
+转生{FCOLOR/10}HP血{FCOLOR/12}属性应该是:[{FCOLOR/1} 200 * <$USERREBORNCOUNT> = <$OUTPUT(应该血)> {FCOLOR/12}]\
+当前{FCOLOR/10}HP血{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际血)> {FCOLOR/12}]\\
+
+转生{FCOLOR/10}MP魔{FCOLOR/12}属性应该是:[{FCOLOR/1} 150 * <$USERREBORNCOUNT> = <$OUTPUT(应该魔)> {FCOLOR/12}]\
+当前{FCOLOR/10}MP魔{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际魔)> {FCOLOR/12}]\\
+
+====={FCOLOR/1}转生属性存在异常{FCOLOR/12}=====\
+=== {FCOLOR/1}请使用小号调整属性{FCOLOR/12} ===
+
+[@jczshuxing_fa]
+#ACT
+MOV P1 %USERREBORNCOUNT
+MOV P2 35
+MUL P1 P2
+MOV 应该自然 %P9
+
+actcmd READSQL "King_HumPlus" "AddMc" "实际自然"
+mov    实际自然    %实际自然
+
+MOV P1 %USERREBORNCOUNT
+MOV P2 100
+MUL P1 P2
+MOV 应该血 %P9
+
+actcmd READSQL "King_HumPlus" "AddHP" "实际血"
+mov    实际血    %实际血
+
+MOV P1 %USERREBORNCOUNT
+MOV P2 200
+MUL P1 P2
+MOV 应该魔 %P9
+
+actcmd READSQL "King_HumPlus" "AddMP" "实际魔"
+mov    实际魔    %实际魔
+
+#IF
+Equal 实际自然 %应该自然
+Equal 实际血 %应该血
+Equal 实际魔 %应该魔
+#SAY
+您当前转生等级[{FCOLOR/1} <$USERREBORNCOUNT> {FCOLOR/12}]次转生\
+转生{FCOLOR/10}自然{FCOLOR/12}属性应该是:[{FCOLOR/1} 35 * <$USERREBORNCOUNT> = <$OUTPUT(应该自然)> {FCOLOR/12}]\
+当前{FCOLOR/10}自然{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际自然)> {FCOLOR/12}]\\
+
+转生{FCOLOR/10}HP血{FCOLOR/12}属性应该是:[{FCOLOR/1} 100 * <$USERREBORNCOUNT> = <$OUTPUT(应该血)> {FCOLOR/12}]\
+当前{FCOLOR/10}HP血{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际血)> {FCOLOR/12}]\\
+
+转生{FCOLOR/10}MP魔{FCOLOR/12}属性应该是:[{FCOLOR/1} 200 * <$USERREBORNCOUNT> = <$OUTPUT(应该魔)> {FCOLOR/12}]\
+当前{FCOLOR/10}MP魔{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际魔)> {FCOLOR/12}]\\
+
+=====转生属性一切正常=====
+#ELSESAY
+您当前转生等级[{FCOLOR/1} <$USERREBORNCOUNT> {FCOLOR/12}]次转生\
+转生{FCOLOR/10}自然{FCOLOR/12}属性应该是:[{FCOLOR/1} 35 * <$USERREBORNCOUNT> = <$OUTPUT(应该自然)> {FCOLOR/12}]\
+当前{FCOLOR/10}自然{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际自然)> {FCOLOR/12}]\\
+
+转生{FCOLOR/10}HP血{FCOLOR/12}属性应该是:[{FCOLOR/1} 100 * <$USERREBORNCOUNT> = <$OUTPUT(应该血)> {FCOLOR/12}]\
+当前{FCOLOR/10}HP血{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际血)> {FCOLOR/12}]\\
+
+转生{FCOLOR/10}MP魔{FCOLOR/12}属性应该是:[{FCOLOR/1} 200 * <$USERREBORNCOUNT> = <$OUTPUT(应该魔)> {FCOLOR/12}]\
+当前{FCOLOR/10}MP魔{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际魔)> {FCOLOR/12}]\\
+
+====={FCOLOR/1}转生属性存在异常{FCOLOR/12}=====\
+=== {FCOLOR/1}请使用小号调整属性{FCOLOR/12} ===
+
+[@jczshuxing_zhan]
+#ACT
+MOV P1 %USERREBORNCOUNT
+MOV P2 35
+MUL P1 P2
+MOV 应该破坏 %P9
+
+actcmd READSQL "King_HumPlus" "AddDc" "实际破坏"
+mov    实际破坏    %实际破坏
+
+MOV P1 %USERREBORNCOUNT
+MOV P2 300
+MUL P1 P2
+MOV 应该血 %P9
+
+actcmd READSQL "King_HumPlus" "AddHP" "实际血"
+mov    实际血    %实际血
+
+MOV P1 %USERREBORNCOUNT
+MOV P2 100
+MUL P1 P2
+MOV 应该魔 %P9
+
+actcmd READSQL "King_HumPlus" "AddMP" "实际魔"
+mov    实际魔    %实际魔
+
+#IF
+Equal 实际破坏 %应该破坏
+Equal 实际血 %应该血
+Equal 实际魔 %应该魔
+#SAY
+您当前转生等级[{FCOLOR/1} <$USERREBORNCOUNT> {FCOLOR/12}]次转生\
+转生{FCOLOR/10}破坏{FCOLOR/12}属性应该是:[{FCOLOR/1} 35 * <$USERREBORNCOUNT> = <$OUTPUT(应该破坏)> {FCOLOR/12}]\
+当前{FCOLOR/10}破坏{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际破坏)> {FCOLOR/12}]\\
+
+转生{FCOLOR/10}HP血{FCOLOR/12}属性应该是:[{FCOLOR/1} 300 * <$USERREBORNCOUNT> = <$OUTPUT(应该血)> {FCOLOR/12}]\
+当前{FCOLOR/10}HP血{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际血)> {FCOLOR/12}]\\
+
+转生{FCOLOR/10}MP魔{FCOLOR/12}属性应该是:[{FCOLOR/1} 100 * <$USERREBORNCOUNT> = <$OUTPUT(应该魔)> {FCOLOR/12}]\
+当前{FCOLOR/10}MP魔{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际魔)> {FCOLOR/12}]\\
+
+=====转生属性一切正常=====
+#ELSESAY
+您当前转生等级[{FCOLOR/1} <$USERREBORNCOUNT> {FCOLOR/12}]次转生\
+转生{FCOLOR/10}破坏{FCOLOR/12}属性应该是:[{FCOLOR/1} 35 * <$USERREBORNCOUNT> = <$OUTPUT(应该破坏)> {FCOLOR/12}]\
+当前{FCOLOR/10}破坏{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际破坏)> {FCOLOR/12}]\\
+
+转生{FCOLOR/10}HP血{FCOLOR/12}属性应该是:[{FCOLOR/1} 300 * <$USERREBORNCOUNT> = <$OUTPUT(应该血)> {FCOLOR/12}]\
+当前{FCOLOR/10}HP血{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际血)> {FCOLOR/12}]\\
+
+转生{FCOLOR/10}MP魔{FCOLOR/12}属性应该是:[{FCOLOR/1} 100 * <$USERREBORNCOUNT> = <$OUTPUT(应该魔)> {FCOLOR/12}]\
+当前{FCOLOR/10}MP魔{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际魔)> {FCOLOR/12}]\\
+
+====={FCOLOR/1}转生属性存在异常{FCOLOR/12}=====\
+=== {FCOLOR/1}请使用小号调整属性{FCOLOR/12} ===
+
+[@gdahao_tiaozheng]
+#SAY
+请输入您的大号角色名: <大号的角色名称/@@gdahao_tiaozheng_1>\\
+
+[@@gdahao_tiaozheng_1]
+#ACT
+mov   A0  %INPUTSTR
+mov   A1  %USERID
+#IF
+EQUAL A0  %USERNAME 
+#ACT
+Close
+SYSMSG "温馨提示: 不能给您当前角色调整"
+#ELSEACT
+GOTO @gdahao_tiaozheng_02
+
+[@gdahao_tiaozheng_02]
+#ACT
+FormatStr "FLD_CHARACTER='%s'" %A0
+ReadValueSql "TBL_CHARACTER" %A9 "FLD_CHARACTER,FLD_USERID,FLD_JOB" @gdahao_tiaozheng_2
+
+[@gdahao_tiaozheng_2()]
+#ACT
+MOV A2 %ARG(1)
+MOV A3 %ARG(2)
+MOV A4 %ARG(3)
+#IF
+EQUAL A2 ""
+#ACT
+close
+SYSMSG "温馨提示: 没有您输入的角色名"
+break
+
+#IF
+!EQUAL A3 %USERID
+#ACT
+close
+SYSMSG "温馨提示: 只能给同一ID下的角色调整"
+#ELSEACT
+GOTO @gdahao_tiaozheng_3
+
+[@gdahao_tiaozheng_3]
+#IF
+EQUAL A4 0
+#ACT
+FormatStr "FLD_CHARACTER='%s'" %A0
+ReadValueSql "King_HumPlus" %A9 "FLD_CHARACTER,AddDc,AddHP,AddMp,SuperChangeCount" @gdahao_tiaozheng_3_zhan
+break
+
+#IF
+EQUAL A4 1
+#ACT
+FormatStr "FLD_CHARACTER='%s'" %A0
+ReadValueSql "King_HumPlus" %A9 "FLD_CHARACTER,AddMc,AddHP,AddMp,SuperChangeCount" @gdahao_tiaozheng_3_fa
+break
+
+#IF
+EQUAL A4 2
+#ACT
+FormatStr "FLD_CHARACTER='%s'" %A0
+ReadValueSql "King_HumPlus" %A9 "FLD_CHARACTER,AddSc,AddHP,AddMp,SuperChangeCount" @gdahao_tiaozheng_3_dao
+break
+
+[@gdahao_tiaozheng_3_dao()]
+#ACT
+MOV A2 %ARG(1)
+MOV 实际灵魂 %ARG(2)
+MOV 实际血 %ARG(3)
+MOV 实际魔 %ARG(4)
+MOV 转等 %ARG(5)
+
+MOV P1 %转等
+MOV P2 45
+MUL P1 P2
+MOV 应该灵魂 %P9
+
+MOV P1 %转等
+MOV P2 200
+MUL P1 P2
+MOV 应该血 %P9
+
+MOV P1 %转等
+MOV P2 150
+MUL P1 P2
+MOV 应该魔 %P9
+#IF
+Equal 实际灵魂 %应该灵魂
+Equal 实际血 %应该血
+Equal 实际魔 %应该魔
+#SAY
+角色[{FCOLOR/10} <$OUTPUT(A2)> {FCOLOR/12}]职业[{FCOLOR/10} 道士 {FCOLOR/12}]等级[{FCOLOR/10} <$OUTPUT(转等)> {FCOLOR/12}]次转生\\
+转生{FCOLOR/10}灵魂{FCOLOR/12}属性应该是:[{FCOLOR/1} 45 * <$OUTPUT(转等)> = <$OUTPUT(应该灵魂)> {FCOLOR/12}]\
+当前{FCOLOR/10}灵魂{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际灵魂)> {FCOLOR/12}]\\
+
+转生{FCOLOR/10}HP血{FCOLOR/12}属性应该是:[{FCOLOR/1} 200 * <$OUTPUT(转等)> = <$OUTPUT(应该血)> {FCOLOR/12}]\
+当前{FCOLOR/10}HP血{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际血)> {FCOLOR/12}]\\
+
+转生{FCOLOR/10}MP魔{FCOLOR/12}属性应该是:[{FCOLOR/1} 150 * <$OUTPUT(转等)> = <$OUTPUT(应该魔)> {FCOLOR/12}]\
+当前{FCOLOR/10}MP魔{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际魔)> {FCOLOR/12}]\\
+=====转生属性一切正常=====
+#ELSESAY
+角色[{FCOLOR/10} <$OUTPUT(A2)> {FCOLOR/12}]职业[{FCOLOR/10} 道士 {FCOLOR/12}]等级[{FCOLOR/10} <$OUTPUT(转等)> {FCOLOR/12}]次转生\\
+转生{FCOLOR/10}灵魂{FCOLOR/12}属性应该是:[{FCOLOR/1} 45 * <$OUTPUT(转等)> = <$OUTPUT(应该灵魂)> {FCOLOR/12}]\
+当前{FCOLOR/10}灵魂{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际灵魂)> {FCOLOR/12}]\\
+
+转生{FCOLOR/10}HP血{FCOLOR/12}属性应该是:[{FCOLOR/1} 200 * <$OUTPUT(转等)> = <$OUTPUT(应该血)> {FCOLOR/12}]\
+当前{FCOLOR/10}HP血{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际血)> {FCOLOR/12}]\\
+
+转生{FCOLOR/10}MP魔{FCOLOR/12}属性应该是:[{FCOLOR/1} 150 * <$OUTPUT(转等)> = <$OUTPUT(应该魔)> {FCOLOR/12}]\
+当前{FCOLOR/10}MP魔{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际魔)> {FCOLOR/12}]\\
+====={FCOLOR/1}转生属性存在异常{FCOLOR/12}=====\\
+=====<调整该角色的属性/@tzzhuanshu_kaishi_daoshi>=====
+
+[@gdahao_tiaozheng_3_fa()]
+#ACT
+MOV A2 %ARG(1)
+MOV 实际自然 %ARG(2)
+MOV 实际血 %ARG(3)
+MOV 实际魔 %ARG(4)
+MOV 转等 %ARG(5)
+
+MOV P1 %转等
+MOV P2 35
+MUL P1 P2
+MOV 应该自然 %P9
+
+MOV P1 %转等
+MOV P2 100
+MUL P1 P2
+MOV 应该血 %P9
+
+MOV P1 %转等
+MOV P2 200
+MUL P1 P2
+MOV 应该魔 %P9
+#IF
+Equal 实际自然 %应该自然
+Equal 实际血 %应该血
+Equal 实际魔 %应该魔
+#SAY
+角色[{FCOLOR/10} <$OUTPUT(A2)> {FCOLOR/12}]职业[{FCOLOR/10} 法师 {FCOLOR/12}]等级[{FCOLOR/10} <$OUTPUT(转等)> {FCOLOR/12}]次转生\\
+转生{FCOLOR/10}自然{FCOLOR/12}属性应该是:[{FCOLOR/1} 35 * <$OUTPUT(转等)> = <$OUTPUT(应该自然)> {FCOLOR/12}]\
+当前{FCOLOR/10}自然{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际自然)> {FCOLOR/12}]\\
+
+转生{FCOLOR/10}HP血{FCOLOR/12}属性应该是:[{FCOLOR/1} 100 * <$OUTPUT(转等)> = <$OUTPUT(应该血)> {FCOLOR/12}]\
+当前{FCOLOR/10}HP血{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际血)> {FCOLOR/12}]\\
+
+转生{FCOLOR/10}MP魔{FCOLOR/12}属性应该是:[{FCOLOR/1} 200 * <$OUTPUT(转等)> = <$OUTPUT(应该魔)> {FCOLOR/12}]\
+当前{FCOLOR/10}MP魔{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际魔)> {FCOLOR/12}]\\
+=====转生属性一切正常=====
+#ELSESAY
+角色[{FCOLOR/10} <$OUTPUT(A2)> {FCOLOR/12}]职业[{FCOLOR/10} 法师 {FCOLOR/12}]等级[{FCOLOR/10} <$OUTPUT(转等)> {FCOLOR/12}]次转生\\
+转生{FCOLOR/10}自然{FCOLOR/12}属性应该是:[{FCOLOR/1} 35 * <$OUTPUT(转等)> = <$OUTPUT(应该自然)> {FCOLOR/12}]\
+当前{FCOLOR/10}自然{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际自然)> {FCOLOR/12}]\\
+
+转生{FCOLOR/10}HP血{FCOLOR/12}属性应该是:[{FCOLOR/1} 100 * <$OUTPUT(转等)> = <$OUTPUT(应该血)> {FCOLOR/12}]\
+当前{FCOLOR/10}HP血{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际血)> {FCOLOR/12}]\\
+
+转生{FCOLOR/10}MP魔{FCOLOR/12}属性应该是:[{FCOLOR/1} 200 * <$OUTPUT(转等)> = <$OUTPUT(应该魔)> {FCOLOR/12}]\
+当前{FCOLOR/10}MP魔{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际魔)> {FCOLOR/12}]\\
+====={FCOLOR/1}转生属性存在异常{FCOLOR/12}=====\\
+=====<调整该角色的属性/@tzzhuanshu_kaishi_fashi>=====
+
+[@gdahao_tiaozheng_3_zhan()]
+#ACT
+MOV A2 %ARG(1)
+MOV 实际破坏 %ARG(2)
+MOV 实际血 %ARG(3)
+MOV 实际魔 %ARG(4)
+MOV 转等 %ARG(5)
+
+MOV P1 %转等
+MOV P2 35
+MUL P1 P2
+MOV 应该破坏 %P9
+
+MOV P1 %转等
+MOV P2 300
+MUL P1 P2
+MOV 应该血 %P9
+
+MOV P1 %转等
+MOV P2 100
+MUL P1 P2
+MOV 应该魔 %P9
+#IF
+Equal 实际破坏 %应该破坏
+Equal 实际血 %应该血
+Equal 实际魔 %应该魔
+#SAY
+角色[{FCOLOR/10} <$OUTPUT(A2)> {FCOLOR/12}]职业[{FCOLOR/10} 战士 {FCOLOR/12}]等级[{FCOLOR/10} <$OUTPUT(转等)> {FCOLOR/12}]次转生\\
+转生{FCOLOR/10}破坏{FCOLOR/12}属性应该是:[{FCOLOR/1} 35 * <$OUTPUT(转等)> = <$OUTPUT(应该破坏)> {FCOLOR/12}]\
+当前{FCOLOR/10}破坏{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际破坏)> {FCOLOR/12}]\\
+
+转生{FCOLOR/10}HP血{FCOLOR/12}属性应该是:[{FCOLOR/1} 300 * <$OUTPUT(转等)> = <$OUTPUT(应该血)> {FCOLOR/12}]\
+当前{FCOLOR/10}HP血{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际血)> {FCOLOR/12}]\\
+
+转生{FCOLOR/10}MP魔{FCOLOR/12}属性应该是:[{FCOLOR/1} 100 * <$OUTPUT(转等)> = <$OUTPUT(应该魔)> {FCOLOR/12}]\
+当前{FCOLOR/10}MP魔{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际魔)> {FCOLOR/12}]\\
+=====转生属性一切正常=====
+#ELSESAY
+角色[{FCOLOR/10} <$OUTPUT(A2)> {FCOLOR/12}]职业[{FCOLOR/10} 战士 {FCOLOR/12}]等级[{FCOLOR/10} <$OUTPUT(转等)> {FCOLOR/12}]次转生\\
+转生{FCOLOR/10}破坏{FCOLOR/12}属性应该是:[{FCOLOR/1} 35 * <$OUTPUT(转等)> = <$OUTPUT(应该破坏)> {FCOLOR/12}]\
+当前{FCOLOR/10}破坏{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际破坏)> {FCOLOR/12}]\\
+
+转生{FCOLOR/10}HP血{FCOLOR/12}属性应该是:[{FCOLOR/1} 300 * <$OUTPUT(转等)> = <$OUTPUT(应该血)> {FCOLOR/12}]\
+当前{FCOLOR/10}HP血{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际血)> {FCOLOR/12}]\\
+
+转生{FCOLOR/10}MP魔{FCOLOR/12}属性应该是:[{FCOLOR/1} 100 * <$OUTPUT(转等)> = <$OUTPUT(应该魔)> {FCOLOR/12}]\
+当前{FCOLOR/10}MP魔{FCOLOR/12}属性实际为:[{FCOLOR/1} <$OUTPUT(实际魔)> {FCOLOR/12}]\\
+====={FCOLOR/1}转生属性存在异常{FCOLOR/12}=====\\
+=====<调整该角色的属性/@tzzhuanshu_kaishi_zhanshi>=====
+
+[@tzzhuanshu_kaishi_daoshi]
+#ACT
+Close
+FormatStr "FLD_CHARACTER='%s'" %A2
+mov   A8   %A9
+FormatStr "AddSc='%s'" %应该灵魂
+UPDATEVALUESQL "King_HumPlus" %A8 %A9
+
+FormatStr "FLD_CHARACTER='%s'" %A2
+mov   A8   %A9
+FormatStr "AddHP='%s'" %应该血
+UPDATEVALUESQL "King_HumPlus" %A8 %A9
+
+FormatStr "FLD_CHARACTER='%s'" %A2
+mov   A8   %A9
+FormatStr "AddMp='%s'" %应该魔
+UPDATEVALUESQL "King_HumPlus" %A8 %A9
+SysMsg  "调整成功: 灵魂[ <$OUTPUT(应该灵魂)> ]HP血[ <$OUTPUT(应该血)> ]MP魔[ <$OUTPUT(应该魔)> ]"
+
+[@tzzhuanshu_kaishi_fashi]
+#ACT
+Close
+FormatStr "FLD_CHARACTER='%s'" %A2
+mov   A8   %A9
+FormatStr "AddMc='%s'" %应该自然
+UPDATEVALUESQL "King_HumPlus" %A8 %A9
+
+FormatStr "FLD_CHARACTER='%s'" %A2
+mov   A8   %A9
+FormatStr "AddHP='%s'" %应该血
+UPDATEVALUESQL "King_HumPlus" %A8 %A9
+
+FormatStr "FLD_CHARACTER='%s'" %A2
+mov   A8   %A9
+FormatStr "AddMp='%s'" %应该魔
+UPDATEVALUESQL "King_HumPlus" %A8 %A9
+SysMsg  "调整成功: 自然[ <$OUTPUT(应该自然)> ]HP血[ <$OUTPUT(应该血)> ]MP魔[ <$OUTPUT(应该魔)> ]"
+
+[@tzzhuanshu_kaishi_zhanshi]
+#ACT
+Close
+FormatStr "FLD_CHARACTER='%s'" %A2
+mov   A8   %A9
+FormatStr "AddDc='%s'" %应该破坏
+UPDATEVALUESQL "King_HumPlus" %A8 %A9
+
+FormatStr "FLD_CHARACTER='%s'" %A2
+mov   A8   %A9
+FormatStr "AddHP='%s'" %应该血
+UPDATEVALUESQL "King_HumPlus" %A8 %A9
+
+FormatStr "FLD_CHARACTER='%s'" %A2
+mov   A8   %A9
+FormatStr "AddMp='%s'" %应该魔
+UPDATEVALUESQL "King_HumPlus" %A8 %A9
+SysMsg  "调整成功: 破坏[ <$OUTPUT(应该破坏)> ]HP血[ <$OUTPUT(应该血)> ]MP魔[ <$OUTPUT(应该魔)> ]"
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

@@ -1,0 +1,358 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@职业PK赛_jc2]
+{
+#IF
+checkjob warrior
+#ACT
+GOTO @战士PK
+break
+
+#IF
+checkjob wizard
+#ACT
+GOTO @法师PK
+break
+#ELSEACT
+GOTO @道士PK
+
+[@战士PK]
+#ACT
+LOADVALUE D0 "ParamControl\PK场检查.ini" 比赛场 战士PK场
+#IF
+equal D0 0
+checkhum 01_003 0
+#SAY
+{FCOLOR/8}
+─────────战士职业PK赛─────────{FCOLOR/10}\
+战士职业PK赛还没有人开启.你想开始挑战其他战士吗?{FCOLOR/8}\
+─────────战士职业PK赛─────────\
+_        [ <开启职业PK场地挑战各路人马/@开通战士PK> ]\
+─────────战士职业PK赛─────────{FCOLOR/12}\
+#ACT
+break
+
+#IF
+equal D0 1
+checkhum 01_003 1
+#SAY
+{FCOLOR/8}
+─────────战士职业PK赛─────────{FCOLOR/10}\
+战士职业PK赛已经有人开启.你想进入挑战这位战士吗?{FCOLOR/8}\
+─────────战士职业PK赛─────────\
+_        [ <进入职业PK场地挑战各路人马/@进入战士PK> ]\
+─────────战士职业PK赛─────────{FCOLOR/12}\
+#ACT
+break
+
+#IF
+equal D0 2
+checkhum 01_003 2
+#ACT
+Close
+SYSMSG "【温馨提示】比赛正在进行中...."
+break
+
+#IF
+equal D0 2
+checkhum 01_003 1
+#ACT
+Close
+SYSMSG "【温馨提示】比赛正在进行中...."
+break
+
+#IF
+equal D0 1
+checkhum 01_003 0
+#ACT
+Close
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 战士PK场 0
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 战士PK注码 0
+SYSMSG "【温馨提示】职业PK场地初试化完毕...."
+GOTO @职业挑战8
+break
+
+#IF
+equal D0 2
+checkhum 01_003 0
+#ACT
+Close
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 战士PK场 0
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 战士PK注码 0
+SYSMSG "【温馨提示】职业PK场地初试化完毕...."
+GOTO @职业挑战8
+break
+
+[@开通战士PK]
+#IF
+!checkgold 1000000
+#ACT
+Close
+SYSMSG "【温馨提示】您的金币不足.不能进入PK场地."
+break
+
+#IF
+checkhum 01_003 1
+#SAY
+{FCOLOR/8}
+─────────战士职业PK赛─────────\
+{FCOLOR/13}【温馨提示】{FCOLOR/12}:已经有玩家开启.你可以进入挑战{FCOLOR/8}\
+─────────战士职业PK赛─────────\
+_        [ <进入职业PK场地挑战各路人马/@进入战士PK> ]\
+─────────战士职业PK赛─────────{FCOLOR/12}\
+#ELSEACT
+TAKE 金币 1000000
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 战士PK场 1
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 战士PK注码 1
+SetAreaAttr "01_003,20,20,100" "NoRevival"
+MAP 01_003
+LineMsg "Grobal" "战士→<$USERNAME>←挑战各路人马.谁来应战?"
+
+[@进入战士PK]
+#IF
+checkhum 01_003 2
+#ACT
+Close
+SYSMSG "【温馨提示】人数已满.无法进入.请稍侯~"
+#ELSEACT
+TAKE 金币 1000000
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场  战士PK场 2
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 战士PK注码 2
+SetAreaAttr "01_003,20,20,100" "NoRevival"
+ChangeMapAttr  "01_003" "SAFE"
+MAP 01_003
+LineMsg "01_003" "大家做好准备,5秒后比赛开始"
+LineMsg "Grobal" "战士→<$USERNAME>←接受了挑战.看看谁是英雄?"
+Delaygoto [Grobal] 5 @进入战士PK_1
+
+[@进入战士PK_1]
+#ACT
+ResetMapAttr "01_003"
+
+[@法师PK]
+#ACT
+LOADVALUE D0 "ParamControl\PK场检查.ini" 比赛场 法师PK场
+#IF
+equal D0 0
+checkhum 02_0011 0
+#SAY
+{FCOLOR/8}
+─────────法师职业PK赛─────────{FCOLOR/10}\
+法师职业PK赛还没有人开启.你想开始挑战其他法师吗?{FCOLOR/8}\
+─────────法师职业PK赛─────────\
+_        [ <开启职业PK场地挑战各路人马/@开通法师PK> ]\
+─────────法师职业PK赛─────────{FCOLOR/12}\
+#ACT
+break
+
+#IF
+equal D0 1
+checkhum 02_0011 1
+#SAY
+{FCOLOR/8}
+─────────法师职业PK赛─────────{FCOLOR/10}\
+法师职业PK赛已经有人开启.你想进入挑战这位法师吗?{FCOLOR/8}\
+─────────法师职业PK赛─────────\
+_        [ <进入职业PK场地挑战各路人马/@进入法师PK> ]\
+─────────法师职业PK赛─────────{FCOLOR/12}\
+#ACT
+break
+
+#IF
+equal D0 2
+checkhum 02_0011 2
+#ACT
+Close
+SYSMSG "【温馨提示】比赛正在进行中...."
+break
+
+#IF
+equal D0 2
+checkhum 02_0011 1
+#ACT
+Close
+SYSMSG "【温馨提示】比赛正在进行中...."
+break
+
+#IF
+equal D0 1
+checkhum 02_0011 0
+#ACT
+Close
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 法师PK场 0
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 法师PK注码 0
+SYSMSG "【温馨提示】职业PK场地初试化完毕...."
+GOTO @职业挑战8
+break
+
+#IF
+equal D0 2
+checkhum 02_0011 0
+#ACT
+Close
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 法师PK场 0
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 法师PK注码 0
+SYSMSG "【温馨提示】职业PK场地初试化完毕...."
+GOTO @职业挑战8
+break
+
+[@开通法师PK]
+#IF
+!checkgold 1000000
+#ACT
+Close
+SYSMSG "【温馨提示】您的金币不足.不能进入PK场地."
+break
+
+#IF
+checkhum 02_0011 1
+#SAY
+{FCOLOR/8}
+─────────法师职业PK赛─────────\
+{FCOLOR/13}【温馨提示】{FCOLOR/12}:已经有玩家开启.你可以进入挑战{FCOLOR/8}\
+─────────战士职业PK赛─────────\
+_        [ <进入职业PK场地挑战各路人马/@进入法师PK> ]\
+─────────法师职业PK赛─────────{FCOLOR/12}\
+#ELSEACT
+TAKE 金币 1000000
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 法师PK场 1
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 法师PK注码 1
+SetAreaAttr "02_0011,20,20,100" "NoRevival"
+MAP 02_0011
+LineMsg "Grobal" "法师→<$USERNAME>←挑战各路人马.谁来应战?"
+
+[@进入法师PK]
+#IF
+checkhum 02_0011 2
+#ACT
+Close
+SYSMSG "【温馨提示】人数已满.无法进入.请稍侯~"
+#ELSEACT
+TAKE 金币 1000000
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场  法师PK场 2
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 法师PK注码 2
+SetAreaAttr "02_0011,20,20,100" "NoRevival"
+ChangeMapAttr  "02_0011" "SAFE"
+MAP 02_0011
+LineMsg "02_0011" "大家做好准备,5秒后比赛开始"
+LineMsg "Grobal" "法师→<$USERNAME>←接受了挑战.看看谁是英雄?"
+Delaygoto [Grobal] 5 @进入法师PK_1
+
+[@进入法师PK_1]
+#ACT
+ResetMapAttr "02_0011"
+
+[@道士PK]
+#ACT
+LOADVALUE D0 "ParamControl\PK场检查.ini" 比赛场 道士PK场
+#IF
+equal D0 0
+checkhum 1_012 0
+#SAY
+{FCOLOR/8}
+─────────道士职业PK赛─────────{FCOLOR/10}\
+道士职业PK赛还没有人开启.你想开始挑战其他道士吗?{FCOLOR/8}\
+─────────道士职业PK赛─────────\
+_        [ <开启职业PK场地挑战各路人马/@开通道士PK> ]\
+─────────道士职业PK赛─────────{FCOLOR/12}\
+#ACT
+break
+
+#IF
+equal D0 1
+checkhum 1_012 1
+#SAY
+{FCOLOR/8}
+─────────道士职业PK赛─────────{FCOLOR/10}\
+道士职业PK赛已经有人开启.你想进入挑战这位道士吗?{FCOLOR/8}\
+─────────道士职业PK赛─────────\
+_        [ <进入职业PK场地挑战各路人马/@进入道士PK> ]\
+─────────道士职业PK赛─────────{FCOLOR/12}\
+#ACT
+break
+
+#IF
+equal D0 2
+checkhum 1_012 2
+#ACT
+Close
+SYSMSG "【温馨提示】比赛正在进行中...."
+break
+
+#IF
+equal D0 2
+checkhum 1_012 1
+#ACT
+Close
+SYSMSG "【温馨提示】比赛正在进行中...."
+break
+
+#IF
+equal D0 1
+checkhum 1_012 0
+#ACT
+Close
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 道士PK场 0
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 道士PK注码 0
+SYSMSG "【温馨提示】职业PK场地初试化完毕...."
+GOTO @职业挑战8
+break
+
+#IF
+equal D0 2
+checkhum 1_012 0
+#ACT
+Close
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 道士PK场 0
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 道士PK注码 0
+SYSMSG "【温馨提示】职业PK场地初试化完毕...."
+GOTO @职业挑战8
+break
+
+[@开通道士PK]
+#IF
+!checkgold 1000000
+#ACT
+Close
+SYSMSG "【温馨提示】您的金币不足.不能进入PK场地."
+break
+
+#IF
+checkhum 1_012 1
+#SAY
+{FCOLOR/8}
+─────────道士职业PK赛─────────\
+{FCOLOR/13}【温馨提示】{FCOLOR/12}:已经有玩家开启.你可以进入挑战{FCOLOR/8}\
+─────────道士职业PK赛─────────\
+_        [ <进入职业PK场地挑战各路人马/@进入道士PK> ]\
+─────────道士职业PK赛─────────{FCOLOR/12}\
+#ELSEACT
+TAKE 金币 1000000
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 道士PK场 1
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 道士PK注码 1
+SetAreaAttr "1_012,20,20,100" "NoRevival"
+MAP 1_012
+LineMsg "Grobal" "道士→<$USERNAME>←挑战各路人马.谁来应战?"
+
+[@进入道士PK]
+#IF
+checkhum 1_012 2
+#ACT
+Close
+SYSMSG "【温馨提示】人数已满.无法进入.请稍侯~"
+#ELSEACT
+TAKE 金币 1000000
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场  道士PK场 2
+SAVEVALUE "ParamControl\PK场检查.ini" 比赛场 道士PK注码 2
+SetAreaAttr "1_012,20,20,100" "NoRevival"
+ChangeMapAttr  "1_012" "SAFE"
+MAP 1_012
+LineMsg "1_012" "大家做好准备,5秒后比赛开始"
+LineMsg "Grobal" "道士→<$USERNAME>←接受了挑战.看看谁是英雄?"
+Delaygoto [Grobal] 5 @进入道士PK_1
+
+[@进入道士PK_1]
+#ACT
+ResetMapAttr "1_012"
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

@@ -1,0 +1,142 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@货币兑换_Main]
+{
+#IF
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}货{FCOLOR/4}━{FCOLOR/14}币{FCOLOR/4}━{FCOLOR/14}兑{FCOLOR/4}━{FCOLOR/14}换{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_             [ <取 出 元 宝 系 统/@取出元宝系统> ]\\
+_             [ <存 入 元 宝 系 统/@存入元宝系统> ]\\
+_             [ <元 宝 兑 换 金 币/@元宝兑换金币> ]\\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}货{FCOLOR/4}━{FCOLOR/14}币{FCOLOR/4}━{FCOLOR/14}兑{FCOLOR/4}━{FCOLOR/14}换{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_             [ <返 回 上 层 菜 单/@Main> ]\
+[@取出元宝系统]
+#IF
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}货{FCOLOR/4}━{FCOLOR/14}币{FCOLOR/4}━{FCOLOR/14}兑{FCOLOR/4}━{FCOLOR/14}换{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_             [ {FCOLOR/1}取 出 元 宝 系 统{FCOLOR/12} ]\\
+_             [ <存 入 元 宝 系 统/@存入元宝系统> ]\\
+_             [ <元 宝 兑 换 金 币/@元宝兑换金币> ]\\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}货{FCOLOR/4}━{FCOLOR/14}币{FCOLOR/4}━{FCOLOR/14}兑{FCOLOR/4}━{FCOLOR/14}换{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_         把{FCOLOR/1}虚拟元宝{FCOLOR/12}兑换转换成{FCOLOR/1}实物元宝{FCOLOR/12}\\
+_           [ <请输入取出元宝的数量/@@取出元宝系统1> ]\\
+_             [ <返 回 上 层 菜 单/@Main> ]\
+
+[@@取出元宝系统1]
+#ACT
+MOV   D6  %INPUTSTR
+
+#IF
+SMALL D6 1
+#ACT
+SYSMSG "每次兑换数量至少不能小于1个！请重新输入~"
+Break
+
+#IF
+LARGE D6 1000
+#ACT
+SYSMSG "每次兑换数量不能超过1000！请重新输入~"
+Break
+
+#IF
+checkcmd checkuserjf %D6
+#ACT
+actcmd setuserjf - %D6
+Give 元宝 %D6
+SYSMSG "温馨提示: 取出了 <$OUTPUT(D6)> 个元宝.当前拥有 <$USERJF> 个元宝~"
+Close
+Break
+#ELSEACT
+SYSMSG "温馨提示: 您没有 <$OUTPUT(D6)> 个元宝.请重新输入~"
+Break
+
+[@存入元宝系统]
+#IF
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}货{FCOLOR/4}━{FCOLOR/14}币{FCOLOR/4}━{FCOLOR/14}兑{FCOLOR/4}━{FCOLOR/14}换{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_             [ <取 出 元 宝 系 统/@取出元宝系统> ]\\
+_             [ {FCOLOR/1}存 入 元 宝 系 统{FCOLOR/12} ]\\
+_             [ <元 宝 兑 换 金 币/@元宝兑换金币> ]\\
+_             [ <金 卡 兑 换 元 宝/@金卡兑换元宝> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}货{FCOLOR/4}━{FCOLOR/14}币{FCOLOR/4}━{FCOLOR/14}兑{FCOLOR/4}━{FCOLOR/14}换{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_         把{FCOLOR/1}实物元宝{FCOLOR/12}兑换转换成{FCOLOR/1}虚拟元宝{FCOLOR/12}\\
+_           [ <请输入存入元宝的数量/@@存入元宝系统1> ]\\
+_             [ <返 回 上 层 菜 单/@Main> ]\
+
+[@@存入元宝系统1]
+#ACT
+MOV   D6  %INPUTSTR
+
+#IF
+SMALL D6 1
+#ACT
+SYSMSG "每次兑换数量至少不能小于1个！请重新输入~"
+Break
+
+#IF
+LARGE D6 1000
+#ACT
+SYSMSG "每次兑换数量不能超过1000！请重新输入~"
+Break
+
+#IF
+checkitem 元宝 %D6
+#ACT
+Take 元宝 %D6
+actcmd setuserjf + %D6
+SYSMSG "温馨提示: 储存了 <$OUTPUT(D6)> 个元宝.当前拥有 <$USERJF> 个元宝~"
+Close
+Break
+#ELSEACT
+SYSMSG "温馨提示: 您包裹内没有 <$OUTPUT(D6)> 个实物元宝.请重新输入~"
+Break
+
+[@元宝兑换金币]
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}货{FCOLOR/4}━{FCOLOR/14}币{FCOLOR/4}━{FCOLOR/14}兑{FCOLOR/4}━{FCOLOR/14}换{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_             [ <取 出 元 宝 系 统/@取出元宝系统> ]\\
+_             [ <存 入 元 宝 系 统/@存入元宝系统> ]\\
+_             [ {FCOLOR/1}元 宝 兑 换 金 币{FCOLOR/12} ]\\
+_             [ <金 卡 兑 换 元 宝/@金卡兑换元宝> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}货{FCOLOR/4}━{FCOLOR/14}币{FCOLOR/4}━{FCOLOR/14}兑{FCOLOR/4}━{FCOLOR/14}换{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_              {FCOLOR/1}1{FCOLOR/12}元宝 = {FCOLOR/1}100000{FCOLOR/12}金币{FCOLOR/12}\\
+_              [ <请输入元宝的数量/@@元宝兑换金币1> ]\\
+_              [ <返 回 上 层 菜 单/@Main> ]\
+
+[@@元宝兑换金币1]
+#ACT
+MOV   D6  %INPUTSTR
+
+#IF
+SMALL D6 1
+#ACT
+SYSMSG "每次兑换数量至少不能小于1个！请重新输入~"
+Break
+
+#IF
+LARGE D6 1000
+#ACT
+SYSMSG "每次兑换数量不能超过1000！请重新输入~"
+Break
+
+#IF
+#ACT
+MOV P1 100000
+MOV P2 %D6
+MUL P1 P2
+MOV D7 %P9
+
+#IF
+checkcmd checkuserjf %D6
+#ACT
+actcmd setuserjf - %D6
+give 金币 %D7
+SYSMSG "恭喜您花费了[ <$OUTPUT(D6)> ]个元宝兑换了[ <$OUTPUT(D7)> ]个金币"
+Close
+Break
+#ELSEACT
+SYSMSG "您的元宝不够[ <$OUTPUT(D6)> ]个，无法完成兑换"
+Break
+Close
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

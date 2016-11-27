@@ -1,0 +1,12 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@系统计时1_Main]
+{
+#ACT
+actcmd RESETSERVERTOP 10
+mov N3 %ONLINECOUNT
+movr N6 15
+inc N3 %N3
+inc N3 %N6
+linemsg [grobal] "当前在线人数[ <$OUTPUT(N3)> ]人"
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

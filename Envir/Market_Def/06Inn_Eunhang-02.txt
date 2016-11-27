@@ -1,0 +1,27 @@
+;;创天网络有限公司原版1.45
+%100
+
+[@main]
+#IF
+#SAY
+要我帮忙吗？\ \
+<寄存/@storage>物品\
+<取回/@PreGetback>寄存的物品\
+<仓库 密码 管理/@StgPassword>\
+<结束/@exit>
+ 
+[@StgPassword]
+#CALL [\PassWord\PassWord.txt] @Manage_PassWord
+
+[@PreGetback]
+#CALL [\PassWord\PassWord.txt] @Input_PassWord
+
+[@storage]
+#SAY
+你有什么东西要寄存，就交给我吧。\ \
+<前一步/@main>
+
+[@getback]
+#SAY
+你想找什么，看了目录以后再决定吧。\ \
+<前一步/@main>

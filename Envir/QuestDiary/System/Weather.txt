@@ -1,0 +1,156 @@
+;;创天网络有限公司原版1.45
+[@Weather]
+{
+#ACT
+goto @ConfirmWeather_Bichon
+
+goto @ConfirmWeather_DoGwan
+
+goto @ConfirmWeather_halpNight
+
+goto @ConfirmWeather_Encore
+
+goto @ConfirmWeather_SinGiSun
+
+;-------------------------------------------------------------------------------
+
+[@ConfirmWeather_Bichon]
+#IF
+!DayTime Day
+#ACT
+movr  P0  20
+Inc   P0  1
+#ELSEACT
+Delaygoto [Grobal]  3600 @ConfirmWeather_Bichon
+break
+
+#IF
+Equal P0  1
+#ACT
+ChangeMapAttr  "0,01,02" "Rain"
+Delaygoto [Grobal]  3600  @ConfirmWeather_Bichon
+break
+
+#IF
+Equal P0  2
+#ACT
+ChangeMapAttr  "0,01,02" "Fog"
+Delaygoto [Grobal]  3600  @ConfirmWeather_Bichon
+break
+
+#IF
+#ACT
+ChangeMapAttr  "0,01,02" "Clean"
+Delaygoto [Grobal]  10800 @ConfirmWeather_Bichon
+
+;-------------------------------------------------------------------------------
+[@ConfirmWeather_DoGwan]
+#IF
+!IsOnCastleWar SaBuk
+!DayTime Day
+#ACT
+movr  P0  20
+Inc   P0  1
+#ELSEACT
+Delaygoto [Grobal]  3600 @ConfirmWeather_DoGwan
+break
+
+#IF
+Equal P0  1
+#ACT
+ChangeMapAttr  "1,2,3" "Rain"
+Delaygoto [Grobal]  3600  @ConfirmWeather_DoGwan
+break
+
+#IF
+Equal P0  2
+#ACT
+ChangeMapAttr  "1,2,3" "Fog"
+Delaygoto [Grobal]  3600  @ConfirmWeather_DoGwan
+break
+
+#IF
+#ACT
+ChangeMapAttr  "1,2,3" "Clean"
+Delaygoto [Grobal]  10800 @ConfirmWeather_DoGwan
+
+;-------------------------------------------------------------------------------
+[@ConfirmWeather_halpNight]
+#IF
+!DayTime Day
+#ACT
+movr  P0  20
+Inc   P0  1
+#ELSEACT
+Delaygoto [Grobal]  3600 @ConfirmWeather_halpNight
+break
+
+#IF
+Equal P0  1
+#ACT
+ChangeMapAttr  "8" "Rain"
+Delaygoto [Grobal]  3600  @ConfirmWeather_halpNight
+break
+
+#IF
+Equal P0  2
+#ACT
+ChangeMapAttr  "8" "Fog"
+Delaygoto [Grobal]  3600  @ConfirmWeather_halpNight
+break
+
+#IF
+#ACT
+ChangeMapAttr  "8" "Clean"
+Delaygoto [Grobal]  10800 @ConfirmWeather_halpNight
+
+;-------------------------------------------------------------------------------
+[@ConfirmWeather_Encore]
+#IF
+!DayTime Day
+#ACT
+movr  P0  20
+Inc   P0  1
+#ELSEACT
+Delaygoto [Grobal]  3600 @ConfirmWeather_Encore
+break
+
+#IF
+Equal P0  1
+#ACT
+ChangeMapAttr  "9" "Rain"
+Delaygoto [Grobal]  3600  @ConfirmWeather_Encore
+break
+
+#IF
+Small P0  8
+#ACT
+ChangeMapAttr  "9" "Fog"
+Delaygoto [Grobal]  3600  @ConfirmWeather_Encore
+break
+
+#IF
+#ACT
+ChangeMapAttr  "9" "Clean"
+Delaygoto [Grobal]  3600 @ConfirmWeather_Encore
+
+;-------------------------------------------------------------------------------
+[@ConfirmWeather_SinGiSun]
+#IF
+#ACT
+movr  P0  20
+Inc   P0  1
+
+#IF
+Small P0  8
+#ACT
+ChangeMapAttr  "D900,D901,D9011,D9012,D9021,D90211,D90212,D9022,D90221,D90222,D90223,D903,D9031,D9032,D9033,D904,D90323" "Fog"
+Delaygoto [Grobal]  600  @ConfirmWeather_SinGiSun
+break
+
+#IF
+#ACT
+ChangeMapAttr  "D900,D901,D9011,D9012,D9021,D90211,D90212,D9022,D90221,D90222,D90223,D903,D9031,D9032,D9033,D904,D90323" "Clean"
+Delaygoto [Grobal]  3600 @ConfirmWeather_SinGiSun
+;-------------------------------------------------------------------------------
+}

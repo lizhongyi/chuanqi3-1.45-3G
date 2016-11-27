@@ -1,0 +1,56 @@
+;;创天网络有限公司原版1.45
+%100
++0
++3
+
+[@main]
+#ACT
+LOADVALUE D0 "ParamControl\主线任务.txt" %USERNAME 进度
+LOADVALUE D1 "ParamControl\主线任务.txt" %USERNAME 药店
+
+#IF
+Equal D0 1
+Equal D1 0
+#ACT
+SAVEVALUE "ParamControl\主线任务.txt" %USERNAME 药店 1
+BREAK
+#SAY
+{FCOLOR/1}药品是持续战斗的必要补充,欢迎随时光临.{FCOLOR/12}\\
+<回新人指导员/@回指导员>
+
+#IF
+checkpkpoint 2
+#SAY
+我不愿意和你这样的坏人进行交易。\ \
+<结束/@exit>
+#ELSESAY
+欢迎光临，这里出售一些简单的药品。\ \
+<购买/@buy>药品\
+<出售/@sell>药品\
+<结束/@exit>
+
+[@回指导员]
+#ACT
+MAPMOVE 0 410 385
+close
+
+[@buy]
+#SAY
+你需要什么东西？\ \
+ <前一步/@main>
+
+[@sell]
+#SAY
+请把要出售的物品交给我。\ \
+ <前一步/@main>
+
+[Goods]
+;ItemName      Volume     Hour
+金创药（小）  2000       1
+魔法药（小）  2000       1
+金创药（中）  2000       1
+魔法药（中）  2000       1
+金创药（大）  2000       1
+魔法药（大）  2000       1
+金创药（特）  2000       1
+魔法药（特）  2000       1

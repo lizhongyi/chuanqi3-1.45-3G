@@ -1,0 +1,39 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@套装上线1]
+{
+#ACT
+MOV 焰魔套 ""
+MOV 狂战套 ""
+MOV 天丛套 ""
+
+#IF
+!Equal 狂战套 "生效"
+CHECKITEMW 狂战项链 1
+CHECKITEMW 狂战手镯 1
+CHECKITEMW 狂战戒指 1
+#ACT
+mov 狂战套 "生效"
+ATTRIBUTEADD HP 100
+BREAK
+
+#IF
+!Equal 焰魔套 "生效"
+CHECKITEMW 转轮项链 1
+CHECKITEMW 转轮手镯 1
+CHECKITEMW 转轮戒指 1
+#ACT
+mov 焰魔套 "生效"
+ATTRIBUTEADD HP 50
+BREAK
+
+#IF
+!Equal 天丛套 "生效"
+CHECKITEMW 天丛项链 1
+CHECKITEMW 天丛手镯 1
+CHECKITEMW 天丛戒指 1
+#ACT
+mov 天丛套 "生效"
+ATTRIBUTEADD HP 100
+BREAK
+
+}

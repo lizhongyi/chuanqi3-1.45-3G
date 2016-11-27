@@ -1,0 +1,74 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@随身商店_Main]
+{
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}随{FCOLOR/4}━{FCOLOR/14}身{FCOLOR/4}━{FCOLOR/14}商{FCOLOR/4}━{FCOLOR/14}店{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <金 创 药  (1000金币)/@@MoneyBuy(金创药,1000,1000)> ]  [ <魔 法 药  (1000金币)/@@MoneyBuy(魔法药,1000,1000)> ]\
+{FCOLOR/12}[ <急 救 丸  (1500金币)/@@MoneyBuy(急救丸,1500,1000)> ]  [ <清 心 丸  (1500金币)/@@MoneyBuy(清心丸,1500,1000)> ]\
+{FCOLOR/12}[ <太 阳 水  (2000金币)/@@MoneyBuy(太阳水,2000,1000)> ]  [ <万年雪霜  (2500金币)/@@MoneyBuy(万年雪霜,2500,1000)> ]\
+{FCOLOR/12}[ <回 城 卷  (5000金币)/@@MoneyBuy(回城卷,5000,1000)> ]  [ <随机传送卷(5000金币)/@@MoneyBuy(随机传送卷,5000,100)> ]\
+{FCOLOR/12}[ <地牢逃脱卷(5000金币)/@@MoneyBuy(地牢逃脱卷,5000,100)> ]  [ <行会回城卷(5000金币)/@@MoneyBuy(行会回城卷,5000,100)> ]\
+{FCOLOR/12}[ <护 身 符   (3万金币)/@@MoneyBuy(护身符,30000,10)> ]  [ <护身符(冰) (3万金币)/@@MoneyBuy(护身符（冰）,30000,10)> ]\
+{FCOLOR/12}[ <护身符(火) (3万金币)/@@MoneyBuy(护身符（火）,30000,10)> ]  [ <护身符(雷) (3万金币)/@@MoneyBuy(护身符（雷）,30000,10)> ]\
+{FCOLOR/12}[ <护身符(风) (3万金币)/@@MoneyBuy(护身符（风）,30000,10)> ]  [ <神圣护身符 (3万金币)/@@MoneyBuy(神圣护身符,30000,10)> ]\
+{FCOLOR/12}[ <暗黑护身符 (3万金币)/@@MoneyBuy(暗黑护身符,30000,10)> ]  [ <灵魂护身符 (9万金币)/@@MoneyBuy(灵魂护身符,90000,10)> ]\
+{FCOLOR/12}[ <灰色药粉   (5万金币)/@@MoneyBuy(灰色药粉,50000,10)> ]  [ <黄色药粉   (5万金币)/@@MoneyBuy(黄色药粉,50000,10)> ]\
+{FCOLOR/12}[ <黑 铁      (5万金币)/@@MoneyBuy(黑铁,50000,10)> ]  [ <升刀首饰   (5万金币)/@@MoneyBuy(升刀首饰,50000,10)> ]\
+{FCOLOR/12}[ <体力神水   (7万金币)/@@MoneyBuy(体力神水,70000,50)> ]  [ <魔力神水   (7万金币)/@@MoneyBuy(魔力神水,70000,50)> ]\
+{FCOLOR/12}[ <攻击神水   (7万金币)/@@MoneyBuy(攻击神水,70000,50)> ]  [ <自然神水   (7万金币)/@@MoneyBuy(自然神水,70000,50)> ]\
+{FCOLOR/12}[ <灵魂神水   (7万金币)/@@MoneyBuy(灵魂神水,70000,50)> ]  [ <疾风神水   (7万金币)/@@MoneyBuy(疾风神水,70000,50)> ]\
+{FCOLOR/12}[ <祝 福 油  (100W金币)/@@MoneyBuy(祝福油,1000000,100)> ]  [ <战 神 油   (5万金币)/@@MoneyBuy(战神油,50000,100)> ]\
+{FCOLOR/12}[ <武器强化油(20万金币)/@@MoneyBuy(武器强化油,200000,100)> ]  [ <诅咒药水  (90万金币)/@@MoneyBuy(诅咒之药水,900000,100)> ]\
+{FCOLOR/12}[ <沃玛号角 (200万金币)/@@MoneyBuy(沃玛号角,2000000,5)> ]  [ <祖玛头像 (500万金币)/@@MoneyBuy(祖玛头像,5000000,5)> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}注{FCOLOR/4}━{FCOLOR/14}意{FCOLOR/4}━{FCOLOR/14}事{FCOLOR/4}━{FCOLOR/14}项{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/10}在随身商店所购买物品的价格是普通商店购买价格的{FCOLOR/1}2倍{FCOLOR/12}\
+
+[@@MoneyBuy()]
+#IF
+checkbaggage
+#ACT
+Mov        A3     %ARG(1)           ;;物品
+Mov        D3     %ARG(2)           ;;金钱
+Mov        D5     %ARG(3)           ;;数量
+mov        D4     %INPUTSTR
+#elsesay
+对不起，您的包裹满了！\
+<离开/@exit>
+#elseact
+break
+
+#IF 
+Small D4 1 
+#ACT 
+SYSMSG "温馨提示: 请输入数值 1 至 <$OUTPUT(D5)> "
+break 
+
+#IF 
+Large D4 %D5
+#ACT 
+SYSMSG "温馨提示: 购买此物品的最大数量为 <$OUTPUT(D5)> 个"
+break 
+
+#IF
+#ACT
+MOV P1 %D3
+MOV P2 %D4
+MUL P1 P2
+MOV D2 %P9
+MOV P1 %D2
+MOV P2 2
+MUL P1 P2
+MOV D7 %P9
+
+#IF
+checkgold   %D7
+#ACT
+give   %A3  %D4
+take  金币  %D7
+SYSMSG "温馨提示: 购买[ <$OUTPUT(D4)> ]个[ <$OUTPUT(A3)> ]花费[ <$OUTPUT(D7)> ]金币"
+#ELSEACT
+SYSMSG "温馨提示: 您的金币不足<$OUTPUT(D2)>"
+
+}
+
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

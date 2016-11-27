@@ -1,0 +1,292 @@
+;;
+[@冲级奖励_Main]
+{
+#IF
+checklevel 0
+#ACT
+mov D0 %P9
+
+#IF
+EQUAL D0 10
+#ACT
+Give 凌风 1
+Give 沃玛头盔 1
+Give 水晶项链 1
+Give 黑檀手镯 2
+Give 珊瑚戒指 2
+Give 皮鞋 1
+Give 金币 200000
+GOTO @礼包衣服10
+SysMsg "< 系统奖励 >达到了10级,系统奖励20万金币和10级装备."
+Break
+
+#IF
+EQUAL D0 20
+#ACT
+Give 命运之刃 1
+Give 斗笠 1
+Give 荣誉项链 1
+Give 波纹手镯 2
+Give 龙骨戒指 2
+Give 五彩鞋 1
+Give 金币 500000
+GOTO @礼包衣服20
+SysMsg "< 系统奖励 >达到了20级,系统奖励50万金币和20级装备."
+Break
+
+#IF
+EQUAL D0 30
+checkjob warrior
+#ACT
+Give 炼狱 1
+Give 天藤头盔 1
+Give 勇士项链 1
+Give 骑士手镯 2
+Give 力量戒指 2
+Give 赤飞靴子 1
+Give 金币 900000
+GOTO @礼包衣服30_warrior
+SysMsg "< 系统奖励 >达到了30级,系统奖励90万金币和30级装备."
+Break
+
+#IF
+EQUAL D0 30
+checkjob wizard
+#ACT
+Give 血饮 1
+Give 天藤头盔 1
+Give 震天项链 1
+Give 龙之手镯 2
+Give 紫碧螺 2
+Give 赤飞靴子 1
+Give 金币 900000
+SysMsg "< 系统奖励 >达到了30级,系统奖励90万金币和30级装备."
+GOTO @礼包衣服30_wizard
+Break
+
+#IF
+EQUAL D0 30
+checkjob taoist
+#ACT
+Give 银蛇 1
+Give 天藤头盔 1
+Give 银镜项链 1
+Give 三眼手镯 2
+Give 泰坦戒指 2
+Give 赤飞靴子 1
+Give 金币 900000
+GOTO @礼包衣服30_taoist
+SysMsg "< 系统奖励 >达到了30级,系统奖励90万金币和30级装备."
+Break
+
+#IF
+EQUAL D0 40
+checkjob warrior
+#ACT
+Give 裁决之杖 1
+Give 行者帽 1
+Give 破坏项链 1
+Give 火玉手镯 2
+Give 帝王戒指 2
+Give 天掌靴子 1
+Give 金币 1500000
+GOTO @礼包衣服40_warrior
+SysMsg "< 系统奖励 >达到了40级,系统奖励150万金币和40级装备."
+Break
+
+#IF
+EQUAL D0 40
+checkjob wizard
+#ACT
+Give 骨玉权杖 1
+Give 行者帽 1
+Give 昏暗封印 1
+Give 毁灭手镯 2
+Give 雷神戒指 2
+Give 天掌靴子 1
+Give 金币 1500000
+GOTO @礼包衣服40_wizard
+SysMsg "< 系统奖励 >达到了40级,系统奖励150万金币和40级装备."
+Break
+
+#IF
+EQUAL D0 40
+checkjob taoist
+#ACT
+Give 无极棍 1
+Give 行者帽 1
+Give 魔令项链 1
+Give 心灵手镯 2
+Give 魔灵戒指 2
+Give 天掌靴子 1
+Give 金币 1500000
+GOTO @礼包衣服40_taoist
+SysMsg "< 系统奖励 >达到了40级,系统奖励150万金币和40级装备."
+Break
+
+#IF
+EQUAL D0 50
+checkjob warrior
+#ACT
+Give 旋风流星刀 1
+Give 霸龙头盔 1
+Give 追风项链 1
+Give 金棱手镯 2
+Give 师承戒指 2
+Give 黑皮靴子 1
+Give 金币 3000000
+GOTO @礼包衣服50_warrior
+SysMsg "< 系统奖励 >达到了50级,系统奖励300万金币和50级装备."
+Break
+
+#IF
+EQUAL D0 50
+checkjob wizard
+#ACT
+Give 飞魂魔刃 1
+Give 霸龙头盔 1
+Give 五行神镜 1
+Give 思过手镯 2
+Give 龙马戒指 2
+Give 黑皮靴子 1
+Give 金币 3000000
+GOTO @礼包衣服50_wizard
+SysMsg "< 系统奖励 >达到了50级,系统奖励300万金币和50级装备."
+Break
+
+#IF
+EQUAL D0 50
+checkjob taoist
+#ACT
+Take 豪华礼包（50级） 1
+Give 封魔剑 1
+Give 霸龙头盔 1
+Give 追魂项链 1
+Give 世尊手镯 2
+Give 青云戒指 2
+Give 黑皮靴子 1
+Give 金币 3000000
+GOTO @礼包衣服50_taoist
+SysMsg "< 系统奖励 >达到了50级,系统奖励300万金币和50级装备."
+Break
+
+#IF
+EQUAL D0 60
+#ACT
+Give 金币 5000000
+SysMsg "< 系统奖励 >达到了50级,系统奖励500万金币."
+Break
+
+[@礼包衣服10]
+#IF
+gender man
+#ACT
+Give 轻盔甲（男） 1
+Break
+#ELSEACT
+Give 轻盔甲（女） 1
+Break
+
+[@礼包衣服20]
+#IF
+gender man
+#ACT
+Give 重盔甲（男） 1
+Break
+#ELSEACT
+Give 重盔甲（女） 1
+Break
+
+[@礼包衣服30_warrior]
+#IF
+gender man
+#ACT
+Give 战神盔甲（男） 1
+Break
+#ELSEACT
+Give 战神盔甲（女） 1
+Break
+
+[@礼包衣服30_wizard]
+#IF
+gender man
+#ACT
+Give 恶魔长袍（男） 1
+Break
+#ELSEACT
+Give 恶魔长袍（女） 1
+Break
+
+[@礼包衣服30_taoist]
+#IF
+gender man
+#ACT
+Give 幽灵战衣（男） 1
+Break
+#ELSEACT
+Give 幽灵战衣（女） 1
+Break
+
+[@礼包衣服40_warrior]
+#IF
+gender man
+#ACT
+Give 龙鳞战甲（男） 1
+Break
+#ELSEACT
+Give 龙鳞战甲（女） 1
+Break
+
+[@礼包衣服40_wizard]
+#IF
+gender man
+#ACT
+Give 袁灵法衣（男） 1
+Break
+#ELSEACT
+Give 袁灵法衣（女） 1
+Break
+
+[@礼包衣服40_taoist]
+#IF
+gender man
+#ACT
+Give 天极道衣（男） 1
+Break
+#ELSEACT
+Give 天极道衣（女） 1
+Break
+
+[@礼包衣服50_warrior]
+#IF
+gender man
+#ACT
+Give 麒麟宝铠（男） 1
+Break
+#ELSEACT
+Give 麒麟宝铠（女） 1
+Break
+
+[@礼包衣服50_wizard]
+#IF
+gender man
+#ACT
+Give 仙风神袍（男） 1
+Break
+#ELSEACT
+Give 仙风神袍（女） 1
+Break
+
+[@礼包衣服50_taoist]
+#IF
+gender man
+#ACT
+Give 阴阳圣衣（男） 1
+Break
+#ELSEACT
+Give 阴阳圣衣（女） 1
+Break
+
+}
+
+;;

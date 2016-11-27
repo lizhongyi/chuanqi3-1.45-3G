@@ -1,0 +1,149 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@取下宝石_Main]
+{
+#Act
+Mov 取下显示信息1 ""
+Mov 取下显示信息2 ""
+Mov 取下显示信息3 ""
+Mov 取下显示信息4 ""
+Mov 取下显示信息5 ""
+Mov Temp 0
+Mov D7 0
+#Say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}取{FCOLOR/4}━{FCOLOR/14}下{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+请选择你需要操作装备的种类且身上已穿戴该类型的装备\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}取{FCOLOR/4}━{FCOLOR/14}下{FCOLOR/4}━{FCOLOR/14}宝{FCOLOR/4}━{FCOLOR/14}石{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+{FCOLOR/12}[ <取下武器宝石/@取下面板(武器,1)> ] [ <取下衣服宝石/@取下面板(衣服,0)> ] [ <取下头盔宝石/@取下面板(头盔,4)> ]\\
+{FCOLOR/12}[ <取下项链宝石/@取下面板(项链,3)> ] [ <取下左镯宝石/@取下面板(左手镯,5)> ] [ <取下右镯宝石/@取下面板(右手镯,6)> ]\\
+{FCOLOR/12}[ <取下鞋子宝石/@取下面板(鞋子,10)> ] [ <取下左戒宝石/@取下面板(左戒指,7)> ] [ <取下右戒宝石/@取下面板(右戒指,8)> ]\\
+_                    [ <返  回/@菜单_Main> ]\
+
+;************************取下面板************************
+[@取下面板()]
+#Act
+Mov 取下装备名字 %ARG(1)
+Mov 取下装备位置 %ARG(2)
+#IF
+!checkcmd CHECKITEMINFO %取下装备位置 0       ;;;检测是否带装备
+#ACT
+SysMsg  "温馨提示: 您的[ <$OUTPUT(取下装备名字)> ]位置没有佩带任何装备"
+break
+
+#If
+#Act
+Goto @取下物品信息读取
+#Say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}操{FCOLOR/4}━{FCOLOR/14}作{FCOLOR/4}━{FCOLOR/14}面{FCOLOR/4}━{FCOLOR/14}板{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+您选择了{FCOLOR/1}<$OUTPUT(取下装备名字)>{FCOLOR/12}来操作本功能。将花费{FCOLOR/1}1个动燃消魔之尘{FCOLOR/12}\
+该操作将把装备上所有插槽和宝石清空。有{FCOLOR/1}40%{FCOLOR/12}的几率把\
+镶嵌过的宝石成功还原到包裹里.如果失败的话宝石将消\
+失。如果您的装备上没有插槽或者\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}操{FCOLOR/4}━{FCOLOR/14}作{FCOLOR/4}━{FCOLOR/14}面{FCOLOR/4}━{FCOLOR/14}板{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_     [ <使用1个动燃消魔之尘摘下装备所有宝石/@取下操作> ]\\
+
+_                  [ <返  回/@取下_Main> ]\
+
+[@取下操作]
+#ACT
+Movr D7 100
+
+#IF
+!checkitem 动燃消魔之尘 1
+#ACT
+SYSMSG "<系统提示:>您没有动燃消魔之尘无法取下宝石."
+Break
+
+#IF
+ESMALL D7 30
+EQUAL Temp 0
+#ACT
+Mov Temp 1
+GOTO @取下操作成功
+Break
+
+#IF
+LARGE D7 30
+EQUAL Temp 0
+#ACT
+Mov Temp 1
+GOTO @取下操作失败
+Break
+
+[@取下操作失败]
+#If
+!Equal 取下显示信息1 ""
+#Act
+take 动燃消魔之尘 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+ACTCMD WRITESQL "TBL_Jewel" "Display1,Display2,Display3,Display4,Display5" "'','','','',''" %A9
+GOTO @宝石减属性
+SysMsg "当前<$OUTPUT(取下装备名字)>成功初始化,宝石没有成功摘下从而消失了."
+Break
+Close
+#ElseAct
+SysMsg "对不起,您当前<$OUTPUT(取下装备名字)>上没有任何插槽或宝石无法操作!"
+Break
+Close
+
+[@取下操作成功]
+#If
+!Equal 取下显示信息1 ""
+#Act
+take 动燃消魔之尘 1
+Give %取下显示信息1 1
+Give %取下显示信息2 1
+Give %取下显示信息3 1
+Give %取下显示信息4 1
+Give %取下显示信息5 1
+FormatStr "where FLD_MAKEINDEX = '%s'" %FLD_MAKEINDEX
+ACTCMD WRITESQL "TBL_Jewel" "Display1,Display2,Display3,Display4,Display5" "'','','','',''" %A9
+GOTO @宝石减属性
+SysMsg "当前<$OUTPUT(取下装备名字)>成功初始化,宝石还原到包裹里,所有插槽都已清理!"
+Break
+Close
+#ElseAct
+SysMsg "对不起,您当前<$OUTPUT(取下装备名字)>上没有任何插槽或宝石无法操作!"
+Break
+Close
+
+[@取下物品信息读取]
+#If
+checkcmd CHECKITEMINFO %取下装备位置
+
+#If
+#Act
+FormatStr "where FLD_MAKEINDEX = %s" %FLD_MAKEINDEX
+actcmd READSQL "TBL_Jewel" "Display1,Display2,Display3,Display4,Display5" "取下显示信息1,取下显示信息2,取下显示信息3,取下显示信息4,取下显示信息5" %A9
+Break
+
+[@宝石减属性]
+#Act
+FormatStr "where Name = '%s'" %取下宝石名字
+Mov 取下宝石名字_1 %A9
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "取下破坏,取下自然,取下灵魂" %取下宝石名字_1
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "取下物防,取下魔防,取下体力" %取下宝石名字_1
+ACTCMD READSQL "King_Stditems" "ExMp" "取下魔力1" %取下宝石名字_1
+
+#If
+Equal TempK 0
+#Act
+Mov TempK 1
+ATTRIBUTECLEAR DC %取下破坏
+ATTRIBUTECLEAR MC %取下自然
+ATTRIBUTECLEAR SC %取下灵魂
+ATTRIBUTECLEAR AC %取下物防
+ATTRIBUTECLEAR MAC %取下魔防
+ATTRIBUTECLEAR HP %取下体力
+ATTRIBUTECLEAR MP %取下魔力
+Mov 取下破坏 ""
+Mov 取下自然 ""
+Mov 取下灵魂 ""
+Mov 取下物防 ""
+Mov 取下魔防 ""
+Mov 取下体力 ""
+Mov 取下魔力 ""
+Break
+
+}
+
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

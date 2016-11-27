@@ -1,0 +1,12 @@
+;;创天网络有限公司原版1.45
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+跟你这种人我无话可说。\ \
+<结束/@exit>
+#ELSEACT
+goto @main_0_0
+
+[@main_0_0]
+#CALL [\ChangeMoney\ChangeMoney.txt] @Change

@@ -1,0 +1,112 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@追忆礼品卡_1]
+{
+#ACT
+LOADVALUE D0 "ParamControl\追忆礼品卡.ini" %USERNAME 天数
+
+#IF
+Large D0 %CURDAY
+#ACT
+DEC D0 %CURDAY
+#SAY
+追忆礼品卡兑换后可以增加{FCOLOR/10}30{FCOLOR/12}天领取资格,领取物品为:{FCOLOR/14}苹果15个,特修神水4个,金币50W,祝福油10个,封魔石5个{FCOLOR/12},在这30天时间内泡点免费.\\
+你的礼品卡兑换资格还剩余:{FCOLOR/1}<$OUTPUT(D0)>{FCOLOR/12}天.\\
+<〖兑换礼品卡〗/@礼品卡兑换>\\
+<〖领取奖励〗/@礼品卡奖励>\\
+#ELSESAY
+追忆礼品卡兑换后可以获得{FCOLOR/10}30{FCOLOR/12}天领取资格,领取物品为:{FCOLOR/14}苹果15个,特修神水4个,金币50W,祝福油10个,封魔石5个{FCOLOR/12},在这30天时间内泡点免费.\\
+<〖兑换礼品卡〗/@礼品卡兑换>\\
+
+[@礼品卡兑换]
+#ACT
+LOADVALUE D0 "ParamControl\追忆礼品卡.ini" %USERNAME 天数
+
+#IF
+CHECKITEM 追忆礼品卡 1
+#ELSEACT
+BREAK
+#ELSESAY
+对不起,你的包袱里没有{FCOLOR/1}追忆礼品卡{FCOLOR/12}.\\
+<关闭/@exit>
+
+#IF
+large D0 %CURDAY
+#ACT
+TAKE 追忆礼品卡 1
+INC D0 30
+SAVEVALUE "ParamControl\追忆礼品卡.ini" %USERNAME 天数 %D0
+BREAK
+#SAY
+兑换成功,你的礼品卡领取资格增加了{FCOLOR/10}30{FCOLOR/12}天.\\
+<关闭/@exit>
+
+#IF
+#ACT
+TAKE 追忆礼品卡 1
+MOV D1 %CURDAY
+INC D1 30
+SAVEVALUE "ParamControl\追忆礼品卡.ini" %USERNAME 天数 %D1
+BREAK
+#SAY
+兑换成功,你获得了{FCOLOR/10}30{FCOLOR/12}天的礼品卡领取资格.\\
+<关闭/@exit>
+
+[@礼品卡奖励]
+#ACT
+LOADVALUE D0 "ParamControl\追忆礼品卡.ini" %USERNAME 天数
+LOADVALUE D1 "ParamControl\追忆礼品卡.ini" %USERNAME 领取
+
+#IF
+Equal D1 %CURDAY
+#ACT
+BREAK
+#SAY
+{FCOLOR/1}你今天已经领取过礼品卡奖励了.\\
+<关闭/@Exit>
+
+#IF
+large D0 %CURDAY
+#ELSEACT
+BREAK
+#ELSESAY
+{FCOLOR/1}对不起,你没有获得领取礼品卡的资格.\\
+<关闭/@exit>
+
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+Elarge 占用格子 40
+#ACT
+BREAK
+#SAY
+请将包袱整理出{FCOLOR/1}7{FCOLOR/12}个空位再来领取.\\
+<关闭/@exit>
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+Elarge 剩余负重 8
+#ACT
+GIVEGOLDEX 500000
+GIVE 苹果（绑定） 15
+GIVE 特修神水 4
+GIVE 祝福油 10
+GIVE 封魔石 5
+SAVEVALUE "ParamControl\追忆礼品卡.ini" %USERNAME 领取 %CURDAY
+lineMsg [Grobal] "<$USERNAME>领取了今天的礼品卡,获得了50W金币,15个苹果,4个特修神水,10个祝福油和5个封魔石."
+break
+#SAY
+{FCOLOR/1}你领取了今天的礼包奖励.\\
+<关闭/@exit>
+#ELSESAY
+请将包袱整理出{FCOLOR/1}8{FCOLOR/12}点以上的负重再来领取.\\
+<关闭/@exit>
+
+
+}

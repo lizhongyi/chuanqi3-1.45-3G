@@ -1,0 +1,187 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@D键菜单_Main]
+{
+#Act
+formatstr "元宝数:{FCOLOR/12}{FCOLOR/1}%-6s{FCOLOR/12} 声望数:{FCOLOR/12}{FCOLOR/1}%-6s{FCOLOR/12} 转生数:{FCOLOR/12}{FCOLOR/1}%-4s{FCOLOR/12}" %USERJF,%USERFAME,%USERREBORNCOUNT
+mov 个人信息 %A9
+formatstr "红名:{FCOLOR/12}{FCOLOR/1}%s{FCOLOR/12}" %USERPK
+Addstr 个人信息 %A9
+formatstr "服务器启动时间:{FCOLOR/12}{FCOLOR/1}%-19s{FCOLOR/12}  开区天数:{FCOLOR/12}{FCOLOR/1}%s{FCOLOR/12}" %服务器启动时间,%CURDAY
+mov 服务器信息A %A9
+formatstr "服务器当前时间:{FCOLOR/12}{FCOLOR/1}%-19s{FCOLOR/12}  在线分钟:{FCOLOR/12}{FCOLOR/1}%s{FCOLOR/12}" %SERVERNOWTIME,%STARTGAMEMINUTE
+mov 服务器信息B %A9
+
+#IF
+#say
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}个{FCOLOR/4}━{FCOLOR/14}人{FCOLOR/4}━{FCOLOR/14}信{FCOLOR/4}━{FCOLOR/14}息{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_<$OUTPUT(服务器信息A)>\
+_<$OUTPUT(服务器信息B)>\
+_<$OUTPUT(个人信息)>\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}Ｄ{FCOLOR/4}━{FCOLOR/14}键{FCOLOR/4}━{FCOLOR/14}菜{FCOLOR/4}━{FCOLOR/14}单{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_{FCOLOR/12}[ <随身商店/@随身商店8> ]  {FCOLOR/1}★{FCOLOR/12}  [ <武器炼制/@武器炼制8> ]  {FCOLOR/1}★{FCOLOR/12}  [ <好友传送/@好友传送8> ]\\
+_{FCOLOR/12}[ <清洗红名/@清洗红名8> ]  {FCOLOR/1}★{FCOLOR/12}  [ <便捷传送/@便捷传送8> ]  {FCOLOR/1}★{FCOLOR/12}  [ <红字喊话/@红字喊话8> ]\\
+_{FCOLOR/12}[ <超级攻击/@超级攻击8> ]  {FCOLOR/1}★{FCOLOR/12}  [ <超级经验/@超级经验8> ]  {FCOLOR/1}★{FCOLOR/12}  [ <双倍经验/@双倍经验8> ]\\
+_{FCOLOR/12}[ <怪物查询/@怪物查询8> ]  {FCOLOR/1}★{FCOLOR/12}  [ <宠物管理/@宠物管理8> ]  {FCOLOR/1}★{FCOLOR/12}  [ <开启宝箱/@开启宝箱8> ]\\
+_{FCOLOR/12}[ <原地复活/@原地复活8> ]  {FCOLOR/1}★{FCOLOR/12}  [ <开心词典/@开心词典8> ]  {FCOLOR/1}★{FCOLOR/12}  [ <行会加人/@行会加人8> ]\\
+_{FCOLOR/12}[ <返回道馆/@返回道馆8> ]  {FCOLOR/1}★{FCOLOR/12}  [ <返回比奇/@返回比奇8> ]  {FCOLOR/1}★{FCOLOR/12}  [ <返回银杏/@返回银杏8> ]\
+#IF
+ISADMIN
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}管{FCOLOR/4}━{FCOLOR/14}理{FCOLOR/4}━{FCOLOR/14}菜{FCOLOR/4}━{FCOLOR/14}单{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_{FCOLOR/12}[ <专用地图/@管理地图8> ]  {FCOLOR/1}★{FCOLOR/12}  [ <清理垃圾/@清理垃圾8> ]  {FCOLOR/1}★{FCOLOR/12}  [ <清理怪物/@清理怪物8> ]\
+_{FCOLOR/12}[ <重读眼前/@重读眼前8> ]  {FCOLOR/1}★{FCOLOR/12}  [ <重读Ｄ键/@重读Ｄ键8> ]  {FCOLOR/1}★{FCOLOR/12}  [ <重读列表/@重读列表8> ]\
+_{FCOLOR/12}[ <后台命令/@后台命令8> ]  {FCOLOR/1}★{FCOLOR/12}  [ <后台管理/@后台管理8> ]  {FCOLOR/1}★{FCOLOR/12}  [ <原地复活/@管理复活8> ]\
+
+[@开启宝箱8]
+#CALL [Capability\开启宝箱.txt] @开启宝箱_1
+
+[@宠物管理8]
+#CALL [Capability\宠物管理.txt] @宠物管理_1
+
+[@超级攻击8]
+#CALL [Capability\超级攻击.txt] @超级攻击_1
+
+[@超级经验8]
+#CALL [Capability\超级经验.txt] @超级经验_1
+
+[@便捷传送8]
+#CALL [Capability\传送系统.txt] @传送系统_Main
+
+[@随身商店8]
+#CALL [Capability\随身商店.txt] @随身商店_Main
+
+[@好友传送8]
+#CALL [Capability\好友列表.txt] @好友列表_1
+
+[@红字喊话8]
+#CALL [Capability\红字喊话.txt] @红字喊话_1
+
+[@双倍经验8]
+#CALL [Capability\双倍经验.txt] @双倍经验_1
+
+[@清洗红名8]
+#CALL [Capability\清除红名.txt] @清除红名_1
+
+[@武器炼制8]
+#CALL [Capability\武器炼制.txt] @武器炼制_Main
+
+[@开心词典8]
+#CALL [Capability\开心词典.txt] @开心词典_1
+
+[@怪物查询8]
+#CALL [Capability\BOSS查询.txt] @BOSS查询_1
+
+[@原地复活8]
+#CALL [Capability\原地复活.txt] @原地复活_Main
+
+[@后台命令8]
+#CALL [Capability\管理员命令.txt] @管理员命令_1
+
+[@后台管理8]
+#CALL [Capability\管理员菜单.txt] @管理员菜单_1
+
+[@管理复活8]
+#ACT
+RELIVE 100 100
+SYSMSG "您已经复活"
+Close
+
+[@返回道馆8]
+#If
+CheckGold 50000
+#ACT
+Take 金币 50000
+MapMove 1 400 123
+Close
+Break
+#ElseAct
+SysMsg "对不起金币不足50000无法传送"
+Break
+Close
+
+[@返回比奇8]
+#If
+CheckGold 50000
+#ACT
+Take 金币 50000
+MapMove 0 463 369
+Close
+Break
+#ElseAct
+SysMsg "对不起金币不足50000无法传送"
+Break
+Close
+
+[@返回银杏8]
+#If
+CheckGold 50000
+#ACT
+Take 金币 50000
+MapMove 02 249 204
+Close
+Break
+#ElseAct
+SysMsg "对不起金币不足50000无法传送"
+Break
+Close
+
+[@管理地图8]
+#ACT
+MapMove z010
+Close
+Break
+
+[@清理垃圾8]
+#ACT
+Close
+MOV A0 %USERMAP
+MOV A1 %USERX
+MOV A2 %USERY
+MOV A3 ""
+ADDSTR A3 %A0
+ADDSTR A3 ","
+ADDSTR A3 %A1
+ADDSTR A3 ","
+ADDSTR A3 %A2
+ADDSTR A3 ",100"
+Clearitemmap %A3 *
+SYSMSG "亲爱的[ <$USERNAME> ]您身边的地面已经清理完毕"
+Close
+
+[@行会加人8]
+#IF
+IsGuildMaster
+#ACT
+actcmd SENDUSERSAY "@添加成员"
+Break
+#ElseAct
+SysMsg "对不起,您不是行会领袖无法添加,请先创建行会!"
+Break
+
+[@重读眼前8]
+#ACT
+actcmd SENDUSERSAY "@ReloadNpc"
+SYSMSG "系统信息：[ 重读眼前NPC ]已读取"
+Close
+
+[@重读Ｄ键8]
+#ACT
+actcmd SENDUSERSAY "@ReloadDefaultNpc"
+SYSMSG "系统信息：[ 重读D键NPC ]已读取"
+Close
+
+[@重读列表8]
+#ACT
+actcmd SENDUSERSAY "@ReloadNpc map"
+SYSMSG "系统信息：[ 重读NPC列表 ]已读取"
+Close
+
+[@清理怪物8]
+#ACT
+MOV A0 %USERMAP
+Monclear %A0
+SYSMSG "亲爱的[ <$USERNAME> ]您所在地图的怪物清理完毕"
+Close
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

@@ -1,0 +1,8 @@
+;;创天网络有限公司原版1.45
+[@main]
+#CALL [\CastleWar\Flag.txt] @Defence_MainFlag
+
+[@_Startup]
+#ACT
+PasteFlag SABUK
+

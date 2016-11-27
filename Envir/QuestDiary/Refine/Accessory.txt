@@ -1,0 +1,174 @@
+;;创天网络有限公司原版1.45
+[@RefineAccessory]
+{
+
+#Define   D1{PROB}    D1
+#Define   D2{TYPE}    D2
+#Define   D3{ATOM}    D3
+
+#SAY
+<输入进行制炼的饰品名/@@testRefineAccessory>
+
+[@@testRefineAccessory]
+begin
+
+  #ACT
+    mov  A0  %INPUTSTR
+
+  #IF
+    Equal  A0  ""
+  #ACT
+    break
+
+  #IF
+  #SAY
+  真的进行制炼<$OUTPUT(A0)>吗? 饰品制炼是融解3个饰品
+  _制炼出一个高级饰品的过程.因工艺上比较复杂,所以成功率较低.
+  _制炼之前,请注意这一点.不要在失败后怨天尤人,不管怎样都不能拿回原来的物品.\ \
+  _对了,如果是高级物品2个也可以进行制炼.\ \
+  <制炼破坏力./@doRefineAcc(0)>\
+  <制炼魔法./@doRefineAcc(1)>\
+  <制炼元素(火)./@doRefineAcc(3,1)>\
+  <制炼元素(冰)./@doRefineAcc(3,2)>\
+  <制炼元素(雷)./@doRefineAcc(3,3)>\
+  <制炼元素(风)./@doRefineAcc(3,4)>\
+  <制炼元素(神圣)./@doRefineAcc(3,5)>\
+  <制炼元素(暗黑)./@doRefineAcc(3,6)>\
+  <制炼元素(幻影)./@doRefineAcc(3,7)>\
+  <了解饰品制炼方法./@askAboutRefineAccessories>\
+end
+
+[@retryRefine]
+begin
+  #ACT
+    goto @@testRefineAccessory
+end
+
+[@doRefineAcc()]
+begin
+
+  #IF
+    not CheckItem        钢玉石    1
+    or not CheckGold     10000
+  #ACT
+    goto @didnotMatchConditions
+    break
+
+  #IF
+  #ACT
+    mov     D2{TYPE}    %ARG(1)
+    mov     D3{ATOM}    %ARG(2)
+    TestRefineAccessories   %A0   %D2   %D3
+    mov     D1{PROB}    %P9
+
+  #IF
+    Small   D1{PROB}    0
+  #ACT
+    goto @didnotMatchConditions
+    break
+
+  #IF
+  #SAY
+    做好制炼饰品<$OUTPUT(A0)>的准备了. 在我看来
+    _这次成功率为<$@GetRefineProb>.\ \
+    <进行制炼./@RefineAccNow>\
+    <制炼其他属性./@retryRefine>\
+end
+
+[@GetRefineProb]
+begin
+  #IF
+    Small  D1  30
+  #SAY
+    成功率连{FCOLOR/10}3成{FCOLOR/12}都不到
+  #ACT
+    break
+
+  #IF
+    Small  D1  38
+  #SAY
+    成功率为{FCOLOR/10}3成{FCOLOR/12} 
+  #ACT
+    break
+
+  #IF
+    Small  D1  45
+  #SAY
+    成功率为{FCOLOR/10}4成{FCOLOR/12}
+  #ACT
+    break
+
+  #IF
+    Small  D1  55
+  #SAY
+    成功率为{FCOLOR/10}5成{FCOLOR/12}
+  #ACT
+    break
+
+  #IF
+    Small  D1  65
+  #SAY
+    成功率为{FCOLOR/10}6成{FCOLOR/12}
+  #ACT
+    break
+
+  #IF
+  #SAY
+    成功率为{FCOLOR/10}7成{FCOLOR/12}
+  #ACT
+    break
+end
+
+[@RefineAccNow]
+begin
+
+  #IF
+    not CheckItem        钢玉石    1
+    or not CheckGold     10000
+  #ACT
+    break
+
+  #IF
+  #ACT
+    Take      钢玉石    1
+    Take      金币        10000
+    RefineAccessories   %A0   %D2   %D3
+
+  #IF
+    Equal     P9        1
+  #SAY
+    成功了.祝贺你!.\
+
+  #IF
+    Equal  P9  0
+  #SAY
+    我已经尽力了.请不要气馁,下次再试试运气.\ \
+    <了解饰品制炼方法./@askAboutRefineAccessories>\
+    <重新进行制炼./@retryRefine>\
+end
+
+
+
+[@didnotMatchConditions]
+begin
+  #SAY
+    呵呵... 不是想制炼<$OUTPUT(A0)>吗?怎么连材料都没有收集好. 看来你还不了解
+    _制炼饰品的方法. 一时间很难说清楚,
+    _请你有空时再来找我.\ \
+    <了解饰品制炼方法./@askAboutRefineAccessories>\
+    <重新进行制炼./@retryRefine>\
+end
+    
+[@askAboutRefineAccessories]
+begin
+  #SAY
+    我来告诉你饰品制炼的方法吧。\
+    先告诉你所需的材料。首先，准备需要进行制炼的3个同样的饰品。还有，一个钢玉石和一定的制炼费用。\ \
+    下面讲的是进行制炼时需要注意的几点。进行饰品制炼时，最主要的是饰品具有的附加属性。把附加属性视为成败的关键也不为过。还有，必须准备好个制炼属性相同的饰品。这点也很重要。\ \
+    还有，如果一般物品所需数量为3个，但是，利用高级物品制炼2个即可。\ \
+    这是我20年来所积累的经验。在饰品制炼时，物品的附加属性越多成功的几率就越高。如果是高级物品或稀有物品，即使没有附加属性成功率也比较高。相信你也听过物有所值这句话。我觉得这句话说得非常好！（。。。。呵呵）\ \
+    但是，最终成功与否还是看你运气了 还有。。。即使制炼失败也不要责怪我。因为我已经尽力了。。\ \
+    <重新进行制炼./@retryRefine>\    
+end
+
+}

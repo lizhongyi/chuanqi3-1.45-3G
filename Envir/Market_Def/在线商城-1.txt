@@ -1,0 +1,5 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@Main]
+#CALL [Pay\元宝在线商城.txt] @元宝在线商城_Main
+
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

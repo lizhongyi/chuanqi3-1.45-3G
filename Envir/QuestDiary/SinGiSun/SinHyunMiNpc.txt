@@ -1,0 +1,348 @@
+;;-----------------------;;购买请联系鱼的眼泪,QQ:16487549
+[@SinQuest_Start]
+{
+#IF
+CHECK [065] 0
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+ReadValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINUSERNAME,FLD_SINMAINSTEP,FLD_SINSTEP_READY" [@SinQuest_Start_0]
+#ELSEACT
+BREAK
+#ELSESAY
+我没有什么可告诉你的……
+
+[@SinQuest_Start_0()]
+#ACT
+mov A1 %ARG(1)
+mov D1 %ARG(2)
+mov D2 %ARG(3)
+
+#IF
+Equal A1 ""
+#SAY
+我没有什么可告诉你的……\ \
+#ACT
+break
+
+#IF
+Equal D1 3
+Equal D2 1
+#ACT
+goto @SinQuest_Ending_3
+break
+
+#IF
+Equal D1 3
+Equal D2 0
+#ACT
+goto @SinQuest_Ending_2
+break
+
+#IF
+Equal D1 2
+Equal D2 1
+#ACT
+goto @SinQuest_diary_0_4
+break
+
+#IF
+Equal D1 2
+Equal D2 0
+#ACT
+goto @SinQuest_diary_2
+break
+
+#IF
+Equal D1 1
+Equal D2 2
+#ACT
+goto @SinQuest_1_6
+break
+
+#IF
+Equal D1 1
+Equal D2 0
+#ACT
+goto @SinQuest_Start_1
+break
+
+#IF
+#SAY
+神舰是连接世界与异界之间的通道……不马上关闭的话,异界邪恶的幻影会出现在世界上……唉…… \ \
+<关 闭/@Exit>
+#ACT
+break
+
+[@SinQuest_Start_1]
+#SAY
+你做过噩梦了吧?脸色看起来不太好……让我免费看一下你的相吧.\ \
+<...../@SinQuest_0_2>
+
+[@SinQuest_0_2]
+#SAY
+我看到了霸王教主相……你在梦中是否看到过{FCOLOR/10}舰船{FCOLOR/12}之类的东西?\ \
+<啊？你怎么连这个都……/@SinQuest_0_3>
+
+[@SinQuest_0_3]
+#SAY
+要听听我讲的故事吗?\ \
+<听一听/@SinQuest_0_4>也无妨.\
+没时间听<还是走吧./@exit>
+
+[@SinQuest_0_4]
+#SAY
+好好听我说,很久以前这里曾经是美丽富饶的土地,有一天东部的神人跟西部的神人之间发生了战争,为了在战争中给对方以更大的伤害,各自使用了被禁用的强大{FCOLOR/10}<力量>{FCOLOR/12},在强大{FCOLOR/10}<力量>{FCOLOR/12}的破坏面前双方都付出了惨重的代价,他们的文明到了即将毁灭的地步,但他们丝毫都没有想过要停战,在战争过程中使用的无可估量的强大{FCOLOR/10}<力量>{FCOLOR/12}给世界气候产生了重大的影响,于是预示灾难的各种征兆相继出现了.\ \
+<他们当中有谁胜利了?/@SinQuest_0_5>
+
+[@SinQuest_0_5]
+#SAY
+谁赢得胜利并不是重要的,自从东部的王死了以后,不详的征兆相继出现……从某一天开始东部海岸和临近东部的湖上出现了怪舰船,专门袭击过往船只或临近的城市.那是沉没了的东部王的舰船,徘徊在舰船周围的碎片被莫名其妙的力量所控制,形成了巨大的阵型,打开了异界的门,把异界的灵魂放出来了,异界的灵魂占有了东部王及其部下们的肉身,从此东部王变成魔王重新回到了这个世界.\ \
+<哦?我看到的莫非就是那艘舰船./@SinQuest_0_6>
+
+[@SinQuest_0_5]
+#SAY
+可以那么说……我看相时,看到了霸王教主相,早晚会发生不测,我真担心你啊.\ \
+<不可理喻,我得走了./@exit>\
+<我可以相信你一次吗?/@SinQuest_0_6>
+
+[@SinQuest_0_6]
+#SAY
+这看来是你命中注定的……当年神人们试图封印所有通往异界的出口,经过他们的努力封印住了通往异界的出口,但随着时间的推移封印之力渐渐减弱.\ \
+<它们期望着什么呢?/@SinQuest_0_7>
+
+[@SinQuest_0_7]
+#SAY
+有记录显示异界灵魂曾经入侵过世界.异界灵魂追求着强大{FCOLOR/10}<力量>{FCOLOR/12},它们奴役了这个世界的生物,人类把它们的王叫做霸王教主.其中就包括战死的东部王.出现在沙漠另一边的船影,那艘船出没的地方,就有通往异界的出口存在.被强烈的力量给吸引住走进异界的人,没有一个人能够活着回来,你算是第一个活着回来的人……\ \
+<我只是做个梦而已,没有那么严重吧?/@SinQuest_0_8>
+
+[@SinQuest_0_8]
+#SAY
+那我就不太清楚了……是你做了梦还是真的去过神舰……但我看的相里显示你确实去过了神舰.\ \
+<神舰是怎么生成的呢……仅仅是普通的船……/@SinQuest_0_9>
+
+[@SinQuest_0_9]
+#SAY
+重要的是神舰起着连接现实世界和异界之间的纽带作用.\ \
+<异界?/@SinQuest_1_0>
+
+[@SinQuest_1_0]
+#SAY
+除了我们所知道的现实世界外还存在着许多其他世界.但那些世界之间不存在相互连接的通道.不过现实世界和异界之间是可以通过神舰来连接的.\ \
+<连接后会不会发生坏事?/@SinQuest_1_1>
+
+[@SinQuest_1_1]
+#SAY
+你亲自看过,应该知道吧,异界灵魂是没有躯体的,但是它们利用船上的尸体得到了躯体.\ \
+<它们期望着什么呢?/@SinQuest_1_2>
+
+[@SinQuest_1_2]
+#SAY
+它们期望得到的不会是这个世界吧……?就算我们知道它们的动机,但又能怎么样呢?这世界还没出现能够阻止它们的英雄……\ \
+<站在你前面的不就是那个人吗?/@SinQuest_1_3>\
+<没有人能战胜异界之王吧./@SinQuest_9_0>
+
+[@SinQuest_1_3]
+#SAY
+呵呵,是吗?\ \
+<当然了./@SinQuest_1_4> \
+<又没报酬,我干吗要冒那么大的风险?/@SinQuest_9_0>
+
+[@SinQuest_9_0]
+#SAY
+真不敢想象世界会变成什么样……\ \
+<关 闭/@exit>
+
+[@SinQuest_1_4]
+#SAY
+那你再去一趟吧,我感觉到了那地方存在像困魔石的东西……我看到了除霸王教主相之外你周围缠绕着的守护神气息……难道是守护神在保佑你?\ \
+<下一步/@SinQuest_1_5>
+
+[@SinQuest_1_5]
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+ReadValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINUSERNAME,FLD_SINMAINSTEP,FLD_SINSTEP_READY" [@SinQuest_GO_1]
+
+[@SinQuest_GO_1()]
+#ACT
+mov A1 %ARG(1)
+mov D1 %ARG(2)
+mov D2 %ARG(3)
+
+#IF
+Equal D1 1
+Equal D2 0
+#ELSEACT
+BREAK
+
+#IF
+checkjob warrior
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINMAINSTEP=1"
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINSTEP_READY=2"
+give 魔灵牌 1
+GIVE 炼狱 1
+break
+#SAY
+我给你{FCOLOR/10}魔灵牌{FCOLOR/12},这是以前神舰来到这里时,我的朋友送给我的.把魔灵牌带给霸王幽灵.然后打听一下除掉异界之王的方法或关闭神舰大门的方法.\ \
+<明白了./@exit>
+
+#IF
+checkjob taoist
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINMAINSTEP=1"
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINSTEP_READY=2"
+give 魔灵牌 1
+GIVE 无名刀 1
+break
+#SAY
+我给你{FCOLOR/10}魔灵牌{FCOLOR/12},这是以前神舰来到这里时,我的朋友送给我的.把魔灵牌带给霸王幽灵.然后打听一下除掉异界之王的方法或关闭神舰大门的方法.\ \
+<明白了./@exit>
+
+#IF
+checkjob wizard
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINMAINSTEP=1"
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINSTEP_READY=2"
+give 血饮 1
+give 魔灵牌 1
+break
+#SAY
+我给你{FCOLOR/10}魔灵牌{FCOLOR/12},这是以前神舰来到这里时,我的朋友送给我的.把魔灵牌带给霸王幽灵.然后打听一下除掉异界之王的方法或关闭神舰大门的方法.\ \
+<明白了./@exit>
+
+
+[@SinQuest_1_6]
+#SAY
+把魔灵牌带给霸王幽灵.然后打听一下除掉异界之王的方法或关闭神舰大门的方法.\ \
+<关 闭/@exit>
+
+[@SinQuest_diary_2]
+#IF
+checkitem 航海日志 1
+#SAY
+这是……这本{FCOLOR/10}航海日志{FCOLOR/12}是东部王写下的,最后一页上还留着我朋友的笔记,可怜的朋友……\
+啊?这是……?\ \
+<你到底怎么了?/@SinQuest_diary_0_1>
+#ELSESAY
+见到霸王幽灵了吗?脸色好象不太好,是不是发生了不顺心的事情……?\ \
+<关 闭/@Exit>
+
+[@SinQuest_diary_0_1]
+#SAY
+看这里……\ \ '{FCOLOR/1}霸王幽灵将要复活,起初会以朋友的身份靠近我们,最后将变成可怕的霸王守卫.{FCOLOR/12}'\ \
+<这是什么意思?/@SinQuest_diary_0_2>
+
+[@SinQuest_diary_0_2]
+#SAY
+霸王幽灵和霸王守卫……你见到的霸王幽灵是我朋友的灵魂,那么根据这句话的意思,我朋友很快将变成霸王守卫,你能不能帮我阻止这件事的发生?\ \
+<明白了./@SinQuest_diary_0_3>\ \
+<还让我再进去一趟?我不做了./@exit>
+
+[@SinQuest_diary_0_3]
+#IF
+checkitem 航海日志 1
+#SAY
+感谢你,把这个送给你,这东西对我来说已经没用处了……\ \
+<..../@exit>
+#ACT
+goto @SQ_SemiReward_1
+break
+#ELSEACT
+break
+#ELSESAY
+把你带过来的航海日志送给我……我把我不用的东西送给你……\ \
+<关 闭/@Exit>
+
+[@SQ_SemiReward_1]
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+ReadValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINUSERNAME,FLD_SINMAINSTEP,FLD_SINSTEP_READY" [@SinQuest_GO_2]
+
+[@SinQuest_GO_2()]
+#ACT
+mov A1 %ARG(1)
+mov D1 %ARG(2)
+mov D2 %ARG(3)
+
+#IF
+Equal D1 2
+Equal D2 0
+#ELSEACT
+BREAK
+
+#IF
+checkjob warrior
+#ACT
+GIVE 帝王戒指 1
+take 航海日志 1
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINMAINSTEP=2"
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINSTEP_READY=1"
+break
+
+#IF
+checkjob wizard
+#ACT
+GIVE 雷神戒指 1
+take 航海日志 1
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINMAINSTEP=2"
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINSTEP_READY=1"
+break
+
+#IF
+checkjob taoist
+#ACT
+GIVE 润神戒指 1
+take 航海日志 1
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINMAINSTEP=2"
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINSTEP_READY=1"
+break
+
+[@SinQuest_diary_0_4]
+#SAY
+你见到的霸王幽灵是我朋友的灵魂,那么根据这句话的意思,我朋友很快将变成霸王守卫,你能不能帮我阻止这件事的发生?\ \
+<关 闭/@Exit>
+
+[@SinQuest_Ending_2]
+#ACT
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+ReadValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINUSERNAME,FLD_SINMAINSTEP,FLD_SINSTEP_READY" [@SinQuest_GO_3]
+
+[@SinQuest_GO_3()]
+#ACT
+mov A1 %ARG(1)
+mov D1 %ARG(2)
+mov D2 %ARG(3)
+
+#IF
+Equal D1 3
+Equal D2 0
+checkitem 遗骸 1
+#ACT
+GIVE 连环明珠 1
+take 遗骸 1
+FormatStr "FLD_SINUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINMAINSTEP=3"
+UpdateValueSql "TBL_SinGiSunQuest" %A9 "FLD_SINSTEP_READY=1"
+set [067] 1
+#SAY
+托你的福,我朋友可以安息了……这是我以前跟朋友一起到神舰时,捡到的东西.\
+每当看到这件东西的时候,我就想起我的朋友,你拿去好好用吧……\ \
+<关 闭/@exit>
+#ELSESAY
+你在神舰上遇到了什么事情……怎么吞吞吐吐的……\ \
+<关 闭/@Exit>
+#ELSEACT
+break
+
+[@SinQuest_Ending_3]
+#SAY
+托你的福,我朋友可以安息了……\
+<关 闭/@exit>
+}
+;;----------------------;;购买请联系鱼的眼泪,QQ:16487549

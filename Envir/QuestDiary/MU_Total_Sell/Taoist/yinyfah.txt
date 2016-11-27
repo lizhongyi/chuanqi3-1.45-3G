@@ -1,0 +1,93 @@
+;;创天网络有限公司原版1.45
+[@Mu_Taoist_yinyfah]
+{
+#IF
+checkitem 阴阳法环 1
+#ACT
+goto @Mu_Taoist_yinyfah_next_1
+#ELSESAY
+喂，您不是已经找到阴阳法环秘籍了吗。\ \
+<结束/@exit>
+
+[@Mu_Taoist_yinyfah_next_1]
+#IF
+#SAY
+如果想学阴阳法环，请支付6500钱。与获得武功相比这个金额是微不足道的。\ \
+<请写武功秘籍！/@Mu_Taoist_yinyfah_next_2>\
+<结束/@Mu_Taoist_yinyfah_next_5>
+
+[@Mu_Taoist_yinyfah_next_2]
+#IF
+checkitem 阴阳法环 1
+#ACT
+goto @Mu_Taoist_yinyfah_next_3
+#ELSESAY
+请首先找到武功书。不拿武功书来，却让解释，真让人生气！\ \
+<结束/@exit>
+
+[@Mu_Taoist_yinyfah_next_3]
+#IF
+checkgold 6500
+checkitem 阴阳法环 1
+#ELSEACT
+BREAK
+#ELSESAY
+喂！我没有说我不能免费传授武功吗？难道让我挖沙子吃活着吗？快点拿学费来！\ \
+<结束/@exit>
+
+#IF
+#ACT
+LOADVALUE D2 "ParamControl\新书成功率.ini" [设置] 成功率
+
+#IF
+Equal D2 1
+#ACT
+lineMsg [Grobal] "<$USERNAME>鉴定的[ 阴阳法环 ]破碎了."
+take 阴阳法环 1
+take 金币 6500
+break
+#SAY
+难道你是说让我解释如此陈旧的书吗。书不是都破碎了嘛。请拿像样的书来，像样的书！！\ \
+<结束/@exit>
+
+#if
+Equal D2 2
+#SAY
+这里有秘诀。天气很热，看很旧的书进行解释，直出冷汗。下次，请拿保存状态稍好写的书来。\ \
+<结束/@exit>
+#ACT
+lineMsg [Grobal] "<$USERNAME>在鉴定时好运降临获得了[ 阴阳法环（秘籍） ]."
+take 阴阳法环 1
+take 金币 6500
+give 阴阳法环（秘籍） 1
+break
+
+#IF
+#ACT
+MOVR D1 100
+
+#IF
+Elarge D1 40
+#ACT
+lineMsg [Grobal] "<$USERNAME>鉴定的[ 阴阳法环 ]破碎了."
+take 阴阳法环 1
+take 金币 6500
+#SAY
+难道你是说让我解释如此陈旧的书吗。书不是都破碎了嘛。请拿像样的书来，像样的书！！\ \
+<结束/@exit>
+#ELSESAY
+这里有秘诀。天气很热，看很旧的书进行解释，直出冷汗。下次，请拿保存状态稍好写的书来。\ \
+<结束/@exit>
+#ELSEACT
+lineMsg [Grobal] "<$USERNAME>在鉴定时好运降临获得了[ 阴阳法环（秘籍） ]."
+take 阴阳法环 1
+take 金币 6500
+give 阴阳法环（秘籍） 1
+break
+
+[@Mu_Taoist_yinyfah_next_5]
+#IF
+#SAY
+嗯！现在在耍我吗？如果真的没有什么事情可做，请到沙漠抓诺玛吧。\ \
+<结束/@exit>
+}

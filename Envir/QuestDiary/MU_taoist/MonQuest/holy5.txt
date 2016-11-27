@@ -1,0 +1,61 @@
+;;创天网络有限公司原版1.45
+[@MapQuest_holycircle_moveTo3]
+#IF
+check [052] 1
+#ACT
+set [052] 0
+enter_fail
+break
+;
+#IF
+check [022] 1
+#SAY
+(现在也没有进去的必要了...)
+#ACT
+enter_fail
+break
+;
+#IF
+checkmagic 困魔咒
+#SAY
+(现在也没有进去的必要了...)
+#ACT
+enter_fail
+break
+;
+#IF
+check [055] 1
+check [022] 0
+#ACT
+goto @MapQuest_holycircle_moveTo3_0
+#ELSESAY
+(我怎么会在这里呢? 难道我的魂被什么勾住了? ) \
+#ELSEACT
+enter_fail
+break
+
+
+[@MapQuest_holycircle_moveTo3_0]
+#IF
+checkmonmap 1_016  1
+#SAY
+(这里还没有彻底净化...)
+#ACT
+enter_fail
+#ELSEACT
+goto @MapQuest_holycircle_moveTo3_1
+
+
+[@MapQuest_holycircle_moveTo3_1]
+#IF
+checkitem 第三困魔石  1
+;#SAY
+;(现在是进入第三困魔咒空间吗...)
+#ACT
+take 第三困魔石  1
+set [052] 1
+enter_ok
+#ELSESAY
+(需要第三困魔石...)
+#ELSEACT
+enter_fail

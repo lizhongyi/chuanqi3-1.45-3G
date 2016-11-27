@@ -1,0 +1,262 @@
+;;
+[@WestQuest_Start]
+{
+#ACT
+FormatStr "FLD_SinUSERNAME='%s'" %USERNAME
+ReadValueSql "TBL_WestDesertQuest" %A9 "FLD_SinUSERNAME,FLD_SinMAINSTEP,FLD_SinSTEP_READY" [@WestQuest_Start_0]
+
+[@WestQuest_Start_0()]
+#ACT
+mov A1 %ARG(1)
+mov D1 %ARG(2)
+mov D2 %ARG(3)
+
+#IF
+Equal A1 ""
+#SAY
+我没有什么可告诉你的……\\
+<关 闭/@Exit>
+#ACT
+break
+
+#IF
+Equal D1 3
+Equal D2 1
+#ACT
+goto @WestQuest_Ending_3
+break
+
+#IF
+Equal D1 3
+Equal D2 0
+#ACT
+goto @WestQuest_Ending_2
+break
+
+#IF
+Equal D1 2
+Equal D2 1
+#ACT
+goto @WestQuest_diary_0_4
+break
+
+#IF
+Equal D1 2
+Equal D2 0
+#ACT
+goto @WestQuest_diary_2
+break
+
+#IF
+Equal D1 1
+Equal D2 2
+#ACT
+goto @WestQuest_1_6
+break
+
+#IF
+Equal D1 1
+Equal D2 0
+#ACT
+goto @WestQuest_Start_1
+break
+
+#IF
+#SAY
+西沙漠是这个世界上最恐怖的地方。。。 \\
+<关 闭/@Exit>
+#ACT
+break
+
+[@WestQuest_Start_1]
+#SAY
+你做过噩梦了吧？脸色看起来不太好……让我免费看一下你的相吧。\\
+<...../@WestQuest_0_2>
+
+[@WestQuest_0_2]
+#SAY
+我看到了地天灭王相……你在梦中是否看到过{FCOLOR/10}地宫{FCOLOR/12}之类的东西？\\
+<啊？你怎么连这个都……/@WestQuest_0_3>
+
+[@WestQuest_0_3]
+#SAY
+要听听我讲的故事吗？\\
+<听一听/@WestQuest_0_4>也无妨。\
+没时间听<还是走吧。/@exit>
+
+[@WestQuest_0_4]
+#SAY
+听我慢慢告诉你吧。这里曾经是一片不为人知的土地，地面上是一片沙漠。而在这沙漠地下，聚集着一些怪兽。它们开垦了这片地下宫殿。它们拥有强大的{FCOLOR/10}<力量>{FCOLOR/12}，在强大的{FCOLOR/10}<力量>{FCOLOR/12}下，他们不断扩大它们的领土。直至到了与诺玛村的交界处。人们发现了这块土地，在战争过程中地宫的生物使用无可估量的强大{FCOLOR/10}<力量>{FCOLOR/12}给世界带来了争斗和灾难。\\
+<他们当中有谁胜利了？/@WestQuest_0_5>
+
+[@WestQuest_0_5]
+#SAY
+在争斗中，人类应用智慧，而地宫生物便是用它们的神秘力量，夺取了大片领土。它们首领便是地天灭王，地天灭王的面目狰狞，并拖着一条带刺的针尾，异常恐怖。\\
+<真的吗？难道我看到的就是地宫中的地天灭王展开杀戮的景象吗？/@WestQuest_0_6>
+
+[@WestQuest_0_5]
+#SAY
+可以那么说……我看相时，看到了地天灭王相，早晚会发生不测，我真担心你啊。\\
+<不可理喻，我得走了。/@exit>\
+<我可以相信你一次吗？/@WestQuest_0_6>
+
+[@WestQuest_0_6]
+#SAY
+这看来是你命中注定的……人类的远征者希望消灭邪恶的力量，保卫我们的家园。\\
+<那他们做到了吗？/@WestQuest_0_7>
+
+[@WestQuest_0_7]
+#SAY
+知道吗？地宫生物拥有强大{FCOLOR/10}<力量>{FCOLOR/12}，它们就栖息在西沙漠的深处地宫中。我所说的地天灭王就在地宫的最底层……\\
+<我只是做个梦而已，没有那么严重吧？/@WestQuest_0_8>
+
+[@WestQuest_0_8]
+#SAY
+那我就不太清楚了……是你做了梦还是真的去过西沙漠……但我看的相里显示你确实去过了西沙漠。\\
+<西沙漠怎么到达呢？那是一个什么样的地方呢？/@WestQuest_0_9>
+
+[@WestQuest_0_9]
+#SAY
+到达西沙漠并不难，只要从诺玛村庄一直向南走。\\
+<向南？/@WestQuest_1_0>
+
+[@WestQuest_1_0]
+#SAY
+对，传说中诺玛村庄的边界某处便是西沙漠地洞的入口，曾经人类也在那里居住过。\\
+<人类居住过？/@WestQuest_1_1>
+
+[@WestQuest_1_1]
+#SAY
+恩，人类曾经也征服过那片土地。只是，唉，那些地宫生物的力量太强大了……\\
+<后来怎么样呢？/@WestQuest_1_2>
+
+[@WestQuest_1_2]
+#SAY
+人类被打败了，地宫生物占据了那一大片肥沃的土地。人们一直企盼能有一个英雄为他们夺回自己的领土……\\
+<站在你前面的不就是那个人吗？/@WestQuest_1_3>\
+<没有人能战胜地宫首领吧！/@WestQuest_9_0>
+
+[@WestQuest_1_3]
+#SAY
+呵呵，是吗？\\
+<当然了。/@WestQuest_1_4> \
+<又没报酬，我干吗要冒那么大的风险？/@WestQuest_9_0>
+
+[@WestQuest_9_0]
+#SAY
+真不敢想象世界会变成什么样……\\
+<关 闭/@exit>
+
+[@WestQuest_1_4]
+#SAY
+那你再去一趟吧，我感觉到了那地方存在像 地洞之眼 的东西……我看到了除地天灭王相之外你周围缠绕着的守护神气息……难道是守护神在保佑你？\\
+<下一步/@WestQuest_1_5>
+
+[@WestQuest_1_5]
+#ACT
+FormatStr "FLD_SinUSERNAME='%s'" %USERNAME
+ReadValueSql "TBL_WestDesertQuest" %A9 "FLD_SinMAINSTEP,FLD_SinSTEP_READY" [@WestDesertREAD_1_1]
+
+[@WestDesertREAD_1_1()]
+#ACT
+mov D1 %ARG(1)
+mov D2 %ARG(2)
+
+#IF
+Equal D1 1
+Equal D2 0
+#ACT
+FormatStr "FLD_SinUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_WestDesertQuest" %A9 "FLD_SinMAINSTEP=1"
+UpdateValueSql "TBL_WestDesertQuest" %A9 "FLD_SinSTEP_READY=2"
+LOADVALUE D0 "ParamControl\官阶值.ini" 官阶值 %USERNAME
+INC D0 500
+SAVEVALUE "ParamControl\官阶值.ini" 官阶值 %USERNAME %D0
+SetUserExp + 50000000
+GIVEGOLDEX 500000
+give 圣灵牌 1
+#SAY
+我给你{FCOLOR/10}圣灵牌{FCOLOR/12}，这是我的一个故人送我的。这会给你带来帮助，你找到一个叫圣灵守护者的人，他会告诉你该怎么办的。\\
+<明白了。/@exit>
+
+[@WestQuest_1_6]
+#SAY
+把圣灵牌带给圣灵守护者。然后打听一下除掉地天灭王的方法。\\
+<关 闭/@exit>
+
+[@WestQuest_diary_2]
+#IF
+checkitem 圣史记 1
+#SAY
+这是……这个是{FCOLOR/10}圣史记{FCOLOR/12}是西部王写下的，书中还留着我朋友的字迹，可怜的朋友……\
+啊？这是……？\\
+<你到底怎么了？/@WestQuest_diary_0_1>
+#ELSESAY
+见到圣灵守护者吗？脸色好象不太好，是不是发生了不顺心的事情……？\\
+<关 闭/@Exit>
+
+[@WestQuest_diary_0_1]
+#SAY
+看这里……\\ '{FCOLOR/1}圣灵守护者将要报复，他是魔石守护神的信从，之后将被可怕的魔石守护神附身。{FCOLOR/12}'\\
+<这是什么意思？/@WestQuest_diary_0_2>
+
+[@WestQuest_diary_0_2]
+#SAY
+圣灵守护者和魔石守护神……你见到的圣灵守护者是我朋友的意志凝结而成的，那么根据这句话的意思，我朋友很快将被魔石守护神附身，你能不能帮我阻止这件事的发生？\\
+<明白了。/@WestQuest_diary_0_3>\\
+<还让我再进去一趟？我不做了。/@exit>
+
+[@WestQuest_diary_0_3]
+#IF
+checkitem 圣史记 1
+#SAY
+感谢你，把这个送给你，这东西对我来说已经没用处了……\\
+<..../@exit>
+#ACT
+take 圣史记 1
+LOADVALUE D0 "ParamControl\官阶值.ini" 官阶值 %USERNAME
+INC D0 700
+SAVEVALUE "ParamControl\官阶值.ini" 官阶值 %USERNAME %D0
+SetUserExp + 70000000
+GIVEGOLDEX 700000
+FormatStr "FLD_SinUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_WestDesertQuest" %A9 "FLD_SinMAINSTEP=2"
+UpdateValueSql "TBL_WestDesertQuest" %A9 "FLD_SinSTEP_READY=1"
+break
+#ELSESAY
+把你带过来的圣史记送给我……我把我不用的东西送给你……\\
+<关 闭/@Exit>
+
+
+[@WestQuest_diary_0_4]
+#SAY
+你见到的圣灵守护者是我朋友的意志凝结而成的，那么根据这句话的意思，我朋友很快将被魔石守护神附身，你能不能帮我阻止这件事的发生？\\
+<关 闭/@Exit>
+
+[@WestQuest_Ending_2]
+#IF
+checkitem 圣灵枯骨 1
+#ACT
+give 地洞之眼 1
+take 圣灵枯骨 1
+FormatStr "FLD_SinUSERNAME='%s'" %USERNAME
+UpdateValueSql "TBL_WestDesertQuest" %A9 "FLD_SinMAINSTEP=3"
+UpdateValueSql "TBL_WestDesertQuest" %A9 "FLD_SinSTEP_READY=1"
+set [494] 1
+#SAY
+托你的福，我朋友可以安息了……这是我以前跟朋友一起到西沙漠时，捡到的东西。\
+每当看到这件东西的时候，我就想起我的朋友，你拿去好好用吧……\\
+<关 闭/@exit>
+#ELSESAY
+你在西沙漠遇到了什么事情……怎么吞吞吐吐的……\\
+<关 闭/@Exit>
+#ELSEACT
+break
+
+[@WestQuest_Ending_3]
+#SAY
+托你的福，我朋友可以安息了……\
+<关 闭/@exit>
+
+}
+;;

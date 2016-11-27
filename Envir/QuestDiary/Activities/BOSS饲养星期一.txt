@@ -1,0 +1,345 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@喂_星期一]
+{
+#ACT
+LoadValue A0 "ParamControl\饲养BOSS.ini" [BOSS] [%USERNAME]
+LoadValue A2 "ParamControl\饲养BOSS.ini" [BOSS状态] [%USERNAME]
+
+#IF
+equal A0 ""
+#SAY
+您还没有领养过BOSS的幼虫呢，请先领养！
+#ACT
+break
+
+#IF
+equal A2 "死亡"
+#SAY
+唉，您领养的BOSS幼虫已经死亡，请重新进行领养操作！
+#ACT
+break
+
+#IF
+equal A0 "低级"
+or equal A0 "高级"
+#ACT
+mov s4 1
+goto @选择饲料_一
+#ELSESAY
+您养的BOSS幼虫已经长{FCOLOR/1}<$OUTPUT(A0)>{FCOLOR/12}了,还不快去宰杀!
+
+[@选择饲料_一]
+#IF
+equal s4 1
+#SAY
+说明:\
+1、幼虫喂养的饲料有两种，一种是普通饲料\
+另一种是高级饲料，均需要一些材料制作而成。\
+2、三天内喂养的幼虫如果全部用普通饲料，养成的BOSS是低级的BOSS，比如沃玛教主等。\
+三天内喂养的幼虫只需要有一天用了高级饲料，养成的BOSS是高级的BOSS，比如诺玛教主等。\
+<我要用普通饲料喂养/@饲料_一_普>\
+<我要用高级饲料喂养/@饲料_一_高>\
+<离开/@exit>
+
+[@饲料_一_普]
+#IF
+checkitem 普通饲料 1
+#ACT
+LoadValue A0 "ParamControl\饲养BOSS.ini" [BOSS] [%USERNAME]
+LoadValue N1 "ParamControl\饲养BOSS.ini" [剩余天数] [%USERNAME]
+mov A4 "普通饲料"
+mov s3 2
+goto @检测BOSS_一
+#ELSESAY
+您包里没有1个普通饲料，怎么喂养呢？
+
+[@饲料_一_高]
+#IF
+checkitem 高级饲料 1
+#ACT
+LoadValue A0 "ParamControl\饲养BOSS.ini" [BOSS] [%USERNAME]
+LoadValue N1 "ParamControl\饲养BOSS.ini" [剩余天数] [%USERNAME]
+mov A4 "高级饲料"
+mov s3 2
+goto @饲料_一_高_2
+#ELSESAY
+您包里的高级饲料呢？
+
+[@饲料_一_高_2]
+#IF
+equal A0 "高级"
+#SAY
+您的BOSS幼虫已经可以长成高级BOSS了，不需要再浪费高级饲料。\
+#ELSEACT
+mov A0 "高级"
+goto @检测BOSS_一
+
+[@检测BOSS_一]
+#IF
+dayofweek mon
+#ACT
+goto @检测BOSS_一日
+#ELSESAY
+今天是星期一吗？我没记错吧！
+
+[@检测BOSS_一日]
+#IF
+check [362] 1
+#SAY
+您今天已经喂养过了，明天再来吧！
+#ACT
+break
+
+#IF
+equal N1 3
+#ACT
+goto  @可以喂养_一
+Break
+
+#IF
+equal N1 2
+#ACT
+goto @检测BOSS_一_2
+Break
+
+#IF
+equal N1 1
+#ACT
+goto @检测BOSS_一_3
+Break
+
+[@检测BOSS_一_2]
+#IF
+check [361] 1
+check [362] 0
+#ACT
+goto @可以喂养_一
+#ELSEACT
+goto @BOSS死亡_一
+
+[@检测BOSS_一_3]
+#IF
+check [367] 1
+check [361] 1
+check [362] 0
+#ACT
+goto @可以喂养_一
+#ELSEACT
+goto @BOSS死亡_一
+
+[@可以喂养_一]
+#IF
+equal s4 1
+equal s3 2
+checkitem %A4 1
+#ACT
+DEC N1 1
+SaveValue "ParamControl\饲养BOSS.ini" [BOSS] [%USERNAME] %A0
+SaveValue "ParamControl\饲养BOSS.ini" [剩余天数] [%USERNAME] %N1
+take %A4 1
+set [362] 1
+mov s4 0
+mov s3 0
+goto @BOSS长成_一
+#ELSESAY
+下次这样直接删号！
+
+[@BOSS长成_一]
+#IF
+large N1 0
+#SAY
+您今天喂养了一次BOSS幼虫。\
+您的BOSS将在{FCOLOR/10}<$OUTPUT(N1)>天{FCOLOR/12}后长成{FCOLOR/1}<$OUTPUT(A0)>BOSS{FCOLOR/12}，请不要放弃哦！
+#ACT
+Break
+
+#IF
+equal A0 "低级"
+#ACT
+goto @BOSS长成_一_低
+Break
+
+#IF
+equal A0 "高级"
+#ACT
+goto @BOSS长成_一_高
+Break
+
+[@BOSS长成_一_低]
+#ACT
+movr d1 8
+inc d1 1
+
+#IF
+Equal d1 1
+#ACT
+mov A5 %USERNAME
+mov A6 "沃玛教主"
+goto @BOSS长成_一_OK
+break
+
+#IF
+Equal d1 2
+#ACT
+mov A5 %USERNAME
+mov A6 "骷髅教主"
+goto @BOSS长成_一_OK
+break
+
+#IF
+Equal d1 3
+#ACT
+mov A5 %USERNAME
+mov A6 "触龙神"
+goto @BOSS长成_一_OK
+break
+
+#IF
+Equal d1 4
+#ACT
+mov A5 %USERNAME
+mov A6 "赤月恶魔"
+goto @BOSS长成_一_OK
+break
+
+#IF
+Equal d1 5
+#ACT
+mov A5 %USERNAME
+mov A6 "祖玛教主"
+goto @BOSS长成_一_OK
+break
+
+#IF
+Equal d1 6
+#ACT
+mov A5 %USERNAME
+mov A6 "潘夜牛魔王"
+goto @BOSS长成_一_OK
+break
+
+#IF
+Equal d1 7
+#ACT
+mov A5 %USERNAME
+mov A6 "震天魔神"
+goto @BOSS长成_一_OK
+break
+
+#IF
+Equal d1 8
+#ACT
+mov A5 %USERNAME
+mov A6 "霸王教主"
+goto @BOSS长成_一_OK
+break
+
+
+[@BOSS长成_一_高]
+#ACT
+movr d1 10
+inc d1 1
+
+#IF
+Equal d1 1
+#ACT
+mov A5 %USERNAME
+mov A6 "诺玛教主"
+goto @BOSS长成_一_OK
+break
+
+#IF
+Equal d1 2
+#ACT
+mov A5 %USERNAME
+mov A6 "地天灭王"
+goto @BOSS长成_一_OK
+break
+
+#IF
+Equal d1 3
+#ACT
+mov A5 %USERNAME
+mov A6 "冰城帝王"
+goto @BOSS长成_一_OK
+break
+
+#IF
+Equal d1 4
+#ACT
+mov A5 %USERNAME
+mov A6 "绝情殿主"
+goto @BOSS长成_一_OK
+break
+
+#IF
+Equal d1 5
+#ACT
+mov A5 %USERNAME
+mov A6 "诺玛教主"
+goto @BOSS长成_一_OK
+break
+
+#IF
+Equal d1 6
+#ACT
+mov A5 %USERNAME
+mov A6 "地天灭王"
+goto @BOSS长成_一_OK
+break
+
+#IF
+Equal d1 7
+#ACT
+mov A5 %USERNAME
+mov A6 "诺玛教主"
+goto @BOSS长成_一_OK
+break
+
+#IF
+Equal d1 8
+#ACT
+mov A5 %USERNAME
+mov A6 "群魔统治者"
+goto @BOSS长成_一_OK
+break
+
+#IF
+Equal d1 9
+#ACT
+mov A5 %USERNAME
+mov A6 "异界神灵"
+goto @BOSS长成_一_OK
+break
+
+#IF
+Equal d1 10
+#ACT
+mov A5 %USERNAME
+mov A6 "邪恶至尊"
+goto @BOSS长成_一_OK
+break
+
+[@BOSS长成_一_OK]
+#IF
+equal N1 0
+#ACT
+SaveValue "ParamControl\饲养BOSS.ini" [BOSS] [%USERNAME] %A6
+lineMsg [Grobal] "(*)玩家 '<$OUTPUT(A5)>' 成功的把一个BOSS幼虫喂养成'<$OUTPUT(A6)>'，大家快去祝贺！"
+#SAY
+恭喜，您成功的培养出一个{FCOLOR/10}<$OUTPUT(A6)>{FCOLOR/12}，请叫上您的配偶一起去宰杀这只BOSS吧！\
+在BOSS养成后，您可以选择在{FCOLOR/10}任何时间{FCOLOR/12}去宰杀，不过您要注意的是在宰杀BOSS时如果您
+被BOSS杀死或下线出来后就{FCOLOR/10}不能再进入了{FCOLOR/12}，小心为上！\\
+
+<结束/@exit>
+
+[@BOSS死亡_一]
+#ACT
+SaveValue "ParamControl\饲养BOSS.ini" [BOSS状态] [%USERNAME] "死亡"
+mov s4 0
+mov s3 0
+#SAY
+您在三天内有一天没有喂养，所以您的BOSS幼虫已经饿死了！请重新开始领养吧！\
+<结束/@exit>\
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

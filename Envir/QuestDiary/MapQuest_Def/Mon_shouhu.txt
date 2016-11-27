@@ -1,0 +1,11 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@Main]
+#IF
+check [493] 1
+check [494] 1
+#ACT
+goto @shouhu_Quest
+break
+
+[@shouhu_Quest]
+#CALL [WestDesert\Mon_WestDesert.txt] @shouhu_Quest1

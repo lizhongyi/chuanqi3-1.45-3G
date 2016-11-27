@@ -1,0 +1,1209 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@随身功能_1]
+{
+#ACT
+LOADVALUE D1 "ParamControl\内测金币卷.ini" [金币卷] %USERID
+
+#IF
+#SAY
+{FCOLOR/10}便捷传送可以让玩家快速到达目的地,推荐使用.{FCOLOR/1}hot~~~{FCOLOR/12}\\
+<〖道馆城市中心〗/@随身便捷(1,409,120)> <〖银杏特修加点〗/@随身便捷(02,244,232)> <〖比奇马匹商人〗/@随身便捷(0,377,305)>\\
+<〖战士鉴定书籍〗/@随身便捷(0,451,389)> <〖法道鉴定书籍〗/@随身便捷(0,456,436)> <〖道观栗子商人〗/@随身便捷(1,383,141)>\\
+<〖移动冰雪森林〗/@随身便捷(D005,153,45)> <〖移动冰雪之城〗/@随身便捷(82,257,137)> <〖移动冰宫一层〗/@随身便捷(D2101,20,268)>\\
+<【奖牌抽奖系统】/@奖牌系统D> <【马匹铠甲合成】/@马铠合成D> <【冰宫生锈首饰】/@冰宫首饰D>\\
+<【好友送花系统】/@好友系统DX> <【四级技能提升】/@四级技能X> <【打造纯金玉佩】/@纯金玉佩X>\\
+__________________<【合西沙首饰】/@西沙首饰D>  \\
+__________________<【庆西沙礼物】/@西沙礼物X>  \\
+__________________<【遗物变宝贝】/@合成玉佩X>  \\
+__________________<【四十级奖励】/@四十奖励DX> \\
+
+#IF
+Large D1 0
+#SAY
+________________<【领取内测金币】/@提取金币卷_OKD>\\
+
+#if
+CheckPos D1113,369,57,15
+#SAY
+__________________<【进入牛七西】/@进入牛七(D11141,40,108)>\\
+
+#if
+CheckPos D1113,40,375,20
+#SAY
+__________________<【进入牛七东】/@进入牛七(D11142,93,127)>\\
+
+#IF
+ISADMIN
+#SAY
+{FCOLOR/1}以下功能仅管理员可见.\
+<〖书籍原始〗/@书籍原始D>   <〖书籍失败〗/@书籍失败D>   <〖书籍成功〗/@书籍成功D>\
+<〖速回道馆〗/@速回道馆>   <〖开启系统双倍〗/@开启双倍D>   <〖关闭系统双倍〗/@关闭双倍D>\
+<〖刷新排行〗/@刷新排行>   <〖账号充值〗/@账号充值>   <〖地图尸王〗/@地图尸王>\
+<〖转移道馆〗/@转移泡点>   <〖转移银杏〗/@转移泡点2>   <〖开区刷怪〗/@开区刷怪1>\
+<〖沙城掉金币苹果〗/@沙城掉金D>  <〖清理地面〗/@shuashuashua2>\
+<〖沙城刷圣诞树〗/@沙城刷圣诞树>
+
+
+[@四级技能X]
+#IF
+checkjob warrior
+#SAY
+{FCOLOR/10}请选择你要提升的技能:{FCOLOR/12}\\
+<『铁 布 杉』/@提升技能1>\
+<『十 方 斩』/@提升技能2>\
+<『 返  回 』/@main>\\
+
+#IF
+checkjob wizard
+#SAY
+{FCOLOR/10}请选择你要提升的技能:{FCOLOR/12}\\
+<『怒神霹雳』/@提升技能3>\
+<『焰天火雨』/@提升技能4>\
+<『 返  回 』/@main>\\
+
+#IF
+checkjob taoist
+#SAY
+{FCOLOR/10}请选择你要提升的技能:{FCOLOR/12}\\
+<『回 生 术』/@提升技能5>\
+<『妙影无踪』/@提升技能6>\
+<『 返  回 』/@main>\\
+
+[@西沙首饰D]
+#SAY
+{FCOLOR/14}我可以将西沙掉落的生锈首饰还原,需要我帮忙吗?\\
+<〖云龙项链〗/@西沙洗生锈(生锈云龙项链,转轮项链,云龙项链)>    <〖云龙手镯〗/@西沙洗生锈(生锈云龙手镯,转轮手镯,云龙手镯)>    <〖云龙戒指〗/@西沙洗生锈(生锈云龙戒指,七转轮戒指,云龙戒指)>\\
+<〖旭日项链〗/@西沙洗生锈(生锈旭日项链,狂战项链,旭日项链)>    <〖旭日手镯〗/@西沙洗生锈(生锈旭日手镯,狂战手镯,旭日手镯)>    <〖旭日戒指〗/@西沙洗生锈(生锈旭日戒指,狂战戒指,旭日戒指)>\\
+<〖至善项链〗/@西沙洗生锈(生锈至善项链,天丛项链,至善项链)>    <〖至善手镯〗/@西沙洗生锈(生锈至善手镯,天丛手镯,至善手镯)>    <〖至善戒指〗/@西沙洗生锈(生锈至善戒指,天丛戒指,至善戒指)>\\
+
+[@西沙洗生锈()]
+#ACT
+MOV 链镯配方一 %ARG(1)
+MOV 链镯配方二 %ARG(2)
+MOV 链镯成品 %ARG(3)
+
+#IF
+#SAY
+合成物品:{FCOLOR/10}<$OUTPUT(链镯成品)>{FCOLOR/12}.\\
+需要{FCOLOR/1}<$OUTPUT(链镯配方一)>,<$OUTPUT(链镯配方二)>各1个+1000W金币{FCOLOR/12}.\\
+<〖确定合成〗/@合成西沙首饰>
+
+[@合成西沙首饰]
+#IF
+CHECKITEM %链镯配方一 1
+CHECKITEM %链镯配方二 1
+CHECKGOLD 10000000
+#ACT
+TAKE %链镯配方一 1
+TAKE %链镯配方二 1
+TAKE 金币 10000000
+GIVE %链镯成品 1
+lineMsg [Grobal] "恭喜玩家[ <$USERNAME> ]合成了<$OUTPUT(链镯成品)>!"
+CLOSE
+BREAK
+#ELSESAY
+对不起,你的包袱里没有足够的物品.\\
+<关闭/@Exit>
+
+
+[@纯金玉佩X]
+#SAY
+{FCOLOR/10}300个遗物+金币500W+祝福油20+玉佩1个可以换取“纯金玉佩”一件.\\
+{FCOLOR/13}纯金玉佩攻击主属性5-5 带人物第四格{FCOLOR/12}\\
+<〖合成玉佩〗/@纯金玉佩X1>
+
+[@纯金玉佩X1]
+#IF
+CHECKITEM 遗物 300
+checkitem 祝福油 20
+CHECKGOLD 5000000
+CHECKITEM 玉佩 1
+#ACT
+TAKE 遗物 300
+TAKE 祝福油 20
+TAKE 金币 5000000
+TAKE 玉佩 1
+give 纯金玉佩 1
+close
+lineMsg [Grobal] "恭喜玩家[ <$USERNAME> ]合成了纯金玉佩!"
+break
+#ELSESAY
+对不起,你的包袱里没有足够的物品.\\
+<关闭/@Exit>
+
+[@合成玉佩X]
+#SAY
+{FCOLOR/14}活动时间：12月24日-1月3日{FCOLOR/12}\\
+使用300个遗物+金币500W+祝福油20个可以换取“玉佩”一件.\\
+{FCOLOR/13}玉佩攻击主属性2-3 带人物第四格{FCOLOR/12}\\
+<〖合成玉佩〗/@合成玉佩1>
+
+[@合成玉佩1]
+#IF
+CHECKITEM 遗物 300
+checkitem 祝福油 20
+CHECKGOLD 5000000
+#ACT
+TAKE 遗物 300
+TAKE 祝福油 20
+TAKE 金币 5000000
+GIVE 玉佩 1
+close
+lineMsg [Grobal] "恭喜玩家[ <$USERNAME> ]合成了玉佩!"
+break
+#ELSESAY
+对不起,你的包袱里没有足够的物品.\\
+<关闭/@Exit>
+
+[@沙城刷圣诞树]
+#ACT
+MongenP "3, 210, 154, 40" 圣诞树 50
+lineMsg [Grobal] "沙巴克城市里出现了大量的圣诞树!"
+CLOSE
+
+
+[@@六味地黄丸D]
+#ACT
+MOV A0 %INPUTSTR
+
+#IF
+checkcmd ISONLINE %A0
+#ACT
+FormatStr "@_六味地黄丸(%s)" %USERNAME
+actcmd RUNSCRIPTLABEL %A0 %A9
+break
+#ELSESAY
+对方不在线.
+
+[@_六味地黄丸()]
+#ACT
+MOV 返回名字 %ARG(1)
+
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+ELarge 占用格子 46
+#ACT
+FormatStr "@_六味失败(%s)" %USERNAME
+actcmd RUNSCRIPTLABEL %返回名字 %A9
+break
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+Small 剩余负重 100
+#ACT
+FormatStr "@_六味失败(%s)" %USERNAME
+actcmd RUNSCRIPTLABEL %返回名字 %A9
+BREAK
+
+#IF
+#ACT
+GIVE 六味地黄丸 100
+break
+
+[@_六味失败()]
+#ACT
+mov A0 %ARG(1)
+SYSMSG "<$output(a0)>失败"
+
+[@冰宫首饰D]
+#SAY
+{FCOLOR/14}我可以将冰宫掉落的生锈首饰还原,需要我帮忙吗?\\
+<〖转轮项链〗/@冰宫链镯(生锈转轮项链,五行神镜,转轮项链)>    <〖转轮手镯〗/@冰宫链镯(生锈转轮手镯,毁灭手镯,转轮手镯)>    <〖转轮戒指〗/@冰宫戒指(生锈转轮戒指,心魔戒指,七彩金环,转轮戒指)>\\
+<〖狂战项链〗/@冰宫链镯(生锈狂战项链,毁灭魔链,狂战项链)>    <〖狂战手镯〗/@冰宫链镯(生锈狂战手镯,火玉手镯,狂战手镯)>    <〖狂战戒指〗/@冰宫戒指(生锈狂战戒指,紫金环,六棱戒,狂战戒指)>\\
+<〖天丛项链〗/@冰宫链镯(生锈天丛项链,乾坤一气,天丛项链)>    <〖天丛手镯〗/@冰宫链镯(生锈天丛手镯,如来手镯,天丛手镯)>    <〖天丛戒指〗/@冰宫戒指(生锈天丛戒指,天机戒指,虚空道环,天丛戒指)>\\
+
+[@冰宫链镯()]
+#ACT
+MOV 链镯配方一 %ARG(1)
+MOV 链镯配方二 %ARG(2)
+MOV 链镯成品 %ARG(3)
+
+#IF
+#SAY
+合成物品:{FCOLOR/10}<$OUTPUT(链镯成品)>{FCOLOR/12}.\\
+需要{FCOLOR/1}<$OUTPUT(链镯配方一)>,<$OUTPUT(链镯配方二)>各1个+500W金币{FCOLOR/12}.\\
+<〖确定合成〗/@合成链镯>
+
+[@合成链镯]
+#IF
+CHECKITEM %链镯配方一 1
+CHECKITEM %链镯配方二 1
+CHECKGOLD 5000000
+#ACT
+TAKE %链镯配方一 1
+TAKE %链镯配方二 1
+TAKE 金币 5000000
+GIVE %链镯成品 1
+lineMsg [Grobal] "恭喜玩家[ <$USERNAME> ]合成了<$OUTPUT(链镯成品)>!"
+CLOSE
+BREAK
+#ELSESAY
+对不起,你的包袱里没有足够的物品.\\
+<关闭/@Exit>
+
+
+[@冰宫戒指()]
+#ACT
+MOV 链镯配方一 %ARG(1)
+MOV 链镯配方二 %ARG(2)
+MOV 链镯配方三 %ARG(3)
+MOV 链镯成品 %ARG(4)
+
+#IF
+#SAY
+合成物品:{FCOLOR/10}<$OUTPUT(链镯成品)>{FCOLOR/12}.\\
+需要{FCOLOR/1}<$OUTPUT(链镯配方一)>,<$OUTPUT(链镯配方二)>,<$OUTPUT(链镯配方三)>各1个+500W金币{FCOLOR/12}.\\
+<〖确定合成〗/@合成冰戒>
+
+[@合成冰戒]
+#IF
+CHECKITEM %链镯配方一 1
+CHECKITEM %链镯配方二 1
+CHECKITEM %链镯配方三 1
+CHECKGOLD 5000000
+#ACT
+TAKE %链镯配方一 1
+TAKE %链镯配方二 1
+TAKE %链镯配方三 1
+TAKE 金币 5000000
+GIVE %链镯成品 1
+lineMsg [Grobal] "恭喜玩家[ <$USERNAME> ]合成了<$OUTPUT(链镯成品)>!"
+CLOSE
+BREAK
+#ELSESAY
+对不起,你的包袱里没有足够的物品.\\
+<关闭/@Exit>
+
+
+[@马铠合成D]
+#SAY
+金马铠属性:\
+破坏:4-8 全系列:4-8 负重:500 舒适:20\
+特殊属性:爆率增加百分之20\
+合成公式:金马铠碎片20个+银马铠+4000W\
+<合成金马铠/@合成金色铠>\\
+银马铠属性:\
+破坏:2-5 全系列:2-5 负重:200 舒适:10\
+特殊属性:爆率增加百分之10\
+合成公式:银马铠碎片20个+3000W\
+<合成银马铠/@合成银色铠>\\
+
+
+[@合成金色铠]
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+Elarge 占用格子 46
+#ACT
+SYSMSG "请整理出足够的包袱空位!!!"
+break
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+Small 剩余负重 2
+#ACT
+SYSMSG "你的包袱剩余负重为<$OUTPUT(剩余负重)>,请留出2点以上负重."
+BREAK
+
+#IF
+CHECKITEM 金马铠碎片 20
+CHECKGOLD 40000000
+#ACT
+TAKE 金马铠碎片 20
+TAKE 金币 40000000
+TAKE 银马铠 1
+GIVE 金马铠 1
+lineMsg [Grobal] "恭喜玩家[ <$USERNAME> ]合成了金马铠!"
+close
+break
+#ELSESAY
+对不起,你的包袱里没有20个金马铠碎片,4000W金币,1个银马铠.\\
+<关闭/@Exit>
+
+
+
+[@合成银色铠]
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+Elarge 占用格子 45
+#ACT
+SYSMSG "请整理出足够的包袱空位!!!"
+break
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+Small 剩余负重 2
+#ACT
+SYSMSG "你的包袱剩余负重为<$OUTPUT(剩余负重)>,请留出2点以上负重."
+BREAK
+
+#IF
+CHECKITEM 银马铠碎片 20
+CHECKGOLD 30000000
+#ACT
+TAKE 银马铠碎片 20
+TAKE 金币 30000000
+GIVE 银马铠 1
+lineMsg [Grobal] "恭喜玩家[ <$USERNAME> ]合成了银马铠!"
+close
+break
+#ELSESAY
+对不起,你的包袱里没有20个银马铠碎片或3000W金币.\\
+<关闭/@Exit>
+
+
+
+[@奖牌系统D]
+#SAY
+每天晚上19:00-22:59点,等级大于33的玩家,在线每10分钟获得一个铜牌,5个奖牌就可以进行一次抽奖.\\
+<〖奖牌抽奖〗/@抽奖奖牌1>  {FCOLOR/1}务必注意包袱的负重.\\
+
+[@抽奖奖牌1]
+#IF
+CHECKITEM 奖牌 5
+#ELSEACT
+BREAK
+#ELSESAY
+对不起,你的包袱里已经没有奖牌了.\\
+<关闭/@Exit>
+
+#IF
+#ACT
+TAKE 奖牌 5
+MOVR D0 72
+
+#IF
+Small D0 10
+#ACT
+GIVE 祝福油 5
+lineMsg [Grobal] "<$USERNAME>使用奖牌抽奖获得了祝福油5个!"
+BREAK
+
+#IF
+Small D0 20
+#ACT
+GIVE 天山雪莲花 1
+lineMsg [Grobal] "<$USERNAME>使用奖牌抽奖获得了天山雪莲花!"
+BREAK
+
+#IF
+Small D0 30
+#ACT
+GIVE 万年雪霜（绑定） 50
+lineMsg [Grobal] "<$USERNAME>使用奖牌抽奖获得了万年雪霜（绑定）50个!"
+BREAK
+
+#IF
+Small D0 40
+#ACT
+GIVE 特修神水 5
+lineMsg [Grobal] "<$USERNAME>使用奖牌抽奖获得了特修神水5个!"
+BREAK
+
+#IF
+Small D0 50
+#ACT
+GIVE 经验卷 1
+lineMsg [Grobal] "<$USERNAME>使用奖牌抽奖获得了经验卷1个!"
+BREAK
+
+#IF
+Small D0 70
+#ACT
+GIVE 经验卷 1
+lineMsg [Grobal] "<$USERNAME>使用奖牌抽奖获得了经验卷!"
+BREAK
+
+#IF
+Small D0 71
+#ACT
+GIVE 金条 1
+lineMsg [Grobal] "<$USERNAME>使用奖牌抽奖获得了金条!"
+BREAK
+
+
+
+[@书籍原始D]
+#ACT
+SAVEVALUE "ParamControl\新书成功率.ini" [设置] 成功率 0
+SYSMSG "已经恢复原始几率."
+close
+
+[@书籍失败D]
+#ACT
+SAVEVALUE "ParamControl\新书成功率.ini" [设置] 成功率 1
+SYSMSG "已经修改为100%失败."
+close
+
+[@书籍成功D]
+#ACT
+SAVEVALUE "ParamControl\新书成功率.ini" [设置] 成功率 2
+SYSMSG "已经修改为100%成功."
+close
+
+[@四十奖励DX]
+#ACT
+LOADVALUE D0 "ParamControl\40级奖励.ini" [领取] %USERNAME
+LOADVALUE D1 "ParamControl\充值余额.ini" %USERID RMB
+
+#IF
+CHECKLEVEL 40
+#ELSEACT
+BREAK
+#ELSESAY
+对不起,你的等级还没有到40级.\\
+<关闭/@Exit>
+
+#IF
+Equal D0 0
+#ACT
+INC D1 50
+SAVEVALUE "ParamControl\充值余额.ini" %USERID RMB %D1
+SAVEVALUE "ParamControl\40级奖励.ini" [领取] %USERNAME 1
+lineMsg [Grobal] "玩家<$USERNAME>在D键里领取里四十级玩家奖励,请达到40级没有领取的玩家赶紧领取!"
+BREAK
+#SAY
+恭喜你获得了50个赞助币的奖励.\\
+<关闭/@Exit>
+#ELSESAY
+你已经领取过了,无法反复领取.\\
+<关闭/@Exit>
+
+
+[@好友系统DX]
+#CALL [KINGSCRIPT\好友通讯录.txt] @FriendSystem_0 
+
+[@地图尸王]
+#if
+checkmonmap %USERMAP 1 "尸王"
+#SAY
+活着
+#ELSESAY
+击杀
+
+[@西沙礼物X]
+#IF
+CHECKLEVEL 30
+#ELSEACT
+BREAK
+#ELSESAY
+对不起,你的等级不足30级,无法领取活动奖励.\\
+<关闭/@Exit>
+
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+Elarge 占用格子 45
+#ACT
+SYSMSG "请整理出足够的包袱空位!!!"
+break
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+Small 剩余负重 203
+#ACT
+SYSMSG "你的包袱剩余负重为<$OUTPUT(剩余负重)>,请留出203点以上负重."
+BREAK
+
+#IF
+#ACT
+LOADVALUE D1 "ParamControl\西沙礼物.ini" [设置] %USERNAME
+
+#IF
+Equal D1 1
+#ACT
+BREAK
+#SAY
+你已经领取过了.\\
+<关闭/@Exit>
+#ELSEACT
+GIVE 万年雪霜（绑定） 200
+GIVEGOLDEX 500000
+GIVE 天山雪莲花 3
+SAVEVALUE "ParamControl\西沙礼物.ini" [设置] %USERNAME 1
+BREAK
+#ELSESAY
+恭喜你获得了200个万年雪霜（绑定）,3个天山雪莲花和50W金币.\\
+<关闭/@Exit>
+
+[@提取金币卷_OKD]
+#ACT
+LOADVALUE D1 "ParamControl\内测金币卷.ini" [金币卷] %USERID
+LOADVALUE D3 "ParamControl\内测金币卷领取.ini" %USERID 日期
+
+#IF
+CHECKLEVEL 22
+#elseact
+sysmsg "对不起,22级以下无法提取."
+close
+break
+
+#IF
+Large D1 0
+#ELSEACT
+BREAK
+#ELSESAY
+对不起,你已经没有可提取的金币卷了.\\
+<关闭/@EXIT>
+
+#IF
+Equal D3 %CURDAY
+#ACT
+BREAK
+#SAY
+你今天已经领取过了,剩余的{FCOLOR/10}<$OUTPUT(D1)>{FCOLOR/12}个请明天再来.\\
+<关闭/@exit>
+
+#IF
+Esmall D1 7000
+#ACT
+MOV P1 %D1
+MOV P2 1000
+MUL P1 P2
+MOV D2 %P9
+GIVEGOLDEX %D2
+SAVEVALUE "ParamControl\内测金币卷.ini" [金币卷] %USERID 0
+SAVEVALUE "ParamControl\内测金币卷领取.ini" %USERID 日期 %CURDAY
+close
+BREAK
+#ELSEACT
+GIVEGOLDEX 7000000
+DEC D1 7000
+SAVEVALUE "ParamControl\内测金币卷.ini" [金币卷] %USERID %D1
+SAVEVALUE "ParamControl\内测金币卷领取.ini" %USERID 日期 %CURDAY
+close
+BREAK
+
+
+[@进入牛七()]
+#ACT
+MOV A0 %ARG(1)
+MOV D0 %ARG(2)
+MOV D1 %ARG(3)
+MOV A1 %USERMAP
+
+#IF
+Equal A1 "D1113"
+#ACT
+MAPMOVE %A0 %D0 %D1
+CLOSE
+BREAK
+
+[@shuashuashua2]
+#ACT
+CLOSE
+MOV A0 %USERMAP
+MOV A1 %USERX
+MOV A2 %USERY
+MOV A3 ""
+ADDSTR A3 %A0
+ADDSTR A3 ","
+ADDSTR A3 %A1
+ADDSTR A3 ","
+ADDSTR A3 %A2
+ADDSTR A3 ",200"
+Clearitemmap %A3 *
+
+[@沙城掉金D]
+#ACT
+CLOSE
+DropItemMap "3, 210, 154, 40" 金币  10000   100
+DropItemMap "3, 210, 154, 40" 苹果    1      5
+DropItemMap "3, 210, 154, 40" 黑铁    1     10
+DropItemMap "3, 210, 154, 40" 钢玉石  1     5
+DropItemMap "3, 210, 154, 40" 特修神水  1   5
+DropItemMap "3, 210, 154, 40" 回生神水  1   5
+DropItemMap "3, 210, 154, 40" 祝福油    1   10
+lineMsg [Grobal] "沙巴克地面上出现了大量的双旦活动礼物!"
+BREAK
+
+[@提取金币卷_OKD]
+#ACT
+LOADVALUE D1 "ParamControl\内测金币卷.ini" [金币卷] %USERID
+
+#IF
+Large D1 0
+#ACT
+MOV P1 %D1
+MOV P2 1000
+MUL P1 P2
+MOV D2 %P9
+GIVEGOLDEX %D2
+SAVEVALUE "ParamControl\内测金币卷.ini" [金币卷] %USERID 0
+close
+BREAK
+#ELSESAY
+对不起,你已经没有可提取的金币卷了.\\
+<关闭/@EXIT>
+
+[@每日福利D]
+#ACT
+LOADVALUE D0 "ParamControl\每日福利.ini" 领取日期 %USERNAME
+
+#if
+Equal D0 %Curday
+#ACT
+BREAK
+#SAY
+你今天已经领取过了,请明天再来!\\
+<关闭/@Exit>
+
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+ELarge 占用格子 45
+#ACT
+SYSMSG "你的包袱格子已经满了,不能装下东西了!"
+break
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+Small 剩余负重 5
+#ACT
+SYSMSG "你的包袱没有足够的负重了."
+BREAK
+
+#IF
+#ACT
+GIVE 苹果（绑定） 5
+SAVEVALUE "ParamControl\每日福利.ini" 领取日期 %USERNAME %CURDAY
+BREAK
+#SAY
+恭喜你获得了掉线补偿.\\
+<关闭/@Exit>
+
+
+[@每日福利DX]
+#ACT
+LOADVALUE D0 "ParamControl\每日福利追加.ini" 领取日期 %USERNAME
+
+#if
+Equal D0 %Curday
+#ACT
+BREAK
+#SAY
+你今天已经领取过了,请明天再来!\\
+<关闭/@Exit>
+
+#IF
+CHECKBAGGAGEEX
+#ELSEACT
+MOV 占用格子 %P9
+
+#IF
+ELarge 占用格子 45
+#ACT
+SYSMSG "你的包袱格子已经满了,不能装下东西了!"
+break
+
+#IF
+CHECKWEIGHT
+#ELSEACT
+MOV 剩余负重 %P9
+
+#IF
+Small 剩余负重 10
+#ACT
+SYSMSG "你的包袱没有剩余足够的负重了."
+BREAK
+
+#IF
+#ACT
+GIVE 苹果（绑定） 10
+SAVEVALUE "ParamControl\每日福利追加.ini" 领取日期 %USERNAME %CURDAY
+BREAK
+#SAY
+恭喜你获得了掉线补偿.\\
+<关闭/@Exit>
+
+
+[@开区刷怪1]
+#ACT
+MongenP "1,396,134,30" 猪 20
+MongenP "1,396,134,30" 牛 20
+MongenP "1,396,133,30" 鸡 20
+CLOSE
+
+[@转移泡点]
+#ACT
+MAPTING 1 0 447 389
+CLOSE
+
+[@转移泡点2]
+#ACT
+MAPTING 1 02 252 194
+CLOSE
+
+[@刷新排行]
+#ACT
+actcmd RESETSERVERTOP 10
+CLOSE
+
+[@关闭双倍D]
+#ACT
+SETSERVEREXPMULTIPLE 1
+SetDropRate 1
+lineMsg [Grobal] "服务器系统双倍活动结束了..."
+CLOSE
+
+[@开启双倍D]
+#ACT
+SETSERVEREXPMULTIPLE 2
+SetDropRate 2
+lineMsg [Grobal] "服务器系统双倍活动开始了..."
+CLOSE
+
+[@转移泡点]
+#ACT
+MAPTING 1 0 447 389
+CLOSE
+
+[@刷新排行]
+#ACT
+actcmd RESETSERVERTOP 10
+CLOSE
+
+
+[@修理勋章D]
+#SAY
+勋章修理每次收费{FCOLOR/10}10W金币{FCOLOR/12},你需要我帮你修理吗?\\
+<修理勋章/@我要修勋章>
+
+[@我要修勋章]
+#IF
+CheckGold 100000
+#ACT
+TAKE 金币 100000
+RepairItem 2
+SYSMSG "勋章已经修理好了."
+CLOSE
+break
+#ELSESAY
+对不起,包袱里没有10W金币.\\
+<关闭/@Exit>
+
+[@随身便捷()]
+#ACT
+MOV A0 %ARG(1)
+MOV A1 %ARG(2)
+MOV A2 %ARG(3)
+MOV A3 %USERMAP
+
+#IF
+Equal A3 "D900"
+or Equal A3 "D901"
+or Equal A3 "D9011"
+or Equal A3 "D9012"
+or Equal A3 "D9021"
+or Equal A3 "D90211"
+or Equal A3 "D90212"
+or Equal A3 "D9022"
+or Equal A3 "D90221"
+or Equal A3 "D90222"
+or Equal A3 "D90223"
+or Equal A3 "D903"
+or Equal A3 "D9031"
+or Equal A3 "D9032"
+or Equal A3 "D9033"
+or Equal A3 "D904"
+or Equal A3 "D90323"
+#ACT
+SYSMSG "对不起,本地图不允许使用便捷传送."
+BREAK
+
+#IF
+#ACT
+MAPMOVE %A0 %A1 %A2
+BREAK
+
+
+
+[@速回道馆]
+#ACT
+MAPMOVE 1 400 132
+
+[@账号充值]
+#IF
+ISADMIN
+#SAY
+<输入充值账号/@@充值账号2>  账号:<$OUTPUT(充值账号)>  <查询余额/@账号查余额>\
+<输入充值金额/@@充值金额2>  金额:<$OUTPUT(充值金额)>\\
+<确认充值/@充值确定2>
+
+[@账号查余额]
+#ACT
+LOADVALUE D0 "ParamControl\充值余额.ini" %充值账号 RMB
+SYSMSG "<$OUTPUT(充值账号)>的余额为:<$OUTPUT(D0)>."
+break
+
+[@充值确定2]
+#IF
+Equal 充值账号 ""
+#ACT
+SYSMSG "充值的账号不能为空值." 2
+BREAK
+
+#IF
+Large 充值金额 0
+#ACT
+LOADVALUE D0 "ParamControl\充值余额.ini" %充值账号 RMB
+INC D0 %充值金额
+SAVEVALUE "ParamControl\充值余额.ini" %充值账号 RMB %D0
+SAVEVALUE "ParamControl\充值记录.ini" %充值账号 %SERVERNOWTIME %充值金额
+SYSMSG "<$OUTPUT(充值账号)>成功充值<$OUTPUT(充值金额)>,当前金额总数为:<$OUTPUT(D0)>."
+CLOSE
+BREAK
+#ELSEACT
+SYSMSG "充值金额错误,请重新输入." 2
+BREAK
+
+[@@充值账号2]
+#ACT
+MOV 充值账号 %INPUTSTR
+GOTO @账号充值
+BREAK
+
+[@@充值金额2]
+#ACT
+MOV 充值金额 %INPUTNUM
+GOTO @账号充值
+BREAK
+
+
+[@提升技能1]
+#SAY
+铁布杉提升到4级需要铁布杉（秘籍）2本+莲月剑法（秘籍）2本+破血狂杀（秘籍）1本+200W金币.\\
+<我要提升/@提升技能1_1>
+
+[@提升技能1_1]
+#IF
+chkmagiclevel 铁布杉 0
+#ELSEACT
+BREAK
+#ELSESAY
+对不起,你根本没有修炼过{FCOLOR/10}铁布杉{FCOLOR/12}.\\
+<关闭/@Exit>
+
+#IF
+chkmagiclevel 铁布杉 4
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}铁布杉{FCOLOR/12}已经到4级,无须反复提升.\\
+<关闭/@Exit>
+
+#IF
+!chkmagiclevel 铁布杉 3
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}铁布杉{FCOLOR/12}还未修炼到3级,无法提升.\\
+<关闭/@Exit>
+
+#IF
+CHECKITEM 铁布杉（秘籍） 2
+CHECKITEM 莲月剑法（秘籍） 2
+CHECKITEM 破血狂杀（秘籍） 1
+CHECKGOLD 2000000
+#ACT
+TAKE 铁布杉（秘籍） 2
+TAKE 莲月剑法（秘籍） 2
+TAKE 破血狂杀（秘籍） 1
+TAKE 金币 2000000
+ACTCMD CHANGEMAGLVL 铁布杉 4
+break
+#SAY
+修炼成功,你的铁布杉提升到了4级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,你的包袱里没有足够的物品.\\
+<关闭/@Exit>
+
+
+
+[@提升技能2]
+#SAY
+十方斩提升到4级需要十方斩（秘籍）6本+斗转星移（秘籍）6本+乾坤大挪移（秘籍）6本+200W金币.\\
+<我要提升/@提升技能2_1>
+
+[@提升技能2_1]
+#IF
+chkmagiclevel 十方斩 0
+#ELSEACT
+BREAK
+#ELSESAY
+对不起,你根本没有修炼过{FCOLOR/10}十方斩{FCOLOR/12}.\\
+<关闭/@Exit>
+
+#IF
+chkmagiclevel 十方斩 4
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}十方斩{FCOLOR/12}已经到4级,无须反复提升.\\
+<关闭/@Exit>
+
+#IF
+!chkmagiclevel 十方斩 3
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}十方斩{FCOLOR/12}还未修炼到3级,无法提升.\\
+<关闭/@Exit>
+
+#IF
+CHECKITEM 十方斩（秘籍） 6
+CHECKITEM 斗转星移（秘籍） 6
+CHECKITEM 乾坤大挪移（秘籍） 6
+CHECKGOLD 2000000
+#ACT
+TAKE 十方斩（秘籍） 6
+TAKE 斗转星移（秘籍） 6
+TAKE 乾坤大挪移（秘籍） 6
+TAKE 金币 2000000
+ACTCMD CHANGEMAGLVL 十方斩 4
+break
+#SAY
+修炼成功,你的十方斩提升到了4级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,你的包袱里没有足够的物品.\\
+<关闭/@Exit>
+
+
+
+[@提升技能3]
+#SAY
+怒神霹雳提升到4级需要怒神霹雳（秘籍）6本+魄冰刺（秘籍）6本+200W金币.\\
+<我要提升/@提升技能3_1>
+
+[@提升技能3_1]
+#IF
+chkmagiclevel 怒神霹雳 0
+#ELSEACT
+BREAK
+#ELSESAY
+对不起,你根本没有修炼过{FCOLOR/10}怒神霹雳{FCOLOR/12}.\\
+<关闭/@Exit>
+
+#IF
+chkmagiclevel 怒神霹雳 4
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}怒神霹雳{FCOLOR/12}已经到4级,无须反复提升.\\
+<关闭/@Exit>
+
+#IF
+!chkmagiclevel 怒神霹雳 3
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}怒神霹雳{FCOLOR/12}还未修炼到3级,无法提升.\\
+<关闭/@Exit>
+
+#IF
+CHECKITEM 怒神霹雳（秘籍） 6
+CHECKITEM 魄冰刺（秘籍） 6
+CHECKGOLD 2000000
+#ACT
+TAKE 怒神霹雳（秘籍） 6
+TAKE 魄冰刺（秘籍） 6
+TAKE 金币 2000000
+ACTCMD CHANGEMAGLVL 怒神霹雳 4
+break
+#SAY
+修炼成功,你的怒神霹雳提升到了4级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,你的包袱里没有足够的物品.\\
+<关闭/@Exit>
+
+
+
+[@提升技能4]
+#SAY
+焰天火雨提升到4级需要焰天火雨（秘籍）2本+魔法盾（秘籍）2本+凝血离魂（秘籍）1本+200W金币.\\
+<我要提升/@提升技能4_1>
+
+[@提升技能4_1]
+#IF
+chkmagiclevel 焰天火雨 0
+#ELSEACT
+BREAK
+#ELSESAY
+对不起,你根本没有修炼过{FCOLOR/10}焰天火雨{FCOLOR/12}.\\
+<关闭/@Exit>
+
+#IF
+chkmagiclevel 焰天火雨 4
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}焰天火雨{FCOLOR/12}已经到4级,无须反复提升.\\
+<关闭/@Exit>
+
+#IF
+!chkmagiclevel 焰天火雨 3
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}焰天火雨{FCOLOR/12}还未修炼到3级,无法提升.\\
+<关闭/@Exit>
+
+#IF
+CHECKITEM 焰天火雨（秘籍） 2
+CHECKITEM 魔法盾（秘籍） 2
+CHECKITEM 凝血离魂（秘籍） 1
+CHECKGOLD 2000000
+#ACT
+TAKE 焰天火雨（秘籍）2
+TAKE 魔法盾（秘籍） 2
+TAKE 凝血离魂（秘籍） 1
+TAKE 金币 2000000
+ACTCMD CHANGEMAGLVL 焰天火雨 4
+break
+#SAY
+修炼成功,你的焰天火雨提升到了4级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,你的包袱里没有足够的物品.\\
+<关闭/@Exit>
+
+
+
+[@提升技能5]
+#SAY
+回生术提升到4级需要回生术（秘籍）2本+移花接玉（秘籍）6本+200W金币.\\
+<我要提升/@提升技能5_1>
+
+[@提升技能5_1]
+#IF
+chkmagiclevel 回生术 0
+#ELSEACT
+BREAK
+#ELSESAY
+对不起,你根本没有修炼过{FCOLOR/10}回生术{FCOLOR/12}.\\
+<关闭/@Exit>
+
+#IF
+chkmagiclevel 回生术 4
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}回生术{FCOLOR/12}已经到4级,无须反复提升.\\
+<关闭/@Exit>
+
+#IF
+!chkmagiclevel 回生术 3
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}回生术{FCOLOR/12}还未修炼到3级,无法提升.\\
+<关闭/@Exit>
+
+#IF
+CHECKITEM 回生术（秘籍） 2
+CHECKITEM 移花接玉（秘籍） 6
+CHECKGOLD 2000000
+#ACT
+TAKE 回生术（秘籍）2
+TAKE 移花接玉（秘籍） 6
+TAKE 金币 2000000
+ACTCMD CHANGEMAGLVL 回生术 4
+break
+#SAY
+修炼成功,你的回生术提升到了4级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,你的包袱里没有足够的物品.\\
+<关闭/@Exit>
+
+
+
+[@提升技能6]
+#SAY
+妙影无踪提升到4级需要妙影无踪（秘籍）2本+阴阳法环（秘籍）1本+200W金币.\\
+<我要提升/@提升技能6_1>
+
+[@提升技能6_1]
+#IF
+chkmagiclevel 妙影无踪 0
+#ELSEACT
+BREAK
+#ELSESAY
+对不起,你根本没有修炼过{FCOLOR/10}妙影无踪{FCOLOR/12}.\\
+<关闭/@Exit>
+
+#IF
+chkmagiclevel 妙影无踪 4
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}妙影无踪{FCOLOR/12}已经到4级,无须反复提升.\\
+<关闭/@Exit>
+
+#IF
+!chkmagiclevel 妙影无踪 3
+#ACT
+BREAK
+#SAY
+你的{FCOLOR/10}妙影无踪{FCOLOR/12}还未修炼到3级,无法提升.\\
+<关闭/@Exit>
+
+#IF
+CHECKITEM 妙影无踪（秘籍） 2
+CHECKITEM 阴阳法环（秘籍） 1
+CHECKGOLD 2000000
+#ACT
+TAKE 妙影无踪（秘籍）2
+TAKE 阴阳法环（秘籍） 1
+TAKE 金币 2000000
+ACTCMD CHANGEMAGLVL 妙影无踪 4
+break
+#SAY
+修炼成功,你的妙影无踪提升到了4级.\\
+<关闭/@Exit>
+#ELSESAY
+对不起,你的包袱里没有足够的物品.\\
+<关闭/@Exit>
+
+
+}

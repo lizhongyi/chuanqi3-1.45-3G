@@ -1,0 +1,260 @@
+;;创天网络有限公司原版1.45
+[@mugong_hiding]
+{
+#IF
+check [018] 1
+#SAY
+你不是已经收到书吗？那么你为什么还要索要？\ \ 
+<结束/@exit>
+#ACT
+break
+
+#IF
+check [040] 1
+check [041] 0
+#SAY
+在如此黑暗之中，好象还没有适应的样子。\
+不要勉强解决问题，保持一个平常心，多试几次终究会成功的。\ 
+噢噢，现在平静一下心情，想 {FCOLOR/10}重新挑战一次{FCOLOR/12} 吗？你这次一定可以成功。\ \
+<请重新送到训练场！/@mugong_hiding_next4_1_1> \
+<准备好了，再来！/@mugong_hiding_next1_2>
+#ELSEACT
+goto @mugong_hiding_next1_0
+
+[@mugong_hiding_next1_0]
+#IF
+#SAY
+想知道叫做隐身术的武功吧？\
+隐身术是 {FCOLOR/10}使怪兽们无法发现自己行踪，从而隐藏自己行踪的魔法{FCOLOR/12} 。首先不动弹，不被发现。在危急的时候就会有很大的帮助。\ 
+为了学习隐身术要领会隐藏自己痕迹的方法，因此要到特殊的训练场累积些经验。\
+哦，同时在训练场使用 {FCOLOR/10}蜡烛{FCOLOR/12} 或者 {FCOLOR/10}火把{FCOLOR/12} 是不可以的，进入训练场的时候都放在地上。如果不这样，我要没收。\ \
+<拜托给与指教。/@mugong_hiding_next1_1> \
+<准备好了，再来。/@exit> \
+
+[@mugong_hiding_next1_2]
+#IF
+#SAY
+说做过什么样的准备，这次也没有特别用处。如果有需要首先解决的事情，解决完再来也可以。也没有急事儿。\ \
+<结束/@exit>
+
+[@mugong_hiding_next1_1]
+#IF
+checklevel 20
+#ACT
+goto @mugong_hiding_next2
+#ELSESAY
+嗯。。想学习的想法值得表扬，但修炼的程度好像还不够。修炼一下再来吧！\ \ 
+<结束/@exit>
+
+[@mugong_hiding_next2]
+#IF
+checkmagic 隐身术
+#SAY
+你不是已经掌握隐身术，请到此为止回去吧！我很忙。\ \
+#ELSEACT
+goto @mugong_hiding_next3
+break
+
+[@mugong_hiding_next3]
+#IF
+#ACT
+set [040] 1
+#SAY
+你要在黑暗的 {FCOLOR/10}训练场里面找到我{FCOLOR/12} ，注意不要碰到各个地方布置的怪兽。\
+如果被碰上。。。嘿嘿，绝对可以学习到隐藏形迹的方法。好了，现在就送到训练场。无论如何要小心身体。。。\ \
+<准备好了。/@mugong_hiding_next4_1_1> \
+<还有要准备的事情。/@mugong_hiding_next4_2> \
+
+[@mugong_hiding_next4_2]
+#IF
+#SAY
+我不是很忙的人，如果有急事儿解决好再来。任何时候都可以送到训练场。\ \
+<结束/@exit>
+
+[@mugong_hiding_next4_1_1]
+#IF
+#SAY
+那么，要将你送去了。。\
+我可以将你送到那儿的时间是5分钟。。时间结束后重新回到这里。\ \
+<移 动/@mugong_hiding_next6_1>
+
+[@mugong_hiding_next6_1]
+#IF
+checkhum 1_010 1
+#SAY
+已经有人在接受测试哟... 请等一下.. \ \
+<结束/@exit>
+#ELSEACT
+goto @mugong_hiding_next6_2
+
+[@mugong_hiding_next6_2]
+#IF
+checkhum 1_011 1
+#SAY
+已经有人在接受测试哟... 请等一下.. \ \ 
+<结束/@exit>
+#ELSEACT
+Monclear 1_010
+Monclear 1_011
+goto @mugong_hiding_next6_3
+
+[@mugong_hiding_next6_3]
+#IF
+#ACT
+Monclear 1_010
+Monclear 1_011
+goto @mugong_hiding_next7_1
+
+[@mugong_hiding_next7_1]
+#IF
+#ACT
+Param1 1_010
+Param2 40
+Param3 64
+MonGen 沃玛勇士61  10 20
+MonGen 雷电僵尸61  10 20
+goto @mugong_hiding_next7_2
+
+[@mugong_hiding_next7_2]
+#IF
+#ACT
+Param1 1_010
+Param2 52
+Param3 52
+MonGen 沃玛勇士61  5 10
+goto @mugong_hiding_next7_3
+
+[@mugong_hiding_next7_3]
+#IF
+#ACT
+Param1 1_010
+Param2 64
+Param3 40
+MonGen 火焰沃玛61  5 20
+MonGen 沃玛护卫61  10 20
+goto @mugong_hiding_next8_1
+
+[@mugong_hiding_next8_1]
+#IF
+#ACT
+Param1 1_011
+Param2 40
+Param3 64
+MonGen 沃玛勇士61  5 20
+MonGen 雷电僵尸61  15 20
+goto @mugong_hiding_next8_2
+
+[@mugong_hiding_next8_2]
+#IF
+#ACT
+Param1 1_011
+Param2 52
+Param3 52
+MonGen 沃玛勇士61  5 10
+goto @mugong_hiding_next8_3
+
+[@mugong_hiding_next8_3]
+#IF
+#ACT
+Param1 1_011
+Param2 65
+Param3 40
+MonGen 火焰沃玛61  10 20
+MonGen 沃玛护卫61  5 20
+goto @mugong_hiding_next9
+
+[@mugong_hiding_next9]
+#IF
+#ACT
+TimeRecall 5
+mapmove 1_010 21 85
+goto @yinshenshurenwu1
+break
+
+[@yinshenshurenwu1]
+#ACT
+mov A3 %USERMAP
+
+#IF
+EQUAL A3 "1_010"
+#ACT
+delaygoto [local] 10 @yinshenshurenwu1
+#ELSEACT
+BREAKTIMERECALL
+break
+}
+
+[@mugong_hiding_complete]
+{
+#IF
+check [018] 1
+#ACT
+break
+#IF
+check [041] 0
+#ACT
+break
+#IF
+check [040] 0
+#ACT
+break
+#IF
+check [040] 1
+check [041] 1
+check [018] 0
+#ACT
+goto @mugong_hiding_give1
+#ELSEACT
+break
+
+[@mugong_hiding_give1]
+#IF
+checkmagic 隐身术
+#SAY
+你不是已经掌握隐身术，请到此为止回去吧！我很忙。\ \
+#ACT
+break
+#IF
+check [018] 0
+#ACT
+give 隐身术（秘籍） 1
+give 金币 20000
+give 暗黑凤凰明珠 1
+reset [040] 1
+SET [018] 1
+#SAY
+祝贺你, 你终于成功了！\
+通过在漆黑的空间抢先发现敌人的动静隐藏自己的训练，你的知觉变得很发达了。 \
+我给你隐身术秘籍，剩下的部分你自己修炼吧。\ \
+<结束/@exit>
+#ELSESAY
+你不是已经收到书吗？那么你为什么还要索要？\ \ 
+<结束/@exit>
+}
+
+[@mugong_hiding_test]
+{
+#IF
+#ACT
+SET [041] 1
+BreakTimeRecall
+Delaygoto [local] 2 @mugong_hiding_test_out
+#SAY
+祝贺你，做得好！\
+这里危险，请到外面去。\ \
+<结束/@exit>
+
+[@mugong_hiding_test_out]
+#ACT
+mapmove 1_002 12 11
+break
+}
+
+[@mugong_hiding_explain]
+{
+#IF
+#SAY
+为了学习隐身术，在非常黑暗的训练场中要找到我。 
+训练场里的怪兽们蠕动着，要尽量回避回到这里。\ \ 
+<结束/@exit>
+}

@@ -1,0 +1,82 @@
+;;创天网络有限公司原版1.45
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+跟你这种人我无话可说。\\
+<结束/@exit>
+#ELSEACT
+goto @main_root_1
+
+[@main_root_1]
+#IF
+checkjob taoist
+#ACT
+BreakTimeRecall 
+goto @daebi_main
+#ELSEACT
+BreakTimeRecall 
+goto @daebi_other_class
+
+[@daebi_other_class]
+#IF
+checkjob warrior
+#SAY
+贫道人称黛悲先生，专门指导来这里修行的道士。\
+不过你是战士，你应该去边境城市。\ \
+<结束/@exit>
+#ELSESAY
+贫道人称黛悲先生，专门指导来这里修行的道士。\
+不过你是魔法师，你应该去银杏山谷。\ \
+<结束/@exit>
+
+[@daebi_main]
+#IF
+#SAY
+贫道人称黛悲先生。\
+那，你来找我有什么事？\
+<寻求武功指导/@daebi_mugong_main>\
+<结束/@exit>
+
+[@daebi_mugong_main]
+#IF
+#SAY
+我可以指导你以下这些武功。\
+（26 - 30 等级 修炼魔法）\
+<困魔咒/@holycircle_test_start>\
+（31 - 40 等级 修炼魔法）\
+<群体治愈术/@massheal_test_start>\ \
+<不寻求武功指导/@exit>
+
+[@holycircle_test_start]
+#IF
+#ACT
+goto @holycircle_begin
+
+[@holycircle_begin]
+#CALL [\MU_taoist\holy.txt] @mugong_holycircle
+
+[@massheal_test_start]
+#IF
+check [059] 1
+check [023] 0
+#ACT
+goto @massheal_complete
+break
+
+#IF
+#ACT
+goto @massheal_begin
+break
+
+[@massheal_begin]
+#CALL [\MU_taoist\massheal.txt] @mugong_massheal
+
+[@massheal_complete]
+#CALL [\MU_taoist\massheal.txt] @mugong_massheal_complete
+
+[@holycircle_test_explain_again]
+#CALL [\MU_taoist\holy.txt] @mugong_holycircle_explain
+
+[@massheal_test_explain_again]
+#CALL [\MU_taoist\massheal.txt] @mugong_massheal_explain

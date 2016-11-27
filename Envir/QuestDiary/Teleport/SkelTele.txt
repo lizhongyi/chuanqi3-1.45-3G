@@ -1,0 +1,19 @@
+;;创天网络有限公司原版1.45
+[@teleport_81_0]
+{
+#IF
+#SAY
+六面神石 \ \
+<移动至潘夜岛村所需金钱 : 50000 金币/@teleport_8_1_next1> \
+
+
+[@teleport_8_1_next1]
+#IF
+checkgold 50000
+#ACT
+take 金币 50000
+mapmove 8 288 242
+#ELSESAY
+(钱不够啊！…)\ \
+<结束/@exit>
+}

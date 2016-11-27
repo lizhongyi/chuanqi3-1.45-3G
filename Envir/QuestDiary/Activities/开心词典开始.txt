@@ -1,0 +1,121 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@KXCD_Main]
+{
+#ACT
+SaveValue "ParamControl\开心词典游戏参数.ini" [开心词典] [开启变量] 1
+SaveValue "ParamControl\开心词典游戏参数.ini" [开心词典] [出题数量] 5
+GOTO @KXCD_Main_1
+
+[@KXCD_Main_1]
+#ACT
+LoadValue D1 "ParamControl\开心词典游戏参数.ini" [开心词典] [开启变量]
+LoadValue D2 "ParamControl\开心词典游戏参数.ini" [开心词典] [出题数量]
+#IF
+ESmall D2 0
+#act
+linemsg [grobal] "╔══════════< 系统信息 >══════════╗"
+linemsg [grobal] "║           开心词典 结束!请等待下一轮活动           ║"
+linemsg [grobal] "╚══════════════════════════╝"
+SaveValue "ParamControl\开心词典游戏参数.ini" [开心词典] [开启变量] 0
+break
+
+#IF
+Equal D1 1
+ELarge D2 1
+#act
+dec D2 1
+SaveValue "ParamControl\开心词典游戏参数.ini" [开心词典] [出题数量] %D2
+GOTO @KXCD_Main_2
+#ELSEact
+break
+
+[@KXCD_Main_2]
+#ACT
+SaveValue "ParamControl\开心词典游戏参数.ini" [开心词典] [答题状态] 1
+LoadValue D5 "ParamControl\开心词典游戏参数.ini" [开心词典] [题库数量]
+Movr N58 199
+Inc N58 1
+Set [151] 0
+FormatStr "FLD_Idx=%s" %N58
+ReadValueSql "TBL_Game_KXCD" %A9 "FLD_Question,FLD_Result_1,FLD_Result_2,FLD_Result_3,FLD_Result_4" [@Check_Result]
+
+[@Check_Result()]
+#ACT
+Mov A1 %ARG(1)
+Mov A2 %ARG(2)
+Mov A3 %ARG(3)
+Mov A4 %ARG(4)
+Mov A5 %ARG(5)
+SaveValue "ParamControl\开心词典游戏参数.ini" [开心词典] [题目] %A1
+FormatStr "FLD_Idx=%s" %N58
+ReadValueSql "TBL_Game_KXCD" %A9 "FLD_Idx,FLD_Num,FLD_RightResult" [@Check_Result_1]
+
+[@Check_Result_1()]
+#ACT
+Mov N57 %ARG(1)
+Mov N58 %ARG(2)
+Mov N59 %ARG(3)
+
+#IF
+Equal N59 1
+#ACT
+SaveValue "ParamControl\开心词典游戏参数.ini" [开心词典] [正确答案] %A2
+
+#IF
+Equal N59 2
+#ACT
+SaveValue "ParamControl\开心词典游戏参数.ini" [开心词典] [正确答案] %A3
+
+#IF
+Equal N59 3
+#ACT
+SaveValue "ParamControl\开心词典游戏参数.ini" [开心词典] [正确答案] %A4
+
+#IF
+Equal N59 4
+#ACT
+SaveValue "ParamControl\开心词典游戏参数.ini" [开心词典] [正确答案] %A5
+
+#IF
+#ACT
+SaveValue "ParamControl\开心词典游戏参数.ini" [开心词典] [答题变量] 0
+SaveValue "ParamControl\开心词典游戏参数.ini" [开心词典] [临时冠军] 暂无
+SaveValue "ParamControl\开心词典游戏参数.ini" [开心词典] [序号] %N57
+SaveValue "ParamControl\开心词典游戏参数.ini" [开心词典] [题序] %N58
+SaveValue "ParamControl\开心词典游戏参数.ini" [开心词典] [正确答案1] %N59
+SaveValue "ParamControl\开心词典游戏参数.ini" [开心词典] [答案1] %A2
+SaveValue "ParamControl\开心词典游戏参数.ini" [开心词典] [答案2] %A3
+SaveValue "ParamControl\开心词典游戏参数.ini" [开心词典] [答案3] %A4
+SaveValue "ParamControl\开心词典游戏参数.ini" [开心词典] [答案4] %A5
+lineMsg [Grobal] "══════════【温馨提示】══════════"
+lineMsg [Grobal] "开心词典活动→答题← 请按D键进入 答题时间限制为30秒~"
+lineMsg [Grobal] "═════════【开心词典出题】═════════"
+lineMsg [Grobal] "【问题】: <$OUTPUT(A1)>"
+DelayGoto [Local] 30 @Close_Result
+
+[@Close_Result]
+#ACT
+SaveValue "ParamControl\开心词典游戏参数.ini" [开心词典] [答题状态] 0
+LoadValue A5 "ParamControl\开心词典游戏参数.ini" [开心词典] [题目]
+LoadValue A6 "ParamControl\开心词典游戏参数.ini" [开心词典] [正确答案]
+LoadValue B1 "ParamControl\开心词典游戏参数.ini" [开心词典] [答题变量]
+LoadValue B2 "ParamControl\开心词典游戏参数.ini" [开心词典] [临时冠军]
+DelayGoto [Local] 60 @KXCD_Main_1
+#IF
+Equal B1 0
+#ACT
+lineMsg [Grobal] "══════════【温馨提示】══════════"
+lineMsg [Grobal] "【问题】: <$OUTPUT(A5)>"
+lineMsg [Grobal] "【答案】: <$OUTPUT(A6)>"
+lineMsg [Grobal] "【结果】: 本轮→没有人答题.或没有人答对←下一轮努力~"
+lineMsg [Grobal] "══════════【温馨提示】══════════"
+#ELSEACT
+lineMsg [Grobal] "══════════【温馨提示】══════════"
+lineMsg [Grobal] "【问题】: <$OUTPUT(A5)>"
+lineMsg [Grobal] "【答案】: <$OUTPUT(A6)>"
+lineMsg [Grobal] "【结果】: 本轮冠军→<$OUTPUT(B2)>←没答对的下一轮努力"
+lineMsg [Grobal] "══════════【温馨提示】══════════"
+
+}
+
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

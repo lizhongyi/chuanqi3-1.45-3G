@@ -1,0 +1,36 @@
+guo;;王者传奇3 www.mir3w.com
+[@HelperBossQuest]
+{
+#IF
+Checklevel 20
+#ELSEACT
+BREAK
+#ELSESAY
+修炼到20级后再来找我吧. \\
+<关 闭/@exit>
+
+#IF
+#ACT
+LoadValue D1 "ParamControl\任务记录.ini" %USERNAME 任务日期
+
+#IF
+EQUAL D1 %CURDAY
+#ACT
+BREAK
+#SAY
+江湖上的朋友都叫我万拍子,只要是能帮我做事的,我都会给他丰厚的奖赏!\\
+<对今日的任务 进行了解/@CALL_TodayQuest> \\
+{FCOLOR/1}注意:完成任务后获得的经验值和接任务时的等级密切相关,和本次任务的难度无关.{FCOLOR/12}\\
+#ELSESAY
+江湖上的朋友都叫我万拍子,只要是能帮我做事的,我都会给他丰厚的奖赏!\\
+<对今日的任务 进行了解/@ReceivebossQuest>\\
+{FCOLOR/1}注意:完成任务后获得的经验值和接任务时的等级密切相关,和本次任务的难度无关.{FCOLOR/12}\\
+
+
+[@ReceivebossQuest]
+#CALL [每日任务\QT_SettingBook.txt] @SetBossQuest
+
+[@CALL_TodayQuest]
+#CALL [每日任务\QT_NPCAct.txt] @NPCACT_QuestBossToday
+
+}

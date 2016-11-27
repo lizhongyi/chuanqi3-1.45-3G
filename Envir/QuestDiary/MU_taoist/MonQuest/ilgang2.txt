@@ -1,0 +1,41 @@
+;;创天网络有限公司原版1.45
+[@MapQuest_ilgang_mon2]
+#IF
+checkjob warrior
+#ACT
+break
+;
+#IF
+checkjob wizard
+#ACT
+break
+;
+#IF
+check [015] 1
+#ACT
+break
+
+#IF
+check [034] 1
+#ACT
+break
+
+#IF
+check [033] 0
+#ACT
+break
+
+#IF
+#ACT
+goto @MapQuest_ilgang_mon2_1
+
+[@MapQuest_ilgang_mon2_1]
+#IF
+#SAY
+(这么大的事情。半兽人没有了，还要再出现的...)
+#ACT
+Param1 1_012
+Param2 9
+Param3 12
+MonGen 半兽人61  2  1
+break

@@ -1,0 +1,463 @@
+;;创天网络有限公司原版1.45
+[@Castle_Manager]
+{
+#IF
+IsCastleGuild Sabuk
+IsGuildMaster
+#SAY
+<$@FlagTest>\\
+沙巴克城 攻击行会 : \
+<$CS_SABUK_ATTACKGUILDS>\ \
+沙巴克城 剩余资金 : <$CS_SABUK_CASTLEGOLD> 金币 \
+沙巴克城今天收的资金 : <$CS_SABUK_TODAYTAX> 金币 \
+沙巴克城门的状态 \
+<$@DoorState1>\
+<$@DoorState2>\
+<$@DoorState3>\ \
+
+#IF
+!IsOnCastleWar SaBuk       
+!IsOnReadyCastleWar Sabuk  
+IsCastleGuild Sabuk       
+IsGuildMaster             
+#SAY
+<找出沙巴克城的税金。/@@DrawTax> \ \
+<看功城战的日程。/@view_warschedule>\ \
+<申请攻城战。/@Propse_CastleWar>\
+#ELSESAY
+你好,我是沙巴克的管理员,有什么需要我帮忙的？\ \
+<看攻城战的日程。/@view_warschedule>\
+<申请攻城战。/@Propse_CastleWar>\
+<了解有关于攻城战的事。/@requestcastlewar> \
+<结束/@exit>
+
+[@@DrawTax]
+#ACT
+mov d1 %SABUKGOLD
+mov d2 %INPUTNUM
+#IF
+CheckPos 3 194 147 0
+#ELSESAY
+尊敬的沙城主<$USERNAME>请面对我,站在（194：147）处,谢谢！\
+#ELSEACT
+mov d1 0
+mov d2 0
+break
+
+
+#IF
+IsOnCastleWar Sabuk
+IsOnReadyCastleWar Sabuk
+#SAY
+现在时间不允许提取沙巴克资金.\\
+<结束/@exit>
+#ACT
+mov d1 0
+mov d2 0
+break
+
+#IF
+small d2 0
+#SAY
+请输入提款金额. \ \
+<找出沙巴克城的税金。/@@DrawTax> \ \
+#ACT
+break
+
+#IF
+small d1 0
+#SAY
+沙巴克城没有税金，无法提款. \ \
+#ACT
+break
+
+#IF
+small d1 %d2
+#SAY
+输入金额太多不能掉出来。\ \
+<结束/@exit>
+#ACT
+break
+#ELSEACT
+GetBackCastleGold SABUK %d2
+break
+#ELSESAY
+只掉出了<$OUTPUT(d2)>的金额。\ \
+<结束/@exit>
+
+[@Propse_CastleWar]
+#ACT
+LOADVALUE D1 "ParamControl\攻沙变量.txt" 攻沙 开放变量
+
+#IF
+EQUAL D1 0
+#ACT
+BREAK
+#SAY
+暂时关闭.
+
+
+#IF
+checkcmd checkguildonlinecount %GUILDNAME
+#ACT
+Mov 在线成员数量 %P9
+
+#IF
+checkcmd checkguildofflinecount %GUILDNAME
+#ACT
+INC 在线成员数量 %P9
+
+#IF
+Elarge 在线成员数量 35
+#ELSEACT
+sysmsg "对不起,行会成员人数少于35人的行会无法申请攻城战."
+break
+
+#IF
+IsOnCastleWar SaBuk
+#SAY
+在攻城中是不能申请攻城战的。\ \
+<前一步/@main>
+#ACT
+break
+
+#IF
+!IsGuildMaster
+#SAY
+不是行会领袖的话不能申请攻城战。\ \
+<前一步/@main>
+#ACT
+break
+
+#IF
+IsCastleGuild Sabuk
+#SAY
+不能攻击城主人的行会。\ \
+<前一步/@main>
+#ACT
+break
+
+#IF
+!checkitem 祖玛头像 1
+#SAY
+因为没有祖玛头像所以不能申请攻城战的。\ \
+<前一步/@main>
+#ACT
+break
+
+#IF
+CanProposeCastleWar Sabuk
+#ACT
+ProposeCastleWar  Sabuk
+take 祖玛头像 1
+#SAY
+申请了攻城战。\\
+攻城日程是 {FCOLOR/10}5天后下午8点在{FCOLOR/12} 开始战争。\ \
+<前一步/@main>
+#ELSESAY
+已经申请了所以不能再申请。\\
+<前一步/@main>
+
+
+[@requestcastlewar]
+#SAY
+为了申请攻城战需要祖玛头像。\
+你有那个东西吗？\
+现在申请的话 {FCOLOR/10}5天后下午8点在{FCOLOR/12}开始战争。\\
+<前一步/@main>
+
+[@view_warschedule]
+#SAY
+沙巴克城攻城战的日程是这样的。\
+{FCOLOR/10}<$CS_SABUK_WARDATE>{FCOLOR/12} \\
+<前一步/@main>
+
+[@FlagTest]
+#IF
+#SAY
+_'<$CS_SABUK_OWNER>' 行会是沙巴克城的主人。\
+
+#IF
+IsOnCastleWar [sabuk]
+#SAY
+（攻城中）
+
+#IF
+!IsOnCastleWar [sabuk]
+#SAY
+（不是攻城中）
+
+[@DoorState1]
+;Front Door
+#IF
+#SAY
+正侧 城门
+
+#IF
+CheckCastleDoor [SABUK] 1
+#SAY
+_（正常）
+
+#ELSESAY
+_(<没有/@Front_make_door>)
+
+#ELSEACT
+break
+
+#IF
+CheckCastleDoorOpen [SABUK] 1
+#SAY
+_(<开启/@Front_Close_Door>)
+
+#ELSESAY
+_(<关闭/@Front_Open_Door>)
+
+
+[@DoorState2]
+;Left Door
+#IF
+#SAY
+左侧 城门
+
+
+#IF
+CheckCastleDoor [SABUK] 3
+#SAY
+_（正常）
+
+#ELSESAY
+_(<没有/@Left_make_door>)
+
+#ELSEACT
+break
+
+#IF
+CheckCastleDoorOpen [SABUK] 3
+#SAY
+_(<开启/@Left_Close_Door>)
+
+#ELSESAY
+_(<关闭/@Left_Open_Door>)
+
+
+[@DoorState3]
+;Right
+#IF
+#SAY
+右侧 城门
+
+
+#IF
+CheckCastleDoor [SABUK] 4
+#SAY
+_（正常）
+
+#ELSESAY
+_(<没有/@Right_make_door>)
+
+#ELSEACT
+break
+
+#IF
+CheckCastleDoorOpen [SABUK] 4
+#SAY
+_(<开启/@Right_Close_Door>)
+
+#ELSESAY
+_(<关闭/@Right_Open_Door>)
+
+
+[@Front_make_door]
+#IF
+!IsOnCastleWar Sabuk
+#SAY
+制作城门的费用是50万金币。\ \
+<支付50万金币制作正侧城门。/@Front_make_door_comfirm> \
+
+#ELSESAY
+在攻城战中是不能制作城门的。\ \
+<结束/@exit>
+
+
+[@Front_make_door_comfirm]
+#IF
+!checkgold 500000
+#SAY
+没有带钱所以不能制作城门。\ \
+<前一步/@main>
+
+#ACT
+break
+
+#IF
+!CheckCastleDoor [SABUK] 1
+#ACT
+take 金币 500000
+MakeCastleDoor  [SABUK]  1
+#SAY
+城门制作完毕！！\ \
+<前一步/@main>
+
+#ELSESAY
+有城门。 \ \
+<前一步/@main>
+
+[@Left_make_door]
+#IF
+!IsOnCastleWar Sabuk
+#SAY
+制作城门的费用是50万金币。\ \
+<支付50万金币制作左侧城门。/@Left_make_door_comfirm> \
+
+#ELSESAY
+在攻城战中是不能制作城门的。\ \
+<结束/@exit>
+
+
+[@Left_make_door_comfirm]
+#IF
+!checkgold 500000
+#SAY
+没有带钱所以不能制作城门。\ \
+<前一步/@main>
+
+#ACT
+break
+
+#IF
+!CheckCastleDoor [SABUK] 3
+#ACT
+take 金币 500000
+MakeCastleDoor  [SABUK]  3
+#SAY
+城门制作完毕！！\ \
+<前一步/@main>
+
+#ELSESAY
+有城门。 \ \
+<前一步/@main>
+
+
+[@Right_make_door]
+#IF
+!IsOnCastleWar Sabuk
+#SAY
+制作城门的费用是50万金币。\ \
+<支付50万金币制作左侧城门。/@Right_make_door_comfirm> \
+#ELSESAY
+在攻城战中是不能制作城门的。\ \
+<结束/@exit>
+
+
+[@Right_make_door_comfirm]
+#IF
+!checkgold 500000
+#SAY
+没有带钱所以不能制作城门。\ \
+<前一步/@main>
+
+#ACT
+break
+
+#IF
+!CheckCastleDoor [SABUK] 4
+#ACT
+take 金币 500000
+MakeCastleDoor  [SABUK]  4
+#SAY
+城门制作完毕！！\ \
+<前一步/@main>
+
+#ELSESAY
+有城门。 \ \
+<前一步/@RightDoor>
+
+[@Front_open_door]
+#IF
+CheckCastleDoor [SABUK] 1
+!CheckCastleDoorOpen [SABUK] 1
+#ACT
+SENDCMD  "3, 235, 192, 4" 沙巴克城门1 OPEN
+#SAY
+开了沙巴克城门。 \ \
+<前一步/@main>
+
+#ELSESAY
+没有城门或者城门开着的状态。\ \
+<前一步/@main>
+
+[@Front_close_door]
+#IF
+CheckCastleDoor [SABUK] 1
+CheckCastleDoorOpen [SABUK] 1
+#ACT
+SENDCMD  "3, 235, 192, 4" 沙巴克城门1 CLOSE
+#SAY
+关了沙巴克城门。\ \
+<前一步/@main>
+
+#ELSESAY
+没有城门或者城门关闭的状态。\ \
+<前一步/@main>
+
+[@Left_open_door]
+#IF
+CheckCastleDoor [SABUK] 3
+!CheckCastleDoorOpen [SABUK] 3
+#ACT
+SENDCMD    "3, 169, 191, 1" 沙巴克城门3 OPEN
+#SAY
+开了沙巴克城门。 \ \
+<前一步/@main>
+
+#ELSESAY
+没有城门或者城门开着的状态。\ \
+<前一步/@main>
+
+[@Left_close_door]
+#IF
+CheckCastleDoor [SABUK] 3
+CheckCastleDoorOpen [SABUK] 3
+#ACT
+SENDCMD    "3, 169, 191, 1" 沙巴克城门3 CLOSE
+#SAY
+关了沙巴克城门。\ \
+<前一步/@main>
+
+#ELSESAY
+没有城门或者城门关闭的状态。\ \
+<前一步/@main>
+
+
+[@Right_Open_door]
+#IF
+CheckCastleDoor [SABUK] 4
+!CheckCastleDoorOpen [SABUK] 4
+#ACT
+SENDCMD    "3, 233, 127, 1" 沙巴克城门4 OPEN
+#SAY
+开了沙巴克城门。 \ \
+<前一步/@main>
+
+#ELSESAY
+没有城门或者城门开着的状态。\ \
+<前一步/@main>
+
+
+[@Right_Close_door]
+#IF
+CheckCastleDoor [SABUK] 4
+CheckCastleDoorOpen [SABUK] 4
+#ACT
+SENDCMD    "3, 233, 127, 1" 沙巴克城门4 CLOSE
+#SAY
+关了沙巴克城门。\ \
+<前一步/@main>
+
+#ELSESAY
+没有城门或者城门关闭的状态。\ \
+<前一步/@main>
+
+
+}
+;;创天网络有限公司原版1.45

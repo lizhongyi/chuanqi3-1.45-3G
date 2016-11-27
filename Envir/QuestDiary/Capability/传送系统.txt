@@ -1,0 +1,183 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@传送系统_Main]
+{
+#IF
+!CheckPkPoint 2
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}超{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_[ {FCOLOR/1}城镇传送{FCOLOR/12} ][ <经典传送/@经典传送8> ][ <高级传送/@高级传送8> ][ <BOSS传送/@BOSS传送8> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}城{FCOLOR/4}━{FCOLOR/14}镇{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_            {FCOLOR/10}每次传送需要花费{FCOLOR/1}1W{FCOLOR/10}金币{FCOLOR/12}\
+_{FCOLOR/12}[ <道馆城市/@金币传送(1,416,179,10000,道馆城市)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <比奇城市/@金币传送(0,370,336,10000,比奇城市)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <银杏山谷/@金币传送(02,249,144,10000,银杏山谷)> ]\\
+_{FCOLOR/12}[ <沙巴克城/@沙巴克> ]  {FCOLOR/1}★{FCOLOR/12}  [ <沙漠土城/@金币传送(5,227,128,10000,沙漠土城)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <毒蛇山谷/@金币传送(2,306,244,10000,毒蛇山谷)> ]\\
+_{FCOLOR/12}[ <边境城市/@金币传送(01,411,287,10000,边境城市)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <潘 夜 岛/@金币传送(8,288,241,10000,潘夜岛)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <失 乐 园/@金币传送(9,190,579,10000,失乐园)> ]\\
+_{FCOLOR/12}[ <盟 重 县/@金币传送(74,349,329,10000,盟重县)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <流 放 岛/@金币传送(81,129,265,10000,流放岛)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <诺玛沙漠/@金币传送(41,184,136,10000,诺玛沙漠)> ]\\
+_{FCOLOR/12}[ <荒凉沙漠/@金币传送(6,273,729,10000,荒凉沙漠)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <灌 木 林/@金币传送(12,121,447,10000,灌木林)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <沙漠绿洲/@金币传送(4,435,83,10000,沙漠绿洲)> ]\\
+_{FCOLOR/12}[ <冰原雪城/@金币传送(82,209,126,10000,冰原雪城)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <深度雪原/@金币传送(D008,128,144,10000,深度雪原)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <幽 暗 城/@金币传送(1000,103,126,10000,幽暗城)> ]\
+#ELSEACT
+mapmove 81 130 264
+
+[@城镇传送8]
+#IF
+!CheckPkPoint 2
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}超{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_[ {FCOLOR/1}城镇传送{FCOLOR/12} ][ <经典传送/@经典传送8> ][ <高级传送/@高级传送8> ][ <BOSS传送/@BOSS传送8> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}城{FCOLOR/4}━{FCOLOR/14}镇{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_            {FCOLOR/10}每次传送需要花费{FCOLOR/1}1W{FCOLOR/10}金币{FCOLOR/12}\
+_{FCOLOR/12}[ <道馆城市/@金币传送(1,416,179,10000,道馆城市)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <比奇城市/@金币传送(0,370,336,10000,比奇城市)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <银杏山谷/@金币传送(02,249,144,10000,银杏山谷)> ]\\
+_{FCOLOR/12}[ <沙巴克城/@沙巴克> ]  {FCOLOR/1}★{FCOLOR/12}  [ <沙漠土城/@金币传送(5,227,128,10000,沙漠土城)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <毒蛇山谷/@金币传送(2,306,244,10000,毒蛇山谷)> ]\\
+_{FCOLOR/12}[ <边境城市/@金币传送(01,411,287,10000,边境城市)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <潘 夜 岛/@金币传送(8,288,241,10000,潘夜岛)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <失 乐 园/@金币传送(9,190,579,10000,失乐园)> ]\\
+_{FCOLOR/12}[ <盟 重 县/@金币传送(74,349,329,10000,盟重县)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <流 放 岛/@金币传送(81,129,265,10000,流放岛)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <诺玛沙漠/@金币传送(41,184,136,10000,诺玛沙漠)> ]\\
+_{FCOLOR/12}[ <荒凉沙漠/@金币传送(6,273,729,10000,荒凉沙漠)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <灌 木 林/@金币传送(12,121,447,10000,灌木林)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <沙漠绿洲/@金币传送(4,435,83,10000,沙漠绿洲)> ]\\
+_{FCOLOR/12}[ <冰原雪城/@金币传送(82,209,126,10000,冰原雪城)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <深度雪原/@金币传送(D008,128,144,10000,深度雪原)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <幽 暗 城/@金币传送(1000,103,126,10000,幽暗城)> ]\
+#ELSEACT
+mapmove 81 130 264
+
+[@经典传送8]
+#IF
+!CheckPkPoint 2
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}超{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_[ <城镇传送/@城镇传送8> ][ {FCOLOR/1}经典传送{FCOLOR/12} ][ <高级传送/@高级传送8> ][ <BOSS传送/@BOSS传送8> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}经{FCOLOR/4}━{FCOLOR/14}典{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_            {FCOLOR/10}每次传送需要花费{FCOLOR/1}10W{FCOLOR/10}金币{FCOLOR/12}\
+_{FCOLOR/12}[ <万 年 谷/@金币传送(D6011,157,164,10000,万年谷)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <僵尸矿洞/@金币传送(D1301,364,378,10000,银杏僵尸矿洞)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <蚂蚁洞穴/@金币传送(D8002,180,187,10000,蚂蚁洞穴)> ]\\
+_{FCOLOR/12}[ <沃玛神殿/@金币传送(D021,73,69,10000,沃玛神殿)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <石阁猪洞/@金币传送(D7101,27,18,10000,石阁猪洞)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <赤月山谷/@金币传送(D1011,52,282,10000,赤月山谷)> ]\\
+_{FCOLOR/12}[ <潘夜石窟/@金币传送(D1211,130,168,10000,潘夜石窟)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <罪孽洞穴/@金币传送(D1201,21,143,10000,罪孽洞穴)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <祖玛神殿/@金币传送(0157,16,19,10000,祖玛神殿)> ]  \\
+_{FCOLOR/12}[ <潘夜神殿/@金币传送(D1101,136,178,10000,潘夜神殿)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <真 天 宫/@金币传送(D1500,174,222,10000,真天宫)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <黑 度 宫/@金币传送(D1510,16,43,10000,黑度宫)> ]\\
+_{FCOLOR/12}[ <神舰入口/@金币传送(d900,20,21,10000,神舰入口)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <海 盗 船/@金币传送(D9091,24,82,10000,海盗船)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <诺玛遗址/@金币传送(D1601,90,348,10000,诺玛遗址)> ]\\
+#ELSEACT
+mapmove 81 130 264
+
+[@高级传送8]
+#IF
+!CheckPkPoint 2
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}超{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_[ <城镇传送/@城镇传送8> ][ <经典传送/@经典传送8> ][ {FCOLOR/1}高级传送{FCOLOR/12} ][ <BOSS传送/@BOSS传送8> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}高{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_     {FCOLOR/10}进入地图需要一定{FCOLOR/1}转生级别{FCOLOR/10}和花费{FCOLOR/1}5{FCOLOR/10}个元宝{FCOLOR/12}\
+_{FCOLOR/12}[ <西沙洞穴/@转生传送(1,d2001,282,274,西沙洞穴,5)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <地下冰宫/@转生传送(1,d2101,22,266,地下冰宫,5)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <绝情神殿/@转生传送(1,D2201,203,381,绝情神殿,5)> ]\\
+_{FCOLOR/12}[ <群魔之地/@转生传送(2,D2701,23,174,群魔之地,5)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <异界神舰/@转生传送(3,$99d900,20,22,异界神舰,5)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <赤 龙 城/@转生传送(4,D006,24,18,赤龙城,5)> ]\\
+_{FCOLOR/12}[ <龙穴溪谷/@转生传送(5,D30011,37,98,龙穴溪谷,5)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <月 河 城/@转生传送(6,14,94,48,月河城,5)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <月河墓道/@转生传送(6,QD14_001,163,67,月河墓道,5)> ]\\
+_{FCOLOR/12}[ <深虎北滩/@转生传送(7,D3400,380,515,深虎北滩,5)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <深虎南滩/@转生传送(7,D3400_1,516,471,深虎南滩,5)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <鬼蜮死城/@转生传送(7,D010,118,528,鬼蜮死城,5)> ]\\
+_{FCOLOR/12}[ <桃花园栈/@转生传送(9,ID1_001,40,129,桃花园栈道一,5)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <无尽花园/@转生传送(9,ID2_001,173,138,无尽桃花园一,5)> ]  {FCOLOR/1}★\
+#ELSEACT
+mapmove 81 130 264
+
+[@BOSS传送8]
+#IF
+!CheckPkPoint 2
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}超{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_[ <城镇传送/@城镇传送8> ][ <经典传送/@经典传送8> ][ <高级传送/@高级传送8> ][ {FCOLOR/1}BOSS传送{FCOLOR/12} ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}高{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_             {FCOLOR/10}每次传送需要花费{FCOLOR/1}50{FCOLOR/10}元宝{FCOLOR/12}\
+_{FCOLOR/12}[ <触龙之神/@教主传送(D6015,49,63,触龙神房间,0)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <沃玛教主/@教主传送(D024,16,20,沃玛教主房间,0)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <赤月恶魔/@教主传送(D10162,8,15,赤月恶魔房间,0)> ]\\
+_{FCOLOR/12}[ <骷髅教主/@教主传送(D1215,181,286,骷髅教主房间,0)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <祖玛教主/@教主传送(D515,14,30,祖玛教主房间,0)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <潘夜牛魔/@教主传送(D1116,88,16,牛魔王房间,0)> ]\\
+_{FCOLOR/12}[ <震天魔神/@教主传送(D1506,7,65,震天魔神房间,0)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <霸王教主/@教主传送(d904,54,32,霸王教主房间,0)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <海盗神灵/@教主传送(D9094,54,32,海盗神灵房间,0)> ]\\
+_{FCOLOR/12}[ <诺玛教主/@教主传送(D1606,38,50,诺玛教主房间,0)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <地天灭王/@教主传送(d2005,53,28,地天灭王房间,1)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <冰城帝王/@教主传送(d2107,47,30,冰城帝王房间,1)> ]\\
+_{FCOLOR/12}[ <绝情殿主/@教主传送(D2205,41,48,绝情殿主房间,1)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <群魔统治/@教主传送(Yanmums,7,28,群魔统治者房间,2)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <异界神灵/@教主传送($99d903,187,150,异界神灵房间,3)> ]\\
+_{FCOLOR/12}[ <邪恶至尊/@教主传送(D2907,13,67,邪恶至尊房间,4)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <死魔神主/@教主传送(D3005,90,205,死魔神主,5)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <月河教主/@教主传送(D3102_01,65,68,月河教主,6)> ]\\
+_{FCOLOR/12}[ <北滩武圣/@教主传送(D3400,202,171,北滩武圣,7)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <南滩武圣/@教主传送(D3400_1,394,196,南滩武圣,7)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <死亡之翼/@教主传送(D010,682,101,死亡之翼,7)> ]\\
+_{FCOLOR/12}[ <天界佛尊/@教主传送(ID1_003,117,105,天界佛尊,9)> ]  {FCOLOR/1}★{FCOLOR/12}  [ <冥界魔罗/@教主传送(ID2_003,82,59,冥界魔罗,9)> ]  {FCOLOR/1}★{FCOLOR/12}\
+#ELSEACT
+mapmove 81 130 264
+
+[@金币传送()]
+#ACT
+MOV A1 %ARG(1)
+MOV A2 %ARG(2)
+MOV A3 %ARG(3)
+MOV D1 %ARG(4)
+MOV A4 %ARG(5)
+
+#IF
+CHECKGOLD %D1
+#ACT
+TAKE 金币 %D1
+MAPMOVE %A1 %A2 %A3
+SYSMSG "温馨提示：您花费了[ <$OUTPUT(D1)> ]金币传送到了[ <$OUTPUT(A4)> ]"
+Break
+Close
+#ELSEACT
+SYSMSG "温馨提示：金币不足[ <$OUTPUT(D1)> ]无法传送到[ <$OUTPUT(A4)> ]"
+Break
+
+[@转生传送()]
+#ACT
+MOV D1 %ARG(1)
+MOV A1 %ARG(2)
+MOV A2 %ARG(3)
+MOV A3 %ARG(4)
+MOV A4 %ARG(5)
+MOV D2 %ARG(6)
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}超{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_          进入{FCOLOR/1}<$OUTPUT(A4)>{FCOLOR/12}需要{FCOLOR/1}<$OUTPUT(D1)>转{FCOLOR/12}花费{FCOLOR/1}<$OUTPUT(D2)>个{FCOLOR/12}元宝\\
+_             [ <我 要 传 送 进 去/@转生传送开始> ]
+
+[@转生传送开始]
+#IF
+ELarge USERREBORNCOUNT %D1
+CHECKUSERJF %D2
+#ACT
+SETUSERJF - %D2
+MAPMOVE %A1 %A2 %A3
+SYSMSG "温馨提示：您花费了[ <$OUTPUT(D2)> ]元宝传送到了[ <$OUTPUT(A4)> ]"
+Break
+Close
+#ELSEACT
+SYSMSG "温馨提示：元宝不足[ <$OUTPUT(D2)> ]无法传送到[ <$OUTPUT(A4)> ]"
+Break
+
+[@教主传送()]
+#ACT
+Mov  A1  %ARG(1)
+Mov  A2  %ARG(2)
+Mov  A3  %ARG(3)
+Mov  A4  %ARG(4)
+Mov  D1  %ARG(5)
+#IF
+checkcmd CHECKUSERJF 50
+ELarge USERREBORNCOUNT %D1
+#ACT
+actcmd SETUSERJF - 50 超级传送
+mapmove %A1 %A2 %A3
+SYSMSG "温馨提示：您花费了50元宝传送到了[ <$OUTPUT(A4)> ]"
+Break
+Close
+#ELSEACT
+SYSMSG "温馨提示：金币不足50或者转生不足<$OUTPUT(D1)>转无法传送到[ <$OUTPUT(A4)> ]"
+Break
+
+[@沙巴克]
+#IF
+IsOnCastleWar [SABUK]
+#ACT
+GOTO @沙巴克攻城期间
+#ELSEACT
+TAKE GOLD  10000
+MAPMOVE 3 222 159
+
+[@沙巴克攻城期间]
+#IF
+IsCastleGuild Sabuk
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}超{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_[ {FCOLOR/1}城镇传送{FCOLOR/12} ][ <经典传送/@经典传送8> ][ <高级传送/@高级传送8> ][ <终极传送/@终极传送8> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}城{FCOLOR/4}━{FCOLOR/14}镇{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_            {FCOLOR/10}每次传送需要花费{FCOLOR/1}1W{FCOLOR/10}金币{FCOLOR/12}\
+当前处于: [ {FCOLOR/1}攻城状态{FCOLOR/12} ]      您隶属于: [ {FCOLOR/1}沙城成员{FCOLOR/12} ]\
+<传送至城内[城内复活点]/@金币传送(3,217,141)>      <传送至城外[城外左上角]/@金币传送(3,73,142)>\
+#ELSESAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}超{FCOLOR/4}━{FCOLOR/14}级{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_[ {FCOLOR/1}城镇传送{FCOLOR/12} ][ <经典传送/@经典传送8> ][ <高级传送/@高级传送8> ][ <终极传送/@终极传送8> ]\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}城{FCOLOR/4}━{FCOLOR/14}镇{FCOLOR/4}━{FCOLOR/14}传{FCOLOR/4}━{FCOLOR/14}送{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_            {FCOLOR/10}每次传送需要花费{FCOLOR/1}1W{FCOLOR/10}金币{FCOLOR/12}\
+当前处于: [ {FCOLOR/1}攻城状态{FCOLOR/12} ]      您隶属于: [ {FCOLOR/1}攻城一族{FCOLOR/12} ]\
+<传送至城外[城外左下角]/@金币传送(3,51,564)>      <传送至城外[城外右下角]/@金币传送(3,293,536)>\
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

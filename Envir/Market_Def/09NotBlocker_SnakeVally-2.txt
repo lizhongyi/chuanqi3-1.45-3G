@@ -1,0 +1,18 @@
+;;创天网络有限公司原版1.45
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+跟你这种人我无话可说。\ \
+<结束/@exit>
+#ELSESAY
+这里是 沙巴克城 {FCOLOR/10}<$CS_SABUK_OWNER>{FCOLOR/12} 行会的领地。\
+到矿山采矿可以挣钱，你也想挣大钱？ 那就准备好鹤嘴锄去矿山吧。如果你不知道怎么去矿山，我可以把你移过去。\ \
+<移动到矿山/@move> \
+<结束/@exit>
+
+[@move]
+#IF
+#ACT
+mapmove  D421 32 363
+break

@@ -1,0 +1,167 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@摘下_Main]
+{
+#Act
+Mov D0 %ARG(2)
+Mov 摘下索引 %ARG(3)
+
+#If
+small 摘下索引 1
+#Act
+break
+
+#If
+Equal 摘下索引 ""
+#Act
+break
+
+#IF
+Small D0 0
+#ACT
+break
+
+#If
+!Equal 摘下索引 ""
+#Act
+FormatStr "where FLD_MAKEINDEX = %s" %摘下索引
+ACTCMD READSQL "TBL_Jewel" "Display1,Display2,Display3,Display4,Display5" "摘下显示信息1,摘下显示信息2,摘下显示信息3,摘下显示信息4,摘下显示信息5" %A9
+
+#If
+!Equal 摘下显示信息1 ""
+#Act
+FormatStr "where Name = '%s'" %摘下显示信息1
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "摘下破坏1,摘下自然1,摘下灵魂1" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "摘下物防1,摘下魔防1,摘下体力1" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "摘下魔力1" %A9
+
+#If
+!Equal 摘下显示信息2 ""
+#Act
+FormatStr "where Name = '%s'" %摘下显示信息2
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "摘下破坏2,摘下自然2,摘下灵魂2" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "摘下物防2,摘下魔防2,摘下体力2" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "摘下魔力2" %A9
+
+#If
+!Equal 摘下显示信息3 ""
+#Act
+FormatStr "where Name = '%s'" %摘下显示信息3
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "摘下破坏3,摘下自然3,摘下灵魂3" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "摘下物防3,摘下魔防3,摘下体力3" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "摘下魔力3" %A9
+
+#If
+!Equal 摘下显示信息4 ""
+#Act
+FormatStr "where Name = '%s'" %摘下显示信息4
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "摘下破坏4,摘下自然4,摘下灵魂4" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "摘下物防4,摘下魔防4,摘下体力4" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "摘下魔力4" %A9
+
+#If
+!Equal 摘下显示信息5 ""
+#Act
+FormatStr "where Name = '%s'" %摘下显示信息5
+ACTCMD READSQL "King_Stditems" "ExDc,ExMc,ExSc" "摘下破坏5,摘下自然5,摘下灵魂5" %A9
+ACTCMD READSQL "King_Stditems" "ExAc,ExMac,ExHp" "摘下物防5,摘下魔防5,摘下体力5" %A9
+ACTCMD READSQL "King_Stditems" "ExMp" "摘下魔力5" %A9
+
+#If
+#Act
+Mov 摘下破坏 %摘下破坏1
+Inc 摘下破坏 %摘下破坏2
+Inc 摘下破坏 %摘下破坏3
+Inc 摘下破坏 %摘下破坏4
+Inc 摘下破坏 %摘下破坏5
+Mov 摘下自然 %摘下自然1
+Inc 摘下自然 %摘下自然2
+Inc 摘下自然 %摘下自然3
+Inc 摘下自然 %摘下自然4
+Inc 摘下自然 %摘下自然5
+Mov 摘下灵魂 %摘下灵魂1
+Inc 摘下灵魂 %摘下灵魂2
+Inc 摘下灵魂 %摘下灵魂3
+Inc 摘下灵魂 %摘下灵魂4
+Inc 摘下灵魂 %摘下灵魂5
+Mov 摘下物防 %摘下物防1
+Inc 摘下物防 %摘下物防2
+Inc 摘下物防 %摘下物防3
+Inc 摘下物防 %摘下物防4
+Inc 摘下物防 %摘下物防5
+Mov 摘下魔防 %摘下魔防1
+Inc 摘下魔防 %摘下魔防2
+Inc 摘下魔防 %摘下魔防3
+Inc 摘下魔防 %摘下魔防4
+Inc 摘下魔防 %摘下魔防5
+Mov 摘下体力 %摘下体力1
+Inc 摘下体力 %摘下体力2
+Inc 摘下体力 %摘下体力3
+Inc 摘下体力 %摘下体力4
+Inc 摘下体力 %摘下体力5
+Mov 摘下魔力 %摘下魔力1
+Inc 摘下魔力 %摘下魔力2
+Inc 摘下魔力 %摘下魔力3
+Inc 摘下魔力 %摘下魔力4
+Inc 摘下魔力 %摘下魔力5
+
+#If
+#Act
+ATTRIBUTECLEAR DC %摘下破坏
+ATTRIBUTECLEAR MC %摘下自然
+ATTRIBUTECLEAR SC %摘下灵魂
+ATTRIBUTECLEAR AC %摘下物防
+ATTRIBUTECLEAR MAC %摘下魔防
+ATTRIBUTECLEAR HP %摘下体力
+ATTRIBUTECLEAR MP %摘下魔力
+Mov 摘下破坏 ""
+Mov 摘下自然 ""
+Mov 摘下灵魂 ""
+Mov 摘下物防 ""
+Mov 摘下魔防 ""
+Mov 摘下体力 ""
+Mov 摘下魔力 ""
+Mov 摘下破坏1 ""
+Mov 摘下自然1 ""
+Mov 摘下灵魂1 ""
+Mov 摘下物防1 ""
+Mov 摘下魔防1 ""
+Mov 摘下体力1 ""
+Mov 摘下魔力1 ""
+Mov 摘下破坏2 ""
+Mov 摘下自然2 ""
+Mov 摘下灵魂2 ""
+Mov 摘下物防2 ""
+Mov 摘下魔防2 ""
+Mov 摘下体力2 ""
+Mov 摘下魔力2 ""
+Mov 摘下破坏3 ""
+Mov 摘下自然3 ""
+Mov 摘下灵魂3 ""
+Mov 摘下物防3 ""
+Mov 摘下魔防3 ""
+Mov 摘下体力3 ""
+Mov 摘下魔力3 ""
+Mov 摘下破坏4 ""
+Mov 摘下自然4 ""
+Mov 摘下灵魂4 ""
+Mov 摘下物防4 ""
+Mov 摘下魔防4 ""
+Mov 摘下体力4 ""
+Mov 摘下魔力4 ""
+Mov 摘下破坏5 ""
+Mov 摘下自然5 ""
+Mov 摘下灵魂5 ""
+Mov 摘下物防5 ""
+Mov 摘下魔防5 ""
+Mov 摘下体力5 ""
+Mov 摘下魔力5 ""
+Mov 摘下显示信息1 ""
+Mov 摘下显示信息2 ""
+Mov 摘下显示信息3 ""
+Mov 摘下显示信息4 ""
+Mov 摘下显示信息5 ""
+Break
+
+}
+
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

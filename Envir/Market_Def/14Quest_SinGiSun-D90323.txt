@@ -1,0 +1,10 @@
+;;创天网络有限公司原版1.45
+[@main]
+#SAY
+杀掉这里的全部怪物,显示一下你的威武.\ \
+<我决定放弃./@SinQuest_failed>
+
+[@SinQuest_failed]
+#IF
+#ACT
+mapmove d903 55 55

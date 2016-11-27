@@ -1,0 +1,184 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@行会系统_Main]
+{
+#IF
+IsGuildMaster
+#ELSEACT
+break
+
+#IF
+checkcmd checkguildonlinecount %GUILDNAME
+#ACT
+Mov 在线成员数量 %P9
+
+#IF
+checkcmd checkguildofflinecount %GUILDNAME
+#ACT
+INC 在线成员数量 %P9
+
+#IF
+Elarge 在线成员数量 100
+#ACT
+sysmsg "您的行会成员已经达到100人,无法再添加成员了."
+break
+
+#IF
+#ACT
+Mov 对面角色名称 %USERPOSNAME
+
+#IF
+!Equal 对面角色名称 ""
+#ACT
+break
+#SAY
+\{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}行{FCOLOR/4}━{FCOLOR/14}会{FCOLOR/4}━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}人{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+将添加您对面的'{FCOLOR/13}<$OUTPUT(对面角色名称)>{FCOLOR/12}'入你的行会,您确定吗?\
+_  <[确定请求对面玩家加入]/@确定加人>\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}行{FCOLOR/4}━{FCOLOR/14}会{FCOLOR/4}━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}人{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+您也可以请求其他人加入您的行会,不论对方是否在您对面.
+_  <[输入其他玩家的名字]/@@请输入名字>\
+
+
+#IF
+#ACT
+break
+#SAY
+\{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}行{FCOLOR/4}━{FCOLOR/14}会{FCOLOR/4}━{FCOLOR/14}加{FCOLOR/4}━{FCOLOR/14}人{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+您可以请求任何人加入您的行会,不论对方是否在你身边..\\
+_  <[请输入对方角色名字]/@@请输入名字>\
+
+[@确定加人]
+#IF
+CANJOINGUILD %对面角色名称
+#ACT
+FormatStr "@_QingqiuJr(%s,%s)" %USERNAME %GUILDNAME
+actcmd RUNSCRIPTLABEL %对面角色名称 %A9
+sysmsg "请求信息已发送给[<$OUTPUT(对面角色名称)>],请等待对方应答." 2
+close
+break
+
+#IF
+#ACT
+FormatStr "@_QingqiuReason(%s,%s)" %USERNAME %GUILDNAME
+actcmd RUNSCRIPTLABEL %对面角色名称 %A9
+close
+break
+
+[@@请输入名字]
+#IF
+checkcmd ISONLINE %INPUTSTR
+#ELSEACT
+sysmsg "'<$INPUTSTR>'当前不在线或者角色名称错误."
+break
+
+#IF
+CANJOINGUILD %INPUTSTR
+#ACT
+FormatStr "@_QingqiuJr(%s,%s)" %USERNAME %GUILDNAME
+actcmd RUNSCRIPTLABEL %INPUTSTR %A9
+sysmsg "请求信息已发送给[<$INPUTSTR>],请等待对方应答." 2
+close
+break
+
+#IF
+#ACT
+FormatStr "@_QingqiuReason(%s,%s)" %USERNAME %GUILDNAME
+actcmd RUNSCRIPTLABEL %INPUTSTR %A9
+close
+break
+
+
+[@_QingqiuJr()]
+#ACT
+Mov 添加人名字 %ARG(1)
+Mov 添加人行会 %ARG(2)
+#SAY
+'{FCOLOR/13}<$OUTPUT(添加人行会)>{FCOLOR/12}'行会的领袖'{FCOLOR/13}<$OUTPUT(添加人名字)>{FCOLOR/12}'请求您加入他的行会.\\
+您同意加入吗?\\
+<[同意加入]/@~~同意加入>   <[拒绝加入]/@~~拒绝加入>
+
+[@~~同意加入]
+#ACT
+FormatStr "@_QingqiuOK(%s)" %USERNAME
+actcmd RUNSCRIPTLABEL %添加人名字 %A9
+close
+
+[@_QingqiuOK()]
+#ACT
+Mov 请求的名字 %ARG(1)
+GuildAddMember %请求的名字
+sysmsg "'<$OUTPUT(请求的名字)>'加入了您的行会." 2
+break
+
+[@~~拒绝加入]
+#ACT
+FormatStr "@_QingqiuNO(%s)" %USERNAME
+actcmd RUNSCRIPTLABEL %添加人名字 %A9
+sysmsg "你拒绝了加入[<$OUTPUT(添加人行会)>]"
+close
+
+[@_QingqiuNO()]
+#ACT
+Mov 请求的名字 %ARG(1)
+sysmsg "'<$OUTPUT(请求的名字)>'拒绝加入您的行会."
+break
+
+[@_QingqiuReason()]
+#ACT
+Mov 添加人名字 %ARG(1)
+
+#IF
+HASGUILD
+#ACT
+FormatStr "@_QqReasonA(%s)" %USERNAME
+actcmd RUNSCRIPTLABEL %添加人名字 %A9
+break
+
+#IF
+#ACT
+FormatStr "@_QqReasonB(%s)" %USERNAME
+actcmd RUNSCRIPTLABEL %添加人名字 %A9
+break
+
+[@_QqReasonA()]
+#ACT
+Mov 请求的名字 %ARG(1)
+sysmsg "'<$OUTPUT(请求的名字)>'已经有行会了."
+break
+
+[@_QqReasonB()]
+#ACT
+Mov 请求的名字 %ARG(1)
+sysmsg "'<$OUTPUT(请求的名字)>'不允许加入行会."
+break
+
+
+[@_ONJOINGUILD]
+#ACT
+Mov 添加人名字 %ARG(1)
+Mov 添加人行会 %ARG(2)
+
+#IF
+checkcmd checkguildonlinecount %添加人行会
+#ACT
+Mov 在线成员数量 %P9
+
+#IF
+checkcmd checkguildofflinecount %添加人行会
+#ACT
+INC 在线成员数量 %P9
+
+#IF
+Elarge 在线成员数量 100
+#ACT
+mov P9 0
+sysmsg "'<$OUTPUT(添加人行会)>'行会成员已经达到100人,无法再添加成员了."
+break
+
+#IF
+#ACT
+mov P9 1
+break
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

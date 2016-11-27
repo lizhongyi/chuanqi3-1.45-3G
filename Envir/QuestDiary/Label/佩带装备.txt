@@ -1,0 +1,11 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@佩带装备_Main]
+{
+#ACT
+Goto @佩戴_套装效果
+
+[@佩戴_套装效果]
+#CALL [StdFunction\套装佩戴.txt] @套装佩戴_Main
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

@@ -1,0 +1,35 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@原地复活_Main]
+{
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}原{FCOLOR/4}━{FCOLOR/14}地{FCOLOR/4}━{FCOLOR/14}复{FCOLOR/4}━{FCOLOR/14}活{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_     使用原地复活需消费 [ {FCOLOR/1}复活卷轴{FCOLOR/12} ] {FCOLOR/1}1{FCOLOR/12} 个\\
+_          [ < 使 用 原 地 复 活 卷 轴/@使用原地复活卷轴> ]
+
+[@使用原地复活卷轴]
+#IF
+!checkcmd ISDEATH
+#ACT
+SYSMSG "对不起,你目前状态不能使用原地复活功能!"
+Break
+
+#IF
+CHECKMAPFLAG MAPGROUP 1
+#ACT
+SYSMSG "对不起,本地图无法使用原地复活功能!"
+Break
+
+#IF
+checkitem 复活卷轴 1
+#ACT
+Take 复活卷轴 1
+RELIVE 100 100
+SYSMSG "消费了1个[ 复活卷轴 ]成功的复活了"
+Close
+Break
+#ELSEACT
+SYSMSG "您没有[ 复活卷轴 ]无法复活~"
+Break
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

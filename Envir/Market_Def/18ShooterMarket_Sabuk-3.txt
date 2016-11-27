@@ -1,0 +1,16 @@
+;;创天网络有限公司原版1.45
+%100
++59
+
+[@main]
+#CALL [\CastleWar\ShooterMarket.txt] @MarketShooter
+
+[@buy]
+#SAY
+这里是卖攻城时专用武器的子弹的地方。。\ \
+<前一步/@main>
+
+[Goods]
+;ItemName      Volume     Hour
+箭            1000        1
+石头            1000        1

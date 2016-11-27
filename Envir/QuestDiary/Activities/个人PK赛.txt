@@ -1,0 +1,134 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@个人PK赛_Main]
+{
+#IF
+checkhum E007
+#ACT
+mov D1 %P9
+#ELSEACT
+mov D1 0
+
+#IF
+#ACT
+loadvalue D0 "ParamControl\PK赛记录.ini" [状态] [状态]
+
+#IF
+EQUAL D0 0
+#ACT
+mov A0 "场地空闲中"
+
+#IF
+EQUAL D0 1
+#ACT
+mov A0 "尚未申请挑战对象"
+
+#IF
+EQUAL D0 2
+#ACT
+mov A0 "挑战已申请，等待对方应答"
+
+#IF
+EQUAL D0 3
+#ACT
+mov A0 "双方即将开始对战"
+
+#IF
+EQUAL D0 4
+#ACT
+mov A0 "双方正在PK中"
+
+#IF
+EQUAL D0 5
+#ACT
+mov A0 "比赛已结束，场地即将关闭"
+
+
+#IF
+#SAY
+欢迎使用 PK挑战场 .场地费每次5元宝,由发起人承担.\
+最低下注金额为10颗元宝,双方都必须下注.\\
+场地使用说明:\
+进入场地的玩家在开始PK赛之前有5分钟的申请时间.\
+与战场内 PK裁判员 进行对话.输入下注金额与对手名字.\
+当双方元宝都满足条件时,并且对方应战,挑战成功.\
+对方被传入挑战场,进入挑战准备时间,5分钟后开始比赛.\
+从进入挑战准备时间开始,任意一方下线、掉线、\
+死亡则被判定为挑战失败.另一方为 获胜方,\
+系统收取10%的手续费后,获胜方赢得余下双方所下赌注.\
+比赛时间为10分钟,超时则各收取10%赌注为手续费,\
+剩余元宝各自返还双方,比赛强制结束.\\
+观战者不收取任何费用.\
+观战者在场地内无法使用任何技能与移动物品.\\
+{FCOLOR/1}场地内现在有<$OUTPUT(D1)>人{FCOLOR/12}\
+场地状态:{FCOLOR/10}<$OUTPUT(A0)>{FCOLOR/12}\\
+<进入PK场地/@EnterPKPlace> \
+<观战/@EnterPK>\\
+#IF
+Isadmin
+#SAY
+<初始化/@初始化PK>
+
+
+[@初始化PK]
+#ACT
+actcmd delfile "envir\ParamControl\PK赛记录.ini"
+mapting E007 1 405 117
+SetAreaAttr "E007,40,40,200" "SAFE"
+sysmsg "初始化完毕"
+
+[@EnterPK]
+#ACT
+loadvalue D0 "ParamControl\PK赛记录.ini" [状态] [状态]
+#IF
+ELARGE D0 1
+#ACT
+mapmove E007 22 34
+#ELSESAY
+对不起，尚没有人发起挑战，现在不能观战.\
+<关闭/@exit>
+
+[@EnterPKPlace]
+#IF
+#ACT
+loadvalue D0 "ParamControl\PK赛记录.ini" [状态] [状态]
+
+#IF
+EQUAL D0 0
+#ELSESAY
+对不起，已经有人进入赛场了。
+#ELSEACT
+break
+
+#IF
+checkcmd checkuserjf 5
+#ACT
+actcmd setuserjf - 5 PK赛手续费
+SetAreaAttr "E007,40,40,200" "SAFE"
+ChangeMapAttr "E007" "NoSpell"
+Delaygoto [grobal] 300 @Entercheck
+mapmove E007,40,40
+savevalue "ParamControl\PK赛记录.ini" [用户] [申请人] %USERNAME
+savevalue "ParamControl\PK赛记录.ini" [状态] [状态] 1
+#ELSEACT
+break
+#ELSESAY
+对不起，你的元宝不足5元宝.\
+
+
+
+
+[@Entercheck]
+#IF
+#ACT
+loadvalue D0 "ParamControl\PK赛记录.ini" [状态] [状态]
+
+#IF
+SMALL D0 3
+#ACT
+actcmd delfile "envir\ParamControl\PK赛记录.ini"
+mapting E007 1 405 117
+SetAreaAttr "E007,40,40,200" "SAFE"
+
+}
+
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

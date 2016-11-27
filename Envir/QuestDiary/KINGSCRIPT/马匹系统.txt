@@ -1,0 +1,172 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@马匹系统_1]
+{
+#SAY
+11月11日当天购买白马时,可以享受7.5折优惠,仅限双11当前.\
+等级达到{FCOLOR/10}35级{FCOLOR/12}时,消耗2000W金币可以把褐色马进阶为{FCOLOR/1}白马{FCOLOR/12}.\
+拥有{FCOLOR/1}白马{FCOLOR/12}每天可以领取{FCOLOR/10}100W经验{FCOLOR/12}的奖励.\
+等级达到{FCOLOR/10}45级{FCOLOR/12}时,消耗8000W金币可以把白马进阶为{FCOLOR/1}赤兔马{FCOLOR/12}.\
+拥有{FCOLOR/1}赤兔马{FCOLOR/12}每天可以领取{FCOLOR/10}200W经验{FCOLOR/12}的奖励.\\
+{FCOLOR/2}白  马属性{FCOLOR/12}:{FCOLOR/14}200点负重2点的属性加成,舒适度增加7点.\
+{FCOLOR/2}赤兔马属性{FCOLOR/12}:{FCOLOR/14}500点负重8点的属性加成,舒适度增加10点.\\
+<进阶马匹/@进阶马匹_1>\\
+<每日领奖/@马匹领奖_1>\\
+
+[@马匹领奖_1]
+#IF
+!CheckHorse
+#ACT
+break
+#SAY
+你目前还未拥有马匹,要不要先试试我这里的褐色马.\\
+<关闭/@Exit>
+
+#IF
+checkhorse 1
+#ACT
+BREAK
+#SAY
+你目前的马匹是{FCOLOR/1}褐色马{FCOLOR/12},进阶成{FCOLOR/1}白马{FCOLOR/12}以上才可以领奖.\\
+<关闭/@Exit>
+
+#IF
+checkhorse 2
+#ACT
+BREAK
+#SAY
+你的坐骑是{FCOLOR/1}白马{FCOLOR/12},每天可以领取{FCOLOR/10}100W经验{FCOLOR/12}.\\
+<领取奖励/@白马奖励>
+
+#IF
+checkhorse 3
+#ACT
+BREAK
+#SAY
+你的坐骑是{FCOLOR/1}赤兔马{FCOLOR/12},每天可以领取{FCOLOR/10}200W经验{FCOLOR/12}.\\
+<领取奖励/@赤兔马奖励>
+
+[@白马奖励]
+#IF
+checkhorse 2
+#ELSEACT
+BREAK
+
+#IF
+#ACT
+LOADVALUE 每日马匹 "ParamControl\马匹奖励.ini" 每日马匹 %USERNAME
+
+#IF
+!Equal 每日马匹 %CURDAY
+#ACT
+SetUserExp + 1000000
+SAVEVALUE "ParamControl\马匹奖励.ini" 每日马匹 %USERNAME %CURDAY
+lineMsg [Grobal] "<$USERNAME>领取了今日的马匹奖励获得了100W经验的奖励."
+BREAK
+#SAY
+你获得了100W经验.\\
+<关闭/@Exit>
+#ELSESAY
+你今天已经领过了,请明天再来.\\
+<关闭/@Exit>
+
+[@赤兔马奖励]
+#IF
+checkhorse 3
+#ELSEACT
+BREAK
+
+#IF
+#ACT
+LOADVALUE 每日马匹 "ParamControl\马匹奖励.ini" 每日马匹 %USERNAME
+
+#IF
+!Equal 每日马匹 %CURDAY
+#ACT
+SetUserExp + 2000000
+SAVEVALUE "ParamControl\马匹奖励.ini" 每日马匹 %USERNAME %CURDAY
+lineMsg [Grobal] "<$USERNAME>领取了今日的马匹奖励获得了200W经验的奖励."
+BREAK
+#SAY
+你获得了200W经验.\\
+<关闭/@Exit>
+#ELSESAY
+你今天已经领过了,请明天再来.\\
+<关闭/@Exit>
+
+[@进阶马匹_1]
+#IF
+!CheckHorse
+#ACT
+break
+#SAY
+你目前还未拥有马匹,快去比奇找{FCOLOR/1}义贤{FCOLOR/12}吧.\\
+<关闭/@Exit>
+
+#IF
+checkhorse 1
+#ACT
+BREAK
+#SAY
+你目前的马匹是{FCOLOR/1}褐色马{FCOLOR/12},进阶成{FCOLOR/1}白马{FCOLOR/12}需要人物等级达到{FCOLOR/10}35{FCOLOR/12}级,并消耗{FCOLOR/10}2000W{FCOLOR/12}金币.\\
+<进阶为白马/@进阶白马>
+
+#IF
+checkhorse 2
+#ACT
+BREAK
+#SAY
+你目前的马匹是{FCOLOR/1}白马{FCOLOR/12},进阶成{FCOLOR/1}赤兔马{FCOLOR/12}需要人物等级达到{FCOLOR/10}45{FCOLOR/12}级,并消耗{FCOLOR/10}8000W{FCOLOR/12}金币.\\
+<进阶为赤兔马/@进阶赤兔马>
+
+#IF
+#SAY
+你目前拥有的是最高开放的:{FCOLOR/1}赤兔马{FCOLOR/12}\\
+<关闭/@Exit>
+
+[@进阶白马]
+#IF
+!CHECKLEVEL 35
+#ACT
+SYSMSG "你的等级还没有到35级,请在35级后再来!"
+BREAK
+
+#IF
+!CheckGold 20000000
+#ACT
+SYSMSG "进阶到白马需要花费2000W金币,请按W键查看包袱确认!"
+BREAK
+
+#IF
+checkhorse 1
+#ACT
+CLOSE
+take 金币 20000000
+KillHorse
+horsecall 白马
+BREAK
+
+
+[@进阶赤兔马]
+#IF
+!CHECKLEVEL 45
+#ACT
+SYSMSG "你的等级还没有到45级,请在45级后再来!"
+BREAK
+
+#IF
+!CheckGold 80000000
+#ACT
+SYSMSG "进阶到赤兔马需要花费8000W金币,请按W键查看包袱确认!"
+BREAK
+
+#IF
+checkhorse 2
+#ACT
+CLOSE
+take 金币 80000000
+KillHorse
+horsecall 赤兔马
+BREAK
+
+
+}

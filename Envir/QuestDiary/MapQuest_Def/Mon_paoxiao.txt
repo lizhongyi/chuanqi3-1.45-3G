@@ -1,0 +1,39 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[@main]
+#IF
+check [493] 1
+check [494] 1
+#ACT
+goto @paoxiao_Quest
+break
+#ELSEACT
+GOTO @XishaXH
+BREAK
+
+[@paoxiao_Quest]
+#CALL [WestDesert\Mon_WestDesert.txt] @paoxiao_Quest1
+
+
+[@XishaXH]
+#ACT
+LOADVALUE D0 "ParamControl\西沙循环.ini" %USERNAME 日期
+LOADVALUE A0 "ParamControl\西沙循环.ini" %USERNAME 进度
+LOADVALUE D2 "ParamControl\西沙循环.ini" %USERNAME 杀怪
+
+#IF
+Equal D0 %CURDAY
+Equal A0 "Start"
+#ACT
+INC D2 1
+SAVEVALUE "ParamControl\西沙循环.ini" %USERNAME 杀怪 %D2
+SYSMSG "西沙循环杀怪任务进度<$OUTPUT(D2)>/200." 1
+#ELSEACT
+BREAK
+
+#IF
+ELarge D2 200
+#ACT
+SAVEVALUE "ParamControl\西沙循环.ini" %USERNAME 杀怪 200
+SAVEVALUE "ParamControl\西沙循环.ini" %USERNAME 进度 "PreEnd"
+SYSMSG "西沙循环杀怪任务已经完成,赶快回去领奖吧." 2
+break

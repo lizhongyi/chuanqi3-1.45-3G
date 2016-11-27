@@ -1,0 +1,197 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@衣服染色_1]
+{
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}衣{FCOLOR/4}━{FCOLOR/14}服{FCOLOR/4}━{FCOLOR/14}染{FCOLOR/4}━{FCOLOR/14}色{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_        您好!花费{FCOLOR/1}5{FCOLOR/12}个元宝可以改变衣服颜色\
+_   [ < 白色 /@ys1> ][ < 黑色 /@ys2> ][ < 蓝色 /@ys3> ][ < 草绿 /@ys13> ]\\
+_   [ < 青色 /@ys14> ][ < 灰色 /@ys15> ][ < 紫色 /@ys7> ][ < 绿色 /@ys5> ]\\
+_   [ <淡黄色/@ys9> ][ <天蓝色/@ys10> ][ <淡紫色/@ys4> ][ <大红色/@ys11> ]\\
+_   [ <水红色/@ys6> ][ <青绿色/@ys8> ][ <浅蓝色/@ys12> ][ <金黄色/@ys16> ]\\
+_                 [ <返回上层/@main> ]
+
+[@ys1]
+#IF
+checkcmd CHECKUSERJF 5
+#ACT
+Close
+actcmd SETUSERJF - 5
+wearcolor 255 255 255
+SYSMSG "您需要的 白色衣服 已经染好了!^_^.."
+#ELSEACT
+goto @nojifen
+
+;---------------------------------------------
+[@ys2]
+#IF
+checkcmd CHECKUSERJF 5
+#ACT
+Close
+actcmd SETUSERJF - 5
+wearcolor 5 5 5
+SYSMSG "您需要的 黑色衣服 已经染好了 ^_^"
+#ELSEACT
+goto @nojifen
+;---------------------------------------------
+[@ys3]
+#IF
+checkcmd CHECKUSERJF 5
+#ACT
+Close
+actcmd SETUSERJF - 5
+wearcolor 255 0 0
+SYSMSG "您需要的 蓝色衣服 已经染好了 ^_^"
+#ELSEACT
+goto @nojifen
+;---------------------------------------------
+[@ys4]
+#IF
+checkcmd CHECKUSERJF 5
+#ACT
+Close
+actcmd SETUSERJF - 5
+wearcolor 252 220 208
+SYSMSG "您需要的 淡紫色衣服 已经染好了 ^_^"
+#ELSEACT
+goto @nojifen
+;---------------------------------------------
+[@ys5]
+#IF
+checkcmd CHECKUSERJF 5
+#ACT
+Close
+actcmd SETUSERJF - 5
+wearcolor 128 0 128
+mov   A2 0
+SYSMSG "您需要的 绿色衣服 已经染好了 ^_^"
+#ELSEACT
+goto @nojifen
+;---------------------------------------------
+[@ys6]
+#IF
+checkcmd CHECKUSERJF 5
+#ACT
+Close
+actcmd SETUSERJF - 5
+wearcolor 255 255 0
+SYSMSG "您需要的 水红色衣服 已经染好了 ^_^"
+#ELSEACT
+goto @nojifen
+;---------------------------------------------
+[@ys7]
+#IF
+checkcmd CHECKUSERJF 5
+#ACT
+Close
+actcmd SETUSERJF - 5
+wearcolor 223 184 117
+SYSMSG "您需要的 紫色衣服 已经染好了 ^_^"
+#ELSEACT
+goto @nojifen
+;---------------------------------------------
+[@ys8]
+#IF
+checkcmd CHECKUSERJF 5
+#ACT
+Close
+actcmd SETUSERJF - 5
+wearcolor 0 0 255
+SYSMSG "您需要的 青绿色衣服 已经染好了 ^_^"
+#ELSEACT
+goto @nojifen
+;---------------------------------------------
+[@ys9]
+#IF
+checkcmd CHECKUSERJF 5
+#ACT
+Close
+actcmd SETUSERJF - 5
+wearcolor 181 255 255
+SYSMSG "您需要的 淡黄色衣服 已经染好了 ^_^"
+#ELSEACT
+goto @nojifen
+;---------------------------------------------
+[@ys10]
+#IF
+checkcmd CHECKUSERJF 5
+#ACT
+Close
+actcmd SETUSERJF - 5
+wearcolor 222 132 182
+SYSMSG "您需要的 天蓝色衣服 已经染好了 ^_^"
+#ELSEACT
+goto @nojifen
+;---------------------------------------------
+[@ys11]
+#IF
+checkcmd CHECKUSERJF 5
+#ACT
+Close
+actcmd SETUSERJF - 5
+wearcolor 0 255 0
+SYSMSG "您需要的 大红色衣服 已经染好了 ^_^"
+#ELSEACT
+goto @nojifen
+;---------------------------------------------
+[@ys12]
+#IF
+checkcmd CHECKUSERJF 5
+#ACT
+Close
+actcmd SETUSERJF - 5
+wearcolor 247 138 090
+SYSMSG "您需要的 浅蓝色衣服 已经染好了 ^_^"
+#ELSEACT
+goto @nojifen
+;---------------------------------------------
+[@ys13]
+#IF
+checkcmd CHECKUSERJF 5
+#ACT
+Close
+actcmd SETUSERJF - 5
+wearcolor 0 128 128
+SYSMSG "您需要的 草绿色衣服 已经染好了 ^_^"
+#ELSEACT
+goto @nojifen
+;---------------------------------------------
+[@ys14]
+#IF
+checkcmd CHECKUSERJF 5
+#ACT
+Close
+actcmd SETUSERJF - 5
+wearcolor 128 0 255
+SYSMSG "您需要的 青色衣服 已经染好了 ^_^"
+#ELSEACT
+goto @nojifen
+;----------------
+[@ys15]
+#IF
+checkcmd CHECKUSERJF 5
+#ACT
+Close
+actcmd SETUSERJF - 5
+wearcolor 174 174 174
+SYSMSG "您需要的 灰色衣服 已经染好了 ^_^"
+#ELSEACT
+goto @nojifen
+;---------------------------------------------
+[@ys16]
+#IF
+checkcmd CHECKUSERJF 5
+#ACT
+Close
+actcmd SETUSERJF - 5
+wearcolor 0 255 255
+SYSMSG "您需要的 金黄色衣服 已经染好了 ^_^"
+#ELSEACT
+goto @nojifen
+
+[@nojifen]
+#ACT
+Close
+SYSMSG "您没有 5 个元宝.不能为您服务...."
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

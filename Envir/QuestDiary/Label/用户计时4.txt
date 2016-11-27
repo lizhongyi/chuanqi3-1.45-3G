@@ -1,0 +1,14 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@用户计时4_Main]
+{
+#Act
+LoadValue D5 "ParamControl\每日在线时间.ini" [%UserName] [累计在线分钟]
+
+#IF
+#ACT
+Inc D5 1
+SaveValue "ParamControl\每日在线时间.ini" [%UserName] [累计在线分钟] %D5
+Break
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

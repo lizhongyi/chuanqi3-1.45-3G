@@ -1,0 +1,179 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@NewHumanExN]
+{
+#IF
+check [379] 1
+#ACT
+SysMsg "系统提示:[ <$UserName> ]欢迎您再次光临本游戏"
+#ELSEACT
+GOTO @GiveItemN
+
+[@GiveItemN]
+#ACT
+SET [379] 1
+GOTO @内测给装备
+actcmd SETFAME = 90000
+actcmd SETSUPERCHANGE = 12
+Give 金币 1500000000
+actcmd SETUSERJF = 90000
+ACTCMD CHANGELVL = 200
+horsecall 黑灵马
+actcmd SENDUSERSAY "@骑马"
+actcmd SENDUSERSAY "@允许悄悄话"
+setsuperpower = 90000
+lineMsg [Grobal] "新的英雄[ <$USERNAME> ]降临到这个未知的世界"
+GOTO @GiveMagicN
+
+[@内测给装备]
+#IF
+checkjob warrior
+#ACT
+GiveW 1  御神幻辰之刃
+GiveW 3  御神幻辰战链
+GiveW 4  御神幻辰战盔
+GiveW 5  御神幻辰守镯
+GiveW 6  御神幻辰护镯
+GiveW 7  御神幻辰守戒
+GiveW 8  御神幻辰护戒
+GiveW 10 御神幻辰战靴
+GiveW 11 御神幻辰印章
+GOTO @内测给衣服_Z
+Break
+
+#IF
+checkjob wizard
+#ACT
+GiveW 1  御神幻云之杖
+GiveW 3  御神幻云法链
+GiveW 4  御神幻云法盔
+GiveW 5  御神幻云守镯
+GiveW 6  御神幻云护镯
+GiveW 7  御神幻云守戒
+GiveW 8  御神幻云护戒
+GiveW 10 御神幻云法靴
+GiveW 11 御神幻云印章
+GOTO @内测给衣服_F
+Break
+
+#IF
+checkjob taoist
+#ACT
+GiveW 1  御神幻绝之剑
+GiveW 3  御神幻绝圣链
+GiveW 4  御神幻绝圣盔
+GiveW 5  御神幻绝守镯
+GiveW 6  御神幻绝护镯
+GiveW 7  御神幻绝守戒
+GiveW 8  御神幻绝护戒
+GiveW 10 御神幻绝圣靴
+GiveW 11 御神幻绝印章
+GOTO @内测给衣服_D
+Break
+
+[@内测给衣服_Z]
+#IF
+gender man
+#ACT
+GiveW 0  御神幻辰战铠（男）
+#ELSEACT
+GiveW 0  御神幻辰战铠（女）
+
+[@内测给衣服_F]
+#IF
+gender man
+#ACT
+GiveW 0  御神幻云法铠（男）
+#ELSEACT
+GiveW 0  御神幻云法铠（女）
+
+[@内测给衣服_D]
+#IF
+gender man
+#ACT
+GiveW 0  御神幻绝圣铠（男）
+#ELSEACT
+GiveW 0  御神幻绝圣铠（女）
+
+[@GiveMagicN]
+#IF
+checkjob warrior
+#ACT
+actcmd addmagic 基本剑术 5
+actcmd addmagic 刺杀剑术 5
+actcmd addmagic 攻杀剑术 5
+actcmd addmagic 翔空剑法 5
+actcmd addmagic 破血狂杀 5
+actcmd addmagic 铁布杉 5
+actcmd addmagic 乾坤大挪移 5
+actcmd addmagic 斗转星移 5
+actcmd addmagic 旋风斩 5
+actcmd addmagic 屠龙斩 5
+actcmd addmagic 移花接木 5
+actcmd addmagic 君临步 5
+actcmd addmagic 泰山压顶 5
+actcmd addmagic 金刚之躯 5
+actcmd addmagic 快刀斩麻 5
+actcmd addmagic 运气术 5
+Break
+
+#IF
+checkjob wizard
+#ACT
+actcmd addmagic 大火球 5
+actcmd addmagic 瞬息移动 5
+actcmd addmagic 诱惑之光 5
+actcmd addmagic 抗拒火环 5
+actcmd addmagic 异形换位 5
+actcmd addmagic 圣言术 5
+actcmd addmagic 击风 5
+actcmd addmagic 冰月震天 5
+actcmd addmagic 雷电术 5
+actcmd addmagic 魄冰刺 5
+actcmd addmagic 怒神霹雳 5
+actcmd addmagic 焰天火雨 5
+actcmd addmagic 魔光盾 5
+actcmd addmagic 混元掌 5
+actcmd addmagic 透心链 5
+actcmd addmagic 魔爆术 5
+actcmd addmagic 地狱魔焰 5
+actcmd addmagic 焚魂魔功 5
+actcmd addmagic 天打雷劈 5
+actcmd addmagic 闪电雷鸣 5
+actcmd addmagic 分身术 5
+Break
+
+#IF
+checkjob taoist
+#ACT
+actcmd addmagic 治愈术 5
+actcmd addmagic 精神力战法 5
+actcmd addmagic 施毒术 5
+actcmd addmagic 困魔咒 5
+actcmd addmagic 召唤骷髅 5
+actcmd addmagic 隐身术 5
+actcmd addmagic 群体治愈术 5
+actcmd addmagic 空拳刀法 5
+actcmd addmagic 月魂灵波 5
+actcmd addmagic 回生术 5
+actcmd addmagic 强魔震法 5
+actcmd addmagic 猛虎强势 5
+actcmd addmagic 召唤圣兽 5
+actcmd addmagic 超强召唤骷髅 5
+actcmd addmagic 云寂术 5
+actcmd addmagic 移花接玉 5
+actcmd addmagic 妙影无踪 5
+actcmd addmagic 阴阳法环 5
+actcmd addmagic 灭魂火符 5
+actcmd addmagic 隐魂术 5
+actcmd addmagic 月明波 5
+actcmd addmagic 神灵守护 5
+actcmd addmagic 施毒大法 5
+actcmd addmagic 吸星大法 5
+actcmd addmagic 横扫千军 5
+actcmd addmagic 养生术 5
+actcmd addmagic 迷魂大法 5
+Break
+
+}
+
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

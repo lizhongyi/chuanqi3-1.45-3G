@@ -1,0 +1,37 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@¿ªÇøË¢¹Ö_1]
+{
+#IF
+#ACT
+Monclear 1  Å£
+Monclear 1  Öí
+Monclear 1  ¼¦
+Delaygoto [Grobal] 5 @¿ªÇøË¢¹Ö_2
+SYSMSG "ÎÂÜ°ÌáÊ¾:¿ªÇøË¢¹ÖÖ´ÐÐ³É¹¦!"
+Close
+
+[@¿ªÇøË¢¹Ö_2]
+#ACT
+MonGenP   "1,407,124,12"    Å£ 20
+MonGenP   "1,393,120,12"    Å£ 20
+MonGenP   "1,382,145,12"    Öí 20
+MonGenP   "1,408,151,12"    Öí 20
+MonGenP   "1,378,125,12"    Å£ 20
+MonGenP   "1,407,124,12"    Öí 20
+MonGenP   "1,393,120,12"    Öí 20
+MonGenP   "1,382,145,12"    Å£ 20
+MonGenP   "1,408,151,12"    Å£ 20
+MonGenP   "1,378,125,12"    Öí 20
+MonGenP   "1,403,185,12"    Öí 20
+MonGenP   "1,403,185,12"    Å£ 20
+MonGenP   "1,371,95,12"     Å£ 20
+MonGenP   "1,371,95,12"     Öí 20
+MonGenP   "1,407,124,12"    ¼¦ 20
+MonGenP   "1,393,120,12"    ¼¦ 20
+MonGenP   "1,382,145,12"    ¼¦ 20
+MonGenP   "1,408,151,12"    ¼¦ 20
+MonGenP   "1,378,125,12"    ¼¦ 20
+Break
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

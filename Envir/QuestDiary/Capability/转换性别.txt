@@ -1,0 +1,29 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@转换性别_1]
+{
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}转{FCOLOR/4}━{FCOLOR/14}换{FCOLOR/4}━{FCOLOR/14}性{FCOLOR/4}━{FCOLOR/14}别{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_ 请问您需要变性手术吗? 变性手术需要消费 {FCOLOR/1}50{FCOLOR/12} 元宝!\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}转{FCOLOR/4}━{FCOLOR/14}换{FCOLOR/4}━{FCOLOR/14}性{FCOLOR/4}━{FCOLOR/14}别{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_              [ <我需要做变性手术/@变性性> ]\
+
+[@变性性]
+#IF
+Checkmarriage
+#ACT
+SYSMSG "对不起,你结过婚了,不能变性!"
+BREAK
+
+#IF
+checkcmd CHECKUSERJF 50
+#ACT
+Close
+Changegender
+actcmd SETUSERJF - 50
+LineMsg "Grobal" "号外号外: 玩家【 <$USERNAME> 】进行了变性手术!!"
+#ELSEACT
+Close
+SYSMSG "温馨提示: 您的元宝不足,不能为您服务."
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

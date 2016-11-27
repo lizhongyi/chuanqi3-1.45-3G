@@ -1,0 +1,53 @@
+;;创天网络有限公司原版1.45
+[@main]
+#IF
+checkjob taoist
+#ACT
+break
+;
+#IF
+checkjob wizard
+#ACT
+break
+;
+#IF
+check [037] 1
+#ACT
+break
+
+#IF
+check [036] 1
+#ACT
+goto @asword1
+break
+
+[@asword1]
+#IF
+large S3 10
+#ACT
+goto @asword1_6
+#ELSEACT
+goto @asword1_3
+
+[@asword1_3]
+#IF
+large S3 2
+#ACT
+goto @asword1_4
+#ELSEACT
+mov S3 2
+goto @asword1_4
+
+[@asword1_4]
+#IF
+#ACT
+inc S3 1
+
+[@asword1_6]
+#IF
+#SAY
+(现在把沃玛角送给'龙血先生'就可以修炼'刺杀剑术'...)
+#ACT
+give 沃玛角 1
+SET [037] 1
+mov S3 0

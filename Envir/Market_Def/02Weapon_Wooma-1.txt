@@ -1,0 +1,40 @@
+;;创天网络有限公司原版1.45
+%100
++5
++6
+
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+我不想和你这种坏人做生意。\ \
+<结束/@exit>
+#ELSESAY
+欢迎光临，有什么事吗？\ \ 
+<修理/@pre_repair>武器\
+<特殊修理/@Special_Repair(1)>武器\
+<结束/@exit>
+
+[@Special_Repair()]
+#CALL [\Repair\TotalRepair.txt] @SRepairItem
+
+[@repair]
+#SAY
+我给你好好擦，就放在我这儿吧。\ \
+<前一步/@main>
+
+[~@repair]
+#SAY
+都修好了。\
+以后把要修的武器全都拿到这儿来。\ \
+<前一步/@main>
+
+[Goods]
+;ItemName      Volume     Hour
+
+
+[@pre_repair]
+#IF
+#SAY
+请把要修理的武器放上去。\ \
+<修理/@repair>

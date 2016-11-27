@@ -1,0 +1,337 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@行会申请_1]
+{
+#ACT
+MOV D8 0
+MOV A7 %USERNAME
+MOV A0 ""
+LoadValue D0 "ParamControl\行会申请资料.ini" 申请号码 MUN
+LoadValue D9 "ParamControl\行会申请资料.ini" [每页显示数] [每页显示数]
+MOV P1 %D0
+MOV P2 %D9
+DIV P1 P2
+MOV D6 %P9
+INC D6 1
+SaveValue "ParamControl\行会暂用变量.ini" %A7 总页数 %D6
+MOV P1 %D8
+MOV P2 %D9
+MUL P1 P2
+MOV D1 %P9
+INC D1 1
+INC D8 1
+SaveValue "ParamControl\行会暂用变量.ini" %A7 页数 %D8
+MOV P1 %D8
+MOV P2 %D9
+MUL P1 P2
+MOV D7 %P9
+MOV D2 1
+MOV D3 %D0
+SaveValue "ParamControl\行会暂用变量.ini" %A7 页下限 %D1
+SaveValue "ParamControl\行会暂用变量.ini" %A7 页上限 %D7
+SaveValue "ParamControl\行会暂用变量.ini" %A7 上次读 %D3
+GOTO @读取资料
+
+
+[@读取资料]
+#IF
+!LARGE D1 %D7
+!LARGE D1 %D0
+#ACT
+LoadValue A4 "ParamControl\行会申请内容.ini" %D3 [行会名字]
+LoadValue A5 "ParamControl\行会申请内容.ini" %D3 [申请人]
+LoadValue D6 "ParamControl\行会申请内容.ini" %D3  人数
+ADDSTR A0 "{FCOLOR/8}[序号]→{FCOLOR/10}"
+ADDSTR A0  %D1
+ADDSTR A0  ":{FCOLOR/12}<"
+ADDSTR A0  %A4
+ADDSTR A0 "/@序号("
+ADDSTR A0  "%D2"
+ADDSTR A0  ")> {FCOLOR/8}〓申请人〓:{FCOLOR/10}"
+ADDSTR A0  %A5
+ADDSTR A0 "{FCOLOR/12} 人数:{FCOLOR/1}"
+ADDSTR A0  %D6
+ADDSTR A0  "{FCOLOR/12}\"
+SaveValue "ParamControl\行会暂用变量.ini" %A7 %D2 %D3
+DEC D3 1
+INC D1 1
+INC D2 1
+GOTO @读取资料
+#ELSEACT
+DEC D1 1
+SaveValue "ParamControl\行会暂用变量.ini" %A7 阅读数 %D3
+GOTO @申请版面
+
+[@申请版面]
+#ACT
+mov A7 %USERNAME
+LoadValue D8 "ParamControl\行会暂用变量.ini" %A7 页数
+LoadValue D6 "ParamControl\行会暂用变量.ini" %A7 总页数
+#SAY
+{FCOLOR/8}
+────────[ <返回上层菜单/@main> ]────────{FCOLOR/12}\
+等级限制: {FCOLOR/10}44级{FCOLOR/12}.人数限制: 由一人申请.{FCOLOR/10}15人以上加入{FCOLOR/12}\
+达到要求即可获得 沃玛号角,祖玛头像和行会启动资金{FCOLOR/8}\
+────────[ <开始申请行会/@提交申请> ]────────{FCOLOR/12}\
+<$OUTPUT(A0)>\
+共{FCOLOR/1} <$OUTPUT(D6)> {FCOLOR/12}页   第{FCOLOR/15} <$OUTPUT(D8)> {FCOLOR/12}页           <上一页/@上一页1>      <下一页/@下一页1>\
+</@序号(1)></@序号(2)></@序号(3)></@序号(4)></@序号(5)></@序号(6)></@标题(7)></@序号(8)></@序号(9)></@序号(10)></@序号(11)></@序号(12)></@序号(13)></@序号(14)></@序号(15)></@序号(16)></@序号(17)></@序号(18)></@标题(19)></@序号(20)>
+;<跳到X页/@@跳页>
+
+[@提交申请]
+#ACT
+MOV A3 %USERNAME
+LoadValue D0 "ParamControl\行会申请内容.ini" [加入人] [%A3]
+#IF
+!CHECKLEVEL 44
+#ACT
+SysMsg "【温馨提示】你的等级不够!无法申请"
+BREAK
+#if
+EQUAL D0 0
+#SAY
+{FCOLOR/8}
+────────[ <返回上层菜单/@main> ]────────{FCOLOR/12}\
+等级限制: {FCOLOR/10}44级{FCOLOR/12}.人数限制: 由一人申请.{FCOLOR/10}15人以上加入{FCOLOR/12}\
+达到要求即可获得 沃玛号角,祖玛头像和行会启动资金{FCOLOR/8}\
+────────[ <输入行会名字/@@发文序号> ]────────{FCOLOR/12}\
+#elseact
+SysMsg "【温馨提示】你已经参加过某个组织,不能再提交申请"
+BREAK
+
+[@@发文序号]
+#ACT
+MOV A1 %INPUTSTR
+#IF
+!EQUAL A1 ""
+#ACT
+LoadValue D0 "ParamControl\行会申请资料.ini" 申请号码 MUN
+INC D0 1
+SaveValue "ParamControl\行会申请资料.ini" 申请号码 MUN %D0
+SaveValue "ParamControl\行会暂用变量.ini" %D0 [行会名字] %A1
+#SAY
+{FCOLOR/8}
+────────[ <返回上层菜单/@main> ]────────{FCOLOR/12}\
+等级限制: {FCOLOR/10}44级{FCOLOR/12}.人数限制: 由一人申请.{FCOLOR/10}15人以上加入{FCOLOR/12}\
+达到要求即可获得 沃玛号角,祖玛头像和行会启动资金{FCOLOR/8}\
+────────[ <输入号召宣言/@@发口号> ]────────{FCOLOR/12}\
+#ELSEACT
+SysMsg "【温馨提示】输入的内容不能为空!"
+
+[@@发口号]
+#ACT
+MOV A3 %USERNAME
+MOV A2 %INPUTSTR
+#IF
+!EQUAL A2 ""
+#ACT
+ADDSTR A2 "\"
+LoadValue D0 "ParamControl\行会申请资料.ini" 申请号码 MUN
+LoadValue A1 "ParamControl\行会暂用变量.ini" %D0 行会名字
+SaveValue "ParamControl\行会申请内容.ini" %D0 [行会名字] %A1
+SaveValue "ParamControl\行会申请内容.ini" %D0 [内容] %A2
+SaveValue "ParamControl\行会申请内容.ini" %D0 [申请人] %A3
+SaveValue "ParamControl\行会申请内容.ini" [申请人] [%A3] %D0
+SaveValue "ParamControl\行会申请内容.ini" [加入人] [%A3] %D0
+SaveValue "ParamControl\行会申请内容.ini" %D0  人数 1
+SysMsg "【温馨提示】发表成功!"
+GOTO @行会申请_1
+#ELSEACT
+SysMsg "【温馨提示】输入的内容不能为空!"
+
+
+[@下一页1]
+#ACT
+MOV A7 %USERNAME
+LoadValue D0 "ParamControl\行会申请资料.ini" 申请号码 MUN
+loadVAlue D3 "ParamControl\行会暂用变量.ini" %A7 阅读数
+LoadValue D9 "ParamControl\行会申请资料.ini" [每页显示数] [每页显示数]
+LoadValue D8 "ParamControl\行会暂用变量.ini" %A7 页数
+LoadValue D6 "ParamControl\行会暂用变量.ini" %A7 总页数
+SaveValue "ParamControl\行会暂用变量.ini" %A7 上次读 %D3
+#IF
+EQUAL D3 0
+#ACT
+SysMsg "【温馨提示】后面已经没有内容!无需再翻页!"
+break
+#ELSEACT
+GOTO @需翻页1
+
+[@需翻页1]
+#ACT
+INC D8 1
+#IF
+!LARGE D8 %D6
+#ACT
+SaveValue "ParamControl\行会暂用变量.ini" %A7 页数 %D8
+loadValue D1 "ParamControl\行会暂用变量.ini" %A7 页下限
+loadValue D7 "ParamControl\行会暂用变量.ini" %A7 页上限
+INC D1 %D9
+INC D7 %D9
+MOV A0 ""
+MOV D2 1
+SaveValue "ParamControl\行会暂用变量.ini" %A7 页下限 %D1
+SaveValue "ParamControl\行会暂用变量.ini" %A7 页上限 %D7
+GOTO @读取资料
+
+#ELSEACT
+SysMsg "【温馨提示】已经到顶了!"
+BREAK
+
+[@上一页1]
+#ACT
+MOV A7 %USERNAME
+LoadValue D0 "ParamControl\行会申请资料.ini" 申请号码 MUN
+loadVAlue D3 "ParamControl\行会暂用变量.ini" %A7 上次读
+loadValue D1 "ParamControl\行会暂用变量.ini" %A7 页下限
+loadValue D7 "ParamControl\行会暂用变量.ini" %A7 页上限
+LoadValue D9 "ParamControl\行会申请资料.ini" [每页显示数] [每页显示数]
+LoadValue D8 "ParamControl\行会暂用变量.ini" %A7 页数
+DEC D8 1
+INC D3 %D9
+#IF
+!SMALL D8 1
+#ACT
+ SaveValue "ParamControl\行会暂用变量.ini" %A7 页数 %D8
+GOTO @验证D31
+#ELSEACT
+SysMsg "【温馨提示】已经到底了!"
+BREAK
+
+[@验证D31]
+#ACT
+DEC D1 %D9
+DEC D7 %D9
+SaveValue "ParamControl\行会暂用变量.ini" %A7 页下限 %D1
+SaveValue "ParamControl\行会暂用变量.ini" %A7 页上限 %D7
+MOV A0 ""
+MOV D2 1
+#IF
+LARGE D3 %D0
+#ACT
+MOV D3 %D0
+SaveValue "ParamControl\行会暂用变量.ini" %A7 上次读 %D3
+GOTO @读取资料
+break
+#ELSEACT
+SaveValue "ParamControl\行会暂用变量.ini" %A7 上次读 %D3
+GOTO @读取资料
+break
+
+[@序号()]
+#ACT
+MOV A7 %USERNAME
+MOV D4 %ARG(1)
+LoadValue D0 "ParamControl\行会暂用变量.ini" %A7 %D4
+LoadValue   A5 "ParamControl\行会申请内容.ini" %D0 [失效]
+#IF
+!EQUAL A5 "失效"
+#ACT
+SaveValue "ParamControl\行会暂用变量.ini" 加入 %A7 %D0
+LoadValue A6 "ParamControl\行会申请内容.ini" %D0 [行会名字]
+LoadValue A9 "ParamControl\行会申请内容.ini" %D0 [申请人]
+LoadValue A8 "ParamControl\行会申请内容.ini" %D0 [内容]
+#SAY
+{FCOLOR/15}『行会名字:』{FCOLOR/14}<$OUTPUT(A6)>{FCOLOR/12}\
+{FCOLOR/15}『申 请 人:』{FCOLOR/10}<$OUTPUT(A9)>{FCOLOR/12}\
+{FCOLOR/15}『行会口号:』{FCOLOR/8}<$OUTPUT(A8)>{FCOLOR/12}\
+<『 加 入 』/@加入>\\
+申请人:<[领取号角,头像和行会资金:人数必须超过15个]/@获得>\\
+<『 返 回 』/@返回那里1>\\
+#ELSEACT
+SysMsg "【温馨提示】该操作行会申请已经过期,不能进去查阅!"
+BREAK
+
+[@加入]
+#ACT
+MOV A7 %USERNAME
+LoadValue D7 "ParamControl\行会申请内容.ini" [加入人] [%A7]
+#IF
+!CHECKLEVEL 44
+#ACT
+SysMsg "【温馨提示】你的等级不够!无法加入"
+BREAK
+#IF
+EQUAL D7 0
+#ACT
+LoadValue D1 "ParamControl\行会申请内容.ini" %D0  人数
+LoadValue  D0 "ParamControl\行会暂用变量.ini" 加入 %A7
+LoadValue A8 "ParamControl\行会申请内容.ini" %D0 [内容]
+ADDSTR A8 "{FCOLOR/15}『加入人员:』{FCOLOR/10}"
+ADDSTR A8 %A7
+ADDSTR A8 "{FCOLOR/12}\"
+INC D1 1
+SaveValue "ParamControl\行会申请内容.ini" %D0 [内容] %A8
+SaveValue "ParamControl\行会申请内容.ini" [加入人] [%A7] %D0
+SaveValue  "ParamControl\行会申请内容.ini" %D0  人数 %D1
+SYSMSG "加入成功!现在共有<$OUTPUT(D1)>个人提交了申请!"
+goto @返回那里1
+#ELSEACT
+SYSMSG "你已经申请加入过了,不能再加入申请!"
+break
+
+
+[@返回那里1]
+#ACT
+MOV A7 %USERNAME
+LoadValue D0 "ParamControl\行会申请资料.ini" 申请号码 MUN
+loadVAlue D3 "ParamControl\行会暂用变量.ini" %A7 上次读
+LoadValue D9 "ParamControl\行会申请资料.ini" [每页显示数] [每页显示数]
+LoadValue D8 "ParamControl\行会暂用变量.ini" %A7 页数
+LoadValue D6 "ParamControl\行会暂用变量.ini" %A7 总页数
+loadValue D1 "ParamControl\行会暂用变量.ini" %A7 页下限
+loadValue D7 "ParamControl\行会暂用变量.ini" %A7 页上限
+loadVAlue D2 "ParamControl\行会暂用变量.ini" %A7 阅读数
+#IF
+EQUAL D2 0
+#ACT
+GOTO @新路1
+#ELSEACT
+INC D3 %D9
+GOTO @验证你1
+
+[@验证你1]
+#IF
+LARGE D3 %D0
+#ACT
+MOV D3 %D0 
+MOV D2 1
+MOV A0 ""
+GOTO @读取资料
+#ELSEACT
+MOV D2 1
+MOV A0 ""
+GOTO @读取资料
+
+[@新路1]
+#ACT
+MOV D2 1
+MOV A0 ""
+GOTO @读取资料
+
+[@获得]
+#ACT
+MOV A7 %USERNAME
+LoadValue D0 "ParamControl\行会暂用变量.ini" %A7 %D4
+LoadValue A9 "ParamControl\行会申请内容.ini" %D0 [申请人]
+LoadValue D1 "ParamControl\行会申请内容.ini" %D0  人数
+#IF
+EQUAL A9 %A7
+!SMALL D1 15
+#ACT
+GIVE 沃玛号角 1
+give 祖玛头像 1
+GIVE 金币 2000000
+SYSMSG "恭喜您,希望您在游戏中能快乐和强大!"
+LoadValue A6 "ParamControl\行会申请内容.ini" %D0 [行会名字]
+ADDSTR A6 "(已结束申请)"
+MOV A9 ""
+SaveValue "ParamControl\行会申请内容.ini" %D0 [申请人] %A9
+SaveValue "ParamControl\行会申请内容.ini" %D0 [行会名字] %A6
+SaveValue "ParamControl\行会申请内容.ini" %D0 [失效] 失效
+CLOSE
+BREAK
+#ELSEACT
+SYSMSG "人数不足 或者 你不是申请人 或 你已领取 无法领取号角!"
+BREAK
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

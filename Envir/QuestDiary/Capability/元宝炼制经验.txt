@@ -1,0 +1,70 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@元宝炼制经验_Main]
+{
+#ACT
+ACTCMD READSQL "TBL_QUEST" "吃经验次数,进八大次数,进暗影次数" "炼制经验,八大教主,暗影禁地"
+MOV Temp 0
+#ACT
+formatstr "{FCOLOR/13}已经公测天数: {FCOLOR/1}%-8s{FCOLOR/13}  剩余炼制次数: {FCOLOR/1}%s{FCOLOR/12}" %CurDay,%炼制经验
+MOV 炼制信息 %A9
+#SAY
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}炼{FCOLOR/4}━{FCOLOR/14}制{FCOLOR/4}━{FCOLOR/14}经{FCOLOR/4}━{FCOLOR/14}验{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_   <$OUTPUT(炼制信息)>\
+这里您,可以通过{FCOLOR/1}元宝炼制经验{FCOLOR/12}来提高您的自身升级速度\
+元宝炼制经验从公测起每{FCOLOR/1}24{FCOLOR/12}小时可炼制{FCOLOR/1}1{FCOLOR/12}次并可累积次数\
+本系统需要您的等级达到{FCOLOR/1}40{FCOLOR/12}级才可以操作，每炼制{FCOLOR/1}1{FCOLOR/12}次可\
+获得大量经验并且可增加{FCOLOR/1}1{FCOLOR/12}次八大教主和暗影禁地的挑战\
+次数，请点击下面的按钮进行元宝炼制经验。\
+{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}炼{FCOLOR/4}━{FCOLOR/14}制{FCOLOR/4}━{FCOLOR/14}经{FCOLOR/4}━{FCOLOR/14}验{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\
+_    {FCOLOR/12}[ <炼制经验 2亿消耗20个元宝/@开始炼制经验(200000000,20,50)> ] 需{FCOLOR/1}50{FCOLOR/12}级以上\\
+_    {FCOLOR/12}[ <炼制经验10亿消耗30个元宝/@开始炼制经验(1000000000,30,67)> ] 需{FCOLOR/1}67{FCOLOR/12}级以上\\
+_    {FCOLOR/12}[ <炼制经验25亿消耗50个元宝/@开始炼制经验(2500000000,50,83)> ] 需{FCOLOR/1}83{FCOLOR/12}级以上\\
+
+[@开始炼制经验()]
+#ACT
+MOV 经验数量 %ARG(1)
+MOV 元宝数量 %ARG(2)
+MOV 需要等级 %ARG(3)
+
+#IF
+CHECKLEVEL 0
+#ACT
+MOV 角色等级 %P9
+
+#IF
+EQUAL 炼制经验 0
+#ACT
+SYSMSG "温馨提示: 您的剩余的炼制次数为0,不可以再进行炼制!"
+Break
+
+#IF
+SMALL 角色等级 %需要等级
+#ACT
+SYSMSG "温馨提示: 至少达到<$OUTPUT(需要等级)>级才可以炼制此选项!"
+Break
+
+#IF
+CHECKCMD CHECKUSERJF %元宝数量
+EQUAL Temp 0
+#ACT
+MOV Temp 1
+ACTCMD SETUSERJF - %元宝数量
+ACTCMD SETUSEREXP + %经验数量
+DEC 炼制经验 1
+ACTCMD WRITESQL "TBL_QUEST" "吃经验次数" %炼制经验
+INC 八大教主 1
+ACTCMD WRITESQL "TBL_QUEST" "进八大次数" %八大教主
+INC 暗影禁地 1
+ACTCMD WRITESQL "TBL_QUEST" "进暗影次数" %暗影禁地
+SYSMSG "温馨提示: 您花费[ <$OUTPUT(元宝数量)> ]元宝炼制了[ <$OUTPUT(经验数量)> ]经验值"
+SYSMSG "温馨提示: 您的八大教主挑战次数增加1次"
+SYSMSG "温馨提示: 您的暗影禁地挑战次数增加1次"
+Break
+Close
+#ELSEACT
+SYSMSG "温馨提示: 对不起您的元宝不足<$OUTPUT(元宝数量)>无法炼制经验~"
+Break
+
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

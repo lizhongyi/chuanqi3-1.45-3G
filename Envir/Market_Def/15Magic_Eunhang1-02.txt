@@ -1,0 +1,233 @@
+;;创天网络有限公司原版1.45
+[@main]
+#IF
+checkpkpoint 2
+#SAY
+跟你这种人我无话可说。。\ \
+<关闭/@exit>
+#ELSEACT
+goto @main_0
+
+[@main_0]
+#IF
+checkjob wizard
+#ACT
+goto @beouk_main
+#ELSEACT
+goto @beouk_other_class
+
+[@beouk_other_class]
+#IF
+checkjob warrior
+#SAY
+本座人称霹雳尊者， 你听说过吗？\
+呵呵呵， 本座最近在指导江湖的后生们。 不过，你不是魔法师啊。\ 
+你这个战士还是去找龙血先生吧。\ \
+<结束/@exit>
+#ELSESAY
+本座人称霹雳尊者， 你听说过吗？\
+呵呵呵， 本座最近在指导江湖的后生们。 不过，你不是魔法师啊。\ 
+你这个道士还是去找黛悲先生吧。\ \
+<结束/@exit>
+
+[@beouk_main]
+#IF
+#SAY
+本座就是霹雳尊者。\
+你找我有什么事？ \
+<寻求武功指导/@beouk_mugong_main>\
+<结束/@exit>
+
+[@beouk_mugong_main]
+#IF
+#SAY
+我可以指导你以下这些武功。\
+修炼的时候有什么问题尽管来找我。\
+（1 - 10 等级 修炼魔法）\
+<火球术/@fireball_test_start>\
+（11 - 20 等级 修炼魔法）\
+<抗拒火环/@firewind_test_start> , <诱惑之光/@lightwave_test_start> , <瞬息移动/@fly_test_start>\
+<大火球/@upfireball_test_start> , <雷电术/@lightstick_test_start> , <地狱火/@fireline_test_start>\
+（21 - 25 等级 修炼魔法）\
+<疾光电影/@lightline_test_start>\\
+<需要更高级的魔法/@wizard_hight>\\
+<不寻求武功指导/@exit>
+
+[@fireball_test_start]
+#IF
+#ACT
+goto @fireball_begin
+
+[@fireball_begin]
+#CALL [\MU_wizard\fireBolt.txt] @mugong_fireball
+
+;;------------------------------------------------------------------------------
+
+[@upfireball_test_start]
+;;
+#IF
+check [050] 1
+check [028] 0
+#ACT
+goto @upfireball_complete
+break
+
+#IF
+#ACT
+goto @upfireball_begin
+break
+
+[@upfireball_begin]
+#CALL [\MU_wizard\fireUpbolt.txt] @mugong_upfireball
+
+[@upfireball_complete]
+#CALL [\MU_wizard\fireUpbolt.txt] @mugong_upfireball_complete
+
+[@firewind_test_start]
+;;
+#IF
+check [034] 1
+check [025] 0
+#ACT
+goto @firewind_complete
+break
+
+#IF
+#ACT
+goto @firewind_begin
+
+[@firewind_begin]
+#CALL [\MU_wizard\fireStorm.txt] @mugong_firewind
+
+[@firewind_complete]
+#CALL [\MU_wizard\fireStorm.txt] @mugong_firewind_complete
+
+;;------------------------------------------------------------------------------
+
+[@lightwave_test_start]
+;;
+#IF
+check [036] 1
+check [026] 0
+#ACT
+goto @lightwave_complete
+break
+
+#IF
+#ACT
+goto @lightwave_begin
+break
+
+[@lightwave_begin]
+#CALL [\MU_wizard\lightShock.txt] @mugong_lightwave
+
+[@lightwave_complete]
+#CALL [\MU_wizard\lightShock.txt] @mugong_lightwave_test_complete
+
+;;------------------------------------------------------------------------------
+
+[@fireline_test_start]
+;;
+#IF
+check [054] 1
+check [030] 0
+#ACT
+goto @fireline_complete
+break
+
+#IF
+#ACT
+goto @fireline_begin
+break
+
+[@fireline_begin]
+#CALL [\MU_wizard\fireLine.txt] @mugong_fireline
+
+[@fireline_complete]
+#CALL [\MU_wizard\fireLine.txt] @mugong_fireline_complete
+
+;;------------------------------------------------------------------------------
+
+[@lightstick_test_start]
+;;
+#IF
+check [052] 1
+check [029] 0
+#ACT
+goto @lightstick_complete
+break
+
+#IF
+#ACT
+goto @lightstick_begin
+break
+
+[@lightstick_begin]
+#CALL [\MU_wizard\lightRecall.txt] @mugong_lightstick
+
+[@lightstick_complete]
+#CALL [\MU_wizard\lightRecall.txt] @mugong_lightstick_complete
+
+
+;;------------------------------------------------------------------------------
+
+[@fly_test_start]
+#IF
+check [048] 1
+check [027] 0
+#ACT
+goto @fly_complete
+break
+
+#IF
+#ACT
+goto @fly_begin
+break
+
+[@fly_begin]
+#CALL [\MU_wizard\teleport.txt] @mugong_fly
+[@fly_complete]
+
+#CALL [\MU_wizard\teleport.txt] @mugong_fly_complete
+
+;;------------------------------------------------------------------------------
+
+[@lightline_test_start]
+#IF
+check [058] 1
+check [031] 0
+#ACT
+goto @lightline_test
+break
+
+#IF
+#ACT
+goto @lightline_begin
+
+[@lightline_begin]
+#CALL [\MU_wizard\lightLine.txt] @mugong_lightline
+
+[@lightline_test]
+#CALL [\MU_wizard\lightLine.txt] @mugong_lightline_test
+
+[@wizard_hight]
+#IF
+checkmagic 爆裂火焰 
+#SAY
+你不是已经修炼了爆裂火焰吗..请找寻其它的武功吧！\\
+<结束/@exit>
+#ACT
+break
+
+#IF
+check [032] 0
+#SAY
+你有什么事吗？说说看。。\ 
+嗯，想学称为“爆裂火焰”的武功？\
+不好意思，我没到这个境界，请去银杏村的（353：212）寻找化天先生\
+他会帮助你的\\
+<结束/@exit>
+#ELSESAY
+你找到化天先生了,还来这里干什么呢？\\
+<结束/@exit>
+

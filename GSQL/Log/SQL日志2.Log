@@ -1,0 +1,56 @@
+2016-11-26 20:57:35.31 server    Microsoft SQL Server  2000 - 8.00.2039 (Intel X86) 
+	May  3 2005 23:18:38 
+	Copyright (c) 1988-2003 Microsoft Corporation
+	Enterprise Edition on Windows NT 5.2 (Build 3790: Service Pack 2)
+
+2016-11-26 20:57:35.31 server    Copyright (C) 1988-2002 Microsoft Corporation.
+2016-11-26 20:57:35.31 server    保留所有权利。
+2016-11-26 20:57:35.31 server    服务器进程 ID 是 2448。
+2016-11-26 20:57:35.33 server    将 SQL Server 消息记录在文件“D:\Mud3-1.45\GSQL\Log\SQL日志.Log”中。
+2016-11-26 20:57:35.36 server    SQL Server 正在以优先级“normal”（已检测到 1 CPU）启动。
+2016-11-26 20:57:35.41 server    已为 thread 模式处理而配置了 SQL Server。
+2016-11-26 20:57:35.41 server    使用 dynamic 锁分配。[2500] 锁块，[5000] 锁所有者块。
+2016-11-26 20:57:35.47 server    尝试初始化分布式事务处理协调器。
+2016-11-26 20:57:36.50 spid3     启动数据库“master”。
+2016-11-26 20:57:36.70 spid3     0 个事务在数据库“master”中后滚 (1)。
+2016-11-26 20:57:36.70 spid3     恢复操作正在对数据库 'master'（1）执行检查点操作。
+2016-11-26 20:57:36.89 server    正在使用“SSNETLIB.DLL”版本“8.0.2039”。
+2016-11-26 20:57:36.89 spid5     启动数据库“model”。
+2016-11-26 20:57:36.89 spid3     服务器名称是“iZhn6ss22e6di3Z”。
+2016-11-26 20:57:36.91 spid8     启动数据库“msdb”。
+2016-11-26 20:57:36.91 spid9     启动数据库“account”。
+2016-11-26 20:57:36.91 spid10    启动数据库“conlog”。
+2016-11-26 20:57:36.91 spid10    udopen: 创建/打开物理设备 D:\MUD3\GSQL\Data\conlog.mdf 时发生操作系统错误 2(系统找不到指定的文件。)。
+2016-11-26 20:57:36.92 server    SQL Server 正在监听 120.24.191.9: 1433。
+2016-11-26 20:57:36.92 server    SQL Server 正在监听 10.169.230.47: 1433。
+2016-11-26 20:57:36.92 server    SQL Server 正在监听 169.254.25.129: 1433。
+2016-11-26 20:57:36.92 server    SQL Server 正在监听 127.0.0.1: 1433。
+2016-11-26 20:57:36.92 spid10    FCB::Open failed: 未能为虚拟设备号 (VDN) 1 打开设备 D:\MUD3\GSQL\Data\conlog.mdf。
+2016-11-26 20:57:36.92 spid11    启动数据库“game1”。
+2016-11-26 20:57:36.92 spid11    udopen: 创建/打开物理设备 D:\MUD3\GSQL\Data\game1.mdf 时发生操作系统错误 2(系统找不到指定的文件。)。
+2016-11-26 20:57:36.92 spid11    FCB::Open failed: 未能为虚拟设备号 (VDN) 1 打开设备 D:\MUD3\GSQL\Data\game1.mdf。
+2016-11-26 20:57:36.94 spid11    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\game1.mdf' 可能有误。
+2016-11-26 20:57:36.97 spid10    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\conlog.mdf' 可能有误。
+2016-11-26 20:57:36.97 spid10    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\conlog_log.LDF' 可能有误。
+2016-11-26 20:57:36.97 server    SQL Server 正在监听 TCP, Shared Memory, Named Pipes。
+2016-11-26 20:57:36.97 server    SQL Server 已准备好进行客户端连接
+2016-11-26 20:57:36.97 spid10    启动数据库“herocommon1”。
+2016-11-26 20:57:36.97 spid10    udopen: 创建/打开物理设备 D:\MUD3\GSQL\Data\herocommon1.mdf 时发生操作系统错误 2(系统找不到指定的文件。)。
+2016-11-26 20:57:36.99 spid10    FCB::Open failed: 未能为虚拟设备号 (VDN) 1 打开设备 D:\MUD3\GSQL\Data\herocommon1.mdf。
+2016-11-26 20:57:37.00 spid11    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\game1_log.LDF' 可能有误。
+2016-11-26 20:57:37.00 spid11    启动数据库“kingforeiserverbasedata”。
+2016-11-26 20:57:37.00 spid11    udopen: 创建/打开物理设备 D:\MUD3\GSQL\Data\kingforeiserverbasedata.mdf 时发生操作系统错误 2(系统找不到指定的文件。)。
+2016-11-26 20:57:37.00 spid11    FCB::Open failed: 未能为虚拟设备号 (VDN) 1 打开设备 D:\MUD3\GSQL\Data\kingforeiserverbasedata.mdf。
+2016-11-26 20:57:37.00 spid11    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\kingforeiserverbasedata.mdf' 可能有误。
+2016-11-26 20:57:37.00 spid11    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\kingforeiserverbasedata_log.LDF' 可能有误。
+2016-11-26 20:57:37.00 spid11    启动数据库“manage”。
+2016-11-26 20:57:37.00 spid11    udopen: 创建/打开物理设备 D:\MUD3\GSQL\Data\manage.mdf 时发生操作系统错误 2(系统找不到指定的文件。)。
+2016-11-26 20:57:37.00 spid11    FCB::Open failed: 未能为虚拟设备号 (VDN) 1 打开设备 D:\MUD3\GSQL\Data\manage.mdf。
+2016-11-26 20:57:37.00 spid11    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\manage.mdf' 可能有误。
+2016-11-26 20:57:37.00 spid11    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\manage_log.LDF' 可能有误。
+2016-11-26 20:57:37.00 spid10    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\herocommon1.mdf' 可能有误。
+2016-11-26 20:57:37.00 spid10    设备激活错误。物理文件名 'D:\MUD3\GSQL\Data\herocommon1_log.LDF' 可能有误。
+2016-11-26 20:57:37.13 spid5     清除 tempdb 数据库。
+2016-11-26 20:57:37.53 spid5     启动数据库“tempdb”。
+2016-11-26 20:57:37.64 spid3     恢复完成。
+2016-11-26 20:57:41.75 spid51    服务器已按要求关闭。

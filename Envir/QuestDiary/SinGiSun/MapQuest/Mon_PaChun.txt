@@ -1,0 +1,17 @@
+;;----------;;购买请联系鱼的眼泪,QQ:16487549
+[@main]
+#ACT
+Mov A0 %USERMAP
+
+#IF
+Equal A0 "D904"
+check [066] 1
+check [067] 1
+#ACT
+goto @PaChun_Quest
+break
+
+[@PaChun_Quest]
+#CALL [SinGiSun\Mon_SinGi.txt] @PaChun_Quest1
+
+;;----------;;购买请联系鱼的眼泪,QQ:16487549

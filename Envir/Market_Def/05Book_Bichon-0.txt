@@ -1,0 +1,95 @@
+;;创天网络有限公司原版1.45
+%100
++51
++4
+
+[@main]
+#ACT
+LOADVALUE D0 "ParamControl\主线任务.txt" %USERNAME 进度
+LOADVALUE D1 "ParamControl\主线任务.txt" %USERNAME 书店
+
+#IF
+Equal D0 1
+Equal D1 0
+#ACT
+SAVEVALUE "ParamControl\主线任务.txt" %USERNAME 书店 1
+BREAK
+#SAY
+{FCOLOR/1}如果你需要购买书籍,欢迎随时光临.{FCOLOR/12}\\
+<回新人指导员/@回指导员>
+
+#IF
+checkpkpoint 2
+#SAY
+我不愿意和你这样的人进行交易。\ \
+ <结束/@exit>
+#ELSESAY
+欢迎光临，你来买练武功的书？\ \
+<购买/@buy>图书\
+<出售/@sell>图书\
+<聆听/@helpbooks>关于武功书的说明\ 
+<结束/@exit>
+
+[@回指导员]
+#ACT
+MAPMOVE 0 410 385
+close
+
+[@buy]
+#SAY
+请挑选你想要的书。\ \
+ <前一步/@main>
+
+[@sell]
+#SAY
+请把要出售的物品拿上来。\ \
+ <前一步/@main>
+
+[@helpbooks]
+#SAY
+你想听哪类书的介绍？\
+战士可以学习<基本剑术/@help_11>和<半月弯刀/@help_12>，魔法师可以学习\
+<火球术/@help_21>和<霹雳掌/@help_22>，道士可以学习<治愈术/@help_31>,<精神力战法/@help_32>和<施毒术/@help_33>\ \
+<前一步/@main>
+
+[@help_11]
+#SAY
+等级为7时可以修炼{FCOLOR/10}基本剑术{FCOLOR/12}的第一阶段， 等级为11时修炼第2阶段，16级时可以完成第3阶段的修炼。\ \
+<前一步/@helpbooks>
+
+[@help_12]
+#SAY
+等级为14时可以修炼{FCOLOR/10}半月弯刀{FCOLOR/12}的第一阶段， 等级为16时修炼第2阶段，18级时可以完成第3阶段的修炼。\ \
+<前一步/@helpbooks>
+
+[@help_21]
+#SAY
+等级为7时可以修炼{FCOLOR/10}火球术{FCOLOR/12}的第一阶段， 等级为11时修炼第2阶段，16级时可以完成第3阶段的修炼。\ \ 
+<前一步/@helpbooks>
+
+[@help_22]
+#SAY
+{FCOLOR/10}霹雳掌{FCOLOR/12}1级修炼可在8等级, 2级修炼可在10等级, 3级修炼可在12等级开始。\ \
+<前一步/@helpbooks>
+
+[@help_31]
+#SAY
+等级为7时可以修炼{FCOLOR/10}治愈术{FCOLOR/12}的第一阶段， 等级为11时修炼第2阶段，16级时可以完成第3阶段的修炼。\ \
+<前一步/@helpbooks>
+
+[@help_32]
+#SAY
+等级为8时可以修炼{FCOLOR/10}精神力战法{FCOLOR/12}的第一阶段， 等级为10时修炼第2阶段，12级时可以完成第3阶段的修炼。\ \
+<前一步/@helpbooks>
+
+[@help_33]
+#SAY
+等级为12时可以修炼{FCOLOR/10}施毒术{FCOLOR/12}的第一阶段， 等级为14时修炼第2阶段，16级时可以完成第3阶段的修炼。\ \
+<前一步/@helpbooks>
+
+[Goods]
+;ItemName      Volume     Hour
+基本剑术     100            1
+火球术       100            1
+治愈术       100            1
+ 
