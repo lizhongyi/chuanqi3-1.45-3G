@@ -7,3 +7,6 @@
 16:45:22 Start Transaction Log
 16:53:59 UPDATE TBL_QUEST SET FLD_QUESTOPENINDEX='<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<', FLD_QUESTFININDEX='<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<', FLD_QUEST='<<<<<<<<<<<<<<<<><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<' WHERE FLD_CHARACTER='´ó·¿×Ó' 
 17:10:06 Start Transaction Log
+19:34:50 Start Transaction Log
+22:38:17 Start Transaction Log
+23:50:30 Start Transaction Log

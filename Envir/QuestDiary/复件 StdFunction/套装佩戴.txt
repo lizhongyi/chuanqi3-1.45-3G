@@ -1,0 +1,1237 @@
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
+[@套装佩戴_Main]
+{
+#Act
+Mov 套装佩戴 %ARG(1)
+Mov 鞋子名字 ""
+Mov 印章名字 ""
+GoTo @检测套装装备名字
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+#IF
+CHECKITEMINFO 12
+
+#IF
+Equal FLD_Name "银马铠"
+#ACT
+STARTBUFF 19 -1 "[银马铠特效]\打怪爆率增加10%"
+break
+
+#IF
+Equal FLD_Name "金马铠"
+#ACT
+STARTBUFF 19 -1 "[金马铠特效]\打怪爆率增加20%"
+break
+
+
+#If
+gender man
+CheckItemW  1
+CheckItemW 狂战手镯 1
+CheckItemW 狂战戒指 1
+CheckItemW 狂战项链 1
+
+#Act
+Mov 狂战套装特效 1
+StartExpRate + 0.07
+StartPowerRate + 0.07
+HumMagicA 20 200
+STARTBUFF 130 -1 "[狂战套装特效]\获得经验值提高7%\物理攻击和魔法攻击提高7%\5%的几率祈祷会心一击"
+SysMsg "※狂战套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 101
+!Equal 开天套装特效 1
+CheckItemW 开天神袍（女） 1
+CheckItemW 开天之刃 1
+CheckItemW 开天魔盔 1
+CheckItemW 开天魔链 1
+CheckItemW 开天魔镯 1
+CheckItemW 开天魔戒 1
+Equal 鞋子名字 "开天魔靴"
+#Act
+Mov 开天套装特效 1
+StartExpRate + 0.07
+StartPowerRate + 0.07
+HumMagicA 20 200
+STARTBUFF 130 -1 "[开天套装特效]\获得经验值提高7%\物理攻击和魔法攻击提高7%\5%的几率祈祷会心一击"
+SysMsg "※开天套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 102
+!Equal 混元套装特效 1
+CheckItemW 混元神袍（男） 1
+CheckItemW 混元之刃 1
+CheckItemW 混元魔盔 1
+CheckItemW 混元魔链 1
+CheckItemW 混元魔镯 1
+CheckItemW 混元魔戒 1
+Equal 鞋子名字 "混元魔靴"
+#Act
+Mov 混元套装特效 1
+StartExpRate + 0.07
+StartPowerRate + 0.07
+HumMagicA 20 200
+STARTBUFF 131 -1 "[混元套装特效]\获得经验值提高7%\物理攻击和魔法攻击提高7%\5%的几率祈祷会心一击"
+SysMsg "※混元套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 102
+!Equal 混元套装特效 1
+CheckItemW 混元神袍（女） 1
+CheckItemW 混元之刃 1
+CheckItemW 混元魔盔 1
+CheckItemW 混元魔链 1
+CheckItemW 混元魔镯 1
+CheckItemW 混元魔戒 1
+Equal 鞋子名字 "混元魔靴"
+#Act
+Mov 混元套装特效 1
+StartExpRate + 0.07
+StartPowerRate + 0.07
+HumMagicA 20 200
+STARTBUFF 131 -1 "[混元套装特效]\获得经验值提高7%\物理攻击和魔法攻击提高7%\5%的几率祈祷会心一击"
+SysMsg "※混元套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 103
+!Equal 神灵套装特效 1
+CheckItemW 神灵神袍（男） 1
+CheckItemW 神灵之刃 1
+CheckItemW 神灵魔盔 1
+CheckItemW 神灵魔链 1
+CheckItemW 神灵守镯 1
+CheckItemW 神灵护镯 1
+CheckItemW 神灵守戒 1
+CheckItemW 神灵护戒 1
+Equal 鞋子名字 "神灵魔靴"
+#Act
+Mov 神灵套装特效 1
+StartExpRate + 0.07
+StartPowerRate + 0.07
+HumMagicA 20 200
+HumMagicB 20 10
+STARTBUFF 132 -1 "[神灵套装特效]\获得经验值提高7%\物理攻击和魔法攻击提高7%\5%的几率祈祷会心一击\5%的几率10倍暴毒"
+SysMsg "※神灵套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 103
+!Equal 神灵套装特效 1
+CheckItemW 神灵神袍（女） 1
+CheckItemW 神灵之刃 1
+CheckItemW 神灵魔盔 1
+CheckItemW 神灵魔链 1
+CheckItemW 神灵守镯 1
+CheckItemW 神灵护镯 1
+CheckItemW 神灵守戒 1
+CheckItemW 神灵护戒 1
+Equal 鞋子名字 "神灵魔靴"
+#Act
+Mov 神灵套装特效 1
+StartExpRate + 0.07
+StartPowerRate + 0.07
+HumMagicA 20 200
+HumMagicB 20 10
+STARTBUFF 132 -1 "[神灵套装特效]\获得经验值提高7%\物理攻击和魔法攻击提高7%\5%的几率祈祷会心一击\5%的几率10倍暴毒"
+SysMsg "※神灵套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 104
+!Equal 逍遥套装特效 1
+CheckItemW 逍遥神衣（男） 1
+CheckItemW 逍遥之刃 1
+CheckItemW 逍遥凤冠 1
+CheckItemW 逍遥项链 1
+CheckItemW 逍遥手镯 1
+CheckItemW 逍遥戒指 1
+Equal 鞋子名字 "逍遥神靴"
+#Act
+Mov 逍遥套装特效 1
+StartExpRate + 0.08
+StartPowerRate + 0.08
+HumMagicA 20 200
+HumMagicB 20 10
+HumMagicC 0.05
+STARTBUFF 133 -1 "[逍遥套装特效]\获得经验值提高8%\物理攻击和魔法攻击提高8%\5%的几率祈祷会心一击\5%的几率10倍暴毒\5%的几率HP、MP全满"
+SysMsg "※逍遥套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 104
+!Equal 逍遥套装特效 1
+CheckItemW 逍遥神衣（女） 1
+CheckItemW 逍遥之刃 1
+CheckItemW 逍遥凤冠 1
+CheckItemW 逍遥项链 1
+CheckItemW 逍遥手镯 1
+CheckItemW 逍遥戒指 1
+Equal 鞋子名字 "逍遥神靴"
+#Act
+Mov 逍遥套装特效 1
+StartExpRate + 0.08
+StartPowerRate + 0.08
+HumMagicA 20 200
+HumMagicB 20 10
+HumMagicC 0.05
+STARTBUFF 133 -1 "[逍遥套装特效]\获得经验值提高8%\物理攻击和魔法攻击提高8%\5%的几率祈祷会心一击\5%的几率10倍暴毒\5%的几率HP、MP全满"
+SysMsg "※逍遥套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 105
+!Equal 王者套装特效 1
+CheckItemW 王者神袍（男） 1
+CheckItemW 王者之刃 1
+CheckItemW 王者帝冠 1
+CheckItemW 王者项链 1
+CheckItemW 王者手镯 1
+CheckItemW 王者之戒 1
+Equal 鞋子名字 "王者之靴"
+#Act
+Mov 王者套装特效 1
+StartExpRate + 0.1
+StartPowerRate + 0.1
+HumMagicA 20 200
+HumMagicB 20 10
+HumMagicC 0.05
+STARTBUFF 134 -1 "[王者套装特效]\获得经验值提高10%\物理攻击和魔法攻击提高10%\5%的几率祈祷会心一击\5%的几率10倍暴毒\5%的几率HP、MP全满"
+SysMsg "※王者套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 105
+!Equal 王者套装特效 1
+CheckItemW 王者神袍（女） 1
+CheckItemW 王者之刃 1
+CheckItemW 王者帝冠 1
+CheckItemW 王者项链 1
+CheckItemW 王者手镯 1
+CheckItemW 王者之戒 1
+Equal 鞋子名字 "王者之靴"
+#Act
+Mov 王者套装特效 1
+StartExpRate + 0.1
+StartPowerRate + 0.1
+HumMagicA 20 200
+HumMagicB 20 10
+HumMagicC 0.05
+STARTBUFF 134 -1 "[王者套装特效]\获得经验值提高10%\物理攻击和魔法攻击提高10%\5%的几率祈祷会心一击\5%的几率10倍暴毒\5%的几率HP、MP全满"
+SysMsg "※王者套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 201
+!Equal 无畏套装特效 1
+CheckItemW 无畏战甲（男） 1
+CheckItemW 无畏之刃 1
+CheckItemW 无畏帝冠 1
+CheckItemW 无畏战链 1
+CheckItemW 无畏守镯 1
+CheckItemW 无畏护镯 1
+CheckItemW 无畏守戒 1
+CheckItemW 无畏护戒 1
+Equal 鞋子名字 "无畏战靴"
+#Act
+Mov 无畏套装特效 1
+StartExpRate + 0.13
+StartPowerRate + 0.13
+HumMagicA 12 200
+STARTBUFF 135 -1 "[无畏套装特效]\获得经验值提高13%\物理攻击和魔法攻击提高13%\8%的几率祈祷会心一击"
+SysMsg "※无畏套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 201
+!Equal 无畏套装特效 1
+CheckItemW 无畏战甲（女） 1
+CheckItemW 无畏之刃 1
+CheckItemW 无畏帝冠 1
+CheckItemW 无畏战链 1
+CheckItemW 无畏守镯 1
+CheckItemW 无畏护镯 1
+CheckItemW 无畏守戒 1
+CheckItemW 无畏护戒 1
+Equal 鞋子名字 "无畏战靴"
+#Act
+Mov 无畏套装特效 1
+StartExpRate + 0.13
+StartPowerRate + 0.13
+HumMagicA 12 200
+STARTBUFF 135 -1 "[无畏套装特效]\获得经验值提高13%\物理攻击和魔法攻击提高13%\8%的几率祈祷会心一击"
+SysMsg "※无畏套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 202
+!Equal 霜火套装特效 1
+CheckItemW 霜火魔甲（男） 1
+CheckItemW 霜火之刃 1
+CheckItemW 霜火帝冠 1
+CheckItemW 霜火法链 1
+CheckItemW 霜火守镯 1
+CheckItemW 霜火护镯 1
+CheckItemW 霜火守戒 1
+CheckItemW 霜火护戒 1
+Equal 鞋子名字 "霜火法靴"
+#Act
+Mov 霜火套装特效 1
+StartExpRate + 0.13
+StartPowerRate + 0.13
+HumMagicA 12 200
+STARTBUFF 136 -1 "[霜火套装特效]\获得经验值提高13%\物理攻击和魔法攻击提高13%\8%的几率祈祷会心一击"
+SysMsg "※霜火套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 202
+!Equal 霜火套装特效 1
+CheckItemW 霜火魔甲（女） 1
+CheckItemW 霜火之刃 1
+CheckItemW 霜火帝冠 1
+CheckItemW 霜火法链 1
+CheckItemW 霜火守镯 1
+CheckItemW 霜火护镯 1
+CheckItemW 霜火守戒 1
+CheckItemW 霜火护戒 1
+Equal 鞋子名字 "霜火法靴"
+#Act
+Mov 霜火套装特效 1
+StartExpRate + 0.13
+StartPowerRate + 0.13
+HumMagicA 12 200
+STARTBUFF 136 -1 "[霜火套装特效]\获得经验值提高13%\物理攻击和魔法攻击提高13%\8%的几率祈祷会心一击"
+SysMsg "※霜火套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 203
+!Equal 骨镰套装特效 1
+CheckItemW 骨镰圣袍（男） 1
+CheckItemW 骨镰之刃 1
+CheckItemW 骨镰帝冠 1
+CheckItemW 骨镰圣链 1
+CheckItemW 骨镰守镯 1
+CheckItemW 骨镰护镯 1
+CheckItemW 骨镰守戒 1
+CheckItemW 骨镰护戒 1
+Equal 鞋子名字 "骨镰圣靴"
+#Act
+Mov 骨镰套装特效 1
+StartExpRate + 0.13
+StartPowerRate + 0.13
+HumMagicA 12 200
+HumMagicB 12 10
+STARTBUFF 137 -1 "[骨镰套装特效]\获得经验值提高13%\物理攻击和魔法攻击提高13%\8%的几率祈祷会心一击\8%的几率10倍暴毒"
+SysMsg "※骨镰套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 203
+!Equal 骨镰套装特效 1
+CheckItemW 骨镰圣袍（女） 1
+CheckItemW 骨镰之刃 1
+CheckItemW 骨镰帝冠 1
+CheckItemW 骨镰圣链 1
+CheckItemW 骨镰守镯 1
+CheckItemW 骨镰护镯 1
+CheckItemW 骨镰守戒 1
+CheckItemW 骨镰护戒 1
+Equal 鞋子名字 "骨镰圣靴"
+#Act
+Mov 骨镰套装特效 1
+StartExpRate + 0.13
+StartPowerRate + 0.13
+HumMagicA 12 200
+HumMagicB 12 10
+STARTBUFF 137 -1 "[骨镰套装特效]\获得经验值提高13%\物理攻击和魔法攻击提高13%\8%的几率祈祷会心一击\8%的几率10倍暴毒"
+SysMsg "※骨镰套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 301
+!Equal 夜歌套装特效 1
+CheckItemW 夜歌铠甲（男） 1
+CheckItemW 夜歌碎灵刀 1
+CheckItemW 夜歌面罩 1
+CheckItemW 夜歌吊坠 1
+CheckItemW 夜歌护镯 1
+CheckItemW 夜歌护腕 1
+CheckItemW 夜歌指环 1
+CheckItemW 夜歌灵戒 1
+Equal 鞋子名字 "夜歌长靴"
+#Act
+Mov 夜歌套装特效 1
+StartExpRate + 0.19
+StartPowerRate + 0.19
+HumMagicA 9 200
+HumMagicB 9 10
+HumMagicC 0.11
+STARTBUFF 138 -1 "[夜歌套装特效]\获得经验值提高19%\物理攻击和魔法攻击提高19%\11%的几率祈祷会心一击\11%的几率10倍暴毒\11%的几率HP、MP全满"
+SysMsg "※夜歌套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 301
+!Equal 夜歌套装特效 1
+CheckItemW 夜歌铠甲（女） 1
+CheckItemW 夜歌碎灵刀 1
+CheckItemW 夜歌面罩 1
+CheckItemW 夜歌吊坠 1
+CheckItemW 夜歌护镯 1
+CheckItemW 夜歌护腕 1
+CheckItemW 夜歌指环 1
+CheckItemW 夜歌灵戒 1
+Equal 鞋子名字 "夜歌长靴"
+#Act
+Mov 夜歌套装特效 1
+StartExpRate + 0.19
+StartPowerRate + 0.19
+HumMagicA 9 200
+HumMagicB 9 10
+HumMagicC 0.11
+STARTBUFF 138 -1 "[夜歌套装特效]\获得经验值提高19%\物理攻击和魔法攻击提高19%\11%的几率祈祷会心一击\11%的几率10倍暴毒\11%的几率HP、MP全满"
+SysMsg "※夜歌套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 401
+!Equal 龙穴套装特效 1
+CheckItemW 龙穴铠甲（男） 1
+CheckItemW 龙穴宝刀 1
+CheckItemW 龙穴头盔 1
+CheckItemW 龙穴项链 1
+CheckItemW 龙穴手镯 1
+CheckItemW 龙穴戒指 1
+Equal 鞋子名字 "龙穴宝靴"
+Equal 印章名字 "龙穴印章"
+#Act
+Mov 龙穴套装特效 1
+StartExpRate + 0.25
+StartPowerRate + 0.25
+HumMagicA 7 200
+HumMagicB 7 10
+HumMagicC 0.14
+STARTBUFF 139 -1 "[龙穴套装特效]\获得经验值提高25%\物理攻击和魔法攻击提高25%\14%的几率祈祷会心一击\14%的几率10倍暴毒\14%的几率HP、MP全满"
+SysMsg "※龙穴套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 401
+!Equal 龙穴套装特效 1
+CheckItemW 龙穴铠甲（女） 1
+CheckItemW 龙穴宝刀 1
+CheckItemW 龙穴头盔 1
+CheckItemW 龙穴项链 1
+CheckItemW 龙穴手镯 1
+CheckItemW 龙穴戒指 1
+Equal 鞋子名字 "龙穴宝靴"
+Equal 印章名字 "龙穴印章"
+#Act
+Mov 龙穴套装特效 1
+StartExpRate + 0.25
+StartPowerRate + 0.25
+HumMagicA 7 200
+HumMagicB 7 10
+HumMagicC 0.14
+STARTBUFF 139 -1 "[龙穴套装特效]\获得经验值提高25%\物理攻击和魔法攻击提高25%\14%的几率祈祷会心一击\14%的几率10倍暴毒\14%的几率HP、MP全满"
+SysMsg "※龙穴套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 501
+!Equal 赤龙套装特效 1
+CheckItemW 赤龙宝铠（男） 1
+CheckItemW 赤龙宝刀 1
+CheckItemW 赤龙头盔 1
+CheckItemW 赤龙项链 1
+CheckItemW 赤龙手镯 1
+CheckItemW 赤龙戒指 1
+Equal 鞋子名字 "赤龙宝靴"
+Equal 印章名字 "赤龙印章"
+#Act
+Mov 赤龙套装特效 1
+StartExpRate + 0.31
+StartPowerRate + 0.31
+HumMagicA 6 200
+HumMagicB 6 10
+HumMagicC 0.17
+STARTBUFF 140 -1 "[赤龙套装特效]\获得经验值提高31%\物理攻击和魔法攻击提高31%\17%的几率祈祷会心一击\17%的几率10倍暴毒\17%的几率HP、MP全满"
+SysMsg "※赤龙套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 501
+!Equal 赤龙套装特效 1
+CheckItemW 赤龙宝铠（女） 1
+CheckItemW 赤龙宝刀 1
+CheckItemW 赤龙头盔 1
+CheckItemW 赤龙项链 1
+CheckItemW 赤龙手镯 1
+CheckItemW 赤龙戒指
+Equal 鞋子名字 "赤龙宝靴"
+Equal 印章名字 "赤龙印章"
+#Act
+Mov 赤龙套装特效 1
+StartExpRate + 0.31
+StartPowerRate + 0.31
+HumMagicA 6 200
+HumMagicB 6 10
+HumMagicC 0.17
+STARTBUFF 140 -1 "[赤龙套装特效]\获得经验值提高31%\物理攻击和魔法攻击提高31%\17%的几率祈祷会心一击\17%的几率10倍暴毒\17%的几率HP、MP全满"
+SysMsg "※赤龙套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 601
+!Equal 月河套装特效 1
+CheckItemW 月河光誓铠甲（男） 1
+CheckItemW 月河血毒长戟 1
+CheckItemW 月河圣洁宝盔 1
+CheckItemW 月河心灵项链 1
+CheckItemW 月河抗争手镯 1
+CheckItemW 月河尸煞手镯 1
+CheckItemW 月河融雪戒指 1
+CheckItemW 月河恩泽戒指 1
+Equal 鞋子名字 "月河兆示之靴"
+Equal 印章名字 "月河蒸腾印章"
+#Act
+Mov 月河套装特效 1
+StartExpRate + 0.37
+StartPowerRate + 0.37
+HumMagicA 5 200
+HumMagicB 5 10
+HumMagicC 0.2
+STARTBUFF 141 -1 "[月河套装特效]\获得经验值提高37%\物理攻击和魔法攻击提高37%\20%的几率祈祷会心一击\20%的几率15倍暴毒\20%的几率HP、MP全满"
+SysMsg "※月河套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 601
+!Equal 月河套装特效 1
+CheckItemW 月河光誓铠甲（女） 1
+CheckItemW 月河血毒长戟 1
+CheckItemW 月河圣洁宝盔 1
+CheckItemW 月河心灵项链 1
+CheckItemW 月河抗争手镯 1
+CheckItemW 月河尸煞手镯 1
+CheckItemW 月河融雪戒指 1
+CheckItemW 月河恩泽戒指 1
+Equal 鞋子名字 "月河兆示之靴"
+Equal 印章名字 "月河蒸腾印章"
+#Act
+Mov 月河套装特效 1
+StartExpRate + 0.37
+StartPowerRate + 0.37
+HumMagicA 5 200
+HumMagicB 5 10
+HumMagicC 0.2
+STARTBUFF 141 -1 "[月河套装特效]\获得经验值提高37%\物理攻击和魔法攻击提高37%\20%的几率祈祷会心一击\20%的几率15倍暴毒\20%的几率HP、MP全满"
+SysMsg "※月河套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 701
+!Equal 天灾奥丁特效 1
+CheckItemW 天灾奥丁战铠（男） 1
+CheckItemW 天灾奥丁之斩 1
+CheckItemW 天灾奥丁战盔 1
+CheckItemW 天灾奥丁战链 1
+CheckItemW 天灾奥丁守镯 1
+CheckItemW 天灾奥丁护镯 1
+CheckItemW 天灾奥丁守戒 1
+CheckItemW 天灾奥丁护戒 1
+Equal 鞋子名字 "天灾奥丁战靴"
+Equal 印章名字 "天灾奥丁印章"
+#Act
+Mov 天灾奥丁特效 1
+StartExpRate + 0.44
+StartPowerRate + 0.44
+HumMagicA 4 200
+STARTBUFF 142 -1 "[天灾奥丁特效]\获得经验值提高44%\物理攻击和魔法攻击提高44%\23%的几率祈祷会心一击"
+SysMsg "※天灾奥丁套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 701
+!Equal 天灾奥丁特效 1
+CheckItemW 天灾奥丁战铠（女） 1
+CheckItemW 天灾奥丁之斩 1
+CheckItemW 天灾奥丁战盔 1
+CheckItemW 天灾奥丁战链 1
+CheckItemW 天灾奥丁守镯 1
+CheckItemW 天灾奥丁护镯 1
+CheckItemW 天灾奥丁守戒 1
+CheckItemW 天灾奥丁护戒 1
+Equal 鞋子名字 "天灾奥丁战靴"
+Equal 印章名字 "天灾奥丁印章"
+#Act
+Mov 天灾奥丁特效 1
+StartExpRate + 0.44
+StartPowerRate + 0.44
+HumMagicA 4 200
+STARTBUFF 142 -1 "[天灾奥丁特效]\获得经验值提高44%\物理攻击和魔法攻击提高44%\23%的几率祈祷会心一击"
+SysMsg "※天灾奥丁套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 702
+!Equal 天灾轩辕特效 1
+CheckItemW 天灾轩辕法铠（男） 1
+CheckItemW 天灾轩辕之杖 1
+CheckItemW 天灾轩辕法盔 1
+CheckItemW 天灾轩辕法链 1
+CheckItemW 天灾轩辕守镯 1
+CheckItemW 天灾轩辕护镯 1
+CheckItemW 天灾轩辕守戒 1
+CheckItemW 天灾轩辕护戒 1
+Equal 鞋子名字 "天灾轩辕法靴"
+Equal 印章名字 "天灾轩辕印章"
+#Act
+Mov 天灾轩辕特效 1
+StartExpRate + 0.44
+StartPowerRate + 0.44
+HumMagicA 4 200
+STARTBUFF 143 -1 "[天灾轩辕特效]\获得经验值提高44%\物理攻击和魔法攻击提高44%\23%的几率祈祷会心一击"
+SysMsg "※天灾轩辕套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 702
+!Equal 天灾轩辕特效 1
+CheckItemW 天灾轩辕法铠（女） 1
+CheckItemW 天灾轩辕之杖 1
+CheckItemW 天灾轩辕法盔 1
+CheckItemW 天灾轩辕法链 1
+CheckItemW 天灾轩辕守镯 1
+CheckItemW 天灾轩辕护镯 1
+CheckItemW 天灾轩辕守戒 1
+CheckItemW 天灾轩辕护戒 1
+Equal 鞋子名字 "天灾轩辕法靴"
+Equal 印章名字 "天灾轩辕印章"
+#Act
+Mov 天灾轩辕特效 1
+StartExpRate + 0.44
+StartPowerRate + 0.44
+HumMagicA 4 200
+STARTBUFF 143 -1 "[天灾奥丁特效]\获得经验值提高44%\物理攻击和魔法攻击提高44%\23%的几率祈祷会心一击"
+SysMsg "※天灾轩辕套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 703
+!Equal 天灾盘古特效 1
+CheckItemW 天灾盘古圣铠（男） 1
+CheckItemW 天灾盘古之刃 1
+CheckItemW 天灾盘古圣盔 1
+CheckItemW 天灾盘古圣链 1
+CheckItemW 天灾盘古守镯 1
+CheckItemW 天灾盘古护镯 1
+CheckItemW 天灾盘古守戒 1
+CheckItemW 天灾盘古护戒 1
+Equal 鞋子名字 "天灾盘古圣靴"
+Equal 印章名字 "天灾盘古印章"
+#Act
+Mov 天灾盘古特效 1
+StartExpRate + 0.44
+StartPowerRate + 0.44
+HumMagicA 4 200
+HumMagicB 4 10
+STARTBUFF 144 -1 "[天灾盘古特效]\获得经验值提高44%\物理攻击和魔法攻击提高44%\23%的几率祈祷会心一击\23%的几率15倍暴毒"
+SysMsg "※天灾盘古套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 703
+!Equal 天灾盘古特效 1
+CheckItemW 天灾盘古圣铠（女） 1
+CheckItemW 天灾盘古之刃 1
+CheckItemW 天灾盘古圣盔 1
+CheckItemW 天灾盘古圣链 1
+CheckItemW 天灾盘古守镯 1
+CheckItemW 天灾盘古护镯 1
+CheckItemW 天灾盘古守戒 1
+CheckItemW 天灾盘古护戒 1
+Equal 鞋子名字 "天灾盘古圣靴"
+Equal 印章名字 "天灾盘古印章"
+#Act
+Mov 天灾盘古特效 1
+StartExpRate + 0.44
+StartPowerRate + 0.44
+HumMagicA 4 200
+HumMagicB 4 10
+STARTBUFF 144 -1 "[天灾盘古特效]\获得经验值提高44%\物理攻击和魔法攻击提高44%\23%的几率祈祷会心一击\23%的几率15倍暴毒"
+SysMsg "※天灾盘古套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 801
+!Equal 巫妖灭世特效 1
+CheckItemW 巫妖灭世铠甲（男） 1
+CheckItemW 巫妖灭世权杖 1
+CheckItemW 巫妖灭世宝盔 1
+CheckItemW 巫妖灭世项链 1
+CheckItemW 巫妖灭世守镯 1
+CheckItemW 巫妖灭世护镯 1
+CheckItemW 巫妖灭世守戒 1
+CheckItemW 巫妖灭世护戒 1
+Equal 鞋子名字 "巫妖灭世宝靴"
+Equal 印章名字 "巫妖灭世印章"
+#Act
+Mov 巫妖灭世特效 1
+StartExpRate + 0.51
+StartPowerRate + 0.51
+HumMagicA 4 200
+HumMagicB 4 10
+HumMagicC 0.26
+STARTBUFF 145 -1 "[巫妖灭世套装特效]\获得经验值提高51%\物理攻击和魔法攻击提高51%\26%的几率祈祷会心一击\26%的几率15倍暴毒\26%的几率HP、MP全满"
+SysMsg "※巫妖灭世套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 801
+!Equal 巫妖灭世特效 1
+CheckItemW 巫妖灭世铠甲（女） 1
+CheckItemW 巫妖灭世权杖 1
+CheckItemW 巫妖灭世宝盔 1
+CheckItemW 巫妖灭世项链 1
+CheckItemW 巫妖灭世守镯 1
+CheckItemW 巫妖灭世护镯 1
+CheckItemW 巫妖灭世守戒 1
+CheckItemW 巫妖灭世护戒 1
+Equal 鞋子名字 "巫妖灭世宝靴"
+Equal 印章名字 "巫妖灭世印章"
+#Act
+Mov 巫妖灭世特效 1
+StartExpRate + 0.51
+StartPowerRate + 0.51
+HumMagicA 4 200
+HumMagicB 4 10
+HumMagicC 0.26
+STARTBUFF 145 -1 "[巫妖灭世套装特效]\获得经验值提高51%\物理攻击和魔法攻击提高51%\26%的几率祈祷会心一击\26%的几率15倍暴毒\26%的几率HP、MP全满"
+SysMsg "※巫妖灭世套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 901
+!Equal 天堑巡风特效 1
+CheckItemW 天堑巡风战铠（男） 1
+CheckItemW 天堑巡风之刃 1
+CheckItemW 天堑巡风战盔 1
+CheckItemW 天堑巡风战链 1
+CheckItemW 天堑巡风守镯 1
+CheckItemW 天堑巡风护镯 1
+CheckItemW 天堑巡风守戒 1
+CheckItemW 天堑巡风护戒 1
+Equal 鞋子名字 "天堑巡风战靴"
+Equal 印章名字 "天堑巡风印章"
+#Act
+Mov 天堑巡风特效 1
+StartExpRate + 0.58
+StartPowerRate + 0.58
+HumMagicA 3 200
+STARTBUFF 146 -1 "[天堑巡风套装特效]\获得经验值提高58%\物理攻击和魔法攻击提高58%\30%的几率祈祷会心一击"
+SysMsg "※天堑巡风套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 901
+!Equal 天堑巡风特效 1
+CheckItemW 天堑巡风战铠（女） 1
+CheckItemW 天堑巡风之刃 1
+CheckItemW 天堑巡风战盔 1
+CheckItemW 天堑巡风战链 1
+CheckItemW 天堑巡风守镯 1
+CheckItemW 天堑巡风护镯 1
+CheckItemW 天堑巡风守戒 1
+CheckItemW 天堑巡风护戒 1
+Equal 鞋子名字 "天堑巡风战靴"
+Equal 印章名字 "天堑巡风印章"
+#Act
+Mov 天堑巡风特效 1
+StartExpRate + 0.58
+StartPowerRate + 0.58
+HumMagicA 3 200
+STARTBUFF 146 -1 "[天堑巡风套装特效]\获得经验值提高58%\物理攻击和魔法攻击提高58%\30%的几率祈祷会心一击"
+SysMsg "※天堑巡风套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 902
+!Equal 天堑疾风特效 1
+CheckItemW 天堑疾风法铠（男） 1
+CheckItemW 天堑疾风之杖 1
+CheckItemW 天堑疾风法盔 1
+CheckItemW 天堑疾风法链 1
+CheckItemW 天堑疾风守镯 1
+CheckItemW 天堑疾风护镯 1
+CheckItemW 天堑疾风守戒 1
+CheckItemW 天堑疾风护戒 1
+Equal 鞋子名字 "天堑疾风法靴"
+Equal 印章名字 "天堑疾风印章"
+#Act
+Mov 天堑疾风特效 1
+StartExpRate + 0.58
+StartPowerRate + 0.58
+HumMagicA 3 200
+STARTBUFF 147 -1 "[天堑疾风套装特效]\获得经验值提高58%\物理攻击和魔法攻击提高58%\30%的几率祈祷会心一击"
+SysMsg "※天堑疾风套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 902
+!Equal 天堑疾风特效 1
+CheckItemW 天堑疾风法铠（女） 1
+CheckItemW 天堑疾风之杖 1
+CheckItemW 天堑疾风法盔 1
+CheckItemW 天堑疾风法链 1
+CheckItemW 天堑疾风守镯 1
+CheckItemW 天堑疾风护镯 1
+CheckItemW 天堑疾风守戒 1
+CheckItemW 天堑疾风护戒 1
+Equal 鞋子名字 "天堑疾风法靴"
+Equal 印章名字 "天堑疾风印章"
+#Act
+Mov 天堑疾风特效 1
+StartExpRate + 0.58
+StartPowerRate + 0.58
+HumMagicA 3 200
+STARTBUFF 147 -1 "[天堑疾风套装特效]\获得经验值提高58%\物理攻击和魔法攻击提高58%\30%的几率祈祷会心一击"
+SysMsg "※天堑疾风套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 903
+!Equal 天堑御风特效 1
+CheckItemW 天堑御风圣铠（男） 1
+CheckItemW 天堑御风之剑 1
+CheckItemW 天堑御风圣盔 1
+CheckItemW 天堑御风圣链 1
+CheckItemW 天堑御风守镯 1
+CheckItemW 天堑御风护镯 1
+CheckItemW 天堑御风守戒 1
+CheckItemW 天堑御风护戒 1
+Equal 鞋子名字 "天堑御风圣靴"
+Equal 印章名字 "天堑御风印章"
+#Act
+Mov 天堑御风特效 1
+StartExpRate + 0.58
+StartPowerRate + 0.58
+HumMagicA 3 200
+HumMagicB 3 20
+STARTBUFF 148 -1 "[天堑御风套装特效]\获得经验值提高58%\物理攻击和魔法攻击提高58%\30%的几率祈祷会心一击\30%的几率20倍暴毒"
+SysMsg "※天堑御风套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 903
+!Equal 天堑御风特效 1
+CheckItemW 天堑御风圣铠（女） 1
+CheckItemW 天堑御风之剑 1
+CheckItemW 天堑御风圣盔 1
+CheckItemW 天堑御风圣链 1
+CheckItemW 天堑御风守镯 1
+CheckItemW 天堑御风护镯 1
+CheckItemW 天堑御风守戒 1
+CheckItemW 天堑御风护戒 1
+Equal 鞋子名字 "天堑御风圣靴"
+Equal 印章名字 "天堑御风印章"
+#Act
+Mov 天堑御风特效 1
+StartExpRate + 0.58
+StartPowerRate + 0.58
+HumMagicA 3 200
+HumMagicB 3 20
+STARTBUFF 148 -1 "[天堑御风套装特效]\获得经验值提高58%\物理攻击和魔法攻击提高58%\30%的几率祈祷会心一击\30%的几率20倍暴毒"
+SysMsg "※天堑御风套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 1001
+!Equal 御神幻辰特效 1
+CheckItemW 御神幻辰战铠（男） 1
+CheckItemW 御神幻辰之刃 1
+CheckItemW 御神幻辰战盔 1
+CheckItemW 御神幻辰战链 1
+CheckItemW 御神幻辰守镯 1
+CheckItemW 御神幻辰护镯 1
+CheckItemW 御神幻辰守戒 1
+CheckItemW 御神幻辰护戒 1
+Equal 鞋子名字 "御神幻辰战靴"
+Equal 印章名字 "御神幻辰印章"
+#Act
+Mov 御神幻辰特效 1
+StartExpRate + 0.65
+StartPowerRate + 0.65
+HumMagicA 3 210
+STARTBUFF 180 -1 "[御神幻辰套装特效]\获得经验值提高65%\物理攻击和魔法攻击提高65%\30%的几率祈祷会心一击"
+SysMsg "※御神幻辰套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 1001
+!Equal 御神幻辰特效 1
+CheckItemW 御神幻辰战铠（女） 1
+CheckItemW 御神幻辰之刃 1
+CheckItemW 御神幻辰战盔 1
+CheckItemW 御神幻辰战链 1
+CheckItemW 御神幻辰守镯 1
+CheckItemW 御神幻辰护镯 1
+CheckItemW 御神幻辰守戒 1
+CheckItemW 御神幻辰护戒 1
+Equal 鞋子名字 "御神幻辰战靴"
+Equal 印章名字 "御神幻辰印章"
+#Act
+Mov 御神幻辰特效 1
+StartExpRate + 0.65
+StartPowerRate + 0.65
+HumMagicA 3 210
+HumMagicB 3 20
+HumMagicC 0.3
+STARTBUFF 180 -1 "[御神幻辰套装特效]\获得经验值提高65%\物理攻击和魔法攻击提高65%\30%的几率祈祷会心一击"
+SysMsg "※御神幻辰套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 1002
+!Equal 御神幻云特效 1
+CheckItemW 御神幻云法铠（男） 1
+CheckItemW 御神幻云之杖 1
+CheckItemW 御神幻云法盔 1
+CheckItemW 御神幻云法链 1
+CheckItemW 御神幻云守镯 1
+CheckItemW 御神幻云护镯 1
+CheckItemW 御神幻云守戒 1
+CheckItemW 御神幻云护戒 1
+Equal 鞋子名字 "御神幻云法靴"
+Equal 印章名字 "御神幻云印章"
+#Act
+Mov 御神幻云特效 1
+StartExpRate + 0.65
+StartPowerRate + 0.65
+HumMagicA 3 210
+STARTBUFF 181 -1 "[御神幻云套装特效]\获得经验值提高65%\物理攻击和魔法攻击提高65%\30%的几率祈祷会心一击"
+SysMsg "※御神幻云套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 1002
+!Equal 御神幻云特效 1
+CheckItemW 御神幻云法铠（女） 1
+CheckItemW 御神幻云之杖 1
+CheckItemW 御神幻云法盔 1
+CheckItemW 御神幻云法链 1
+CheckItemW 御神幻云守镯 1
+CheckItemW 御神幻云护镯 1
+CheckItemW 御神幻云守戒 1
+CheckItemW 御神幻云护戒 1
+Equal 鞋子名字 "御神幻云法靴"
+Equal 印章名字 "御神幻云印章"
+#Act
+Mov 御神幻云特效 1
+StartExpRate + 0.65
+StartPowerRate + 0.65
+HumMagicA 3 210
+STARTBUFF 181 -1 "[御神幻云套装特效]\获得经验值提高65%\物理攻击和魔法攻击提高65%\30%的几率祈祷会心一击"
+SysMsg "※御神幻云套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 1003
+!Equal 御神幻绝特效 1
+CheckItemW 御神幻绝圣铠（男） 1
+CheckItemW 御神幻绝之剑 1
+CheckItemW 御神幻绝圣盔 1
+CheckItemW 御神幻绝圣链 1
+CheckItemW 御神幻绝守镯 1
+CheckItemW 御神幻绝护镯 1
+CheckItemW 御神幻绝守戒 1
+CheckItemW 御神幻绝护戒 1
+Equal 鞋子名字 "御神幻绝圣靴"
+Equal 印章名字 "御神幻绝印章"
+#Act
+Mov 御神幻绝特效 1
+StartExpRate + 0.65
+StartPowerRate + 0.65
+HumMagicA 3 210
+HumMagicB 3 25
+STARTBUFF 182 -1 "[御神幻绝套装特效]\获得经验值提高65%\物理攻击和魔法攻击提高65%\30%的几率祈祷会心一击\30%的几率25倍暴毒"
+SysMsg "※御神幻绝套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 1003
+!Equal 御神幻绝特效 1
+CheckItemW 御神幻绝圣铠（女） 1
+CheckItemW 御神幻绝之剑 1
+CheckItemW 御神幻绝圣盔 1
+CheckItemW 御神幻绝圣链 1
+CheckItemW 御神幻绝守镯 1
+CheckItemW 御神幻绝护镯 1
+CheckItemW 御神幻绝守戒 1
+CheckItemW 御神幻绝护戒 1
+Equal 鞋子名字 "御神幻绝圣靴"
+Equal 印章名字 "御神幻绝印章"
+#Act
+Mov 御神幻绝特效 1
+StartExpRate + 0.65
+StartPowerRate + 0.65
+HumMagicA 3 210
+HumMagicB 3 25
+HumMagicC 0.3
+STARTBUFF 182 -1 "[御神幻绝套装特效]\获得经验值提高65%\物理攻击和魔法攻击提高65%\30%的几率祈祷会心一击\30%的几率25倍暴毒"
+SysMsg "※御神幻绝套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 1101
+!Equal 逸尘震星特效 1
+CheckItemW 逸尘震星战铠（男） 1
+CheckItemW 逸尘震星之刃 1
+CheckItemW 逸尘震星战盔 1
+CheckItemW 逸尘震星战链 1
+CheckItemW 逸尘震星守镯 1
+CheckItemW 逸尘震星护镯 1
+CheckItemW 逸尘震星守戒 1
+CheckItemW 逸尘震星护戒 1
+Equal 鞋子名字 "逸尘震星战靴"
+Equal 印章名字 "逸尘震星印章"
+#Act
+Mov 逸尘震星特效 1
+StartExpRate + 0.72
+StartPowerRate + 0.72
+HumMagicA 3 220
+STARTBUFF 183 -1 "[逸尘震星套装特效]\获得经验值提高72%\物理攻击和魔法攻击提高72%\30%的几率祈祷会心一击"
+SysMsg "※逸尘震星套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 1101
+!Equal 逸尘震星特效 1
+CheckItemW 逸尘震星战铠（女） 1
+CheckItemW 逸尘震星之刃 1
+CheckItemW 逸尘震星战盔 1
+CheckItemW 逸尘震星战链 1
+CheckItemW 逸尘震星守镯 1
+CheckItemW 逸尘震星护镯 1
+CheckItemW 逸尘震星守戒 1
+CheckItemW 逸尘震星护戒 1
+Equal 鞋子名字 "逸尘震星战靴"
+Equal 印章名字 "逸尘震星印章"
+#Act
+Mov 逸尘震星特效 1
+StartExpRate + 0.72
+StartPowerRate + 0.72
+HumMagicA 3 220
+STARTBUFF 183 -1 "[逸尘震星套装特效]\获得经验值提高72%\物理攻击和魔法攻击提高72%\30%的几率祈祷会心一击"
+SysMsg "※逸尘震星套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 1102
+!Equal 逸尘乘龙特效 1
+CheckItemW 逸尘乘龙法铠（男） 1
+CheckItemW 逸尘乘龙之杖 1
+CheckItemW 逸尘乘龙法盔 1
+CheckItemW 逸尘乘龙法链 1
+CheckItemW 逸尘乘龙守镯 1
+CheckItemW 逸尘乘龙护镯 1
+CheckItemW 逸尘乘龙守戒 1
+CheckItemW 逸尘乘龙护戒 1
+Equal 鞋子名字 "逸尘乘龙法靴"
+Equal 印章名字 "逸尘乘龙印章"
+#Act
+Mov 逸尘乘龙特效 1
+StartExpRate + 0.72
+StartPowerRate + 0.72
+HumMagicA 3 220
+STARTBUFF 184 -1 "[逸尘乘龙套装特效]\获得经验值提高72%\物理攻击和魔法攻击提高72%\30%的几率祈祷会心一击"
+SysMsg "※逸尘乘龙套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 1102
+!Equal 逸尘乘龙特效 1
+CheckItemW 逸尘乘龙法铠（女） 1
+CheckItemW 逸尘乘龙之杖 1
+CheckItemW 逸尘乘龙法盔 1
+CheckItemW 逸尘乘龙法链 1
+CheckItemW 逸尘乘龙守镯 1
+CheckItemW 逸尘乘龙护镯 1
+CheckItemW 逸尘乘龙守戒 1
+CheckItemW 逸尘乘龙护戒 1
+Equal 鞋子名字 "逸尘乘龙法靴"
+Equal 印章名字 "逸尘乘龙印章"
+#Act
+Mov 逸尘乘龙特效 1
+StartExpRate + 0.72
+StartPowerRate + 0.72
+HumMagicA 3 220
+STARTBUFF 184 -1 "[逸尘乘龙套装特效]\获得经验值提高72%\物理攻击和魔法攻击提高72%\30%的几率祈祷会心一击"
+SysMsg "※逸尘乘龙套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 1103
+!Equal 逸尘蟠凤特效 1
+CheckItemW 逸尘蟠凤圣铠（男） 1
+CheckItemW 逸尘蟠凤之剑 1
+CheckItemW 逸尘蟠凤圣盔 1
+CheckItemW 逸尘蟠凤圣链 1
+CheckItemW 逸尘蟠凤守镯 1
+CheckItemW 逸尘蟠凤护镯 1
+CheckItemW 逸尘蟠凤守戒 1
+CheckItemW 逸尘蟠凤护戒 1
+Equal 鞋子名字 "逸尘蟠凤圣靴"
+Equal 印章名字 "逸尘蟠凤印章"
+#Act
+Mov 逸尘蟠凤特效 1
+StartExpRate + 0.72
+StartPowerRate + 0.72
+HumMagicA 3 220
+HumMagicB 3 30
+STARTBUFF 185 -1 "[逸尘蟠凤套装特效]\获得经验值提高72%\物理攻击和魔法攻击提高72%\30%的几率祈祷会心一击\30%的几率30倍暴毒"
+SysMsg "※逸尘蟠凤套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 1103
+!Equal 逸尘蟠凤特效 1
+CheckItemW 逸尘蟠凤圣铠（女） 1
+CheckItemW 逸尘蟠凤之剑 1
+CheckItemW 逸尘蟠凤圣盔 1
+CheckItemW 逸尘蟠凤圣链 1
+CheckItemW 逸尘蟠凤守镯 1
+CheckItemW 逸尘蟠凤护镯 1
+CheckItemW 逸尘蟠凤守戒 1
+CheckItemW 逸尘蟠凤护戒 1
+Equal 鞋子名字 "逸尘蟠凤圣靴"
+Equal 印章名字 "逸尘蟠凤印章"
+#Act
+Mov 逸尘蟠凤特效 1
+StartExpRate + 0.72
+StartPowerRate + 0.72
+HumMagicA 3 220
+HumMagicB 3 30
+STARTBUFF 185 -1 "[逸尘蟠凤套装特效]\获得经验值提高72%\物理攻击和魔法攻击提高72%\30%的几率祈祷会心一击\30%的几率30倍暴毒"
+SysMsg "※逸尘蟠凤套装特效开启※"
+Break
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#If
+gender man
+Equal 套装佩戴 1201
+!Equal 光明皇帝特效 1
+CheckItemW 光明皇帝神铠（男） 1
+CheckItemW 光明皇帝神刃 1
+CheckItemW 光明皇帝神盔 1
+CheckItemW 光明皇帝神链 1
+CheckItemW 光明皇帝守镯 1
+CheckItemW 光明皇帝护镯 1
+CheckItemW 光明皇帝守戒 1
+CheckItemW 光明皇帝护戒 1
+Equal 鞋子名字 "光明皇帝神靴"
+Equal 印章名字 "光明皇帝印章"
+#Act
+Mov 光明皇帝特效 1
+StartExpRate + 0.8
+StartPowerRate + 0.8
+HumMagicA 3 230
+HumMagicB 3 30
+HumMagicC 0.3
+STARTBUFF 240 -1 "[光明皇帝套装特效]\获得经验值提高80%\物理攻击和魔法攻击提高80%\30%的几率祈祷会心一击\30%的几率30倍暴毒"
+SysMsg "※光明皇帝套装特效开启※"
+Break
+
+#If
+gender woman
+Equal 套装佩戴 1201
+!Equal 光明皇帝特效 1
+CheckItemW 光明皇帝神铠（女） 1
+CheckItemW 光明皇帝神刃 1
+CheckItemW 光明皇帝神盔 1
+CheckItemW 光明皇帝神链 1
+CheckItemW 光明皇帝守镯 1
+CheckItemW 光明皇帝护镯 1
+CheckItemW 光明皇帝守戒 1
+CheckItemW 光明皇帝护戒 1
+Equal 鞋子名字 "光明皇帝神靴"
+Equal 印章名字 "光明皇帝印章"
+#Act
+Mov 光明皇帝特效 1
+StartExpRate + 0.8
+StartPowerRate + 0.8
+HumMagicA 3 230
+HumMagicB 3 30
+HumMagicC 0.3
+STARTBUFF 240 -1 "[光明皇帝套装特效]\获得经验值提高80%\物理攻击和魔法攻击提高80%\30%的几率祈祷会心一击\30%的几率30倍暴毒\30%的几率HP、MP全满"
+SysMsg "※光明皇帝套装特效开启※"
+Break
+
+[@检测套装装备名字]
+#If
+CheckItemInfo 10 0
+#Act
+Mov 鞋子名字 %FLD_NAME
+
+#If
+CheckItemInfo 11 0
+#Act
+Mov 印章名字 %FLD_NAME
+
+}
+;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)

@@ -4,6 +4,8 @@
 #ACT
 LoadValue D6 "ParamControl\任务记录.ini" %USERNAME 任务编号
 LoadValue D5 "ParamControl\任务记录.ini" %USERNAME 任务类型
+LoadValue D9 "ParamControl\任务重置次数.ini" %USERNAME 重置次数
+
 
 LoadValue D1 "ParamControl\任务查询.ini" %D6 金币1
 LoadValue D2 "ParamControl\任务查询.ini" %D6 金币2
@@ -29,6 +31,7 @@ Equal D5 1
 3.{FCOLOR/10}物品: {FCOLOR/14}<$OUTPUT(A2)>{FCOLOR/12}\
 4.{FCOLOR/10}物品: {FCOLOR/14}<$OUTPUT(A3)>{FCOLOR/12}\\
 {FCOLOR/10}完成本次任务可以获得经验值奖励 {FCOLOR/1}<$OUTPUT(D7)>{FCOLOR/10} 点.{FCOLOR/12}\\
+<重置每日任务（最多三次,每次50点积分）/@resetWanshitong>\\
 
 #IF
 Equal D5 2
@@ -41,6 +44,7 @@ Equal D5 2
 3.{FCOLOR/10}物品: {FCOLOR/14}<$OUTPUT(A2)>{FCOLOR/12}\
 4.{FCOLOR/10}物品: {FCOLOR/14}<$OUTPUT(A3)>{FCOLOR/12}\\
 {FCOLOR/10}完成本次任务可以获得经验值奖励 {FCOLOR/1}<$OUTPUT(D7)>{FCOLOR/10} 点.{FCOLOR/12}\\
+<重置每日任务（最多三次,每次50点积分）/@resetWanshitong>\\
 
 #IF
 Equal D5 3
@@ -53,6 +57,7 @@ Equal D5 3
 3.{FCOLOR/10}物品: {FCOLOR/14}<$OUTPUT(A2)>{FCOLOR/12}\
 4.{FCOLOR/10}物品: {FCOLOR/14}<$OUTPUT(A3)>{FCOLOR/12}\\
 {FCOLOR/10}完成本次任务可以获得经验值奖励 {FCOLOR/1}<$OUTPUT(D7)>{FCOLOR/10} 点.{FCOLOR/12}\\
+<重置每日任务（最多三次,每次50点积分）/@resetWanshitong>\\
 
 #IF
 Equal D5 4
@@ -66,5 +71,26 @@ Equal D5 4
 4.{FCOLOR/10}物品: {FCOLOR/14}<$OUTPUT(A3)>{FCOLOR/12}\\
 {FCOLOR/10}完成本次任务可以获得经验值奖励 {FCOLOR/1}<$OUTPUT(D7)>{FCOLOR/10} 点.{FCOLOR/12}\\
 
+<重置每日任务（最多三次,每次50点积分）/@resetWanshitong>\\
+
+[@resetWanshitong]
+#IF
+Equal D9 3
+#SAY
+你已经重置3次咯！
+
+
+#IF
+Small D9 3
+INC D9 1
+checkcmd CHECKUSERJF 30
+#ACT
+actcmd SETUSERJF - 30
+SAVEVALUE "ParamControl\任务记录.ini" %USERNAME 任务日期 1
+SAVEVALUE "ParamControl\任务重置次数.ini" %USERNAME 重置次数 %D9
+#CALL [每日任务\QT_NPCCHAXUN.txt] @BossQuest_ChaXun
+#Elseact
+Close
+SYSMSG "温馨提示: 您的积分不足."
 
 }

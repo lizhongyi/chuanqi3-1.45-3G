@@ -1,35 +1,44 @@
-2014-07-12 12:15:57.73 server    Microsoft SQL Server  2000 - 8.00.2039 (Intel X86) 
+2014-07-17 19:51:43.73 server    Microsoft SQL Server  2000 - 8.00.2039 (Intel X86) 
 	May  3 2005 23:18:38 
 	Copyright (c) 1988-2003 Microsoft Corporation
 	Enterprise Edition on Windows NT 5.1 (Build 2600: Service Pack 3)
 
-2014-07-12 12:15:57.75 server    Copyright (C) 1988-2002 Microsoft Corporation.
-2014-07-12 12:15:57.75 server    保留所有权利。
-2014-07-12 12:15:57.75 server    服务器进程 ID 是 7904。
-2014-07-12 12:15:57.75 server    将 SQL Server 消息记录在文件“D:\Mud3\GSQL\Log\SQL日志.Log”中。
-2014-07-12 12:15:57.78 server    SQL Server 正在以优先级“normal”（已检测到 2 CPUs）启动。
-2014-07-12 12:15:58.48 server    已为 thread 模式处理而配置了 SQL Server。
-2014-07-12 12:15:58.50 server    使用 dynamic 锁分配。[2500] 锁块，[5000] 锁所有者块。
-2014-07-12 12:15:58.59 server    尝试初始化分布式事务处理协调器。
-2014-07-12 12:15:58.98 server    Failed to obtain TransactionDispenserInterface: XACT_E_TMNOTAVAILABLE
-2014-07-12 12:15:59.14 spid3     启动数据库“master”。
-2014-07-12 12:15:59.62 server    正在使用“SSNETLIB.DLL”版本“8.0.2039”。
-2014-07-12 12:15:59.62 spid5     启动数据库“model”。
-2014-07-12 12:15:59.65 spid3     服务器名称是“2CMJ85ZEOFN5RQQ”。
-2014-07-12 12:15:59.65 spid3     Skipping startup of clean database id 8
-2014-07-12 12:15:59.67 spid8     启动数据库“msdb”。
-2014-07-12 12:15:59.67 spid10    启动数据库“account”。
-2014-07-12 12:15:59.67 spid9     启动数据库“conlog”。
-2014-07-12 12:15:59.67 spid11    启动数据库“game1”。
-2014-07-12 12:15:59.67 spid12    启动数据库“kingforeiserverbasedata”。
-2014-07-12 12:15:59.67 spid13    启动数据库“manage”。
-2014-07-12 12:16:00.42 spid5     清除 tempdb 数据库。
-2014-07-12 12:16:01.20 server    SQL Server 正在监听 192.168.1.101: 1433。
-2014-07-12 12:16:01.20 server    SQL Server 正在监听 10.0.14.12: 1433。
-2014-07-12 12:16:01.20 server    SQL Server 正在监听 127.0.0.1: 1433。
-2014-07-12 12:16:01.34 server    SQL Server 正在监听 TCP, Shared Memory, Named Pipes。
-2014-07-12 12:16:01.34 server    SQL Server 已准备好进行客户端连接
-2014-07-12 12:16:01.35 spid5     启动数据库“tempdb”。
-2014-07-12 12:16:01.53 spid3     恢复完成。
-2014-07-12 12:22:19.12 spid77    启动数据库“herocommon1”。
-2014-07-12 13:21:53.39 spid51    服务器已按要求关闭。
+2014-07-17 19:51:43.75 server    Copyright (C) 1988-2002 Microsoft Corporation.
+2014-07-17 19:51:43.75 server    保留所有权利。
+2014-07-17 19:51:43.75 server    服务器进程 ID 是 5156。
+2014-07-17 19:51:43.75 server    将 SQL Server 消息记录在文件“D:\Mud3\GSQL\Log\SQL日志.Log”中。
+2014-07-17 19:51:43.81 server    SQL Server 正在以优先级“normal”（已检测到 2 CPUs）启动。
+2014-07-17 19:51:44.65 server    已为 thread 模式处理而配置了 SQL Server。
+2014-07-17 19:51:44.68 server    使用 dynamic 锁分配。[2500] 锁块，[5000] 锁所有者块。
+2014-07-17 19:51:44.95 server    尝试初始化分布式事务处理协调器。
+2014-07-17 19:51:45.42 server    Failed to obtain TransactionDispenserInterface: XACT_E_TMNOTAVAILABLE
+2014-07-17 19:51:45.51 spid3     启动数据库“master”。
+2014-07-17 19:51:46.39 server    正在使用“SSNETLIB.DLL”版本“8.0.2039”。
+2014-07-17 19:51:46.39 spid5     启动数据库“model”。
+2014-07-17 19:51:46.42 spid3     服务器名称是“2CMJ85ZEOFN5RQQ”。
+2014-07-17 19:51:46.42 spid3     Skipping startup of clean database id 8
+2014-07-17 19:51:46.43 spid9     启动数据库“account”。
+2014-07-17 19:51:46.43 spid8     启动数据库“msdb”。
+2014-07-17 19:51:46.46 spid10    启动数据库“conlog”。
+2014-07-17 19:51:46.46 spid11    启动数据库“game1”。
+2014-07-17 19:51:46.54 spid12    启动数据库“kingforeiserverbasedata”。
+2014-07-17 19:51:46.54 spid13    启动数据库“manage”。
+2014-07-17 19:51:47.20 spid5     清除 tempdb 数据库。
+2014-07-17 19:51:47.89 spid5     启动数据库“tempdb”。
+2014-07-17 19:51:47.96 server    SQL Server 正在监听 192.168.1.101: 1433。
+2014-07-17 19:51:47.96 server    SQL Server 正在监听 10.0.15.17: 1433。
+2014-07-17 19:51:47.96 server    SQL Server 正在监听 127.0.0.1: 1433。
+2014-07-17 19:51:48.48 spid3     恢复完成。
+2014-07-17 19:51:48.75 server    SQL Server 正在监听 TCP, Shared Memory, Named Pipes。
+2014-07-17 19:51:48.75 server    SQL Server 已准备好进行客户端连接
+2014-07-17 19:53:36.06 spid53    启动数据库“herocommon1”。
+2014-07-17 19:53:52.26 spid52    启动数据库“herocommon1”。
+2014-07-17 19:54:21.57 spid52    启动数据库“herocommon1”。
+2014-07-17 19:54:22.68 spid52    启动数据库“herocommon1”。
+2014-07-17 19:54:22.71 spid52    启动数据库“herocommon1”。
+2014-07-17 19:54:22.74 spid52    启动数据库“herocommon1”。
+2014-07-17 21:33:38.70 spid52    启动数据库“herocommon1”。
+2014-07-17 21:33:48.42 spid52    启动数据库“herocommon1”。
+2014-07-17 21:33:49.43 spid52    启动数据库“herocommon1”。
+2014-07-17 21:34:35.07 spid77    启动数据库“herocommon1”。
+2014-07-17 21:37:15.06 spid51    服务器已按要求关闭。

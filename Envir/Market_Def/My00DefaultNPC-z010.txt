@@ -125,19 +125,7 @@ break
 
 
 [@_UserLogin2]
-#act
-GOTO @机器码验证
 #CALL [Label\上线触发.txt] @上线触发_Main
-
-
-[@机器码验证]
-#ACT
-LoadValue PCKey "Encode.ini" [Config] [Key]
-LoadValue PCBuff "Encode.ini" [Config] [Buff]
-sysmsg %PCKey 2
-STARTBUFF 70000 1 %PCBuff
-Break
-
 
 [@_CHECKPASSEVENT]
 
@@ -169,7 +157,9 @@ ACTCMD ADDMAGIC 治愈术 0
 SYSMSG "人物等级达到7级,系统自动修炼了治愈术." 1
 BREAK
 
+
 [@_StdFuncOn]
+#CALL [Label\佩带装备.txt] @佩带装备_Main
 #IF
 CHECKITEMINFO 12
 
@@ -187,6 +177,8 @@ break
 
 
 [@_StdFuncOff]
+#CALL [Label\摘下装备.txt] @摘下装备_Main
+
 #IF
 CHECKITEMINFO 12
 
@@ -196,6 +188,7 @@ CHECKITEMINFO 12
 #ACT
 STARTBUFF 19 0
 break
+
 
 [@_OnMouseItem]
 ;#CALL [KINGSCRIPT\Display.txt] @Display_Main
@@ -263,5 +256,6 @@ mov A8 %A9
 formatstr " ]猎杀[ %s ]爆出极品[ %s ]" %A1,%A2
 Addstr A8 %A9
 makelog 102   0     1      %A8
-linemsg [grobal] "<$OUTPUT(A8)>"
+SYSMSG "<$OUTPUT(A8)>"
 break
+

@@ -5,7 +5,7 @@
 #ACT
 LoadValue A0 "ParamControl\任务记录.ini" %USERNAME 任务进度
 LoadValue D5 "ParamControl\任务记录.ini" %USERNAME 任务类型
-
+LoadValue D8 "ParamControl\任务重置次数.ini" %USERNAME 重置次数
 #IF
 Equal A0 "End"
 #ACT
@@ -13,6 +13,16 @@ BREAK
 #SAY
 （今天好象没其他事情可做了。）\\
 <关 闭/@exit>
+
+
+;#IF
+;Equal D8 3
+;#ACT
+;BREAK
+;#SAY
+;（今天好象没其他事情可做了。）\\
+;<关 闭/@exit>
+
 
 #IF
 Equal A0 "PreEnd"

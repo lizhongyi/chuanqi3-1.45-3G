@@ -1,5 +1,5 @@
 ;;2013 Jewel Version EiServer 1.45+3G Extended Premtium Build(42 New Skills And Jewel)
-[@寄售系统_Main]
+[@Main]
 {
 #Say
 {FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/14}寄{FCOLOR/4}━{FCOLOR/14}售{FCOLOR/4}━{FCOLOR/14}系{FCOLOR/4}━{FCOLOR/14}统{FCOLOR/4}━━━━{FCOLOR/1}★{FCOLOR/4}━━━━{FCOLOR/12}\

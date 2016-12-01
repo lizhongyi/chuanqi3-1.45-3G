@@ -161,13 +161,13 @@
           <Text/>
         </TEdit>
         <TSpinEdit Name="seFindJF">
-          <Value>4769</Value>
+          <Value>500</Value>
         </TSpinEdit>
         <TSpinEdit Name="seFindFame">
           <Value>0</Value>
         </TSpinEdit>
         <TSpinEdit Name="seFindRound">
-          <Value>1</Value>
+          <Value>0</Value>
         </TSpinEdit>
         <TTabSheet Name="ts6">
           <Caption>玩家聊天</Caption>
@@ -2666,7 +2666,7 @@
           </Items>
         </TComboBox>
         <TEdit Name="SelectTalk">
-          <Text>hahah</Text>
+          <Text>老棍子</Text>
         </TEdit>
         <TComboBox Name="SayContent"/>
         <TGroupBox Name="GroupBox30">

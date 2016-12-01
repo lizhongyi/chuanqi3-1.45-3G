@@ -1101,3 +1101,133 @@
 2016-11-27 13:48:41.464 :   GSQLAdmin 您可以使用以下机器名连接绿色SQL。
 2016-11-27 13:48:41.464 :             本地“iZhn6ss22e6di3Z” 远程“120.24.191.9,1433” 远程“10.169.230.47,1433” 远程“169.254.25.129,1433” 本地“127.0.0.1,1433” 
 2016-11-27 13:49:11.121 :   spid52    使用 'xpstar.dll' 版本 '2000.80.2039' 来执行扩展存储过程 'sp_MSgetversion'。
+2016-11-27 19:34:49.855 : ------[绿色 SQL Server]-------- Web: http://www.SuiSoft.cn;  QQ: 3860040;  Mail:szq993@163.com;  --------------------------------------
+2016-11-27 19:34:50.495 :   GSQLAdmin 管理器在 2016-11-27 19:34:49 启动.
+2016-11-27 19:34:50.495 :   Version   作者只保留本管理器的版权,其他附带文件版权归美国微软公司所有,本软件以技术研究为宗旨,请在下载本软件后24小时内删除附带的"SQLServer"文件或替换为您购买的正版"SQLServer"文件,否则后果自负. 作者不为您承担任何方面的任何责任.
+2016-11-27 19:34:51.417 :   GSQLAdmin 自主创造通讯接口成功.
+2016-11-27 19:34:51.417 :   HotKey    成功注册热键 Win + F4 (启动SQL).
+2016-11-27 19:34:51.433 :   HotKey    成功注册热键 Win + F5 (停止SQL).
+2016-11-27 19:34:51.433 :   HotKey    成功注册热键 Win + F9 (显示管理器).
+2016-11-27 19:34:53.667 :   SQLServer 开始启动.
+2016-11-27 19:34:53.683 :   Key       密匙检测成功.
+2016-11-27 19:34:53.683 :   Virtual   虚拟文件环境.
+2016-11-27 19:34:53.683 :   Virtual   虚拟注册表环境.
+2016-11-27 19:34:53.683 :   Virtual   虚拟API环境.
+2016-11-27 19:34:55.027 :   GSQLAdmin 载入 SQLServer 主体.
+2016-11-27 19:34:55.027 :   MsVersion Microsoft SQL Server  2000 - 8.00.2039 (Intel X86) 
+2016-11-27 19:34:55.027 :   MsVersion May  3 2005 23:18:38 
+2016-11-27 19:34:55.027 :   MsVersion Copyright (c) 1988-2003 Microsoft Corporation
+2016-11-27 19:34:55.042 :   MsVersion Enterprise Edition on Windows NT 5.2 (Build 3790: Service Pack 2)
+2016-11-27 19:34:55.042 :   server    Copyright (C) 1988-2002 Microsoft Corporation.
+2016-11-27 19:34:55.042 :   server    保留所有权利。
+2016-11-27 19:34:55.042 :   server    服务器进程 ID 是 2960。
+2016-11-27 19:34:55.042 :   server    SQL Server 正在以优先级“normal”（已检测到 1 CPU）启动。
+2016-11-27 19:34:55.042 :   server    已为 thread 模式处理而配置了 SQL Server。
+2016-11-27 19:34:55.042 :   server    使用 dynamic 锁分配。[2500] 锁块，[5000] 锁所有者块。
+2016-11-27 19:34:55.042 :   server    尝试初始化分布式事务处理协调器。
+2016-11-27 19:34:56.917 :   spid3     启动数据库“master”。
+2016-11-27 19:34:57.120 :   spid3     0 个事务在数据库“master”中后滚 (1)。
+2016-11-27 19:34:57.152 :   spid3     恢复操作正在对数据库 'master'（1）执行检查点操作。
+2016-11-27 19:34:57.261 :   server    正在使用“SSNETLIB.DLL”版本“8.0.2039”。
+2016-11-27 19:34:57.261 :   spid5     启动数据库“model”。
+2016-11-27 19:34:57.277 :   spid3     服务器名称是“iZhn6ss22e6di3Z”。
+2016-11-27 19:34:57.277 :   spid8     启动数据库“msdb”。
+2016-11-27 19:34:57.277 :   spid9     启动数据库“Account”。
+2016-11-27 19:34:57.292 :   spid10    启动数据库“game3g”。
+2016-11-27 19:34:57.292 :   spid11    启动数据库“hero3g”。
+2016-11-27 19:34:57.402 :   server    SQL Server 正在监听 120.24.191.9: 1433。
+2016-11-27 19:34:57.402 :   server    SQL Server 正在监听 10.169.230.47: 1433。
+2016-11-27 19:34:57.402 :   server    SQL Server 正在监听 169.254.25.129: 1433。
+2016-11-27 19:34:57.402 :   server    SQL Server 正在监听 127.0.0.1: 1433。
+2016-11-27 19:34:57.433 :   spid11    前滚了 26 个事务（在数据库 'hero3g'（7）中。
+2016-11-27 19:34:57.433 :   spid11    回滚了 0 个事务（在数据库 'hero3g'（7）中。
+2016-11-27 19:34:57.449 :   spid11    恢复操作正在对数据库 'hero3g'（7）执行检查点操作。
+2016-11-27 19:34:57.495 :   spid5     清除 tempdb 数据库。
+2016-11-27 19:34:57.542 :   server    SQL Server 正在监听 TCP, Shared Memory, Named Pipes。
+2016-11-27 19:34:57.542 :   server    SQL Server 已准备好进行客户端连接
+2016-11-27 19:34:57.542 :   TryCon    启动成功, 尝试使用 Ado 连接.
+2016-11-27 19:34:57.605 :   spid10    前滚了 57 个事务（在数据库 'game3g'（6）中。
+2016-11-27 19:34:57.620 :   spid10    回滚了 0 个事务（在数据库 'game3g'（6）中。
+2016-11-27 19:34:57.636 :   spid10    恢复操作正在对数据库 'game3g'（6）执行检查点操作。
+2016-11-27 19:34:57.730 :   TryCon    测试连接成功. 连接字符串: 
+2016-11-27 19:34:57.730 :             Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=(local)
+2016-11-27 19:34:57.730 :   SQLServer 启动完毕. 
+2016-11-27 19:34:57.730 :   GSQLAdmin 自动检测 D:\Mud3\Gsql\MyDB\ 中的数据库文件.
+2016-11-27 19:34:58.261 :   RunSqlErr "exec Sp_attach_db 'tempdb', 'D:\Mud3\Gsql\Data\tempdb.mdf', 'D:\Mud3\Gsql\Data\templog.ldf'" 数据库 'tempdb' 已存在。
+2016-11-27 19:34:58.261 :   GSQLAdmin 附加数据库 "D:\Mud3\Gsql\MyDB\tempdb.mdf" 遇到错误：数据库 'tempdb' 已存在。
+2016-11-27 19:34:58.277 :   RunSqlErr "exec Sp_attach_db 'msdb', 'D:\Mud3\Gsql\Data\msdbdata.mdf', 'D:\Mud3\Gsql\Data\MSDBLog.ldf'" 数据库 'msdb' 已存在。
+2016-11-27 19:34:58.292 :   GSQLAdmin 附加数据库 "D:\Mud3\Gsql\MyDB\msdbdata.mdf" 遇到错误：数据库 'msdb' 已存在。
+2016-11-27 19:34:58.308 :   RunSqlErr "exec Sp_attach_db 'model', 'D:\Mud3\Gsql\Data\model.mdf', 'D:\Mud3\Gsql\Data\modellog.ldf'" 数据库 'model' 已存在。
+2016-11-27 19:34:58.308 :   GSQLAdmin 附加数据库 "D:\Mud3\Gsql\MyDB\model.mdf" 遇到错误：数据库 'model' 已存在。
+2016-11-27 19:34:58.370 :   GSQLAdmin 附加数据库 "D:\Mud3\Gsql\MyDB\master.mdf" 时发现数据库中已存在对应数据库 "master".
+2016-11-27 19:34:58.386 :   GSQLAdmin 附加数据库 "D:\Mud3\Gsql\MyDB\Account.MDF" 时发现数据库中已存在对应数据库 "Account".
+2016-11-27 19:34:58.402 :   GSQLAdmin 检测完毕.
+2016-11-27 19:34:58.464 :   spid5     启动数据库“tempdb”。
+2016-11-27 19:34:58.464 :   spid9     前滚了 20 个事务（在数据库 'Account'（5）中。
+2016-11-27 19:34:58.464 :   spid9     回滚了 0 个事务（在数据库 'Account'（5）中。
+2016-11-27 19:34:58.480 :   spid9     恢复操作正在对数据库 'Account'（5）执行检查点操作。
+2016-11-27 19:35:38.559 :   spid3     恢复完成。
+2016-11-27 19:35:38.559 :   GSQLAdmin 您可以使用以下机器名连接绿色SQL。
+2016-11-27 19:35:38.559 :             本地“iZhn6ss22e6di3Z” 远程“120.24.191.9,1433” 远程“10.169.230.47,1433” 远程“169.254.25.129,1433” 本地“127.0.0.1,1433” 
+2016-11-28 20:12:41.761 : ------[绿色 SQL Server]-------- Web: http://www.SuiSoft.cn;  QQ: 3860040;  Mail:szq993@163.com;  --------------------------------------
+2016-11-28 20:12:41.902 :   GSQLAdmin 管理器在 2016-11-28 20:12:41 启动.
+2016-11-28 20:12:41.902 :   Version   作者只保留本管理器的版权,其他附带文件版权归美国微软公司所有,本软件以技术研究为宗旨,请在下载本软件后24小时内删除附带的"SQLServer"文件或替换为您购买的正版"SQLServer"文件,否则后果自负. 作者不为您承担任何方面的任何责任.
+2016-11-28 20:12:42.058 :   GSQLAdmin 连接到现有通讯接口.
+2016-11-28 20:12:42.058 :   GSQLAdmin 读取旧日志.
+2016-11-28 20:12:42.058 :   MsVersion Microsoft SQL Server  2000 - 8.00.2039 (Intel X86) 
+2016-11-28 20:12:42.058 :   MsVersion May  3 2005 23:18:38 
+2016-11-28 20:12:42.058 :   MsVersion Copyright (c) 1988-2003 Microsoft Corporation
+2016-11-28 20:12:42.058 :   MsVersion Enterprise Edition on Windows NT 5.2 (Build 3790: Service Pack 2)
+2016-11-28 20:12:42.058 :   server    Copyright (C) 1988-2002 Microsoft Corporation.
+2016-11-28 20:12:42.058 :   server    保留所有权利。
+2016-11-28 20:12:42.058 :   server    服务器进程 ID 是 2960。
+2016-11-28 20:12:42.058 :   server    SQL Server 正在以优先级“normal”（已检测到 1 CPU）启动。
+2016-11-28 20:12:42.058 :   server    已为 thread 模式处理而配置了 SQL Server。
+2016-11-28 20:12:42.058 :   server    使用 dynamic 锁分配。[2500] 锁块，[5000] 锁所有者块。
+2016-11-28 20:12:42.058 :   server    尝试初始化分布式事务处理协调器。
+2016-11-28 20:12:42.058 :   spid3     启动数据库“master”。
+2016-11-28 20:12:42.058 :   spid3     0 个事务在数据库“master”中后滚 (1)。
+2016-11-28 20:12:42.058 :   spid3     恢复操作正在对数据库 'master'（1）执行检查点操作。
+2016-11-28 20:12:42.058 :   server    正在使用“SSNETLIB.DLL”版本“8.0.2039”。
+2016-11-28 20:12:42.058 :   spid5     启动数据库“model”。
+2016-11-28 20:12:42.058 :   spid3     服务器名称是“iZhn6ss22e6di3Z”。
+2016-11-28 20:12:42.058 :   spid8     启动数据库“msdb”。
+2016-11-28 20:12:42.058 :   spid9     启动数据库“Account”。
+2016-11-28 20:12:42.058 :   spid10    启动数据库“game3g”。
+2016-11-28 20:12:42.058 :   spid11    启动数据库“hero3g”。
+2016-11-28 20:12:42.058 :   server    SQL Server 正在监听 120.24.191.9: 1433。
+2016-11-28 20:12:42.074 :   server    SQL Server 正在监听 10.169.230.47: 1433。
+2016-11-28 20:12:42.074 :   server    SQL Server 正在监听 169.254.25.129: 1433。
+2016-11-28 20:12:42.074 :   server    SQL Server 正在监听 127.0.0.1: 1433。
+2016-11-28 20:12:42.074 :   spid11    前滚了 26 个事务（在数据库 'hero3g'（7）中。
+2016-11-28 20:12:42.074 :   spid11    回滚了 0 个事务（在数据库 'hero3g'（7）中。
+2016-11-28 20:12:42.074 :   spid11    恢复操作正在对数据库 'hero3g'（7）执行检查点操作。
+2016-11-28 20:12:42.074 :   spid5     清除 tempdb 数据库。
+2016-11-28 20:12:42.074 :   server    SQL Server 正在监听 TCP, Shared Memory, Named Pipes。
+2016-11-28 20:12:42.074 :   server    SQL Server 已准备好进行客户端连接
+2016-11-28 20:12:42.074 :   spid10    前滚了 57 个事务（在数据库 'game3g'（6）中。
+2016-11-28 20:12:42.074 :   spid10    回滚了 0 个事务（在数据库 'game3g'（6）中。
+2016-11-28 20:12:42.074 :   spid10    恢复操作正在对数据库 'game3g'（6）执行检查点操作。
+2016-11-28 20:12:42.074 :   spid5     启动数据库“tempdb”。
+2016-11-28 20:12:42.074 :   spid9     前滚了 20 个事务（在数据库 'Account'（5）中。
+2016-11-28 20:12:42.074 :   spid9     回滚了 0 个事务（在数据库 'Account'（5）中。
+2016-11-28 20:12:42.074 :   spid9     恢复操作正在对数据库 'Account'（5）执行检查点操作。
+2016-11-28 20:12:42.074 :   spid3     恢复完成。
+2016-11-28 20:12:42.074 :   TryCon    启动成功, 尝试使用 Ado 连接.
+2016-11-28 20:12:42.105 :   HotKey    成功注册热键 Win + F4 (启动SQL).
+2016-11-28 20:12:42.105 :   HotKey    成功注册热键 Win + F5 (停止SQL).
+2016-11-28 20:12:42.105 :   HotKey    成功注册热键 Win + F9 (显示管理器).
+2016-11-28 20:12:42.417 :   TryCon    测试连接成功. 连接字符串: 
+2016-11-28 20:12:42.417 :             Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=master;Data Source=(local)
+2016-11-28 20:12:42.417 :   SQLServer 启动完毕. 
+2016-11-28 20:12:42.449 :   GSQLAdmin 自动检测 D:\mud3\GSQL\MyDB\ 中的数据库文件.
+2016-11-28 20:12:42.621 :   RunSqlErr "exec Sp_attach_db 'tempdb', 'D:\mud3\GSQL\Data\tempdb.mdf', 'D:\mud3\GSQL\Data\templog.ldf'" 数据库 'tempdb' 已存在。
+2016-11-28 20:12:42.621 :   GSQLAdmin 附加数据库 "D:\mud3\GSQL\MyDB\tempdb.mdf" 遇到错误：数据库 'tempdb' 已存在。
+2016-11-28 20:12:42.636 :   RunSqlErr "exec Sp_attach_db 'msdb', 'D:\mud3\GSQL\Data\msdbdata.mdf', 'D:\mud3\GSQL\Data\MSDBLog.ldf'" 数据库 'msdb' 已存在。
+2016-11-28 20:12:42.636 :   GSQLAdmin 附加数据库 "D:\mud3\GSQL\MyDB\msdbdata.mdf" 遇到错误：数据库 'msdb' 已存在。
+2016-11-28 20:12:42.667 :   RunSqlErr "exec Sp_attach_db 'model', 'D:\mud3\GSQL\Data\model.mdf', 'D:\mud3\GSQL\Data\modellog.ldf'" 数据库 'model' 已存在。
+2016-11-28 20:12:42.683 :   GSQLAdmin 附加数据库 "D:\mud3\GSQL\MyDB\model.mdf" 遇到错误：数据库 'model' 已存在。
+2016-11-28 20:12:42.714 :   GSQLAdmin 附加数据库 "D:\mud3\GSQL\MyDB\master.mdf" 时发现数据库中已存在对应数据库 "master".
+2016-11-28 20:12:42.714 :   GSQLAdmin 附加数据库 "D:\mud3\GSQL\MyDB\Account.MDF" 时发现数据库中已存在对应数据库 "Account".
+2016-11-28 20:12:42.714 :   GSQLAdmin 检测完毕.
+2016-11-28 20:31:40.103 :   spid72    使用 'xpstar.dll' 版本 '2000.80.2039' 来执行扩展存储过程 'sp_MSgetversion'。
